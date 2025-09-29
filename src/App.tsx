@@ -1,10 +1,16 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Solution from "./pages/solution";
 
 function App() {
   return (
-    <div>
-      <h1>IVH Homepage</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/solution" element={<Solution />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
