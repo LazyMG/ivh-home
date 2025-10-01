@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import solutionImage from "../assets/images/pages/solution/solution_main2.png";
+import solutionImage from "../assets/images/pages/solution/solution_main.png";
 import Header from "../common/Header";
 import RowNav from "../components/solution/RowNav";
 
