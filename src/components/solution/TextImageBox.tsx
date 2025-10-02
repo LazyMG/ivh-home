@@ -33,8 +33,6 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
         >
           {contents.map((content, index) => {
             const isSection = /^[A-Z]\.\s/.test(content);
-            console.log("isSection : ", isSection);
-            console.log("content : ", content);
             return (
               <Typography
                 key={index}

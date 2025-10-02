@@ -19,4 +19,24 @@ interface TextImageBoxProps {
   height: string;
 }
 
-export type { ContentProps, TextBoxProps, TextImageBoxProps };
+interface ColorBoxProps {
+  boxColor: string;
+  arrangement: string;
+  title: string[];
+  contents: string[][];
+}
+
+interface ColorBoxProps2 {
+  boxColor: string;
+  arrangement: string;
+  title: string[];
+  contents: (string[] | string[][])[];
+}
+
+export type {
+  ContentProps,
+  TextBoxProps,
+  TextImageBoxProps,
+  ColorBoxProps,
+  ColorBoxProps2,
+};

@@ -15,6 +15,77 @@
     "systemArchitecture": {
       "systemArchitectureTitle": "• 시스템 아키텍처",
       "systemArchitectureImgUrl": "../../assets/images/pages/solution/solution_energy.jpg"
+    },
+    "colorBox": {
+      "boxColor": "#279576",
+      "arrangement": "TwoOnOne",
+      "colorBoxTitle": ["• 핵심 기술", "• 제공 서비스", "• 기대 효과"],
+      "colorBoxContents": [
+        [
+          "- Modelica/Dymola 기반 멀티피직스 모델링",
+          "- 디지털 트윈 기반 예측 제어 및 시나리오 기반 최적 운전 전략",
+          "- FMI/eFMI 표준을 통한 상호운용성 확보",
+          "- 열저장, 수소 생산, 공정열 연계 등 멀티에너지 통합 기술"
+        ],
+        [
+          "- 타당성 검토 및 사업성 분석 (Pre-FEED)",
+          "- 디지털 트윈 기반 통합 모델 구축 및 PoC",
+          "- 운전 전략 최적화 컨설팅",
+          "- 기술 이전 및 교육 프로그램 제공"
+        ],
+        [
+          "- 전력·열·수소 간 섹터 커플링으로 수익 다각화",
+          "- 재생에너지 수용성 확대 및 계통 혼잡 완화",
+          "- 온실가스 감축 및 에너지 자립성 제고",
+          "- 표준 기반 모델 교환으로 공급망 리스크 최소화"
+        ]
+      ]
+    },
+    "colorBox2": {
+      "boxColor": "#279576",
+      "arrangement": "TwoOnOne",
+      "colorBoxTitle": ["• 핵심 기술", "• 제공 서비스", "• 기대 효과"],
+      "colorBoxContents": [
+        [
+          "- Modelica/Dymola 기반 멀티피직스 모델링",
+          "- 디지털 트윈 기반 예측 제어 및 시나리오 기반 최적 운전 전략",
+          "- FMI/eFMI 표준을 통한 상호운용성 확보",
+          "- 열저장, 수소 생산, 공정열 연계 등 멀티에너지 통합 기술"
+        ],
+        [
+          "- 타당성 검토 및 사업성 분석 (Pre-FEED)",
+          "- 디지털 트윈 기반 통합 모델 구축 및 PoC",
+          "- 운전 전략 최적화 컨설팅",
+          "- 기술 이전 및 교육 프로그램 제공"
+        ],
+        [
+          [
+            "[ 실차 계측 결과와 모델 예측 결과 간 정합성 확보 ] \n",
+            "- Steady State Response에서 최대 오차율 11% 이하",
+            "- 제동 시 Rear Upper Rod 좌우 하중 Phase 역전 현상 확보",
+            "- VPG 기반 계측 대비 Damage 비교 수행",
+            "- VTL 기반 계측 대비 Damage 비교 수행"
+          ],
+          [
+            "[ 내구 시험 결과 ] \n",
+            "- 각 적재 조건 및 노면 조건에 따른 VPG 수행 완료",
+            "- 채널 수: Eleccity Town 125ch, PE 140ch, 저상 광역 버스 180ch, 이층 전기 버스 220ch, GZ 독립 현가 180ch"
+          ],
+          [
+            "[ Virtual Test Laboratory 결과 ] \n",
+            "- Drive Signal 생성 및 입력을 통한 시계열 정합성 확보",
+            "- 각 부품에 대한 Damage 예측 신뢰성 향상",
+            "- Iteration 수행 시 추가 신뢰성 확보 가능"
+          ],
+          [
+            "[ 기술적 시사점 ] \n",
+            "- VPG 환경을 통해 미계측 채널(속도, 가속도, 위치 등) 예측 가능",
+            "- 차량 기하학적 형상, 물성치, 부품 특성 변경에 따른 차량 거동 예측 가능",
+            "- 타이어 모델 차이에 따른 Damage 오차 발생 → 고정도 타이어 모델 개발 필요",
+            "- 향후 Hybrid Test Track 및 추가 시나리오 분석 예정"
+          ]
+        ]
+      ]
     }
   }
 }
