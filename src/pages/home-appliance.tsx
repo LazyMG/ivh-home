@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import SubTitle from "../components/solution/SubTitle";
 import ListSection from "../components/solution/ListSection";
 

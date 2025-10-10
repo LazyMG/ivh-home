@@ -28,7 +28,10 @@ interface BoxGridProps {
       [key: string]: string | number | undefined;
     };
     imgSx: {
-      [key: string]: string | number | undefined;
+      [key: string]:
+        | string
+        | number
+        | { [key: string]: string | number | undefined };
     };
   }[];
   total: number;
