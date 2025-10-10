@@ -1,11 +1,14 @@
 import { Box, AppBar, Toolbar, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 interface StyledButtonProps {
   underlineColor: string;
 }
 
 const RowNav = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       component="nav"
@@ -28,7 +31,12 @@ const RowNav = () => {
         }}
       >
         <Toolbar sx={{ gap: 16 }} disableGutters>
-          <StyledButton underlineColor="#279576">Energy</StyledButton>
+          <StyledButton
+            underlineColor="#279576"
+            onClick={() => navigate("/solution/energy")}
+          >
+            Energy
+          </StyledButton>
           <StyledButton underlineColor="#f99818">BEMS</StyledButton>
           <StyledButton underlineColor="#cc5268">Mobility</StyledButton>
           <StyledButton underlineColor="#0c307b">Smart factory</StyledButton>

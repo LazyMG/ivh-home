@@ -1,0 +1,42 @@
+{
+  "main": {
+    "title": "main",
+    "subtitle": "",
+    "path": "/"
+  },
+  "solution": {
+    "title": "solution",
+    "subtitle": "solution",
+    "path": "/solution"
+  },
+  "energy": {
+    "title": "energy",
+    "subtitle": "energy",
+    "path": "/solution/energy"
+  },
+  "BEMS": {
+    "title": "BEMS",
+    "subtitle": "BEMS",
+    "path": "/solution/bems"
+  },
+  "Mobility": {
+    "title": "Mobility",
+    "subtitle": "Mobility",
+    "path": "/solution/mobility"
+  },
+  "SmartFactory": {
+    "title": "SmartFactory",
+    "subtitle": "SmartFactory",
+    "path": "/solution/smartfactory"
+  },
+  "AlInnovationHub": {
+    "title": "AlInnovationHub",
+    "subtitle": "AlInnovationHub",
+    "path": "/solution/alinnovationhub"
+  },
+  "HomeAppliance": {
+    "title": "HomeAppliance",
+    "subtitle": "HomeAppliance",
+    "path": "/solution/homeappliance"
+  }
+}
