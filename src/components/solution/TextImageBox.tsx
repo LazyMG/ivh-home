@@ -46,10 +46,10 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
         </Typography>
       )}
       {imgurl.map((img, index) => {
-        const resolvedSrc = new URL(img, import.meta.url).href;
+        // const resolvedSrc = new URL(img, import.meta.url).href;
         return (
           <img
-            src={resolvedSrc}
+            src={img}
             alt={title}
             key={index}
             width={width}
