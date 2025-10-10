@@ -1,0 +1,419 @@
+{
+  "introduction": {
+    "subtitle": "개요",
+    "text": [
+      {
+        "id": 1,
+        "inner": "",
+        "type": "title",
+        "children": [
+          {
+            "id": 2,
+            "inner": "본 프로젝트는 차량 시스템의 복잡성과 전자제어장치(ECU)의 증가에 대응하여, 설계 초기 단계에서 열 성능을 예측할 수 있는 Modelica 기반 1D PCBA 모델을 구축하고, Front Loading 설계 프로세스를 구현하는 것을 목표로 하였습니다. 이를 통해 설계 변경이 용이하고 KPI 산출이 가능한 모델 기반 시스템 엔지니어링(MBSE) 환경을 제공합니다.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sx": {
+      "p": "0",
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": 2
+    },
+    "img": [""]
+  },
+  "context": {
+    "subtitle": "기술적 배경",
+    "text": [
+      {
+        "id": 1,
+        "inner": "",
+        "type": "title",
+        "children": [
+          {
+            "id": 2,
+            "inner": "기존 방식은 도면 설계 완료 후에야 방열 성능 예측이 가능하며, 설계 변경 시 모델을 처음부터 다시 구축해야 하는 비효율이 존재했습니다.",
+            "type": "text"
+          },
+          {
+            "id": 3,
+            "inner": "차량 시스템의 복잡성과 ECU의 증가로 인해, 설계 초기 단계에서 열 성능을 예측하고, 설계 변경에 유연하게 대응할 수 있는 모델 기반 접근법이 필수적으로 요구되고 있습니다.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sx": {
+      "p": "0",
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": 2
+    },
+    "img": [""]
+  },
+  "necessity": {
+    "subtitle": "시장 동향 및 필요성",
+    "text": [
+      {
+        "id": 1,
+        "inner": "",
+        "type": "title",
+        "children": [
+          {
+            "id": 2,
+            "inner": "자동차 및 전자산업에서 ECU와 PCB의 열 관리 중요성이 높아지고 있으며, 설계 초기 단계에서의 열 성능 예측과 신속한 설계 변경 대응이 경쟁력의 핵심이 되고 있습니다.",
+            "type": "text"
+          },
+          {
+            "id": 3,
+            "inner": "Modelica 기반 1D 모델링은 Front Loading 설계, KPI 산출, 신뢰성 확보 측면에서 산업계의 표준으로 자리잡고 있습니다.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sx": {
+      "p": "0",
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": 2
+    },
+    "img": [""]
+  },
+
+  "architecture": {
+    "subtitle": "시스템 아키텍쳐",
+    "text": [
+      {
+        "id": 1,
+        "inner": "",
+        "type": "title",
+        "children": [
+          {
+            "id": 2,
+            "inner": "■ Lumped Thermal Capacity Model 기반 PCB 및 부품 열전달(전도, 대류) 단순화 구현",
+            "type": "text"
+          },
+          {
+            "id": 3,
+            "inner": "■ 각 부품은 6방향 Resistor와 1개의 Capacitor로 구성, 사용자 설정에 따라 열저항 및 열용량 계산 방식 선택 가능",
+            "type": "text"
+          },
+          {
+            "id": 4,
+            "inner": "■ 1D 모델과 3D CFD 해석 결과 비교(정상 상태 온도 오차율 1.73%)",
+            "type": "text"
+          },
+          {
+            "id": 5,
+            "inner": "■ Detail Design Model(도면 형상 반영, 수동 연결 방식으로 정확도 향상)",
+            "type": "text"
+          },
+          {
+            "id": 6,
+            "inner": "■ Thermal Network Model 활용, 부품과 PCB 간 열전달 경로 구성",
+            "type": "text"
+          },
+          {
+            "id": 7,
+            "inner": "■ 실제 PCB 도면 데이터(2종) 기반 부품 위치, 형상, 발열량, PCB 두께 등 정보 추출",
+            "type": "text"
+          },
+          {
+            "id": 8,
+            "inner": "■ 모델 검증: 최고 온도 부품 기준 오차율(Concept 모델 -8.35%, Detail 모델 -0.05%), PCB 온도 분포 예측",
+            "type": "text"
+          },
+          {
+            "id": 9,
+            "inner": "■ 도면 데이터 기반 모델의 최대 오차율 14.6~15.9%, 평균 오차율 4.0~4.4%",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sx": {
+      "p": "0",
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": 2
+    },
+    "img": [""]
+  },
+  "software": {
+    "subtitle": "관련 소프트웨어 (Software)",
+    "text": [
+      {
+        "id": 1,
+        "inner": "",
+        "type": "title",
+        "children": [
+          {
+            "id": 2,
+            "inner": "Dymola(Dassault), TIL(Dassault), HVAC(XRG)",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sx": {
+      "p": "0",
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": 2
+    },
+    "img": [""]
+  },
+  "qna": {
+    "subtitle": "자주 묻는 질문",
+    "text": [
+      {
+        "id": 1,
+        "inner": "",
+        "type": "title",
+        "children": [
+          {
+            "id": 2,
+            "inner": "Q1. 설계 변경 시 모델 업데이트가 용이한가요?",
+            "type": "text"
+          },
+          {
+            "id": 3,
+            "inner": "A. 네, Modelica 기반 1D 모델은 설계 변경에 유연하게 대응할 수 있습니다.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "inner": "",
+        "type": "title",
+        "children": [
+          {
+            "id": 5,
+            "inner": "Q2. 1D 모델의 정확도는 어느 정도인가요?",
+            "type": "text"
+          },
+          {
+            "id": 6,
+            "inner": "A. 3D CFD 해석과 비교 시 정상 상태 온도 오차율 1.73%로 높은 정확도를 확보했습니다.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "inner": "",
+        "type": "title",
+        "children": [
+          {
+            "id": 8,
+            "inner": "Q3. 실제 도면 데이터 기반 모델링도 가능한가요?",
+            "type": "text"
+          },
+          {
+            "id": 9,
+            "inner": "A. 네, 부품 위치, 형상, 발열량, PCB 두께 등 실제 도면 데이터를 활용한 모델링 및 성능 예측이 가능합니다.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sx": {
+      "p": "0",
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": 5
+    },
+    "img": [""]
+  },
+  "box": {
+    "contents": [
+      {
+        "col": 1,
+        "currentRow": 3,
+        "subtitle": "핵심 기술",
+        "text": [
+          {
+            "id": 1,
+            "inner": "",
+            "type": "title",
+            "children": [
+              {
+                "id": 2,
+                "inner": "- Lumped Thermal Capacity Model 기반 1D PCBA 모델링",
+                "type": "text"
+              },
+              {
+                "id": 3,
+                "inner": "- 부품 및 PCB 단위 모델 구축 및 검증",
+                "type": "text"
+              },
+              {
+                "id": 4,
+                "inner": "- Concept/Detail Design Model 개발 및 자동/수동 연결 방식 적용",
+                "type": "text"
+              },
+              {
+                "id": 5,
+                "inner": "- Thermal Network Model 활용",
+                "type": "text"
+              },
+              {
+                "id": 6,
+                "inner": "- 3D CFD 해석과의 비교 검증",
+                "type": "text"
+              },
+              {
+                "id": 7,
+                "inner": "- 도면 데이터 기반 모델링 및 성능 예측",
+                "type": "text"
+              }
+            ]
+          }
+        ],
+        "listSx": {
+          "p": "0",
+          "gap": 2,
+          "display": "flex",
+          "flexDirection": "column"
+        },
+        "listImgSx": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": 2,
+          "justifyContent": "space-between",
+          "height": "100%"
+        },
+        "imgSx": {
+          "display": "flex",
+          "flexDirection": {
+            "xs": "column"
+          },
+          "gap": 2
+        },
+        "img": [""]
+      },
+      {
+        "col": 1,
+        "currentRow": 3,
+        "subtitle": "제공 서비스",
+        "text": [
+          {
+            "id": 1,
+            "inner": "",
+            "type": "title",
+            "children": [
+              {
+                "id": 2,
+                "inner": "- Modelica 기반 1D PCBA 모델 구축 및 컨설팅",
+                "type": "text"
+              },
+              {
+                "id": 3,
+                "inner": "- 설계 초기 단계 열 성능 예측 지원",
+                "type": "text"
+              },
+              {
+                "id": 4,
+                "inner": "- Concept/Detail 모델 개발 및 검증",
+                "type": "text"
+              },
+              {
+                "id": 5,
+                "inner": "- 도면 데이터 기반 모델링 및 KPI 산출",
+                "type": "text"
+              },
+              {
+                "id": 6,
+                "inner": "- 설계 변경 대응 및 신속한 모델 업데이트 지원",
+                "type": "text"
+              }
+            ]
+          }
+        ],
+        "listSx": {
+          "p": "0",
+          "gap": 2,
+          "display": "flex",
+          "flexDirection": "column"
+        },
+        "listImgSx": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": 2,
+          "height": "100%"
+        },
+        "imgSx": {
+          "display": "flex",
+          "flexDirection": {
+            "xs": "column"
+          },
+          "gap": 2
+        },
+        "img": [""]
+      },
+      {
+        "col": 1,
+        "currentRow": 3,
+        "subtitle": "기대효과",
+        "text": [
+          {
+            "id": 1,
+            "inner": "",
+            "type": "title",
+            "children": [
+              {
+                "id": 2,
+                "inner": "- Modelica 기반 1D 모델로 설계 초기 단계에서 열 성능 예측 가능",
+                "type": "text"
+              },
+              {
+                "id": 3,
+                "inner": "- 단위 부품 모델의 CFD 해석 대비 오차율 1.73%",
+                "type": "text"
+              },
+              {
+                "id": 4,
+                "inner": "- Concept 모델은 자동 연결, Detail 모델은 수동 연결로 정확도 향상",
+                "type": "text"
+              },
+              {
+                "id": 5,
+                "inner": "- Detail 모델의 최고 온도 부품 오차율 -0.05%, PCB 온도 분포 예측 가능",
+                "type": "text"
+              },
+              {
+                "id": 6,
+                "inner": "- 2개 도면에 대한 모델 평균 오차율 각각 4%, 4.4%, 최대 오차율 14.6%, 15.9%",
+                "type": "text"
+              }
+            ]
+          }
+        ],
+        "listSx": {
+          "p": "0",
+          "gap": 2,
+          "display": "flex",
+          "flexDirection": "column"
+        },
+        "listImgSx": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": 2,
+          "height": "100%"
+        },
+        "imgSx": {
+          "display": "flex",
+          "flexDirection": {
+            "xs": "column"
+          },
+          "gap": 2
+        },
+        "img": [""]
+      }
+    ],
+    "total": 3
+  }
+}
