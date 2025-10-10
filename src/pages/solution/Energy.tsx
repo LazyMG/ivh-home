@@ -23,8 +23,8 @@ const Energy = () => {
   const { systemArchitectureTitle, systemArchitectureImgUrl } =
     body.energy.systemArchitecture;
   // 핵심 기술, 제공 서비스, 기대 효과
-  const { boxColor, arrangement, colorBoxTitle, colorBoxContents } =
-    body.energy.colorBox2;
+  const { boxColor, arrangement, colorBoxTitle, colorBoxContents, depth } =
+    body.energy.colorBox;
 
   useSolutionClass("solution-body");
 
@@ -60,6 +60,7 @@ const Energy = () => {
           arrangement={arrangement}
           title={colorBoxTitle}
           contents={colorBoxContents}
+          depth={depth}
         />
       </Box>
     </>

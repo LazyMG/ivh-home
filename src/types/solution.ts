@@ -31,6 +31,7 @@ interface ColorBoxProps2 {
   arrangement: string;
   title: string[];
   contents: (string[] | string[][])[];
+  depth?: boolean;
 }
 
 export type {

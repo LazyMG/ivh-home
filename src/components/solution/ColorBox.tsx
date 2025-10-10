@@ -2,7 +2,8 @@ import { Box, Grid, Typography } from "@mui/material";
 import type { ColorBoxProps2 } from "../../types/solution";
 
 const ColorBox = (colorBoxProps: ColorBoxProps2) => {
-  const { boxColor, arrangement, title, contents } = colorBoxProps;
+  const { boxColor, arrangement, title, contents, depth } = colorBoxProps;
+  console.log("depth :", depth);
   if (arrangement === "basic") {
     return (
       <Grid container spacing={15}>
@@ -23,7 +24,9 @@ const ColorBox = (colorBoxProps: ColorBoxProps2) => {
             >
               <Typography>{title}</Typography>
               <Typography sx={{ mt: 4 }}>
-                {contents[index].join("\n")}
+                {contents[index].map((content, index) => (
+                  <Typography key={index}>{content}</Typography>
+                ))}
               </Typography>
             </Box>
           </Grid>
@@ -129,42 +132,46 @@ const ColorBox = (colorBoxProps: ColorBoxProps2) => {
               {title[2]}
             </Typography>
             <Grid container spacing={4}>
-              {contents[2].map((content, index) => {
-                if (Array.isArray(content)) {
-                  return (
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      {content.map((item, itemIndex) => {
-                        // \n이 포함된 경우 처리
-                        if (item.includes("\n")) {
-                          return item.split("\n").map((line, lineIndex) => (
-                            <Typography
-                              key={`${itemIndex}-${lineIndex}`}
-                              sx={{
-                                fontFamily: "Freesentation-5-Medium",
-                                fontSize: "13px",
-                              }}
-                            >
-                              {line}
-                            </Typography>
-                          ));
-                        }
-                        // 일반 항목
-                        return (
-                          <Typography
-                            key={itemIndex}
-                            sx={{
-                              fontFamily: "Freesentation-5-Medium",
-                              fontSize: "13px",
-                            }}
-                          >
-                            {item}
-                          </Typography>
-                        );
-                      })}
-                    </Grid>
-                  );
-                } else {
-                  return (
+              {depth === true ? (
+                contents[2].map((content) => {
+                  if (Array.isArray(content)) {
+                    return (
+                      <Grid size={{ xs: 12, sm: 6 }}>
+                        {content.map((item, itemIndex) => {
+                          // \n이 포함된 경우 처리
+                          if (item.includes("\n")) {
+                            return item.split("\n").map((line, lineIndex) => (
+                              <Typography
+                                key={`${itemIndex}-${lineIndex}`}
+                                sx={{
+                                  fontFamily: "Freesentation-5-Medium",
+                                  fontSize: "13px",
+                                }}
+                              >
+                                {line}
+                              </Typography>
+                            ));
+                          } else {
+                            return (
+                              <Typography
+                                key={itemIndex}
+                                sx={{
+                                  fontFamily: "Freesentation-5-Medium",
+                                  fontSize: "13px",
+                                }}
+                              >
+                                {item}
+                              </Typography>
+                            );
+                          }
+                        })}
+                      </Grid>
+                    );
+                  }
+                })
+              ) : (
+                <Box>
+                  {contents[2].map((content, index) => (
                     <Typography
                       key={index}
                       sx={{
@@ -174,9 +181,9 @@ const ColorBox = (colorBoxProps: ColorBoxProps2) => {
                     >
                       {content}
                     </Typography>
-                  );
-                }
-              })}
+                  ))}
+                </Box>
+              )}
             </Grid>
           </Box>
         </Grid>
