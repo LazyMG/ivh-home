@@ -1,6 +1,8 @@
 import { Box, CssBaseline, Typography } from "@mui/material";
 import Menu from "../components/home/Menu";
 import bgImg from "../assets/images/home/main-back.jpg";
+import youtubeImg from "../assets/images/home/youtube.png";
+import linkedinImg from "../assets/images/home/linkedin.png";
 
 const Home = () => {
   return (
@@ -97,7 +99,7 @@ const Home = () => {
             >
               <Box
                 component="img"
-                src="/src/assets/images/home/youtube.png"
+                src={youtubeImg}
                 sx={{
                   width: {
                     md: "40px",
@@ -109,7 +111,7 @@ const Home = () => {
               />
               <Box
                 component="img"
-                src="/src/assets/images/home/linkedin.png"
+                src={linkedinImg}
                 sx={{
                   width: {
                     md: "40px",
