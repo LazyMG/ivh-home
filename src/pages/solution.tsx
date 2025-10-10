@@ -1,8 +1,56 @@
+import { Box, Typography } from "@mui/material";
+import solutionImage from "../assets/images/pages/solution/solution_main2.png";
+import Header from "../common/Header";
+import RowNav from "../components/solution/RowNav";
+
 const Solution = () => {
   return (
-    <div>
-      <h1>Solution</h1>
-    </div>
+    <>
+      <Header />
+      <Typography
+        sx={{
+          fontFamily: "Freesentation-8-ExtraBold",
+          fontSize: "40px",
+          ml: "64px",
+        }}
+      >
+        Solution
+      </Typography>
+
+      <Box
+        component="main"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          p: " 12px 64px",
+          m: "auto auto",
+          width: {
+            xs: "200px",
+            md: "500px",
+            lg: "800px",
+            xl: "1200px",
+          },
+          height: {
+            xs: "200px",
+            md: "300px",
+            lg: "400px",
+            xl: "700px",
+          },
+          alignSelf: "center",
+        }}
+      >
+        <img
+          src={solutionImage}
+          alt="solution"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+      </Box>
+      <RowNav />
+    </>
   );
 };
 
