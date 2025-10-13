@@ -1,6 +1,9 @@
 import { ListItem } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const MenuListItem = ({ menu }: { menu: string }) => {
+const MenuListItem = ({ menu, path }: { menu: string; path: string }) => {
+  const navigate = useNavigate();
+
   return (
     <ListItem
       sx={{
@@ -11,6 +14,10 @@ const MenuListItem = ({ menu }: { menu: string }) => {
         fontWeight: "700",
         mb: "4.5rem",
         fontFamily: "Presentation",
+        cursor: "pointer",
+      }}
+      onClick={() => {
+        navigate(path);
       }}
     >
       {menu}

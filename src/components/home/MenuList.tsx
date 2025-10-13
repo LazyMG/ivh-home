@@ -15,10 +15,10 @@ const MenuList = () => {
         mt: "1rem",
       }}
     >
-      <MenuListItem menu="PRODUCT" />
-      <MenuListItem menu="SOLUTION" />
-      <MenuListItem menu="SERVICE" />
-      <MenuListItem menu="COMPANY" />
+      <MenuListItem menu="PRODUCT" path="/product" />
+      <MenuListItem menu="SOLUTION" path="/solution" />
+      <MenuListItem menu="SERVICE" path="/service" />
+      <MenuListItem menu="COMPANY" path="/company" />
     </List>
   );
 };

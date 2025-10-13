@@ -43,7 +43,12 @@ const RowNav = () => {
           <StyledButton underlineColor="#0095d7">
             Al Innovation Hub
           </StyledButton>
-          <StyledButton underlineColor="#92b843">Home appliance</StyledButton>
+          <StyledButton
+            underlineColor="#92b843"
+            onClick={() => navigate("/solution/home-appliance")}
+          >
+            Home appliance
+          </StyledButton>
         </Toolbar>
       </AppBar>
     </Box>
