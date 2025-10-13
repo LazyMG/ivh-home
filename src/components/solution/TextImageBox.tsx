@@ -37,7 +37,10 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
               <Typography
                 key={index}
                 component="div"
-                sx={{ mt: isSection && index !== 0 ? 2 : 0 }}
+                sx={{
+                  mt: isSection && index !== 0 ? 2 : 0,
+                  wordBreak: "keep-all",
+                }}
               >
                 {content}
               </Typography>

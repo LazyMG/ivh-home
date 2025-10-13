@@ -91,6 +91,7 @@ const BoxContentRenderer = ({
             fontFamily: STYLES.contentFontFamily,
             fontSize: STYLES.contentFontSize,
             mb: 0.5,
+            wordBreak: "keep-all",
           }}
         >
           {item}

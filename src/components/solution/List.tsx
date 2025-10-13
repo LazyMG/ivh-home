@@ -40,6 +40,7 @@ const List = (listProps: ListProps) => {
               sx={{
                 fontFamily: "Freesentation-5-Medium",
                 fontSize: "13px",
+                wordBreak: "keep-all",
               }}
             >
               {content.contents}

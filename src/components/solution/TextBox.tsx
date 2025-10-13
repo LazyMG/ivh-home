@@ -27,6 +27,7 @@ const TextBox = (textBoxProps: TextBoxProps) => {
           fontFamily: "Freesentation-5-Medium",
           fontSize: "13px",
           mt: 1.5,
+          wordBreak: "keep-all",
         }}
       >
         {contents}
