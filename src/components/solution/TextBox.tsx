@@ -10,7 +10,7 @@ const TextBox = (textBoxProps: TextBoxProps) => {
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "flex-start",
-        mt: marginTop ? marginTop : 5,
+        mt: marginTop || 5,
       }}
     >
       <Typography
