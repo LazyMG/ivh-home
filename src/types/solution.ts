@@ -14,7 +14,7 @@ interface TextBoxProps {
 interface TextImageBoxProps {
   title: string;
   contents?: string[];
-  imgurl: string[];
+  imgurl?: string[];
   width: string;
   height: string;
   listHeader: string;

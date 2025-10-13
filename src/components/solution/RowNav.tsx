@@ -10,18 +10,7 @@ const RowNav = () => {
   const navigate = useNavigate();
 
   return (
-    <Box
-      component="nav"
-      //   sx={{
-      //     width: {
-      //       xs: "200px",
-      //       md: "500px",
-      //       lg: "800px",
-      //       xl: "1450px",
-      //     },
-      //     m: "auto auto",
-      //   }}
-    >
+    <Box component="nav">
       <AppBar
         position="static"
         sx={{
@@ -58,7 +47,7 @@ const RowNav = () => {
 const StyledButton = styled(Button)<StyledButtonProps>(
   ({ underlineColor }) => ({
     fontFamily: "Freesentation-6-SemiBold",
-    fontSize: "18px",
+    fontSize: "29.2px",
     textTransform: "none",
     color: "black",
     borderBottom: `2px solid ${underlineColor}`,

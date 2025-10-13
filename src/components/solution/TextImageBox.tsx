@@ -12,13 +12,13 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "flex-start",
-        mt: 5,
+        mt: 10,
       }}
     >
       <Typography
         sx={{
           fontFamily: "Freesentation-7-Bold",
-          fontSize: "16px",
+          fontSize: "25px",
           fontWeight: "bold",
         }}
       >
@@ -63,7 +63,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
           })}
         </Box>
       )}
-      {imgurl.map((img, index) => {
+      {imgurl?.map((img, index) => {
         const resolvedSrc = new URL(img, import.meta.url).href;
         return (
           <img
