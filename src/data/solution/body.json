@@ -16,115 +16,64 @@
       "systemArchitectureTitle": "• 시스템 아키텍처",
       "systemArchitectureImgUrl": "../../assets/images/pages/solution/solution_energy.jpg"
     },
-    "colorBox": {
-      "boxColor": "#279576",
-      "arrangement": "basic",
-      "depth": false,
-      "colorBoxTitle": ["• 핵심 기술", "• 제공 서비스", "• 기대 효과"],
-      "colorBoxContents": [
-        [
-          "- Modelica/Dymola 기반 멀티피직스 모델링",
-          "- 디지털 트윈 기반 예측 제어 및 시나리오 기반 최적 운전 전략",
-          "- FMI/eFMI 표준을 통한 상호운용성 확보",
-          "- 열저장, 수소 생산, 공정열 연계 등 멀티에너지 통합 기술"
-        ],
-        [
-          "- 타당성 검토 및 사업성 분석 (Pre-FEED)",
-          "- 디지털 트윈 기반 통합 모델 구축 및 PoC",
-          "- 운전 전략 최적화 컨설팅",
-          "- 기술 이전 및 교육 프로그램 제공"
-        ],
-        [
-          "- 전력·열·수소 간 섹터 커플링으로 수익 다각화",
-          "- 재생에너지 수용성 확대 및 계통 혼잡 완화",
-          "- 온실가스 감축 및 에너지 자립성 제고",
-          "- 표준 기반 모델 교환으로 공급망 리스크 최소화"
+    "colorBoxes": [
+      {
+        "boxColor": "#279576",
+        "layout": [[4, 4, 4]],
+        "boxes": [
+          {
+            "title": "• 핵심 기술",
+            "items": [
+              "- Modelica/Dymola 기반 멀티피직스 모델링",
+              "- 디지털 트윈 기반 예측 제어 및 시나리오 기반 최적 운전 전략",
+              "- FMI/eFMI 표준을 통한 상호운용성 확보",
+              "- 열저장, 수소 생산, 공정열 연계 등 멀티에너지 통합 기술"
+            ]
+          },
+          {
+            "title": "• 제공 서비스",
+            "items": [
+              "- 타당성 검토 및 사업성 분석 (Pre-FEED)",
+              "- 디지털 트윈 기반 통합 모델 구축 및 PoC",
+              "- 운전 전략 최적화 컨설팅",
+              "- 기술 이전 및 교육 프로그램 제공"
+            ]
+          },
+          {
+            "title": "• 기대 효과",
+            "items": [
+              "- 전력·열·수소 간 섹터 커플링으로 수익 다각화",
+              "- 재생에너지 수용성 확대 및 계통 혼잡 완화",
+              "- 온실가스 감축 및 에너지 자립성 제고",
+              "- 표준 기반 모델 교환으로 공급망 리스크 최소화"
+            ]
+          }
         ]
-      ]
+      }
+    ],
+    "relatedSoftware": {
+      "relatedSoftwareTitle": "• 관련 소프트웨어",
+      "relatedSoftwareContents": "Dymola (Dassault), ClaRa Plus(Dassault), ClaRa Grid(Dassault), Wind Power(Dassault), Electric Power(Dassault) Thermal Power(Modelon), Electric Power(Modelon), Electrification(Modelon), Hydro Power(Modelon), TIL(TLK), HVAC(XRG), Human Comfort(XRG)"
     },
-    "colorBox2": {
-      "boxColor": "#279576",
-      "arrangement": "TwoOnOne",
-      "depth": true,
-      "colorBoxTitle": ["• 핵심 기술", "• 제공 서비스", "• 기대 효과"],
-      "colorBoxContents": [
-        [
-          "- Modelica/Dymola 기반 멀티피직스 모델링",
-          "- 디지털 트윈 기반 예측 제어 및 시나리오 기반 최적 운전 전략",
-          "- FMI/eFMI 표준을 통한 상호운용성 확보",
-          "- 열저장, 수소 생산, 공정열 연계 등 멀티에너지 통합 기술"
-        ],
-        [
-          "- 타당성 검토 및 사업성 분석 (Pre-FEED)",
-          "- 디지털 트윈 기반 통합 모델 구축 및 PoC",
-          "- 운전 전략 최적화 컨설팅",
-          "- 기술 이전 및 교육 프로그램 제공"
-        ],
-        [
-          [
-            "[ 실차 계측 결과와 모델 예측 결과 간 정합성 확보 ] \n",
-            "- Steady State Response에서 최대 오차율 11% 이하",
-            "- 제동 시 Rear Upper Rod 좌우 하중 Phase 역전 현상 확보",
-            "- VPG 기반 계측 대비 Damage 비교 수행",
-            "- VTL 기반 계측 대비 Damage 비교 수행"
-          ],
-          [
-            "[ 내구 시험 결과 ] \n",
-            "- 각 적재 조건 및 노면 조건에 따른 VPG 수행 완료",
-            "- 채널 수: Eleccity Town 125ch, PE 140ch, 저상 광역 버스 180ch, 이층 전기 버스 220ch, GZ 독립 현가 180ch"
-          ],
-          [
-            "[ Virtual Test Laboratory 결과 ] \n",
-            "- Drive Signal 생성 및 입력을 통한 시계열 정합성 확보",
-            "- 각 부품에 대한 Damage 예측 신뢰성 향상",
-            "- Iteration 수행 시 추가 신뢰성 확보 가능"
-          ],
-          [
-            "[ 기술적 시사점 ] \n",
-            "- VPG 환경을 통해 미계측 채널(속도, 가속도, 위치 등) 예측 가능",
-            "- 차량 기하학적 형상, 물성치, 부품 특성 변경에 따른 차량 거동 예측 가능",
-            "- 타이어 모델 차이에 따른 Damage 오차 발생 → 고정도 타이어 모델 개발 필요",
-            "- 향후 Hybrid Test Track 및 추가 시나리오 분석 예정"
-          ]
-        ]
-      ]
-    },
-    "colorBox3": {
-      "boxColor": "#279576",
-      "arrangement": "OneOnTwo",
-      "depth": true,
-      "colorBoxTitle": ["• 핵심 기술", "• 제공 서비스", "• 기대 효과"],
-      "colorBoxContents": [
-        [
-          "- EV 열관리 시스템 컨셉 모델 설계",
-          "- 열관리 시스템 솔루션에 대한 종합 설계 역량",
-          "- 시스템 아키텍처 모델링 및 최적 설계",
-          "- 단위 부품의 상세 물리 기반 모델링 기술",
-          "- MILS, SILS, HILS 기반 테스트 시나리오 설계 및 검증 기술",
-          "- 열관리 시스템 제어 로직 설계 기술",
-          "- 임베디드 시스템 HW/SW 설계 기술",
-          "- 임베디드 시스템과 시뮬레이션 소프트웨어 간 통신 및 연동 기술",
-          "- 차량 ECU 개발 프로세스 관련 노하우 및 실무 경험"
-        ],
-        [
-          [
-            "A. 설계 및 컨설팅 서비스 \n",
-            "- EV 열관리 시스템 컨셉 모델 설계 및 최적화 컨설팅",
-            "- 고객 차량/부품 특성 기반 맞춤형 시스템 구성 전략 제안"
-          ],
-          [
-            "B. 모델링 및 시뮬레이션 서비스 \n",
-            "- 단위 부품 및 시스템 레벨 물리 기반 모델링",
-            "- MILS, SILS, HILS 기반 성능 검증 및 시뮬레이션",
-            "- 다양한 운전/환경 조건 시나리오 적용 및 최적화 검증"
-          ],
-          [
-            "C. 제어기 및 임베디드 솔루션 \n",
-            "- 열관리 제어 로직 설계 및 제어기 프로토타입 제작",
-            "- HW/SW 통합 설계 및 실시간 검증 지원"
-          ]
-        ],
-        []
+    "frequentlyAskedQuestions": {
+      "frequentlyAskedQuestionsTitle": "• 자주 묻는 질문",
+      "frequentlyAskedQuestionsContents": [
+        {
+          "title": "Q1. 기존 CHP 시스템과의 차이점은?",
+          "contents": " A. NR-HES는 원자력·재생·저장·수소를 통합하여 멀티에너지 최적화를 수행합니다."
+        },
+        {
+          "title": "Q2. 반드시 SMR이 필요한가요?",
+          "contents": " A. 기존 원자로와도 설계 가능하며, 핵심은 안정적 베이스로드와 변동 재생의 통합 운전 전략입니다."
+        },
+        {
+          "title": "Q3. 수소는 어떤 방식으로 생산하나요?",
+          "contents": " A. 전기분해(PEM/알칼라인) 및 열화학 사이클 등 다양한 방식이 있으며, 부하 및 열원에 따라 선택합니다."
+        },
+        {
+          "title": "Q4. 경제성은 어떻게 확보하나요?",
+          "contents": " A. 잉여전력의 수소/열 전환, 저장 최적화, 시장 연계 전략을 통해 총소유비용(TCO)을 절감합니다."
+        }
       ]
     }
   }
