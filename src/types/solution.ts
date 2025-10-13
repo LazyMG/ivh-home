@@ -17,6 +17,7 @@ interface TextImageBoxProps {
   imgurl: string[];
   width: string;
   height: string;
+  listHeader: string;
 }
 
 // interface ColorBoxProps {
@@ -60,6 +61,7 @@ interface BoxContent {
   imageLayout?: string; // 여러 이미지의 배치 방향
   autoHeight?: boolean;
   pb?: boolean;
+  hyphen?: string;
 }
 
 // ColorBox Props

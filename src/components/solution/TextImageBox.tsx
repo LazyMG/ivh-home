@@ -2,7 +2,8 @@ import { Box, Typography } from "@mui/material";
 import type { TextImageBoxProps } from "../../types/solution";
 
 const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
-  const { title, contents, imgurl, width, height } = textImageBoxProps;
+  const { title, contents, imgurl, width, height, listHeader } =
+    textImageBoxProps;
 
   return (
     <Box
@@ -24,29 +25,43 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
         {title}
       </Typography>
       {contents && (
-        <Typography
+        <Box
           sx={{
-            fontFamily: "Freesentation-5-Medium",
-            fontSize: "13px",
             mt: 1.5,
           }}
         >
           {contents.map((content, index) => {
             const isSection = /^[A-Z]\.\s/.test(content);
             return (
-              <Typography
+              <Box
                 key={index}
-                component="div"
-                sx={{
-                  mt: isSection && index !== 0 ? 2 : 0,
-                  wordBreak: "keep-all",
-                }}
+                sx={{ mt: isSection && index !== 0 ? 2 : 0, display: "flex" }}
               >
-                {content}
-              </Typography>
+                {listHeader && !isSection && (
+                  <Typography
+                    sx={{
+                      fontFamily: "Freesentation-5-Medium",
+                      fontSize: "13px",
+                      mr: 0.5,
+                    }}
+                  >
+                    {listHeader}
+                  </Typography>
+                )}
+                <Typography
+                  sx={{
+                    mt: isSection && index !== 0 ? 2 : 0,
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "13px",
+                    wordBreak: "keep-all",
+                  }}
+                >
+                  {content}
+                </Typography>
+              </Box>
             );
           })}
-        </Typography>
+        </Box>
       )}
       {imgurl.map((img, index) => {
         const resolvedSrc = new URL(img, import.meta.url).href;

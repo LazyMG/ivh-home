@@ -82,24 +82,32 @@ const BoxContentRenderer = ({
   };
 
   // 단순 목록 렌더링
+  // 이마가 수정: 모든 아이템에 하이픈 추가
   const renderItems = (itemList: string[]) => (
-    <Box>
+    <>
       {itemList.map((item, index) => (
-        <Typography
-          key={index}
-          sx={{
-            fontFamily: STYLES.contentFontFamily,
-            fontSize: STYLES.contentFontSize,
-            mb: 0.5,
-            wordBreak: "keep-all",
-          }}
-        >
-          {item}
-        </Typography>
+        <Box sx={{ display: "flex", gap: 0.5 }} key={index}>
+          <Typography
+            sx={{
+              fontFamily: STYLES.contentFontFamily,
+              fontSize: STYLES.contentFontSize,
+            }}
+          >
+            {content.hyphen}
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: STYLES.contentFontFamily,
+              fontSize: STYLES.contentFontSize,
+              wordBreak: "keep-all",
+            }}
+          >
+            {item}
+          </Typography>
+        </Box>
       ))}
-    </Box>
+    </>
   );
-
   // 서브섹션 렌더링 (중첩 목록) - 그리드 컬럼 제어 가능
   const renderSubSections = (sections: BoxSubSection[]) => (
     <Grid container spacing={4}>
