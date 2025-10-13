@@ -11,23 +11,21 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "flex-start",
-        mt: 5,
+        mt: 10,
       }}
     >
       <Typography
         sx={{
           fontFamily: "Freesentation-7-Bold",
-          fontSize: "16px",
+          fontSize: "25px",
           fontWeight: "bold",
         }}
       >
         {title}
       </Typography>
       {contents && (
-        <Typography
+        <Box
           sx={{
-            fontFamily: "Freesentation-5-Medium",
-            fontSize: "13px",
             mt: 1.5,
           }}
         >
@@ -36,8 +34,9 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
             return (
               <Typography
                 key={index}
-                component="div"
                 sx={{
+                  fontFamily: "Freesentation-5-Medium",
+                  fontSize: "13px",
                   mt: isSection && index !== 0 ? 2 : 0,
                   wordBreak: "keep-all",
                 }}
@@ -46,9 +45,9 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
               </Typography>
             );
           })}
-        </Typography>
+        </Box>
       )}
-      {imgurl.map((img, index) => {
+      {imgurl?.map((img, index) => {
         const resolvedSrc = new URL(img, import.meta.url).href;
         return (
           <img

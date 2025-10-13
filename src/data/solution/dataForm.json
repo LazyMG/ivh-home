@@ -28,7 +28,22 @@
               "- 디지털 트윈 기반 예측 제어 및 시나리오 기반 최적 운전 전략",
               "- FMI/eFMI 표준을 통한 상호운용성 확보",
               "- 열저장, 수소 생산, 공정열 연계 등 멀티에너지 통합 기술"
-            ]
+            ],
+            "images": [
+              {
+                "src": "../../assets/images/pages/solution/test.png",
+                "width": "300px",
+                "height": "300px"
+              },
+              {
+                "src": "../../assets/images/pages/solution/test2.png",
+                "width": "300px",
+                "height": "300px"
+              }
+            ],
+            "imagePosition": "right",
+            "contentLayout": "vertical",
+            "imageLayout": "row"
           },
           {
             "title": "• 제공 서비스",
@@ -37,7 +52,9 @@
               "- 디지털 트윈 기반 통합 모델 구축 및 PoC",
               "- 운전 전략 최적화 컨설팅",
               "- 기술 이전 및 교육 프로그램 제공"
-            ]
+            ],
+            "autoHeight": true,
+            "pb": true
           },
           {
             "title": "• 기대 효과",
@@ -46,7 +63,9 @@
               "- 재생에너지 수용성 확대 및 계통 혼잡 완화",
               "- 온실가스 감축 및 에너지 자립성 제고",
               "- 표준 기반 모델 교환으로 공급망 리스크 최소화"
-            ]
+            ],
+            "autoHeight": true,
+            "pb": true
           }
         ]
       },

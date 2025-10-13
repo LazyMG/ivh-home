@@ -11,11 +11,11 @@ const STYLES = {
   boxBorderRadius: "10px",
   boxPadding: "30px 30px 0px 30px",
   titleFontFamily: "Freesentation-7-Bold",
-  titleFontSize: { large: "20px", medium: "16px" },
+  titleFontSize: { large: "31.3px", medium: "16px" },
   titleFontWeight: "bold",
   titleMarginBottom: 3,
   contentFontFamily: "Freesentation-5-Medium",
-  contentFontSize: "13px",
+  contentFontSize: "20.8px",
 } as const;
 
 // 서브 컴포넌트: 박스 내부 콘텐츠 렌더링
@@ -155,7 +155,10 @@ const BoxContentRenderer = ({
       <Box
         sx={{
           display: "flex",
-          flexDirection: getFlexDirection(),
+          flexDirection: {
+            xs: "column",
+            md: getFlexDirection(),
+          },
           gap: 2,
           alignItems: "flex-start",
         }}

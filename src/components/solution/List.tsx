@@ -9,7 +9,7 @@ const List = (listProps: ListProps) => {
       <Typography
         sx={{
           fontFamily: "Freesentation-7-Bold",
-          fontSize: "16px",
+          fontSize: "25px",
           fontWeight: "bold",
         }}
       >
@@ -29,8 +29,8 @@ const List = (listProps: ListProps) => {
           >
             <Typography
               sx={{
-                fontFamily: "Freesentation-6-SemiBold",
-                fontSize: "14px",
+                fontFamily: "Freesentation-5-Medium",
+                fontSize: "20.8px",
                 mb: 0.5,
               }}
             >
@@ -39,7 +39,7 @@ const List = (listProps: ListProps) => {
             <Typography
               sx={{
                 fontFamily: "Freesentation-5-Medium",
-                fontSize: "13px",
+                fontSize: "20.8px",
                 wordBreak: "keep-all",
               }}
             >
