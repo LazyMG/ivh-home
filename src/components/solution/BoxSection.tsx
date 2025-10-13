@@ -1,58 +1,29 @@
-import { Box, List, ListItem, Typography } from "@mui/material";
-import ListText from "./ListText";
-import type { SxProps } from "@mui/material/styles";
-
-type Text = {
-  id: number;
-  type: string;
-  inner: string;
-};
-
-type Title = {
-  id: number;
-  type: string;
-  inner: string;
-  children: Array<Title | Text>;
-};
-
-const RecursiveComp = ({ data }: { data: Title | Text }) => {
-  return (
-    <Box>
-      <ListItem sx={{ p: 0, gap: 1 }}>
-        <ListText text={data.inner} />
-      </ListItem>
-      {data.type === "title" &&
-        (data as Title).children.length > 0 &&
-        (data as Title).children.map((v) => {
-          return <RecursiveComp data={v} key={v.id} />;
-        })}
-    </Box>
-  );
-};
+import { Box, List, Typography, type SxProps } from "@mui/material";
+import RecursiveList, { type Title } from "./RecursiveList";
 
 interface BoxSectionProps {
-  color: string;
-  height?: string;
-  listData: Title[];
-  title: string;
-  img: string[];
+  subtitle: string;
+  text: Title[];
   listSx: SxProps;
   listImgSx: SxProps;
-  imgSx: SxProps;
+  imgSx?: SxProps;
+  img?: string[];
+  color: string;
+  height?: string;
 }
 
 {
   /** 색상, 텍스트 내용, 소제목, 확장하는 박스인지 여부, 이미지, 높이 */
 }
 const BoxSection = ({
-  color,
-  listData,
-  title,
-  img,
-  height = "inherit",
+  subtitle,
+  text,
   listSx,
   listImgSx,
   imgSx,
+  img,
+  color,
+  height = "inherit",
 }: BoxSectionProps) => {
   return (
     <Box
@@ -66,7 +37,7 @@ const BoxSection = ({
         height,
       }}
     >
-      <Box // display:flex인 박스 컴포넌트 따로 만들기
+      <Box
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -83,29 +54,34 @@ const BoxSection = ({
             color,
           }}
         >
-          • {title}
+          • {subtitle}
         </Typography>
         {/** 리스트와 이미지 박스 */}
         <Box sx={listImgSx}>
           <List sx={listSx}>
-            {listData.map((data, idx) => (
-              <RecursiveComp data={data} key={idx} />
+            {text.map((data, idx) => (
+              <RecursiveList
+                data={data}
+                key={idx}
+                listHeader={data.listHeader}
+              />
             ))}
           </List>
-          <Box sx={imgSx}>
-            {img.map((i) => {
-              return i ? (
+          {img && imgSx && (
+            <Box sx={imgSx}>
+              {img.map((i) => (
                 <img
                   src={i}
+                  key={i}
                   style={{
                     height: "200px", // 수정 필요
                     width: "fit-content",
                     maxWidth: "100%",
                   }}
                 />
-              ) : null;
-            })}
-          </Box>
+              ))}
+            </Box>
+          )}
         </Box>
       </Box>
     </Box>

@@ -1,10 +1,9 @@
-import { Box, Container, Divider, Typography } from "@mui/material";
-import SubTitle from "../components/solution/SubTitle";
+import { Box, Divider, Typography } from "@mui/material";
 import ListSection from "../components/solution/ListSection";
+import BoxGrid from "../components/solution/BoxGrid";
 
 import tempData from "../data/home-appliance.json";
-
-import BoxGrid from "../components/solution/BoxGrid";
+import SolutionHeader from "../components/solution/SolutionHeader";
 
 const HomeAppliance = () => {
   return (
@@ -24,7 +23,7 @@ const HomeAppliance = () => {
         sx={{ display: "flex", flexDirection: "column", gap: 8, pb: 8 }}
       ></Container> */}
       {/** 헤더 영역 | 텍스트, 색상 필요 */}
-      <Box sx={{ mt: 4 }}>
+      {/* <Box sx={{ mt: 4 }}>
         <Typography
           sx={{
             fontFamily: "Freesentation-8-ExtraBold",
@@ -60,7 +59,13 @@ const HomeAppliance = () => {
             PCB 열관리 성능 예측
           </Typography>
         </Box>
-      </Box>
+      </Box> */}
+
+      <SolutionHeader
+        title={"Home appliance"}
+        subtitle={"PCB 열관리 성능 예측"}
+        color={"#92b843"}
+      />
 
       {/** 본문 영역 | 소제목, 텍스트, 항목, 박스 요소, 이미지 */}
       <Box
@@ -72,12 +77,7 @@ const HomeAppliance = () => {
           component="section"
           sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}
         >
-          <SubTitle subTitle={tempData["introduction"]["subtitle"]} />
-          <ListSection
-            listData={tempData["introduction"]["text"]}
-            sx={tempData["introduction"]["sx"]}
-            img={tempData["introduction"]["img"]}
-          />
+          <ListSection {...tempData["introduction"]} />
         </Box>
 
         {/** 섹션 */}
@@ -85,12 +85,7 @@ const HomeAppliance = () => {
           component="section"
           sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}
         >
-          <SubTitle subTitle={tempData["context"]["subtitle"]} />
-          <ListSection
-            listData={tempData["context"]["text"]}
-            sx={tempData["context"]["sx"]}
-            img={tempData["context"]["img"]}
-          />
+          <ListSection {...tempData["context"]} />
         </Box>
 
         {/** 섹션 */}
@@ -98,12 +93,7 @@ const HomeAppliance = () => {
           component="section"
           sx={{ display: "flex", flexDirection: "column", gap: 1 }}
         >
-          <SubTitle subTitle={tempData["necessity"]["subtitle"]} />
-          <ListSection
-            listData={tempData["necessity"]["text"]}
-            sx={tempData["necessity"]["sx"]}
-            img={tempData["necessity"]["img"]}
-          />
+          <ListSection {...tempData["necessity"]} />
         </Box>
 
         {/** 섹션 */}
@@ -111,34 +101,10 @@ const HomeAppliance = () => {
           component="section"
           sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}
         >
-          <SubTitle subTitle={tempData["architecture"]["subtitle"]} />
-          <ListSection
-            listData={tempData["architecture"]["text"]}
-            sx={tempData["architecture"]["sx"]}
-            img={tempData["architecture"]["img"]}
-          />
+          <ListSection {...tempData["architecture"]} />
         </Box>
 
         {/** 박스 영역 */}
-        {/** BoxContainer 최대 열 개수 지정 */}
-        {/* <BoxContainer maxColumn={3}>
-          <BoxSection
-            color="#92b843"
-            listData={tempData["technology"]["text"]}
-            title={tempData["technology"]["subtitle"]}
-          />
-          <BoxSection
-            color="#92b843"
-            listData={tempData["service"]["text"]}
-            title={tempData["service"]["subtitle"]}
-          />
-          <BoxSection
-            color="#92b843"
-            listData={tempData["effect"]["text"]}
-            title={tempData["effect"]["subtitle"]}
-          />
-        </BoxContainer> */}
-
         <BoxGrid {...tempData["box"]} height="100%" />
 
         {/** 섹션 */}
@@ -146,12 +112,7 @@ const HomeAppliance = () => {
           component="section"
           sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}
         >
-          <SubTitle subTitle={tempData["software"]["subtitle"]} />
-          <ListSection
-            listData={tempData["software"]["text"]}
-            sx={tempData["software"]["sx"]}
-            img={tempData["software"]["img"]}
-          />
+          <ListSection {...tempData["software"]} />
         </Box>
 
         {/** 섹션 */}
@@ -159,12 +120,7 @@ const HomeAppliance = () => {
           component="section"
           sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}
         >
-          <SubTitle subTitle={tempData["qna"]["subtitle"]} />
-          <ListSection
-            listData={tempData["qna"]["text"]}
-            sx={tempData["qna"]["sx"]}
-            img={tempData["qna"]["img"]}
-          />
+          <ListSection {...tempData["qna"]} />
         </Box>
       </Box>
     </Box>

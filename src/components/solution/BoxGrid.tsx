@@ -1,18 +1,11 @@
-import { ImageList, ImageListItem } from "@mui/material";
+import {
+  ImageList,
+  ImageListItem,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import BoxSection from "./BoxSection";
-
-type Text = {
-  id: number;
-  type: string;
-  inner: string;
-};
-
-type Title = {
-  id: number;
-  type: string;
-  inner: string;
-  children: Array<Title | Text>;
-};
+import type { Title } from "./RecursiveList";
 
 interface BoxGridProps {
   contents: {
@@ -23,12 +16,12 @@ interface BoxGridProps {
     listSx: {
       [key: string]: string | number | undefined;
     };
-    img: string[];
+    img?: string[];
     listImgSx: {
       [key: string]: string | number | undefined;
     };
-    imgSx: {
-      [key: string]: string | number | undefined;
+    imgSx?: {
+      [key: string]: string | number | undefined | { [key: string]: string };
     };
   }[];
   total: number;
@@ -36,22 +29,15 @@ interface BoxGridProps {
 }
 
 const BoxGrid = ({ contents, total, height }: BoxGridProps) => {
+  const theme = useTheme();
+  const matchLg = useMediaQuery(theme.breakpoints.down("lg"));
   return (
-    <ImageList variant="quilted" cols={total} gap={16}>
+    <ImageList variant="quilted" cols={matchLg ? 1 : total} gap={16}>
       {contents.map((content, idx) => {
         const col = (total / content.currentRow) * content.col;
         return (
-          <ImageListItem cols={col} key={idx}>
-            <BoxSection
-              color="#92b843"
-              height={height}
-              listData={content["text"]}
-              title={content["subtitle"]}
-              listSx={content["listSx"]}
-              img={content["img"]}
-              listImgSx={content["listImgSx"]}
-              imgSx={content["imgSx"]}
-            />
+          <ImageListItem cols={matchLg ? 1 : col} key={idx}>
+            <BoxSection color="#92b843" height={height} {...content} />
           </ImageListItem>
         );
       })}
