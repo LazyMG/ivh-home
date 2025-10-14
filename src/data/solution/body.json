@@ -14,12 +14,7 @@
     },
     "systemArchitecture": {
       "systemArchitectureTitle": "• 시스템 아키텍처",
-<<<<<<< HEAD
       "systemArchitectureImgUrl": "/pages/solution/solution_energy.jpg"
-=======
-      "systemArchitectureListHeader": "",
-      "systemArchitectureImgUrl": "../../assets/images/pages/solution/solution_energy.jpg"
->>>>>>> 3ceda0c0d2407216ebd2ad9fa19bf465ce9318c7
     },
     "colorBoxes": [
       {

@@ -63,16 +63,11 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
           })}
         </Box>
       )}
-<<<<<<< HEAD
-      {imgurl.map((img, index) => {
-        // const resolvedSrc = new URL(img, import.meta.url).href;
-=======
       {imgurl?.map((img, index) => {
         const resolvedSrc = new URL(img, import.meta.url).href;
->>>>>>> 3ceda0c0d2407216ebd2ad9fa19bf465ce9318c7
         return (
           <img
-            src={img}
+            src={resolvedSrc}
             alt={title}
             key={index}
             width={width}
