@@ -10,21 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install mustache (to update the date)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby-full
-          sudo gem install mustache
-
-      - name: creates output
-        run: sh ./build.sh
-
       - name: Pushes to personal repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
         with:
-          source-directory: "output"
+          # 소스 코드 전체를 푸시하도록 source-directory를 "." 으로 변경합니다.
+          source-directory: "."
           destination-github-username: LazyMG
           destination-repository-name: ivh-home
           user-email: ${{ secrets.EMAIL }}
