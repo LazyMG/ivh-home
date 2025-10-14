@@ -52,6 +52,7 @@ const Energy = () => {
         <TextImageBox
           title={systemArchitecture.systemArchitectureTitle}
           imgurl={[systemArchitecture.systemArchitectureImgUrl]}
+          listHeader={systemArchitecture.systemArchitectureListHeader}
           width="1200px"
           height="700px"
         />

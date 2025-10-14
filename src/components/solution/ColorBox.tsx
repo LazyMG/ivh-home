@@ -11,11 +11,11 @@ const STYLES = {
   boxBorderRadius: "10px",
   boxPadding: "30px 30px 0px 30px",
   titleFontFamily: "Freesentation-7-Bold",
-  titleFontSize: { large: "20px", medium: "16px" },
+  titleFontSize: { large: "31.3px", medium: "16px" },
   titleFontWeight: "bold",
   titleMarginBottom: 3,
   contentFontFamily: "Freesentation-5-Medium",
-  contentFontSize: "13px",
+  contentFontSize: "20.8px",
 } as const;
 
 // 서브 컴포넌트: 박스 내부 콘텐츠 렌더링
@@ -82,23 +82,32 @@ const BoxContentRenderer = ({
   };
 
   // 단순 목록 렌더링
+  // 이마가 수정: 모든 아이템에 하이픈 추가
   const renderItems = (itemList: string[]) => (
-    <Box>
+    <>
       {itemList.map((item, index) => (
-        <Typography
-          key={index}
-          sx={{
-            fontFamily: STYLES.contentFontFamily,
-            fontSize: STYLES.contentFontSize,
-            mb: 0.5,
-          }}
-        >
-          {item}
-        </Typography>
+        <Box sx={{ display: "flex", gap: 0.5 }} key={index}>
+          <Typography
+            sx={{
+              fontFamily: STYLES.contentFontFamily,
+              fontSize: STYLES.contentFontSize,
+            }}
+          >
+            {content.hyphen}
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: STYLES.contentFontFamily,
+              fontSize: STYLES.contentFontSize,
+              wordBreak: "keep-all",
+            }}
+          >
+            {item}
+          </Typography>
+        </Box>
       ))}
-    </Box>
+    </>
   );
-
   // 서브섹션 렌더링 (중첩 목록) - 그리드 컬럼 제어 가능
   const renderSubSections = (sections: BoxSubSection[]) => (
     <Grid container spacing={4}>
@@ -154,7 +163,10 @@ const BoxContentRenderer = ({
       <Box
         sx={{
           display: "flex",
-          flexDirection: getFlexDirection(),
+          flexDirection: {
+            xs: "column",
+            md: getFlexDirection(),
+          },
           gap: 2,
           alignItems: "flex-start",
         }}

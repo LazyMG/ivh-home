@@ -21,10 +21,10 @@ const SolutionHeader = (contentProps: ContentProps) => {
             variant="h1"
             sx={{
               fontFamily: "Freesentation-8-ExtraBold",
-              fontSize: "23px",
+              fontSize: "35.4px",
               fontWeight: "bold",
               color,
-              letterSpacing: "4px",
+              letterSpacing: "6.4px",
             }}
           >
             {title}
@@ -35,7 +35,7 @@ const SolutionHeader = (contentProps: ContentProps) => {
             variant="subtitle1"
             sx={{
               fontFamily: "Freesentation-6-SemiBold",
-              fontSize: "19px",
+              fontSize: "29.2px",
               fontWeight: "bold",
             }}
             color={"#3b4551"}
