@@ -12,11 +12,12 @@ jobs:
 
       - name: Pushes to personal repository
         uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
+        # env:
+        #   API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
         with:
           # 소스 코드 전체를 푸시하도록 source-directory를 "." 으로 변경합니다.
           source-directory: "."
+          github_token: ${{ secrets.AUTO_ACTIONS }}
           destination-github-username: LazyMG
           destination-repository-name: ivh-home
           user-email: ${{ secrets.EMAIL }}
