@@ -10,9 +10,9 @@ import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
 import BreadScrum from "../../components/solution/BreadScrum";
 
-const Energy = () => {
+const Bems = () => {
   // header
-  const { headerTitle, subtitle, color, subColor } = header.energy;
+  const { headerTitle, subtitle, color, subColor } = header.BEMS;
 
   // body
   const {
@@ -23,7 +23,7 @@ const Energy = () => {
     colorBoxes,
     relatedSoftware,
     frequentlyAskedQuestions,
-  } = body.energy;
+  } = body.bems;
 
   useSolutionClass("solution-body");
 
@@ -52,7 +52,7 @@ const Energy = () => {
           contents={technicalBackground.technicalBackgroundContents}
         />
         {/* 시장 동향 및 필요성 */}
-        <TextBox
+        <TextImageBox
           title={marketTrend.marketTrendTitle}
           contents={marketTrend.marketTrendContents}
         />
@@ -90,4 +90,4 @@ const Energy = () => {
   );
 };
 
-export default Energy;
+export default Bems;

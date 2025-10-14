@@ -18,7 +18,11 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
       <Typography
         sx={{
           fontFamily: "Freesentation-7-Bold",
-          fontSize: "25px",
+          fontSize: {
+            xs: "16.2px",
+            sm: "26.6px",
+            md: "25px",
+          },
           fontWeight: "bold",
         }}
       >
@@ -28,6 +32,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
         <Box
           sx={{
             mt: 1.5,
+            mb: 4,
           }}
         >
           {contents.map((content, index) => {
@@ -41,7 +46,11 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
                   <Typography
                     sx={{
                       fontFamily: "Freesentation-5-Medium",
-                      fontSize: "13px",
+                      fontSize: {
+                        xs: "13.5px",
+                        sm: "22.2px",
+                        md: "20.8px",
+                      },
                       mr: 0.5,
                     }}
                   >
@@ -52,7 +61,11 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
                   sx={{
                     mt: isSection && index !== 0 ? 2 : 0,
                     fontFamily: "Freesentation-5-Medium",
-                    fontSize: "13px",
+                    fontSize: {
+                      xs: "13.5px",
+                      sm: "22.2px",
+                      md: "20.8px",
+                    },
                     wordBreak: "keep-all",
                   }}
                 >

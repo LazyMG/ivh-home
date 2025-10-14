@@ -1,18 +1,18 @@
-import SolutionHeader from "../../components/solution/SolutionHeader";
-import "../../style/solution.css";
-import header from "../../data/solution/header.json";
-import body from "../../data/solution/body.json";
-import TextBox from "../../components/solution/TextBox";
 import { Box } from "@mui/material";
-import useSolutionClass from "../../hooks/useSolutionClass";
+import SolutionHeader from "../../components/solution/SolutionHeader";
+import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
+import useSolutionClass from "../../hooks/useSolutionClass";
+import "../../style/solution.css";
+import header from "../../data/solution/header.json";
+import body from "../../data/solution/body.json";
 import BreadScrum from "../../components/solution/BreadScrum";
 
-const Energy = () => {
+const HomeAppliance = () => {
   // header
-  const { headerTitle, subtitle, color, subColor } = header.energy;
+  const { headerTitle, subtitle, color, subColor } = header.HomeAppliance;
 
   // body
   const {
@@ -23,7 +23,7 @@ const Energy = () => {
     colorBoxes,
     relatedSoftware,
     frequentlyAskedQuestions,
-  } = body.energy;
+  } = body.homeAppliance;
 
   useSolutionClass("solution-body");
 
@@ -47,20 +47,26 @@ const Energy = () => {
           marginTop={8}
         />
         {/* 기술적 배경 */}
-        <TextBox
+        <TextImageBox
           title={technicalBackground.technicalBackgroundTitle}
+          listHeader={technicalBackground.technicalBackgroundListHeader}
           contents={technicalBackground.technicalBackgroundContents}
+          width="1200px"
+          height="700px"
         />
         {/* 시장 동향 및 필요성 */}
-        <TextBox
+        <TextImageBox
           title={marketTrend.marketTrendTitle}
+          listHeader={marketTrend.marketTrendListHeader}
           contents={marketTrend.marketTrendContents}
+          width="1200px"
+          height="700px"
         />
         {/* 시스템 아키텍처 */}
         <TextImageBox
           title={systemArchitecture.systemArchitectureTitle}
-          imgurl={[systemArchitecture.systemArchitectureImgUrl]}
           listHeader={systemArchitecture.systemArchitectureListHeader}
+          contents={systemArchitecture.systemArchitectureContents}
           width="1200px"
           height="700px"
         />
@@ -90,4 +96,4 @@ const Energy = () => {
   );
 };
 
-export default Energy;
+export default HomeAppliance;

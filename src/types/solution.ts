@@ -2,6 +2,7 @@ interface ContentProps {
   title: string;
   subtitle: string;
   color: string;
+  subColor: string;
 }
 
 interface TextBoxProps {
@@ -15,9 +16,9 @@ interface TextImageBoxProps {
   title: string;
   contents?: string[];
   imgurl?: string[];
-  width: string;
-  height: string;
-  listHeader: string;
+  width?: string;
+  height?: string;
+  listHeader?: string;
 }
 
 // interface ColorBoxProps {

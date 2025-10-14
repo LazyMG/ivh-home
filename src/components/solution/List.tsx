@@ -30,7 +30,11 @@ const List = (listProps: ListProps) => {
             <Typography
               sx={{
                 fontFamily: "Freesentation-5-Medium",
-                fontSize: "20.8px",
+                fontSize: {
+                  xs: "16.2px",
+                  sm: "26.6px",
+                  md: "25px",
+                },
                 mb: 0.5,
               }}
             >
@@ -39,7 +43,11 @@ const List = (listProps: ListProps) => {
             <Typography
               sx={{
                 fontFamily: "Freesentation-5-Medium",
-                fontSize: "20.8px",
+                fontSize: {
+                  xs: "13.5px",
+                  sm: "22.2px",
+                  md: "20.8px",
+                },
                 wordBreak: "keep-all",
               }}
             >

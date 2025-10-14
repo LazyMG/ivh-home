@@ -16,7 +16,11 @@ const TextBox = (textBoxProps: TextBoxProps) => {
       <Typography
         sx={{
           fontFamily: "Freesentation-7-Bold",
-          fontSize: "25px",
+          fontSize: {
+            xs: "16.2px",
+            sm: "26.6px",
+            md: "25px",
+          },
           fontWeight: "bold",
         }}
       >
@@ -25,7 +29,11 @@ const TextBox = (textBoxProps: TextBoxProps) => {
       <Typography
         sx={{
           fontFamily: "Freesentation-5-Medium",
-          fontSize: "20.8px",
+          fontSize: {
+            xs: "13.5px",
+            sm: "22.2px",
+            md: "20.8px",
+          },
           mt: 1.5,
           wordBreak: "keep-all",
         }}

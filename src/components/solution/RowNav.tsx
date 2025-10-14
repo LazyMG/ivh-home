@@ -26,9 +26,19 @@ const RowNav = () => {
           >
             Energy
           </StyledButton>
-          <StyledButton underlineColor="#f99818">BEMS</StyledButton>
+          <StyledButton
+            underlineColor="#f99818"
+            onClick={() => navigate("/solution/bems")}
+          >
+            BEMS
+          </StyledButton>
           <StyledButton underlineColor="#cc5268">Mobility</StyledButton>
-          <StyledButton underlineColor="#0c307b">Smart factory</StyledButton>
+          <StyledButton
+            underlineColor="#0c307b"
+            onClick={() => navigate("/solution/smartfactory")}
+          >
+            Smart factory
+          </StyledButton>
           <StyledButton underlineColor="#0095d7">
             Al Innovation Hub
           </StyledButton>
@@ -45,9 +55,15 @@ const RowNav = () => {
 };
 
 const StyledButton = styled(Button)<StyledButtonProps>(
-  ({ underlineColor }) => ({
+  ({ theme, underlineColor }) => ({
     fontFamily: "Freesentation-6-SemiBold",
-    fontSize: "29.2px",
+    fontSize: "18.9px",
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "31.06px",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "29.2px",
+    },
     textTransform: "none",
     color: "black",
     borderBottom: `2px solid ${underlineColor}`,
