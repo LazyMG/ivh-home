@@ -1,9 +1,9 @@
 name: PAT Authentication Test
- 
+
 # 수동으로 직접 실행할 수 있도록 설정
 on:
   workflow_dispatch:
- 
+
 jobs:
   test-pat-validity:
     runs-on: ubuntu-latest
@@ -14,7 +14,7 @@ jobs:
           RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${{ secrets.AUTO_ACTIONS }}" \
-https://api.github.com/repos/LazyMG/ivh-home)
+            https://api.github.com/repos/LazyMG/ivh-home)
           echo "::endgroup::"
           echo "HTTP Status Code: $RESPONSE_CODE"
           if [ "$RESPONSE_CODE" -eq 200 ]; then
