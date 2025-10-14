@@ -15,18 +15,34 @@ const BreadScrum = ({ title }: { title: string }) => {
   } = breadscrum.breadscrum;
   const navigate = useNavigate();
 
+  const responsiveFontSize = {
+    xs: "13.5px",
+    sm: "22.2px",
+    md: "20.8px",
+  };
+
   return (
     <Box
       sx={{ display: "flex", alignItems: "center", justifyContent: "flex-end" }}
     >
       <StyledButton onClick={() => navigate(commonpath.home.path)}>
-        <Typography sx={{ marginRight: "10px" }}>
+        <Typography
+          sx={{
+            marginRight: "10px",
+            fontSize: responsiveFontSize,
+          }}
+        >
           {commonpath.home.title}
         </Typography>
       </StyledButton>
       <ArrowIcon />
       <StyledButton onClick={() => navigate(commonpath.solution.path)}>
-        <Typography sx={{ marginRight: "10px" }}>
+        <Typography
+          sx={{
+            marginRight: "10px",
+            fontSize: responsiveFontSize,
+          }}
+        >
           {commonpath.solution.title}
         </Typography>
       </StyledButton>
@@ -57,7 +73,13 @@ const BreadScrum = ({ title }: { title: string }) => {
           }
         }}
       >
-        <Typography>{title}</Typography>
+        <Typography
+          sx={{
+            fontSize: responsiveFontSize,
+          }}
+        >
+          {title}
+        </Typography>
       </StyledButton>
     </Box>
   );
@@ -65,21 +87,12 @@ const BreadScrum = ({ title }: { title: string }) => {
 
 export default BreadScrum;
 
-const StyledButton = styled(Button)(({ theme }) => ({
+const StyledButton = styled(Button)(() => ({
   fontFamily: "Freesentation-7-Bold",
-  fontSize: "13.5px",
-  [theme.breakpoints.up("sm")]: {
-    fontSize: "22.2px",
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "20.8px",
-  },
   textTransform: "none",
   color: "#717171",
   padding: 0,
   minWidth: 0,
-  //   marginLeft: "10px",
-  //   marginRight: "10px",
   "&:hover": {
     backgroundColor: "transparent",
   },
