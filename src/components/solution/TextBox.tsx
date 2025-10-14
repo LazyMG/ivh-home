@@ -10,13 +10,13 @@ const TextBox = (textBoxProps: TextBoxProps) => {
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "flex-start",
-        mt: marginTop ? marginTop : 5,
+        mt: marginTop || 10,
       }}
     >
       <Typography
         sx={{
           fontFamily: "Freesentation-7-Bold",
-          fontSize: "16px",
+          fontSize: "25px",
           fontWeight: "bold",
         }}
       >
@@ -25,8 +25,9 @@ const TextBox = (textBoxProps: TextBoxProps) => {
       <Typography
         sx={{
           fontFamily: "Freesentation-5-Medium",
-          fontSize: "13px",
+          fontSize: "20.8px",
           mt: 1.5,
+          wordBreak: "keep-all",
         }}
       >
         {contents}

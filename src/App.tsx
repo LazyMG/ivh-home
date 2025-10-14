@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Solution from "./pages/solution";
 import Energy from "./pages/solution/Energy";
 import HomeAppliance from "./pages/home-appliance";
+import Calendar from "./pages/Calendar";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/solution" element={<Solution />} />
         <Route path="/solution/energy" element={<Energy />} />
         <Route path="/solution/home-appliance" element={<HomeAppliance />} />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </BrowserRouter>
   );
