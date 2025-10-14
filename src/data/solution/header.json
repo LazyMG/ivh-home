@@ -2,31 +2,37 @@
   "energy": {
     "headerTitle": "Energy",
     "subtitle": "원자력 - 재생에너지 하이브리드 에너지 시스템",
-    "color": "#279576"
+    "color": "#279576",
+    "subColor": "68, 239, 191"
   },
   "BEMS": {
     "headerTitle": "BEMS",
     "subtitle": "건물 에너지 관리 기술",
-    "color": "#f99818"
+    "color": "#f99818",
+    "subColor": "255, 185, 64"
   },
   "Mobility": {
     "headerTitle": "Mobility",
     "subtitle": "다중 통신기술 네트워크 로드밸런싱 기술개발",
-    "color": "#cc5268"
+    "color": "#cc5268",
+    "subColor": "255, 118, 143"
   },
   "SmartFactory": {
     "headerTitle": "Smart Factory",
     "subtitle": "배터리 제조라인용 스마트 팩토리 Kit 개발",
-    "color": "#0c307b"
+    "color": "#0c307b",
+    "subColor": "91, 144, 255"
   },
   "AlInnovationHub": {
     "headerTitle": "Al innovation hub",
     "subtitle": "AI innovation hub는 iVH의 모든 기술을 연결하고 강화하는 중추적인 기술 조직입니다.\niVH는 인공지능을 기반으로 제품과 서비스 전반에 걸쳐 지속 가능한 혁신과 공학적 진화를 실현합니다. 단순한 기술 개발을 넘어, 조직 전체가 AI를 효과적으로 활용할 수 있도록 돕고, 미래를 준비하는 전략적 역할을 수행합니다.\n\nAI Innovation Hub는 기술의 중심에서 다음 5개의 핵심 가치를 개발합니다. \n",
-    "color": "#0095d7"
+    "color": "#0095d7",
+    "subColor": "109, 210, 255"
   },
   "HomeAppliance": {
     "headerTitle": "Home Appliance",
     "subtitle": "PCB 열관리 성능 예측",
-    "color": "#92b843"
+    "color": "#92b843",
+    "subColor": "187, 241, 76"
   }
 }

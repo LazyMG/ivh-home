@@ -2,6 +2,7 @@ interface ContentProps {
   title: string;
   subtitle: string;
   color: string;
+  subColor: string;
 }
 
 interface TextBoxProps {

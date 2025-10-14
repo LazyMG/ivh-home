@@ -267,5 +267,111 @@
         }
       ]
     }
+  },
+  "smartFactory": {
+    "outline": {
+      "outlineTitle": "• 개요",
+      "outlineContents": [
+        "본 솔루션은 국내 배터리 생산라인 전문기업(엠플러스)과 협력하여 Industry 4.0 요구조건을 충족하는 스마트팩토리 툴킷을 개발하는 것을 목표로 하였습니다.",
+        "디지털 트윈, AI, 스마트 센서, 엣지 시스템 등 첨단 기술을 통합하여 생산 품질 및 설비 상태를 실시간으로 예측·관리할 수 있는 솔루션입니다."
+      ],
+      "outlineImgUrl": ["/images/pages/solutions/solution_smartfactoryMain.png"]
+    },
+    "technicalBackground": {
+      "technicalBackgroundTitle": "• 기술적 배경",
+      "technicalBackgroundContents": "한국 제조업은 국가 경제의 핵심 동력으로, 전체 부가가치의 약 30%를 차지하고 있습니다. 그러나 생산인구 감소, 고령화, 글로벌 경쟁 심화 등으로 인해 생산성 및 효율성 개선이 시급한 상황입니다. 이에 따라 4차 산업혁명에 대응하는 스마트팩토리 도입이 확산되고 있으나, 중소기업의 경우 핵심 기술(초연결, 디지털 트윈, 데이터 기반 예측 및 판단 등) 확보가 어렵고, IoT 기반 단순 모니터링에 그치는 경우가 많아 실질적인 혁신 효과가 제한적입니다. 특히, 배터리 생산라인은 고도의 품질 관리와 설비 예지보전이 필수적임에도 불구하고, 기존 시스템은 실시간 예측 및 자율 제어 기능이 미흡하여 생산 효율과 품질 향상에 한계가 있었습니다. 이에 따라, 배터리 생산라인에 특화된 스마트팩토리 툴킷을 개발하여, 디지털 트윈, AI, 스마트 센서, 엣지 시스템 등 첨단 기술을 통합하고, 생산 품질 및 설비 상태를 실시간으로 예측·관리할 수 있는 솔루션의 필요성이 대두되었습니다."
+    },
+    "marketTrend": {
+      "marketTrendTitle": "• 시장 동향 및 필요성",
+      "marketTrendContents": [
+        "스마트팩토리 기술은 제조업의 디지털 전환을 가속화하고 있으며, 특히 배터리 산업은 고품질·고효율 생산이 요구되는 분야로서 스마트팩토리의 도입 필요성이 높습니다.",
+        "중소기업의 기술 확보 어려움과 기존 시스템의 한계로 인해, 실질적인 혁신을 위한 통합 솔루션의 수요가 증가하고 있습니다."
+      ]
+    },
+    "systemArchitecture": {
+      "systemArchitectureTitle": "• 시스템 아키텍처",
+      "systemArchitectureContents": [
+        "스마트팩토리 툴킷은 디지털 트윈, 스마트 센서, 엣지 컴퓨팅, 클라우드 시스템으로 구성되어 있으며, 생산 품질 및 설비 상태를 실시간으로 예측·관리할 수 있도록 설계되었습니다."
+      ],
+      "systemArchitectureImgUrl": [
+        "/images/pages/solutions/solution_smartfactorySystem.png"
+      ]
+    },
+    "colorBoxes": [
+      {
+        "boxColor": "#0c307b",
+        "layout": [[4, 4, 4]],
+        "boxes": [
+          {
+            "title": "• 핵심 기술",
+            "hyphen": "-",
+            "items": [
+              "Modelica 기반 다중물리 디지털 트윈 모델",
+              "스마트 센서: 카메라, 로드셀, 먼지, 온도, 가속도 센서",
+              "엣지 시스템: NVIDIA Jetson 기반 실시간 데이터 처리",
+              "클라우드 시스템 및 대시보드",
+              "AI 기반 이미지 분석(CNN), SVM 고장 진단",
+              "PHM(예지보전), FEMS(에너지 관리)"
+            ],
+            "images": [
+              {
+                "src": "/images/pages/solutions/solution_smartfactoryBoxTech.png",
+                "width": "100%"
+              }
+            ],
+            "contentLayout": "vertical"
+          },
+          {
+            "title": "• 제공 서비스",
+            "hyphen": "-",
+            "items": [
+              "스마트팩토리 툴킷 구축 및 현장 실증",
+              "디지털 트윈 모델 개발",
+              "스마트 센서 및 엣지 시스템 적용",
+              "클라우드 대시보드 및 AI 분석",
+              "품질관리, 예지보전, 에너지 관리 컨설팅"
+            ],
+            "images": [
+              {
+                "src": "/images/pages/solutions/solution_smartfactoryBoxService.png",
+                "width": "100%"
+              }
+            ],
+            "contentLayout": "vertical"
+          },
+          {
+            "title": "• 기대 효과",
+            "hyphen": "-",
+            "items": [
+              "생산 초기 단계 품질 관리 및 설비 상태 예측",
+              "실시간 데이터 기반 자율 의사결정",
+              "공장 자산의 예측적 운용 및 비용 절감",
+              "빅데이터 분석 통한 효율적 생산체계 구축",
+              "국내외 배터리 생산라인 및 유사 제조업 현장 적용",
+              "스마트팩토리 기술 국산화 및 경쟁력 강화"
+            ],
+            "autoHeight": true,
+            "pb": true
+          }
+        ]
+      }
+    ],
+    "relatedSoftware": {
+      "relatedSoftwareTitle": "• 관련 소프트웨어 (Software)",
+      "relatedSoftwareContents": "Dymola, Claytex(Claytex), Modelon(Modelon), SMArtIInt(XRG), Modelica Device Driver"
+    },
+    "frequentlyAskedQuestions": {
+      "frequentlyAskedQuestionsTitle": "• 자주 묻는 질문",
+      "frequentlyAskedQuestionsContents": [
+        {
+          "title": "Q1. 기존 스마트팩토리와의 차별점은?",
+          "contents": " A. 디지털 트윈, AI, 스마트 센서, 엣지 시스템 등 첨단 기술을 통합하여 실시간 예측·관리가 가능합니다."
+        },
+        {
+          "title": "Q2. 중소기업도 적용 가능한가요?",
+          "contents": " A. 맞춤형 툴킷 제공 및 단계별 도입 컨설팅으로 중소기업도 쉽게 적용할 수 있습니다."
+        }
+      ]
+    }
   }
 }

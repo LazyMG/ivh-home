@@ -2,7 +2,7 @@ import type { ContentProps } from "../../types/solution";
 import { Box, Typography } from "@mui/material";
 
 const SolutionHeader = (contentProps: ContentProps) => {
-  const { title, subtitle, color } = contentProps;
+  const { title, subtitle, color, subColor } = contentProps;
   return (
     <>
       <Box component="header">
@@ -12,9 +12,6 @@ const SolutionHeader = (contentProps: ContentProps) => {
             flexDirection: "column",
             alignItems: "flex-start",
             justifyContent: "flex-start",
-            borderBottom: `1px solid ${color}`,
-            mb: 1.5,
-            pb: 1.5,
           }}
         >
           <Typography
@@ -34,7 +31,14 @@ const SolutionHeader = (contentProps: ContentProps) => {
             {title}
           </Typography>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            background: `linear-gradient(rgba(${subColor}, 0.36), #ffffff)`,
+            mt: 3,
+            py: 1.5,
+            borderTop: `1px solid ${color}`,
+          }}
+        >
           <Typography
             variant="subtitle1"
             sx={{

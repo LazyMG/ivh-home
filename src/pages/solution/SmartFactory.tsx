@@ -1,18 +1,18 @@
-import SolutionHeader from "../../components/solution/SolutionHeader";
-import "../../style/solution.css";
-import header from "../../data/solution/header.json";
-import body from "../../data/solution/body.json";
-import TextBox from "../../components/solution/TextBox";
 import { Box } from "@mui/material";
-import useSolutionClass from "../../hooks/useSolutionClass";
+import SolutionHeader from "../../components/solution/SolutionHeader";
+import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import BreadScrum from "../../components/solution/BreadScrum";
+import useSolutionClass from "../../hooks/useSolutionClass";
 
-const Energy = () => {
+import "../../style/solution.css";
+import header from "../../data/solution/header.json";
+import body from "../../data/solution/body.json";
+
+const SmartFactory = () => {
   // header
-  const { headerTitle, subtitle, color, subColor } = header.energy;
+  const { headerTitle, subtitle, color, subColor } = header.SmartFactory;
 
   // body
   const {
@@ -23,14 +23,12 @@ const Energy = () => {
     colorBoxes,
     relatedSoftware,
     frequentlyAskedQuestions,
-  } = body.energy;
+  } = body.smartFactory;
 
   useSolutionClass("solution-body");
 
   return (
     <>
-      {/* breadcrumb section */}
-      <BreadScrum title={headerTitle} />
       {/* header section */}
       <SolutionHeader
         title={headerTitle}
@@ -41,10 +39,12 @@ const Energy = () => {
       {/* body section */}
       <Box component="main">
         {/* 개요 */}
-        <TextBox
+        <TextImageBox
           title={outline.outlineTitle}
           contents={outline.outlineContents}
-          marginTop={8}
+          imgurl={outline.outlineImgUrl}
+          width="1000px"
+          height="500px"
         />
         {/* 기술적 배경 */}
         <TextBox
@@ -52,17 +52,17 @@ const Energy = () => {
           contents={technicalBackground.technicalBackgroundContents}
         />
         {/* 시장 동향 및 필요성 */}
-        <TextBox
+        <TextImageBox
           title={marketTrend.marketTrendTitle}
           contents={marketTrend.marketTrendContents}
         />
         {/* 시스템 아키텍처 */}
         <TextImageBox
           title={systemArchitecture.systemArchitectureTitle}
-          imgurl={[systemArchitecture.systemArchitectureImgUrl]}
-          listHeader={systemArchitecture.systemArchitectureListHeader}
-          width="1200px"
-          height="700px"
+          contents={systemArchitecture.systemArchitectureContents}
+          imgurl={systemArchitecture.systemArchitectureImgUrl}
+          width="800px"
+          height="400px"
         />
         {/* 핵심 기술, 제공 서비스, 기대 효과 */}
         {/* 모든 ColorBox를 반복 렌더링 */}
@@ -90,4 +90,4 @@ const Energy = () => {
   );
 };
 
-export default Energy;
+export default SmartFactory;
