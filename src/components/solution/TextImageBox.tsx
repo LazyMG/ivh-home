@@ -41,7 +41,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
                   <Typography
                     sx={{
                       fontFamily: "Freesentation-5-Medium",
-                      fontSize: "13px",
+                      fontSize: "20.8px",
                       mr: 0.5,
                     }}
                   >
@@ -52,7 +52,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
                   sx={{
                     mt: isSection && index !== 0 ? 2 : 0,
                     fontFamily: "Freesentation-5-Medium",
-                    fontSize: "13px",
+                    fontSize: "20.8px",
                     wordBreak: "keep-all",
                   }}
                 >
