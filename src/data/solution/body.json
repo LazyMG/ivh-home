@@ -15,7 +15,7 @@
     "systemArchitecture": {
       "systemArchitectureTitle": "• 시스템 아키텍처",
       "systemArchitectureListHeader": "",
-      "systemArchitectureImgUrl": "../../assets/images/pages/solution/solution_energy.jpg"
+      "systemArchitectureImgUrl": "/images/pages/solution/solution_energy.jpg"
     },
     "colorBoxes": [
       {
@@ -176,6 +176,94 @@
         {
           "title": "Q3. 실제 도면 데이터 기반 모델링도 가능한가요?",
           "contents": " A. 네, 부품 위치, 형상, 발열량, PCB 두께 등 실제 도면 데이터를 활용한 모델링 및 성능 예측이 가능합니다."
+        }
+      ]
+    }
+  },
+  "bems": {
+    "outline": {
+      "outlineTitle": "• 개요",
+      "outlineContents": "BEMS(Building Energy Management System)는 건물의 전력·열·가스·수처리 등 다종 설비와 분산에너지자원(DER)을 통합 감시·제어하여 에너지 효율, 쾌적도, 안정성을 향상하는 지능형 운영 시스템입니다. 본 문서는 Modelica/Dymola 기반 디지털 트윈을 핵심으로 하는 BEMS 고도화 기술과 적용 방법을 설명합니다."
+    },
+    "technicalBackground": {
+      "technicalBackgroundTitle": "• 기술적 배경",
+      "technicalBackgroundContents": "도시·건물 부문의 탄소중립 및 에너지비용 절감 요구와 재생에너지 확대에 따른 계통 변동성은 설계-시공-운영 전 주기에 걸친 모델 기반 의사결정을 요구합니다. 디지털 트윈은 실제 설비의 물리적 거동을 재현하고 운영전략을 사전에 검증하여, 비용·피크·탄소·쾌적도의 다목적 최적화를 지원합니다."
+    },
+    "marketTrend": {
+      "marketTrendTitle": "• 시장 동향 및 필요성",
+      "marketTrendContents": [
+        "규제/정책: ZEB·녹색건축·에너지관리 의무 강화, DR/동적요금제 확산",
+        "비즈니스: 데이터센터·병원·상업·캠퍼스 등에서 고가용성 전력과 쾌적도 보장을 동시에 요구",
+        "기술: 분산형자원(PV, ESS, TES) 및 마이크로그리드 도입 가속, AI/예측제어 결합",
+        "현대건설 Smart BEMS 및 GSIC 실증과 같은 선도 사례는 지능형 공조제어와 Micro Energy Grid 연계를 통해 운영 최적화가 가능함을 시사합니다."
+      ]
+    },
+    "systemArchitecture": {
+      "systemArchitectureTitle": "• 시스템 아키텍처",
+      "systemArchitectureListHeader": "",
+      "systemArchitectureImgUrl": "/images/pages/solution/solution_bems.jpg"
+    },
+    "colorBoxes": [
+      {
+        "boxColor": "#f99818",
+        "layout": [[4, 4, 4]],
+        "boxes": [
+          {
+            "title": "• 핵심 기술",
+            "hyphen": "-",
+            "items": [
+              "Modelica/Dymola 기반 1D 멀티피직스 모델링(공조·열원·전력·저장·부하)",
+              "FMI/FMU 교환을 통한 제어기–모델 연동 및 HIL",
+              "MPC(모델예측제어) 기반 비용/피크/쾌적도 다목적 최적화",
+              "현장데이터 동화(Data Assimilation)와 자동 캘리브레이션",
+              "시나리오 기반 의사결정(설비 증설/교체, 운전정책, DR 전략)",
+              "마이크로그리드 연계를 통한 분산형 에너지 통합 운영"
+            ]
+          },
+          {
+            "title": "• 제공 서비스",
+            "hyphen": "-",
+            "items": [
+              "디지털 트윈 구축: 아키텍처 분석→부품 모델링/검증→시스템 통합",
+              "운영 최적화: MPC 설계, DR/요금제 대응, 피크 관리",
+              "교육/이전: 운영자·엔지니어 교육, 문서화 및 표준 운영절차(SOP) 제공"
+            ]
+          },
+          {
+            "title": "• 기대 효과",
+            "hyphen": "-",
+            "items": [
+              "에너지 비용 및 피크 저감, 설비 수명 연장",
+              "탄소배출 감축 및 규제 대응, ESG 성과 향상",
+              "쾌적도·신뢰도 향상(온열환경·IAQ·장애예측)",
+              "다건물/캠퍼스 확장 시 규모의 경제 확보"
+            ]
+          }
+        ]
+      }
+    ],
+    "relatedSoftware": {
+      "relatedSoftwareTitle": "• 관련 소프트웨어",
+      "relatedSoftwareContents": "Dymola (Dassault), HVAC(XRG), Human Comfort(XRG), Air Conditioning(Modelon)"
+    },
+    "frequentlyAskedQuestions": {
+      "frequentlyAskedQuestionsTitle": "• 자주 묻는 질문",
+      "frequentlyAskedQuestionsContents": [
+        {
+          "title": "Q1. 현장마다 모델을 새로 만들어야 하나요?",
+          "contents": " A. 표준화된 라이브러리를 기반으로 현장 파라미터만 캘리브레이션합니다."
+        },
+        {
+          "title": "Q2. 기존 BMS와 무엇이 다른가요?",
+          "contents": " BMS는 모니터링/제어 중심, BEMS DT는 예측·최적화로 선제 운영을 지원합니다."
+        },
+        {
+          "title": "Q3. 데이터가 부족해도 시작할 수 있나요?",
+          "contents": " A. 초기에는 설계값/계측 일부로 시작하고, 운영 중 데이터로 정밀도를 높입니다."
+        },
+        {
+          "title": "Q4. 어떤 성과를 기대할 수 있나요?",
+          "contents": " A. 요금제·설비에 따라 다르나, 비용/피크 저감과 쾌적도 개선을 동시에 달성합니다."
         }
       ]
     }

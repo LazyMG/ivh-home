@@ -8,14 +8,14 @@ import type {
 // 스타일 상수
 const STYLES = {
   boxBorder: "3px solid",
-  boxBorderRadius: "10px",
+  boxBorderRadius: "17px",
   boxPadding: "30px 30px 0px 30px",
   titleFontFamily: "Freesentation-7-Bold",
-  titleFontSize: { large: "31.3px", medium: "16px" },
+  titleFontSize: { xs: "20.2px", sm: "33.3px", md: "31.3px" },
   titleFontWeight: "bold",
   titleMarginBottom: 3,
   contentFontFamily: "Freesentation-5-Medium",
-  contentFontSize: "20.8px",
+  contentFontSize: { xs: "13.5px", sm: "22.2px", md: "20.8px" },
 } as const;
 
 // 서브 컴포넌트: 박스 내부 콘텐츠 렌더링
@@ -148,9 +148,7 @@ const BoxContentRenderer = ({
       <Typography
         sx={{
           fontFamily: STYLES.titleFontFamily,
-          fontSize: subSections
-            ? STYLES.titleFontSize.medium
-            : STYLES.titleFontSize.large,
+          fontSize: STYLES.titleFontSize,
           fontWeight: STYLES.titleFontWeight,
           color: boxColor,
           mb: STYLES.titleMarginBottom,
