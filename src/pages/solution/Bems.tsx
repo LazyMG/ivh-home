@@ -8,6 +8,7 @@ import useSolutionClass from "../../hooks/useSolutionClass";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
+import BreadScrum from "../../components/solution/BreadScrum";
 
 const Bems = () => {
   // header
@@ -28,6 +29,8 @@ const Bems = () => {
 
   return (
     <>
+      {/* breadcrumb section */}
+      <BreadScrum title={headerTitle} />
       {/* header section */}
       <SolutionHeader title={headerTitle} subtitle={subtitle} color={color} />
       {/* body section */}
