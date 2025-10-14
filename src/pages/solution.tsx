@@ -10,7 +10,11 @@ const Solution = () => {
       <Typography
         sx={{
           fontFamily: "Freesentation-8-ExtraBold",
-          fontSize: "62.5px",
+          fontSize: {
+            xs: "40.4px",
+            sm: "66.56px",
+            md: "62.5px",
+          },
           ml: "64px",
         }}
       >

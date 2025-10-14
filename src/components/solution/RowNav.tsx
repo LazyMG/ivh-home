@@ -45,9 +45,15 @@ const RowNav = () => {
 };
 
 const StyledButton = styled(Button)<StyledButtonProps>(
-  ({ underlineColor }) => ({
+  ({ theme, underlineColor }) => ({
     fontFamily: "Freesentation-6-SemiBold",
-    fontSize: "29.2px",
+    fontSize: "18.9px",
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "31.06px",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "29.2px",
+    },
     textTransform: "none",
     color: "black",
     borderBottom: `2px solid ${underlineColor}`,
