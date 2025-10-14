@@ -1,6 +1,6 @@
 import { Box, CssBaseline, Typography } from "@mui/material";
 import Menu from "../components/home/Menu";
-import bgImg from "../assets/images/home/main-back.jpg";
+import bgImg from "/images/home/main-back.jpg";
 
 const Home = () => {
   return (

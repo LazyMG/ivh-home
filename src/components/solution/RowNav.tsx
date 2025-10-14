@@ -26,7 +26,12 @@ const RowNav = () => {
           >
             Energy
           </StyledButton>
-          <StyledButton underlineColor="#f99818">BEMS</StyledButton>
+          <StyledButton
+            underlineColor="#f99818"
+            onClick={() => navigate("/solution/bems")}
+          >
+            BEMS
+          </StyledButton>
           <StyledButton underlineColor="#cc5268">Mobility</StyledButton>
           <StyledButton underlineColor="#0c307b">Smart factory</StyledButton>
           <StyledButton underlineColor="#0095d7">
