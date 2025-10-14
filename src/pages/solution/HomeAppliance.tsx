@@ -11,7 +11,7 @@ import body from "../../data/solution/body.json";
 
 const HomeAppliance = () => {
   // header
-  const { headerTitle, subtitle, color } = header.HomeAppliance;
+  const { headerTitle, subtitle, color, subColor } = header.HomeAppliance;
 
   // body
   const {
@@ -29,7 +29,12 @@ const HomeAppliance = () => {
   return (
     <>
       {/* header section */}
-      <SolutionHeader title={headerTitle} subtitle={subtitle} color={color} />
+      <SolutionHeader
+        title={headerTitle}
+        subtitle={subtitle}
+        color={color}
+        subColor={subColor}
+      />
       {/* body section */}
       <Box component="main">
         {/* 개요 */}

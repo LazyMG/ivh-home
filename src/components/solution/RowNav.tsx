@@ -28,7 +28,12 @@ const RowNav = () => {
           </StyledButton>
           <StyledButton underlineColor="#f99818">BEMS</StyledButton>
           <StyledButton underlineColor="#cc5268">Mobility</StyledButton>
-          <StyledButton underlineColor="#0c307b">Smart factory</StyledButton>
+          <StyledButton
+            underlineColor="#0c307b"
+            onClick={() => navigate("/solution/smartfactory")}
+          >
+            Smart factory
+          </StyledButton>
           <StyledButton underlineColor="#0095d7">
             Al Innovation Hub
           </StyledButton>

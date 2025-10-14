@@ -7,7 +7,7 @@ import type {
 
 // 스타일 상수
 const STYLES = {
-  boxBorder: "2px solid",
+  boxBorder: "3px solid",
   boxBorderRadius: "10px",
   boxPadding: "30px 30px 0px 30px",
   titleFontFamily: "Freesentation-7-Bold",

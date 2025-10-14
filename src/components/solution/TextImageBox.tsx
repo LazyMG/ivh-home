@@ -28,6 +28,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
         <Box
           sx={{
             mt: 1.5,
+            mb: 4,
           }}
         >
           {contents.map((content, index) => {

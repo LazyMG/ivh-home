@@ -5,6 +5,7 @@ import Solution from "./pages/solution";
 import Energy from "./pages/solution/Energy";
 import HomeAppliance from "./pages/solution/HomeAppliance";
 import Calendar from "./pages/Calendar";
+import SmartFactory from "./pages/solution/SmartFactory";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/solution" element={<Solution />} />
         <Route path="/solution/energy" element={<Energy />} />
         <Route path="/solution/home-appliance" element={<HomeAppliance />} />
+        <Route path="/solution/smartfactory" element={<SmartFactory />} />
         <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </BrowserRouter>
