@@ -12,7 +12,7 @@ import BreadScrum from "../../components/solution/BreadScrum";
 
 const Bems = () => {
   // header
-  const { headerTitle, subtitle, color } = header.BEMS;
+  const { headerTitle, subtitle, color, subColor } = header.BEMS;
 
   // body
   const {
@@ -32,7 +32,12 @@ const Bems = () => {
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
-      <SolutionHeader title={headerTitle} subtitle={subtitle} color={color} />
+      <SolutionHeader
+        title={headerTitle}
+        subtitle={subtitle}
+        color={color}
+        subColor={subColor}
+      />
       {/* body section */}
       <Box component="main">
         {/* 개요 */}

@@ -8,6 +8,7 @@ import useSolutionClass from "../../hooks/useSolutionClass";
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
+import BreadScrum from "../../components/solution/BreadScrum";
 
 const HomeAppliance = () => {
   // header
@@ -28,6 +29,8 @@ const HomeAppliance = () => {
 
   return (
     <>
+      {/* breadcrumb section */}
+      <BreadScrum title={headerTitle} />
       {/* header section */}
       <SolutionHeader
         title={headerTitle}

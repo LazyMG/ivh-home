@@ -15,7 +15,7 @@
     "systemArchitecture": {
       "systemArchitectureTitle": "• 시스템 아키텍처",
       "systemArchitectureListHeader": "",
-      "systemArchitectureImgUrl": "/images/pages/solution/solution_energy.jpg"
+      "systemArchitectureImgUrl": "/images/pages/solution/energy/solution_energy.jpg"
     },
     "colorBoxes": [
       {
@@ -201,7 +201,7 @@
     "systemArchitecture": {
       "systemArchitectureTitle": "• 시스템 아키텍처",
       "systemArchitectureListHeader": "",
-      "systemArchitectureImgUrl": "/images/pages/solution/solution_bems.jpg"
+      "systemArchitectureImgUrl": "/images/pages/solution/bems/solution_bems.jpg"
     },
     "colorBoxes": [
       {
@@ -275,7 +275,9 @@
         "본 솔루션은 국내 배터리 생산라인 전문기업(엠플러스)과 협력하여 Industry 4.0 요구조건을 충족하는 스마트팩토리 툴킷을 개발하는 것을 목표로 하였습니다.",
         "디지털 트윈, AI, 스마트 센서, 엣지 시스템 등 첨단 기술을 통합하여 생산 품질 및 설비 상태를 실시간으로 예측·관리할 수 있는 솔루션입니다."
       ],
-      "outlineImgUrl": ["/images/pages/solutions/solution_smartfactoryMain.png"]
+      "outlineImgUrl": [
+        "/images/pages/solution/smartFactory/solution_smartfactoryMain.png"
+      ]
     },
     "technicalBackground": {
       "technicalBackgroundTitle": "• 기술적 배경",
@@ -294,7 +296,7 @@
         "스마트팩토리 툴킷은 디지털 트윈, 스마트 센서, 엣지 컴퓨팅, 클라우드 시스템으로 구성되어 있으며, 생산 품질 및 설비 상태를 실시간으로 예측·관리할 수 있도록 설계되었습니다."
       ],
       "systemArchitectureImgUrl": [
-        "/images/pages/solutions/solution_smartfactorySystem.png"
+        "/images/pages/solution/smartFactory/solution_smartfactorySystem.png"
       ]
     },
     "colorBoxes": [
@@ -315,7 +317,7 @@
             ],
             "images": [
               {
-                "src": "/images/pages/solutions/solution_smartfactoryBoxTech.png",
+                "src": "/images/pages/solution/smartFactory/solution_smartfactoryBoxTech.png",
                 "width": "100%"
               }
             ],
@@ -333,7 +335,7 @@
             ],
             "images": [
               {
-                "src": "/images/pages/solutions/solution_smartfactoryBoxService.png",
+                "src": "/images/pages/solution/smartFactory/solution_smartfactoryBoxService.png",
                 "width": "100%"
               }
             ],
