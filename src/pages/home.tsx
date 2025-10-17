@@ -97,7 +97,7 @@ const Home = () => {
             >
               <Box
                 component="img"
-                src="/src/assets/images/home/youtube.png"
+                src="/images/home/youtube.png"
                 sx={{
                   width: {
                     md: "40px",
@@ -109,7 +109,7 @@ const Home = () => {
               />
               <Box
                 component="img"
-                src="/src/assets/images/home/linkedin.png"
+                src="/images/home/linkedin.png"
                 sx={{
                   width: {
                     md: "40px",
