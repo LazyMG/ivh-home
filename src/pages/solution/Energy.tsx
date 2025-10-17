@@ -1,4 +1,4 @@
-import SolutionHeader from "../../components/solution/SolutionHeader";
+import SolutionTitle from "../../components/solution/SolutionTitle";
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
@@ -32,7 +32,7 @@ const Energy = () => {
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
-      <SolutionHeader
+      <SolutionTitle
         title={headerTitle}
         subtitle={subtitle}
         color={color}

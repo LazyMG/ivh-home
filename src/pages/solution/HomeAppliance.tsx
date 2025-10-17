@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import SolutionHeader from "../../components/solution/SolutionHeader";
+import SolutionTitle from "../../components/solution/SolutionTitle";
 import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
@@ -32,7 +32,7 @@ const HomeAppliance = () => {
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
-      <SolutionHeader
+      <SolutionTitle
         title={headerTitle}
         subtitle={subtitle}
         color={color}

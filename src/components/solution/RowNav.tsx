@@ -72,6 +72,10 @@ const StyledButton = styled(Button)<StyledButtonProps>(
     paddingRight: "0",
     paddingTop: "0",
     paddingBottom: "0",
+    "&:hover": {
+      backgroundColor: "transparent",
+      color: underlineColor,
+    },
   })
 );
 
