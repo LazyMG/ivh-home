@@ -2,44 +2,50 @@ import { isAxiosError } from "axios";
 import { API_ENDPOINTS } from "../utils/constants";
 import api from "./api";
 
-// 타입 정리 필요 -> 데이터 확인 후 정리
-
 type NewsStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
 
-interface News {
-  title: string;
-  content: string;
+interface NewsResponse {
   author: string;
-  status?: NewsStatus;
-  thumbnailUrl?: string;
-  tags?: string[];
-  publishedAt?: string;
+  content: string;
+  createdAt: string;
+  id: number;
+  publishedAt: string;
+  status: NewsStatus;
+  tags: string[];
+  thumbnailUrl: string;
+  title: string;
+  updatedAt: string;
+  viewCount: number;
 }
 
 export const newsService = {
-  async getNews() {
+  async getNews(): Promise<NewsResponse[]> {
     try {
-      const response = await api.get(API_ENDPOINTS.NEWS.LIST);
-      console.log(response);
-    } catch (error) {
-      console.error("Failed to fetch:", error);
-      throw error;
-    }
-  },
-  async searchNewsByTag(tag: string) {
-    try {
-      const response = await api.get(API_ENDPOINTS.NEWS.SEARCH_BY_TAG(tag));
-      console.log(response);
+      const response = await api.get<NewsResponse[]>(API_ENDPOINTS.NEWS.LIST);
       return response.data;
     } catch (error) {
       console.error("Failed to fetch:", error);
       throw error;
     }
   },
-  async getDetailNews(id: number) {
+  // 빈 문자열 처리 필요
+  async searchNewsByTag(tag: string): Promise<NewsResponse[]> {
     try {
-      const response = await api.get(API_ENDPOINTS.NEWS.DETAIL(id));
-      console.log(response);
+      const response = await api.get<NewsResponse[]>(
+        API_ENDPOINTS.NEWS.SEARCH_BY_TAG(tag)
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Failed to fetch:", error);
+      throw error;
+    }
+  },
+  async getDetailNews(id: number): Promise<NewsResponse> {
+    try {
+      const response = await api.get<NewsResponse>(
+        API_ENDPOINTS.NEWS.DETAIL(id)
+      );
+      return response.data;
     } catch (error) {
       if (isAxiosError(error)) {
         throw new Error(
