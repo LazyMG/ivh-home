@@ -375,5 +375,663 @@
         }
       ]
     }
+  },
+  "mobility": {
+    "multiCommunicateTech": {
+      "outline": {
+        "outlineTitle": "• 개요",
+        "outlineContents": [
+          "다중 통신 네트워크 환경에서 자율주행 서비스의 저지연·고신뢰·대용량 데이터 전송 및 처리를 실현하기 위한 네트워크 트래픽 및 컴퓨팅 로드밸런싱 기술 개발 프로젝트입니다. 차량, RSU, 클라우드 간 동적 오프로딩, 데이터 캐싱, 통합 최적화, 실시간 네트워크 상태 기반 정책 조정 등 다양한 기술을 통해 자율주행차의 안정적 서비스와 스마트 모빌리티 인프라 확장을 목표로 합니다."
+        ],
+        "outlineImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_multi_outline.png"
+        ]
+      },
+      "technicalBackground": {
+        "technicalBackgroundTitle": "• 기술적 배경",
+        "technicalBackgroundContents": [
+          "자율주행차의 상용화와 고도화가 진행됨에 따라, 차량 내부(OBU)와 외부(RSU, 클라우드) 간의 실시간 데이터 처리와 대용량 통신이 필수 요소로 자리잡고 있습니다. 그러나 기존 LTE/5G-V2X 표준은 주로 네트워크 자원 관리에 초점을 맞추고 있어, 컴퓨팅과 스토리지 자원 관리, 그리고 통합 로드밸런싱 기술은 아직 충분히 발전하지 못한 상황입니다. 이로 인해 실시간 차량 네트워크와 데이터 처리 요구, 무선 채널 환경 변화 등 다양한 요인으로 V2X 통신 네트워크와 컴퓨팅 로드의 불균일성이 발생하며, 이는 지연 증가와 패킷 전송 성공률 저하로 이어져 자율주행 서비스의 안정적인 제공을 어렵게 만듭니다.",
+          "따라서 완전자율주행(레벨4+) 실현을 위해서는 차량, 인프라, 클라우드 간의 협력적 데이터 처리와 네트워크·컴퓨팅·스토리지의 통합 로드밸런싱 기술이 반드시 필요합니다."
+        ]
+      },
+      "marketTrend": {
+        "marketTrendTitle": "• 시장 동향 및 필요성",
+        "marketTrendContents": [
+          "자율주행 및 스마트 모빌리티 시장은 빠르게 성장하고 있으며, 이에 따라 대규모 데이터 처리와 실시간 통신의 중요성도 점점 커지고 있습니다. 최근에는 국내외 완성차 및 부품사, 교통기관 등에서 자율주행 서비스와 통신 네트워크 통합 시뮬레이터, 그리고 로드밸런싱 기술에 대한 수요가 꾸준히 증가하고 있습니다. 더불어, 차세대 6G-V2X, AI 기반 자율주행, 디지털트윈 등과 같은 후속 연구와 산업적 확장 가능성도 크게 높아지고 있어, 관련 기술 개발과 표준화의 필요성이 더욱 강조되고 있습니다."
+        ]
+      },
+      "systemArchitecture": {
+        "systemArchitectureTitle": "• 시스템 아키텍처",
+        "systemArchitectureListHeader": "-",
+        "systemArchitectureContents": [
+          "VTD(Virtual Test Drive) 기반 차량 주행 시뮬레이션과 MATLAB 기반 네트워크·연산 모델과 연동",
+          "군집주행, 확장센서, 첨단주행 등 3GPP에서 정의되는 평가 환경 중 8가지 시나리오와 다양한 도로 환경(직진, 교차로, 합류 등) 구현",
+          "인천 청라지구 등 실제 도로환경 반영 대규모(OBU 400대 이상) 가상 테스트베드 구축"
+        ],
+        "systemArchitectureImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_multi_system.png"
+        ]
+      },
+      "colorBoxes": [
+        {
+          "boxColor": "#cc5268",
+          "layout": [[4, 4, 4]],
+          "boxes": [
+            {
+              "title": "• 핵심 기술",
+              "hyphen": "-",
+              "items": [
+                "차량, RSU, 클라우드 간 동적 오프로딩 및 데이터 캐싱 정책",
+                "네트워크/컴퓨팅/스토리지/서비스/차량 로드를 동시에 고려한 통합 최적화 기술",
+                "실시간 네트워크 상태와 차량 연산 자원 가용성에 따라 오프로딩 정책 동적 조정",
+                "DVFS(Dynamic Voltage and Frequency Scaling) 등 에너지 최적화 기법 적용",
+                "통합 시뮬레이터 개발 및 성능 검증",
+                "국제 표준화 기여(ITU-T, 3GPP 등), 오픈소스 SW 공개 및 산업계 협력"
+              ]
+            },
+            {
+              "title": "• 제공 서비스",
+              "hyphen": "-",
+              "items": [
+                "네트워크 로드밸런싱 알고리즘 및 통합 시뮬레이터 구축",
+                "실증 및 성능 검증 서비스",
+                "기술 확산 및 표준화 컨설팅",
+                "오픈소스 SW 및 산업계 협력 지원"
+              ]
+            },
+            {
+              "title": "• 기대 효과",
+              "hyphen": "-",
+              "items": [
+                "자율주행 및 V2X 통신 신뢰성·실시간성 향상",
+                "네트워크 혼잡 방지, 차량 전력 효율 극대화",
+                "실제 도로 테스트 없이 다양한 자율주행 시나리오 검증 가능",
+                "스마트 도시·교통 시스템 구축을 위한 핵심 인프라 기술 확보",
+                "E2E 지연 21.7% 개선, 서비스/차량 공평성 20% 이상 향상, 신뢰도 90.9% 달성",
+                "Uplink/Downlink/Sidelink 전송률 30~64% 이상 향상",
+                "SCIE 논문 16건, 특허 35건(출원), 1건(등록), 기술이전 2건, 시제품 2건"
+              ]
+            }
+          ]
+        }
+      ],
+      "relatedSoftware": {
+        "relatedSoftwareTitle": "• 관련 소프트웨어 (Software)",
+        "relatedSoftwareContents": "Virtual Test Drive - Full-Stack, PTV VISSIM Automotive, PTV Viswalk"
+      },
+      "frequentlyAskedQuestions": {
+        "frequentlyAskedQuestionsTitle": "• 자주 묻는 질문",
+        "frequentlyAskedQuestionsContents": [
+          {
+            "title": "Q1. 기존 V2X 통신과의 차별점은?",
+            "contents": " A. 네트워크·컴퓨팅·스토리지 통합 로드밸런싱 기술로 실시간성·신뢰성·에너지 효율을 동시에 확보합니다."
+          },
+          {
+            "title": "Q2. 실제 도로 환경에서도 적용 가능한가요?",
+            "contents": " A. 대규모 가상 테스트베드와 실도로 기반 테스트를 통해 상용화 연계가 가능합니다."
+          },
+          {
+            "title": "Q3. 산업계 협력 및 기술 확산은 어떻게 이루어지나요?",
+            "contents": " A. 국제 표준화 기여, 오픈소스 SW 공개, 산업계 협력 프로젝트를 통해 확산됩니다."
+          }
+        ]
+      }
+    },
+    "aiDrivingAbilityTest": {
+      "outline": {
+        "outlineTitle": "• 개요",
+        "outlineContents": [
+          "도로교통법 기반의 자율주행차 안전운전능력 평가체계 및 표준화, 평가 시나리오 개발, 평가 플랫폼 구축, 실증 및 실도로 평가사업 연계를 목표로 하는 프로젝트입니다.",
+          "한국도로교통공단 주관으로 대학·기업·지자체 등 산학연 협력 체계를 통해, 국민이 안심하고 자율주행차를 이용할 수 있도록 평가 기준을 마련하고, 실도로 적용 가능한 평가 시스템을 개발하였습니다."
+        ],
+        "outlineImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_evaluation_outline.png"
+        ]
+      },
+      "technicalBackground": {
+        "technicalBackgroundTitle": "• 기술적 배경",
+        "technicalBackgroundContents": [
+          "자율주행차 기술이 빠르게 발전하면서, 기존의 차량 성능 위주 평가체계로는 실제 도로에서의 안전운전능력을 충분히 검증하기 어렵다는 한계가 드러났습니다.",
+          "특히, 자율주행차가 도로교통법을 얼마나 잘 준수하는지, 실제 교통사고를 예방할 수 있는지에 대한 체계적인 평가 기준이 부재했습니다.",
+          "이에 따라 국민이 안심하고 자율주행차를 이용할 수 있도록, 도로교통법 기반의 운전능력 평가체계 표준화와 실도로 적용 가능한 평가 시스템 개발의 필요성이 대두되었습니다.",
+          "국제적으로도 자율주행차 운전면허제도, 안전성 검증, 법제도 개선 논의가 활발히 이루어지고 있어, 국내에서도 이에 부합하는 평가체계 마련이 시급합니다."
+        ]
+      },
+      "marketTrend": {
+        "marketTrendTitle": "• 시장 동향 및 필요성",
+        "marketTrendContents": [
+          "자율주행차의 상용화와 안전성 확보를 위한 평가 기준 및 법제도 개선이 전 세계적으로 요구되고 있습니다.",
+          "국내외에서 자율주행차 운전면허제도, 안전성 검증, 법제도 개선 논의가 활발히 이루어지고 있으며, 국민 수용성 확대와 관련 산업 활성화를 위해 평가체계의 표준화가 필수적입니다."
+        ]
+      },
+      "systemArchitecture": {
+        "systemArchitectureTitle": "• 시스템 아키텍처",
+        "systemArchitectureListHeader": "-",
+        "systemArchitectureContents": [
+          "도로교통법 및 교통사고 데이터를 기반으로 21개 중분류, 129개 세분류 평가항목 도출",
+          "실제 교통사고 데이터와 도로교통법을 반영한 단일/복합 평가 시나리오 42종 설계",
+          "가상환경(VTD 등)과 실차(차대동력계, 센서 인터페이스 등) 연동",
+          "시나리오 자동생성 시스템, 실시간 평가툴, 보고서 자동생성 기능 구현",
+          "국제 표준(ASAM OpenX, ISO 23150 등) 기반 센서 데이터 인터페이스 및 평가시스템 표준화 추진"
+        ],
+        "systemArchitectureImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_evaluation_system.png"
+        ]
+      },
+      "colorBoxes": [
+        {
+          "boxColor": "#cc5268",
+          "layout": [[6, 6], [12]],
+          "boxes": [
+            {
+              "title": "• 핵심 기술",
+              "hyphen": "-",
+              "items": [
+                "도로교통법 기반 평가항목 및 시나리오 개발",
+                "가상환경 및 실차 연동 평가 플랫폼 구축",
+                "시나리오 자동생성 및 실시간 자율주행 능력 평가 및 자동 리포트기능 개발",
+                "데이터 연동 및 실시간 평가 검증",
+                "법제도 개선 및 국제 표준 연계(ASAM OpenX, ISO 23150 등)"
+              ]
+            },
+            {
+              "title": "• 제공 서비스",
+              "hyphen": "-",
+              "items": [
+                "자율주행차 안전운전능력 평가체계 및 표준화 컨설팅",
+                "평가 시나리오 개발 및 적용",
+                "평가 플랫폼 구축 및 실증",
+                "법제도 개선 및 국제 표준화 지원"
+              ]
+            },
+            {
+              "title": "• 기대 효과",
+              "hyphen": "-",
+              "items": [
+                "도로교통법 기반 자율주행차 운전능력 평가 프로세스 및 항목 표준화",
+                "실제 사고데이터와 법규를 반영한 단일/복합 시나리오 42종 개발",
+                "가상환경 및 실차 연동 평가 시스템, 시나리오 자동생성 및 실시간 평가툴 구축",
+                "실증(가상환경/실차) 및 실도로 평가사업과의 연계 방안 마련",
+                "자율주행차 운행허가, 원격운영자, 지정운행구역 등 도로교통법 개정안 초안 제시",
+                "ASAM OpenX, ISO 23150 등 국제 표준 기반의 센서 데이터 인터페이스 및 평가시스템 표준화 추진",
+                "논문, 특허, 저작권, 소프트웨어 등 다수 성과 도출, 단체표준 제정 추진",
+                "자율주행차 안전운전능력 평가체계의 표준화, 국민 수용성 확대, 관련 산업 활성화, 실도로 평가사업과의 연계, 국제 경쟁력 강화"
+              ]
+            }
+          ]
+        }
+      ],
+      "relatedSoftware": {
+        "relatedSoftwareTitle": "• 관련 소프트웨어 (Software)",
+        "relatedSoftwareContents": "Virtual Test Drive - Full-Stack, PTV VISSIM Automotive, PTV Viswalk, Dymola, VehicleDynamics(Modelon), VeSyMa(Claytex)"
+      },
+      "frequentlyAskedQuestions": {
+        "frequentlyAskedQuestionsTitle": "• 자주 묻는 질문",
+        "frequentlyAskedQuestionsContents": [
+          {
+            "title": "Q1. 기존 차량 성능 평가와의 차이점은?",
+            "contents": " A. 도로교통법 기반의 안전운전능력 평가체계와 실제 사고데이터를 반영한 시나리오를 통해 실도로에서의 안전성을 검증합니다."
+          },
+          {
+            "title": "Q2. 실차와 가상환경 모두 평가가 가능한가요?",
+            "contents": " A. 네, 가상환경(VTD 등)과 실차(차대동력계, 센서 인터페이스 등) 연동 평가가 모두 가능합니다."
+          },
+          {
+            "title": "Q3. 국제 표준화와 연계가 되나요?",
+            "contents": " A. ASAM OpenX, ISO 23150 등 국제 표준 기반의 센서 데이터 인터페이스 및 평가시스템 표준화가 추진됩니다."
+          }
+        ]
+      }
+    },
+    "virtualDurability": {
+      "outline": {
+        "outlineTitle": "• 개요",
+        "outlineContents": [
+          "본 프로젝트는 CAT 기반의 차량 모델 검증 통합 환경을 구축하여, 실차 계측 데이터와 모델 예측 결과 간의 정합성을 확보하고, 다양한 차량 조건과 시나리오에 대한 예측 분석이 가능한 가상 시험 기반의 내구 주행 기술을 개발하는 것을 목표로 합니다.",
+          "이를 통해 내구 시험, 조향 및 제동 응답, 부품 하중 예측 등 다양한 동역학적 특성을 정밀하게 분석할 수 있는 통합 모델링 환경을 제공합니다."
+        ]
+      },
+      "technicalBackground": {
+        "technicalBackgroundTitle": "• 기술적 배경",
+        "technicalBackgroundContents": [
+          "현대 자동차 개발 과정에서는 실차 시험에 소요되는 시간과 비용을 줄이고, 다양한 차량 조건과 시나리오에 대한 예측 분석을 가능하게 하는 가상 시험 기반의 차량 모델 검증 환경이 요구되고 있습니다. 특히 내구 시험, 조향 및 제동 응답, 부품 하중 예측 등 다양한 동역학적 특성을 정밀하게 분석할 수 있는 통합 모델링 환경이 필요합니다.",
+          "이에 따라 본 프로젝트는 실차 계측 데이터와 모델 예측 결과 간의 정합성을 확보함으로써, 향후 다양한 차량 개발에 활용 가능한 플랫폼을 마련하고자 추진되었습니다."
+        ]
+      },
+      "marketTrend": {
+        "marketTrendTitle": "• 시장 동향 및 필요성",
+        "marketTrendContents": [
+          "자동차 산업에서는 개발 기간 단축과 비용 절감, 그리고 다양한 차량 조건에 대한 신속한 대응이 중요한 과제로 부상하고 있습니다.",
+          "가상 시험 기반의 내구 주행 기술은 실제 도로 시험의 한계를 극복하고, 다양한 시나리오와 환경에서의 차량 성능을 사전에 검증할 수 있어, 완성차 및 부품사의 경쟁력 강화와 시장 대응력 향상에 필수적인 기술로 주목받고 있습니다."
+        ]
+      },
+      "systemArchitecture": {
+        "systemArchitectureTitle": "• 시스템 아키텍처",
+        "systemArchitectureListHeader": "-",
+        "systemArchitectureContents": [
+          "실차 계측, 차량 모델링, 통합 환경 구축의 3단계로 구성",
+          "Electricity Town, Electric PE, 저상 광역 버스, 이층 전기 버스, GZ 독립 현가 등 다양한 차종을 대상으로 한 동역학 모델 구축",
+          "차량 동역학 모델, OpenCRG 기반 노면 모델, F-Tire 타이어 모델, 운전자 모델을 통합한 VPG(Virtual Proving Ground) 환경",
+          "Virtual Test Laboratory(VTL)를 활용한 계측 기반 Drive Signal 생성 및 입력, 시계열 정합성 확보",
+          "Rainflow Counting 및 Cumulative Damage 분석을 통한 부품 하중 및 차량 응답 특성 정량적 평가"
+        ],
+        "systemArchitectureImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_virtual_system.png"
+        ]
+      },
+      "colorBoxes": [
+        {
+          "boxColor": "#cc5268",
+          "layout": [[6, 6], [12]],
+          "boxes": [
+            {
+              "title": "• 핵심 기술",
+              "hyphen": "-",
+              "items": [
+                "실차 계측 데이터 기반 차량 동역학 모델링",
+                "집중 질량 모델 및 계측 기반 무게 중심 튜닝",
+                "모듈화 방식의 모델 설계로 다양한 조합 및 시나리오 적용 가능",
+                "VPG 환경에서의 미계측 채널(속도, 가속도, 위치 등) 예측",
+                "Rainflow Counting, Cumulative Damage 분석",
+                "Virtual Test Laboratory 기반 Drive Signal 생성 및 입력",
+                "타이어 모델 차이에 따른 Damage 오차 분석 및 고정도 타이어 모델 개발"
+              ]
+            },
+            {
+              "title": "• 제공 서비스",
+              "hyphen": "-",
+              "items": [
+                "가상내구 시험 환경 구축 및 컨설팅",
+                "실차 계측 데이터 기반 차량 모델링 및 검증",
+                "내구 시험 시나리오 설계 및 분석",
+                "부품 하중 예측 및 내구성 평가",
+                "기술적 시사점 및 후속 연구 지원"
+              ]
+            },
+            {
+              "title": "• 기대 효과",
+              "hyphen": "-",
+              "subSections": [
+                {
+                  "title": "[ 실차 계측 결과와 모델 예측 결과 간 정합성 확보 ]",
+                  "items": [
+                    "Steady State Response에서 최대 오차율 11% 이하",
+                    "제동 시 Rear Upper Rod 좌우 하중 Phase 역전 현상 확인",
+                    "VPG 기반 계측 대비 Damage 비교 수행",
+                    "VTL 기반 계측 대비 Damage 비교 수행"
+                  ]
+                },
+                {
+                  "title": "[ 내구 시험 결과 ]",
+                  "items": [
+                    "각 적재 조건 및 노면 조건에 따른 VPG 수행 완료",
+                    "채널 수: Eleccity Town 125ch, PE 140ch, 저상 광역 버스 180ch, 이층 전기 버스 220ch, GZ 독립 현가 180ch"
+                  ]
+                },
+                {
+                  "title": "[ Virtual Test Laboratory 결과 ]",
+                  "items": [
+                    "Drive Signal 생성 및 입력을 통한 시계열 정합성 확보",
+                    "각 부품에 대한 Damage 예측 신뢰성 향상",
+                    "Iteration 수행 시 추가 신뢰성 확보 가능"
+                  ]
+                },
+                {
+                  "title": "[ 기술적 시사점 ]",
+                  "items": [
+                    "VPG 환경을 통해 미계측 채널(속도, 가속도, 위치 등) 예측 가능",
+                    "차량 기하학적 형상, 물성치, 부품 특성 변경에 따른 차량 거동 예측 가능",
+                    "타이어 모델 차이에 따른 Damage 오차 발생 → 고정도 타이어 모델 개발 필요",
+                    "향후 Hybrid Test Track 및 추가 시나리오 분석 예정"
+                  ]
+                }
+              ],
+              "subSectionColumns": {
+                "xs": 12,
+                "sm": 6
+              }
+            }
+          ]
+        }
+      ],
+      "relatedSoftware": {
+        "relatedSoftwareTitle": "• 관련 소프트웨어 (Software)",
+        "relatedSoftwareContents": "Dymola(Dassault), Battery(Dassault), Flexible Body(DLR), VeSyMa(Claytex), VeSyMa – Suspension(Claytex), VeSyMa – Powertrain(Claytex), VehicleDynamics(Modelon), Electrification(Modelon), openCRG"
+      },
+      "frequentlyAskedQuestions": {
+        "frequentlyAskedQuestionsTitle": "• 자주 묻는 질문",
+        "frequentlyAskedQuestionsContents": [
+          {
+            "title": "Q1. 실차 시험 없이도 내구성 평가가 가능한가요?",
+            "contents": " A. 네, 실차 계측 데이터와 가상환경 모델링을 결합하여 다양한 조건에서 내구성 평가가 가능합니다."
+          },
+          {
+            "title": "Q2. 다양한 차종과 시나리오에 적용할 수 있나요?",
+            "contents": " A. 네, 모듈화된 모델 설계로 다양한 차종과 시나리오에 유연하게 적용할 수 있습니다."
+          },
+          {
+            "title": "Q3. 실제 도로 환경과의 정합성은 어떻게 확보하나요?",
+            "contents": " A. 계측 기반 Drive Signal과 시계열 정합성 확보, 반복적 Iteration을 통해 신뢰성을 높입니다."
+          }
+        ]
+      }
+    },
+    "suspensionEquipment": {
+      "outline": {
+        "outlineTitle": "• 개요",
+        "outlineContents": [
+          "본 프로젝트는 클라우드 기반 해석 시스템의 활용도 증가에 대응하여, 다양한 차량 모델에 대한 해석 정확도 향상과 사용자 편의성 증대를 목표로 하였습니다.",
+          "신규 현가 및 샤시 모델 추가, GUI 개선, 보안 기능 강화 등을 통해 해석 시스템의 범용성과 신뢰성을 높이고, 사용자 경험을 혁신적으로 개선하였습니다."
+        ],
+        "outlineImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_suspension_outline.png"
+        ]
+      },
+      "technicalBackground": {
+        "technicalBackgroundTitle": "• 기술적 배경",
+        "technicalBackgroundContents": [
+          "기존 해석 시스템은 일부 모델에만 제한적으로 적용되었으며, 보안성과 데이터 접근 제어 기능이 미흡하였습니다. 자동차 산업의 디지털 전환과 클라우드 기반 해석 시스템의 확산에 따라, 다양한 차량 모델에 대한 신속하고 정확한 해석, 그리고 사용자별 데이터 보안 및 접근 제어가 필수적으로 요구되고 있습니다.",
+          "이에 따라 본 프로젝트는 신규 모델 추가, GUI 개선, 보안성 강화, 파일 및 코드 표준화 등 전방위적 업그레이드를 추진하였습니다."
+        ]
+      },
+      "marketTrend": {
+        "marketTrendTitle": "• 시장 동향 및 필요성",
+        "marketTrendContents": [
+          "차량 개발의 복잡성 증가와 맞춤형 해석 수요 확대에 따라, 다양한 차종과 부품에 대한 신속한 해석 및 시뮬레이션이 필수적입니다.",
+          "클라우드 기반 해석 시스템은 협업 효율성, 데이터 보안, 접근성 측면에서 산업계의 표준으로 자리잡고 있으며, 사용자 편의성과 데이터 신뢰성 확보가 경쟁력의 핵심이 되고 있습니다."
+        ]
+      },
+      "systemArchitecture": {
+        "systemArchitectureTitle": "• 시스템 아키텍처",
+        "systemArchitectureListHeader": "-",
+        "systemArchitectureContents": [
+          "신규 현가 모델 6종 및 샤시 모델 3종 추가(저상 광역 버스, 이층 전기 버스, 고상 버스)",
+          "FMU 생성 및 VPEC GUI에 통합",
+          "각 모델별 Hardpoint 및 Parameter 정의, Kinematic/Static 해석 수행",
+          "Dymola와 VPEC 간 해석 결과 비교를 통한 모델 검증",
+          "Suspension/Chassis 모델에 대한 GUI 구성, Geometry Name 규칙화, 이미지 매칭",
+          "PI 및 그래프 출력 기능 추가(K&C, Static, R&H 해석 포함)",
+          "사용자 권한 기반 데이터 접근 제어, FCEV 데이터 접근 권한 분리, 프로젝트 생성 제한",
+          "로그인 실패 시 계정 잠금, 세션 타임아웃, 표준화된 로그 정책 기반 권한 변경 및 사용 이력 추적",
+          "Hardpoint/Component naming 규칙화, Sensor Type/Channel name 표준화, Static 해석 라벨 및 GUI 코드 최적화"
+        ],
+        "systemArchitectureImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_suspension_system_first.png",
+          "/images/pages/solution/mobility/solution_mobility_suspension_system_second.png"
+        ]
+      },
+      "colorBoxes": [
+        {
+          "boxColor": "#cc5268",
+          "layout": [[4, 4, 4]],
+          "boxes": [
+            {
+              "title": "• 핵심 기술",
+              "hyphen": "-",
+              "items": [
+                "다양한 차량 모델(현가 6종, 샤시 3종) 추가 및 FMU 통합",
+                "Dymola-VPEC 해석 결과 비교 기반 모델 정확도 검증",
+                "GUI 구성 자동화 및 사용자 경험 개선",
+                "데이터 접근 제어 및 보안 기능 강화",
+                "파일 구조 및 코드 표준화"
+              ]
+            },
+            {
+              "title": "• 제공 서비스",
+              "hyphen": "-",
+              "items": [
+                "클라우드 기반 해석 시스템 구축 및 컨설팅",
+                "신규 차량 모델 및 부품 해석 지원",
+                "사용자 맞춤형 GUI 제공",
+                "데이터 보안 및 접근 제어 컨설팅",
+                "해석 결과 검증 및 기술 지원"
+              ]
+            },
+            {
+              "title": "• 기대 효과",
+              "hyphen": "-",
+              "items": [
+                "신규 현가 모델 6종, 샤시 모델 3종 개발 및 VPEC 반영",
+                "Dymola vs VPEC 해석 결과 비교를 통한 모델 정확도 검증",
+                "GUI 구성 시간 단축 및 사용자 편의성 향상",
+                "FCEV 데이터 접근 제어 기능 구현",
+                "로그인 실패 제한 및 세션 타임아웃 기능 적용",
+                "로그 추적 기능으로 보안성 강화",
+                "파일 구조 및 코드 규칙화로 데이터 정합성 확보"
+              ]
+            }
+          ]
+        }
+      ],
+      "relatedSoftware": {
+        "relatedSoftwareTitle": "• 관련 소프트웨어 (Software)",
+        "relatedSoftwareContents": "Dymola(Dassault), Battery(Dassault), Flexible Body(DLR), VeSyMa(Claytex), VeSyMa – Suspension(Claytex), VeSyMa – Powertrain(Claytex), VehicleDynamics(Modelon), Electrification(Modelon)"
+      },
+      "frequentlyAskedQuestions": {
+        "frequentlyAskedQuestionsTitle": "• 자주 묻는 질문",
+        "frequentlyAskedQuestionsContents": [
+          {
+            "title": "Q1. 기존 해석 시스템과의 차별점은?",
+            "contents": " A. 다양한 차량 모델 지원, GUI 자동화, 데이터 보안 강화 등으로 범용성과 신뢰성을 크게 높였습니다."
+          },
+          {
+            "title": "Q2. 사용자별 데이터 접근 제어가 가능한가요?",
+            "contents": " A. 네, 권한 기반 접근 제어와 프로젝트별 데이터 분리로 보안성을 강화하였습니다."
+          },
+          {
+            "title": "Q3. 해석 결과 검증은 어떻게 이루어지나요?",
+            "contents": " A. Dymola와 VPEC 간 해석 결과 비교 및 표준화된 검증 프로세스를 통해 신뢰성을 확보합니다."
+          }
+        ]
+      }
+    },
+    "EV": {
+      "outline": {
+        "outlineTitle": "• 개요",
+        "outlineContents": [
+          "전기차(EV)는 열관리 대상 부품은 내연기관 차량에 비해 훨씬 다양하고 복잡합니다. 특히 배터리는 운용 온도를 정밀하게 제어해야만 최적의 성능을 확보할 뿐만 아니라 안전성까지 보장할 수 있습니다. 구동계 부품과 전장 부품의 열관리도 배터리 못지않게 중요합니다. 고전압의 배터리를 운용할 때 많은 열이 발생하며 이를 효과적으로 배출해주는 역할도 EV의 열관리 설계 기술의 필수적인 부분입니다.",
+          "차량 구동에 필요한 열관리 기능만 충족한다고 해서 충분하지 않습니다. 냉난방 부하(HVAC)와 같은 승차 환경 관련 변수도 고려해야 합니다. 결국, 다양한 부품과 시스템 간의 상호작용을 종합적으로 분석하고, 이를 통해 효율과 안전성을 동시에 달성할 수 있는 열관리 전략을 수립하는 것이 핵심입니다. 이러한 복잡한 요구사항을 충족하는 가장 효과적인 접근 방식은 모델 기반 설계이며, 이는 다양한 운용 환경과 시나리오에 유연하게 대응할 수 있는 열관리 아키텍처 구축에 기여합니다."
+        ],
+        "outlineImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_EV_outline.png"
+        ],
+        "outlineImgText": "< EV 열관리 시스템 MBSE 아키텍처 >"
+      },
+      "technicalBackground": {
+        "technicalBackgroundTitle": "• 기술적 배경",
+        "technicalBackgroundContents": [
+          "EV는 기존 내연기관 차량보다 열 관리를 정밀하게 수행해야 합니다. 이는 곧 차량 내 주요 부품의 온도를 능동적(Active)이고 적극적(Proactive)으로 제어해야 함을 의미합니다. 이를 위해 다양한 메커니즘의 냉각 및 열 제어 방식이 도입될 수 있으며, 차량의 운용 목적과 환경 조건에 따라 적용 가능한 열관리 아키텍처의 선택 범위 역시 넓어졌습니다.",
+          "따라서, 복수의 아키텍처 중에서 가장 적합한 구성을 선택하고 이를 최적화하는 기술이 핵심 과제로 부각되고 있습니다. 전통적인 개발 방식으로는 이러한 방대한 설계 공간을 모두 실험하고 검증하기 어렵습니다. 물리적 테스트에는 막대한 시간과 비용이 소요될 뿐 아니라, 모든 시나리오에 대해 최적의 대응이 가능하다고 보장할 수도 없습니다.",
+          "이러한 한계를 극복하기 위해 도입되는 것이 바로 모델 기반 아키텍처링 설계입니다. 이 접근법은 다양한 시나리오와 환경 조건을 가상으로 재현하고, 시스템 차원의 상호작용을 효율적으로 분석함으로써 EV 열관리 아키텍처 최적화에 기여합니다."
+        ]
+      },
+      "marketTrend": {
+        "marketTrendTitle": "• 시장 동향 및 필요성",
+        "marketTrendContents": [
+          "전기차(EV)는 이미 전 세계적으로 활발하게 개발되고 있으며, 이는 배출가스 규제 강화, 에너지 전환 정책, 소비자들의 친환경 차량 수요 확대 등 복합적인 요인에 기인합니다. 시장 수요는 단기간에 폭발적으로 증가하는 양상이라기보다는 안정적인 상승세를 보이고 있으며, 특히 연간 출하량과 신규 등록 대수는 꾸준히 증가하는 추세입니다.",
+          "EV 열관리 기술은 단순히 차량의 보조 시스템이 아니라, 급변하는 시장 환경과 정책적 요구에 대응할 수 있는 핵심 경쟁 요소로 자리 잡고 있으며, 향후 EV 개발과 보급 확대에 있어 반드시 선행되어야 할 기술적 기반이라 할 수 있습니다."
+        ]
+      },
+      "systemArchitecture": {
+        "systemArchitectureTitle": "• 시스템 아키텍처",
+        "systemArchitectureListHeader": "-",
+        "systemArchitectureContents": [
+          "A. 컨셉 및 설계",
+          "EV 컨셉 모델 정의 및 전체 열관리 요구사항 반영",
+          "컨셉 모델별 열부하 특성에 따른 최적화된 열관리 아키텍처 구성",
+          "B. 부품 모델링",
+          "펌프, 라디에이터, 밸브 등 주요 열관리 부품의 물리 기반 모델 구현",
+          "C. 시스템 통합 및 최적화",
+          "모델링된 부품을 시스템 모델에 통합하고 다양한 운전 시나리오 검증",
+          "성능, 원가, 에너지 효율 등을 목적함수로 설정한 아키텍처 최적화",
+          "D. 제어기 구현 및 검증",
+          "제어 알고리즘이 탑재된 제어기를 포함한 HW–SW 통합 아키텍처 설계",
+          "HW 성능 검증 이후 제어 성능 및 타 제어기와의 연계 제어 검증",
+          "MILS(Model in the Loop Simulation)를 통한 제어 로직 모델과 시스템 모델 연동 기반 소프트웨어 검증",
+          "SILS(Software in the Loop Simulation)를 통한 실제 제어기에 로직 코드 적용 및 시스템 모델 상호작용 검증",
+          "HILS(Hardware in the Loop Simulation)를 통한 제어기 하드웨어와 실제 시스템 연계 기반 실시간 성능 검증"
+        ],
+        "systemArchitectureImgUrl": [
+          "/images/pages/solution/mobility/solution_mobility_EV_system.png"
+        ],
+        "systemArchitectureImgText": "< V-Cycle Based Development Process >"
+      },
+      "colorBoxes": [
+        {
+          "boxColor": "#cc5268",
+          "layout": [[12], [6, 6]],
+          "boxes": [
+            {
+              "title": "• 핵심 기술",
+              "hyphen": "-",
+              "items": [
+                "EV 열관리 시스템 컨셉 모델 설계",
+                "열관리 시스템 솔루션에 대한 종합 설계 역량",
+                "시스템 아키텍처 모델링 및 최적 설계",
+                "단위 부품의 상세 물리 기반 모델링 기술",
+                "MILS, SILS, HILS 기반 테스트 시나리오 설계 및 검증 기술",
+                "열관리 시스템 제어 로직 설계 기술",
+                "임베디드 시스템 HW/SW 설계 기술",
+                "임베디드 시스템과 시뮬레이션 소프트웨어 간 통신 및 연동 기술",
+                "차량 ECU 개발 프로세스 관련 노하우 및 실무 경험"
+              ],
+              "images": [
+                {
+                  "src": "/images/pages/solution/mobility/solution_mobility_EV_box_first.png",
+                  "width": "300px",
+                  "height": "300px"
+                },
+                {
+                  "src": "/images/pages/solution/mobility/solution_mobility_EV_box_second.jpg",
+                  "width": "300px",
+                  "height": "300px"
+                }
+              ],
+              "imagePosition": "right",
+              "contentLayout": "horizontal",
+              "imageLayout": "row"
+            },
+            {
+              "title": "• 제공 서비스",
+              "hyphen": "-",
+              "subSections": [
+                {
+                  "title": "A. 설계 및 컨설팅 서비스",
+                  "items": [
+                    "EV 열관리 시스템 컨셉 모델 설계 및 최적화 컨설팅",
+                    "고객 차량/부품 특성 기반 맞춤형 시스템 구성 전략 제안"
+                  ]
+                },
+                {
+                  "title": "B. 모델링 및 시뮬레이션 서비스",
+                  "items": [
+                    "단위 부품 및 시스템 레벨 물리 기반 모델링",
+                    "MILS, SILS, HILS 기반 성능 검증 및 시뮬레이션",
+                    "다양한 운전/환경 조건 시나리오 적용 및 최적화 검증"
+                  ]
+                },
+                {
+                  "title": "C. 제어기 및 임베디드 솔루션",
+                  "items": [
+                    "열관리 제어 로직 설계 및 제어기 프로토타입 제작",
+                    "HW/SW 통합 설계 및 실시간 검증 지원"
+                  ]
+                }
+              ],
+              "subSectionColumns": {
+                "xs": 12
+              }
+            },
+            {
+              "title": "• 기대 효과",
+              "hyphen": "-",
+              "items": [
+                "배터리, 연료전지, 구동부, 전장 부품 등 핵심 부품의 최적 온도 운용으로 성능 극대화",
+                "극한 온도 환경에서의 안정적 운용 및 장기 내구성 확보",
+                "모델 기반 설계와 시뮬레이션 검증으로 시험·테스트 반복 최소화",
+                "설계 최적화 및 아키텍처 검증을 통해 개발 기간 단축",
+                "냉각·예열 부하 최소화 및 HVAC 연계 운용으로 차량 에너지 소비 절감",
+                "주행거리 향상 및 시스템 열손실 최소화",
+                "MILS/SILS/HILS 기반 검증으로 제어 로직과 시스템 상호작용 신뢰성 확보"
+              ]
+            }
+          ]
+        }
+      ],
+      "relatedSoftware": {
+        "relatedSoftwareTitle": "• 관련 소프트웨어 (Software)",
+        "relatedSoftwareContents": "Dymola(Dassault), Dymola Embedded(Dassault), Hydrogen(Dassault), Battery(Dassault), Flexible Body(DLR), ElectrifiedPowertrain(Dassault), VeSyMa – Suspension(Claytex), VeSyMa – Powertrain(Claytex), Air Conditioning(Modelon), Heat Exchanger(Modelon), Fuel Cell(Modelon), VehicleDynamics(Modelon), Electrification(Modelon), Hydrogen(Dassault), TIL(Dassault), HVAC(XRG), Device Drivers, State Graph"
+      },
+      "frequentlyAskedQuestions": {
+        "frequentlyAskedQuestionsTitle": "• 자주 묻는 질문",
+        "frequentlyAskedQuestionsContents": [
+          {
+            "title": "Q1. 모델 기반 설계가 반드시 필요한가요?",
+            "contents": " A. 경험 기반 설계도 가능하지만, 모델 기반 설계를 적용하면 다양한 운전 조건과 운용 시나리오에서 열관리 아키텍처를 신속하고 체계적으로 검증할 수 있어 설계 최적화 과정의 효율성이 극대화됩니다. 이를 통해 개발 소요 시간과 투입 자원을 획기적으로 절감할 수 있으며, 다수의 시스템을 다양한 운용 조건에서 사전 평가할 수 있어 설계 초기 단계에서의 예기치 않은 변수 발생 가능성을 최소화할 수 있습니다."
+          },
+          {
+            "title": "Q2. 실제 제어기와 가상의 시스템 모델은 어떻게 연동되나요?",
+            "contents": " A. MILS, SILS, HILS 검증은 단계적으로 하드웨어 시스템 검증에 접근하기 위해 순차적으로 수행됩니다. 제어기와 가상의 시스템 모델을 연동하는 SILS는 실제 제어기 하드웨어와 소프트웨어 간 실시간 통신 인터페이스를 구현하는 것이 필요합니다. Dymola의 Device Drivers 라이브러리를 활용하면, 차량 내 표준 CAN 통신뿐 아니라 고속 데이터 전송을 지원하는 이더넷 통신과도 연동이 가능하여, Dymola 기반 시스템 모델은 대부분의 임베디드 하드웨어 플랫폼과 호환됩니다."
+          },
+          {
+            "title": "Q3. 개발 기간과 비용 절감은 어떻게 이루어지나요?",
+            "contents": " A. 시뮬레이션 기반 검증과 통합 아키텍처 설계를 통해 반복적인 시험·테스트 수행을 최소화하고, 최적화된 설계를 적용함으로써 개발 기간과 프로젝트 비용을 효율적으로 절감할 수 있습니다. 구체적으로는 개발 기간 단축에 따른 인건비, 유지보수 비용, 개별 테스트 케이스 수행 시 발생하는 제반 비용이 주요 절감 항목입니다."
+          }
+        ]
+      }
+    }
+  },
+  "aiInnovationHub": {
+    "aiPlatformBuild": {
+      "aiPlatformBuildTitle": "• AI 플랫폼 구축",
+      "aiPlatformBuildContents": "AI Innovation Hub는 회사 전반의 기술 활용을 가능하게 하는 공통 인프라와 API 기반의 AI 서비스 플랫폼을 설계하고 운영합니다. 이 플랫폼은 다양한 부서와 제품이 AI 기능을 손쉽게 통합할 수 있도록 지원하며, 확장성과 안정성을 고려한 아키텍처를 기반으로 구축됩니다. 또한, 데이터 수집부터 모델 배포까지의 전 과정을 자동화하는 MLOps 환경을 제공하여, AI 개발의 효율성과 품질을 동시에 확보합니다."
+    },
+    "coreAITechResearch": {
+      "coreAITechResearchTitle": "• 핵심 AI 기술 연구",
+      "coreAITechResearchContents": [
+        "우리는 자연어 처리(NLP), 컴퓨터 비전(CV), 음성 인식, 추천 시스템, 생성형 AI 등 다양한 분야의 최첨단 AI 기술을 연구하고 실제 제품에 적용합니다.",
+        "또한 Modelica 기반의 디지털 트윈과 AI를 연동하는 기술을 연구하여, 물리 기반 시뮬레이션과 데이터 기반 모델을 결합한 지능형 시스템 최적화를 구현합니다.",
+        "내부 서비스뿐만 아니라 고객 경험을 향상시키기 위한 AI 기능을 개발하며, 최신 논문과 글로벌 기술 트렌드를 반영한 자체 모델 개발 및 최적화를 수행합니다.",
+        "더 나아가, 멀티모달 AI, 대규모 언어 모델(LLM), 에이전트 기반 시스템 등 차세대 기술에 대한 선행 연구도 지속적으로 진행합니다."
+      ]
+    },
+    "techInternalizationAndOrgSupport": {
+      "techInternalizationAndOrgSupportTitle": "• 기술 내재화 및 조직 지원",
+      "techInternalizationAndOrgSupportContents": [
+        "AI Innovation Hub는 기술을 특정 팀에 국한시키지 않고, 전사적으로 확산시키는 것을 목표로 합니다.",
+        "이를 위해 타 부서가 AI를 쉽게 이해하고 활용할 수 있도록 기술 교육, PoC(개념 검증) 지원, 공통 라이브러리 및 툴킷 제공 등의 활동을 수행합니다.",
+        "또한, 프로젝트 초기 단계부터 기술 컨설팅을 제공하여, 각 부서의 비즈니스 목표에 맞는 AI 솔루션을 함께 설계합니다."
+      ]
+    },
+    "responsibleAIDevelopment": {
+      "responsibleAIDevelopmentTitle": "• 책임 있는 AI 개발",
+      "responsibleAIDevelopmentContents": [
+        "AI 기술의 발전과 함께 윤리적 책임도 중요해지고 있습니다.AI Innovation Hub는 공정하고 투명한 기술 개발을 위해 AI 윤리 기준을 수립하고, Explainable AI(XAI), Bias 검출, 데이터 프라이버시 보호 기술을 적극적으로 도입합니다.",
+        "이를 통해 사용자와 사회에 신뢰받는 기술을 제공하며, 규제 대응 및 지속 가능한 기술 운영을 위한 기반을 마련합니다."
+      ]
+    },
+    "globalTechTrendHandle": {
+      "globalTechTrendHandleTitle": "• 글로벌 기술 트렌트 대응",
+      "globalTechTrendHandleContents": [
+        "AI Innovation Hub는 빠르게 변화하는 글로벌 AI 생태계를 면밀히 분석하고, 이를 회사의 기술 전략에 반영합니다.",
+        "오픈소스 커뮤니티, 주요 학회, 산업 동향 등을 지속적으로 모니터링하며, 기술 도입 시기와 방향성을 전략적으로 결정합니다.",
+        "또한, 외부 파트너와의 협업을 통해 기술 경쟁력을 강화하고, 글로벌 수준의 기술력을 확보하는 데 주력합니다."
+      ]
+    },
+    "colorBoxes": [
+      {
+        "boxColor": "#0095d7",
+        "layout": [[12]],
+        "boxes": [
+          {
+            "title": "• 우리의 비전",
+            "hyphen": "",
+            "items": [
+              "\"AI Innovation Hub는 기술을 넘어, 회사의 미래를 설계합니다. 우리는 AI를 통해 더 나은 사용자 경험과 지속 가능한 성장을 만들어갑니다.\""
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

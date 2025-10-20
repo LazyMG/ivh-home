@@ -9,6 +9,8 @@ import Calendar from "./pages/Calendar";
 import SmartFactory from "./pages/solution/SmartFactory";
 import { ThemeProvider } from "@mui/material";
 import theme from "./types/theme";
+import Mobility from "./pages/solution/Mobility";
+import AIInnovation from "./pages/solution/AIInnovation";
 
 function App() {
   return (
@@ -18,9 +20,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/solution" element={<Solution />} />
           <Route path="/solution/energy" element={<Energy />} />
-          <Route path="/solution/home-appliance" element={<HomeAppliance />} />
+          <Route path="/solution/homeappliance" element={<HomeAppliance />} />
           <Route path="/solution/smartfactory" element={<SmartFactory />} />
           <Route path="/solution/bems" element={<Bems />} />
+          <Route path="/solution/mobility" element={<Mobility />} />
+          <Route path="/solution/aIinnovationhub" element={<AIInnovation />} />
           <Route path="/calendar" element={<Calendar />} />
         </Routes>
       </BrowserRouter>

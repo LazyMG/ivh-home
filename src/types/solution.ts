@@ -19,6 +19,7 @@ interface TextImageBoxProps {
   width?: string;
   height?: string;
   listHeader?: string;
+  imgText?: string;
 }
 
 // interface ColorBoxProps {

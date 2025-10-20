@@ -10,7 +10,15 @@ const Header = () => {
         pt: 4,
       }}
     >
-      <img src={logo} width={35} height={15} alt="logo" />
+      <Box
+        component="img"
+        src={logo}
+        alt="logo"
+        sx={{
+          width: { mobile: 25, laptop: 35 },
+          height: { mobile: 10, laptop: 15 },
+        }}
+      />
     </Box>
   );
 };

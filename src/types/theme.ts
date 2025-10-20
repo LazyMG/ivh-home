@@ -35,7 +35,7 @@ const responsiveFonts = {
   // 솔루션 페이지 (/solution) 하단 네비게이션 버튼 문구 'Energy BEMS ...'
   solutionMainNavFont: {
     font: fontConfig["semiBold"],
-    smSize: "12px",
+    smSize: "16px",
     mdSize: "31.06px",
     lgSize: "24px",
   },
@@ -124,7 +124,10 @@ const theme = createTheme({
     // 솔루션 페이지 (/solution) 중앙 이미지 스타일
     solutionMainImage: {
       maxWidth: "100%",
-      margin: "50px auto", // px 단위 변경하기
+      alignSelf: "center",
+      position: "absolute",
+      top: 0,
+      bottom: 0,
       [baseTheme.breakpoints.between("tablet", "laptop")]: {
         margin: "200px auto", // px 단위 변경하기
       },
@@ -135,33 +138,51 @@ const theme = createTheme({
     },
     // 솔루션 페이지 (/solution) 하단 네비게이션의 Box 컴포넌트 스타일
     solutionMainRowNavContainer: {
-      position: "relative",
-      bottom: "1rem",
+      position: "absolute",
+      bottom: "5rem",
       width: "100%",
-      [baseTheme.breakpoints.up("laptop")]: {
-        position: "absolute",
+      [baseTheme.breakpoints.up("tablet")]: {
+        bottom: "1rem",
       },
     },
     // 솔루션 페이지 (/solution) 하단 네비게이션의 Toolbar 컴포넌트 스타일
     solutionMainRowNav: {
-      justifyContent: "space-around",
       width: "100%",
-      padding: "0 12px",
+      padding: "0 36px",
       boxSizing: "border-box",
-      display: "grid",
-      gridTemplateColumns: "repeat(2,1fr)",
-      gap: "16px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "24px",
+
       [baseTheme.breakpoints.up("laptop")]: {
         display: "flex",
+        flexDirection: "row",
         gap: "0",
         padding: 0,
+        justifyContent: "space-around",
+        width: "100%",
+        "& > *": {
+          justifySelf: "auto",
+        },
       },
     },
+    // 솔루션 페이지 (/solution) 하단 네비게이션의 Toolbar 자식 컴포넌트 Box
+    // 메뉴를 3개씩 묶어 가지는 컴포넌트
+    solutionMainRowNavItemContainer: {
+      display: "flex",
+      width: "100%",
+      justifyContent: "space-between",
+      [baseTheme.breakpoints.up("laptop")]: {
+        justifyContent: "space-around",
+      },
+    },
+    // 메뉴 1개에 해당하는 컴포넌트
     solutionMainRowNavItem: {
       display: "flex",
       justifyContent: "center",
       [baseTheme.breakpoints.up("laptop")]: {
         display: "block",
+        width: "fit-content",
       },
     },
   },

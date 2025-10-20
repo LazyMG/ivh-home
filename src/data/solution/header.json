@@ -12,10 +12,36 @@
     "subColor": "255, 185, 64"
   },
   "Mobility": {
-    "headerTitle": "Mobility",
-    "subtitle": "다중 통신기술 네트워크 로드밸런싱 기술개발",
-    "color": "#cc5268",
-    "subColor": "255, 118, 143"
+    "multiCommunicateTech": {
+      "headerTitle": "Mobility",
+      "subtitle": "다중 통신기술 네트워크 로드밸런싱 기술개발",
+      "color": "#cc5268",
+      "subColor": "255, 118, 143"
+    },
+    "aiDrivingAbilityTest": {
+      "headerTitle": "Mobility",
+      "subtitle": "AI 운전능력평가 표준화 및 평가 프로세스 개발",
+      "color": "#cc5268",
+      "subColor": "255, 118, 143"
+    },
+    "virtualDurability": {
+      "headerTitle": "Mobility",
+      "subtitle": "가상내구로 주행 기술",
+      "color": "#cc5268",
+      "subColor": "255, 118, 143"
+    },
+    "suspensionEquipment": {
+      "headerTitle": "Mobility",
+      "subtitle": "현가 장치 설계 툴 개발",
+      "color": "#cc5268",
+      "subColor": "255, 118, 143"
+    },
+    "EV": {
+      "headerTitle": "Mobility",
+      "subtitle": "EV 열관리 설계 기술",
+      "color": "#cc5268",
+      "subColor": "255, 118, 143"
+    }
   },
   "SmartFactory": {
     "headerTitle": "Smart Factory",
@@ -23,8 +49,8 @@
     "color": "#0c307b",
     "subColor": "91, 144, 255"
   },
-  "AlInnovationHub": {
-    "headerTitle": "Al innovation hub",
+  "AIInnovationHub": {
+    "headerTitle": "AI innovation hub",
     "subtitle": "AI innovation hub는 iVH의 모든 기술을 연결하고 강화하는 중추적인 기술 조직입니다.\niVH는 인공지능을 기반으로 제품과 서비스 전반에 걸쳐 지속 가능한 혁신과 공학적 진화를 실현합니다. 단순한 기술 개발을 넘어, 조직 전체가 AI를 효과적으로 활용할 수 있도록 돕고, 미래를 준비하는 전략적 역할을 수행합니다.\n\nAI Innovation Hub는 기술의 중심에서 다음 5개의 핵심 가치를 개발합니다. \n",
     "color": "#0095d7",
     "subColor": "109, 210, 255"

@@ -1,4 +1,4 @@
-import { Box, AppBar, Toolbar, Button } from "@mui/material";
+import { Box, AppBar, Toolbar, Button, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
@@ -32,17 +32,116 @@ const RowNav = () => {
         >
           <Box
             sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
+              ...theme.customStyles.solutionMainRowNavItemContainer,
             })}
           >
-            <StyledButton
-              underlineColor="#279576"
-              onClick={() => navigate("/solution/energy")}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
             >
-              Energy
-            </StyledButton>
+              <Typography
+                onClick={() => navigate("/solution/mobility")}
+                sx={(theme) => ({
+                  ...theme.typography.solutionMainNavFont,
+                  width: "fit-content",
+                  textTransform: "none",
+                  color: "black",
+                  borderBottom: `2px solid #cc5268`,
+                  borderRadius: 0,
+                  padding: "0",
+
+                  [theme.breakpoints.up("laptop")]: {
+                    padding: "0 0 0 16px",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  },
+                  "&:hover": {
+                    color: `#cc5268`,
+                    backgroundColor: "transparent",
+                    cursor: "pointer",
+                  },
+                })}
+              >
+                Mobility
+              </Typography>
+            </Box>
+            {/* <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
+            >
+              <StyledButton
+                underlineColor="#279576"
+                onClick={() => navigate("/solution/energy")}
+              >
+                Energy
+              </StyledButton>
+            </Box> */}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
+            >
+              <StyledButton
+                underlineColor="#0095d7"
+                onClick={() => navigate("/solution/aIinnovationhub")}
+              >
+                Al Innovation Hub
+              </StyledButton>
+            </Box>
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
+            >
+              <Typography
+                onClick={() => navigate("/solution/energy")}
+                sx={(theme) => ({
+                  ...theme.typography.solutionMainNavFont,
+                  width: "fit-content",
+                  textTransform: "none",
+                  color: "black",
+                  borderBottom: `2px solid #279576`,
+                  borderRadius: 0,
+                  padding: "0",
+
+                  [theme.breakpoints.up("laptop")]: {
+                    padding: "0 0 0 16px",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  },
+                  "&:hover": {
+                    color: `#279576`,
+                    backgroundColor: "transparent",
+                    cursor: "pointer",
+                  },
+                })}
+              >
+                Energy
+              </Typography>
+            </Box>
           </Box>
           <Box
+            sx={(theme) => ({
+              ...theme.customStyles.solutionMainRowNavItemContainer,
+            })}
+          >
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
+            >
+              <StyledButton
+                underlineColor="#0c307b"
+                onClick={() => navigate("/solution/smartfactory")}
+              >
+                Smart factory
+              </StyledButton>
+            </Box>
+            {/* <Box
             sx={(theme) => ({
               ...theme.customStyles.solutionMainRowNavItem,
             })}
@@ -53,46 +152,63 @@ const RowNav = () => {
             >
               BEMS
             </StyledButton>
-          </Box>
-          <Box
-            sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
-            })}
-          >
-            <StyledButton underlineColor="#cc5268">Mobility</StyledButton>
-          </Box>
-          <Box
+          </Box> */}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
+            >
+              <Typography
+                onClick={() => navigate("/solution/bems")}
+                sx={(theme) => ({
+                  ...theme.typography.solutionMainNavFont,
+                  width: "fit-content",
+                  textTransform: "none",
+                  color: "black",
+                  borderBottom: `2px solid #f99818`,
+                  borderRadius: 0,
+                  padding: "0",
+
+                  [theme.breakpoints.up("laptop")]: {
+                    padding: "0 0 0 16px",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  },
+                  "&:hover": {
+                    color: `#f99818`,
+                    backgroundColor: "transparent",
+                    cursor: "pointer",
+                  },
+                })}
+              >
+                BEMS
+              </Typography>
+            </Box>
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
+            >
+              <StyledButton
+                underlineColor="#92b843"
+                onClick={() => navigate("/solution/homeappliance")}
+              >
+                Home appliance
+              </StyledButton>
+            </Box>
+            {/* <Box
             sx={(theme) => ({
               ...theme.customStyles.solutionMainRowNavItem,
             })}
           >
             <StyledButton
-              underlineColor="#0c307b"
-              onClick={() => navigate("/solution/smartfactory")}
+              underlineColor="#cc5268"
+              onClick={() => navigate("/solution/mobility")}
             >
-              Smart factory
+              Mobility
             </StyledButton>
-          </Box>
-          <Box
-            sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
-            })}
-          >
-            <StyledButton underlineColor="#0095d7">
-              Al Innovation Hub
-            </StyledButton>
-          </Box>
-          <Box
-            sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
-            })}
-          >
-            <StyledButton
-              underlineColor="#92b843"
-              onClick={() => navigate("/solution/home-appliance")}
-            >
-              Home appliance
-            </StyledButton>
+          </Box> */}
           </Box>
         </Toolbar>
       </AppBar>
@@ -112,12 +228,12 @@ const StyledButton = styled(Button)<StyledButtonProps>(
     //   // fontSize: "29.2px",
     //   fontSize: "24px",
     // },
+    width: "fit-content",
     textTransform: "none",
     color: "black",
     borderBottom: `2px solid ${underlineColor}`,
     borderRadius: 0,
-    padding: "0 0 0 16px",
-    width: "70%",
+    padding: "0",
 
     [theme.breakpoints.up("laptop")]: {
       padding: "0 0 0 32px",

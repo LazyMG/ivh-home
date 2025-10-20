@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import type { TextImageBoxProps } from "../../types/solution";
 
 const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
-  const { title, contents, imgurl, width, height, listHeader } =
+  const { title, contents, imgurl, width, height, listHeader, imgText } =
     textImageBoxProps;
 
   return (
@@ -58,16 +58,23 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
           })}
         </Box>
       )}
+      {/** 이미지 하단에 텍스트가 있는 경우 추가 */}
       {imgurl?.map((img, index) => {
         const resolvedSrc = new URL(img, import.meta.url).href;
         return (
-          <img
-            src={resolvedSrc}
-            alt={title}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
             key={index}
-            width={width}
-            height={height}
-          />
+          >
+            <img src={resolvedSrc} alt={title} width={width} height={height} />
+            {imgText && (
+              <Typography variant="solutionTextFont">{imgText}</Typography>
+            )}
+          </Box>
         );
       })}
     </Box>
