@@ -1,12 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import solutionImage from "/images/pages/solution/solution_main.png";
-import Header from "../common/Header";
 import RowNav from "../components/solution/RowNav";
 
 const Solution = () => {
   return (
     <>
-      <Header />
       <Typography
         variant="solutionMainTitle"
         component="p"
