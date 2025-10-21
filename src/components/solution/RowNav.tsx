@@ -10,44 +10,90 @@ const RowNav = () => {
   const navigate = useNavigate();
 
   return (
-    <Box component="nav">
+    <Box
+      component="nav"
+      sx={(theme) => ({
+        ...theme.customStyles.solutionMainRowNavContainer,
+      })}
+    >
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "white",
           boxShadow: "none",
           alignItems: "center",
+          backgroundColor: "transparent",
         }}
       >
-        <Toolbar sx={{ gap: 16 }} disableGutters>
-          <StyledButton
-            underlineColor="#279576"
-            onClick={() => navigate("/solution/energy")}
+        <Toolbar
+          sx={(theme) => ({
+            ...theme.customStyles.solutionMainRowNav,
+          })}
+          disableGutters
+        >
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.solutionMainRowNavItem,
+            })}
           >
-            Energy
-          </StyledButton>
-          <StyledButton
-            underlineColor="#f99818"
-            onClick={() => navigate("/solution/bems")}
+            <StyledButton
+              underlineColor="#279576"
+              onClick={() => navigate("/solution/energy")}
+            >
+              Energy
+            </StyledButton>
+          </Box>
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.solutionMainRowNavItem,
+            })}
           >
-            BEMS
-          </StyledButton>
-          <StyledButton underlineColor="#cc5268">Mobility</StyledButton>
-          <StyledButton
-            underlineColor="#0c307b"
-            onClick={() => navigate("/solution/smartfactory")}
+            <StyledButton
+              underlineColor="#f99818"
+              onClick={() => navigate("/solution/bems")}
+            >
+              BEMS
+            </StyledButton>
+          </Box>
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.solutionMainRowNavItem,
+            })}
           >
-            Smart factory
-          </StyledButton>
-          <StyledButton underlineColor="#0095d7">
-            Al Innovation Hub
-          </StyledButton>
-          <StyledButton
-            underlineColor="#92b843"
-            onClick={() => navigate("/solution/home-appliance")}
+            <StyledButton underlineColor="#cc5268">Mobility</StyledButton>
+          </Box>
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.solutionMainRowNavItem,
+            })}
           >
-            Home appliance
-          </StyledButton>
+            <StyledButton
+              underlineColor="#0c307b"
+              onClick={() => navigate("/solution/smartfactory")}
+            >
+              Smart factory
+            </StyledButton>
+          </Box>
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.solutionMainRowNavItem,
+            })}
+          >
+            <StyledButton underlineColor="#0095d7">
+              Al Innovation Hub
+            </StyledButton>
+          </Box>
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.solutionMainRowNavItem,
+            })}
+          >
+            <StyledButton
+              underlineColor="#92b843"
+              onClick={() => navigate("/solution/home-appliance")}
+            >
+              Home appliance
+            </StyledButton>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
@@ -56,25 +102,30 @@ const RowNav = () => {
 
 const StyledButton = styled(Button)<StyledButtonProps>(
   ({ theme, underlineColor }) => ({
-    fontFamily: "Freesentation-6-SemiBold",
-    fontSize: "18.9px",
-    [theme.breakpoints.up("sm")]: {
-      fontSize: "31.06px",
-    },
-    [theme.breakpoints.up("md")]: {
-      fontSize: "29.2px",
-    },
+    ...theme.typography.solutionMainNavFont,
+    // fontFamily: "Freesentation-6-SemiBold",
+    // fontSize: "18.9px",
+    // [theme.breakpoints.up("sm")]: {
+    //   fontSize: "31.06px",
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //   // fontSize: "29.2px",
+    //   fontSize: "24px",
+    // },
     textTransform: "none",
     color: "black",
     borderBottom: `2px solid ${underlineColor}`,
     borderRadius: 0,
-    paddingLeft: "32px",
-    paddingRight: "0",
-    paddingTop: "0",
-    paddingBottom: "0",
+    padding: "0 0 0 16px",
+    width: "70%",
+
+    [theme.breakpoints.up("laptop")]: {
+      padding: "0 0 0 32px",
+      width: "100%",
+    },
     "&:hover": {
+      color: `${underlineColor}`,
       backgroundColor: "transparent",
-      color: underlineColor,
     },
   })
 );

@@ -6,40 +6,28 @@ const Solution = () => {
   return (
     <>
       <Typography
+        variant="solutionMainTitle"
+        component="p"
         sx={{
-          fontFamily: "Freesentation-8-ExtraBold",
-          fontSize: {
-            xs: "40.4px",
-            sm: "66.56px",
-            md: "62.5px",
+          ml: {
+            xs: 6,
+            lg: 8,
           },
-          ml: "64px",
         }}
       >
-        Solution
+        SOLUTION
       </Typography>
 
       <Box
         component="main"
-        sx={{
+        sx={(theme) => ({
+          ...theme.customStyles.solutionMainImage,
           display: "flex",
           flexDirection: "column",
-          p: " 12px 64px",
-          m: "auto auto",
-          width: {
-            xs: "200px",
-            md: "500px",
-            lg: "800px",
-            xl: "1200px",
-          },
-          height: {
-            xs: "200px",
-            md: "300px",
-            lg: "400px",
-            xl: "700px",
-          },
+          mx: "auto",
+          width: "100%",
           alignSelf: "center",
-        }}
+        })}
       >
         <img
           src={solutionImage}
