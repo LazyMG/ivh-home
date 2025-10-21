@@ -10,12 +10,16 @@ import Bems from "./pages/solution/Bems";
 import HomeAppliance from "./pages/solution/HomeAppliance";
 import Calendar from "./pages/Calendar";
 import SmartFactory from "./pages/solution/SmartFactory";
-import Header from "./common/Header";
+import Header from "./common/Header/Header";
+import MobileHeader from "./common/MobileHeader";
+import { useMediaQuery } from "@mui/material";
 
 function App() {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+
   return (
     <BrowserRouter>
-      <Header />
+      {isMobile ? <MobileHeader /> : <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/solution" element={<Solution />} />
