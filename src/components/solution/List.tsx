@@ -6,15 +6,7 @@ const List = (listProps: ListProps) => {
   return (
     <Box sx={{ mt: 8 }}>
       {/* 제목 */}
-      <Typography
-        sx={{
-          fontFamily: "Freesentation-7-Bold",
-          fontSize: "25px",
-          fontWeight: "bold",
-        }}
-      >
-        {title}
-      </Typography>
+      <Typography variant="solutionTextTitleFont">{title}</Typography>
 
       {/* Q&A 목록 */}
       <MuiList sx={{ width: "100%" }}>
@@ -28,26 +20,18 @@ const List = (listProps: ListProps) => {
             }}
           >
             <Typography
+              component="p"
+              variant="solutionTextFont"
               sx={{
-                fontFamily: "Freesentation-5-Medium",
-                fontSize: {
-                  xs: "16.2px",
-                  sm: "26.6px",
-                  md: "25px",
-                },
                 mb: 0.5,
               }}
             >
               {content.title}
             </Typography>
             <Typography
+              component="p"
+              variant="solutionTextFont"
               sx={{
-                fontFamily: "Freesentation-5-Medium",
-                fontSize: {
-                  xs: "13.5px",
-                  sm: "22.2px",
-                  md: "20.8px",
-                },
                 wordBreak: "keep-all",
               }}
             >

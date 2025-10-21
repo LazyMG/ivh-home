@@ -1,14 +1,18 @@
 import { Box } from "@mui/material";
-import SolutionHeader from "../../components/solution/SolutionHeader";
+import SolutionTitle from "../../components/solution/SolutionTitle";
 import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import useSolutionClass from "../../hooks/useSolutionClass";
-import "../../style/solution.css";
+import BreadScrum from "../../components/solution/BreadScrum";
+
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
-import BreadScrum from "../../components/solution/BreadScrum";
+
+import "../../style/solution.css";
+import ScrollButton from "../../common/ScrollButton";
+
+const THRESHOLD = 100;
 
 const HomeAppliance = () => {
   // header
@@ -25,14 +29,15 @@ const HomeAppliance = () => {
     frequentlyAskedQuestions,
   } = body.homeAppliance;
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
+
+      <ScrollButton color={color} threshold={THRESHOLD} />
+
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
-      <SolutionHeader
+      <SolutionTitle
         title={headerTitle}
         subtitle={subtitle}
         color={color}
@@ -92,7 +97,7 @@ const HomeAppliance = () => {
           contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
         />
       </Box>
-    </>
+    </Box>
   );
 };
 

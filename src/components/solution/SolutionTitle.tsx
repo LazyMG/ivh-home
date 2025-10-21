@@ -1,7 +1,7 @@
 import type { ContentProps } from "../../types/solution";
 import { Box, Typography } from "@mui/material";
 
-const SolutionHeader = (contentProps: ContentProps) => {
+const SolutionTitle = (contentProps: ContentProps) => {
   const { title, subtitle, color, subColor } = contentProps;
   return (
     <>
@@ -15,15 +15,8 @@ const SolutionHeader = (contentProps: ContentProps) => {
           }}
         >
           <Typography
-            variant="h1"
+            variant="solutionTitleFont"
             sx={{
-              fontFamily: "Freesentation-8-ExtraBold",
-              fontSize: {
-                xs: "23px",
-                sm: "37.73px",
-                md: "35.4px",
-              },
-              fontWeight: "bold",
               color,
               letterSpacing: "6.4px",
             }}
@@ -35,22 +28,18 @@ const SolutionHeader = (contentProps: ContentProps) => {
           sx={{
             background: `linear-gradient(rgba(${subColor}, 0.36), #ffffff)`,
             mt: 3,
-            py: 1.5,
+            py: 3,
             borderTop: `1px solid ${color}`,
           }}
         >
           <Typography
-            variant="subtitle1"
-            sx={{
-              fontFamily: "Freesentation-6-SemiBold",
-              fontSize: {
-                xs: "18.8px",
-                sm: "31.6px",
-                md: "29.2px",
-              },
-              fontWeight: "bold",
-            }}
+            // variant="subtitle1"
+            variant="solutionSubTitleFont"
+            component="p"
             color={"#3b4551"}
+            sx={{
+              whiteSpace: "pre-wrap",
+            }}
           >
             {subtitle}
           </Typography>
@@ -60,4 +49,4 @@ const SolutionHeader = (contentProps: ContentProps) => {
   );
 };
 
-export default SolutionHeader;
+export default SolutionTitle;

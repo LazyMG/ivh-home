@@ -13,27 +13,10 @@ const TextBox = (textBoxProps: TextBoxProps) => {
         mt: marginTop || 10,
       }}
     >
+      <Typography variant="solutionTextTitleFont">{title}</Typography>
       <Typography
+        variant="solutionTextFont"
         sx={{
-          fontFamily: "Freesentation-7-Bold",
-          fontSize: {
-            xs: "16.2px",
-            sm: "26.6px",
-            md: "25px",
-          },
-          fontWeight: "bold",
-        }}
-      >
-        {title}
-      </Typography>
-      <Typography
-        sx={{
-          fontFamily: "Freesentation-5-Medium",
-          fontSize: {
-            xs: "13.5px",
-            sm: "22.2px",
-            md: "20.8px",
-          },
           mt: 1.5,
           wordBreak: "keep-all",
         }}

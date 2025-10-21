@@ -19,6 +19,7 @@ interface TextImageBoxProps {
   width?: string;
   height?: string;
   listHeader?: string;
+  imgText?: string;
 }
 
 // interface ColorBoxProps {
@@ -82,6 +83,60 @@ interface ListProps {
   }[];
 }
 
+type SolutionJSONType = {
+  outline: {
+    outlineTitle: string;
+    outlineContents: string[];
+    outlineImgUrl?: string[];
+    outlineImgText?: string;
+  };
+  technicalBackground: {
+    technicalBackgroundTitle: string;
+    technicalBackgroundContents: string[];
+  };
+  marketTrend: {
+    marketTrendTitle: string;
+    marketTrendContents: string[];
+  };
+  systemArchitecture: {
+    systemArchitectureTitle: string;
+    systemArchitectureListHeader: string;
+    systemArchitectureContents: string[];
+    systemArchitectureImgUrl?: string[];
+    systemArchitectureImgText?: string;
+  };
+  colorBoxes: {
+    boxColor: string;
+    layout: number[][];
+    boxes: {
+      title: string;
+      hyphen?: string;
+      items?: string[];
+      subSections?: {
+        title?: string;
+        items: string[];
+      }[];
+      subSectionColumns?: {
+        xs: number;
+        sm?: number;
+        md?: number;
+        lg?: number;
+      };
+    }[];
+  }[];
+  relatedSoftware: {
+    relatedSoftwareTitle: string;
+    relatedSoftwareContents: string;
+  };
+  frequentlyAskedQuestions: {
+    frequentlyAskedQuestionsTitle: string;
+    frequentlyAskedQuestionsContents: {
+      title: string;
+      contents: string;
+    }[];
+  };
+};
+
 export type {
   ContentProps,
   TextBoxProps,
@@ -92,4 +147,5 @@ export type {
   BoxImage,
   BoxContent,
   ListProps,
+  SolutionJSONType,
 };

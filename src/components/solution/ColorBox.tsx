@@ -87,20 +87,16 @@ const BoxContentRenderer = ({
     <>
       {itemList.map((item, index) => (
         <Box sx={{ display: "flex", gap: 0.5 }} key={index}>
-          <Typography
-            sx={{
-              fontFamily: STYLES.contentFontFamily,
-              fontSize: STYLES.contentFontSize,
-            }}
-          >
+          <Typography component="p" variant="solutionTextFont">
             {content.hyphen}
           </Typography>
           <Typography
-            sx={{
-              fontFamily: STYLES.contentFontFamily,
-              fontSize: STYLES.contentFontSize,
+            component="p"
+            variant="solutionTextFont"
+            sx={(theme) => ({
+              ...theme.typography.solutionTextFont,
               wordBreak: "keep-all",
-            }}
+            })}
           >
             {item}
           </Typography>
@@ -118,12 +114,12 @@ const BoxContentRenderer = ({
         >
           {section.title && (
             <Typography
-              sx={{
-                fontFamily: STYLES.contentFontFamily,
-                fontSize: STYLES.contentFontSize,
-                fontWeight: "bold",
+              variant="solutionTextFont"
+              component="p"
+              sx={(theme) => ({
+                ...theme.typography.solutionTextFont,
                 mb: 1,
-              }}
+              })}
             >
               {section.title}
             </Typography>
@@ -146,28 +142,28 @@ const BoxContentRenderer = ({
     <Box>
       {/* 제목 */}
       <Typography
-        sx={{
-          fontFamily: STYLES.titleFontFamily,
-          fontSize: STYLES.titleFontSize,
-          fontWeight: STYLES.titleFontWeight,
+        component="p"
+        variant="solutionBoxTitleFont"
+        sx={(theme) => ({
+          ...theme.typography.solutionBoxTitleFont,
           color: boxColor,
           mb: STYLES.titleMarginBottom,
-        }}
+        })}
       >
         {title}
       </Typography>
 
       {/* 콘텐츠 + 이미지 */}
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "flex",
-          flexDirection: {
-            xs: "column",
-            md: getFlexDirection(),
+          flexDirection: "column",
+          [theme.breakpoints.up("tablet")]: {
+            flexDirection: getFlexDirection(),
           },
           gap: 2,
           alignItems: "flex-start",
-        }}
+        })}
       >
         {/* 순서만으로 위치가 결정되므로, 순서를 조정하면 위치가 변경됨 */}
         {imagePosition === "left" && renderImages()}
@@ -206,12 +202,24 @@ const ColorBox = ({
             return (
               <Grid
                 key={`${rowIndex}-${colIndex}`} // key의 고유성을 위한 중복 방지
-                size={{ xs: 12, md: gridSize >= 8 ? 12 : 6, lg: gridSize }}
-                sx={{
+                // size={{ xs: 12, md: gridSize >= 8 ? 12 : 6, lg: gridSize }}
+                sx={(theme) => ({
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "flex-start",
-                }}
+                  width: "100%",
+                  [theme.breakpoints.up("tablet")]: {
+                    width:
+                      gridSize >= 8
+                        ? "100%"
+                        : `calc(50% - ${columnSpacing * 8}px)`,
+                  },
+                  [theme.breakpoints.up("laptop")]: {
+                    width: `calc(${(gridSize / 12) * 100}% - ${
+                      columnSpacing * 8
+                    }px)`,
+                  },
+                })}
               >
                 <Box
                   sx={{

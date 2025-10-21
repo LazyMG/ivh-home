@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import type { TextImageBoxProps } from "../../types/solution";
 
 const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
-  const { title, contents, imgurl, width, height, listHeader } =
+  const { title, contents, imgurl, listHeader, imgText, width } =
     textImageBoxProps;
 
   return (
@@ -15,17 +15,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
         mt: 10,
       }}
     >
-      <Typography
-        sx={{
-          fontFamily: "Freesentation-7-Bold",
-          fontSize: {
-            xs: "16.2px",
-            sm: "26.6px",
-            md: "25px",
-          },
-          fontWeight: "bold",
-        }}
-      >
+      <Typography variant="solutionTextTitleFont" component="p">
         {title}
       </Typography>
       {contents && (
@@ -44,13 +34,9 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
               >
                 {listHeader && !isSection && (
                   <Typography
+                    component="p"
+                    variant="solutionTextFont"
                     sx={{
-                      fontFamily: "Freesentation-5-Medium",
-                      fontSize: {
-                        xs: "13.5px",
-                        sm: "22.2px",
-                        md: "20.8px",
-                      },
                       mr: 0.5,
                     }}
                   >
@@ -58,14 +44,10 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
                   </Typography>
                 )}
                 <Typography
+                  component="p"
+                  variant="solutionTextFont"
                   sx={{
                     mt: isSection && index !== 0 ? 2 : 0,
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: {
-                      xs: "13.5px",
-                      sm: "22.2px",
-                      md: "20.8px",
-                    },
                     wordBreak: "keep-all",
                   }}
                 >
@@ -76,16 +58,30 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
           })}
         </Box>
       )}
+      {/** 이미지 하단에 텍스트가 있는 경우 추가 */}
       {imgurl?.map((img, index) => {
         const resolvedSrc = new URL(img, import.meta.url).href;
         return (
-          <img
-            src={resolvedSrc}
-            alt={title}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
             key={index}
-            width={width}
-            height={height}
-          />
+          >
+            <img
+              src={resolvedSrc}
+              alt={title}
+              style={{
+                maxWidth: "100%",
+                width,
+              }}
+            />
+            {imgText && (
+              <Typography variant="solutionTextFont">{imgText}</Typography>
+            )}
+          </Box>
         );
       })}
     </Box>

@@ -2,3 +2,24 @@
   margin: 0;
   padding: 50px 100px;
 }
+
+@media (min-width: 0px) {
+  .solution-body {
+    padding: 20px 20px;
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 640px) {
+  .solution-body {
+    padding: 20px 30px;
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .solution-body {
+    padding: 50px 100px;
+    margin: 0;
+  }
+}

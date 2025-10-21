@@ -1,58 +1,57 @@
 import { Box, Typography } from "@mui/material";
 import solutionImage from "/images/pages/solution/solution_main.png";
-import Header from "../common/Header";
 import RowNav from "../components/solution/RowNav";
 
 const Solution = () => {
   return (
     <>
-      <Header />
-      <Typography
-        sx={{
-          fontFamily: "Freesentation-8-ExtraBold",
-          fontSize: {
-            xs: "40.4px",
-            sm: "66.56px",
-            md: "62.5px",
-          },
-          ml: "64px",
-        }}
-      >
-        Solution
-      </Typography>
-
       <Box
-        component="main"
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-          p: " 12px 64px",
-          m: "auto auto",
-          width: {
-            xs: "200px",
-            md: "500px",
-            lg: "800px",
-            xl: "1200px",
+          mt: 10,
+          [theme.breakpoints.up("laptop")]: {
+            mt: 0,
           },
-          height: {
-            xs: "200px",
-            md: "300px",
-            lg: "400px",
-            xl: "700px",
-          },
-          alignSelf: "center",
-        }}
+        })}
       >
-        <img
-          src={solutionImage}
-          alt="solution"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
+        <Typography
+          variant="solutionMainTitle"
+          component="p"
+          sx={{
+            ml: {
+              xs: 4,
+              lg: 8,
+            },
           }}
-        />
+        >
+          SOLUTION
+        </Typography>
+
+        <Box
+          component="main"
+          sx={(theme) => ({
+            ...theme.customStyles.solutionMainImage,
+            display: "flex",
+            flexDirection: "column",
+            mx: "auto",
+            width: "100%",
+            alignItems: "center",
+            flex: 1,
+          })}
+        >
+          <img
+            src={solutionImage}
+            alt="solution"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
       </Box>
+
       <RowNav />
     </>
   );
