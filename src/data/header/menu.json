@@ -28,7 +28,7 @@
               "items": [
                 {
                   "name": "Digital Twin",
-                  "path": "/product/digital-twin",
+                  "path": "/product/digitalTwin",
                   "disabled": false
                 },
                 { "name": "MBSE", "path": "/product/mbse", "disabled": false },
@@ -45,12 +45,12 @@
                 },
                 {
                   "name": "Battery Package 디자인",
-                  "path": "/product/battery-package",
+                  "path": "/product/batteryPackage",
                   "disabled": false
                 },
                 {
                   "name": "Building Energy Management",
-                  "path": "/product/building-energy",
+                  "path": "/product/buildingEnergy",
                   "disabled": false
                 }
               ]
@@ -65,20 +65,20 @@
       "items": [
         {
           "name": "Smart Factory",
-          "path": "/solution/smart-factory",
+          "path": "/solution/smartFactory",
           "disabled": true
         },
         { "name": "Mobility", "path": "/solution/mobility", "disabled": true },
         {
           "name": "Home Appliances",
-          "path": "/solution/home-appliances",
+          "path": "/solution/homeappliance",
           "disabled": true
         },
         { "name": "Energy", "path": "/solution/energy", "disabled": true },
         { "name": "BEMS", "path": "/solution/bems", "disabled": true },
         {
           "name": "AI Innovation Hub",
-          "path": "/solution/ai-innovation-hub",
+          "path": "/solution/aIinnovationhub",
           "disabled": true
         }
       ]

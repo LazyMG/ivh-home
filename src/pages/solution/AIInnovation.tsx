@@ -29,7 +29,6 @@ const AIInnovation = () => {
   return (
     <Box className="solution-body">
       <ScrollButton color={color} threshold={THRESHOLD} />
-
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}

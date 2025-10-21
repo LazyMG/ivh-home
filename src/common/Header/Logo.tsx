@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import logoBlack from "/images/common/ivh_logo_black.png";
-import logoWhite from "/images/common/ivh_logo_white.png";
+import logoBlack from "/images/header/ivh_logo_black.png";
+import logoWhite from "/images/header/ivh_logo_white.png";
 
 interface LogoProps {
   isHomePage: boolean;
