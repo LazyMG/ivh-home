@@ -8,6 +8,9 @@ import TextBox from "../../components/solution/TextBox";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
 import SolutionTitle from "../../components/solution/SolutionTitle";
+import ScrollButton from "../../common/ScrollButton";
+
+const THRESHOLD = 100;
 
 const AIInnovation = () => {
   // header
@@ -25,6 +28,7 @@ const AIInnovation = () => {
 
   return (
     <Box className="solution-body">
+      <ScrollButton color={color} threshold={THRESHOLD} />
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}

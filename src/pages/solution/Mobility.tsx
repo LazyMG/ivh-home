@@ -9,7 +9,7 @@ import ScrollButton from "../../common/ScrollButton";
 import body from "../../data/solution/body.json";
 import header from "../../data/solution/header.json";
 
-import "../../style/solution.css";
+const THRESHOLD = 643;
 
 const Mobility = () => {
   // header
@@ -49,7 +49,7 @@ const Mobility = () => {
       <BreadScrum title={headerTitle} />
 
       {/** 스크롤 버튼 */}
-      <ScrollButton color={color} />
+      <ScrollButton color={color} threshold={THRESHOLD} show />
 
       {/* header section */}
       {/* 제목만 있는 헤더 */}
@@ -62,10 +62,11 @@ const Mobility = () => {
           display: "flex",
           flexDirection: "column",
           mt: 6,
-          mb: 28,
+          mb: 12,
           gap: 1,
           [theme.breakpoints.up("tablet")]: {
             gap: 4,
+            mb: 28,
           },
         })}
       >
