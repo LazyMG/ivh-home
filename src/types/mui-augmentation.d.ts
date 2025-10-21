@@ -24,6 +24,8 @@ declare module "@mui/material/styles" {
   }
 
   interface TypographyVariants {
+    breadScrumFont: React.CSSProperties;
+
     solutionMainTitle: React.CSSProperties;
     solutionMainImage: React.CSSProperties;
     solutionMainNavFont: React.CSSProperties;
@@ -35,6 +37,8 @@ declare module "@mui/material/styles" {
   }
 
   interface TypographyVariantsOptions {
+    breadScrumFont?: React.CSSProperties;
+
     solutionMainTitle?: React.CSSProperties;
     solutionMainImage?: React.CSSProperties;
     solutionMainNavFont?: React.CSSProperties;
@@ -60,6 +64,7 @@ declare module "@mui/material/styles" {
 
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
+    breadScrumFont: true;
     solutionMainTitle: true;
     solutionMainImage: true;
     solutionMainNavFont: true;

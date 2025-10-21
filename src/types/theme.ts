@@ -25,6 +25,12 @@ const fontConfig = {
 };
 
 const responsiveFonts = {
+  breadScrumFont: {
+    font: fontConfig["bold"],
+    smSize: "13.5px",
+    mdSize: "22.2px",
+    lgSize: "20.8px",
+  },
   // 솔루션 페이지 (/solution) 상단 문구 'SOLUTION'
   solutionMainTitle: {
     font: fontConfig["extraBold"],
@@ -37,7 +43,7 @@ const responsiveFonts = {
     font: fontConfig["semiBold"],
     smSize: "16px",
     mdSize: "31.06px",
-    lgSize: "24px",
+    lgSize: "29.2px",
   },
   // 솔루션의 각 페이지 (/solution/...) 상단 페이지 제목 'Energy', 'BEMS', ...
   solutionTitleFont: {
@@ -98,6 +104,7 @@ const getResponsiveFontStyle = (style: {
 const theme = createTheme({
   breakpoints: baseTheme.breakpoints,
   typography: {
+    breadScrumFont: getResponsiveFontStyle(responsiveFonts["breadScrumFont"]),
     solutionMainTitle: getResponsiveFontStyle(
       responsiveFonts["solutionMainTitle"]
     ),
@@ -123,65 +130,72 @@ const theme = createTheme({
   customStyles: {
     // 솔루션 페이지 (/solution) 중앙 이미지 스타일
     solutionMainImage: {
-      maxWidth: "100%",
-      alignSelf: "center",
       position: "absolute",
+      alignSelf: "center",
       top: 0,
       bottom: 0,
-      [baseTheme.breakpoints.between("tablet", "laptop")]: {
-        margin: "200px auto", // px 단위 변경하기
-      },
+
+      maxWidth: "100%",
+
       [baseTheme.breakpoints.up("laptop")]: {
-        margin: "0 auto",
         maxWidth: "70%",
       },
     },
     // 솔루션 페이지 (/solution) 하단 네비게이션의 Box 컴포넌트 스타일
     solutionMainRowNavContainer: {
       position: "absolute",
-      bottom: "5rem",
       width: "100%",
+
+      bottom: "5rem",
+
       [baseTheme.breakpoints.up("tablet")]: {
+        bottom: "2rem",
+      },
+      [baseTheme.breakpoints.up("laptop")]: {
         bottom: "1rem",
       },
     },
     // 솔루션 페이지 (/solution) 하단 네비게이션의 Toolbar 컴포넌트 스타일
     solutionMainRowNav: {
-      width: "100%",
-      padding: "0 36px",
       boxSizing: "border-box",
+
       display: "flex",
       flexDirection: "column",
       gap: "24px",
+      padding: "0 36px",
+      width: "100%",
 
       [baseTheme.breakpoints.up("laptop")]: {
         display: "flex",
         flexDirection: "row",
         gap: "0",
         padding: 0,
-        justifyContent: "space-around",
         width: "100%",
-        "& > *": {
-          justifySelf: "auto",
-        },
+
+        justifyContent: "space-around",
       },
     },
     // 솔루션 페이지 (/solution) 하단 네비게이션의 Toolbar 자식 컴포넌트 Box
     // 메뉴를 3개씩 묶어 가지는 컴포넌트
     solutionMainRowNavItemContainer: {
-      display: "flex",
       width: "100%",
+      display: "flex",
+
       justifyContent: "space-between",
+
       [baseTheme.breakpoints.up("laptop")]: {
         justifyContent: "space-around",
       },
     },
     // 메뉴 1개에 해당하는 컴포넌트
     solutionMainRowNavItem: {
-      display: "flex",
       justifyContent: "center",
+
+      display: "flex",
+
       [baseTheme.breakpoints.up("laptop")]: {
         display: "block",
+
         width: "fit-content",
       },
     },

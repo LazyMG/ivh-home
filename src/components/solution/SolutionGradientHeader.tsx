@@ -13,7 +13,6 @@ const GradientHeader = ({
     <Box
       sx={{
         background: `linear-gradient(rgba(${subColor}, 0.36), #ffffff)`,
-        mt: 28,
         py: 3,
         borderTop: `1px solid ${color}`,
       }}

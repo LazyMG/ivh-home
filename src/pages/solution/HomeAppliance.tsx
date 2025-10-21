@@ -1,14 +1,17 @@
 import { Box } from "@mui/material";
+
 import SolutionHeader from "../../components/solution/SolutionHeader";
 import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
 import useSolutionClass from "../../hooks/useSolutionClass";
-import "../../style/solution.css";
+import BreadScrum from "../../components/solution/BreadScrum";
+
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
-import BreadScrum from "../../components/solution/BreadScrum";
+
+import "../../style/solution.css";
 
 const HomeAppliance = () => {
   // header

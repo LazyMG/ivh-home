@@ -2,11 +2,11 @@
   "breadscrum": {
     "commonpath": {
       "home": {
-        "title": "home",
+        "title": "Home",
         "path": "/"
       },
       "solution": {
-        "title": "solution",
+        "title": "Solution",
         "path": "/solution"
       }
     },
@@ -27,7 +27,7 @@
       "path": "/solution/smartfactory"
     },
     "alinnovationhub": {
-      "title": "AlInnovationHub",
+      "title": "AIInnovationHub",
       "path": "/solution/alinnovationhub"
     },
     "homeappliance": {

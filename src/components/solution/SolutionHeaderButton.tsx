@@ -17,8 +17,11 @@ const SolutionHeaderButton = ({
 
   return (
     <Box
-      sx={{
-        px: 5,
+      sx={(theme) => ({
+        px: 2,
+        [theme.breakpoints.up("tablet")]: {
+          px: 3,
+        },
         py: 1,
         border: `4px solid ${color}`,
         borderRadius: 8,
@@ -26,7 +29,7 @@ const SolutionHeaderButton = ({
         ":hover": {
           cursor: "pointer",
         },
-      }}
+      })}
       onClick={scrollCallBack}
     >
       <Typography variant="solutionTextTitleFont" color="#3b4551">

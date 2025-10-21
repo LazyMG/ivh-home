@@ -12,35 +12,23 @@
     "subColor": "255, 185, 64"
   },
   "Mobility": {
+    "headerTitle": "Mobility",
+    "color": "#cc5268",
+    "subColor": "255, 118, 143",
     "multiCommunicateTech": {
-      "headerTitle": "Mobility",
-      "subtitle": "다중 통신기술 네트워크 로드밸런싱 기술개발",
-      "color": "#cc5268",
-      "subColor": "255, 118, 143"
+      "subtitle": "다중 통신기술 네트워크 로드밸런싱 기술개발"
     },
     "aiDrivingAbilityTest": {
-      "headerTitle": "Mobility",
-      "subtitle": "AI 운전능력평가 표준화 및 평가 프로세스 개발",
-      "color": "#cc5268",
-      "subColor": "255, 118, 143"
+      "subtitle": "AI 운전능력평가 표준화 및 평가 프로세스 개발"
     },
     "virtualDurability": {
-      "headerTitle": "Mobility",
-      "subtitle": "가상내구로 주행 기술",
-      "color": "#cc5268",
-      "subColor": "255, 118, 143"
+      "subtitle": "가상내구로 주행 기술"
     },
     "suspensionEquipment": {
-      "headerTitle": "Mobility",
-      "subtitle": "현가 장치 설계 툴 개발",
-      "color": "#cc5268",
-      "subColor": "255, 118, 143"
+      "subtitle": "현가 장치 설계 툴 개발"
     },
     "EV": {
-      "headerTitle": "Mobility",
-      "subtitle": "EV 열관리 설계 기술",
-      "color": "#cc5268",
-      "subColor": "255, 118, 143"
+      "subtitle": "EV 열관리 설계 기술"
     }
   },
   "SmartFactory": {

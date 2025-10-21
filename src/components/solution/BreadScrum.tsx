@@ -3,6 +3,8 @@ import breadscrum from "../../data/solution/breadscrum.json";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+
 const BreadScrum = ({ title }: { title: string }) => {
   const {
     commonpath,
@@ -15,21 +17,20 @@ const BreadScrum = ({ title }: { title: string }) => {
   } = breadscrum.breadscrum;
   const navigate = useNavigate();
 
-  const responsiveFontSize = {
-    xs: "13.5px",
-    sm: "22.2px",
-    md: "20.8px",
-  };
-
   return (
     <Box
-      sx={{ display: "flex", alignItems: "center", justifyContent: "flex-end" }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-end",
+        mb: 2,
+      }}
     >
       <StyledButton onClick={() => navigate(commonpath.home.path)}>
         <Typography
+          variant="breadScrumFont"
           sx={{
-            marginRight: "10px",
-            fontSize: responsiveFontSize,
+            mr: "10px",
           }}
         >
           {commonpath.home.title}
@@ -38,9 +39,9 @@ const BreadScrum = ({ title }: { title: string }) => {
       <ArrowIcon />
       <StyledButton onClick={() => navigate(commonpath.solution.path)}>
         <Typography
+          variant="breadScrumFont"
           sx={{
-            marginRight: "10px",
-            fontSize: responsiveFontSize,
+            mr: "10px",
           }}
         >
           {commonpath.solution.title}
@@ -73,13 +74,7 @@ const BreadScrum = ({ title }: { title: string }) => {
           }
         }}
       >
-        <Typography
-          sx={{
-            fontSize: responsiveFontSize,
-          }}
-        >
-          {title}
-        </Typography>
+        <Typography variant="breadScrumFont">{title}</Typography>
       </StyledButton>
     </Box>
   );
@@ -88,7 +83,6 @@ const BreadScrum = ({ title }: { title: string }) => {
 export default BreadScrum;
 
 const StyledButton = styled(Button)(() => ({
-  fontFamily: "Freesentation-7-Bold",
   textTransform: "none",
   color: "#717171",
   padding: 0,
@@ -102,7 +96,7 @@ const ArrowIcon = () => {
   return (
     <Box
       component="span"
-      sx={{
+      sx={(theme) => ({
         display: "inline-flex",
         width: 16,
         height: 16,
@@ -111,13 +105,16 @@ const ArrowIcon = () => {
         color: "white",
         alignItems: "center",
         justifyContent: "center",
-        fontSize: 10,
         fontWeight: "bold",
         verticalAlign: "middle",
         mr: "10px",
-      }}
+        fontSize: 16,
+        [theme.breakpoints.up("tablet")]: {
+          fontSize: 24,
+        },
+      })}
     >
-      &gt;
+      <KeyboardArrowRightIcon fontSize="inherit" />
     </Box>
   );
 };

@@ -1,81 +1,28 @@
+import type { SolutionJSONType } from "../../types/solution";
+
 import { Box } from "@mui/material";
+
 import ColorBox from "./ColorBox";
 import List from "./List";
 import GradientHeader from "./SolutionGradientHeader";
 import TextImageBox from "./TextImageBox";
-
 import TextBox from "./TextBox";
 
 interface SubPageProp {
   color: string;
   subColor: string;
   subtitle: string;
-  id?: string; // 스크롤 이동을 위한 아이디
+  // 스크롤 이동을 위한 아이디
+  id?: string;
   // JSON 파일 구조에 맞춰 타입 구현
-  jsonData: {
-    outline: {
-      outlineTitle: string;
-      outlineContents: string[];
-      outlineImgUrl?: string[];
-      outlineImgText?: string;
-    };
-    technicalBackground: {
-      technicalBackgroundTitle: string;
-      technicalBackgroundContents: string[];
-    };
-    marketTrend: {
-      marketTrendTitle: string;
-      marketTrendContents: string[];
-    };
-    systemArchitecture: {
-      systemArchitectureTitle: string;
-      systemArchitectureListHeader: string;
-      systemArchitectureContents: string[];
-      systemArchitectureImgUrl?: string[];
-      systemArchitectureImgText?: string;
-    };
-    colorBoxes: {
-      boxColor: string;
-      layout: number[][];
-      boxes: {
-        title: string;
-        hyphen?: string;
-        items?: string[];
-        subSections?: {
-          title?: string;
-          items: string[];
-        }[];
-        subSectionColumns?: {
-          xs: number;
-          sm?: number;
-          md?: number;
-          lg?: number;
-        };
-      }[];
-    }[];
-    relatedSoftware: {
-      relatedSoftwareTitle: string;
-      relatedSoftwareContents: string;
-    };
-    frequentlyAskedQuestions: {
-      frequentlyAskedQuestionsTitle: string;
-      frequentlyAskedQuestionsContents: {
-        title: string;
-        contents: string;
-      }[];
-    };
-  };
+  jsonData: SolutionJSONType;
 }
 
 const SubPage = ({ color, subColor, subtitle, jsonData, id }: SubPageProp) => {
   return (
-    <>
-      {/** 스크롤 타겟 */}
-      {id && <div id={id} />}
-
+    <Box id={id}>
       {/** 그라데이션이 있는 헤더 */}
       <GradientHeader color={color} subColor={subColor} subtitle={subtitle} />
-
       {/* body section */}
       <Box component="main">
         {/* 개요 */}
@@ -131,7 +78,7 @@ const SubPage = ({ color, subColor, subtitle, jsonData, id }: SubPageProp) => {
           }
         />
       </Box>
-    </>
+    </Box>
   );
 };
 
