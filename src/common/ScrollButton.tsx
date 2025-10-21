@@ -34,9 +34,9 @@ const ScrollButton = ({ color }: { color: string }) => {
             right: "30px",
           },
           [theme.breakpoints.up("laptop")]: {
-            right: "100px",
+            right: "30px",
           },
-          backgroundColor: "transparent",
+          backgroundColor: "#ffffff",
           ":hover": {
             backgroundColor: color,
             color: "#ffffff",
