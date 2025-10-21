@@ -1,6 +1,5 @@
 import { Box, Stack } from "@mui/material";
 
-import useSolutionClass from "../../hooks/useSolutionClass";
 import BreadScrum from "../../components/solution/BreadScrum";
 import SubPage from "../../components/solution/SubPage";
 import SolutionTitleHeader from "../../components/solution/SolutionTitleHeader";
@@ -44,10 +43,8 @@ const Mobility = () => {
     EV: "EV",
   };
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
 
@@ -172,7 +169,7 @@ const Mobility = () => {
           id={mobilityId.EV}
         />
       </Stack>
-    </>
+    </Box>
   );
 };
 

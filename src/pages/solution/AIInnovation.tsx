@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 
 import BreadScrum from "../../components/solution/BreadScrum";
-import useSolutionClass from "../../hooks/useSolutionClass";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import TextBox from "../../components/solution/TextBox";
@@ -24,10 +23,8 @@ const AIInnovation = () => {
     globalTechTrendHandle,
   } = body.aiInnovationHub;
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
@@ -79,7 +76,7 @@ const AIInnovation = () => {
           </Box>
         ))}
       </Box>
-    </>
+    </Box>
   );
 };
 

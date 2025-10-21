@@ -4,7 +4,6 @@ import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import useSolutionClass from "../../hooks/useSolutionClass";
 
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
@@ -26,10 +25,8 @@ const SmartFactory = () => {
     frequentlyAskedQuestions,
   } = body.smartFactory;
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
@@ -89,7 +86,7 @@ const SmartFactory = () => {
           contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
         />
       </Box>
-    </>
+    </Box>
   );
 };
 
