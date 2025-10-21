@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 
 import BreadScrum from "../../components/solution/BreadScrum";
-import useSolutionClass from "../../hooks/useSolutionClass";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import TextBox from "../../components/solution/TextBox";
@@ -9,6 +8,9 @@ import TextBox from "../../components/solution/TextBox";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
 import SolutionTitle from "../../components/solution/SolutionTitle";
+import ScrollButton from "../../common/ScrollButton";
+
+const THRESHOLD = 100;
 
 const AIInnovation = () => {
   // header
@@ -24,10 +26,10 @@ const AIInnovation = () => {
     globalTechTrendHandle,
   } = body.aiInnovationHub;
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
+      <ScrollButton color={color} threshold={THRESHOLD} />
+
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
@@ -79,7 +81,7 @@ const AIInnovation = () => {
           </Box>
         ))}
       </Box>
-    </>
+    </Box>
   );
 };
 

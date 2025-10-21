@@ -4,11 +4,13 @@ import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
 import TextBox from "../../components/solution/TextBox";
 import { Box } from "@mui/material";
-import useSolutionClass from "../../hooks/useSolutionClass";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
 import BreadScrum from "../../components/solution/BreadScrum";
+import ScrollButton from "../../common/ScrollButton";
+
+const THRESHOLD = 100;
 
 const Bems = () => {
   // header
@@ -25,10 +27,10 @@ const Bems = () => {
     frequentlyAskedQuestions,
   } = body.bems;
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
+      <ScrollButton color={color} threshold={THRESHOLD} />
+
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
@@ -86,7 +88,7 @@ const Bems = () => {
           contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
         />
       </Box>
-    </>
+    </Box>
   );
 };
 

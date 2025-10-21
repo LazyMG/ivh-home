@@ -1,6 +1,5 @@
 import { Box, Stack } from "@mui/material";
 
-import useSolutionClass from "../../hooks/useSolutionClass";
 import BreadScrum from "../../components/solution/BreadScrum";
 import SubPage from "../../components/solution/SubPage";
 import SolutionTitleHeader from "../../components/solution/SolutionTitleHeader";
@@ -10,7 +9,7 @@ import ScrollButton from "../../common/ScrollButton";
 import body from "../../data/solution/body.json";
 import header from "../../data/solution/header.json";
 
-import "../../style/solution.css";
+const THRESHOLD = 643;
 
 const Mobility = () => {
   // header
@@ -44,15 +43,13 @@ const Mobility = () => {
     EV: "EV",
   };
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
 
       {/** 스크롤 버튼 */}
-      <ScrollButton color={color} />
+      <ScrollButton color={color} threshold={THRESHOLD} show />
 
       {/* header section */}
       {/* 제목만 있는 헤더 */}
@@ -65,10 +62,11 @@ const Mobility = () => {
           display: "flex",
           flexDirection: "column",
           mt: 6,
-          mb: 28,
+          mb: 12,
           gap: 1,
           [theme.breakpoints.up("tablet")]: {
             gap: 4,
+            mb: 28,
           },
         })}
       >
@@ -172,7 +170,7 @@ const Mobility = () => {
           id={mobilityId.EV}
         />
       </Stack>
-    </>
+    </Box>
   );
 };
 

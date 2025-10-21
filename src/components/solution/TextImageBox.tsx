@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import type { TextImageBoxProps } from "../../types/solution";
 
 const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
-  const { title, contents, imgurl, width, height, listHeader, imgText } =
+  const { title, contents, imgurl, listHeader, imgText, width } =
     textImageBoxProps;
 
   return (
@@ -70,7 +70,14 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
             }}
             key={index}
           >
-            <img src={resolvedSrc} alt={title} width={width} height={height} />
+            <img
+              src={resolvedSrc}
+              alt={title}
+              style={{
+                maxWidth: "100%",
+                width,
+              }}
+            />
             {imgText && (
               <Typography variant="solutionTextFont">{imgText}</Typography>
             )}

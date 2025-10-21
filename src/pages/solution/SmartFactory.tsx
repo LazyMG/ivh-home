@@ -4,12 +4,13 @@ import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import useSolutionClass from "../../hooks/useSolutionClass";
 
-import "../../style/solution.css";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
 import BreadScrum from "../../components/solution/BreadScrum";
+import ScrollButton from "../../common/ScrollButton";
+
+const THRESHOLD = 100;
 
 const SmartFactory = () => {
   // header
@@ -26,10 +27,10 @@ const SmartFactory = () => {
     frequentlyAskedQuestions,
   } = body.smartFactory;
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
+      <ScrollButton color={color} threshold={THRESHOLD} />
+
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
@@ -89,7 +90,7 @@ const SmartFactory = () => {
           contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
         />
       </Box>
-    </>
+    </Box>
   );
 };
 
