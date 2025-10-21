@@ -2,13 +2,13 @@ import { Box } from "@mui/material";
 
 import BreadScrum from "../../components/solution/BreadScrum";
 import useSolutionClass from "../../hooks/useSolutionClass";
-import SolutionHeader from "../../components/solution/SolutionHeader";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import TextBox from "../../components/solution/TextBox";
 
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
+import SolutionTitle from "../../components/solution/SolutionTitle";
 
 const AIInnovation = () => {
   // header
@@ -31,7 +31,7 @@ const AIInnovation = () => {
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
-      <SolutionHeader
+      <SolutionTitle
         title={headerTitle}
         subtitle={subtitle}
         color={color}
