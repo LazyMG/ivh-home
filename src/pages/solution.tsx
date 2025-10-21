@@ -1,12 +1,23 @@
 import { Box, Typography } from "@mui/material";
 import solutionImage from "/images/pages/solution/solution_main.png";
-import Header from "../common/Header";
 import RowNav from "../components/solution/RowNav";
 
 const Solution = () => {
   return (
     <>
-      <Header />
+      <Typography
+        variant="solutionMainTitle"
+        component="p"
+        sx={{
+          ml: {
+            xs: 6,
+            lg: 8,
+          },
+        }}
+      >
+        SOLUTION
+      </Typography>
+
       <Box
         sx={{
           display: "flex",

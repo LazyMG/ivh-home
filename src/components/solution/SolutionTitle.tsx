@@ -1,7 +1,7 @@
 import type { ContentProps } from "../../types/solution";
 import { Box, Typography } from "@mui/material";
 
-const SolutionHeader = (contentProps: ContentProps) => {
+const SolutionTitle = (contentProps: ContentProps) => {
   const { title, subtitle, color, subColor } = contentProps;
   return (
     <>
@@ -49,4 +49,4 @@ const SolutionHeader = (contentProps: ContentProps) => {
   );
 };
 
-export default SolutionHeader;
+export default SolutionTitle;

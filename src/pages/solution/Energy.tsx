@@ -1,10 +1,9 @@
-import SolutionHeader from "../../components/solution/SolutionHeader";
+import SolutionTitle from "../../components/solution/SolutionTitle";
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
 import TextBox from "../../components/solution/TextBox";
 import { Box } from "@mui/material";
-import useSolutionClass from "../../hooks/useSolutionClass";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
@@ -25,14 +24,12 @@ const Energy = () => {
     frequentlyAskedQuestions,
   } = body.energy;
 
-  useSolutionClass("solution-body");
-
   return (
-    <>
+    <Box className="solution-body">
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
-      <SolutionHeader
+      <SolutionTitle
         title={headerTitle}
         subtitle={subtitle}
         color={color}
@@ -86,7 +83,7 @@ const Energy = () => {
           contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
         />
       </Box>
-    </>
+    </Box>
   );
 };
 
