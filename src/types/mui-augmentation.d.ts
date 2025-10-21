@@ -1,26 +1,31 @@
 import "@mui/material/styles";
 import "@mui/material/Typography";
+import type { SxProps, Theme as MuiTheme } from "@mui/material";
 
 declare module "@mui/material/styles" {
   interface Theme {
     customStyles: {
       solutionMainImage: React.CSSProperties;
-      solutionMainRowNav: React.CSSProperties;
-      solutionMainRowNavContainer: React.CSSProperties;
-      solutionMainRowNavItem: React.CSSProperties;
+      solutionMainRowNav: SxProps<MuiTheme>;
+      solutionMainRowNavContainer: SxProps<MuiTheme>;
+      solutionMainRowNavItemContainer: SxProps<MuiTheme>;
+      solutionMainRowNavItem: SxProps<MuiTheme>;
     };
   }
 
   interface ThemeOptions {
     customStyles?: {
       solutionMainImage?: React.CSSProperties;
-      solutionMainRowNav?: React.CSSProperties;
-      solutionMainRowNavContainer?: React.CSSProperties;
-      solutionMainRowNavItem?: React.CSSProperties;
+      solutionMainRowNav?: SxProps<MuiTheme>;
+      solutionMainRowNavContainer?: SxProps<MuiTheme>;
+      solutionMainRowNavItemContainer?: SxProps<MuiTheme>;
+      solutionMainRowNavItem?: SxProps<MuiTheme>;
     };
   }
 
   interface TypographyVariants {
+    breadScrumFont: React.CSSProperties;
+
     solutionMainTitle: React.CSSProperties;
     solutionMainImage: React.CSSProperties;
     solutionMainNavFont: React.CSSProperties;
@@ -32,6 +37,8 @@ declare module "@mui/material/styles" {
   }
 
   interface TypographyVariantsOptions {
+    breadScrumFont?: React.CSSProperties;
+
     solutionMainTitle?: React.CSSProperties;
     solutionMainImage?: React.CSSProperties;
     solutionMainNavFont?: React.CSSProperties;
@@ -57,6 +64,7 @@ declare module "@mui/material/styles" {
 
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
+    breadScrumFont: true;
     solutionMainTitle: true;
     solutionMainImage: true;
     solutionMainNavFont: true;

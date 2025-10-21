@@ -37,6 +37,9 @@ const SolutionTitle = (contentProps: ContentProps) => {
             variant="solutionSubTitleFont"
             component="p"
             color={"#3b4551"}
+            sx={{
+              whiteSpace: "pre-wrap",
+            }}
           >
             {subtitle}
           </Typography>

@@ -87,24 +87,12 @@ const BoxContentRenderer = ({
     <>
       {itemList.map((item, index) => (
         <Box sx={{ display: "flex", gap: 0.5 }} key={index}>
-          <Typography
-            component="p"
-            variant="solutionTextFont"
-            // sx={{
-            //   fontFamily: STYLES.contentFontFamily,
-            //   fontSize: STYLES.contentFontSize,
-            // }}
-          >
+          <Typography component="p" variant="solutionTextFont">
             {content.hyphen}
           </Typography>
           <Typography
             component="p"
             variant="solutionTextFont"
-            // sx={{
-            //   fontFamily: STYLES.contentFontFamily,
-            //   fontSize: STYLES.contentFontSize,
-            //   wordBreak: "keep-all",
-            // }}
             sx={(theme) => ({
               ...theme.typography.solutionTextFont,
               wordBreak: "keep-all",
@@ -128,11 +116,6 @@ const BoxContentRenderer = ({
             <Typography
               variant="solutionTextFont"
               component="p"
-              // sx={{
-              //   fontFamily: STYLES.contentFontFamily,
-              //   fontSize: STYLES.contentFontSize,
-              //   mb: 1,
-              // }}
               sx={(theme) => ({
                 ...theme.typography.solutionTextFont,
                 mb: 1,
@@ -161,12 +144,6 @@ const BoxContentRenderer = ({
       <Typography
         component="p"
         variant="solutionBoxTitleFont"
-        // sx={{
-        //   fontFamily: STYLES.titleFontFamily,
-        //   fontSize: STYLES.titleFontSize,
-        //   color: boxColor,
-        //   mb: STYLES.titleMarginBottom,
-        // }}
         sx={(theme) => ({
           ...theme.typography.solutionBoxTitleFont,
           color: boxColor,
@@ -184,10 +161,6 @@ const BoxContentRenderer = ({
           [theme.breakpoints.up("tablet")]: {
             flexDirection: getFlexDirection(),
           },
-          // {
-          //   xs: "column",
-          //   md: getFlexDirection(),
-          // },
           gap: 2,
           alignItems: "flex-start",
         })}
@@ -230,11 +203,6 @@ const ColorBox = ({
               <Grid
                 key={`${rowIndex}-${colIndex}`} // key의 고유성을 위한 중복 방지
                 // size={{ xs: 12, md: gridSize >= 8 ? 12 : 6, lg: gridSize }}
-                // sx={{
-                //   display: "flex",
-                //   justifyContent: "center",
-                //   alignItems: "flex-start",
-                // }}
                 sx={(theme) => ({
                   display: "flex",
                   justifyContent: "center",

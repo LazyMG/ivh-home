@@ -1,4 +1,4 @@
-import { Box, AppBar, Toolbar, Button } from "@mui/material";
+import { Box, AppBar, Toolbar, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
@@ -30,69 +30,103 @@ const RowNav = () => {
           })}
           disableGutters
         >
+          {/** 네비게이션 메뉴 컨테이너 (3개씩 묶음) */}
           <Box
             sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
+              ...theme.customStyles.solutionMainRowNavItemContainer,
             })}
           >
-            <StyledButton
-              underlineColor="#279576"
-              onClick={() => navigate("/solution/energy")}
+            {/** 네비게이션 메뉴 */}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
             >
-              Energy
-            </StyledButton>
-          </Box>
-          <Box
-            sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
-            })}
-          >
-            <StyledButton
-              underlineColor="#f99818"
-              onClick={() => navigate("/solution/bems")}
+              <StyledTypo
+                underlineColor="#cc5268"
+                onClick={() => navigate("/solution/mobility")}
+                variant="solutionMainNavFont"
+              >
+                Mobility
+              </StyledTypo>
+            </Box>
+            {/** 네비게이션 메뉴 */}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
             >
-              BEMS
-            </StyledButton>
-          </Box>
-          <Box
-            sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
-            })}
-          >
-            <StyledButton underlineColor="#cc5268">Mobility</StyledButton>
-          </Box>
-          <Box
-            sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
-            })}
-          >
-            <StyledButton
-              underlineColor="#0c307b"
-              onClick={() => navigate("/solution/smartfactory")}
+              <StyledTypo
+                underlineColor="#0095d7"
+                onClick={() => navigate("/solution/aIinnovationhub")}
+                variant="solutionMainNavFont"
+              >
+                Al Innovation Hub
+              </StyledTypo>
+            </Box>
+            {/** 네비게이션 메뉴 */}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
             >
-              Smart factory
-            </StyledButton>
+              <StyledTypo
+                underlineColor="#279576"
+                onClick={() => navigate("/solution/energy")}
+                variant="solutionMainNavFont"
+              >
+                Energy
+              </StyledTypo>
+            </Box>
           </Box>
+          {/** 네비게이션 메뉴 컨테이너 (3개씩 묶음) */}
           <Box
             sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
+              ...theme.customStyles.solutionMainRowNavItemContainer,
             })}
           >
-            <StyledButton underlineColor="#0095d7">
-              Al Innovation Hub
-            </StyledButton>
-          </Box>
-          <Box
-            sx={(theme) => ({
-              ...theme.customStyles.solutionMainRowNavItem,
-            })}
-          >
-            <StyledButton
-              underlineColor="#92b843"
-              onClick={() => navigate("/solution/home-appliance")}
+            {/** 네비게이션 메뉴 */}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
             >
-              Home appliance
-            </StyledButton>
+              <StyledTypo
+                underlineColor="#0c307b"
+                onClick={() => navigate("/solution/smartfactory")}
+                variant="solutionMainNavFont"
+              >
+                Smart factory
+              </StyledTypo>
+            </Box>
+            {/** 네비게이션 메뉴 */}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
+            >
+              <StyledTypo
+                underlineColor="#f99818"
+                onClick={() => navigate("/solution/bems")}
+                variant="solutionMainNavFont"
+              >
+                BEMS
+              </StyledTypo>
+            </Box>
+            {/** 네비게이션 메뉴 */}
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.solutionMainRowNavItem,
+              })}
+            >
+              <StyledTypo
+                underlineColor="#92b843"
+                onClick={() => navigate("/solution/homeappliance")}
+                variant="solutionMainNavFont"
+              >
+                Home appliance
+              </StyledTypo>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
@@ -100,32 +134,48 @@ const RowNav = () => {
   );
 };
 
-const StyledButton = styled(Button)<StyledButtonProps>(
+// const StyledButton = styled(Button)<StyledButtonProps>(
+//   ({ theme, underlineColor }) => ({
+//     ...theme.typography.solutionMainNavFont,
+//     width: "fit-content",
+//     textTransform: "none",
+//     color: "black",
+//     borderBottom: `2px solid ${underlineColor}`,
+//     borderRadius: 0,
+//     padding: "0",
+
+//     [theme.breakpoints.up("laptop")]: {
+//       padding: "0 0 0 32px",
+//       width: "100%",
+//     },
+//     "&:hover": {
+//       color: `${underlineColor}`,
+//       backgroundColor: "transparent",
+//     },
+//   })
+// );
+
+const StyledTypo = styled(Typography)<StyledButtonProps>(
   ({ theme, underlineColor }) => ({
-    ...theme.typography.solutionMainNavFont,
-    // fontFamily: "Freesentation-6-SemiBold",
-    // fontSize: "18.9px",
-    // [theme.breakpoints.up("sm")]: {
-    //   fontSize: "31.06px",
-    // },
-    // [theme.breakpoints.up("md")]: {
-    //   // fontSize: "29.2px",
-    //   fontSize: "24px",
-    // },
-    textTransform: "none",
-    color: "black",
     borderBottom: `2px solid ${underlineColor}`,
+    textTransform: "none",
     borderRadius: 0,
-    padding: "0 0 0 16px",
-    width: "70%",
+    color: "black",
+
+    padding: "0",
+    width: "fit-content",
 
     [theme.breakpoints.up("laptop")]: {
-      padding: "0 0 0 32px",
+      padding: "0 0 0 16px",
       width: "100%",
+
+      display: "flex",
+      justifyContent: "flex-end",
     },
     "&:hover": {
       color: `${underlineColor}`,
       backgroundColor: "transparent",
+      cursor: "pointer",
     },
   })
 );
