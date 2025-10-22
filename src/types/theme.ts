@@ -199,6 +199,15 @@ const theme = createTheme({
         width: "fit-content",
       },
     },
+    productPagePadding: {
+      padding: "0 32px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        padding: "0 80px",
+      },
+      [baseTheme.breakpoints.up("laptop")]: {
+        padding: "0 160px",
+      },
+    },
   },
 });
 

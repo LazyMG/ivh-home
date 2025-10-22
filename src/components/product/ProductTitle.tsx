@@ -1,7 +1,7 @@
 import type { ContentProps } from "../../types/solution";
 import { alpha, Box, Typography } from "@mui/material";
 
-const SolutionTitle = (contentProps: ContentProps) => {
+const ProductTitle = (contentProps: ContentProps) => {
   const { title, subtitle, color, subColor } = contentProps;
   return (
     <>
@@ -28,8 +28,9 @@ const SolutionTitle = (contentProps: ContentProps) => {
           sx={{
             background: `linear-gradient(${alpha(subColor, 0.36)}, #ffffff)`,
             mt: 3,
-            py: 3,
-            borderTop: `1px solid ${color}`,
+            pt: 3,
+            pb: 12,
+            borderTop: `2px solid ${color}`,
           }}
         >
           <Typography
@@ -49,4 +50,4 @@ const SolutionTitle = (contentProps: ContentProps) => {
   );
 };
 
-export default SolutionTitle;
+export default ProductTitle;
