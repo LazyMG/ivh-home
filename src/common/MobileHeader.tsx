@@ -23,7 +23,7 @@ const MobileHeader = () => {
     <>
       {/* 모바일 상단 바 */}
       <AppBar
-        position="fixed"
+        position="sticky"
         sx={{
           backgroundColor: theme.background, // #000 대신 테마 색상
           boxShadow: "none",
@@ -46,7 +46,13 @@ const MobileHeader = () => {
           }}
         >
           {/* 로고 */}
-          <Box sx={{ cursor: "pointer" }} onClick={() => navigate("/")}>
+          <Box
+            sx={{ cursor: "pointer" }}
+            onClick={() => {
+              navigate("/");
+              setIsMenuOpen(false);
+            }}
+          >
             <img
               src={isHomePage ? logoWhite : logoBlack} // 페이지에 따라 로고 변경
               alt="logo"
@@ -58,7 +64,6 @@ const MobileHeader = () => {
 
       {/* 햄버거 메뉴 드로어 */}
       <MobileMenuDrawer $isOpen={isMenuOpen} $isHomePage={isHomePage}>
-        {" "}
         {/* prop 추가 */}
         {menu.mainMenu.map((item, index) => (
           <Box key={index} sx={{ mb: 3 }}>
@@ -168,7 +173,8 @@ const MobileHeader = () => {
 const MobileMenuDrawer = styled(Box)<{
   $isOpen: boolean;
   $isHomePage: boolean;
-}>(({ $isOpen, $isHomePage }) => { // prop 추가
+}>(({ $isOpen, $isHomePage }) => {
+  // prop 추가
   const theme = getHeaderTheme($isHomePage);
 
   return {
@@ -185,13 +191,16 @@ const MobileMenuDrawer = styled(Box)<{
     padding: "80px 24px 24px 24px",
     overflowY: "auto",
     overflowX: "hidden",
+
     scrollbarWidth: "thin",
-    scrollbarColor: "transparent transparent",
+    scrollbarGutter: "stable",
+
     "&:hover": {
       scrollbarColor: $isHomePage ? "#4a4a4a #1a1a1a" : "#d0d0d0 #f0f0f0",
     },
     "&::-webkit-scrollbar": {
       width: "8px",
+      position: "absolute",
     },
     "&::-webkit-scrollbar-track": {
       backgroundColor: "transparent",
@@ -215,7 +224,8 @@ const MobileMenuDrawer = styled(Box)<{
 const MobileMenuTitle = styled(Typography)<{
   $isActive?: boolean;
   $isHomePage: boolean;
-}>(({ $isActive, $isHomePage }) => { // prop 추가
+}>(({ $isActive, $isHomePage }) => {
+  // prop 추가
   const theme = getHeaderTheme($isHomePage);
 
   return {
@@ -227,7 +237,7 @@ const MobileMenuTitle = styled(Typography)<{
     marginBottom: "8px",
     paddingBottom: "8px",
     borderBottom: $isActive
-      ? `2px solid #1d4ed8`
+      ? `2px solid #000000`
       : `2px solid ${$isHomePage ? "#333" : "#e0e0e0"}`,
   };
 });
@@ -250,7 +260,8 @@ const MobileColumnTitle = styled(Typography)<{ $isHomePage: boolean }>( // prop 
 const MobileMenuItem = styled(Typography)<{
   disabled?: boolean;
   $isHomePage: boolean;
-}>(({ disabled, $isHomePage }) => { // prop 추가
+}>(({ disabled, $isHomePage }) => {
+  // prop 추가
   const theme = getHeaderTheme($isHomePage);
 
   return {

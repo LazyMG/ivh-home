@@ -4,6 +4,7 @@ import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
+import { useMediaQuery } from "@mui/material";
 
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
@@ -13,6 +14,7 @@ import BreadScrum from "../../components/solution/BreadScrum";
 const SmartFactory = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.SmartFactory;
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   // body
   const {
@@ -28,14 +30,28 @@ const SmartFactory = () => {
   return (
     <Box className="solution-body">
       {/* breadcrumb section */}
-      <BreadScrum title={headerTitle} />
+      {isMobile ? null : <BreadScrum title={headerTitle} />}
       {/* header section */}
-      <SolutionTitle
-        title={headerTitle}
-        subtitle={subtitle}
-        color={color}
-        subColor={subColor}
-      />
+      {isMobile ? (
+        <SolutionTitle
+          contentProps={{
+            title: headerTitle,
+            subtitle: subtitle,
+            color: color,
+            subColor: subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <SolutionTitle
+          contentProps={{
+            title: headerTitle,
+            subtitle: subtitle,
+            color: color,
+            subColor: subColor,
+          }}
+        />
+      )}
       {/* body section */}
       <Box component="main">
         {/* 개요 */}
