@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 
 import BreadScrum from "../../components/solution/BreadScrum";
 import TextImageBox from "../../components/solution/TextImageBox";
@@ -15,6 +16,7 @@ const THRESHOLD = 100;
 const AIInnovation = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.AIInnovationHub;
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   // body
   const {
@@ -30,14 +32,28 @@ const AIInnovation = () => {
     <Box className="solution-body">
       <ScrollButton color={color} threshold={THRESHOLD} />
       {/* breadcrumb section */}
-      <BreadScrum title={headerTitle} />
+      {isMobile ? null : <BreadScrum title={headerTitle} />}
       {/* header section */}
-      <SolutionTitle
-        title={headerTitle}
-        subtitle={subtitle}
-        color={color}
-        subColor={subColor}
-      />
+      {isMobile ? (
+        <SolutionTitle
+          contentProps={{
+            title: headerTitle,
+            subtitle: subtitle,
+            color: color,
+            subColor: subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <SolutionTitle
+          contentProps={{
+            title: headerTitle,
+            subtitle: subtitle,
+            color: color,
+            subColor: subColor,
+          }}
+        />
+      )}
       {/* body section */}
       <Box component="main">
         {/* 개요 */}

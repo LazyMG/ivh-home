@@ -1,4 +1,5 @@
 import { Box, Stack } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 
 import BreadScrum from "../../components/solution/BreadScrum";
 import SubPage from "../../components/solution/SubPage";
@@ -12,6 +13,7 @@ import header from "../../data/solution/header.json";
 const THRESHOLD = 643;
 
 const Mobility = () => {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
   // header
   // 각각의 헤더에서 소제목 분리
   const {
@@ -46,14 +48,34 @@ const Mobility = () => {
   return (
     <Box className="solution-body">
       {/* breadcrumb section */}
-      <BreadScrum title={headerTitle} />
+      {isMobile ? null : <BreadScrum title={headerTitle} />}
 
       {/** 스크롤 버튼 */}
       <ScrollButton color={color} threshold={THRESHOLD} show />
 
       {/* header section */}
       {/* 제목만 있는 헤더 */}
-      <SolutionTitleHeader color={color} title={headerTitle} />
+      {isMobile ? (
+        <SolutionTitleHeader
+          contentProps={{
+            title: headerTitle,
+
+            color: color,
+            subColor: subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <SolutionTitleHeader
+          contentProps={{
+            title: headerTitle,
+
+            color: color,
+            subColor: subColor,
+          }}
+          isMobile={isMobile}
+        />
+      )}
 
       {/** 스크롤 이동 기능 버튼 컨테이너 */}
       {/** 2줄로 구성 */}
