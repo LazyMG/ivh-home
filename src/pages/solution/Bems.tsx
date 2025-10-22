@@ -9,12 +9,14 @@ import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
 import BreadScrum from "../../components/solution/BreadScrum";
 import ScrollButton from "../../common/ScrollButton";
+import { useMediaQuery } from "@mui/material";
 
 const THRESHOLD = 100;
 
 const Bems = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.BEMS;
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   // body
   const {
@@ -32,14 +34,28 @@ const Bems = () => {
       <ScrollButton color={color} threshold={THRESHOLD} />
 
       {/* breadcrumb section */}
-      <BreadScrum title={headerTitle} />
+      {isMobile ? null : <BreadScrum title={headerTitle} />}
       {/* header section */}
-      <SolutionTitle
-        title={headerTitle}
-        subtitle={subtitle}
-        color={color}
-        subColor={subColor}
-      />
+      {isMobile ? (
+        <SolutionTitle
+          contentProps={{
+            title: headerTitle,
+            subtitle: subtitle,
+            color: color,
+            subColor: subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <SolutionTitle
+          contentProps={{
+            title: headerTitle,
+            subtitle: subtitle,
+            color: color,
+            subColor: subColor,
+          }}
+        />
+      )}
       {/* body section */}
       <Box component="main">
         {/* 개요 */}

@@ -1,4 +1,5 @@
 import SolutionTitle from "../../components/solution/SolutionTitle";
+import { useMediaQuery } from "@mui/material";
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
@@ -15,6 +16,7 @@ const THRESHOLD = 100;
 const Energy = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.energy;
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   // body
   const {
@@ -32,14 +34,28 @@ const Energy = () => {
       <ScrollButton color={color} threshold={THRESHOLD} />
 
       {/* breadcrumb section */}
-      <BreadScrum title={headerTitle} />
+      {isMobile ? null : <BreadScrum title={headerTitle} />}
       {/* header section */}
-      <SolutionTitle
-        title={headerTitle}
-        subtitle={subtitle}
-        color={color}
-        subColor={subColor}
-      />
+      {isMobile ? (
+        <SolutionTitle
+          contentProps={{
+            title: headerTitle,
+            subtitle: subtitle,
+            color: color,
+            subColor: subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <SolutionTitle
+          contentProps={{
+            title: headerTitle,
+            subtitle: subtitle,
+            color: color,
+            subColor: subColor,
+          }}
+        />
+      )}
       {/* body section */}
       <Box component="main">
         {/* 개요 */}
