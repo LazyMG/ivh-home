@@ -10,6 +10,8 @@ declare module "@mui/material/styles" {
       solutionMainRowNavContainer: SxProps<MuiTheme>;
       solutionMainRowNavItemContainer: SxProps<MuiTheme>;
       solutionMainRowNavItem: SxProps<MuiTheme>;
+
+      productPagePadding: React.CSSProperties;
     };
   }
 
@@ -20,6 +22,8 @@ declare module "@mui/material/styles" {
       solutionMainRowNavContainer?: SxProps<MuiTheme>;
       solutionMainRowNavItemContainer?: SxProps<MuiTheme>;
       solutionMainRowNavItem?: SxProps<MuiTheme>;
+
+      productPagePadding?: React.CSSProperties;
     };
   }
 
