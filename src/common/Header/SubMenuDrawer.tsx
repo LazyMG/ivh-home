@@ -2,8 +2,10 @@ import { Box } from "@mui/material";
 import { SubMenuColumn } from "../../style/header/column.styles";
 import { SubMenuContent } from "./SubMenuContent";
 import type { MainMenuItem } from "../../types/header";
-import youtube from "/images/header/youtube_white.png";
-import linkedin from "/images/header/linkedin_white.png";
+import youtubeWhite from "/images/header/youtube_white.png";
+import linkedinWhite from "/images/header/linkedin_white.png";
+import youtubeBlack from "/images/header/youtube_black.png";
+import linkedinBlack from "/images/header/linkedin_black.png";
 
 interface SubMenuDrawerProps {
   menuItems: MainMenuItem[];
@@ -68,14 +70,23 @@ export const SubMenuDrawer = ({
         <SubMenuColumn $isLogoColumn={true}>
           <Box sx={{ display: "flex", gap: 2 }}>
             <img
-              src={youtube}
+              src={isHomePage ? youtubeWhite : youtubeBlack}
               alt="youtube"
-              style={{ width: "40px", height: "40px" }}
+              style={{ width: "40px", height: "40px", cursor: "pointer" }}
+              onClick={() =>
+                window.open("https://www.youtube.com/@koreaelec", "_blank")
+              }
             />
             <img
-              src={linkedin}
+              src={isHomePage ? linkedinWhite : linkedinBlack}
               alt="linkedin"
-              style={{ width: "40px", height: "40px" }}
+              style={{ width: "40px", height: "40px", cursor: "pointer" }}
+              onClick={() =>
+                window.open(
+                  "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image",
+                  "_blank"
+                )
+              }
             />
           </Box>
         </SubMenuColumn>
