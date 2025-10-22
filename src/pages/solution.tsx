@@ -5,31 +5,22 @@ import RowNav from "../components/solution/RowNav";
 const Solution = () => {
   return (
     <>
-      <Typography
-        variant="solutionMainTitle"
-        component="p"
-        sx={{
-          ml: {
-            xs: 6,
-            lg: 8,
-          },
-        }}
-      >
-        SOLUTION
-      </Typography>
-
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-        }}
+          mt: 10,
+          [theme.breakpoints.up("laptop")]: {
+            mt: 0,
+          },
+        })}
       >
         <Typography
           variant="solutionMainTitle"
           component="p"
           sx={{
             ml: {
-              xs: 6,
+              xs: 4,
               lg: 8,
             },
           }}

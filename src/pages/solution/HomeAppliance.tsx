@@ -10,6 +10,9 @@ import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
 
 import "../../style/solution.css";
+import ScrollButton from "../../common/ScrollButton";
+
+const THRESHOLD = 100;
 
 const HomeAppliance = () => {
   // header
@@ -28,6 +31,9 @@ const HomeAppliance = () => {
 
   return (
     <Box className="solution-body">
+
+      <ScrollButton color={color} threshold={THRESHOLD} />
+
       {/* breadcrumb section */}
       <BreadScrum title={headerTitle} />
       {/* header section */}
