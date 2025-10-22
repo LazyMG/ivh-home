@@ -1,13 +1,16 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, useMediaQuery } from "@mui/material";
 
 import ProductTitle from "../../components/product/ProductTitle";
 import Feature from "../../components/product/Feature";
 import Outline from "../../components/product/Outline";
 import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+import BreadScrum from "../../components/solution/BreadScrum";
 
 import til from "../../data/product/til.json";
 
 const TIL = () => {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+
   const {
     til_title,
     til_subtitle,
@@ -23,6 +26,7 @@ const TIL = () => {
     <Box
       sx={(theme) => ({
         px: 4,
+        pt: "50px",
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
@@ -31,13 +35,29 @@ const TIL = () => {
         },
       })}
     >
+      {/* breadcrumb section */}
+      {isMobile ? null : <BreadScrum title={til_title} />}
       {/** 그라데이션이 있는 제목 영역 */}
-      <ProductTitle
-        title={til_title}
-        subtitle={til_subtitle}
-        color={til_color}
-        subColor={til_subColor}
-      />
+      {isMobile ? (
+        <ProductTitle
+          contentProps={{
+            title: til_title,
+            subtitle: til_subtitle,
+            color: til_color,
+            subColor: til_subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <ProductTitle
+          contentProps={{
+            title: til_title,
+            subtitle: til_subtitle,
+            color: til_color,
+            subColor: til_subColor,
+          }}
+        />
+      )}
 
       {/** 그라데이션 영역 바로 밑에 개요 영역 */}
       <Outline outline={til_outline} imgObj={til_imgObj} />
