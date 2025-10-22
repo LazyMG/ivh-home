@@ -2,7 +2,7 @@ import { Box, Typography, Button } from "@mui/material";
 import breadscrum from "../../data/solution/breadscrum.json";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
-
+import { useMediaQuery } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const BreadScrum = ({ title }: { title: string }) => {
@@ -16,17 +16,21 @@ const BreadScrum = ({ title }: { title: string }) => {
     homeappliance,
   } = breadscrum.breadscrum;
   const navigate = useNavigate();
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-end",
-        mb: 2,
+        justifyContent: isMobile ? "flex-start" : "flex-end",
+        mb: isMobile ? 0 : 2,
       }}
     >
-      <StyledButton onClick={() => navigate(commonpath.home.path)}>
+      <StyledButton
+        onClick={() => navigate(commonpath.home.path)}
+        isMobile={isMobile}
+      >
         <Typography
           variant="breadScrumFont"
           sx={{
@@ -36,8 +40,11 @@ const BreadScrum = ({ title }: { title: string }) => {
           {commonpath.home.title}
         </Typography>
       </StyledButton>
-      <ArrowIcon />
-      <StyledButton onClick={() => navigate(commonpath.solution.path)}>
+      <ArrowIcon isMobile={isMobile} />
+      <StyledButton
+        onClick={() => navigate(commonpath.solution.path)}
+        isMobile={isMobile}
+      >
         <Typography
           variant="breadScrumFont"
           sx={{
@@ -47,8 +54,9 @@ const BreadScrum = ({ title }: { title: string }) => {
           {commonpath.solution.title}
         </Typography>
       </StyledButton>
-      <ArrowIcon />
+      <ArrowIcon isMobile={isMobile} />
       <StyledButton
+        isMobile={isMobile}
         onClick={() => {
           switch (title) {
             case energy.title:
@@ -82,24 +90,25 @@ const BreadScrum = ({ title }: { title: string }) => {
 
 export default BreadScrum;
 
-const StyledButton = styled(Button)(() => ({
+const StyledButton = styled(Button)(({ isMobile }: { isMobile: boolean }) => ({
   textTransform: "none",
   color: "#717171",
   padding: 0,
   minWidth: 0,
+  fontSize: isMobile ? "8px" : "16px",
   "&:hover": {
     backgroundColor: "transparent",
   },
 }));
 
-const ArrowIcon = () => {
+const ArrowIcon = ({ isMobile }: { isMobile: boolean }) => {
   return (
     <Box
       component="span"
       sx={(theme) => ({
         display: "inline-flex",
-        width: 16,
-        height: 16,
+        width: isMobile ? 10 : 16,
+        height: isMobile ? 10 : 16,
         borderRadius: "50%",
         backgroundColor: "#9e9e9e",
         color: "white",
@@ -107,8 +116,8 @@ const ArrowIcon = () => {
         justifyContent: "center",
         fontWeight: "bold",
         verticalAlign: "middle",
-        mr: "10px",
-        fontSize: 16,
+        mr: isMobile ? "5px" : "10px",
+        fontSize: isMobile ? 10 : 16,
         [theme.breakpoints.up("tablet")]: {
           fontSize: 24,
         },

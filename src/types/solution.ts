@@ -1,6 +1,6 @@
 interface ContentProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   color: string;
   subColor: string;
 }

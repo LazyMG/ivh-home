@@ -1,8 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import solutionImage from "/images/pages/solution/solution_main.png";
+import solutionImageMobile from "/images/pages/solution/solution_mobile.png";
 import RowNav from "../components/solution/RowNav";
 
 const Solution = () => {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
   return (
     <>
       <Box
@@ -41,7 +43,7 @@ const Solution = () => {
           })}
         >
           <img
-            src={solutionImage}
+            src={isMobile ? solutionImageMobile : solutionImage}
             alt="solution"
             style={{
               width: "100%",
