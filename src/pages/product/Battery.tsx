@@ -1,13 +1,16 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, useMediaQuery } from "@mui/material";
 
 import ProductTitle from "../../components/product/ProductTitle";
 import Feature from "../../components/product/Feature";
 import Outline from "../../components/product/Outline";
 import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+import BreadScrum from "../../components/solution/BreadScrum";
 
 import battery from "../../data/product/battery.json";
 
 const Battery = () => {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+
   const {
     battery_title,
     battery_subtitle,
@@ -22,6 +25,7 @@ const Battery = () => {
     <Box
       sx={(theme) => ({
         px: 4,
+        pt: "50px",
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
@@ -30,13 +34,29 @@ const Battery = () => {
         },
       })}
     >
+      {/* breadcrumb section */}
+      {isMobile ? null : <BreadScrum title={battery_title} />}
       {/** 그라데이션이 있는 제목 영역 */}
-      <ProductTitle
-        title={battery_title}
-        subtitle={battery_subtitle}
-        color={battery_color}
-        subColor={battery_subColor}
-      />
+      {isMobile ? (
+        <ProductTitle
+          contentProps={{
+            title: battery_title,
+            subtitle: battery_subtitle,
+            color: battery_color,
+            subColor: battery_subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <ProductTitle
+          contentProps={{
+            title: battery_title,
+            subtitle: battery_subtitle,
+            color: battery_color,
+            subColor: battery_subColor,
+          }}
+        />
+      )}
 
       {/** 그라데이션 영역 바로 밑에 개요 영역 */}
       <Outline outline={battery_outline} />
