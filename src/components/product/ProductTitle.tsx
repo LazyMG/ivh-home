@@ -34,13 +34,16 @@ const ProductTitle = ({
         {isMobile && <BreadScrum title={title} />}
 
         <Box
-          sx={{
+          sx={(theme) => ({
             background: `linear-gradient(${alpha(subColor, 0.36)}, #ffffff)`,
             mt: 3,
             pt: 3,
-            pb: 12,
             borderTop: `2px solid ${color}`,
-          }}
+            pb: 8,
+            [theme.breakpoints.up("tablet")]: {
+              pb: 12,
+            },
+          })}
         >
           <Typography
             // variant="subtitle1"
@@ -49,6 +52,7 @@ const ProductTitle = ({
             color={"#3b4551"}
             sx={{
               whiteSpace: "pre-wrap",
+              wordBreak: "keep-all",
             }}
           >
             {subtitle}

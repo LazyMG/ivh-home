@@ -1,26 +1,24 @@
 import { Box, Stack, useMediaQuery } from "@mui/material";
-
-import ProductTitle from "../../components/product/ProductTitle";
-import Feature from "../../components/product/Feature";
-import Outline from "../../components/product/Outline";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
 import BreadScrum from "../../components/solution/BreadScrum";
+import ProductTitle from "../../components/product/ProductTitle";
+import Outline from "../../components/product/Outline";
+import Feature from "../../components/product/Feature";
+import ProductTextImageBox from "../../components/product/ProductTextImageBox";
 
-import thermal from "../../data/product/thermal.json";
+import vissim_automotive from "../../data/product/vissim-automotive.json";
 
-const ThermalPowerLibrary = () => {
+const VissimAutomotive = () => {
   const isMobile = useMediaQuery("(max-width: 1024px)");
 
   const {
-    thermal_title,
-    thermal_outline,
-    thermal_subtitle,
-    thermal_color,
-    thermal_subColor,
-    thermal_featureColor,
-    thermal_data,
-  } = thermal;
-
+    vissim_automotive_title,
+    vissim_automotive_subtitle,
+    vissim_automotive_outline,
+    vissim_automotive_color,
+    vissim_automotive_featureColor,
+    vissim_automotive_subColor,
+    vissim_automotive_data,
+  } = vissim_automotive;
   return (
     <Box
       sx={(theme) => ({
@@ -35,31 +33,31 @@ const ThermalPowerLibrary = () => {
       })}
     >
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={thermal_title} />}
+      {isMobile ? null : <BreadScrum title={vissim_automotive_title} />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
           contentProps={{
-            title: thermal_title,
-            subtitle: thermal_subtitle,
-            color: thermal_color,
-            subColor: thermal_subColor,
+            title: vissim_automotive_title,
+            subtitle: vissim_automotive_subtitle,
+            color: vissim_automotive_color,
+            subColor: vissim_automotive_subColor,
           }}
           isMobile={isMobile}
         />
       ) : (
         <ProductTitle
           contentProps={{
-            title: thermal_title,
-            subtitle: thermal_subtitle,
-            color: thermal_color,
-            subColor: thermal_subColor,
+            title: vissim_automotive_title,
+            subtitle: vissim_automotive_subtitle,
+            color: vissim_automotive_color,
+            subColor: vissim_automotive_subColor,
           }}
         />
       )}
 
       {/** 그라데이션 영역 바로 밑에 개요 영역 */}
-      <Outline outline={thermal_outline} />
+      <Outline outline={vissim_automotive_outline} />
 
       {/** Features 영역 */}
       <Box
@@ -70,16 +68,16 @@ const ThermalPowerLibrary = () => {
           },
         })}
       >
-        <Feature color={thermal_featureColor} />
+        <Feature color={vissim_automotive_featureColor} />
 
         <Stack
           sx={(theme) => ({
             ...theme.customStyles.productStackComponent,
           })}
         >
-          {thermal_data.map((data, index) => (
+          {vissim_automotive_data.map((data, index) => (
             <ProductTextImageBox
-              key={`thermal-${index}`}
+              key={`vissim-automotive-${index}`}
               title={data.title}
               contents={data.contents}
               imgObj={data.imgObj}
@@ -91,4 +89,4 @@ const ThermalPowerLibrary = () => {
   );
 };
 
-export default ThermalPowerLibrary;
+export default VissimAutomotive;

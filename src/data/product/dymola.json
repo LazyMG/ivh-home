@@ -118,5 +118,35 @@
         "Dymola는 미분-대수 방정식(DAE)을 해결하기 위해 기호적 조작(Symbolic Manipulation) 기법을 활용합니다. 이 방식은 대수 루프나 제약 조건으로 인한 자유도 감소 문제를 효과적으로 처리하며, 고성능 수치 해석기를 통해 실시간 HiL(Hardware-in-the-Loop) 시뮬레이션까지 지원합니다. 이를 통해 복잡한 시스템 모델도 안정적으로 실행할 수 있습니다."
       ]
     }
-  ]
+  ],
+  "dymola_cards": {
+    "gap": 10,
+    "cols": 2,
+    "items": [
+      {
+        "title": "Battery",
+        "description": "복합 시스템 내 배터리 통합 및 성능 분석을 위한 Modelica 기반 시뮬레이션 라이브러리",
+        "image": "/images/pages/product/dymola/dymola-card-one.png",
+        "path": "/product/dymola/battery"
+      },
+      {
+        "title": "TIL",
+        "description": "유연한 구성과 고정밀 시뮬레이션을 지원하는 다분야 시스템 모델링 라이브러리",
+        "image": "/images/pages/product/dymola/dymola-card-two.png",
+        "path": "/product/dymola/til"
+      },
+      {
+        "title": "Thermal Power Library",
+        "description": "열반전 시스템 설계 및 최적화를 위한 통합 시뮬레이션 라이브러리",
+        "image": "/images/pages/product/dymola/dymola-card-three.png",
+        "path": "/product/dymola/thermalpowerlibrary"
+      },
+      {
+        "title": "Vehicle Dynamics Library",
+        "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리",
+        "image": "/images/pages/product/dymola/dymola-card-four.png",
+        "path": "/product/dymola/vehicledynamicslibrary"
+      }
+    ]
+  }
 }

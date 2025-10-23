@@ -1,26 +1,25 @@
 import { Box, Stack, useMediaQuery } from "@mui/material";
-
-import ProductTitle from "../../components/product/ProductTitle";
-import Feature from "../../components/product/Feature";
-import Outline from "../../components/product/Outline";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
 import BreadScrum from "../../components/solution/BreadScrum";
+import ProductTitle from "../../components/product/ProductTitle";
+import Outline from "../../components/product/Outline";
+import Feature from "../../components/product/Feature";
+import ProductTextImageBox from "../../components/product/ProductTextImageBox";
 
-import thermal from "../../data/product/thermal.json";
+import vtd_simulate from "../../data/product/vtd-simulate.json";
 
-const ThermalPowerLibrary = () => {
+const VTDSimulate = () => {
   const isMobile = useMediaQuery("(max-width: 1024px)");
 
   const {
-    thermal_title,
-    thermal_outline,
-    thermal_subtitle,
-    thermal_color,
-    thermal_subColor,
-    thermal_featureColor,
-    thermal_data,
-  } = thermal;
-
+    vtd_simulate_title,
+    vtd_simulate_subtitle,
+    vtd_simulate_imgObj,
+    vtd_simulate_outline,
+    vtd_simulate_color,
+    vtd_simulate_featureColor,
+    vtd_simulate_subColor,
+    vtd_simulate_data,
+  } = vtd_simulate;
   return (
     <Box
       sx={(theme) => ({
@@ -35,31 +34,31 @@ const ThermalPowerLibrary = () => {
       })}
     >
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={thermal_title} />}
+      {isMobile ? null : <BreadScrum title={vtd_simulate_title} />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
           contentProps={{
-            title: thermal_title,
-            subtitle: thermal_subtitle,
-            color: thermal_color,
-            subColor: thermal_subColor,
+            title: vtd_simulate_title,
+            subtitle: vtd_simulate_subtitle,
+            color: vtd_simulate_color,
+            subColor: vtd_simulate_subColor,
           }}
           isMobile={isMobile}
         />
       ) : (
         <ProductTitle
           contentProps={{
-            title: thermal_title,
-            subtitle: thermal_subtitle,
-            color: thermal_color,
-            subColor: thermal_subColor,
+            title: vtd_simulate_title,
+            subtitle: vtd_simulate_subtitle,
+            color: vtd_simulate_color,
+            subColor: vtd_simulate_subColor,
           }}
         />
       )}
 
       {/** 그라데이션 영역 바로 밑에 개요 영역 */}
-      <Outline outline={thermal_outline} />
+      <Outline outline={vtd_simulate_outline} imgObj={vtd_simulate_imgObj} />
 
       {/** Features 영역 */}
       <Box
@@ -70,16 +69,16 @@ const ThermalPowerLibrary = () => {
           },
         })}
       >
-        <Feature color={thermal_featureColor} />
+        <Feature color={vtd_simulate_featureColor} />
 
         <Stack
           sx={(theme) => ({
             ...theme.customStyles.productStackComponent,
           })}
         >
-          {thermal_data.map((data, index) => (
+          {vtd_simulate_data.map((data, index) => (
             <ProductTextImageBox
-              key={`thermal-${index}`}
+              key={`vtd-simulate-${index}`}
               title={data.title}
               contents={data.contents}
               imgObj={data.imgObj}
@@ -91,4 +90,4 @@ const ThermalPowerLibrary = () => {
   );
 };
 
-export default ThermalPowerLibrary;
+export default VTDSimulate;

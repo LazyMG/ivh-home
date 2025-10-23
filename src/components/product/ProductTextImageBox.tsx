@@ -6,15 +6,25 @@ const ProductTextImageBox = (textImageBoxProps: ProductTextImageBoxProps) => {
 
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "flex-start",
-        mt: 10,
-      }}
+        mt: 6,
+        [theme.breakpoints.up("tablet")]: {
+          mt: 8,
+        },
+        [theme.breakpoints.up("laptop")]: {
+          mt: 10,
+        },
+      })}
     >
-      <Typography variant="solutionTextTitleFont" component="p">
+      <Typography
+        variant="solutionTextTitleFont"
+        component="p"
+        sx={{ wordBreak: "keep-all" }}
+      >
         {title}
       </Typography>
       {contents && (
@@ -48,14 +58,21 @@ const ProductTextImageBox = (textImageBoxProps: ProductTextImageBoxProps) => {
       )}
       {imgObj && (
         <Box
-          sx={{
+          sx={(theme) => ({
             width: "100%",
             display: "flex",
             flexDirection: imgObj.imgLayout || "column",
             alignItems: "center",
-            gap: imgObj.imgLayout ? 0 : 8,
+            gap: imgObj.imgLayout ? 0 : 4,
             justifyContent: imgObj.imgPosition || "center",
-          }}
+            mt: 0,
+            [theme.breakpoints.up("tablet")]: {
+              mt: 6,
+            },
+            [theme.breakpoints.up("laptop")]: {
+              mt: 8,
+            },
+          })}
         >
           {imgObj.imgs.map((obj, index) => {
             const resolvedSrc = new URL(obj.imgUrl, import.meta.url).href;

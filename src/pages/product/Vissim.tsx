@@ -4,28 +4,29 @@ import Feature from "../../components/product/Feature";
 import ImageBanner from "../../components/product/ImageBanner";
 import Outline from "../../components/product/Outline";
 import ProductTextImageBox from "../../components/product/ProductTextImageBox";
-
-import dymola from "../../data/product/dymola.json";
 import ProductCard from "../../components/product/Card";
 
-const Dymola = () => {
+import vissim from "../../data/product/vissim.json";
+
+const Vissim = () => {
   const {
-    dymola_title,
-    dymola_subtitle,
-    dymola_outline,
-    dymola_mainImgUrl,
-    dymola_data,
-    dymola_cards,
-  } = dymola;
+    vissim_title,
+    vissim_subtitle,
+    vissim_outline,
+    vissim_mainImgUrl,
+    vissim_imgObj,
+    vissim_data,
+    vissim_cards,
+  } = vissim;
 
   return (
     <>
       {/** 전체 패딩 영역(반응형 고려) 넣기 */}
       {/** 이미지 영역 */}
       <ImageBanner
-        imgUrl={dymola_mainImgUrl}
-        title={dymola_title}
-        subtitle={dymola_subtitle}
+        imgUrl={vissim_mainImgUrl}
+        title={vissim_title}
+        subtitle={vissim_subtitle}
       />
 
       {/** 개요 영역 */}
@@ -34,7 +35,7 @@ const Dymola = () => {
           ...theme.customStyles.productBranchPageOutline,
         })}
       >
-        <Outline outline={dymola_outline} />
+        <Outline outline={vissim_outline} imgObj={vissim_imgObj} />
       </Box>
 
       {/** Features 영역*/}
@@ -59,9 +60,9 @@ const Dymola = () => {
             ...theme.customStyles.productStackComponent,
           })}
         >
-          {dymola_data.map((data, index) => (
+          {vissim_data.map((data, index) => (
             <ProductTextImageBox
-              key={`dymola-${index}`}
+              key={`vissim-${index}`}
               title={data.title}
               contents={data.contents}
               imgObj={data.imgObj}
@@ -88,10 +89,10 @@ const Dymola = () => {
           },
         })}
       >
-        <ProductCard cards={dymola_cards} />
+        <ProductCard cards={vissim_cards} />
       </Box>
     </>
   );
 };
 
-export default Dymola;
+export default Vissim;
