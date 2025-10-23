@@ -26,6 +26,9 @@ import VTD from "./pages/product/VTD";
 import VTDCreate from "./pages/product/VTDCreate";
 import VTDSimulate from "./pages/product/VTDSimulate";
 import VTDFullstack from "./pages/product/VTDFullstack";
+import Vissim from "./pages/product/Vissim";
+import VissimAutomotive from "./pages/product/VissimAutomotive";
+import Viswalk from "./pages/product/Viswalk";
 
 function App() {
   const isMobile = useMediaQuery("(max-width: 1024px)");
@@ -68,6 +71,12 @@ function App() {
               path="/product/vtd/vtdfullstack"
               element={<VTDFullstack />}
             />
+            <Route path="/product/vissim" element={<Vissim />} />
+            <Route
+              path="/product/vissim/vissimautomotive"
+              element={<VissimAutomotive />}
+            />
+            <Route path="/product/vissim/viswalk" element={<Viswalk />} />
 
             <Route path="/calendar" element={<Calendar />} />
           </Routes>

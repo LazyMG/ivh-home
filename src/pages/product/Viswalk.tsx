@@ -1,0 +1,81 @@
+import { Box, Stack, useMediaQuery } from "@mui/material";
+import BreadScrum from "../../components/solution/BreadScrum";
+import ProductTitle from "../../components/product/ProductTitle";
+import Outline from "../../components/product/Outline";
+import Feature from "../../components/product/Feature";
+import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+
+import viswalk from "../../data/product/viswalk.json";
+
+const Viswalk = () => {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+
+  const {
+    viswalk_title,
+    viswalk_subtitle,
+    viswalk_outline,
+    viswalk_color,
+    viswalk_featureColor,
+    viswalk_subColor,
+    viswalk_data,
+  } = viswalk;
+  return (
+    <Box
+      sx={(theme) => ({
+        px: 4,
+        pt: "50px",
+        [theme.breakpoints.up("tablet")]: {
+          px: 10,
+        },
+        [theme.breakpoints.up("laptop")]: {
+          px: 20,
+        },
+      })}
+    >
+      {/* breadcrumb section */}
+      {isMobile ? null : <BreadScrum title={viswalk_title} />}
+      {/** 그라데이션이 있는 제목 영역 */}
+      {isMobile ? (
+        <ProductTitle
+          contentProps={{
+            title: viswalk_title,
+            subtitle: viswalk_subtitle,
+            color: viswalk_color,
+            subColor: viswalk_subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <ProductTitle
+          contentProps={{
+            title: viswalk_title,
+            subtitle: viswalk_subtitle,
+            color: viswalk_color,
+            subColor: viswalk_subColor,
+          }}
+        />
+      )}
+
+      {/** 그라데이션 영역 바로 밑에 개요 영역 */}
+      <Outline outline={viswalk_outline} />
+
+      {/** Features 영역 */}
+      <Box sx={{ mt: 22 }}>
+        <Feature color={viswalk_featureColor} />
+
+        <Stack gap={12}>
+          {viswalk_data.map((data, index) => (
+            <ProductTextImageBox
+              key={`viswalk-${index}`}
+              title={data.title}
+              contents={data.contents}
+              imgObj={data.imgObj}
+            />
+          ))}
+        </Stack>
+      </Box>
+    </Box>
+  );
+};
+
+export default Viswalk;
