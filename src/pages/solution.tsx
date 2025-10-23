@@ -37,7 +37,7 @@ const Solution = () => {
             flexDirection: "column",
             mx: "auto",
             alignItems: "center",
-            flex: 1,
+            // flex: 1,
             width: "100%",
           })}
         >
@@ -47,6 +47,7 @@ const Solution = () => {
             style={{
               width: "100%",
               height: "100%",
+              objectFit: "cover",
             }}
           />
         </Box>
