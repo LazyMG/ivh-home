@@ -6,6 +6,7 @@ import Outline from "../../components/product/Outline";
 import ProductTextImageBox from "../../components/product/ProductTextImageBox";
 
 import dymola from "../../data/product/dymola.json";
+import ProductCard from "../../components/product/Card";
 
 const Dymola = () => {
   const {
@@ -14,6 +15,7 @@ const Dymola = () => {
     dymola_outline,
     dymola_mainImgUrl,
     dymola_data,
+    dymola_cards,
   } = dymola;
 
   return (
@@ -80,6 +82,9 @@ const Dymola = () => {
       </Box>
 
       {/** 카드 영역 */}
+      <Box sx={{ my: 30, px: 20, display: "flex", justifyContent: "center" }}>
+        <ProductCard cards={dymola_cards} />
+      </Box>
     </>
   );
 };
