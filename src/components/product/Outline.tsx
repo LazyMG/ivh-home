@@ -4,11 +4,17 @@ import type { OutlineProps } from "../../types/product";
 const Outline = ({ outline, imgObj }: OutlineProps) => {
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         display: "flex",
         flexDirection: "column",
-        gap: imgObj ? 8 : 3,
-      }}
+        gap: imgObj ? 5 : 3,
+        [theme.breakpoints.up("tablet")]: {
+          gap: imgObj ? 8 : 3,
+        },
+        [theme.breakpoints.up("laptop")]: {
+          gap: imgObj ? 12 : 3,
+        },
+      })}
     >
       {outline.map((sentence, index) => (
         <Typography

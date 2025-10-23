@@ -60,10 +60,21 @@ const VissimAutomotive = () => {
       <Outline outline={vissim_automotive_outline} />
 
       {/** Features 영역 */}
-      <Box sx={{ mt: 22 }}>
+      <Box
+        sx={(theme) => ({
+          my: 12,
+          [theme.breakpoints.up("tablet")]: {
+            my: 22,
+          },
+        })}
+      >
         <Feature color={vissim_automotive_featureColor} />
 
-        <Stack gap={12}>
+        <Stack
+          sx={(theme) => ({
+            ...theme.customStyles.productStackComponent,
+          })}
+        >
           {vissim_automotive_data.map((data, index) => (
             <ProductTextImageBox
               key={`vissim-automotive-${index}`}

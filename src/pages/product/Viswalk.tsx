@@ -60,10 +60,21 @@ const Viswalk = () => {
       <Outline outline={viswalk_outline} />
 
       {/** Features 영역 */}
-      <Box sx={{ mt: 22 }}>
+      <Box
+        sx={(theme) => ({
+          my: 12,
+          [theme.breakpoints.up("tablet")]: {
+            my: 22,
+          },
+        })}
+      >
         <Feature color={viswalk_featureColor} />
 
-        <Stack gap={12}>
+        <Stack
+          sx={(theme) => ({
+            ...theme.customStyles.productStackComponent,
+          })}
+        >
           {viswalk_data.map((data, index) => (
             <ProductTextImageBox
               key={`viswalk-${index}`}
