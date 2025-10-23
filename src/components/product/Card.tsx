@@ -134,7 +134,7 @@ const ProductCard = ({ cards }: ProductCardProps) => {
                   alignItems: "flex-end",
                   bottom: "70px",
                   width: "100%",
-                  px: 2,
+                  px: 3,
                   boxSizing: "border-box",
 
                   justifyContent: cards?.textPosition || "flex-end",
@@ -151,6 +151,8 @@ const ProductCard = ({ cards }: ProductCardProps) => {
                     color: "#000000",
                     letterSpacing: 0,
                     lineHeight: "19px",
+                    px: 1,
+                    wordBreak: "keep-all",
                   }}
                 >
                   {product.description}

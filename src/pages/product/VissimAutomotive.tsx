@@ -5,21 +5,20 @@ import Outline from "../../components/product/Outline";
 import Feature from "../../components/product/Feature";
 import ProductTextImageBox from "../../components/product/ProductTextImageBox";
 
-import vtd_create from "../../data/product/vtd-create.json";
+import vissim_automotive from "../../data/product/vissim-automotive.json";
 
-const VTDCreate = () => {
+const VissimAutomotive = () => {
   const isMobile = useMediaQuery("(max-width: 1024px)");
 
   const {
-    vtd_create_title,
-    vtd_create_subtitle,
-    vtd_create_imgObj,
-    vtd_create_outline,
-    vtd_create_color,
-    vtd_create_featureColor,
-    vtd_create_subColor,
-    vtd_create_data,
-  } = vtd_create;
+    vissim_automotive_title,
+    vissim_automotive_subtitle,
+    vissim_automotive_outline,
+    vissim_automotive_color,
+    vissim_automotive_featureColor,
+    vissim_automotive_subColor,
+    vissim_automotive_data,
+  } = vissim_automotive;
   return (
     <Box
       sx={(theme) => ({
@@ -34,40 +33,40 @@ const VTDCreate = () => {
       })}
     >
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={vtd_create_title} />}
+      {isMobile ? null : <BreadScrum title={vissim_automotive_title} />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
           contentProps={{
-            title: vtd_create_title,
-            subtitle: vtd_create_subtitle,
-            color: vtd_create_color,
-            subColor: vtd_create_subColor,
+            title: vissim_automotive_title,
+            subtitle: vissim_automotive_subtitle,
+            color: vissim_automotive_color,
+            subColor: vissim_automotive_subColor,
           }}
           isMobile={isMobile}
         />
       ) : (
         <ProductTitle
           contentProps={{
-            title: vtd_create_title,
-            subtitle: vtd_create_subtitle,
-            color: vtd_create_color,
-            subColor: vtd_create_subColor,
+            title: vissim_automotive_title,
+            subtitle: vissim_automotive_subtitle,
+            color: vissim_automotive_color,
+            subColor: vissim_automotive_subColor,
           }}
         />
       )}
 
       {/** 그라데이션 영역 바로 밑에 개요 영역 */}
-      <Outline outline={vtd_create_outline} imgObj={vtd_create_imgObj} />
+      <Outline outline={vissim_automotive_outline} />
 
       {/** Features 영역 */}
       <Box sx={{ mt: 22 }}>
-        <Feature color={vtd_create_featureColor} />
+        <Feature color={vissim_automotive_featureColor} />
 
         <Stack gap={12}>
-          {vtd_create_data.map((data, index) => (
+          {vissim_automotive_data.map((data, index) => (
             <ProductTextImageBox
-              key={`vtd-create-${index}`}
+              key={`vissim-automotive-${index}`}
               title={data.title}
               contents={data.contents}
               imgObj={data.imgObj}
@@ -79,4 +78,4 @@ const VTDCreate = () => {
   );
 };
 
-export default VTDCreate;
+export default VissimAutomotive;
