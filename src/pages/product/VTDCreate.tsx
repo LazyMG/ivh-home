@@ -1,0 +1,84 @@
+import { Box, Stack, useMediaQuery } from "@mui/material";
+import BreadScrum from "../../components/solution/BreadScrum";
+import ProductTitle from "../../components/product/ProductTitle";
+import Outline from "../../components/product/Outline";
+import Feature from "../../components/product/Feature";
+import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+
+import vtd_create from "../../data/product/vtd-create.json";
+
+const VTDCreate = () => {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+
+  const {
+    vtd_create_title,
+    vtd_create_subtitle,
+    vtd_create_imgObj,
+    vtd_create_outline,
+    vtd_create_color,
+    vtd_create_featureColor,
+    vtd_create_subColor,
+    vtd_create_data,
+  } = vtd_create;
+  return (
+    <Box
+      sx={(theme) => ({
+        px: 4,
+        pt: "50px",
+        [theme.breakpoints.up("tablet")]: {
+          px: 10,
+        },
+        [theme.breakpoints.up("laptop")]: {
+          px: 20,
+        },
+      })}
+    >
+      {/* breadcrumb section */}
+      {isMobile ? null : <BreadScrum title={vtd_create_title} />}
+      {/** 그라데이션이 있는 제목 영역 */}
+      {isMobile ? (
+        <ProductTitle
+          contentProps={{
+            title: vtd_create_title,
+            subtitle: vtd_create_subtitle,
+            color: vtd_create_color,
+            subColor: vtd_create_subColor,
+          }}
+          isMobile={isMobile}
+        />
+      ) : (
+        <ProductTitle
+          contentProps={{
+            title: vtd_create_title,
+            subtitle: vtd_create_subtitle,
+            color: vtd_create_color,
+            subColor: vtd_create_subColor,
+          }}
+        />
+      )}
+
+      {/** 그라데이션 영역 바로 밑에 개요 영역 */}
+      <Outline outline={vtd_create_outline} imgObj={vtd_create_imgObj} />
+
+      {/** 개요 하단에 이미지가 있는 텍스트 영역 - subOutline으로 구분 */}
+
+      {/** Features 영역 */}
+      <Box sx={{ mt: 22 }}>
+        <Feature color={vtd_create_featureColor} />
+
+        <Stack gap={12}>
+          {vtd_create_data.map((data, index) => (
+            <ProductTextImageBox
+              key={`til-${index}`}
+              title={data.title}
+              contents={data.contents}
+              imgObj={data.imgObj}
+            />
+          ))}
+        </Stack>
+      </Box>
+    </Box>
+  );
+};
+
+export default VTDCreate;
