@@ -41,7 +41,6 @@ const Solution = () => {
             // flex: 1,
             // width: "100%",
             objectFit: "cover",
-            backgroundColor: "blue",
             justifyContent: "center",
           })}
         >
