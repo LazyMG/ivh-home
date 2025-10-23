@@ -60,8 +60,6 @@ const VTDSimulate = () => {
       {/** 그라데이션 영역 바로 밑에 개요 영역 */}
       <Outline outline={vtd_simulate_outline} imgObj={vtd_simulate_imgObj} />
 
-      {/** 개요 하단에 이미지가 있는 텍스트 영역 - subOutline으로 구분 */}
-
       {/** Features 영역 */}
       <Box sx={{ mt: 22 }}>
         <Feature color={vtd_simulate_featureColor} />
@@ -69,7 +67,7 @@ const VTDSimulate = () => {
         <Stack gap={12}>
           {vtd_simulate_data.map((data, index) => (
             <ProductTextImageBox
-              key={`til-${index}`}
+              key={`vtd-simulate-${index}`}
               title={data.title}
               contents={data.contents}
               imgObj={data.imgObj}

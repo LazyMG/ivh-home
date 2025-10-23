@@ -60,8 +60,6 @@ const VTDCreate = () => {
       {/** 그라데이션 영역 바로 밑에 개요 영역 */}
       <Outline outline={vtd_create_outline} imgObj={vtd_create_imgObj} />
 
-      {/** 개요 하단에 이미지가 있는 텍스트 영역 - subOutline으로 구분 */}
-
       {/** Features 영역 */}
       <Box sx={{ mt: 22 }}>
         <Feature color={vtd_create_featureColor} />
@@ -69,7 +67,7 @@ const VTDCreate = () => {
         <Stack gap={12}>
           {vtd_create_data.map((data, index) => (
             <ProductTextImageBox
-              key={`til-${index}`}
+              key={`vtd-create-${index}`}
               title={data.title}
               contents={data.contents}
               imgObj={data.imgObj}
