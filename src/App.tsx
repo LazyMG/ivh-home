@@ -22,6 +22,10 @@ import TIL from "./pages/product/TIL";
 import ThermalPowerLibrary from "./pages/product/ThermalPowerLibrary";
 import VehicleDynamicsLibrary from "./pages/product/VehicleDynamicsLibrary";
 import ScrollToTop from "./common/ScrollToTop";
+import VTD from "./pages/product/VTD";
+import VTDCreate from "./pages/product/VTDCreate";
+import VTDSimulate from "./pages/product/VTDSimulate";
+import VTDFullstack from "./pages/product/VTDFullstack";
 
 function App() {
   const isMobile = useMediaQuery("(max-width: 1024px)");
@@ -57,6 +61,14 @@ function App() {
               path="/product/dymola/vehicledynamicslibrary"
               element={<VehicleDynamicsLibrary />}
             />
+            <Route path="/product/vtd" element={<VTD />} />
+            <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
+            <Route path="/product/vtd/vtdsimulate" element={<VTDSimulate />} />
+            <Route
+              path="/product/vtd/vtdfullstack"
+              element={<VTDFullstack />}
+            />
+
             <Route path="/calendar" element={<Calendar />} />
           </Routes>
         </ScrollToTop>

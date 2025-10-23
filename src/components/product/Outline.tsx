@@ -14,7 +14,7 @@ const Outline = ({ outline, imgObj }: OutlineProps) => {
         <Typography
           variant="solutionTextFont"
           key={index}
-          sx={{ wordBreak: "keep-all" }}
+          sx={{ wordBreak: "keep-all", whiteSpace: "pre-wrap" }}
         >
           {sentence}
         </Typography>
