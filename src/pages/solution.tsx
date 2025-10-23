@@ -46,8 +46,8 @@ const Solution = () => {
             src={isMobile ? solutionImageMobile : solutionImage}
             alt="solution"
             style={{
-              width: "100%",
-              height: "100%",
+              maxWidth: "90%",
+              maxHeight: "80%",
               objectFit: "cover",
             }}
           />
