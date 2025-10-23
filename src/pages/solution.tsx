@@ -11,7 +11,6 @@ const Solution = () => {
         sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-          mt: 10,
           [theme.breakpoints.up("laptop")]: {
             mt: 0,
           },
@@ -37,9 +36,9 @@ const Solution = () => {
             display: "flex",
             flexDirection: "column",
             mx: "auto",
-            width: "100%",
             alignItems: "center",
             flex: 1,
+            width: "100%",
           })}
         >
           <img
@@ -48,7 +47,6 @@ const Solution = () => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
             }}
           />
         </Box>

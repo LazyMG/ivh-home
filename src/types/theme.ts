@@ -137,8 +137,13 @@ const theme = createTheme({
 
       maxWidth: "100%",
 
+      [baseTheme.breakpoints.up("tablet")]: {
+        width: "70%",
+      },
+
       [baseTheme.breakpoints.up("laptop")]: {
         maxWidth: "70%",
+        top: "80px",
       },
     },
     // 솔루션 페이지 (/solution) 하단 네비게이션의 Box 컴포넌트 스타일
