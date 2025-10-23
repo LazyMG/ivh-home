@@ -61,10 +61,21 @@ const VTDCreate = () => {
       <Outline outline={vtd_create_outline} imgObj={vtd_create_imgObj} />
 
       {/** Features 영역 */}
-      <Box sx={{ mt: 22 }}>
+      <Box
+        sx={(theme) => ({
+          my: 12,
+          [theme.breakpoints.up("tablet")]: {
+            my: 22,
+          },
+        })}
+      >
         <Feature color={vtd_create_featureColor} />
 
-        <Stack gap={12}>
+        <Stack
+          sx={(theme) => ({
+            ...theme.customStyles.productStackComponent,
+          })}
+        >
           {vtd_create_data.map((data, index) => (
             <ProductTextImageBox
               key={`vtd-create-${index}`}

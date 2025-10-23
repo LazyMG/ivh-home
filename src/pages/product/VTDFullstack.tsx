@@ -61,10 +61,21 @@ const VTDFullstack = () => {
       <Outline outline={vtd_fullstack_outline} imgObj={vtd_fullstack_imgObj} />
 
       {/** Features 영역 */}
-      <Box sx={{ mt: 22 }}>
+      <Box
+        sx={(theme) => ({
+          my: 12,
+          [theme.breakpoints.up("tablet")]: {
+            my: 22,
+          },
+        })}
+      >
         <Feature color={vtd_fullstack_featureColor} />
 
-        <Stack gap={12}>
+        <Stack
+          sx={(theme) => ({
+            ...theme.customStyles.productStackComponent,
+          })}
+        >
           {vtd_fullstack_data.map((data, index) => (
             <ProductTextImageBox
               key={`vtd-fullstack-${index}`}

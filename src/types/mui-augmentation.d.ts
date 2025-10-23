@@ -11,7 +11,8 @@ declare module "@mui/material/styles" {
       solutionMainRowNavItemContainer: SxProps<MuiTheme>;
       solutionMainRowNavItem: SxProps<MuiTheme>;
 
-      productPagePadding: React.CSSProperties;
+      productBranchPageOutline: React.CSSProperties;
+      productStackComponent: React.CSSProperties;
     };
   }
 
@@ -23,7 +24,8 @@ declare module "@mui/material/styles" {
       solutionMainRowNavItemContainer?: SxProps<MuiTheme>;
       solutionMainRowNavItem?: SxProps<MuiTheme>;
 
-      productPagePadding?: React.CSSProperties;
+      productBranchPageOutline?: React.CSSProperties;
+      productStackComponent?: React.CSSProperties;
     };
   }
 

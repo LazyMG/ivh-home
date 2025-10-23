@@ -60,17 +60,25 @@ const ProductCard = ({ cards }: ProductCardProps) => {
   return (
     <>
       <Box
-        sx={{
+        sx={(theme) => ({
           // display: "flex",
           // flexDirection: products.vtdCreate.boxFlex,
           // justifyContent: "center",
           // alignItems: "center",
           // gap: products.vtdCreate.gap,
 
-          gap: cards.gap,
           display: "grid",
-          gridTemplateColumns: `repeat(${cards.cols},1fr)`,
-        }}
+          gridTemplateColumns: `repeat(1,1fr)`,
+
+          gap: 4,
+          [theme.breakpoints.up("tablet")]: {
+            gap: 6,
+            gridTemplateColumns: `repeat(${cards.cols},1fr)`,
+          },
+          [theme.breakpoints.up("laptop")]: {
+            gap: cards.gap,
+          },
+        })}
       >
         {cards.items.map((product, index) => (
           <Card

@@ -206,13 +206,26 @@ const theme = createTheme({
         width: "fit-content",
       },
     },
-    productPagePadding: {
+    // 프로덕트 페이지 중 중간 페이지(/product/dymola, /product/vtd 등)의 Outline 영역 스타일
+    productBranchPageOutline: {
+      marginTop: "32px",
       padding: "0 32px",
       [baseTheme.breakpoints.up("tablet")]: {
+        marginTop: "64px",
         padding: "0 80px",
       },
       [baseTheme.breakpoints.up("laptop")]: {
+        marginTop: "144px",
         padding: "0 160px",
+      },
+    },
+    productStackComponent: {
+      gap: "48px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        gap: "64px",
+      },
+      [baseTheme.breakpoints.up("laptop")]: {
+        gap: "96px",
       },
     },
   },

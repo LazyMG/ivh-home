@@ -21,21 +21,30 @@ const VTD = () => {
       {/** 개요 영역 */}
       <Box
         sx={(theme) => ({
-          mt: 18,
-          px: 4,
-          [theme.breakpoints.up("tablet")]: {
-            px: 10,
-          },
-          [theme.breakpoints.up("laptop")]: {
-            px: 20,
-          },
+          ...theme.customStyles.productBranchPageOutline,
         })}
       >
         <Outline outline={vtd_outline} />
       </Box>
 
       {/** 카드 영역 */}
-      <Box sx={{ my: 30, px: 20, display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={(theme) => ({
+          display: "flex",
+          justifyContent: "center",
+
+          my: 12,
+          px: 4,
+          [theme.breakpoints.up("tablet")]: {
+            my: 24,
+            px: 10,
+          },
+          [theme.breakpoints.up("laptop")]: {
+            my: 30,
+            px: 20,
+          },
+        })}
+      >
         <ProductCard cards={vtd_cards} />
       </Box>
     </>
