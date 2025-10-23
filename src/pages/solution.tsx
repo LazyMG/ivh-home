@@ -42,6 +42,7 @@ const Solution = () => {
             // width: "100%",
             objectFit: "cover",
             backgroundColor: "blue",
+            justifyContent: "center",
           })}
         >
           <img
