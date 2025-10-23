@@ -36,6 +36,7 @@ const Solution = () => {
             display: "flex",
             flexDirection: "column",
             mx: "auto",
+            my: "auto",
             alignItems: "center",
             // flex: 1,
             // width: "100%",
