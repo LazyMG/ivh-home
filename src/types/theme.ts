@@ -135,10 +135,17 @@ const theme = createTheme({
       top: 0,
       bottom: 0,
 
-      maxWidth: "100%",
+      maxWidth: "90%",
+      width: "100%",
+
+      [baseTheme.breakpoints.up("tablet")]: {
+        width: "50%",
+      },
 
       [baseTheme.breakpoints.up("laptop")]: {
-        maxWidth: "70%",
+        width: "60%",
+        maxWidth: "100%",
+        top: "80px",
       },
     },
     // 솔루션 페이지 (/solution) 하단 네비게이션의 Box 컴포넌트 스타일
@@ -146,7 +153,7 @@ const theme = createTheme({
       position: "absolute",
       width: "100%",
 
-      bottom: "5rem",
+      bottom: "2rem",
 
       [baseTheme.breakpoints.up("tablet")]: {
         bottom: "2rem",
