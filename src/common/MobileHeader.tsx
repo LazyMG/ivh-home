@@ -132,6 +132,7 @@ const MobileHeader = () => {
                               }}
                               disabled={subItem.disabled}
                               $isHomePage={isHomePage}
+                              $deps={subItem.deps}
                             >
                               {subItem.name}
                             </MobileMenuItem>
@@ -327,13 +328,15 @@ const MobileColumnTitle = styled(Typography)<{ $isHomePage: boolean }>( // prop 
 const MobileMenuItem = styled(Typography)<{
   disabled?: boolean;
   $isHomePage: boolean;
-}>(({ disabled, $isHomePage }) => {
+  $deps?: number;
+}>(({ disabled, $isHomePage, $deps }) => {
   // prop 추가
   const theme = getHeaderTheme($isHomePage);
 
   return {
     color: disabled ? theme.submenu.disabled : theme.submenu.active,
     fontSize: "13px",
+    marginLeft: $deps === 2 ? "4px" : 0,
     marginBottom: "6px",
     cursor: disabled ? "default" : "pointer",
     fontFamily: "Freesentation-4-Regular",
