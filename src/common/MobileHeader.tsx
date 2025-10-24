@@ -247,7 +247,7 @@ const MobileMenuDrawer = styled(Box)<{
     left: 0,
     width: "80%",
     maxWidth: "400px",
-    height: "100vh",
+    height: "100dvh",
     boxSizing: "border-box",
     backgroundColor: theme.background, // #000 대신 테마 색상
     transform: $isOpen ? "translateX(0)" : "translateX(-100%)",
