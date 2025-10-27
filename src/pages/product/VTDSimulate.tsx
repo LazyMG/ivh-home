@@ -1,5 +1,6 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
-import BreadScrum from "../../components/solution/BreadScrum";
+import { Box, Stack } from "@mui/material";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import BreadScrum from "../../common/BreadScrum";
 import ProductTitle from "../../components/product/ProductTitle";
 import Outline from "../../components/product/Outline";
 import Feature from "../../components/product/Feature";
@@ -8,7 +9,7 @@ import ProductTextImageBox from "../../components/product/ProductTextImageBox";
 import vtd_simulate from "../../data/product/vtd-simulate.json";
 
 const VTDSimulate = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
 
   const {
     vtd_simulate_title,
@@ -34,7 +35,7 @@ const VTDSimulate = () => {
       })}
     >
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={vtd_simulate_title} />}
+      {isMobile ? null : <BreadScrum pageKey="vtdSimulate" />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
@@ -45,6 +46,7 @@ const VTDSimulate = () => {
             subColor: vtd_simulate_subColor,
           }}
           isMobile={isMobile}
+          pageKey="vtdSimulate"
         />
       ) : (
         <ProductTitle

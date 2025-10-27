@@ -1,10 +1,12 @@
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import solutionImage from "/images/pages/solution/solution_main.png";
 import solutionImageMobile from "/images/pages/solution/solution_mobile.png";
 import RowNav from "../components/solution/RowNav";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 const Solution = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
+
   return (
     <>
       <Box

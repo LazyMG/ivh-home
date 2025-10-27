@@ -4,11 +4,11 @@ import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import { useMediaQuery } from "@mui/material";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
-import BreadScrum from "../../components/solution/BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 import ScrollButton from "../../common/ScrollButton";
 
 const THRESHOLD = 100;
@@ -16,7 +16,7 @@ const THRESHOLD = 100;
 const SmartFactory = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.SmartFactory;
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
 
   // body
   const {
@@ -34,7 +34,7 @@ const SmartFactory = () => {
       <ScrollButton color={color} threshold={THRESHOLD} />
 
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={headerTitle} />}
+      {isMobile ? null : <BreadScrum pageKey="smartfactory" />}
       {/* header section */}
       {isMobile ? (
         <SolutionTitle
@@ -45,6 +45,7 @@ const SmartFactory = () => {
             subColor: subColor,
           }}
           isMobile={isMobile}
+          pageKey="smartfactory"
         />
       ) : (
         <SolutionTitle

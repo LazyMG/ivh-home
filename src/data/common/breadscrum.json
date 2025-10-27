@@ -1,0 +1,101 @@
+{
+  "templates": {
+    "home_product": [
+      { "title": "Home", "url": "/" },
+      { "title": "Product", "url": "/product" }
+    ],
+    "home_solution": [
+      { "title": "Home", "url": "/" },
+      { "title": "Solution", "url": "/solution" }
+    ],
+    "modelica_dymola": [{ "title": "Dymola", "url": "/product/dymola" }],
+    "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
+    "vissim_base": [{ "title": "Vissim", "url": "/product/vissim" }]
+  },
+  "pages": {
+    "battery": {
+      "extends": ["home_product", "modelica_dymola"],
+      "current": {
+        "title": "Battery",
+        "url": "/product/dymola/battery"
+      }
+    },
+    "til": {
+      "extends": ["home_product", "modelica_dymola"],
+      "current": { "title": "TIL", "url": "/product/dymola/til" }
+    },
+    "thermalPowerLibrary": {
+      "extends": ["home_product", "modelica_dymola"],
+      "current": {
+        "title": "Thermal Power Library",
+        "url": "/product/dymola/thermal"
+      }
+    },
+    "vehicledynamicslibrary": {
+      "extends": ["home_product", "modelica_dymola"],
+      "current": {
+        "title": "Vehicle Dynamics Library",
+        "url": "/product/dymola/vehicledynamicslibrary"
+      }
+    },
+    "vtdCreate": {
+      "extends": ["home_product", "vtd_base"],
+      "current": {
+        "title": "VTD(Virtual Test Drive) CREATE",
+        "url": "/product/vtd/vtdcreate"
+      }
+    },
+    "vtdSimulate": {
+      "extends": ["home_product", "vtd_base"],
+      "current": {
+        "title": "VTD(Virtual Test Drive) SIMULATE",
+        "url": "/product/vtd/vtdsimulate"
+      }
+    },
+    "vtdFullstack": {
+      "extends": ["home_product", "vtd_base"],
+      "current": {
+        "title": "VTD(Virtual Test Drive) FULLSTACK",
+        "url": "/product/vtd/vtdfullstack"
+      }
+    },
+    "vissimAutomotive": {
+      "extends": ["home_product", "vissim_base"],
+      "current": {
+        "title": "Vissim Automotive",
+        "url": "/product/vissim/automotive"
+      }
+    },
+    "viswalk": {
+      "extends": ["home_product", "vissim_base"],
+      "current": { "title": "Viswalk", "url": "/product/vissim/viswalk" }
+    },
+    "energy": {
+      "extends": ["home_solution"],
+      "current": { "title": "Energy", "url": "/solution/energy" }
+    },
+    "bems": {
+      "extends": ["home_solution"],
+      "current": { "title": "BEMS", "url": "/solution/bems" }
+    },
+    "smartfactory": {
+      "extends": ["home_solution"],
+      "current": { "title": "Smart factory", "url": "/solution/smartfactory" }
+    },
+    "alinnovationhub": {
+      "extends": ["home_solution"],
+      "current": {
+        "title": "AI innovation hub",
+        "url": "/solution/alinnovationhub"
+      }
+    },
+    "homeAppliance": {
+      "extends": ["home_solution"],
+      "current": { "title": "Home appliance", "url": "/solution/homeappliance" }
+    },
+    "mobility": {
+      "extends": ["home_solution"],
+      "current": { "title": "Mobility", "url": "/solution/mobility" }
+    }
+  }
+}

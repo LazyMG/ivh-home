@@ -1,7 +1,8 @@
-import { Fab, Slide, useMediaQuery } from "@mui/material";
+import { Fab, Slide } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import { useEffect, useState } from "react";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 const ScrollButton = ({
   color,
@@ -12,7 +13,7 @@ const ScrollButton = ({
   threshold: number;
   show?: boolean;
 }) => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
 
   // 항상 보이거나 모바일 화면에서만 보이도록 설정
   const defaultShowing = show || isMobile;

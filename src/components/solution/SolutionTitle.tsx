@@ -1,13 +1,15 @@
 import type { ContentProps } from "../../types/solution";
 import { alpha, Box, Typography } from "@mui/material";
-import BreadScrum from "./BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 
 const SolutionTitle = ({
   contentProps,
   isMobile,
+  pageKey,
 }: {
   contentProps: ContentProps;
   isMobile?: boolean;
+  pageKey?: string;
 }) => {
   const { title, subtitle, color, subColor } = contentProps;
   return (
@@ -31,7 +33,7 @@ const SolutionTitle = ({
             {title}
           </Typography>
         </Box>
-        {isMobile && <BreadScrum title={title} />}
+        {isMobile && pageKey && <BreadScrum pageKey={pageKey} />}
         <Box
           sx={{
             background: `linear-gradient(${alpha(subColor, 0.36)}, #ffffff)`,

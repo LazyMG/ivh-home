@@ -1,15 +1,16 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 import ProductTitle from "../../components/product/ProductTitle";
 import Feature from "../../components/product/Feature";
 import Outline from "../../components/product/Outline";
 import ProductTextImageBox from "../../components/product/ProductTextImageBox";
-import BreadScrum from "../../components/solution/BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 
 import battery from "../../data/product/battery.json";
 
 const Battery = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
 
   const {
     battery_title,
@@ -35,7 +36,7 @@ const Battery = () => {
       })}
     >
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={battery_title} />}
+      {isMobile ? null : <BreadScrum pageKey="battery" />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
@@ -46,6 +47,7 @@ const Battery = () => {
             subColor: battery_subColor,
           }}
           isMobile={isMobile}
+          pageKey="battery"
         />
       ) : (
         <ProductTitle

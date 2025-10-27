@@ -1,5 +1,6 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
-import BreadScrum from "../../components/solution/BreadScrum";
+import { Box, Stack } from "@mui/material";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import BreadScrum from "../../common/BreadScrum";
 import ProductTitle from "../../components/product/ProductTitle";
 import Outline from "../../components/product/Outline";
 import Feature from "../../components/product/Feature";
@@ -8,7 +9,7 @@ import ProductTextImageBox from "../../components/product/ProductTextImageBox";
 import vissim_automotive from "../../data/product/vissim-automotive.json";
 
 const VissimAutomotive = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
 
   const {
     vissim_automotive_title,
@@ -33,7 +34,7 @@ const VissimAutomotive = () => {
       })}
     >
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={vissim_automotive_title} />}
+      {isMobile ? null : <BreadScrum pageKey="vissimAutomotive" />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
@@ -44,6 +45,7 @@ const VissimAutomotive = () => {
             subColor: vissim_automotive_subColor,
           }}
           isMobile={isMobile}
+          pageKey="vissimAutomotive"
         />
       ) : (
         <ProductTitle

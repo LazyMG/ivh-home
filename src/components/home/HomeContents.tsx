@@ -1,10 +1,10 @@
 import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useMediaQuery } from "@mui/material";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const HomeContents = () => {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
 
   return (
     <>

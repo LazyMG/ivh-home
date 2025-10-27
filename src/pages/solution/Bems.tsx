@@ -7,16 +7,16 @@ import { Box } from "@mui/material";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import BreadScrum from "../../components/solution/BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 import ScrollButton from "../../common/ScrollButton";
-import { useMediaQuery } from "@mui/material";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const THRESHOLD = 100;
 
 const Bems = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.BEMS;
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
 
   // body
   const {
@@ -34,7 +34,7 @@ const Bems = () => {
       <ScrollButton color={color} threshold={THRESHOLD} />
 
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={headerTitle} />}
+      {isMobile ? null : <BreadScrum pageKey="bems" />}
       {/* header section */}
       {isMobile ? (
         <SolutionTitle
@@ -45,6 +45,7 @@ const Bems = () => {
             subColor: subColor,
           }}
           isMobile={isMobile}
+          pageKey="bems"
         />
       ) : (
         <SolutionTitle

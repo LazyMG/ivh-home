@@ -1,15 +1,16 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 import ProductTitle from "../../components/product/ProductTitle";
 import Feature from "../../components/product/Feature";
 import Outline from "../../components/product/Outline";
 import ProductTextImageBox from "../../components/product/ProductTextImageBox";
-import BreadScrum from "../../components/solution/BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 
 import til from "../../data/product/til.json";
 
 const TIL = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useIsMobile();
 
   const {
     til_title,
@@ -36,7 +37,7 @@ const TIL = () => {
       })}
     >
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={til_title} />}
+      {isMobile ? null : <BreadScrum pageKey="til" />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
@@ -47,6 +48,7 @@ const TIL = () => {
             subColor: til_subColor,
           }}
           isMobile={isMobile}
+          pageKey="til"
         />
       ) : (
         <ProductTitle
