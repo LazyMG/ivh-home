@@ -1,15 +1,19 @@
 import { Box } from "@mui/material";
-import ImageBanner from "../../components/product/ImageBanner";
-import Outline from "../../components/product/Outline";
-import ProductCard from "../../components/product/Card";
+import ImageBanner from "../../../components/product/ImageBanner";
+import Outline from "../../../components/product/Outline";
+import ProductCard from "../../../components/product/Card";
 
-import vtd from "../../data/product/vtd.json";
+import vtd from "../../../data/product/vtd.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const VTD = () => {
   const { vtd_title, vtd_subtitle, vtd_mainImgUrl, vtd_outline, vtd_cards } =
     vtd;
+  const THRESHOLD = 100;
+
   return (
     <>
+      <ScrollButton threshold={THRESHOLD} />
       {/** 전체 패딩 영역(반응형 고려) 넣기 */}
       {/** 이미지 영역 */}
       <ImageBanner

@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
 
 const ScrollButton = ({
-  color,
+  color = "#000000",
   threshold,
   show,
 }: {
-  color: string;
+  color?: string;
   threshold: number;
   show?: boolean;
 }) => {

@@ -1,12 +1,13 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../hooks/useIsMobile";
-import BreadScrum from "../../common/BreadScrum";
-import ProductTitle from "../../components/product/ProductTitle";
-import Outline from "../../components/product/Outline";
-import Feature from "../../components/product/Feature";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+import { useIsMobile } from "../../../hooks/useIsMobile";
+import BreadScrum from "../../../common/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Outline from "../../../components/product/Outline";
+import Feature from "../../../components/product/Feature";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
 
-import vissim_automotive from "../../data/product/vissim-automotive.json";
+import vissim_automotive from "../../../data/product/vissim-automotive.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const VissimAutomotive = () => {
   const isMobile = useIsMobile();
@@ -20,6 +21,9 @@ const VissimAutomotive = () => {
     vissim_automotive_subColor,
     vissim_automotive_data,
   } = vissim_automotive;
+
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -33,6 +37,11 @@ const VissimAutomotive = () => {
         },
       })}
     >
+      <ScrollButton
+        color={vissim_automotive_color}
+        threshold={THRESHOLD}
+        show={!isMobile}
+      />
       {/* breadcrumb section */}
       {isMobile ? null : <BreadScrum pageKey="vissimAutomotive" />}
       {/** 그라데이션이 있는 제목 영역 */}

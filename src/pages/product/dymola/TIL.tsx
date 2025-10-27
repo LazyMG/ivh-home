@@ -1,13 +1,14 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
-import ProductTitle from "../../components/product/ProductTitle";
-import Feature from "../../components/product/Feature";
-import Outline from "../../components/product/Outline";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
-import BreadScrum from "../../common/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Feature from "../../../components/product/Feature";
+import Outline from "../../../components/product/Outline";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
+import BreadScrum from "../../../common/BreadScrum";
 
-import til from "../../data/product/til.json";
+import til from "../../../data/product/til.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const TIL = () => {
   const isMobile = useIsMobile();
@@ -23,6 +24,9 @@ const TIL = () => {
     til_featureColor,
     til_data,
   } = til;
+
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -36,6 +40,7 @@ const TIL = () => {
         },
       })}
     >
+      <ScrollButton color={til_color} threshold={THRESHOLD} show={!isMobile} />
       {/* breadcrumb section */}
       {isMobile ? null : <BreadScrum pageKey="til" />}
       {/** 그라데이션이 있는 제목 영역 */}

@@ -1,12 +1,14 @@
 import { Box, Stack } from "@mui/material";
 
-import Feature from "../../components/product/Feature";
-import ImageBanner from "../../components/product/ImageBanner";
-import Outline from "../../components/product/Outline";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
-import ProductCard from "../../components/product/Card";
+import Feature from "../../../components/product/Feature";
+import ImageBanner from "../../../components/product/ImageBanner";
+import Outline from "../../../components/product/Outline";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
+import ProductCard from "../../../components/product/Card";
 
-import vissim from "../../data/product/vissim.json";
+import vissim from "../../../data/product/vissim.json";
+import ScrollButton from "../../../common/ScrollButton";
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
 const Vissim = () => {
   const {
@@ -19,8 +21,12 @@ const Vissim = () => {
     vissim_cards,
   } = vissim;
 
+  const THRESHOLD = 100;
+  const isMobile = useIsMobile();
+
   return (
     <>
+      <ScrollButton color="#000000" threshold={THRESHOLD} show={!isMobile} />
       {/** 전체 패딩 영역(반응형 고려) 넣기 */}
       {/** 이미지 영역 */}
       <ImageBanner

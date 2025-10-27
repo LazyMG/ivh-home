@@ -1,13 +1,14 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
-import ProductTitle from "../../components/product/ProductTitle";
-import Feature from "../../components/product/Feature";
-import Outline from "../../components/product/Outline";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
-import BreadScrum from "../../common/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Feature from "../../../components/product/Feature";
+import Outline from "../../../components/product/Outline";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
+import BreadScrum from "../../../common/BreadScrum";
 
-import vehicle from "../../data/product/vehicle.json";
+import vehicle from "../../../data/product/vehicle.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const VehicleDynamicsLibrary = () => {
   const isMobile = useIsMobile();
@@ -22,6 +23,8 @@ const VehicleDynamicsLibrary = () => {
     vehicle_data,
   } = vehicle;
 
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -35,6 +38,11 @@ const VehicleDynamicsLibrary = () => {
         },
       })}
     >
+      <ScrollButton
+        color={vehicle_color}
+        threshold={THRESHOLD}
+        show={!isMobile}
+      />
       {/* breadcrumb section */}
       {isMobile ? null : <BreadScrum pageKey="vehicledynamicslibrary" />}
       {/** 그라데이션이 있는 제목 영역 */}

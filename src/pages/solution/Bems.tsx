@@ -31,7 +31,7 @@ const Bems = () => {
 
   return (
     <Box className="solution-body">
-      <ScrollButton color={color} threshold={THRESHOLD} />
+      <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
 
       {/* breadcrumb section */}
       {isMobile ? null : <BreadScrum pageKey="bems" />}

@@ -42,8 +42,6 @@ const BreadScrum = ({ pageKey }: BreadScrumProps) => {
     breadcrumbPath.push(pageData.current);
   }
 
-  console.log("breadcrumbPath", breadcrumbPath);
-
   return (
     <Box
       sx={{

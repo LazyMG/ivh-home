@@ -1,12 +1,13 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../hooks/useIsMobile";
-import BreadScrum from "../../common/BreadScrum";
-import ProductTitle from "../../components/product/ProductTitle";
-import Outline from "../../components/product/Outline";
-import Feature from "../../components/product/Feature";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+import { useIsMobile } from "../../../hooks/useIsMobile";
+import BreadScrum from "../../../common/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Outline from "../../../components/product/Outline";
+import Feature from "../../../components/product/Feature";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
 
-import vtd_create from "../../data/product/vtd-create.json";
+import vtd_create from "../../../data/product/vtd-create.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const VTDCreate = () => {
   const isMobile = useIsMobile();
@@ -21,6 +22,9 @@ const VTDCreate = () => {
     vtd_create_subColor,
     vtd_create_data,
   } = vtd_create;
+
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -34,6 +38,11 @@ const VTDCreate = () => {
         },
       })}
     >
+      <ScrollButton
+        color={vtd_create_color}
+        threshold={THRESHOLD}
+        show={!isMobile}
+      />
       {/* breadcrumb section */}
       {isMobile ? null : <BreadScrum pageKey="vtdCreate" />}
       {/** 그라데이션이 있는 제목 영역 */}

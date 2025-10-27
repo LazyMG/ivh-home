@@ -51,7 +51,7 @@ const Mobility = () => {
       {isMobile ? null : <BreadScrum pageKey="mobility" />}
 
       {/** 스크롤 버튼 */}
-      <ScrollButton color={color} threshold={THRESHOLD} show />
+      <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
 
       {/* header section */}
       {/* 제목만 있는 헤더 */}

@@ -1,13 +1,14 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
-import ProductTitle from "../../components/product/ProductTitle";
-import Feature from "../../components/product/Feature";
-import Outline from "../../components/product/Outline";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
-import BreadScrum from "../../common/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Feature from "../../../components/product/Feature";
+import Outline from "../../../components/product/Outline";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
+import BreadScrum from "../../../common/BreadScrum";
 
-import battery from "../../data/product/battery.json";
+import battery from "../../../data/product/battery.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const Battery = () => {
   const isMobile = useIsMobile();
@@ -22,6 +23,8 @@ const Battery = () => {
     battery_data,
   } = battery;
 
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -35,6 +38,11 @@ const Battery = () => {
         },
       })}
     >
+      <ScrollButton
+        color={battery_color}
+        threshold={THRESHOLD}
+        show={!isMobile}
+      />
       {/* breadcrumb section */}
       {isMobile ? null : <BreadScrum pageKey="battery" />}
       {/** 그라데이션이 있는 제목 영역 */}
