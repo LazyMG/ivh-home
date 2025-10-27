@@ -8,7 +8,7 @@ import ProductCard from "../../../components/product/Card";
 
 import vissim from "../../../data/product/vissim.json";
 import ScrollButton from "../../../common/ScrollButton";
-import { useIsMobile } from "../../../hooks/useIsMobile";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 
 const Vissim = () => {
   const {
@@ -22,7 +22,7 @@ const Vissim = () => {
   } = vissim;
 
   const THRESHOLD = 100;
-  const isMobile = useIsMobile();
+  const isMobile = useBreakpoint();
 
   return (
     <>
@@ -53,7 +53,7 @@ const Vissim = () => {
             mt: 24,
             px: 10,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             mt: 36,
             px: 20,
           },
@@ -89,7 +89,7 @@ const Vissim = () => {
             my: 24,
             px: 10,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             my: 30,
             px: 20,
           },

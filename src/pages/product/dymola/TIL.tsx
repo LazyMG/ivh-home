@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../../hooks/useIsMobile";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 
 import ProductTitle from "../../../components/product/ProductTitle";
 import Feature from "../../../components/product/Feature";
@@ -11,7 +11,7 @@ import til from "../../../data/product/til.json";
 import ScrollButton from "../../../common/ScrollButton";
 
 const TIL = () => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   const {
     til_title,
@@ -35,7 +35,7 @@ const TIL = () => {
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           px: 20,
         },
       })}

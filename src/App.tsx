@@ -2,7 +2,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
-import { useIsMobile } from "./hooks/useIsMobile";
+import { useBreakpoint } from "./hooks/useBreakpoint";
 import theme from "./types/theme";
 import ScrollToTop from "./common/ScrollToTop";
 // Header
@@ -10,11 +10,11 @@ import Header from "./common/Header/Header";
 import MobileHeader from "./common/MobileHeader";
 // pages
 import Home from "./pages/home";
-import Product from "./pages/product";
+import Product from "./pages/product/product";
 import Service from "./pages/service";
 import Company from "./pages/company";
 // Solution
-import Solution from "./pages/solution";
+import Solution from "./pages/solution/solution";
 import Energy from "./pages/solution/Energy";
 import Bems from "./pages/solution/Bems";
 import HomeAppliance from "./pages/solution/HomeAppliance";
@@ -40,13 +40,13 @@ import Viswalk from "./pages/product/vissim/Viswalk";
 import Calendar from "./pages/Calendar";
 
 function App() {
-  const isMobile = useIsMobile();
+  const { isMobile, isTablet } = useBreakpoint();
 
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <ScrollToTop>
-          {isMobile ? <MobileHeader /> : <Header />}
+          {isMobile || isTablet ? <MobileHeader /> : <Header />}
           <Routes>
             {/** pages */}
             <Route path="/" element={<Home />} />

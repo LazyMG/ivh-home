@@ -4,7 +4,10 @@ import { headerFonts } from "../../theme/headerTheme";
 import { getMenuItemColor } from "../../utils/headerStyleHelpers";
 
 // 서브 메뉴 아이템
-export const SubMenuItem = styled(Typography)<MenuItemStyleProps>(
+export const SubMenuItem = styled(Typography, {
+  shouldForwardProp: (prop) =>
+    prop !== "$isHomePage" && prop !== "$deps" && prop !== "disabled",
+})<MenuItemStyleProps>(
   ({ disabled = false, $isHomePage = false, $deps = 0 }) => ({
     color: getMenuItemColor(disabled, $isHomePage),
     fontSize: "14px",

@@ -3,7 +3,7 @@ import breadcrumbs from "../data/common/breadscrum.json";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { useIsMobile } from "../hooks/useIsMobile";
+import { useBreakpoint } from "../hooks/useBreakpoint";
 
 interface BreadcrumbItem {
   title: string;
@@ -16,7 +16,7 @@ interface BreadScrumProps {
 
 const BreadScrum = ({ pageKey }: BreadScrumProps) => {
   const navigate = useNavigate();
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   const pageData = breadcrumbs.pages[pageKey as keyof typeof breadcrumbs.pages];
 
@@ -56,7 +56,7 @@ const BreadScrum = ({ pageKey }: BreadScrumProps) => {
         <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
           <StyledButton
             onClick={() => navigate(item.url)}
-            isLast={index === breadcrumbPath.length - 1}
+            $isLast={index === breadcrumbPath.length - 1}
           >
             <Typography
               variant="breadScrumFont"
@@ -79,12 +79,14 @@ const BreadScrum = ({ pageKey }: BreadScrumProps) => {
 
 export default BreadScrum;
 
-const StyledButton = styled(Button)(({ isLast }: { isLast?: boolean }) => ({
+const StyledButton = styled(Button, {
+  shouldForwardProp: (prop) => prop !== "$isLast",
+})<{ $isLast?: boolean }>(({ $isLast = false }) => ({
   textTransform: "none",
-  color: isLast ? "#333" : "#717171", // 마지막 항목은 더 진한 색상
+  color: $isLast ? "#333" : "#717171", // 마지막 항목은 더 진한 색상
   padding: 0,
   minWidth: 0,
-  fontWeight: isLast ? 600 : 400, // 마지막 항목은 더 굵게
+  fontWeight: $isLast ? 600 : 400, // 마지막 항목은 더 굵게
   "&:hover": {
     backgroundColor: "transparent",
   },

@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../../hooks/useIsMobile";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import BreadScrum from "../../../common/BreadScrum";
 import ProductTitle from "../../../components/product/ProductTitle";
 import Outline from "../../../components/product/Outline";
@@ -10,7 +10,7 @@ import vtd_create from "../../../data/product/vtd-create.json";
 import ScrollButton from "../../../common/ScrollButton";
 
 const VTDCreate = () => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   const {
     vtd_create_title,
@@ -33,7 +33,7 @@ const VTDCreate = () => {
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           px: 20,
         },
       })}

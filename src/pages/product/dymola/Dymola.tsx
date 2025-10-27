@@ -8,7 +8,7 @@ import ProductTextImageBox from "../../../components/product/ProductTextImageBox
 import dymola from "../../../data/product/dymola.json";
 import ProductCard from "../../../components/product/Card";
 import ScrollButton from "../../../common/ScrollButton";
-import { useIsMobile } from "../../../hooks/useIsMobile";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 
 const Dymola = () => {
   const {
@@ -21,7 +21,7 @@ const Dymola = () => {
   } = dymola;
 
   const THRESHOLD = 100;
-  const isMobile = useIsMobile();
+  const isMobile = useBreakpoint();
 
   return (
     <>
@@ -52,7 +52,7 @@ const Dymola = () => {
             mt: 24,
             px: 10,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             mt: 36,
             px: 20,
           },
@@ -88,7 +88,7 @@ const Dymola = () => {
             my: 24,
             px: 10,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             my: 30,
             px: 20,
           },

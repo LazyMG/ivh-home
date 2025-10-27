@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import BreadScrum from "../../common/BreadScrum";
 import SubPage from "../../components/solution/SubPage";
@@ -13,7 +13,7 @@ import header from "../../data/solution/header.json";
 const THRESHOLD = 643;
 
 const Mobility = () => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
   // header
   // 각각의 헤더에서 소제목 분리
   const {

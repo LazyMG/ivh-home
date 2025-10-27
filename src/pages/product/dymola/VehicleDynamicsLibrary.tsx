@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../../hooks/useIsMobile";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 
 import ProductTitle from "../../../components/product/ProductTitle";
 import Feature from "../../../components/product/Feature";
@@ -11,7 +11,8 @@ import vehicle from "../../../data/product/vehicle.json";
 import ScrollButton from "../../../common/ScrollButton";
 
 const VehicleDynamicsLibrary = () => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
+  console.log("VehicleDynamicsLibrary : ", isMobile);
 
   const {
     vehicle_title,
@@ -33,7 +34,7 @@ const VehicleDynamicsLibrary = () => {
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           px: 20,
         },
       })}

@@ -9,14 +9,14 @@ import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
 import BreadScrum from "../../common/BreadScrum";
 import ScrollButton from "../../common/ScrollButton";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 const THRESHOLD = 100;
 
 const Bems = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.BEMS;
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   // body
   const {

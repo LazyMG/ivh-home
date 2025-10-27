@@ -1,11 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import solutionImage from "/images/pages/solution/solution_main.png";
 import solutionImageMobile from "/images/pages/solution/solution_mobile.png";
-import RowNav from "../components/solution/RowNav";
-import { useIsMobile } from "../hooks/useIsMobile";
+import RowNav from "../../components/solution/RowNav";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 const Solution = () => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   return (
     <>
@@ -13,7 +13,7 @@ const Solution = () => {
         sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             mt: 0,
           },
         })}
@@ -22,10 +22,7 @@ const Solution = () => {
           variant="solutionMainTitle"
           component="p"
           sx={{
-            ml: {
-              xs: 4,
-              lg: 8,
-            },
+            ml: "36px",
           }}
         >
           SOLUTION
@@ -40,19 +37,28 @@ const Solution = () => {
             mx: "auto",
             my: "auto",
             alignItems: "center",
-            // flex: 1,
-            // width: "100%",
+
+            [theme.breakpoints.up("mobileLandscape")]: {
+              maxWidth: "90%",
+            },
+
+            [theme.breakpoints.up("tablet")]: {
+              maxWidth: "230%",
+            },
+
             objectFit: "cover",
             justifyContent: "center",
           })}
         >
-          <img
+          <Box
+            component="img"
             src={isMobile ? solutionImageMobile : solutionImage}
             alt="solution"
             style={{
-              maxWidth: "90%",
-              maxHeight: "80%",
-              objectFit: "cover",
+              width: "100%",
+              height: "auto",
+              maxHeight: "80vh",
+              objectFit: "contain",
             }}
           />
         </Box>

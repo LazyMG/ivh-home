@@ -4,7 +4,7 @@ import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
@@ -16,7 +16,7 @@ const THRESHOLD = 100;
 const SmartFactory = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.SmartFactory;
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   // body
   const {

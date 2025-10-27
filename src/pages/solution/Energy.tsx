@@ -1,5 +1,5 @@
 import SolutionTitle from "../../components/solution/SolutionTitle";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
@@ -16,7 +16,7 @@ const THRESHOLD = 100;
 const Energy = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.energy;
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   // body
   const {

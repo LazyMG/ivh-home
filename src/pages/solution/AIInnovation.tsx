@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import BreadScrum from "../../common/BreadScrum";
 import TextImageBox from "../../components/solution/TextImageBox";
@@ -16,7 +16,7 @@ const THRESHOLD = 100;
 const AIInnovation = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.AIInnovationHub;
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   // body
   const {

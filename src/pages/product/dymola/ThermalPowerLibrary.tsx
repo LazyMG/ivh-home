@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/material";
-import { useIsMobile } from "../../../hooks/useIsMobile";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 
 import ProductTitle from "../../../components/product/ProductTitle";
 import Feature from "../../../components/product/Feature";
@@ -11,7 +11,7 @@ import thermal from "../../../data/product/thermal.json";
 import ScrollButton from "../../../common/ScrollButton";
 
 const ThermalPowerLibrary = () => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useBreakpoint();
 
   const {
     thermal_title,
@@ -33,7 +33,7 @@ const ThermalPowerLibrary = () => {
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           px: 20,
         },
       })}
