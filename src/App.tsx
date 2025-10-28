@@ -29,6 +29,7 @@ import VTDFullstack from "./pages/product/VTDFullstack";
 import Vissim from "./pages/product/Vissim";
 import VissimAutomotive from "./pages/product/VissimAutomotive";
 import Viswalk from "./pages/product/Viswalk";
+import Training from "./pages/support/Training";
 
 function App() {
   const isMobile = useMediaQuery("(max-width: 1024px)");
@@ -77,7 +78,7 @@ function App() {
               element={<VissimAutomotive />}
             />
             <Route path="/product/vissim/viswalk" element={<Viswalk />} />
-
+            <Route path="/support/training" element={<Training />} />
             <Route path="/calendar" element={<Calendar />} />
           </Routes>
         </ScrollToTop>
