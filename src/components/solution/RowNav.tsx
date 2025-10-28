@@ -155,29 +155,29 @@ const RowNav = () => {
 //   })
 // );
 
-const StyledTypo = styled(Typography)<StyledButtonProps>(
-  ({ theme, underlineColor }) => ({
-    borderBottom: `2px solid ${underlineColor}`,
-    textTransform: "none",
-    borderRadius: 0,
-    color: "black",
+const StyledTypo = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "theme" && prop !== "underlineColor",
+})<StyledButtonProps>(({ theme, underlineColor }) => ({
+  borderBottom: `2px solid ${underlineColor}`,
+  textTransform: "none",
+  borderRadius: 0,
+  color: "black",
 
-    padding: "0",
-    width: "fit-content",
+  padding: "0",
+  width: "fit-content",
 
-    [theme.breakpoints.up("laptop")]: {
-      padding: "0 0 0 16px",
-      width: "100%",
+  [theme.breakpoints.up("desktop")]: {
+    padding: "0 0 0 16px",
+    width: "100%",
 
-      display: "flex",
-      justifyContent: "flex-end",
-    },
-    "&:hover": {
-      color: `${underlineColor}`,
-      backgroundColor: "transparent",
-      cursor: "pointer",
-    },
-  })
-);
+    display: "flex",
+    justifyContent: "flex-end",
+  },
+  "&:hover": {
+    color: `${underlineColor}`,
+    backgroundColor: "transparent",
+    cursor: "pointer",
+  },
+}));
 
 export default RowNav;

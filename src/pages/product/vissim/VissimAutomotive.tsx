@@ -1,14 +1,16 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
-import BreadScrum from "../../components/solution/BreadScrum";
-import ProductTitle from "../../components/product/ProductTitle";
-import Outline from "../../components/product/Outline";
-import Feature from "../../components/product/Feature";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+import { Box, Stack } from "@mui/material";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import BreadScrum from "../../../common/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Outline from "../../../components/product/Outline";
+import Feature from "../../../components/product/Feature";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
 
-import vissim_automotive from "../../data/product/vissim-automotive.json";
+import vissim_automotive from "../../../data/product/vissim-automotive.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const VissimAutomotive = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const { isMobile } = useBreakpoint();
 
   const {
     vissim_automotive_title,
@@ -19,6 +21,9 @@ const VissimAutomotive = () => {
     vissim_automotive_subColor,
     vissim_automotive_data,
   } = vissim_automotive;
+
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -27,13 +32,18 @@ const VissimAutomotive = () => {
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           px: 20,
         },
       })}
     >
+      <ScrollButton
+        color={vissim_automotive_color}
+        threshold={THRESHOLD}
+        show={!isMobile}
+      />
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={vissim_automotive_title} />}
+      {isMobile ? null : <BreadScrum pageKey="vissimAutomotive" />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
@@ -44,6 +54,7 @@ const VissimAutomotive = () => {
             subColor: vissim_automotive_subColor,
           }}
           isMobile={isMobile}
+          pageKey="vissimAutomotive"
         />
       ) : (
         <ProductTitle

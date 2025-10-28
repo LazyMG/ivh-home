@@ -1,15 +1,17 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 
-import ProductTitle from "../../components/product/ProductTitle";
-import Feature from "../../components/product/Feature";
-import Outline from "../../components/product/Outline";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
-import BreadScrum from "../../components/solution/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Feature from "../../../components/product/Feature";
+import Outline from "../../../components/product/Outline";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
+import BreadScrum from "../../../common/BreadScrum";
 
-import battery from "../../data/product/battery.json";
+import battery from "../../../data/product/battery.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const Battery = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const { isMobile } = useBreakpoint();
 
   const {
     battery_title,
@@ -21,6 +23,8 @@ const Battery = () => {
     battery_data,
   } = battery;
 
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -29,13 +33,18 @@ const Battery = () => {
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           px: 20,
         },
       })}
     >
+      <ScrollButton
+        color={battery_color}
+        threshold={THRESHOLD}
+        show={!isMobile}
+      />
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={battery_title} />}
+      {isMobile ? null : <BreadScrum pageKey="battery" />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
@@ -46,6 +55,7 @@ const Battery = () => {
             subColor: battery_subColor,
           }}
           isMobile={isMobile}
+          pageKey="battery"
         />
       ) : (
         <ProductTitle

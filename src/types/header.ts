@@ -3,6 +3,7 @@ export interface MenuItem {
   name: string;
   path: string;
   disabled: boolean;
+  deps?: number;
 }
 
 // 서브 컬럼
@@ -41,6 +42,7 @@ export interface ColumnStyleProps {
 export interface MenuItemStyleProps {
   disabled?: boolean;
   $isHomePage?: boolean;
+  $deps?: number;
 }
 
 export interface MenuTitleStyleProps {

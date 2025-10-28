@@ -1,14 +1,16 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
-import BreadScrum from "../../components/solution/BreadScrum";
-import ProductTitle from "../../components/product/ProductTitle";
-import Outline from "../../components/product/Outline";
-import Feature from "../../components/product/Feature";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+import { Box, Stack } from "@mui/material";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import BreadScrum from "../../../common/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Outline from "../../../components/product/Outline";
+import Feature from "../../../components/product/Feature";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
 
-import vtd_create from "../../data/product/vtd-create.json";
+import vtd_create from "../../../data/product/vtd-create.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const VTDCreate = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const { isMobile } = useBreakpoint();
 
   const {
     vtd_create_title,
@@ -20,6 +22,9 @@ const VTDCreate = () => {
     vtd_create_subColor,
     vtd_create_data,
   } = vtd_create;
+
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -28,13 +33,18 @@ const VTDCreate = () => {
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           px: 20,
         },
       })}
     >
+      <ScrollButton
+        color={vtd_create_color}
+        threshold={THRESHOLD}
+        show={!isMobile}
+      />
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={vtd_create_title} />}
+      {isMobile ? null : <BreadScrum pageKey="vtdCreate" />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
@@ -45,6 +55,7 @@ const VTDCreate = () => {
             subColor: vtd_create_subColor,
           }}
           isMobile={isMobile}
+          pageKey="vtdCreate"
         />
       ) : (
         <ProductTitle

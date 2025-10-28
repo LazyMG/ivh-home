@@ -214,7 +214,7 @@ const ColorBox = ({
                         ? "100%"
                         : `calc(50% - ${columnSpacing * 8}px)`,
                   },
-                  [theme.breakpoints.up("laptop")]: {
+                  [theme.breakpoints.up("desktop")]: {
                     width: `calc(${(gridSize / 12) * 100}% - ${
                       columnSpacing * 8
                     }px)`,

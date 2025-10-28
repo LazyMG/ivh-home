@@ -1,18 +1,19 @@
-import { Fab, Slide, useMediaQuery } from "@mui/material";
+import { Fab, Slide } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import { useEffect, useState } from "react";
+import { useBreakpoint } from "../hooks/useBreakpoint";
 
 const ScrollButton = ({
-  color,
+  color = "#000000",
   threshold,
   show,
 }: {
-  color: string;
+  color?: string;
   threshold: number;
   show?: boolean;
 }) => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useBreakpoint();
 
   // 항상 보이거나 모바일 화면에서만 보이도록 설정
   const defaultShowing = show || isMobile;
@@ -53,7 +54,7 @@ const ScrollButton = ({
             right: "30px",
             scale: 0.8,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             right: "30px",
             scale: 1,
           },

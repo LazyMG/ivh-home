@@ -132,6 +132,7 @@ const MobileHeader = () => {
                               }}
                               disabled={subItem.disabled}
                               $isHomePage={isHomePage}
+                              $deps={subItem.deps}
                             >
                               {subItem.name}
                             </MobileMenuItem>
@@ -233,7 +234,10 @@ const MobileHeader = () => {
 };
 
 // 모바일 전용 스타일들
-const MobileMenuDrawer = styled(Box)<{
+const MobileMenuDrawer = styled(Box, {
+  shouldForwardProp: (prop) =>
+    prop !== "$isOpen" && prop !== "$isHomePage" && prop !== "$isTablets",
+})<{
   $isOpen: boolean;
   $isHomePage: boolean;
   $isTablets: boolean;
@@ -288,7 +292,9 @@ const MobileMenuDrawer = styled(Box)<{
   };
 });
 
-const MobileMenuTitle = styled(Typography)<{
+const MobileMenuTitle = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "$isActive" && prop !== "$isHomePage",
+})<{
   $isActive?: boolean;
   $isHomePage: boolean;
 }>(({ $isActive, $isHomePage }) => {
@@ -309,31 +315,37 @@ const MobileMenuTitle = styled(Typography)<{
   };
 });
 
-const MobileColumnTitle = styled(Typography)<{ $isHomePage: boolean }>( // prop 추가
-  ({ $isHomePage }) => {
-    const theme = getHeaderTheme($isHomePage);
+const MobileColumnTitle = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "$isHomePage",
+})<{ $isHomePage: boolean }>(({ $isHomePage }) => {
+  // prop 추가
+  const theme = getHeaderTheme($isHomePage);
 
-    return {
-      color: theme.text, // #fff 대신 테마 색상
-      fontSize: "14px",
-      fontWeight: "bold",
-      marginBottom: "8px",
-      marginTop: "8px",
-      fontFamily: "Freesentation-6-SemiBold",
-    };
-  }
-);
+  return {
+    color: theme.text, // #fff 대신 테마 색상
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginBottom: "8px",
+    marginTop: "8px",
+    fontFamily: "Freesentation-6-SemiBold",
+  };
+});
 
-const MobileMenuItem = styled(Typography)<{
+const MobileMenuItem = styled(Typography, {
+  shouldForwardProp: (prop) =>
+    prop !== "disabled" && prop !== "$isHomePage" && prop !== "$deps",
+})<{
   disabled?: boolean;
   $isHomePage: boolean;
-}>(({ disabled, $isHomePage }) => {
+  $deps?: number;
+}>(({ disabled, $isHomePage, $deps }) => {
   // prop 추가
   const theme = getHeaderTheme($isHomePage);
 
   return {
     color: disabled ? theme.submenu.disabled : theme.submenu.active,
     fontSize: "13px",
+    marginLeft: $deps === 2 ? "4px" : 0,
     marginBottom: "6px",
     cursor: disabled ? "default" : "pointer",
     fontFamily: "Freesentation-4-Regular",
