@@ -12,13 +12,14 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import ApplicationInputErrorText from "./ApplicationInputErrorText";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
-import ApplicationButton from "./ApplicationButton";
+
 import type { ReservationResponse } from "../../types/reservation";
 
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import ApplicationButton from "./ApplicationButton";
+import ApplicationInputErrorText from "./ApplicationInputErrorText";
 
 interface ApplicantForm {
   applicantName: string;
@@ -44,6 +45,9 @@ interface ApplicationFormType {
   isChecked?: boolean;
 }
 
+{
+  /** react-hook-form을 사용한 교육 신청 폼 컴포넌트 */
+}
 const ApplicationForm = ({
   reservations,
 }: {
@@ -88,6 +92,10 @@ const ApplicationForm = ({
       requestedPeople: data.customer.length,
     };
     console.log(reservationRequestForm);
+
+    {
+      /** 교육 신청 요청 구현 필요 */
+    }
   };
 
   return (
@@ -329,7 +337,7 @@ const ApplicationForm = ({
                       />
                     )}
                 </Box>
-                <Box>
+                <Box sx={{ position: "relative" }}>
                   <TextField
                     size="small"
                     placeholder="부서*"
@@ -347,7 +355,7 @@ const ApplicationForm = ({
                       />
                     )}
                 </Box>
-                <Box>
+                <Box sx={{ position: "relative" }}>
                   <TextField
                     size="small"
                     placeholder="연락처*"

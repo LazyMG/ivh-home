@@ -18,6 +18,7 @@ export const API_ENDPOINTS = {
   },
 } as const;
 
+// 달력에 사용되는 색상을 객체로 분리함
 export const RESERVATION_STATUS_COLOR: ReservationStatusColorType = {
   OPEN: { color: "#efb415", label: "모집 중" },
   CLOSED: { color: "#3cb56a", label: "모집 완료" },

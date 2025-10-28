@@ -4,6 +4,9 @@ interface ApplicationButtonProps {
   children: React.ReactNode;
 }
 
+{
+  /** 교육 신청 시에 사용하는 인원 추가 및 삭제 버튼 컴포넌트*/
+}
 const ApplicationButton = ({ children }: ApplicationButtonProps) => {
   return (
     <Box

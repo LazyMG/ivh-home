@@ -6,16 +6,15 @@ import type {
 
 import { Box, Divider, Typography } from "@mui/material";
 
+import TrainingMainTitle from "../../components/support/TrainingMainTitle";
 import GradientSectionLabel from "../../components/support/GradientSectionLabel";
 import CalendarLegend from "../../components/support/CalendarLegend";
 import Calendar from "../../components/support/Calendar";
-
+import TraingCurriculumTable from "../../components/support/TrainingCurriculumTable";
 import ApplicationForm from "../../components/support/ApplicationForm";
-import TrainingMainTitle from "../../components/support/TrainingMainTitle";
 
 import training from "../../data/support/training.json";
 import curriculums from "../../data/support/curriculum.json";
-import TraingCurriculumTable from "../../components/support/TrainingCurriculumTable";
 
 // 캘린더에 사용되는 이벤트 디자인을 위한 타입
 export interface ExtendedCalendarEventProps {
@@ -92,11 +91,15 @@ const Training = () => {
   const formattedEvents = formattingEvent(reservations);
 
   const { training_title, training_outline, training_title_image } = training;
-
   const { training_curriculums } = curriculums;
+
+  {
+    /** reservation 호출 기능 추가 필요 */
+  }
 
   return (
     <>
+      {/** Training 페이지 타이틀 영역  */}
       <Box
         display="flex"
         sx={{
@@ -135,17 +138,19 @@ const Training = () => {
         />
       </Box>
 
+      {/** 개요, Curriculum, Schedule, Application 섹션 전체 컨테이너 */}
       <Box
         sx={(theme) => ({
           px: 4,
           [theme.breakpoints.up("tablet")]: {
             px: 10,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             px: 20,
           },
         })}
       >
+        {/** 개요 영역 */}
         <Box
           display="grid"
           sx={(theme) => ({
@@ -154,7 +159,6 @@ const Training = () => {
               px: 5,
               gridTemplateColumns: "repeat(2,1fr)",
             },
-
             gap: 8,
             alignItems: "center",
             mb: 16,
@@ -183,9 +187,12 @@ const Training = () => {
             ))}
           </Box>
         </Box>
+
+        {/** Curriculum 섹션 */}
         <GradientSectionLabel labelText="Curriculum" />
         <TraingCurriculumTable curriculums={training_curriculums} />
 
+        {/** Schedule 섹션 */}
         <GradientSectionLabel labelText="Schedule" />
         <Box
           sx={{
@@ -199,6 +206,8 @@ const Training = () => {
           <CalendarLegend />
           <Calendar events={formattedEvents} />
         </Box>
+
+        {/** Application 섹션 */}
         <GradientSectionLabel labelText="Application" />
         <ApplicationForm reservations={reservations} />
       </Box>

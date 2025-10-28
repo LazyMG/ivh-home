@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
 
+{
+  /** 달력에 사용되는 각주 컴포넌트 */
+}
 const Legend = ({ color, text }: { color: string; text: string }) => {
   return (
     <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>

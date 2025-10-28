@@ -1,12 +1,12 @@
-import { Box } from "@mui/material";
-import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import FullCalendar from "@fullcalendar/react";
+import { Box } from "@mui/material";
 
-import "../../style/support/training-calendar.css";
+import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
 
 import type { EventContentArg, EventInput } from "@fullcalendar/core/index.js";
 import type { ExtendedCalendarEventProps } from "../../pages/support/Training";
-import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
+import "../../style/support/training-calendar.css";
 
 const Calendar = ({ events }: { events: EventInput[] }) => {
   // 같은 이벤트 ID 클래스를 가진 모든 요소에 hovered 클래스를 추가/제거하여 호버 효과 적용

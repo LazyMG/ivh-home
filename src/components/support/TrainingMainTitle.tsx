@@ -9,6 +9,12 @@ interface TrainingMainTitleProps {
   children?: React.ReactNode;
 }
 
+{
+  /** Training 페이지의 제목 컴포넌트 */
+}
+{
+  /** JSON 파일에서 폰트와 굵기 정보를 가져옴 */
+}
 const TrainingMainTitle = ({ children, titleList }: TrainingMainTitleProps) => {
   return (
     <Typography

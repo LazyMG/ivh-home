@@ -22,6 +22,12 @@ interface TraingCurriculumTableProps {
   }[];
 }
 
+{
+  /** 커리큘럼 섹션에 사용되는 테이블 컴포넌트 */
+}
+{
+  /** JSON 데이터에서 파일에서 row-span 및 content를 가져옴 */
+}
 const TraingCurriculumTable = ({ curriculums }: TraingCurriculumTableProps) => {
   return curriculums.map((curriculum, index) => (
     <Box
