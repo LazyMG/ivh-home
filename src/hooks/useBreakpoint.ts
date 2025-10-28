@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@mui/material";
-import { mediaQueries } from "../types/theme";
+import { mediaQueries } from "../theme/theme";
 
 export const useBreakpoint = () => {
   // Portrait (세로)

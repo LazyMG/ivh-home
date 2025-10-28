@@ -62,7 +62,6 @@ const BreadScrum = ({ pageKey }: BreadScrumProps) => {
               variant="breadScrumFont"
               sx={{
                 mr: index === breadcrumbPath.length - 1 ? 0 : "10px",
-                fontSize: isMobile ? "10px" : "16px",
               }}
             >
               {item.title}

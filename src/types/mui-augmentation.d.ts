@@ -5,6 +5,8 @@ import type { SxProps, Theme as MuiTheme } from "@mui/material";
 declare module "@mui/material/styles" {
   interface Theme {
     customStyles: {
+      solutionMainContainer: React.CSSProperties;
+      solutionMainImageContainer: React.CSSProperties;
       solutionMainImage: React.CSSProperties;
       solutionMainRowNav: SxProps<MuiTheme>;
       solutionMainRowNavContainer: SxProps<MuiTheme>;
@@ -18,6 +20,8 @@ declare module "@mui/material/styles" {
 
   interface ThemeOptions {
     customStyles?: {
+      solutionMainContainer?: React.CSSProperties;
+      solutionMainImageContainer?: React.CSSProperties;
       solutionMainImage?: React.CSSProperties;
       solutionMainRowNav?: SxProps<MuiTheme>;
       solutionMainRowNavContainer?: SxProps<MuiTheme>;
@@ -40,6 +44,8 @@ declare module "@mui/material/styles" {
     solutionTextFont: React.CSSProperties;
     solutionTextTitleFont: React.CSSProperties;
     solutionBoxTitleFont: React.CSSProperties;
+    productImageBannerTitleFont: React.CSSProperties;
+    productImageBannerSubtitleFont: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
@@ -53,6 +59,8 @@ declare module "@mui/material/styles" {
     solutionTextFont?: React.CSSProperties;
     solutionTextTitleFont?: React.CSSProperties;
     solutionBoxTitleFont?: React.CSSProperties;
+    productImageBannerTitleFont?: React.CSSProperties;
+    productImageBannerSubtitleFont?: React.CSSProperties;
   }
 
   interface BreakpointOverrides {
@@ -79,5 +87,7 @@ declare module "@mui/material/Typography" {
     solutionTextFont: true;
     solutionTextTitleFont: true;
     solutionBoxTitleFont: true;
+    productImageBannerTitleFont: true;
+    productImageBannerSubtitleFont: true;
   }
 }

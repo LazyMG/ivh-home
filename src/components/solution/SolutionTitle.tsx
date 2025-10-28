@@ -12,6 +12,7 @@ const SolutionTitle = ({
   pageKey?: string;
 }) => {
   const { title, subtitle, color, subColor } = contentProps;
+
   return (
     <>
       <Box component="header">
@@ -43,13 +44,29 @@ const SolutionTitle = ({
           }}
         >
           <Typography
-            // variant="subtitle1"
-            variant="solutionSubTitleFont"
+            // aIInnovationHub 페이지는 더 작은 폰트 스타일 적용
+            variant={
+              pageKey === "alinnovationhub" ? undefined : "solutionSubTitleFont"
+            }
             component="p"
             color={"#3b4551"}
-            sx={{
+            sx={(theme) => ({
               whiteSpace: "pre-wrap",
-            }}
+              ...(pageKey === "alinnovationhub" && {
+                [theme.breakpoints.up("mobilePortrait")]: {
+                  fontSize: "13px",
+                },
+                [theme.breakpoints.up("mobileLandscape")]: {
+                  fontSize: "16px",
+                },
+                [theme.breakpoints.up("tablet")]: {
+                  fontSize: "18px",
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  fontSize: "24px",
+                },
+              }),
+            })}
           >
             {subtitle}
           </Typography>

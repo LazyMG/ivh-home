@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import { useBreakpoint } from "./hooks/useBreakpoint";
-import theme from "./types/theme";
+import theme from "./theme/theme";
 import ScrollToTop from "./common/ScrollToTop";
 // Header
 import Header from "./common/Header/Header";

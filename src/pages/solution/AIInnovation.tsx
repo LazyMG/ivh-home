@@ -53,6 +53,7 @@ const AIInnovation = () => {
             color: color,
             subColor: subColor,
           }}
+          pageKey="alinnovationhub"
         />
       )}
       {/* body section */}

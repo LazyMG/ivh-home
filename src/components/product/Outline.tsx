@@ -11,7 +11,7 @@ const Outline = ({ outline, imgObj }: OutlineProps) => {
         [theme.breakpoints.up("tablet")]: {
           gap: imgObj ? 8 : 3,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           gap: imgObj ? 12 : 3,
         },
       })}
@@ -20,7 +20,10 @@ const Outline = ({ outline, imgObj }: OutlineProps) => {
         <Typography
           variant="solutionTextFont"
           key={index}
-          sx={{ wordBreak: "keep-all", whiteSpace: "pre-wrap" }}
+          sx={{
+            wordBreak: "keep-all",
+            whiteSpace: "pre-wrap",
+          }}
         >
           {sentence}
         </Typography>

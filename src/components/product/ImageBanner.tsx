@@ -24,19 +24,25 @@ const ImageBanner = ({ imgUrl, title, subtitle }: ImageBannerProps) => {
           [theme.breakpoints.up("tablet")]: {
             px: 10,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             px: 20,
             bottom: "6rem",
           },
         })}
       >
         <Typography
-          sx={{
+          sx={(theme) => ({
             color: "#ffffff",
-            fontSize: "53px",
+            ...theme.typography.productImageBannerTitleFont,
             letterSpacing: 5,
-            fontFamily: "Freesentation-8-ExtraBold",
-          }}
+            // iPad 세로 모드(tablet portrait)에서는 tablet 크기로 강제 적용
+            [`${theme.breakpoints.between(
+              "mobileLandscape",
+              "tablet"
+            )} and (orientation: portrait)`]: {
+              fontSize: "44px", // tablet 사이즈로 오버라이드
+            },
+          })}
         >
           {title}
         </Typography>
@@ -44,12 +50,11 @@ const ImageBanner = ({ imgUrl, title, subtitle }: ImageBannerProps) => {
           sx={{ width: "100%", height: "1px", backgroundColor: "#ffffff" }}
         />
         <Typography
-          sx={{
+          sx={(theme) => ({
             color: "#ffffff",
             pt: 1,
-            fontSize: "19px",
-            fontFamily: "Freesentation-6-SemiBold",
-          }}
+            ...theme.typography.productImageBannerSubtitleFont,
+          })}
         >
           {subtitle}
         </Typography>
