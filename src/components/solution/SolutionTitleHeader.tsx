@@ -1,13 +1,15 @@
 import { Box, Typography } from "@mui/material";
-import BreadScrum from "./BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 import type { ContentProps } from "../../types/solution";
 
 const SolutionTitleHeader = ({
   contentProps,
   isMobile,
+  pageKey,
 }: {
   contentProps: ContentProps;
   isMobile?: boolean;
+  pageKey?: string;
 }) => {
   const { color, title } = contentProps;
   return (
@@ -30,7 +32,7 @@ const SolutionTitleHeader = ({
       >
         {title}
       </Typography>
-      {isMobile && <BreadScrum title={title} />}
+      {isMobile && pageKey && <BreadScrum pageKey={pageKey} />}
     </Box>
   );
 };

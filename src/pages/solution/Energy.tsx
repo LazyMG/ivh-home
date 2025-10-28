@@ -1,5 +1,5 @@
 import SolutionTitle from "../../components/solution/SolutionTitle";
-import { useMediaQuery } from "@mui/material";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
@@ -8,7 +8,7 @@ import { Box } from "@mui/material";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import BreadScrum from "../../components/solution/BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 import ScrollButton from "../../common/ScrollButton";
 
 const THRESHOLD = 100;
@@ -16,7 +16,7 @@ const THRESHOLD = 100;
 const Energy = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.energy;
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const { isMobile } = useBreakpoint();
 
   // body
   const {
@@ -31,10 +31,10 @@ const Energy = () => {
 
   return (
     <Box className="solution-body">
-      <ScrollButton color={color} threshold={THRESHOLD} />
+      <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
 
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={headerTitle} />}
+      {isMobile ? null : <BreadScrum pageKey="energy" />}
       {/* header section */}
       {isMobile ? (
         <SolutionTitle
@@ -45,6 +45,7 @@ const Energy = () => {
             subColor: subColor,
           }}
           isMobile={isMobile}
+          pageKey="energy"
         />
       ) : (
         <SolutionTitle

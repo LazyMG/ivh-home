@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import { useMediaQuery } from "@mui/material";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
-import BreadScrum from "../../components/solution/BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import TextBox from "../../components/solution/TextBox";
@@ -16,7 +16,7 @@ const THRESHOLD = 100;
 const AIInnovation = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.AIInnovationHub;
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const { isMobile } = useBreakpoint();
 
   // body
   const {
@@ -30,9 +30,9 @@ const AIInnovation = () => {
 
   return (
     <Box className="solution-body">
-      <ScrollButton color={color} threshold={THRESHOLD} />
+      <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={headerTitle} />}
+      {isMobile ? null : <BreadScrum pageKey="alinnovationhub" />}
       {/* header section */}
       {isMobile ? (
         <SolutionTitle
@@ -43,6 +43,7 @@ const AIInnovation = () => {
             subColor: subColor,
           }}
           isMobile={isMobile}
+          pageKey="alinnovationhub"
         />
       ) : (
         <SolutionTitle
@@ -52,6 +53,7 @@ const AIInnovation = () => {
             color: color,
             subColor: subColor,
           }}
+          pageKey="alinnovationhub"
         />
       )}
       {/* body section */}

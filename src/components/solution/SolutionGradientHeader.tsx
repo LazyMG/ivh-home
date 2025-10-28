@@ -16,7 +16,7 @@ const GradientHeader = ({
         py: 3,
         borderTop: `1px solid ${color}`,
         mt: 9,
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("tablet")]: {
           mt: 0,
         },
       })}

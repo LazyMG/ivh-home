@@ -1,7 +1,7 @@
 import { Box, Stack } from "@mui/material";
-import { useMediaQuery } from "@mui/material";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
-import BreadScrum from "../../components/solution/BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 import SubPage from "../../components/solution/SubPage";
 import SolutionTitleHeader from "../../components/solution/SolutionTitleHeader";
 import SolutionHeaderButton from "../../components/solution/SolutionHeaderButton";
@@ -13,7 +13,7 @@ import header from "../../data/solution/header.json";
 const THRESHOLD = 643;
 
 const Mobility = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const { isMobile } = useBreakpoint();
   // header
   // 각각의 헤더에서 소제목 분리
   const {
@@ -48,10 +48,10 @@ const Mobility = () => {
   return (
     <Box className="solution-body">
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={headerTitle} />}
+      {isMobile ? null : <BreadScrum pageKey="mobility" />}
 
       {/** 스크롤 버튼 */}
-      <ScrollButton color={color} threshold={THRESHOLD} show />
+      <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
 
       {/* header section */}
       {/* 제목만 있는 헤더 */}
@@ -64,6 +64,7 @@ const Mobility = () => {
             subColor: subColor,
           }}
           isMobile={isMobile}
+          pageKey="mobility"
         />
       ) : (
         <SolutionTitleHeader

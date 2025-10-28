@@ -13,9 +13,24 @@
               "path": "/product/modelica",
               "disabled": false
             },
-            { "name": "Dymola", "path": "/product/dymola", "disabled": true },
-            { "name": "Modelon", "path": "/product/modelon", "disabled": true },
-            { "name": "TLK", "path": "/product/tlk", "disabled": true },
+            {
+              "name": "Dymola",
+              "path": "/product/dymola",
+              "disabled": true,
+              "deps": 2
+            },
+            {
+              "name": "Modelon",
+              "path": "/product/modelon",
+              "disabled": true,
+              "deps": 2
+            },
+            {
+              "name": "TLK",
+              "path": "/product/tlk",
+              "disabled": true,
+              "deps": 2
+            },
             { "name": "VTD", "path": "/product/vtd", "disabled": false },
             { "name": "Vissim", "path": "/product/vissim", "disabled": false },
             { "name": "SFE", "path": "/product/sfe", "disabled": false }
