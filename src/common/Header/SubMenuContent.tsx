@@ -31,6 +31,7 @@ export const SubMenuContent = ({
                     onClick={() => navigate(subItem.path)}
                     disabled={subItem.disabled}
                     $isHomePage={isHomePage}
+                    $deps={subItem.deps}
                   >
                     {subItem.name}
                   </SubMenuItem>

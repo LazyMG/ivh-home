@@ -4,8 +4,8 @@ import TextBox from "../../components/solution/TextBox";
 import TextImageBox from "../../components/solution/TextImageBox";
 import ColorBox from "../../components/solution/ColorBox";
 import List from "../../components/solution/List";
-import BreadScrum from "../../components/solution/BreadScrum";
-import { useMediaQuery } from "@mui/material";
+import BreadScrum from "../../common/BreadScrum";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import header from "../../data/solution/header.json";
 import body from "../../data/solution/body.json";
@@ -18,7 +18,7 @@ const THRESHOLD = 100;
 const HomeAppliance = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.HomeAppliance;
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const { isMobile } = useBreakpoint();
 
   // body
   const {
@@ -33,10 +33,10 @@ const HomeAppliance = () => {
 
   return (
     <Box className="solution-body">
-      <ScrollButton color={color} threshold={THRESHOLD} />
+      <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
 
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={headerTitle} />}
+      {isMobile ? null : <BreadScrum pageKey="homeAppliance" />}
       {/* header section */}
       {isMobile ? (
         <SolutionTitle
@@ -47,6 +47,7 @@ const HomeAppliance = () => {
             subColor: subColor,
           }}
           isMobile={isMobile}
+          pageKey="homeAppliance"
         />
       ) : (
         <SolutionTitle

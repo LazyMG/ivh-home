@@ -1,14 +1,16 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
-import BreadScrum from "../../components/solution/BreadScrum";
-import ProductTitle from "../../components/product/ProductTitle";
-import Outline from "../../components/product/Outline";
-import Feature from "../../components/product/Feature";
-import ProductTextImageBox from "../../components/product/ProductTextImageBox";
+import { Box, Stack } from "@mui/material";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import BreadScrum from "../../../common/BreadScrum";
+import ProductTitle from "../../../components/product/ProductTitle";
+import Outline from "../../../components/product/Outline";
+import Feature from "../../../components/product/Feature";
+import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
 
-import viswalk from "../../data/product/viswalk.json";
+import viswalk from "../../../data/product/viswalk.json";
+import ScrollButton from "../../../common/ScrollButton";
 
 const Viswalk = () => {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const { isMobile } = useBreakpoint();
 
   const {
     viswalk_title,
@@ -19,6 +21,9 @@ const Viswalk = () => {
     viswalk_subColor,
     viswalk_data,
   } = viswalk;
+
+  const THRESHOLD = 100;
+
   return (
     <Box
       sx={(theme) => ({
@@ -27,13 +32,18 @@ const Viswalk = () => {
         [theme.breakpoints.up("tablet")]: {
           px: 10,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           px: 20,
         },
       })}
     >
+      <ScrollButton
+        color={viswalk_color}
+        threshold={THRESHOLD}
+        show={!isMobile}
+      />
       {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum title={viswalk_title} />}
+      {isMobile ? null : <BreadScrum pageKey="viswalk" />}
       {/** 그라데이션이 있는 제목 영역 */}
       {isMobile ? (
         <ProductTitle
@@ -44,6 +54,7 @@ const Viswalk = () => {
             subColor: viswalk_subColor,
           }}
           isMobile={isMobile}
+          pageKey="viswalk"
         />
       ) : (
         <ProductTitle

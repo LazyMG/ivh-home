@@ -1,15 +1,18 @@
 import type { ContentProps } from "../../types/solution";
 import { alpha, Box, Typography } from "@mui/material";
-import BreadScrum from "./BreadScrum";
+import BreadScrum from "../../common/BreadScrum";
 
 const SolutionTitle = ({
   contentProps,
   isMobile,
+  pageKey,
 }: {
   contentProps: ContentProps;
   isMobile?: boolean;
+  pageKey?: string;
 }) => {
   const { title, subtitle, color, subColor } = contentProps;
+
   return (
     <>
       <Box component="header">
@@ -31,7 +34,7 @@ const SolutionTitle = ({
             {title}
           </Typography>
         </Box>
-        {isMobile && <BreadScrum title={title} />}
+        {isMobile && pageKey && <BreadScrum pageKey={pageKey} />}
         <Box
           sx={{
             background: `linear-gradient(${alpha(subColor, 0.36)}, #ffffff)`,
@@ -41,13 +44,29 @@ const SolutionTitle = ({
           }}
         >
           <Typography
-            // variant="subtitle1"
-            variant="solutionSubTitleFont"
+            // aIInnovationHub 페이지는 더 작은 폰트 스타일 적용
+            variant={
+              pageKey === "alinnovationhub" ? undefined : "solutionSubTitleFont"
+            }
             component="p"
             color={"#3b4551"}
-            sx={{
+            sx={(theme) => ({
               whiteSpace: "pre-wrap",
-            }}
+              ...(pageKey === "alinnovationhub" && {
+                [theme.breakpoints.up("mobilePortrait")]: {
+                  fontSize: "13px",
+                },
+                [theme.breakpoints.up("mobileLandscape")]: {
+                  fontSize: "16px",
+                },
+                [theme.breakpoints.up("tablet")]: {
+                  fontSize: "18px",
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  fontSize: "24px",
+                },
+              }),
+            })}
           >
             {subtitle}
           </Typography>
