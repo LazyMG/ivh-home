@@ -15,7 +15,7 @@ const ProductTextImageBox = (textImageBoxProps: ProductTextImageBoxProps) => {
         [theme.breakpoints.up("tablet")]: {
           mt: 8,
         },
-        [theme.breakpoints.up("laptop")]: {
+        [theme.breakpoints.up("desktop")]: {
           mt: 10,
         },
       })}
@@ -69,7 +69,7 @@ const ProductTextImageBox = (textImageBoxProps: ProductTextImageBoxProps) => {
             [theme.breakpoints.up("tablet")]: {
               mt: 6,
             },
-            [theme.breakpoints.up("laptop")]: {
+            [theme.breakpoints.up("desktop")]: {
               mt: 8,
             },
           })}

@@ -75,7 +75,7 @@ const ProductCard = ({ cards }: ProductCardProps) => {
             gap: 6,
             gridTemplateColumns: `repeat(${cards.cols},1fr)`,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             gap: cards.gap,
           },
         })}
