@@ -38,6 +38,8 @@ import VissimAutomotive from "./pages/product/vissim/VissimAutomotive";
 import Viswalk from "./pages/product/vissim/Viswalk";
 // Calendar
 import Calendar from "./pages/Calendar";
+// Support
+import Training from "./pages/support/Training";
 
 function App() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -91,7 +93,7 @@ function App() {
               element={<VissimAutomotive />}
             />
             <Route path="/product/vissim/viswalk" element={<Viswalk />} />
-            {/** calendar */}
+            <Route path="/support/training" element={<Training />} />
             <Route path="/calendar" element={<Calendar />} />
           </Routes>
         </ScrollToTop>
