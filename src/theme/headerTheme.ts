@@ -37,7 +37,7 @@ export const headerFonts = {
 // 레이아웃 상수
 export const headerLayout = {
   padding: "24px",
-  logoFlex: 1,
+  logoFlex: 0,
   menuFlex: 4,
   logoMinWidth: "150px",
   menuMinWidth: "160px",

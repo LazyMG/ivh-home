@@ -10,7 +10,7 @@ export const MenuTitle = styled(Typography, {
 
   return {
     color: theme.text,
-    fontSize: "20px",
+    fontSize: "19px",
     fontWeight: "bold",
     fontFamily: headerFonts.bold,
     textAlign: "center",
