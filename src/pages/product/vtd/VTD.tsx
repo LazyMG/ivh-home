@@ -43,7 +43,7 @@ const VTD = () => {
             my: 24,
             px: 10,
           },
-          [theme.breakpoints.up("laptop")]: {
+          [theme.breakpoints.up("desktop")]: {
             my: 30,
             px: 20,
           },

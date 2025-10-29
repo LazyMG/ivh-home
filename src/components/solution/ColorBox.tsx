@@ -109,7 +109,10 @@ const BoxContentRenderer = ({
     <Grid container spacing={4}>
       {sections.map((section, index) => (
         <Grid
-          size={subSectionColumns} // 동적으로 컬럼 설정
+          size={{
+            mobilePortrait: subSectionColumns.xs ?? 12,
+            mobileLandscape: subSectionColumns.sm ?? subSectionColumns.xs ?? 6,
+          }} // 동적으로 컬럼 설정
           key={index}
         >
           {section.title && (
