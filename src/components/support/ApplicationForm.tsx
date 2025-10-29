@@ -1,13 +1,16 @@
 import {
+  Alert,
   Box,
   Button,
   Checkbox,
+  CircularProgress,
   Divider,
   FormControl,
   FormControlLabel,
   InputLabel,
   MenuItem,
   Select,
+  Snackbar,
   Stack,
   TextField,
   Typography,
@@ -16,10 +19,15 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 
-import type { ReservationResponse } from "../../types/reservation";
+import type {
+  ReservationResponse,
+  ReservationCustomer as CustomerForm,
+} from "../../types/reservation";
 
 import ApplicationButton from "./ApplicationButton";
 import ApplicationInputErrorText from "./ApplicationInputErrorText";
+import { reservationService } from "../../service/reservationService";
+import { useState } from "react";
 
 interface ApplicantForm {
   applicantName: string;
@@ -27,14 +35,6 @@ interface ApplicantForm {
   applicantCompany: string;
   applicantPosition: string;
   applicantPhone: string;
-}
-
-interface CustomerForm {
-  name: string;
-  email: string;
-  company: string;
-  position: string;
-  phone: string;
 }
 
 interface ApplicationFormType {
@@ -49,15 +49,24 @@ interface ApplicationFormType {
   /** react-hook-form을 사용한 교육 신청 폼 컴포넌트 */
 }
 const ApplicationForm = ({
-  reservations,
+  reservationList,
 }: {
-  reservations: ReservationResponse[];
+  reservationList: ReservationResponse[] | null;
 }) => {
+  const [submitStatus, setSubmitStatus] = useState<
+    "loading" | "success" | "error" | null
+  >(null);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+
+  const isReservationListAvailable =
+    reservationList && reservationList.length > 0;
+
   const {
     control,
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<ApplicationFormType>({
     defaultValues: {
       customer: [{ name: "", email: "", company: "", position: "", phone: "" }],
@@ -93,9 +102,26 @@ const ApplicationForm = ({
     };
     console.log(reservationRequestForm);
 
-    {
-      /** 교육 신청 요청 구현 필요 */
+    setSubmitStatus("loading");
+    setSnackbarMessage("교육 신청 중입니다...");
+
+    // return;
+
+    try {
+      await reservationService.postReservationRequest(reservationRequestForm);
+      setSubmitStatus("success");
+      setSnackbarMessage("교육 신청이 완료되었습니다.");
+      reset();
+    } catch (error) {
+      console.log(error);
+      setSubmitStatus("error");
+      // setSnackbarMessage(`${error}`);
+      setSnackbarMessage("교육 신청에 실패했습니다. 다시 시도해주세요.");
     }
+  };
+
+  const handleCloseSnackbar = () => {
+    setSubmitStatus(null);
   };
 
   return (
@@ -111,7 +137,11 @@ const ApplicationForm = ({
         수강신청
       </Typography>
       <FormControl fullWidth sx={{ position: "relative" }}>
-        <InputLabel id="reservation-select-label">수강할 교육*</InputLabel>
+        <InputLabel id="reservation-select-label">
+          {isReservationListAvailable
+            ? "수강할 교육*"
+            : "교육 일정이 없습니다."}
+        </InputLabel>
         <Controller
           name="reservationId"
           control={control}
@@ -123,15 +153,21 @@ const ApplicationForm = ({
           render={({ field }) => (
             <Select
               labelId="reservation-select-label"
-              label="수강할 교육"
+              label={
+                isReservationListAvailable
+                  ? "수강할 교육"
+                  : "교육 일정이 없습니다."
+              }
               {...field}
               value={field.value ?? ""}
+              disabled={!isReservationListAvailable}
             >
-              {reservations.map((reservation) => (
-                <MenuItem key={reservation.id} value={reservation.id}>
-                  {reservation.reservationName}
-                </MenuItem>
-              ))}
+              {isReservationListAvailable &&
+                reservationList.map((reservation) => (
+                  <MenuItem key={reservation.id} value={reservation.id}>
+                    {`${reservation.startDate} ${reservation.reservationName}`}
+                  </MenuItem>
+                ))}
             </Select>
           )}
         />
@@ -162,7 +198,7 @@ const ApplicationForm = ({
                 size="small"
                 placeholder="회사명*"
                 required
-                sx={{ width: "100%", fontFamily: "Freesentation-4-Regular" }}
+                sx={{ width: "100%" }}
                 {...register("applicant.applicantCompany", {
                   required: "신청자 회사명을 입력해주십시오.",
                 })}
@@ -170,6 +206,22 @@ const ApplicationForm = ({
               {errors.applicant && errors.applicant.applicantCompany && (
                 <ApplicationInputErrorText
                   text={errors.applicant.applicantCompany.message || ""}
+                />
+              )}
+            </Box>
+            <Box sx={{ position: "relative" }}>
+              <TextField
+                size="small"
+                placeholder="부서*"
+                required
+                sx={{ width: "100%" }}
+                {...register("applicant.applicantPosition", {
+                  required: "신청자 부서를 입력해주십시오.",
+                })}
+              />
+              {errors.applicant && errors.applicant.applicantPosition && (
+                <ApplicationInputErrorText
+                  text={errors.applicant.applicantPosition.message || ""}
                 />
               )}
             </Box>
@@ -210,22 +262,7 @@ const ApplicationForm = ({
                 />
               )}
             </Box>
-            <Box sx={{ position: "relative" }}>
-              <TextField
-                size="small"
-                placeholder="부서*"
-                required
-                sx={{ width: "100%" }}
-                {...register("applicant.applicantPosition", {
-                  required: "신청자 부서를 입력해주십시오.",
-                })}
-              />
-              {errors.applicant && errors.applicant.applicantPosition && (
-                <ApplicationInputErrorText
-                  text={errors.applicant.applicantPosition.message || ""}
-                />
-              )}
-            </Box>
+
             <Box sx={{ position: "relative" }}>
               <TextField
                 size="small"
@@ -249,7 +286,7 @@ const ApplicationForm = ({
           </Box>
         </Box>
       </Stack>
-      <Divider />
+      <Divider sx={{ mt: 1 }} />
       <Box>
         <Typography
           sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
@@ -299,6 +336,24 @@ const ApplicationForm = ({
                 <Box sx={{ position: "relative" }}>
                   <TextField
                     size="small"
+                    placeholder="부서*"
+                    required
+                    sx={{ width: "100%" }}
+                    {...register(`customer.${index}.position`, {
+                      required: "참여자 부서를 입력해주십시오.",
+                    })}
+                  />
+                  {errors.customer &&
+                    errors.customer[index] &&
+                    errors.customer[index].position && (
+                      <ApplicationInputErrorText
+                        text={errors.customer[index].position.message || ""}
+                      />
+                    )}
+                </Box>
+                <Box sx={{ position: "relative" }}>
+                  <TextField
+                    size="small"
                     placeholder="성함*"
                     required
                     sx={{ width: "100%" }}
@@ -337,24 +392,7 @@ const ApplicationForm = ({
                       />
                     )}
                 </Box>
-                <Box sx={{ position: "relative" }}>
-                  <TextField
-                    size="small"
-                    placeholder="부서*"
-                    required
-                    sx={{ width: "100%" }}
-                    {...register(`customer.${index}.position`, {
-                      required: "참여자 부서를 입력해주십시오.",
-                    })}
-                  />
-                  {errors.customer &&
-                    errors.customer[index] &&
-                    errors.customer[index].position && (
-                      <ApplicationInputErrorText
-                        text={errors.customer[index].position.message || ""}
-                      />
-                    )}
-                </Box>
+
                 <Box sx={{ position: "relative" }}>
                   <TextField
                     size="small"
@@ -421,11 +459,7 @@ const ApplicationForm = ({
               name="isChecked"
               control={control}
               rules={{ required: "동의가 필요합니다." }}
-              render={({ field }) => (
-                <>
-                  <Checkbox {...field} />
-                </>
-              )}
+              render={({ field }) => <Checkbox {...field} />}
             />
           }
           sx={{ fontFamily: "Freesentation-6-SemiBold" }}
@@ -457,6 +491,52 @@ const ApplicationForm = ({
           신청하기
         </Button>
       </Box>
+      {/** 신청 요청을 보낼 때 발생한 에러 보여주는 스낵바 */}
+      {/** 에러 문구 출력 필요 */}
+      {submitStatus === "loading" && (
+        <Snackbar open>
+          <Alert
+            severity="info"
+            variant="filled"
+            sx={{
+              width: "20%",
+              minWidth: "300px",
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+            }}
+            icon={<CircularProgress size={24} sx={{ color: "white" }} />}
+          >
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
+      )}
+
+      {submitStatus === "success" && (
+        <Snackbar open autoHideDuration={5000} onClose={handleCloseSnackbar}>
+          <Alert
+            onClose={handleCloseSnackbar}
+            severity="success"
+            variant="filled"
+            sx={{ width: "20%", minWidth: "300px" }}
+          >
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
+      )}
+
+      {submitStatus === "error" && (
+        <Snackbar open autoHideDuration={6000} onClose={handleCloseSnackbar}>
+          <Alert
+            onClose={handleCloseSnackbar}
+            severity="error"
+            variant="filled"
+            sx={{ width: "20%", minWidth: "360px" }}
+          >
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
+      )}
     </Box>
   );
 };
