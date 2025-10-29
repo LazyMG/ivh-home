@@ -6,8 +6,8 @@ import { useBreakpoint } from "./hooks/useBreakpoint";
 import theme from "./theme/theme";
 import ScrollToTop from "./common/ScrollToTop";
 // Header
-import Header from "./common/Header/Header";
-import MobileHeader from "./common/MobileHeader";
+import Header from "./common/header/Header";
+import MobileHeader from "./common/mobile/MobileHeader";
 // pages
 import Home from "./pages/home";
 import Product from "./pages/product/product";
