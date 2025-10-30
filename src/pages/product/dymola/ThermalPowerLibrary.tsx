@@ -6,11 +6,13 @@ import Feature from "../../../components/product/Feature";
 import Outline from "../../../components/product/Outline";
 import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
 import BreadScrum from "../../../common/BreadScrum";
-
+import SEO from "../../../common/SEO";
+import { useSEO } from "../../../hooks/useSEO";
 import thermal from "../../../data/product/thermal.json";
 import ScrollButton from "../../../common/ScrollButton";
 
 const ThermalPowerLibrary = () => {
+  const seoData = useSEO("product/dymola/thermalPowerLibrary", thermal);
   const { isMobile } = useBreakpoint();
 
   const {
@@ -26,78 +28,87 @@ const ThermalPowerLibrary = () => {
   const THRESHOLD = 100;
 
   return (
-    <Box
-      sx={(theme) => ({
-        px: 4,
-        pt: "50px",
-        [theme.breakpoints.up("tablet")]: {
-          px: 10,
-        },
-        [theme.breakpoints.up("desktop")]: {
-          px: 20,
-        },
-      })}
-    >
-      <ScrollButton
-        color={thermal_color}
-        threshold={THRESHOLD}
-        show={!isMobile}
-      />
-      {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum pageKey="thermalPowerLibrary" />}
-      {/** 그라데이션이 있는 제목 영역 */}
-      {isMobile ? (
-        <ProductTitle
-          contentProps={{
-            title: thermal_title,
-            subtitle: thermal_subtitle,
-            color: thermal_color,
-            subColor: thermal_subColor,
-          }}
-          isMobile={isMobile}
-          pageKey="thermalPowerLibrary"
-        />
-      ) : (
-        <ProductTitle
-          contentProps={{
-            title: thermal_title,
-            subtitle: thermal_subtitle,
-            color: thermal_color,
-            subColor: thermal_subColor,
-          }}
-        />
-      )}
-
-      {/** 그라데이션 영역 바로 밑에 개요 영역 */}
-      <Outline outline={thermal_outline} />
-
-      {/** Features 영역 */}
+    <>
+      {/* SEO 메타 태그 */}
+      <SEO {...seoData} />
       <Box
+        component="main"
         sx={(theme) => ({
-          my: 12,
+          px: 4,
+          pt: "50px",
           [theme.breakpoints.up("tablet")]: {
-            my: 22,
+            px: 10,
+          },
+          [theme.breakpoints.up("desktop")]: {
+            px: 20,
           },
         })}
       >
-        <Feature color={thermal_featureColor} />
-
-        <Stack
-          sx={(theme) => ({
-            ...theme.customStyles.productStackComponent,
-          })}
-        >
-          {thermal_data.map((data, index) => (
-            <ProductTextImageBox
-              key={`thermal-${index}`}
-              title={data.title}
-              contents={data.contents}
-              imgObj={data.imgObj}
+        <ScrollButton
+          color={thermal_color}
+          threshold={THRESHOLD}
+          show={!isMobile}
+        />
+        <Box component="article">
+          {/* breadcrumb section */}
+          {isMobile ? null : <BreadScrum pageKey="thermalPowerLibrary" />}
+          {/** 그라데이션이 있는 제목 영역 */}
+          {isMobile ? (
+            <ProductTitle
+              contentProps={{
+                title: thermal_title,
+                subtitle: thermal_subtitle,
+                color: thermal_color,
+                subColor: thermal_subColor,
+              }}
+              isMobile={isMobile}
+              pageKey="thermalPowerLibrary"
             />
-          ))}
-        </Stack>
+          ) : (
+            <ProductTitle
+              contentProps={{
+                title: thermal_title,
+                subtitle: thermal_subtitle,
+                color: thermal_color,
+                subColor: thermal_subColor,
+              }}
+            />
+          )}
+
+          {/** 그라데이션 영역 바로 밑에 개요 영역 */}
+          <Outline outline={thermal_outline} />
+
+          {/** Features 영역 */}
+          <Box
+            component="section"
+            aria-label="features-heading"
+            sx={(theme) => ({
+              my: 12,
+              [theme.breakpoints.up("tablet")]: {
+                my: 22,
+              },
+            })}
+          >
+            <Feature color={thermal_featureColor} />
+
+            <Stack
+              sx={(theme) => ({
+                ...theme.customStyles.productStackComponent,
+              })}
+            >
+              {thermal_data.map((data, index) => (
+                <ProductTextImageBox
+                  key={`thermal-${index}`}
+                  title={data.title}
+                  contents={data.contents}
+                  imgObj={data.imgObj}
+                />
+              ))}
+            </Stack>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

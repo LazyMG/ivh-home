@@ -15,6 +15,8 @@ import ApplicationForm from "../../components/support/ApplicationForm";
 
 import training from "../../data/support/training.json";
 import curriculums from "../../data/support/curriculum.json";
+import { useSEO } from "../../hooks/useSEO";
+import SEO from "../../common/SEO";
 
 // 캘린더에 사용되는 이벤트 디자인을 위한 타입
 export interface ExtendedCalendarEventProps {
@@ -89,7 +91,7 @@ const reservations: ReservationResponse[] = [
 
 const Training = () => {
   const formattedEvents = formattingEvent(reservations);
-
+  const seoData = useSEO("support/training", training);
   const { training_title, training_outline, training_title_image } = training;
   const { training_curriculums } = curriculums;
 
@@ -99,6 +101,7 @@ const Training = () => {
 
   return (
     <>
+      <SEO {...seoData} />
       {/** Training 페이지 타이틀 영역  */}
       <Box
         display="flex"

@@ -14,6 +14,7 @@ const SolutionTitleHeader = ({
   const { color, title } = contentProps;
   return (
     <Box
+      component="header"
       sx={{
         display: "flex",
         flexDirection: "column",

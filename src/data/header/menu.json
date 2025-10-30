@@ -83,7 +83,29 @@
         { "name": "Smart Factory", "path": "/solution/smartFactory" },
         {
           "name": "Mobility",
-          "path": "/solution/mobility"
+          "path": "/solution/mobility/multiCommunicateTech",
+          "items": [
+            {
+              "name": "다중 통신기술 네트워크 로드밸런싱 기술개발",
+              "path": "/solution/mobility/multiCommunicateTech"
+            },
+            {
+              "name": "AI 운전능력평가 표준화 및 평가 프로세스 개발",
+              "path": "/solution/mobility/aiDrivingAbilityTest"
+            },
+            {
+              "name": "가상내구로 주행 기술",
+              "path": "/solution/mobility/virtualDurability"
+            },
+            {
+              "name": "현가 장치 설계 툴 개발",
+              "path": "/solution/mobility/suspensionEquipment"
+            },
+            {
+              "name": "EV 열관리 설계 기술",
+              "path": "/solution/mobility/ev"
+            }
+          ]
         },
         { "name": "Home Appliances", "path": "/solution/homeappliance" },
         { "name": "Energy", "path": "/solution/energy" },

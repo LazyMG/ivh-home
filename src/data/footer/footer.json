@@ -27,7 +27,10 @@
       "title": "SOLUTIONS",
       "items": [
         { "name": "Smart Factory", "path": "/solution/smartfactory" },
-        { "name": "Mobility" },
+        {
+          "name": "Mobility",
+          "path": "/solution/mobility/multiCommunicateTech"
+        },
         { "name": "Home Appliances", "path": "/solution/homeappliance" },
         { "name": "Energy", "path": "/solution/energy" },
         { "name": "BEMS", "path": "/solution/bems" },

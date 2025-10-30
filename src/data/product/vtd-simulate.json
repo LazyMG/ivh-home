@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "VTD(Virtual Test Drive) SIMULATE - 자율주행 및 ADAS 검증을 위한 고정밀 시뮬레이션 실행 플랫폼",
+    "description": "VTD SIMULATE는 VTD CREATE에서 설계된 가상 환경을 기반으로, 다양한 교통 시나리오와 센서 데이터를 정밀하게 실행·검증할 수 있는 시뮬레이션 플랫폼입니다. 차량의 움직임, 주변 객체와의 상호작용, 센서 반응 등을 실시간으로 시뮬레이션하며, 자율주행 및 ADAS 기능의 성능을 종합적으로 평가할 수 있도록 지원합니다.",
+    "keywords": "VTD(Virtual Test Drive) SIMULATE, 자율주행, ADAS, 시뮬레이션, 플랫폼, 가상환경, 시나리오, 센서, 이미지, 시뮬레이션 제어, XiL, X-in-the-Loop",
+    "ogImage": "https://ivh.co.kr/images/pages/product/vtd-simulate/vtd-simulate-head.png"
+  },
   "vtd_simulate_title": "VTD(Virtual Test Drive) SIMULATE",
   "vtd_simulate_subtitle": "자율주행 및 ADAS 검증을 위한 고정밀 시뮬레이션 실행 플랫폼",
   "vtd_simulate_outline": [

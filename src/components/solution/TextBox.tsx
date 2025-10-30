@@ -5,6 +5,8 @@ const TextBox = (textBoxProps: TextBoxProps) => {
   const { title, contents, imgurl, marginTop } = textBoxProps;
   return (
     <Box
+      component="section"
+      aria-label="content-section"
       sx={{
         display: "flex",
         flexDirection: "column",

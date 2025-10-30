@@ -3,7 +3,7 @@ import type { ImageBannerProps } from "../../types/product";
 
 const ImageBanner = ({ imgUrl, title, subtitle }: ImageBannerProps) => {
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box component="header" sx={{ position: "relative" }}>
       {/** 그라데이션이 적용된 이미지 */}
       <Box
         component="img"

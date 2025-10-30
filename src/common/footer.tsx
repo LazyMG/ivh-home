@@ -229,7 +229,7 @@ const Footer = () => {
                       cursor: subItem.path ? "pointer" : "default",
                     }}
                     key={subIndex}
-                    onClick={() => navigate(subItem.path || "")}
+                    onClick={() => subItem.path && navigate(subItem.path)}
                   >
                     {subItem.name}
                   </Typography>

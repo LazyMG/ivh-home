@@ -8,8 +8,11 @@ import ProductTextImageBox from "../../../components/product/ProductTextImageBox
 
 import viswalk from "../../../data/product/viswalk.json";
 import ScrollButton from "../../../common/ScrollButton";
+import { useSEO } from "../../../hooks/useSEO";
+import SEO from "../../../common/SEO";
 
 const Viswalk = () => {
+  const seoData = useSEO("product/viswalk", viswalk);
   const { isMobile } = useBreakpoint();
 
   const {
@@ -25,78 +28,87 @@ const Viswalk = () => {
   const THRESHOLD = 100;
 
   return (
-    <Box
-      sx={(theme) => ({
-        px: 4,
-        pt: "50px",
-        [theme.breakpoints.up("tablet")]: {
-          px: 10,
-        },
-        [theme.breakpoints.up("desktop")]: {
-          px: 20,
-        },
-      })}
-    >
-      <ScrollButton
-        color={viswalk_color}
-        threshold={THRESHOLD}
-        show={!isMobile}
-      />
-      {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum pageKey="viswalk" />}
-      {/** 그라데이션이 있는 제목 영역 */}
-      {isMobile ? (
-        <ProductTitle
-          contentProps={{
-            title: viswalk_title,
-            subtitle: viswalk_subtitle,
-            color: viswalk_color,
-            subColor: viswalk_subColor,
-          }}
-          isMobile={isMobile}
-          pageKey="viswalk"
-        />
-      ) : (
-        <ProductTitle
-          contentProps={{
-            title: viswalk_title,
-            subtitle: viswalk_subtitle,
-            color: viswalk_color,
-            subColor: viswalk_subColor,
-          }}
-        />
-      )}
-
-      {/** 그라데이션 영역 바로 밑에 개요 영역 */}
-      <Outline outline={viswalk_outline} />
-
-      {/** Features 영역 */}
+    <>
+      {/* SEO 메타 태그 */}
+      <SEO {...seoData} />
       <Box
+        component="main"
         sx={(theme) => ({
-          my: 12,
+          px: 4,
+          pt: "50px",
           [theme.breakpoints.up("tablet")]: {
-            my: 22,
+            px: 10,
+          },
+          [theme.breakpoints.up("desktop")]: {
+            px: 20,
           },
         })}
       >
-        <Feature color={viswalk_featureColor} />
-
-        <Stack
-          sx={(theme) => ({
-            ...theme.customStyles.productStackComponent,
-          })}
-        >
-          {viswalk_data.map((data, index) => (
-            <ProductTextImageBox
-              key={`viswalk-${index}`}
-              title={data.title}
-              contents={data.contents}
-              imgObj={data.imgObj}
+        <ScrollButton
+          color={viswalk_color}
+          threshold={THRESHOLD}
+          show={!isMobile}
+        />
+        <Box component="article">
+          {/* breadcrumb section */}
+          {isMobile ? null : <BreadScrum pageKey="viswalk" />}
+          {/** 그라데이션이 있는 제목 영역 */}
+          {isMobile ? (
+            <ProductTitle
+              contentProps={{
+                title: viswalk_title,
+                subtitle: viswalk_subtitle,
+                color: viswalk_color,
+                subColor: viswalk_subColor,
+              }}
+              isMobile={isMobile}
+              pageKey="viswalk"
             />
-          ))}
-        </Stack>
+          ) : (
+            <ProductTitle
+              contentProps={{
+                title: viswalk_title,
+                subtitle: viswalk_subtitle,
+                color: viswalk_color,
+                subColor: viswalk_subColor,
+              }}
+            />
+          )}
+
+          {/** 그라데이션 영역 바로 밑에 개요 영역 */}
+          <Outline outline={viswalk_outline} />
+
+          {/** Features 영역 */}
+          <Box
+            component="section"
+            aria-label="features-heading"
+            sx={(theme) => ({
+              my: 12,
+              [theme.breakpoints.up("tablet")]: {
+                my: 22,
+              },
+            })}
+          >
+            <Feature color={viswalk_featureColor} />
+
+            <Stack
+              sx={(theme) => ({
+                ...theme.customStyles.productStackComponent,
+              })}
+            >
+              {viswalk_data.map((data, index) => (
+                <ProductTextImageBox
+                  key={`viswalk-${index}`}
+                  title={data.title}
+                  contents={data.contents}
+                  imgObj={data.imgObj}
+                />
+              ))}
+            </Stack>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

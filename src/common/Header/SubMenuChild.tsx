@@ -62,7 +62,7 @@ export const SubMenuChild = ({
       <Box
         sx={{
           minWidth: "250px",
-          maxWidth: "250px",
+          maxWidth: "350px",
           padding: "24px 24px",
           display: "flex",
           flexDirection: "column",
