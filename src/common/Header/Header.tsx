@@ -2,8 +2,8 @@ import { Box, AppBar } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import menu from "../../data/header/menu.json";
-import { MainMenuBar } from "../header/MainMenuBar";
-import { SubMenuDrawer } from "../header/SubMenuDrawer";
+import { MainMenuBar } from "../Header/MainMenuBar";
+import { SubMenuDrawer } from "../Header/SubMenuDrawer";
 
 const Header = () => {
   const navigate = useNavigate();

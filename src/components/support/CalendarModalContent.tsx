@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import {
   Box,
-  Divider,
   LinearProgress,
   linearProgressClasses,
-  Tooltip,
-  tooltipClasses,
   Typography,
 } from "@mui/material";
 import type { ReservationResponse } from "../../types/reservation";
