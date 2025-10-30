@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { MenuColumn } from "../../style/header/column.styles";
 import { MenuTitle } from "../../style/header/title.styles";
-import { Logo } from "../header/Logo";
 import type { MainMenuItem } from "../../types/header";
+import { Logo } from "./Logo";
 
 interface MainMenuBarProps {
   menuItems: MainMenuItem[];
