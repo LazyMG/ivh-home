@@ -5,10 +5,53 @@ import { Box } from "@mui/material";
 import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
 
 import type { EventContentArg, EventInput } from "@fullcalendar/core/index.js";
-import type { ExtendedCalendarEventProps } from "../../pages/support/Training";
 import "../../style/support/training-calendar.css";
+import type {
+  ReservationResponse,
+  ReservationStatus,
+} from "../../types/reservation";
+import { useState } from "react";
+import CustomModal from "./CustomModal";
+import CalendarModalContent from "./CalendarModalContent";
 
-const Calendar = ({ events }: { events: EventInput[] }) => {
+// 캘린더에 사용되는 이벤트 디자인을 위한 타입
+interface ExtendedCalendarEventProps {
+  status: ReservationStatus;
+  maxPeople: number;
+  reservatedPeople: number;
+}
+
+// api를 통해 받은 교육 일정을 캘린더 형식에 맞게 변형하는 함수
+const formattingEvent = (dataList: ReservationResponse[] | null) => {
+  if (!dataList) return [];
+  const eventList: EventInput[] = dataList.map((data) => ({
+    title: data.reservationName,
+    start: data.startDate,
+    end: data.endDate,
+    id: data.id.toString(),
+    extendedProps: {
+      status: data.reservationStatus,
+      maxPeople: data.maxPeople,
+      reservatedPeople: data.reservatedPeople,
+    } as ExtendedCalendarEventProps,
+  }));
+  return eventList;
+};
+
+const Calendar = ({
+  reservationList,
+}: {
+  reservationList: ReservationResponse[] | null;
+}) => {
+  const [selectedReservation, setSelectedReservation] =
+    useState<ReservationResponse | null>(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
   // 같은 이벤트 ID 클래스를 가진 모든 요소에 hovered 클래스를 추가/제거하여 호버 효과 적용
   const handleMouseEnter = (eventId: string) => {
     const elements = document.querySelectorAll(`.event-${eventId}`);
@@ -18,6 +61,17 @@ const Calendar = ({ events }: { events: EventInput[] }) => {
   const handleMouseLeave = (eventId: string) => {
     const elements = document.querySelectorAll(`.event-${eventId}`);
     elements.forEach((el) => el.classList.remove("hovered"));
+  };
+
+  const handleClickReservation = (eventId: string) => {
+    if (!reservationList) return;
+    const reservation = reservationList.find(
+      (el) => el.id.toString() === eventId
+    );
+    if (reservation) {
+      setIsModalOpen(true);
+      setSelectedReservation(reservation);
+    }
   };
 
   // 이벤트 커스텀 렌더링 함수
@@ -37,7 +91,7 @@ const Calendar = ({ events }: { events: EventInput[] }) => {
         }}
         onMouseEnter={() => handleMouseEnter(eventInfo.event.id)}
         onMouseLeave={() => handleMouseLeave(eventInfo.event.id)}
-        onClick={() => console.log(eventInfo.event.title)}
+        onClick={() => handleClickReservation(eventInfo.event.id)}
       >
         {showIcon && (
           <div
@@ -70,23 +124,19 @@ const Calendar = ({ events }: { events: EventInput[] }) => {
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         height="auto"
+        timeZone="UTC"
         headerToolbar={{
           start: "prev next today",
           center: "title",
           end: "dayGridMonth dayGridWeek dayGridDay",
         }}
         locale={"ko"}
-        // events={[
-        //   {
-        //     title: "오전 6시 VTD 후반기 교육",
-        //     date: "2025-10-01",
-        //     end: "2025-10-09",
-        //   },
-        //   { title: "오전 6시 Dymola 후반기 교육", date: "2025-10-12" },
-        // ]}
-        events={events}
+        events={formattingEvent(reservationList)}
         eventContent={renderEventContent}
       />
+      <CustomModal open={isModalOpen} onClose={handleModalClose}>
+        <CalendarModalContent reservation={selectedReservation} />
+      </CustomModal>
     </Box>
   );
 };

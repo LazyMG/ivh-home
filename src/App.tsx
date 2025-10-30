@@ -7,7 +7,6 @@ import theme from "./theme/theme";
 import ScrollToTop from "./common/ScrollToTop";
 import { HelmetProvider } from "react-helmet-async";
 // Header
-import Header from "./common/header/Header";
 import MobileHeader from "./common/mobile/MobileHeader";
 // Footer
 import Footer from "./common/footer";
@@ -48,6 +47,7 @@ import Viswalk from "./pages/product/vissim/Viswalk";
 import Calendar from "./pages/Calendar";
 // Support
 import Training from "./pages/support/Training";
+import Header from "./common/Header/Header";
 
 function App() {
   const { isMobile, isTablet } = useBreakpoint();

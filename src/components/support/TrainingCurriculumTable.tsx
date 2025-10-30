@@ -33,7 +33,7 @@ const TraingCurriculumTable = ({ curriculums }: TraingCurriculumTableProps) => {
     <Box
       display="flex"
       flexDirection="column"
-      sx={{ mt: 4, mb: 8 }}
+      sx={{ mt: 4, mb: 8, mx: "auto", maxWidth: "1500px" }}
       key={index}
     >
       <Typography

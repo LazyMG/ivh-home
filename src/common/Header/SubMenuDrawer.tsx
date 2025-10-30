@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import type { MainMenuItem } from "../../types/header";
 import { SubMenuColumn } from "../../style/header/column.styles";
-import { SubMenuParents } from "../header/SubMenuParents";
-import { SubMenuChild } from "../header/SubMenuChild";
+import { SubMenuParents } from "../Header/SubMenuParents";
+import { SubMenuChild } from "../Header/SubMenuChild";
 import youtubeWhite from "/images/header/youtube_white.png";
 import linkedinWhite from "/images/header/linkedin_white.png";
 import youtubeBlack from "/images/header/youtube_black.png";
