@@ -32,7 +32,7 @@ const BreadScrum = ({ pageKey }: BreadScrumProps) => {
           templateKey as keyof typeof breadcrumbs.templates
         ];
       if (template) {
-        breadcrumbPath.push(...template);
+        breadcrumbPath.push(...(template as BreadcrumbItem[]));
       }
     });
   }
@@ -44,6 +44,8 @@ const BreadScrum = ({ pageKey }: BreadScrumProps) => {
 
   return (
     <Box
+      component="nav"
+      aria-label="breadcrumb"
       sx={{
         display: "flex",
         alignItems: "center",

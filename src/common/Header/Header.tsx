@@ -51,6 +51,7 @@ const Header = () => {
 
   return (
     <Box
+      component="header"
       onMouseLeave={() => {
         setOpenMainMenu(null);
         setOpenLevel1Menu(null);

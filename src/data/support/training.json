@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "Training - IVH 교육 프로그램",
+    "description": "Dymola, VTD, Vissim 등 시뮬레이션 도구 전문 교육 프로그램. 초급부터 고급까지 맞춤형 교육 제공.",
+    "keywords": "Training, 교육, Dymola, VTD, Vissim, 시뮬레이션 교육, 기술 교육",
+    "ogImage": "https://ivh.co.kr/images/header/ivh_logo_black.png"
+  },
   "training_title": [
     { "text": "표준화", "font": "Freesentation-7-Bold", "color": "#3b995f" },
     {

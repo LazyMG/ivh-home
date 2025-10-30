@@ -8,33 +8,33 @@ const Solution = () => {
   const { isMobile } = useBreakpoint();
 
   return (
-    <>
+    <Box
+      component="main"
+      sx={(theme) => ({
+        ...theme.customStyles.solutionMainContainer,
+        minHeight: "100vh",
+        position: "relative",
+      })}
+    >
       <Box
         sx={(theme) => ({
-          ...theme.customStyles.solutionMainContainer,
+          ...theme.customStyles.solutionMainImageContainer,
         })}
       >
         <Box
-          component="main"
-          sx={(theme) => ({
-            ...theme.customStyles.solutionMainImageContainer,
-          })}
-        >
-          <Box
-            component="img"
-            src={isMobile ? solutionImageMobile : solutionImage}
-            alt="solution"
-            sx={{
-              width: "100%",
-              height: "auto",
-              maxHeight: "80vh",
-              objectFit: "contain",
-            }}
-          />
-        </Box>
-        <RowNav />
+          component="img"
+          src={isMobile ? solutionImageMobile : solutionImage}
+          alt="solution"
+          sx={{
+            width: "100%",
+            height: "auto",
+            maxHeight: "80vh",
+            objectFit: "contain",
+          }}
+        />
       </Box>
-    </>
+      <RowNav />
+    </Box>
   );
 };
 
