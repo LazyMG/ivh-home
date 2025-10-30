@@ -1,4 +1,4 @@
-export type ReservationStatus = "OPEN" | "CLOSED" | "CANCELED";
+export type ReservationStatus = "OPEN" | "CLOSED" | "CANCELLED";
 
 type ReservationType = "EDUCATION" | "EVENT" | "ETC";
 
