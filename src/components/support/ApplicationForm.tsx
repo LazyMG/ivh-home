@@ -1,16 +1,9 @@
 import {
-  Alert,
   Box,
   Button,
   Checkbox,
-  CircularProgress,
   Divider,
-  FormControl,
   FormControlLabel,
-  InputLabel,
-  MenuItem,
-  Select,
-  Snackbar,
   Stack,
   TextField,
   Typography,
@@ -28,6 +21,16 @@ import ApplicationButton from "./ApplicationButton";
 import ApplicationInputErrorText from "./ApplicationInputErrorText";
 import { reservationService } from "../../service/reservationService";
 import { useState } from "react";
+import { EAMIL_REGEX, PHONE_REGEX } from "../../utils/constants";
+import ApplicationInput from "./ApplicationInput";
+import CustomSnackbar from "./CustomSnackbar";
+import PrivacyPolicyIcon from "./PrivacyPolicyIcon";
+import ApplicationSelect from "./ApplicationSelect";
+
+// 공백 문자 유효성 검사를 위한 공통 규칙
+const trimValidation = (message: string) => ({
+  validate: (value: string) => value.trim() !== "" || message,
+});
 
 interface ApplicantForm {
   applicantName: string;
@@ -37,7 +40,7 @@ interface ApplicantForm {
   applicantPhone: string;
 }
 
-interface ApplicationFormType {
+export interface ApplicationFormType {
   applicant: ApplicantForm;
   customer: CustomerForm[];
   memo?: string;
@@ -58,28 +61,36 @@ const ApplicationForm = ({
   >(null);
   const [snackbarMessage, setSnackbarMessage] = useState("");
 
-  const isReservationListAvailable =
-    reservationList && reservationList.length > 0;
-
   const {
     control,
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
+    getValues,
+    watch,
+    setError,
   } = useForm<ApplicationFormType>({
+    mode: "onChange",
     defaultValues: {
       customer: [{ name: "", email: "", company: "", position: "", phone: "" }],
+      isChecked: false,
     },
   });
   const {
     fields: customerFields,
     append,
     remove,
+    prepend,
   } = useFieldArray({
     control,
     name: "customer",
   });
+
+  // 수강자 필드 값 감지
+  const customerValues = watch("customer");
+
+  const [isFillCustomerChecked, setIsFillCustomerChecked] = useState(false);
 
   const addCustomerList = () => {
     append(
@@ -89,10 +100,104 @@ const ApplicationForm = ({
   };
 
   const removeCustomerList = (index: number) => {
+    // 배열 길이가 1일 때는 삭제 불가
+    if (customerFields.length === 1) {
+      return;
+    }
+
+    // 0번 인덱스를 삭제하면서 체크박스가 체크된 경우 체크 해제
+    if (index === 0 && isFillCustomerChecked) {
+      setIsFillCustomerChecked(false);
+    }
+
     remove(index);
   };
 
+  const onIsFillCustomerCheckedChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    if (event.target.checked) {
+      const applicantValue = getValues().applicant;
+
+      // 모든 필드가 채워져 있는지 검증
+      const emptyFields: Array<keyof ApplicantForm> = [];
+
+      if (!applicantValue?.applicantName?.trim()) {
+        emptyFields.push("applicantName");
+        setError("applicant.applicantName", {
+          type: "manual",
+          message: "신청자 정보를 먼저 입력해주세요.",
+        });
+      }
+      if (!applicantValue?.applicantEmail?.trim()) {
+        emptyFields.push("applicantEmail");
+        setError("applicant.applicantEmail", {
+          type: "manual",
+          message: "신청자 정보를 먼저 입력해주세요.",
+        });
+      }
+      if (!applicantValue?.applicantCompany?.trim()) {
+        emptyFields.push("applicantCompany");
+        setError("applicant.applicantCompany", {
+          type: "manual",
+          message: "신청자 정보를 먼저 입력해주세요.",
+        });
+      }
+      if (!applicantValue?.applicantPosition?.trim()) {
+        emptyFields.push("applicantPosition");
+        setError("applicant.applicantPosition", {
+          type: "manual",
+          message: "신청자 정보를 먼저 입력해주세요.",
+        });
+      }
+      if (!applicantValue?.applicantPhone?.trim()) {
+        emptyFields.push("applicantPhone");
+        setError("applicant.applicantPhone", {
+          type: "manual",
+          message: "신청자 정보를 먼저 입력해주세요.",
+        });
+      }
+
+      // 모든 필드가 채워져 있을 때만 체크박스 활성화
+      if (emptyFields.length === 0) {
+        setIsFillCustomerChecked(true);
+
+        // 신청자 정보를 수강자 배열의 맨 앞에 추가
+        prepend({
+          email: applicantValue.applicantEmail,
+          name: applicantValue.applicantName,
+          position: applicantValue.applicantPosition,
+          company: applicantValue.applicantCompany,
+          phone: applicantValue.applicantPhone,
+        });
+      } else {
+        // 빈 필드가 있으면 체크 해제
+        setIsFillCustomerChecked(false);
+      }
+    } else {
+      setIsFillCustomerChecked(false);
+
+      // 배열 길이가 1일 때: 새 빈 인풋 추가 후 기존 인풋(0번) 삭제
+      if (customerFields.length === 1) {
+        addCustomerList();
+        remove(0);
+      } else {
+        // 배열 길이가 1보다 클 때: 0번 인덱스만 삭제
+        remove(0);
+      }
+    }
+  };
+
   const onSubmit = async (data: ApplicationFormType) => {
+    // 교육 일정에 없는 아이디가 들어있는 경우의 방어 코드
+    if (
+      reservationList &&
+      !reservationList.some(
+        (reservation) => reservation.id === data.reservationId
+      )
+    )
+      return;
+
     const reservationRequestForm = {
       ...data.applicant,
       memo: data?.memo || "",
@@ -100,23 +205,28 @@ const ApplicationForm = ({
       reservationId: data.reservationId,
       requestedPeople: data.customer.length,
     };
-    console.log(reservationRequestForm);
+    // console.log(reservationRequestForm);
 
     setSubmitStatus("loading");
-    setSnackbarMessage("교육 신청 중입니다...");
+    setSnackbarMessage("예약 신청 중입니다...");
 
-    // return;
+    return;
 
     try {
       await reservationService.postReservationRequest(reservationRequestForm);
       setSubmitStatus("success");
-      setSnackbarMessage("교육 신청이 완료되었습니다.");
+      setSnackbarMessage("예약 신청이 성공적으로 등록되었습니다.");
       reset();
-    } catch (error) {
+      setIsFillCustomerChecked(false);
+    } catch (error: unknown) {
       console.log(error);
       setSubmitStatus("error");
-      // setSnackbarMessage(`${error}`);
-      setSnackbarMessage("교육 신청에 실패했습니다. 다시 시도해주세요.");
+
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "교육 신청에 실패했습니다. 다시 시도해주세요.";
+      setSnackbarMessage(errorMessage);
     }
   };
 
@@ -128,7 +238,15 @@ const ApplicationForm = ({
     <Box
       onSubmit={handleSubmit(onSubmit)}
       component={"form"}
-      sx={{ display: "flex", flexDirection: "column", gap: 2, my: 4 }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        width: "100%",
+        maxWidth: "1500px",
+        mx: "auto",
+        my: 4,
+      }}
     >
       <Typography
         component="h4"
@@ -136,48 +254,11 @@ const ApplicationForm = ({
       >
         수강신청
       </Typography>
-      <FormControl fullWidth sx={{ position: "relative" }}>
-        <InputLabel id="reservation-select-label">
-          {isReservationListAvailable
-            ? "수강할 교육*"
-            : "교육 일정이 없습니다."}
-        </InputLabel>
-        <Controller
-          name="reservationId"
-          control={control}
-          rules={{
-            required: "교육을 선택해주세요",
-            validate: (value) =>
-              typeof value === "number" || "교육을 선택해주세요",
-          }}
-          render={({ field }) => (
-            <Select
-              labelId="reservation-select-label"
-              label={
-                isReservationListAvailable
-                  ? "수강할 교육"
-                  : "교육 일정이 없습니다."
-              }
-              {...field}
-              value={field.value ?? ""}
-              disabled={!isReservationListAvailable}
-            >
-              {isReservationListAvailable &&
-                reservationList.map((reservation) => (
-                  <MenuItem key={reservation.id} value={reservation.id}>
-                    {`${reservation.startDate} ${reservation.reservationName}`}
-                  </MenuItem>
-                ))}
-            </Select>
-          )}
-        />
-        {errors.reservationId && (
-          <ApplicationInputErrorText
-            text={errors.reservationId.message || ""}
-            sx={{ mx: 0, bottom: -12 }}
-          />
-        )}
-      </FormControl>
+      <ApplicationSelect
+        control={control}
+        errors={errors}
+        reservationList={reservationList}
+      />
       <Stack gap={2}>
         <Typography
           sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
@@ -186,21 +267,27 @@ const ApplicationForm = ({
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Box
-            sx={{
+            sx={(theme) => ({
               flex: 1,
               display: "grid",
-              gridTemplateColumns: "repeat(5,1fr)",
-              gap: 2,
-            }}
+              gridTemplateColumns: "repeat(1,1fr)",
+              gap: 4,
+              [theme.breakpoints.up("mobileLandscape")]: {
+                gridTemplateColumns: "repeat(5,1fr)",
+                gap: 2,
+              },
+            })}
           >
-            <Box sx={{ position: "relative" }}>
+            {/* <Box sx={{ position: "relative" }}>
               <TextField
                 size="small"
-                placeholder="회사명*"
+                placeholder="iVH"
+                label="회사명"
                 required
                 sx={{ width: "100%" }}
                 {...register("applicant.applicantCompany", {
                   required: "신청자 회사명을 입력해주십시오.",
+                  ...trimValidation("신청자 회사명을 입력해주십시오."),
                 })}
               />
               {errors.applicant && errors.applicant.applicantCompany && (
@@ -208,91 +295,116 @@ const ApplicationForm = ({
                   text={errors.applicant.applicantCompany.message || ""}
                 />
               )}
-            </Box>
-            <Box sx={{ position: "relative" }}>
-              <TextField
-                size="small"
-                placeholder="부서*"
-                required
-                sx={{ width: "100%" }}
-                {...register("applicant.applicantPosition", {
+            </Box> */}
+            <ApplicationInput
+              label="회사명"
+              placeholder="iVH"
+              register={{
+                ...register("applicant.applicantCompany", {
+                  required: "신청자 회사명을 입력해주십시오.",
+                  ...trimValidation("신청자 회사명을 입력해주십시오."),
+                }),
+              }}
+            >
+              {errors.applicant && errors.applicant.applicantCompany && (
+                <ApplicationInputErrorText
+                  text={errors.applicant.applicantCompany.message || ""}
+                />
+              )}
+            </ApplicationInput>
+            <ApplicationInput
+              placeholder="IT"
+              label="부서"
+              register={{
+                ...register("applicant.applicantPosition", {
                   required: "신청자 부서를 입력해주십시오.",
-                })}
-              />
+                  ...trimValidation("신청자 부서를 입력해주십시오."),
+                }),
+              }}
+            >
               {errors.applicant && errors.applicant.applicantPosition && (
                 <ApplicationInputErrorText
                   text={errors.applicant.applicantPosition.message || ""}
                 />
               )}
-            </Box>
-            <Box sx={{ position: "relative" }}>
-              <TextField
-                size="small"
-                placeholder="성함*"
-                required
-                sx={{ width: "100%" }}
-                {...register("applicant.applicantName", {
+            </ApplicationInput>
+            <ApplicationInput
+              placeholder="홍길동"
+              label="성함"
+              register={{
+                ...register("applicant.applicantName", {
                   required: "신청자 성함을 입력해주십시오.",
-                })}
-              />
+                  ...trimValidation("신청자 성함을 입력해주십시오."),
+                }),
+              }}
+            >
               {errors.applicant && errors.applicant.applicantName && (
                 <ApplicationInputErrorText
                   text={errors.applicant.applicantName.message || ""}
                 />
               )}
-            </Box>
-            <Box sx={{ position: "relative" }}>
-              <TextField
-                size="small"
-                placeholder="이메일*"
-                required
-                sx={{ width: "100%" }}
-                {...register("applicant.applicantEmail", {
+            </ApplicationInput>
+            <ApplicationInput
+              placeholder="example@ivh.co.kr"
+              label="이메일"
+              register={{
+                ...register("applicant.applicantEmail", {
                   required: "신청자 이메일을 입력해주십시오.",
+                  ...trimValidation("신청자 이메일을 입력해주십시오."),
                   pattern: {
-                    value:
-                      /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-.]*)[a-z0-9_+-]@([a-z0-9][a-z0-9-]*\.)+[a-z]{2,}$/i,
+                    value: EAMIL_REGEX,
                     message: "이메일 형식을 맞춰주십시오.",
                   },
-                })}
-              />
+                }),
+              }}
+            >
               {errors.applicant && errors.applicant.applicantEmail && (
                 <ApplicationInputErrorText
                   text={errors.applicant.applicantEmail.message || ""}
                 />
               )}
-            </Box>
-
-            <Box sx={{ position: "relative" }}>
-              <TextField
-                size="small"
-                placeholder="연락처*"
-                required
-                sx={{ width: "100%" }}
-                {...register("applicant.applicantPhone", {
+            </ApplicationInput>
+            <ApplicationInput
+              placeholder="000-0000-0000"
+              label="연락처"
+              register={{
+                ...register("applicant.applicantPhone", {
                   required: "신청자 연락처를 입력해주십시오.",
+                  ...trimValidation("신청자 연락처를 입력해주십시오."),
                   pattern: {
-                    value: /^\d{3}-\d{4}-\d{4}$/,
+                    value: PHONE_REGEX,
                     message: "전화번호 형식을 맞춰주십시오.",
                   },
-                })}
-              />
+                }),
+              }}
+            >
               {errors.applicant && errors.applicant.applicantPhone && (
                 <ApplicationInputErrorText
                   text={errors.applicant.applicantPhone.message || ""}
                 />
               )}
-            </Box>
+            </ApplicationInput>
           </Box>
         </Box>
       </Stack>
       <Divider sx={{ mt: 1 }} />
       <Box>
-        <Typography
-          sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
-        >
-          참여자
-        </Typography>
+        <Box display="flex" gap={2} alignContent="center">
+          <Typography
+            sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
+          >
+            수강자
+          </Typography>
+          <FormControlLabel
+            label="신청자 정보와 같음"
+            control={
+              <Checkbox
+                checked={isFillCustomerChecked}
+                onChange={onIsFillCustomerCheckedChange}
+              />
+            }
+          />
+        </Box>
         <Stack
           gap={4}
           sx={{
@@ -305,26 +417,32 @@ const ApplicationForm = ({
           {customerFields.map((_, index) => (
             <Box
               key={index}
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              sx={{ display: "flex", alignItems: "center", pt: 1 }}
             >
               <Box
-                sx={{
+                sx={(theme) => ({
                   flex: 1,
                   display: "grid",
-                  gridTemplateColumns: "repeat(5,1fr)",
-                  gap: 2,
-                }}
+                  gridTemplateColumns: "repeat(1,1fr)",
+                  gap: 4,
+                  [theme.breakpoints.up("mobileLandscape")]: {
+                    gridTemplateColumns: "repeat(5,1fr)",
+                    gap: 2,
+                  },
+                })}
               >
-                <Box sx={{ position: "relative" }}>
-                  <TextField
-                    size="small"
-                    placeholder="회사명*"
-                    required
-                    sx={{ width: "100%" }}
-                    {...register(`customer.${index}.company`, {
-                      required: "참여자 회사명을 입력해주십시오.",
-                    })}
-                  />
+                <ApplicationInput
+                  placeholder="iVH"
+                  label="회사명"
+                  disabled={index === 0 && isFillCustomerChecked}
+                  shrink={customerValues?.[index]?.company}
+                  register={{
+                    ...register(`customer.${index}.company`, {
+                      required: "수강자 회사명을 입력해주십시오.",
+                      ...trimValidation("수강자 회사명을 입력해주십시오."),
+                    }),
+                  }}
+                >
                   {errors.customer &&
                     errors.customer[index] &&
                     errors.customer[index].company && (
@@ -332,17 +450,19 @@ const ApplicationForm = ({
                         text={errors.customer[index].company.message || ""}
                       />
                     )}
-                </Box>
-                <Box sx={{ position: "relative" }}>
-                  <TextField
-                    size="small"
-                    placeholder="부서*"
-                    required
-                    sx={{ width: "100%" }}
-                    {...register(`customer.${index}.position`, {
-                      required: "참여자 부서를 입력해주십시오.",
-                    })}
-                  />
+                </ApplicationInput>
+                <ApplicationInput
+                  placeholder="IT"
+                  label="부서"
+                  disabled={index === 0 && isFillCustomerChecked}
+                  shrink={customerValues?.[index]?.position}
+                  register={{
+                    ...register(`customer.${index}.position`, {
+                      required: "수강자 부서를 입력해주십시오.",
+                      ...trimValidation("수강자 부서를 입력해주십시오."),
+                    }),
+                  }}
+                >
                   {errors.customer &&
                     errors.customer[index] &&
                     errors.customer[index].position && (
@@ -350,17 +470,19 @@ const ApplicationForm = ({
                         text={errors.customer[index].position.message || ""}
                       />
                     )}
-                </Box>
-                <Box sx={{ position: "relative" }}>
-                  <TextField
-                    size="small"
-                    placeholder="성함*"
-                    required
-                    sx={{ width: "100%" }}
-                    {...register(`customer.${index}.name`, {
-                      required: "참여자 성함을 입력해주십시오.",
-                    })}
-                  />
+                </ApplicationInput>
+                <ApplicationInput
+                  placeholder="홍길동"
+                  label="성함"
+                  disabled={index === 0 && isFillCustomerChecked}
+                  shrink={customerValues?.[index]?.name}
+                  register={{
+                    ...register(`customer.${index}.name`, {
+                      required: "수강자 성함을 입력해주십시오.",
+                      ...trimValidation("수강자 성함을 입력해주십시오."),
+                    }),
+                  }}
+                >
                   {errors.customer &&
                     errors.customer[index] &&
                     errors.customer[index].name && (
@@ -368,22 +490,23 @@ const ApplicationForm = ({
                         text={errors.customer[index].name.message || ""}
                       />
                     )}
-                </Box>
-                <Box sx={{ position: "relative" }}>
-                  <TextField
-                    size="small"
-                    placeholder="이메일*"
-                    required
-                    sx={{ width: "100%" }}
-                    {...register(`customer.${index}.email`, {
-                      required: "참여자 이메일을 입력해주십시오.",
+                </ApplicationInput>
+                <ApplicationInput
+                  placeholder="example@ivh.co.kr"
+                  label="이메일"
+                  disabled={index === 0 && isFillCustomerChecked}
+                  shrink={customerValues?.[index]?.email}
+                  register={{
+                    ...register(`customer.${index}.email`, {
+                      required: "수강자 이메일을 입력해주십시오.",
+                      ...trimValidation("수강자 이메일을 입력해주십시오."),
                       pattern: {
-                        value:
-                          /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-.]*)[a-z0-9_+-]@([a-z0-9][a-z0-9-]*\.)+[a-z]{2,}$/i,
+                        value: EAMIL_REGEX,
                         message: "이메일 형식을 맞춰주십시오.",
                       },
-                    })}
-                  />
+                    }),
+                  }}
+                >
                   {errors.customer &&
                     errors.customer[index] &&
                     errors.customer[index].email && (
@@ -391,22 +514,23 @@ const ApplicationForm = ({
                         text={errors.customer[index].email.message || ""}
                       />
                     )}
-                </Box>
-
-                <Box sx={{ position: "relative" }}>
-                  <TextField
-                    size="small"
-                    placeholder="연락처*"
-                    required
-                    sx={{ width: "100%" }}
-                    {...register(`customer.${index}.phone`, {
-                      required: "참여자 연락처를 입력해주십시오.",
+                </ApplicationInput>
+                <ApplicationInput
+                  placeholder="000-0000-0000"
+                  label="연락처"
+                  disabled={index === 0 && isFillCustomerChecked}
+                  shrink={customerValues?.[index]?.phone}
+                  register={{
+                    ...register(`customer.${index}.phone`, {
+                      required: "수강자 연락처를 입력해주십시오.",
+                      ...trimValidation("수강자 연락처를 입력해주십시오."),
                       pattern: {
-                        value: /^\d{3}-\d{4}-\d{4}$/,
+                        value: PHONE_REGEX,
                         message: "전화번호 형식을 맞춰주십시오.",
                       },
-                    })}
-                  />
+                    }),
+                  }}
+                >
                   {errors.customer &&
                     errors.customer[index] &&
                     errors.customer[index].phone && (
@@ -414,17 +538,16 @@ const ApplicationForm = ({
                         text={errors.customer[index].phone.message || ""}
                       />
                     )}
-                </Box>
+                </ApplicationInput>
               </Box>
-              {index + 1 === customerFields.length ? (
-                <ApplicationButton>
-                  <AddIcon onClick={addCustomerList} />
-                </ApplicationButton>
-              ) : (
+              <Box display="flex" gap={1} sx={{ mx: 1 }}>
                 <ApplicationButton>
                   <RemoveIcon onClick={() => removeCustomerList(index)} />
                 </ApplicationButton>
-              )}
+                <ApplicationButton>
+                  <AddIcon onClick={addCustomerList} />
+                </ApplicationButton>
+              </Box>
             </Box>
           ))}
         </Stack>
@@ -440,7 +563,7 @@ const ApplicationForm = ({
           maxRows={5}
           minRows={5}
           multiline
-          placeholder="문의 내용을 입력해주십시오."
+          placeholder="요청 사항을 입력해주십시오."
           {...register("memo")}
         />
       </Box>
@@ -453,18 +576,35 @@ const ApplicationForm = ({
           position: "relative",
         }}
       >
-        <FormControlLabel
-          control={
-            <Controller
-              name="isChecked"
-              control={control}
-              rules={{ required: "동의가 필요합니다." }}
-              render={({ field }) => <Checkbox {...field} />}
-            />
-          }
-          sx={{ fontFamily: "Freesentation-6-SemiBold" }}
-          label={"개인정보처리방침에 동의합니다."}
-        />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <FormControlLabel
+            control={
+              <Controller
+                name="isChecked"
+                control={control}
+                rules={{ required: "동의가 필요합니다." }}
+                render={({ field }) => (
+                  <Checkbox
+                    checked={field.value || false}
+                    onChange={field.onChange}
+                  />
+                )}
+              />
+            }
+            sx={{
+              fontFamily: "Freesentation-6-SemiBold",
+              mr: 1,
+            }}
+            label={"개인정보처리방침에 동의합니다."}
+          />
+          <PrivacyPolicyIcon />
+        </Box>
+
         {errors.isChecked && (
           <ApplicationInputErrorText
             sx={{
@@ -487,56 +627,18 @@ const ApplicationForm = ({
             fontFamily: "Freesentation-6-SemiBold",
             fontSize: "16px",
           }}
+          disabled={!isValid || submitStatus === "loading"}
         >
           신청하기
         </Button>
       </Box>
       {/** 신청 요청을 보낼 때 발생한 에러 보여주는 스낵바 */}
       {/** 에러 문구 출력 필요 */}
-      {submitStatus === "loading" && (
-        <Snackbar open>
-          <Alert
-            severity="info"
-            variant="filled"
-            sx={{
-              width: "20%",
-              minWidth: "300px",
-              display: "flex",
-              alignItems: "center",
-              gap: 2,
-            }}
-            icon={<CircularProgress size={24} sx={{ color: "white" }} />}
-          >
-            {snackbarMessage}
-          </Alert>
-        </Snackbar>
-      )}
-
-      {submitStatus === "success" && (
-        <Snackbar open autoHideDuration={5000} onClose={handleCloseSnackbar}>
-          <Alert
-            onClose={handleCloseSnackbar}
-            severity="success"
-            variant="filled"
-            sx={{ width: "20%", minWidth: "300px" }}
-          >
-            {snackbarMessage}
-          </Alert>
-        </Snackbar>
-      )}
-
-      {submitStatus === "error" && (
-        <Snackbar open autoHideDuration={6000} onClose={handleCloseSnackbar}>
-          <Alert
-            onClose={handleCloseSnackbar}
-            severity="error"
-            variant="filled"
-            sx={{ width: "20%", minWidth: "360px" }}
-          >
-            {snackbarMessage}
-          </Alert>
-        </Snackbar>
-      )}
+      <CustomSnackbar
+        submitStatus={submitStatus}
+        snackbarMessage={snackbarMessage}
+        handleCloseSnackbar={handleCloseSnackbar}
+      />
     </Box>
   );
 };

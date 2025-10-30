@@ -1,6 +1,6 @@
 import type { ReservationResponse } from "../../types/reservation";
 
-import { Alert, Box, Divider, Snackbar, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 
 import TrainingMainTitle from "../../components/support/TrainingMainTitle";
 import GradientSectionLabel from "../../components/support/GradientSectionLabel";
@@ -13,6 +13,7 @@ import training from "../../data/support/training.json";
 import curriculums from "../../data/support/curriculum.json";
 import { useEffect, useState } from "react";
 import { reservationService } from "../../service/reservationService";
+import CustomSnackbar from "../../components/support/CustomSnackbar";
 
 // 임시 교육 일정 데이터
 const reservations: ReservationResponse[] = [
@@ -21,7 +22,7 @@ const reservations: ReservationResponse[] = [
     reservationName: "VTD 후반기 교육",
     startDate: "2025-10-02",
     endDate: "2025-10-02",
-    reservationStatus: "OPEN",
+    reservationStatus: "CLOSED",
     reservationType: "EDUCATION",
     cost: 1234,
     reservationDescription: "VTD 후반기 교육",
@@ -36,7 +37,7 @@ const reservations: ReservationResponse[] = [
     reservationName: "Dymola 후반기 교육",
     startDate: "2025-10-12",
     endDate: "2025-10-12",
-    reservationStatus: "CLOSED",
+    reservationStatus: "OPEN",
     reservationType: "EDUCATION",
     cost: 1234,
     reservationDescription: "Dymola 후반기 교육",
@@ -49,9 +50,9 @@ const reservations: ReservationResponse[] = [
   {
     id: 3,
     reservationName: "Dymola 후반기 교육2",
-    startDate: "2025-10-15",
-    endDate: "2025-10-15",
-    reservationStatus: "CLOSED",
+    startDate: "2025-10-31",
+    endDate: "2025-10-31",
+    reservationStatus: "OPEN",
     reservationType: "EDUCATION",
     cost: 1234,
     reservationDescription: "Dymola 후반기 교육2",
@@ -93,8 +94,8 @@ const Training = () => {
   };
 
   useEffect(() => {
-    // // 렌더시에 호출하도록
-    // fetchReservationList();
+    // 렌더시에 호출하도록
+    fetchReservationList();
   }, []);
 
   return (
@@ -213,18 +214,11 @@ const Training = () => {
 
         {/** 데이터 불러올 때 발생한 에러 보여주는 스낵바 */}
         {/** 에러 문구 출력 */}
-        {submitStatus === "error" && (
-          <Snackbar open onClose={handleCloseSnackbar}>
-            <Alert
-              onClose={handleCloseSnackbar}
-              severity="error"
-              variant="filled"
-              sx={{ width: "20%", minWidth: "360px" }}
-            >
-              {snackbarMessage}
-            </Alert>
-          </Snackbar>
-        )}
+        <CustomSnackbar
+          submitStatus={submitStatus}
+          snackbarMessage={snackbarMessage}
+          handleCloseSnackbar={handleCloseSnackbar}
+        />
       </Box>
     </>
   );

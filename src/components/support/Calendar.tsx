@@ -1,6 +1,6 @@
 import dayGridPlugin from "@fullcalendar/daygrid";
 import FullCalendar from "@fullcalendar/react";
-import { Box, Modal, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
 
@@ -11,6 +11,8 @@ import type {
   ReservationStatus,
 } from "../../types/reservation";
 import { useState } from "react";
+import CustomModal from "./CustomModal";
+import CalendarModalContent from "./CalendarModalContent";
 
 // 캘린더에 사용되는 이벤트 디자인을 위한 타입
 interface ExtendedCalendarEventProps {
@@ -34,18 +36,6 @@ const formattingEvent = (dataList: ReservationResponse[] | null) => {
     } as ExtendedCalendarEventProps,
   }));
   return eventList;
-};
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  // border: "2px solid #000",
-  // boxShadow: 24,
-  p: 4,
 };
 
 const Calendar = ({
@@ -78,9 +68,7 @@ const Calendar = ({
     const reservation = reservationList.find(
       (el) => el.id.toString() === eventId
     );
-    console.log(reservation);
     if (reservation) {
-      // 모달을 여는 등의 이벤트
       setIsModalOpen(true);
       setSelectedReservation(reservation);
     }
@@ -136,6 +124,7 @@ const Calendar = ({
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         height="auto"
+        timeZone="UTC"
         headerToolbar={{
           start: "prev next today",
           center: "title",
@@ -145,30 +134,9 @@ const Calendar = ({
         events={formattingEvent(reservationList)}
         eventContent={renderEventContent}
       />
-      <Box>
-        <Modal
-          open={isModalOpen}
-          onClose={handleModalClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            {selectedReservation && (
-              <>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  {selectedReservation.reservationName}
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  최대 인원: {selectedReservation.maxPeople}
-                </Typography>
-                <Typography id="modal-modal-description">
-                  현재 인원: {selectedReservation.reservatedPeople}
-                </Typography>
-              </>
-            )}
-          </Box>
-        </Modal>
-      </Box>
+      <CustomModal open={isModalOpen} onClose={handleModalClose}>
+        <CalendarModalContent reservation={selectedReservation} />
+      </CustomModal>
     </Box>
   );
 };

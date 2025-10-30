@@ -1,6 +1,11 @@
-import type { ReservationStatusColorType } from "../types/reservation";
+import type {
+  ReservationStatusColorType,
+  ReservationTypeMap,
+} from "../types/reservation";
 
-export const API_BASE_URL = "http://192.168.0.4:9550";
+export const API_BASE_URL = import.meta.env.VITE_BASE_API_URL;
+
+console.log(API_BASE_URL);
 
 export const API_ENDPOINTS = {
   MENU: {
@@ -24,3 +29,14 @@ export const RESERVATION_STATUS_COLOR: ReservationStatusColorType = {
   CLOSED: { color: "#3cb56a", label: "모집 완료" },
   CANCELED: { color: "#888888", label: "취소" },
 } as const;
+
+export const EAMIL_REGEX =
+  /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-.]*)[a-z0-9_+-]@([a-z0-9][a-z0-9-]*\.)+[a-z]{2,}$/i;
+
+export const PHONE_REGEX = /^\d{3}-\d{4}-\d{4}$/;
+
+export const RESERVATION_TYPE: ReservationTypeMap = {
+  EDUCATION: "교육",
+  EVENT: "행사",
+  ETC: "기타",
+};
