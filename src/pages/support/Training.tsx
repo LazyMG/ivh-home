@@ -67,7 +67,6 @@ import CustomSnackbar from "../../components/support/CustomSnackbar";
 // ];
 
 const Training = () => {
-  const formattedEvents = formattingEvent(reservations);
   const seoData = useSEO("support/training", training);
   const { training_title, training_outline, training_title_image } = training;
   const { training_curriculums } = curriculums;
