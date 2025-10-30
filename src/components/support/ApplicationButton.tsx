@@ -19,7 +19,7 @@ const ApplicationButton = ({ children }: ApplicationButtonProps) => {
         justifyContent: "center",
         alignItems: "center",
         cursor: "pointer",
-        mx: 2,
+        // mx: 1,
       }}
     >
       {children}

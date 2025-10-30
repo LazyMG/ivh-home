@@ -10,6 +10,8 @@ export type ReservationStatusColorType = Record<
   { color: string; label: string }
 >;
 
+export type ReservationTypeMap = Record<ReservationType, string>;
+
 export interface ReservationResponse {
   id: number;
   reservationName: string;

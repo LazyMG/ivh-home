@@ -195,12 +195,12 @@ tr {
   border-radius: 4px;
   font-weight: 500;
   font-size: 14px;
-  background-color: #ffffff;
-  border: 1px solid black;
+  background-color: transparent;
+  border: none;
 }
 
 .fc-event-title {
-  white-space: nowrap;
+  white-space: pre-wrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #000000;

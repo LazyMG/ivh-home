@@ -1,8 +1,4 @@
-import type { EventInput } from "@fullcalendar/core";
-import type {
-  ReservationResponse,
-  ReservationStatus,
-} from "../../types/reservation";
+import type { ReservationResponse } from "../../types/reservation";
 
 import { Box, Divider, Typography } from "@mui/material";
 
@@ -15,37 +11,18 @@ import ApplicationForm from "../../components/support/ApplicationForm";
 
 import training from "../../data/support/training.json";
 import curriculums from "../../data/support/curriculum.json";
+import { useEffect, useState } from "react";
+import { reservationService } from "../../service/reservationService";
+import CustomSnackbar from "../../components/support/CustomSnackbar";
 
-// 캘린더에 사용되는 이벤트 디자인을 위한 타입
-export interface ExtendedCalendarEventProps {
-  status: ReservationStatus;
-  maxPeople: number;
-  reservatedPeople: number;
-}
-
-// api를 통해 받은 교육 일정을 캘린더 형식에 맞게 변형하는 함수
-const formattingEvent = (dataList: ReservationResponse[]) => {
-  const eventList: EventInput[] = dataList.map((data) => ({
-    title: data.reservationName,
-    start: data.startDate,
-    end: data.endDate,
-    id: data.id.toString(),
-    extendedProps: {
-      status: data.reservationStatus,
-      maxPeople: data.maxPeople,
-      reservatedPeople: data.reservatedPeople,
-    } as ExtendedCalendarEventProps,
-  }));
-  return eventList;
-};
 // 임시 교육 일정 데이터
 const reservations: ReservationResponse[] = [
   {
     id: 1,
-    reservationName: "오전 6시 VTD 후반기 교육",
+    reservationName: "VTD 후반기 교육",
     startDate: "2025-10-02",
-    endDate: "2025-10-09",
-    reservationStatus: "OPEN",
+    endDate: "2025-10-02",
+    reservationStatus: "CLOSED",
     reservationType: "EDUCATION",
     cost: 1234,
     reservationDescription: "VTD 후반기 교육",
@@ -57,10 +34,10 @@ const reservations: ReservationResponse[] = [
   },
   {
     id: 2,
-    reservationName: "오전 6시 Dymola 후반기 교육",
+    reservationName: "Dymola 후반기 교육",
     startDate: "2025-10-12",
     endDate: "2025-10-12",
-    reservationStatus: "CLOSED",
+    reservationStatus: "OPEN",
     reservationType: "EDUCATION",
     cost: 1234,
     reservationDescription: "Dymola 후반기 교육",
@@ -72,10 +49,10 @@ const reservations: ReservationResponse[] = [
   },
   {
     id: 3,
-    reservationName: "오전 6시 Dymola 후반기 교육2",
-    startDate: "2025-10-12",
-    endDate: "2025-10-15",
-    reservationStatus: "CLOSED",
+    reservationName: "Dymola 후반기 교육2",
+    startDate: "2025-10-31",
+    endDate: "2025-10-31",
+    reservationStatus: "OPEN",
     reservationType: "EDUCATION",
     cost: 1234,
     reservationDescription: "Dymola 후반기 교육2",
@@ -88,14 +65,38 @@ const reservations: ReservationResponse[] = [
 ];
 
 const Training = () => {
-  const formattedEvents = formattingEvent(reservations);
-
   const { training_title, training_outline, training_title_image } = training;
   const { training_curriculums } = curriculums;
+
+  const [apiReservationList, setApiReservationList] = useState<
+    ReservationResponse[] | null
+  >(null);
+  const [submitStatus, setSubmitStatus] = useState<"error" | null>(null);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+
+  const handleCloseSnackbar = () => {
+    setSubmitStatus(null);
+  };
 
   {
     /** reservation 호출 기능 추가 필요 */
   }
+  const fetchReservationList = async () => {
+    try {
+      const result = await reservationService.getReservations();
+      setApiReservationList(result);
+    } catch (error) {
+      console.log(`에러가 발생했습니다. | ${error}`);
+      setSubmitStatus("error");
+      // setSnackbarMessage(`${error}`);
+      setSnackbarMessage("교육 일정을 불러오지 못했습니다.");
+    }
+  };
+
+  useEffect(() => {
+    // 렌더시에 호출하도록
+    fetchReservationList();
+  }, []);
 
   return (
     <>
@@ -204,12 +205,20 @@ const Training = () => {
           }}
         >
           <CalendarLegend />
-          <Calendar events={formattedEvents} />
+          <Calendar reservationList={apiReservationList} />
         </Box>
 
         {/** Application 섹션 */}
         <GradientSectionLabel labelText="Application" />
-        <ApplicationForm reservations={reservations} />
+        <ApplicationForm reservationList={apiReservationList} />
+
+        {/** 데이터 불러올 때 발생한 에러 보여주는 스낵바 */}
+        {/** 에러 문구 출력 */}
+        <CustomSnackbar
+          submitStatus={submitStatus}
+          snackbarMessage={snackbarMessage}
+          handleCloseSnackbar={handleCloseSnackbar}
+        />
       </Box>
     </>
   );
