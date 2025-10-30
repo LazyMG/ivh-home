@@ -9,9 +9,15 @@ export const MenuColumn = styled(Box, {
   shouldForwardProp: (prop) =>
     prop !== "$isLogoColumn" &&
     prop !== "$isProductPage" &&
-    prop !== "$isHomePage",
+    prop !== "$isHomePage" &&
+    prop !== "$isActive",
 })<ColumnStyleProps>(
-  ({ $isProductPage, $isLogoColumn, $isHomePage = false }) => {
+  ({
+    $isProductPage,
+    $isLogoColumn,
+    $isHomePage = false,
+    $isActive = false,
+  }) => {
     const theme = getHeaderTheme($isHomePage);
     const { min, max } = getColumnWidth($isLogoColumn, $isProductPage);
 
@@ -34,7 +40,10 @@ export const MenuColumn = styled(Box, {
         left: 0,
         right: 0,
         height: headerLayout.hoverLineHeight,
-        backgroundColor: "transparent",
+        backgroundColor:
+          $isActive && !$isLogoColumn
+            ? theme.hoverLine // 클릭된 상태에도 밑줄 유지
+            : "transparent",
         transition: "background-color 0.3s ease",
         zIndex: 1,
       },
@@ -50,9 +59,7 @@ export const MenuColumn = styled(Box, {
 export const SubMenuColumn = styled(Box, {
   shouldForwardProp: (prop) =>
     prop !== "$isProductPage" && prop !== "$isLogoColumn",
-})<ColumnStyleProps>(({ $isProductPage, $isLogoColumn }) => {
-  const { min, max } = getColumnWidth($isLogoColumn, $isProductPage);
-
+})<ColumnStyleProps>(({ $isLogoColumn }) => {
   return {
     padding: headerLayout.padding,
     flex: getColumnFlex($isLogoColumn),
@@ -60,7 +67,5 @@ export const SubMenuColumn = styled(Box, {
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    minWidth: min,
-    maxWidth: max,
   };
 });

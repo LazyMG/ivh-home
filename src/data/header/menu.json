@@ -2,118 +2,109 @@
   "mainMenu": [
     {
       "title": "PRODUCT & SERVICES",
-      "path": "/product",
-      "columns": [
+      "subMenu": [
         {
-          "title": "All Products",
+          "name": "All Products",
           "items": [
-            { "name": "iSuite", "path": "/product/isuite", "disabled": false },
+            { "name": "iSuite" },
             {
               "name": "Modelica",
-              "path": "/product/modelica",
-              "disabled": false
+              "subMenu": [
+                {
+                  "name": "Dymola",
+                  "path": "/product/dymola",
+                  "subMenu": [
+                    { "name": "Battery", "path": "/product/dymola/battery" },
+                    { "name": "TIL", "path": "/product/dymola/til" },
+                    {
+                      "name": "Thermal Power Library",
+                      "path": "/product/dymola/thermalpowerlibrary"
+                    },
+                    {
+                      "name": "Vehicle Dynamics Library",
+                      "path": "/product/dymola/vehicledynamicslibrary"
+                    }
+                  ]
+                },
+                { "name": "Modelon" },
+                { "name": "TLK" }
+              ]
             },
             {
-              "name": "Dymola",
-              "path": "/product/dymola",
-              "disabled": true,
-              "deps": 2
+              "name": "VTD",
+              "path": "/product/vtd",
+              "subMenu": [
+                { "name": "VTD CREATE", "path": "/product/vtd/vtdcreate" },
+                { "name": "VTD SIMULATE", "path": "/product/vtd/vtdsimulate" },
+                { "name": "VTD FULLSTACK", "path": "/product/vtd/vtdfullstack" }
+              ]
             },
             {
-              "name": "Modelon",
-              "path": "/product/modelon",
-              "disabled": true,
-              "deps": 2
+              "name": "Vissim",
+              "path": "/product/vissim",
+              "subMenu": [
+                {
+                  "name": "Vissim Automotive",
+                  "path": "/product/vissim/vissimautomotive"
+                },
+                { "name": "Viswalk", "path": "/product/vissim/viswalk" }
+              ]
             },
-            {
-              "name": "TLK",
-              "path": "/product/tlk",
-              "disabled": true,
-              "deps": 2
-            },
-            { "name": "VTD", "path": "/product/vtd", "disabled": false },
-            { "name": "Vissim", "path": "/product/vissim", "disabled": false },
-            { "name": "SFE", "path": "/product/sfe", "disabled": false }
+            { "name": "SFE" }
           ]
         },
         {
-          "subColumns": [
-            {
-              "title": "Technology",
-              "items": [
-                {
-                  "name": "Digital Twin",
-                  "path": "/product/digitalTwin",
-                  "disabled": false
-                },
-                { "name": "MBSE", "path": "/product/mbse", "disabled": false },
-                { "name": "AI", "path": "/product/ai", "disabled": false }
-              ]
-            },
-            {
-              "title": "Application",
-              "items": [
-                {
-                  "name": "AMR 개발",
-                  "path": "/product/amr",
-                  "disabled": false
-                },
-                {
-                  "name": "Battery Package 디자인",
-                  "path": "/product/batteryPackage",
-                  "disabled": false
-                },
-                {
-                  "name": "Building Energy Management",
-                  "path": "/product/buildingEnergy",
-                  "disabled": false
-                }
-              ]
-            }
+          "name": "Technology",
+          "items": [
+            { "name": "Digital Twin" },
+            { "name": "MBSE" },
+            { "name": "AI" }
           ]
+        },
+        {
+          "name": "Application",
+          "items": [
+            { "name": "AMR Development" },
+            { "name": "Battery Package Design" },
+            { "name": "Building Energy Management" }
+          ]
+        },
+        {
+          "name": "Services",
+          "path": "/product/services",
+          "items": []
         }
       ]
     },
     {
       "title": "SOLUTIONS",
       "path": "/solution",
-      "items": [
+      "subMenu": [
+        { "name": "Smart Factory", "path": "/solution/smartFactory" },
         {
-          "name": "Smart Factory",
-          "path": "/solution/smartFactory",
-          "disabled": true
+          "name": "Mobility",
+          "path": "/solution/mobility"
         },
-        { "name": "Mobility", "path": "/solution/mobility", "disabled": true },
-        {
-          "name": "Home Appliances",
-          "path": "/solution/homeappliance",
-          "disabled": true
-        },
-        { "name": "Energy", "path": "/solution/energy", "disabled": true },
-        { "name": "BEMS", "path": "/solution/bems", "disabled": true },
-        {
-          "name": "AI Innovation Hub",
-          "path": "/solution/aIinnovationhub",
-          "disabled": true
-        }
+        { "name": "Home Appliances", "path": "/solution/homeappliance" },
+        { "name": "Energy", "path": "/solution/energy" },
+        { "name": "BEMS", "path": "/solution/bems" },
+        { "name": "AI Innovation Hub", "path": "/solution/aIinnovationhub" }
       ]
     },
     {
       "title": "SUPPORT",
-      "path": "/support",
-      "items": [
-        { "name": "Training", "path": "/support/training", "disabled": true },
-        { "name": "Support", "path": "/support/support", "disabled": true }
+      "subMenu": [
+        { "name": "Training", "path": "/support/training" },
+        { "name": "Support" }
       ]
     },
     {
       "title": "COMPANY",
-      "path": "/company",
-      "items": [
-        { "name": "CEO", "path": "/company/ceo", "disabled": true },
-        { "name": "History", "path": "/company/history", "disabled": true },
-        { "name": "Partner", "path": "/company/partner", "disabled": true },
-        { "name": "Contact", "path": "/company/contact", "disabled": true }
+      "subMenu": [
+        { "name": "CEO" },
+        { "name": "History" },
+        { "name": "Partner" },
+        { "name": "Contact" }
       ]
     }
   ]

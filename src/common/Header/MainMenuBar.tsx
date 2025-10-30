@@ -1,23 +1,23 @@
 import { Box } from "@mui/material";
 import { MenuColumn } from "../../style/header/column.styles";
 import { MenuTitle } from "../../style/header/title.styles";
-import { Logo } from "./Logo";
 import type { MainMenuItem } from "../../types/header";
+import { Logo } from "./Logo";
 
 interface MainMenuBarProps {
   menuItems: MainMenuItem[];
   isHomePage: boolean;
   navigate: (path: string) => void;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  onMenuClick: (title: string) => void;
+  openMainMenu: string | null;
 }
 
 export const MainMenuBar = ({
   menuItems,
   isHomePage,
   navigate,
-  onMouseEnter,
-  onMouseLeave,
+  onMenuClick,
+  openMainMenu,
 }: MainMenuBarProps) => {
   return (
     <Box
@@ -42,12 +42,14 @@ export const MainMenuBar = ({
           key={index}
           $isProductPage={item.path === "/product"}
           $isHomePage={isHomePage}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
+          $isActive={openMainMenu === item.title}
         >
           <MenuTitle
             $isHomePage={isHomePage}
-            onClick={() => navigate(item.path)}
+            onClick={() => onMenuClick(item.title)}
+            sx={{
+              fontWeight: openMainMenu === item.title ? "900" : "bold",
+            }}
           >
             {item.title}
           </MenuTitle>

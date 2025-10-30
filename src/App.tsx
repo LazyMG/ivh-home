@@ -6,8 +6,7 @@ import { useBreakpoint } from "./hooks/useBreakpoint";
 import theme from "./theme/theme";
 import ScrollToTop from "./common/ScrollToTop";
 // Header
-import Header from "./common/Header/Header";
-import MobileHeader from "./common/MobileHeader";
+import MobileHeader from "./common/mobile/MobileHeader";
 // pages
 import Home from "./pages/home";
 import Product from "./pages/product/product";
@@ -40,6 +39,7 @@ import Viswalk from "./pages/product/vissim/Viswalk";
 import Calendar from "./pages/Calendar";
 // Support
 import Training from "./pages/support/Training";
+import Header from "./common/Header/Header";
 
 function App() {
   const { isMobile, isTablet } = useBreakpoint();

@@ -1,18 +1,60 @@
 import { Box, AppBar } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import menu from "../../data/header/menu.json";
-import { MainMenuBar } from "./MainMenuBar";
-import { SubMenuDrawer } from "./SubMenuDrawer";
+import { MainMenuBar } from "../Header/MainMenuBar";
+import { SubMenuDrawer } from "../Header/SubMenuDrawer";
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // 어떤 메인 메뉴가 클릭되어 열려있는지
+  const [openMainMenu, setOpenMainMenu] = useState<string | null>(null);
+
+  // 1단계 서브메뉴 중 어떤 것이 클릭되었는지
+  const [openLevel1Menu, setOpenLevel1Menu] = useState<string | null>(null);
+
+  // 페이지 이동 시 메뉴 닫기
+  useEffect(() => {
+    setOpenMainMenu(null);
+    setOpenLevel1Menu(null);
+  }, [location.pathname]);
+
+  const handleMainMenuClick = (title: string) => {
+    if (openMainMenu === title) {
+      // 같은 메뉴 클릭 시 닫기
+      setOpenMainMenu(null);
+      setOpenLevel1Menu(null);
+    } else {
+      // 다른 메뉴 클릭 시 열기
+      setOpenMainMenu(title);
+      setOpenLevel1Menu(null); // 1단계 메뉴 초기화
+    }
+  };
+
+  const handleLevel1Click = (name: string) => {
+    if (openLevel1Menu === name) {
+      // 같은 1단계 메뉴 클릭 시 닫기
+      setOpenLevel1Menu(null);
+    } else {
+      // 다른 1단계 메뉴 클릭 시 열기
+      setOpenLevel1Menu(name);
+    }
+  };
+
+  const handleClose = () => {
+    setOpenMainMenu(null);
+    setOpenLevel1Menu(null);
+  };
 
   return (
     <Box
+      onMouseLeave={() => {
+        setOpenMainMenu(null);
+        setOpenLevel1Menu(null);
+      }}
       sx={{
         position: "relative",
         width: "100%",
@@ -37,19 +79,23 @@ const Header = () => {
           menuItems={menu.mainMenu}
           isHomePage={isHomePage}
           navigate={navigate}
-          onMouseEnter={() => setIsMenuOpen(true)}
-          onMouseLeave={() => setIsMenuOpen(false)}
+          onMenuClick={handleMainMenuClick}
+          openMainMenu={openMainMenu}
         />
       </AppBar>
 
-      {/* 하단 서브메뉴 영역 */}
-      {isMenuOpen && (
+      {/* 서브메뉴 영역 */}
+      {openMainMenu && (
         <SubMenuDrawer
-          menuItems={menu.mainMenu}
+          allMenuItems={menu.mainMenu}
+          openedMenuIndex={menu.mainMenu.findIndex(
+            (item) => item.title === openMainMenu
+          )}
           isHomePage={isHomePage}
           navigate={navigate}
-          onMouseEnter={() => setIsMenuOpen(true)}
-          onMouseLeave={() => setIsMenuOpen(false)}
+          openLevel1Menu={openLevel1Menu}
+          onLevel1Click={handleLevel1Click}
+          onClose={handleClose}
         />
       )}
     </Box>

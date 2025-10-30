@@ -1,30 +1,16 @@
-// 메뉴 아이템
+// 재귀적 메뉴 아이템
 export interface MenuItem {
   name: string;
-  path: string;
-  disabled: boolean;
-  deps?: number;
-}
-
-// 서브 컬럼
-export interface SubColumn {
-  title: string;
-  items: MenuItem[];
-}
-
-// 메뉴 컬럼
-export interface MenuColumn {
-  title?: string;
-  items?: MenuItem[];
-  subColumns?: SubColumn[];
+  path?: string;
+  items?: MenuItem[]; // 2단계 메뉴 (클릭 시 표시)
+  subMenu?: MenuItem[]; // 3단계+ 메뉴 (호버 시 표시)
 }
 
 // 메인 메뉴
 export interface MainMenuItem {
   title: string;
-  path: string;
-  columns?: MenuColumn[];
-  items?: MenuItem[];
+  path?: string;
+  subMenu?: MenuItem[]; // 1단계 서브메뉴
 }
 
 // 전체 메뉴 데이터
@@ -37,6 +23,7 @@ export interface ColumnStyleProps {
   $isProductPage?: boolean;
   $isLogoColumn?: boolean;
   $isHomePage?: boolean;
+  $isActive?: boolean;
 }
 
 export interface MenuItemStyleProps {
