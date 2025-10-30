@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "VTD(Virtual Test Drive) CREATE - ASAM 표준기반 OpenDRIVE 가상환경 생성 툴킷",
+    "description": "VTD(Virtual Test Drive) CREATE는 ASAM 표준기반 OpenDRIVE 가상환경 생성 툴킷입니다. VTD CREATE는 도로 및 철도 기반 시뮬레이션을 위한 가상 환경의 생성, 구성, 시각화 및 평가를 지원합니다.",
+    "keywords": "VTD(Virtual Test Drive) CREATE, ASAM 표준, OpenDRIVE, 가상환경, 생성, 구성, 시각화, 평가",
+    "ogImage": "https://ivh.co.kr/images/pages/product/vtd-create/vtd-create-head.png"
+  },
   "vtd_create_title": "VTD(Virtual Test Drive) CREATE",
   "vtd_create_subtitle": "ASAM 표준기반 OpenDRIVE 가상환경 생성 툴킷",
   "vtd_create_outline": [

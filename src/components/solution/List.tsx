@@ -4,7 +4,7 @@ import type { ListProps } from "../../types/solution";
 const List = (listProps: ListProps) => {
   const { title, contents } = listProps;
   return (
-    <Box sx={{ mt: 8 }}>
+    <Box component="section" aria-label="list-section" sx={{ mt: 8 }}>
       {/* 제목 */}
       <Typography variant="solutionTextTitleFont">{title}</Typography>
 

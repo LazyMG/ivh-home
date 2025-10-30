@@ -4,6 +4,8 @@ import type { OutlineProps } from "../../types/product";
 const Outline = ({ outline, imgObj }: OutlineProps) => {
   return (
     <Box
+      component="section"
+      aria-label="outline-heading"
       sx={(theme) => ({
         display: "flex",
         flexDirection: "column",

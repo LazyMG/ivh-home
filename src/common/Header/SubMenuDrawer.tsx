@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
 import type { MainMenuItem } from "../../types/header";
 import { SubMenuColumn } from "../../style/header/column.styles";
-import { SubMenuParents } from "../Header/SubMenuParents";
-import { SubMenuChild } from "../Header/SubMenuChild";
 import youtubeWhite from "/images/header/youtube_white.png";
 import linkedinWhite from "/images/header/linkedin_white.png";
 import youtubeBlack from "/images/header/youtube_black.png";
 import linkedinBlack from "/images/header/linkedin_black.png";
+import { SubMenuParents } from "./SubMenuParents";
+import { SubMenuChild } from "./SubMenuChild";
 
 interface SubMenuDrawerProps {
   allMenuItems: MainMenuItem[];
@@ -103,9 +103,7 @@ export const SubMenuDrawer = ({
                 src={isHomePage ? youtubeWhite : youtubeBlack}
                 alt="youtube"
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
-                onClick={() =>
-                  window.open("https://www.youtube.com/@koreaelec", "_blank")
-                }
+                onClick={() => window.open("https://www.youtube.com/@ivhkorea")}
               />
               <img
                 src={isHomePage ? linkedinWhite : linkedinBlack}
@@ -113,8 +111,7 @@ export const SubMenuDrawer = ({
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
                 onClick={() =>
                   window.open(
-                    "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image",
-                    "_blank"
+                    "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image"
                   )
                 }
               />

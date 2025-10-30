@@ -12,6 +12,9 @@ import body from "../../data/solution/body.json";
 
 import "../../style/solution.css";
 import ScrollButton from "../../common/ScrollButton";
+import homeappliance from "../../data/solution/seo.json";
+import SEO from "../../common/SEO";
+import { useSEO } from "../../hooks/useSEO";
 
 const THRESHOLD = 100;
 
@@ -19,6 +22,8 @@ const HomeAppliance = () => {
   // header
   const { headerTitle, subtitle, color, subColor } = header.HomeAppliance;
   const { isMobile } = useBreakpoint();
+
+  const seoData = useSEO("solution/homeappliance", homeappliance.homeappliance);
 
   // body
   const {
@@ -32,88 +37,96 @@ const HomeAppliance = () => {
   } = body.homeAppliance;
 
   return (
-    <Box className="solution-body">
-      <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
-
-      {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum pageKey="homeAppliance" />}
-      {/* header section */}
-      {isMobile ? (
-        <SolutionTitle
-          contentProps={{
-            title: headerTitle,
-            subtitle: subtitle,
-            color: color,
-            subColor: subColor,
-          }}
-          isMobile={isMobile}
-          pageKey="homeAppliance"
-        />
-      ) : (
-        <SolutionTitle
-          contentProps={{
-            title: headerTitle,
-            subtitle: subtitle,
-            color: color,
-            subColor: subColor,
-          }}
-        />
-      )}
-      {/* body section */}
-      <Box component="main">
-        {/* 개요 */}
-        <TextBox
-          title={outline.outlineTitle}
-          contents={outline.outlineContents}
-          marginTop={8}
-        />
-        {/* 기술적 배경 */}
-        <TextImageBox
-          title={technicalBackground.technicalBackgroundTitle}
-          listHeader={technicalBackground.technicalBackgroundListHeader}
-          contents={technicalBackground.technicalBackgroundContents}
-          width="1200px"
-          height="700px"
-        />
-        {/* 시장 동향 및 필요성 */}
-        <TextImageBox
-          title={marketTrend.marketTrendTitle}
-          listHeader={marketTrend.marketTrendListHeader}
-          contents={marketTrend.marketTrendContents}
-          width="1200px"
-          height="700px"
-        />
-        {/* 시스템 아키텍처 */}
-        <TextImageBox
-          title={systemArchitecture.systemArchitectureTitle}
-          listHeader={systemArchitecture.systemArchitectureListHeader}
-          contents={systemArchitecture.systemArchitectureContents}
-          width="1200px"
-          height="700px"
-        />
-        {/* 핵심 기술, 제공 서비스, 기대 효과 */}
-        {/* 모든 ColorBox를 반복 렌더링 */}
-        {colorBoxes.map((colorBox, index) => (
-          <Box key={index} sx={{ mt: 8, mb: 16 }}>
-            <ColorBox
-              boxColor={colorBox.boxColor}
-              layout={colorBox.layout}
-              boxes={colorBox.boxes}
+    <>
+      {/* SEO 메타 태그 */}
+      <SEO {...seoData} />
+      <Box component="main" className="solution-body">
+        <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
+        <Box component="article">
+          {/* breadcrumb section */}
+          {isMobile ? null : <BreadScrum pageKey="homeAppliance" />}
+          {/* header section */}
+          {isMobile ? (
+            <SolutionTitle
+              contentProps={{
+                title: headerTitle,
+                subtitle: subtitle,
+                color: color,
+                subColor: subColor,
+              }}
+              isMobile={isMobile}
+              pageKey="homeAppliance"
             />
-          </Box>
-        ))}
-        {/* 관련 소프트웨어 */}
-        <TextBox
-          title={relatedSoftware.relatedSoftwareTitle}
-          contents={relatedSoftware.relatedSoftwareContents}
-        />
-        {/* 자주 묻는 질문 */}
-        <List
-          title={frequentlyAskedQuestions.frequentlyAskedQuestionsTitle}
-          contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
-        />
+          ) : (
+            <SolutionTitle
+              contentProps={{
+                title: headerTitle,
+                subtitle: subtitle,
+                color: color,
+                subColor: subColor,
+              }}
+            />
+          )}
+          {/* body section */}
+          {/* 개요 */}
+          <TextBox
+            title={outline.outlineTitle}
+            contents={outline.outlineContents}
+            marginTop={8}
+          />
+          {/* 기술적 배경 */}
+          <TextImageBox
+            title={technicalBackground.technicalBackgroundTitle}
+            listHeader={technicalBackground.technicalBackgroundListHeader}
+            contents={technicalBackground.technicalBackgroundContents}
+            width="1200px"
+            height="700px"
+          />
+          {/* 시장 동향 및 필요성 */}
+          <TextImageBox
+            title={marketTrend.marketTrendTitle}
+            listHeader={marketTrend.marketTrendListHeader}
+            contents={marketTrend.marketTrendContents}
+            width="1200px"
+            height="700px"
+          />
+          {/* 시스템 아키텍처 */}
+          <TextImageBox
+            title={systemArchitecture.systemArchitectureTitle}
+            listHeader={systemArchitecture.systemArchitectureListHeader}
+            contents={systemArchitecture.systemArchitectureContents}
+            width="1200px"
+            height="700px"
+          />
+          {/* 핵심 기술, 제공 서비스, 기대 효과 */}
+          {/* 모든 ColorBox를 반복 렌더링 */}
+          {colorBoxes.map((colorBox, index) => (
+            <Box
+              component="section"
+              aria-label="box-content-section"
+              key={index}
+              sx={{ mt: 8, mb: 16 }}
+            >
+              <ColorBox
+                boxColor={colorBox.boxColor}
+                layout={colorBox.layout}
+                boxes={colorBox.boxes}
+              />
+            </Box>
+          ))}
+          {/* 관련 소프트웨어 */}
+          <TextBox
+            title={relatedSoftware.relatedSoftwareTitle}
+            contents={relatedSoftware.relatedSoftwareContents}
+          />
+          {/* 자주 묻는 질문 */}
+          <List
+            title={frequentlyAskedQuestions.frequentlyAskedQuestionsTitle}
+            contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
+          />
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

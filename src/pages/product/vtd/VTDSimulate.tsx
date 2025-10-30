@@ -8,10 +8,12 @@ import ProductTextImageBox from "../../../components/product/ProductTextImageBox
 
 import vtd_simulate from "../../../data/product/vtd-simulate.json";
 import ScrollButton from "../../../common/ScrollButton";
+import { useSEO } from "../../../hooks/useSEO";
+import SEO from "../../../common/SEO";
 
 const VTDSimulate = () => {
   const { isMobile } = useBreakpoint();
-
+  const seoData = useSEO("product/vtd/vtdsimulate", vtd_simulate);
   const {
     vtd_simulate_title,
     vtd_simulate_subtitle,
@@ -26,78 +28,90 @@ const VTDSimulate = () => {
   const THRESHOLD = 100;
 
   return (
-    <Box
-      sx={(theme) => ({
-        px: 4,
-        pt: "50px",
-        [theme.breakpoints.up("tablet")]: {
-          px: 10,
-        },
-        [theme.breakpoints.up("desktop")]: {
-          px: 20,
-        },
-      })}
-    >
-      <ScrollButton
-        color={vtd_simulate_color}
-        threshold={THRESHOLD}
-        show={!isMobile}
-      />
-      {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum pageKey="vtdSimulate" />}
-      {/** 그라데이션이 있는 제목 영역 */}
-      {isMobile ? (
-        <ProductTitle
-          contentProps={{
-            title: vtd_simulate_title,
-            subtitle: vtd_simulate_subtitle,
-            color: vtd_simulate_color,
-            subColor: vtd_simulate_subColor,
-          }}
-          isMobile={isMobile}
-          pageKey="vtdSimulate"
-        />
-      ) : (
-        <ProductTitle
-          contentProps={{
-            title: vtd_simulate_title,
-            subtitle: vtd_simulate_subtitle,
-            color: vtd_simulate_color,
-            subColor: vtd_simulate_subColor,
-          }}
-        />
-      )}
-
-      {/** 그라데이션 영역 바로 밑에 개요 영역 */}
-      <Outline outline={vtd_simulate_outline} imgObj={vtd_simulate_imgObj} />
-
-      {/** Features 영역 */}
+    <>
+      {/* SEO 메타 태그 */}
+      <SEO {...seoData} />
       <Box
+        component="main"
         sx={(theme) => ({
-          my: 12,
+          px: 4,
+          pt: "50px",
           [theme.breakpoints.up("tablet")]: {
-            my: 22,
+            px: 10,
+          },
+          [theme.breakpoints.up("desktop")]: {
+            px: 20,
           },
         })}
       >
-        <Feature color={vtd_simulate_featureColor} />
-
-        <Stack
-          sx={(theme) => ({
-            ...theme.customStyles.productStackComponent,
-          })}
-        >
-          {vtd_simulate_data.map((data, index) => (
-            <ProductTextImageBox
-              key={`vtd-simulate-${index}`}
-              title={data.title}
-              contents={data.contents}
-              imgObj={data.imgObj}
+        <ScrollButton
+          color={vtd_simulate_color}
+          threshold={THRESHOLD}
+          show={!isMobile}
+        />
+        <Box component="article">
+          {/* breadcrumb section */}
+          {isMobile ? null : <BreadScrum pageKey="vtdSimulate" />}
+          {/** 그라데이션이 있는 제목 영역 */}
+          {isMobile ? (
+            <ProductTitle
+              contentProps={{
+                title: vtd_simulate_title,
+                subtitle: vtd_simulate_subtitle,
+                color: vtd_simulate_color,
+                subColor: vtd_simulate_subColor,
+              }}
+              isMobile={isMobile}
+              pageKey="vtdSimulate"
             />
-          ))}
-        </Stack>
+          ) : (
+            <ProductTitle
+              contentProps={{
+                title: vtd_simulate_title,
+                subtitle: vtd_simulate_subtitle,
+                color: vtd_simulate_color,
+                subColor: vtd_simulate_subColor,
+              }}
+            />
+          )}
+
+          {/** 그라데이션 영역 바로 밑에 개요 영역 */}
+          <Outline
+            outline={vtd_simulate_outline}
+            imgObj={vtd_simulate_imgObj}
+          />
+
+          {/** Features 영역 */}
+          <Box
+            component="section"
+            aria-label="features-heading"
+            sx={(theme) => ({
+              my: 12,
+              [theme.breakpoints.up("tablet")]: {
+                my: 22,
+              },
+            })}
+          >
+            <Feature color={vtd_simulate_featureColor} />
+
+            <Stack
+              sx={(theme) => ({
+                ...theme.customStyles.productStackComponent,
+              })}
+            >
+              {vtd_simulate_data.map((data, index) => (
+                <ProductTextImageBox
+                  key={`vtd-simulate-${index}`}
+                  title={data.title}
+                  contents={data.contents}
+                  imgObj={data.imgObj}
+                />
+              ))}
+            </Stack>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

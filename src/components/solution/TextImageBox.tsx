@@ -7,6 +7,8 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
 
   return (
     <Box
+      component="section"
+      aria-label="content-section"
       sx={{
         display: "flex",
         flexDirection: "column",

@@ -6,6 +6,8 @@ const ProductTextImageBox = (textImageBoxProps: ProductTextImageBoxProps) => {
 
   return (
     <Box
+      component="section"
+      aria-label="outline-content"
       sx={(theme) => ({
         display: "flex",
         flexDirection: "column",
