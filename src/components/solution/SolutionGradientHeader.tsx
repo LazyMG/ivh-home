@@ -11,6 +11,8 @@ const GradientHeader = ({
 }) => {
   return (
     <Box
+      component="section"
+      aria-label="gradient-header-section"
       sx={(theme) => ({
         background: `linear-gradient(${alpha(subColor, 0.36)}, #ffffff)`,
         py: 3,

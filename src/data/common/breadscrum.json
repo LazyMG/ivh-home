@@ -1,9 +1,6 @@
 {
   "templates": {
-    "home_product": [
-      { "title": "Home", "url": "/" },
-      { "title": "Product", "url": "/product" }
-    ],
+    "home_product": [{ "title": "Home", "url": "/" }, { "title": "Product" }],
     "home_solution": [
       { "title": "Home", "url": "/" },
       { "title": "Solution", "url": "/solution" }

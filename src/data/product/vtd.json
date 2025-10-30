@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "VTD - 자율주행 가상검증 솔루션",
+    "description": "VTD(Virtual Test Drive)는 자율주행 가상검증 솔루션입니다. VTD는 ASAM Simulation 표준을 지원하며 가상주행환경 구축, 검증용 시나리오 개발, 센서 시뮬레이션, 시험평가자동화 등의 기능을 제공합니다. 자율주행 Level4 이상의 기술 개발을 가속화하여 완전자율시대를 실현할 수 있습니다.",
+    "keywords": "VTD, 자율주행, 가상검증, 솔루션, ASAM Simulation, 가상주행환경, 시나리오 개발, 센서 시뮬레이션, 시험평가자동화",
+    "ogImage": "https://ivh.co.kr/images/pages/product/vtd/vtd-card-create.png"
+  },
   "vtd_title": "VTD",
   "vtd_subtitle": "Virtual Test Drive : 자율주행 가상검증 솔루션",
   "vtd_outline": [

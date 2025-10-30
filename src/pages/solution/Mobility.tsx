@@ -154,7 +154,7 @@ const Mobility = () => {
           subColor={subColor}
           subtitle={multiCommunicateTechSubTitle}
           jsonData={multiCommunicateTech}
-          id={mobilityId.multiCommunicateTech}
+          // id={mobilityId.multiCommunicateTech}
         />
 
         {/** AI 운전능력평가 표준화 및 평가 프로세스 개발 */}
@@ -163,7 +163,7 @@ const Mobility = () => {
           subColor={subColor}
           subtitle={aiDrivingAbilityTestSubTitle}
           jsonData={aiDrivingAbilityTest}
-          id={mobilityId.aiDrivingAbilityTest}
+          // id={mobilityId.aiDrivingAbilityTest}
         />
 
         {/** 가상내구로 주행 기술 */}
@@ -172,7 +172,7 @@ const Mobility = () => {
           subColor={subColor}
           subtitle={virtualDurabilitySubTitle}
           jsonData={virtualDurability}
-          id={mobilityId.virtualDurability}
+          // id={mobilityId.virtualDurability}
         />
 
         {/** 현가 장치 설계 툴 개발 */}
@@ -181,7 +181,7 @@ const Mobility = () => {
           subColor={subColor}
           subtitle={suspensionEquipmentSubTitle}
           jsonData={suspensionEquipment}
-          id={mobilityId.suspensionEquipment}
+          // id={mobilityId.suspensionEquipment}
         />
 
         {/** EV 열관리 설계 기술 */}
@@ -190,7 +190,7 @@ const Mobility = () => {
           subColor={subColor}
           subtitle={EVSubTitle}
           jsonData={EV}
-          id={mobilityId.EV}
+          // id={mobilityId.EV}
         />
       </Stack>
     </Box>

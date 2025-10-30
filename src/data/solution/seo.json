@@ -1,0 +1,64 @@
+{
+  "energy": {
+    "title": "Energy - 원자력 재생에너지 하이브리드 시스템",
+    "description": "원자력과 재생에너지를 결합한 하이브리드 에너지 시스템 시뮬레이션 솔루션. 에너지 효율 최적화 및 안정적인 전력 공급 설계.",
+    "keywords": "Energy, 에너지, 원자력, 재생에너지, 하이브리드, 시뮬레이션, 전력망, Dymola",
+    "ogImage": "https://ivh.co.kr/images/pages/solution/energy/solution_energy.png"
+  },
+  "bems": {
+    "title": "BEMS - 건물 에너지 관리 시스템",
+    "description": "Building Energy Management System으로 건물 에너지 효율 최적화. 실시간 모니터링 및 제어 시스템.",
+    "keywords": "BEMS, 건물, 에너지 관리, 스마트빌딩, 에너지 효율, IoT, 빌딩 자동화",
+    "ogImage": "https://ivh.co.kr/images/pages/solution/bems/solution_bems.png"
+  },
+  "smartfactory": {
+    "title": "Smart Factory - 배터리 제조라인 스마트팩토리",
+    "description": "배터리 제조라인을 위한 스마트팩토리 Kit 개발. 생산 최적화 및 품질 관리 자동화.",
+    "keywords": "Smart Factory, 스마트팩토리, 배터리, 제조, 자동화, IoT, MES, 품질관리",
+    "ogImage": "https://ivh.co.kr/images/pages/solution/smartFactory/solution_smartfactoryBoxTech.png"
+  },
+  "homeappliance": {
+    "title": "Home Appliance - PCB 열관리 성능 예측",
+    "description": "가전제품 PCB의 열관리 성능을 예측하고 최적화하는 시뮬레이션 솔루션.",
+    "keywords": "Home Appliance, 가전, PCB, 열관리, 시뮬레이션, 성능 예측, 열 해석",
+    "ogImage": "https://ivh.co.kr/images/pages/header/ivh_logo_black.png"
+  },
+  "aiinnovationhub": {
+    "title": "AI Innovation Hub - AI 기술 혁신 센터",
+    "description": "IVH의 AI 기술 혁신을 주도하는 중추 조직. AI 기반 제품 및 서비스 개발.",
+    "keywords": "AI, 인공지능, Innovation, 혁신, 머신러닝, 딥러닝, AI Hub",
+    "ogImage": "https://ivh.co.kr/images/header/ivh_logo_black.png"
+  },
+  "mobility": {
+    "multiCommunicateTech": {
+      "title": "다중 통신기술 네트워크 로드밸런싱",
+      "description": "5G, LTE, V2X 등 다중 통신 기술을 활용한 네트워크 로드밸런싱 기술 개발.",
+      "keywords": "통신, 네트워크, 로드밸런싱, 5G, V2X, LTE, 자율주행",
+      "ogImage": "https://ivh.co.kr/images/header/ivh_logo_black.png"
+    },
+    "aiDrivingAbilityTest": {
+      "title": "AI 운전능력평가 표준화",
+      "description": "AI 기반 운전능력 평가 표준화 및 자동화된 평가 프로세스 개발.",
+      "keywords": "AI, 운전능력, 평가, 자율주행, 안전, 시뮬레이션",
+      "ogImage": "https://ivh.co.kr/images/header/ivh_logo_black.png"
+    },
+    "virtualDurability": {
+      "title": "가상내구로 주행 기술",
+      "description": "가상 환경에서 차량 내구성을 테스트하는 시뮬레이션 기술. 실제 주행 없이 내구성 평가.",
+      "keywords": "가상내구, 내구성, 시뮬레이션, 주행, 차량, 테스트",
+      "ogImage": "https://ivh.co.kr/images/header/ivh_logo_black.png"
+    },
+    "suspensionEquipment": {
+      "title": "현가 장치 설계 툴",
+      "description": "차량 현가 장치 최적 설계를 위한 시뮬레이션 툴 개발. 승차감 및 안정성 향상.",
+      "keywords": "현가장치, 서스펜션, 차량, 설계, 시뮬레이션, 승차감",
+      "ogImage": "https://ivh.co.kr/images/header/ivh_logo_black.png"
+    },
+    "ev": {
+      "title": "EV 열관리 설계 기술",
+      "description": "전기차 배터리 및 파워트레인 열관리 최적화 설계 기술. 효율 및 안전성 향상.",
+      "keywords": "EV, 전기차, 열관리, 배터리, 파워트레인, 시뮬레이션",
+      "ogImage": "https://ivh.co.kr/images/header/ivh_logo_black.png"
+    }
+  }
+}
