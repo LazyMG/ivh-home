@@ -210,7 +210,7 @@ const ApplicationForm = ({
     setSubmitStatus("loading");
     setSnackbarMessage("예약 신청 중입니다...");
 
-    return;
+    // return;
 
     try {
       await reservationService.postReservationRequest(reservationRequestForm);
