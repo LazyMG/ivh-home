@@ -8,6 +8,9 @@ import ScrollToTop from "./common/ScrollToTop";
 // Header
 import Header from "./common/header/Header";
 import MobileHeader from "./common/mobile/MobileHeader";
+// Footer
+import Footer from "./common/footer";
+import MobileFooter from "./common/mobile/mobileFooter";
 // pages
 import Home from "./pages/home";
 import Product from "./pages/product/product";
@@ -97,6 +100,7 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
           </Routes>
         </ScrollToTop>
+        {isMobile || isTablet ? <MobileFooter /> : <Footer />}
       </BrowserRouter>
     </ThemeProvider>
   );

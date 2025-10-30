@@ -7,6 +7,7 @@ const Home = () => {
     <>
       <CssBaseline />
       <Box
+        component="main"
         sx={{
           position: "relative",
           width: "100%",

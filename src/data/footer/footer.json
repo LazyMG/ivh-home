@@ -1,0 +1,54 @@
+{
+  "compantInfo": {
+    "companyName": "주식회사 아이브이에이치",
+    "address": "서울특별시 서초구 양재천로 17길 19,2층,3층 (양재동, 태암빌딩)",
+    "phone": "T. 02-557-5010",
+    "email": "E. ivh@ivh.co.kr",
+    "copyright": "© iVH All rights reserved.",
+    "socialMedia": {
+      "youtubeLogo": "/images/header/youtube_white.png",
+      "linkedinLogo": "/images/header/linkedin_white.png",
+      "youtubeUrl": "https://www.youtube.com/@ivhkorea",
+      "linkedinUrl": "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image"
+    }
+  },
+  "menu": [
+    {
+      "title": "PRODUCT & SERVICES",
+      "items": [
+        { "name": "All Products" },
+        { "name": "Modelica" },
+        { "name": "VTD", "path": "/product/vtd" },
+        { "name": "Vissim", "path": "/product/vissim" },
+        { "name": "SFE" }
+      ]
+    },
+    {
+      "title": "SOLUTIONS",
+      "items": [
+        { "name": "Smart Factory", "path": "/solution/smartfactory" },
+        { "name": "Mobility" },
+        { "name": "Home Appliances", "path": "/solution/homeappliance" },
+        { "name": "Energy", "path": "/solution/energy" },
+        { "name": "BEMS", "path": "/solution/bems" },
+        { "name": "AI Innovation Hub", "path": "/solution/aIinnovationhub" }
+      ]
+    },
+    {
+      "title": "SUPPORT",
+      "items": [
+        { "name": "Training", "path": "/support/training" },
+        { "name": "Support" }
+      ]
+    },
+    {
+      "title": "COMPANY",
+      "items": [
+        { "name": "CEO" },
+        { "name": "History" },
+        { "name": "Partner" },
+        { "name": "Contact" }
+      ]
+    }
+  ]
+}

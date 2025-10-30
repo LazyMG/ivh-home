@@ -103,9 +103,7 @@ export const SubMenuDrawer = ({
                 src={isHomePage ? youtubeWhite : youtubeBlack}
                 alt="youtube"
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
-                onClick={() =>
-                  window.open("https://www.youtube.com/@koreaelec", "_blank")
-                }
+                onClick={() => window.open("https://www.youtube.com/@ivhkorea")}
               />
               <img
                 src={isHomePage ? linkedinWhite : linkedinBlack}
@@ -113,8 +111,7 @@ export const SubMenuDrawer = ({
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
                 onClick={() =>
                   window.open(
-                    "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image",
-                    "_blank"
+                    "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image"
                   )
                 }
               />

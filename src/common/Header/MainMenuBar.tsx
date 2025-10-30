@@ -21,6 +21,7 @@ export const MainMenuBar = ({
 }: MainMenuBarProps) => {
   return (
     <Box
+      component="nav"
       sx={{
         display: "flex",
         flexDirection: "row",
