@@ -41,8 +41,8 @@ const CalendarLegend = () => {
           text: RESERVATION_STATUS_COLOR.CLOSED.label,
         },
         {
-          color: RESERVATION_STATUS_COLOR.CANCELED.color,
-          text: RESERVATION_STATUS_COLOR.CANCELED.label,
+          color: RESERVATION_STATUS_COLOR.CANCELLED.color,
+          text: RESERVATION_STATUS_COLOR.CANCELLED.label,
         },
       ].map((legend) => (
         <Legend key={legend.color} color={legend.color} text={legend.text} />

@@ -47,7 +47,7 @@ import Viswalk from "./pages/product/vissim/Viswalk";
 import Calendar from "./pages/Calendar";
 // Support
 import Training from "./pages/support/Training";
-import Header from "./common/header/Header";
+import Header from "./common/Header/Header";
 
 function App() {
   const { isMobile, isTablet } = useBreakpoint();
