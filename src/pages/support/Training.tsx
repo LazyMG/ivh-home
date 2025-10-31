@@ -89,7 +89,7 @@ const Training = () => {
       const result = await reservationService.getReservations();
       setApiReservationList(result);
     } catch (error) {
-      console.log(`에러가 발생했습니다. | ${error}`);
+      console.error(error);
       setSubmitStatus("error");
       // setSnackbarMessage(`${error}`);
       setSnackbarMessage("교육 일정을 불러오지 못했습니다.");

@@ -205,7 +205,6 @@ const ApplicationForm = ({
       reservationId: data.reservationId,
       requestedPeople: data.customer.length,
     };
-    // console.log(reservationRequestForm);
 
     setSubmitStatus("loading");
     setSnackbarMessage("예약 신청 중입니다...");
@@ -219,7 +218,7 @@ const ApplicationForm = ({
       reset();
       setIsFillCustomerChecked(false);
     } catch (error: unknown) {
-      console.log(error);
+      console.error(error);
       setSubmitStatus("error");
 
       const errorMessage =
