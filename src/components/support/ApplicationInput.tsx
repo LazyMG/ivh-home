@@ -8,6 +8,8 @@ interface ApplicationInputProps {
   shrink?: string;
   children?: React.ReactNode;
   register: UseFormRegisterReturn;
+  type?: string;
+  onFocus?: () => void;
 }
 const ApplicationInput = ({
   label,
@@ -16,12 +18,15 @@ const ApplicationInput = ({
   shrink,
   register,
   children,
+  type = "text",
+  onFocus,
 }: ApplicationInputProps) => {
   return (
     <Box sx={{ position: "relative" }}>
       <TextField
         size="small"
         label={label}
+        type={type}
         placeholder={placeholder}
         required
         sx={{ width: "100%" }}
@@ -31,6 +36,7 @@ const ApplicationInput = ({
           },
         }}
         disabled={disabled}
+        onFocus={onFocus}
         {...register}
       />
       {children}

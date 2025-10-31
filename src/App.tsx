@@ -1,6 +1,6 @@
 // common
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import theme from "./theme/theme";
@@ -48,91 +48,91 @@ import Calendar from "./pages/Calendar";
 // Support
 import Training from "./pages/support/Training";
 import Header from "./common/Header/Header";
+import PrivacyPolicy from "./components/support/PrivacyPolicy";
+
+function AppContent() {
+  const { isMobile, isTablet } = useBreakpoint();
+  const location = useLocation();
+
+  // 헤더/푸터를 숨길 페이지 경로
+  const hideLayout = location.pathname === "/support/privacyPolicy";
+
+  return (
+    <>
+      <ScrollToTop>
+        {!hideLayout && (isMobile || isTablet ? <MobileHeader /> : <Header />)}
+        <Routes>
+          {/** pages */}
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/company" element={<Company />} />
+          {/** Solution */}
+          <Route path="/solution" element={<Solution />} />
+          <Route path="/solution/energy" element={<Energy />} />
+          <Route path="/solution/homeappliance" element={<HomeAppliance />} />
+          <Route path="/solution/smartfactory" element={<SmartFactory />} />
+          <Route path="/solution/bems" element={<Bems />} />
+          <Route path="/solution/mobility" element={<MultiCommunicateTech />} />
+          <Route
+            path="/solution/mobility/multiCommunicateTech"
+            element={<MultiCommunicateTech />}
+          />
+          <Route
+            path="/solution/mobility/aiDrivingAbilityTest"
+            element={<AiDrivingAbilityTest />}
+          />
+          <Route
+            path="/solution/mobility/virtualDurability"
+            element={<VirtualDurability />}
+          />
+          <Route
+            path="/solution/mobility/suspensionEquipment"
+            element={<SuspensionEquipment />}
+          />
+          <Route path="/solution/mobility/ev" element={<EV />} />
+          <Route path="/solution/aIinnovationhub" element={<AIInnovation />} />
+          {/** dymola */}
+          <Route path="/product/dymola" element={<Dymola />} />
+          <Route path="/product/dymola/battery" element={<Battery />} />
+          <Route path="/product/dymola/til" element={<TIL />} />
+          <Route
+            path="/product/dymola/thermalpowerlibrary"
+            element={<ThermalPowerLibrary />}
+          />
+          <Route
+            path="/product/dymola/vehicledynamicslibrary"
+            element={<VehicleDynamicsLibrary />}
+          />
+          {/** vtd */}
+          <Route path="/product/vtd" element={<VTD />} />
+          <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
+          <Route path="/product/vtd/vtdsimulate" element={<VTDSimulate />} />
+          <Route path="/product/vtd/vtdfullstack" element={<VTDFullstack />} />
+          {/** vissim */}
+          <Route path="/product/vissim" element={<Vissim />} />
+          <Route
+            path="/product/vissim/vissimautomotive"
+            element={<VissimAutomotive />}
+          />
+          <Route path="/product/vissim/viswalk" element={<Viswalk />} />
+          {/** support */}
+          <Route path="/support/training" element={<Training />} />
+          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
+        </Routes>
+      </ScrollToTop>
+      {!hideLayout && (isMobile || isTablet ? <MobileFooter /> : <Footer />)}
+    </>
+  );
+}
 
 function App() {
-  const { isMobile, isTablet } = useBreakpoint();
-
   return (
     <HelmetProvider>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <ScrollToTop>
-            {isMobile || isTablet ? <MobileHeader /> : <Header />}
-            <Routes>
-              {/** pages */}
-              <Route path="/" element={<Home />} />
-              <Route path="/product" element={<Product />} />
-              <Route path="/service" element={<Service />} />
-              <Route path="/company" element={<Company />} />
-              {/** Solution */}
-              <Route path="/solution" element={<Solution />} />
-              <Route path="/solution/energy" element={<Energy />} />
-              <Route
-                path="/solution/homeappliance"
-                element={<HomeAppliance />}
-              />
-              <Route path="/solution/smartfactory" element={<SmartFactory />} />
-              <Route path="/solution/bems" element={<Bems />} />
-              <Route
-                path="/solution/mobility"
-                element={<MultiCommunicateTech />}
-              />
-              <Route
-                path="/solution/mobility/multiCommunicateTech"
-                element={<MultiCommunicateTech />}
-              />
-              <Route
-                path="/solution/mobility/aiDrivingAbilityTest"
-                element={<AiDrivingAbilityTest />}
-              />
-              <Route
-                path="/solution/mobility/virtualDurability"
-                element={<VirtualDurability />}
-              />
-              <Route
-                path="/solution/mobility/suspensionEquipment"
-                element={<SuspensionEquipment />}
-              />
-              <Route path="/solution/mobility/ev" element={<EV />} />
-              <Route
-                path="/solution/aIinnovationhub"
-                element={<AIInnovation />}
-              />
-              {/** dymola */}
-              <Route path="/product/dymola" element={<Dymola />} />
-              <Route path="/product/dymola/battery" element={<Battery />} />
-              <Route path="/product/dymola/til" element={<TIL />} />
-              <Route
-                path="/product/dymola/thermalpowerlibrary"
-                element={<ThermalPowerLibrary />}
-              />
-              <Route
-                path="/product/dymola/vehicledynamicslibrary"
-                element={<VehicleDynamicsLibrary />}
-              />
-              {/** vtd */}
-              <Route path="/product/vtd" element={<VTD />} />
-              <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
-              <Route
-                path="/product/vtd/vtdsimulate"
-                element={<VTDSimulate />}
-              />
-              <Route
-                path="/product/vtd/vtdfullstack"
-                element={<VTDFullstack />}
-              />
-              {/** vissim */}
-              <Route path="/product/vissim" element={<Vissim />} />
-              <Route
-                path="/product/vissim/vissimautomotive"
-                element={<VissimAutomotive />}
-              />
-              <Route path="/product/vissim/viswalk" element={<Viswalk />} />
-              <Route path="/support/training" element={<Training />} />
-              <Route path="/calendar" element={<Calendar />} />
-            </Routes>
-          </ScrollToTop>
-          {isMobile || isTablet ? <MobileFooter /> : <Footer />}
+          <AppContent />
         </BrowserRouter>
       </ThemeProvider>
     </HelmetProvider>

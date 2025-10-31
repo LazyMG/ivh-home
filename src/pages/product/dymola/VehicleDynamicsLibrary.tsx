@@ -15,7 +15,6 @@ import SEO from "../../../common/SEO";
 const VehicleDynamicsLibrary = () => {
   const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", vehicle);
   const { isMobile } = useBreakpoint();
-  console.log("VehicleDynamicsLibrary : ", isMobile);
 
   const {
     vehicle_title,
