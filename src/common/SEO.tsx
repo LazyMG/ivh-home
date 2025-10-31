@@ -29,15 +29,6 @@ const SEO = ({
   const currentUrl =
     ogUrl || (typeof window !== "undefined" ? window.location.href : "");
 
-  // SEO.tsx 안에
-  console.log("SEO Component Props:", {
-    title,
-    description,
-    keywords,
-    ogImage,
-    canonical,
-  });
-
   return (
     <Helmet>
       {/* 기본 메타 태그 */}

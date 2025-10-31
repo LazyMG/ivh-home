@@ -1,4 +1,4 @@
-import { Box, Modal } from "@mui/material";
+import { Box, Button, Modal } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -8,7 +8,8 @@ const style = {
   width: "70%",
   maxWidth: 600,
   bgcolor: "background.paper",
-  p: 6,
+  p: 8,
+  outline: "none",
 };
 
 const CustomModal = ({
@@ -26,8 +27,31 @@ const CustomModal = ({
       onClose={onClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
+      autoFocus={false} // 자동 focus 방지
     >
-      <Box sx={style}>{children}</Box>
+      <Box sx={style}>
+        {children}
+        <Button
+          onClick={onClose}
+          sx={{
+            position: "absolute",
+            top: 15,
+            right: 15,
+            width: "20px",
+            height: "20px",
+            minWidth: "20px",
+            minHeight: "20px",
+            padding: 0,
+            margin: 0,
+            color: "black",
+            fontSize: "16px",
+            fontWeight: "bold",
+            cursor: "pointer",
+          }}
+        >
+          X
+        </Button>
+      </Box>
     </Modal>
   );
 };

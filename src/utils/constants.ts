@@ -5,8 +5,6 @@ import type {
 
 export const API_BASE_URL = import.meta.env.VITE_BASE_API_URL;
 
-console.log(API_BASE_URL);
-
 export const API_ENDPOINTS = {
   MENU: {
     LIST: "/menu",
