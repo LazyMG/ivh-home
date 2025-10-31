@@ -53,7 +53,6 @@ const Calendar = ({
 }: {
   reservationList: ReservationResponse[] | null;
 }) => {
-  console.log("reservationList", reservationList);
   const [selectedReservation, setSelectedReservation] =
     useState<ReservationResponse | null>(null);
 
