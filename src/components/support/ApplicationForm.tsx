@@ -91,6 +91,16 @@ const ApplicationForm = ({
   const customerValues = watch("customer");
 
   const [isFillCustomerChecked, setIsFillCustomerChecked] = useState(false);
+  const [showFillCustomerError, setShowFillCustomerError] = useState<
+    string | null
+  >(null);
+
+  // 신청자 필드 포커스 시 체크박스 에러 메시지만 초기화
+  const handleApplicantFieldFocus = () => {
+    if (showFillCustomerError) {
+      setShowFillCustomerError(null);
+    }
+  };
 
   const addCustomerList = () => {
     append(
@@ -117,6 +127,11 @@ const ApplicationForm = ({
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     if (event.target.checked) {
+      if (errors.applicant) {
+        setIsFillCustomerChecked(false);
+        setShowFillCustomerError("신청자 양식을 맞춰주세요.");
+        return;
+      }
       const applicantValue = getValues().applicant;
 
       // 모든 필드가 채워져 있는지 검증
@@ -299,10 +314,16 @@ const ApplicationForm = ({
             <ApplicationInput
               label="회사명"
               placeholder="iVH"
+              disabled={isFillCustomerChecked}
+              onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantCompany", {
-                  required: "신청자 회사명을 입력해주십시오.",
                   ...trimValidation("신청자 회사명을 입력해주십시오."),
+                  required: "신청자 회사명을 입력해주십시오.",
+                  maxLength: {
+                    value: 50,
+                    message: "글자 수가 너무 많습니다.",
+                  },
                 }),
               }}
             >
@@ -315,10 +336,16 @@ const ApplicationForm = ({
             <ApplicationInput
               placeholder="IT"
               label="부서"
+              disabled={isFillCustomerChecked}
+              onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantPosition", {
-                  required: "신청자 부서를 입력해주십시오.",
                   ...trimValidation("신청자 부서를 입력해주십시오."),
+                  required: "신청자 부서를 입력해주십시오.",
+                  maxLength: {
+                    value: 50,
+                    message: "글자 수가 너무 많습니다.",
+                  },
                 }),
               }}
             >
@@ -331,10 +358,16 @@ const ApplicationForm = ({
             <ApplicationInput
               placeholder="홍길동"
               label="성함"
+              disabled={isFillCustomerChecked}
+              onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantName", {
-                  required: "신청자 성함을 입력해주십시오.",
                   ...trimValidation("신청자 성함을 입력해주십시오."),
+                  required: "신청자 성함을 입력해주십시오.",
+                  maxLength: {
+                    value: 50,
+                    message: "글자 수가 너무 많습니다.",
+                  },
                 }),
               }}
             >
@@ -347,13 +380,19 @@ const ApplicationForm = ({
             <ApplicationInput
               placeholder="example@ivh.co.kr"
               label="이메일"
+              disabled={isFillCustomerChecked}
+              onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantEmail", {
-                  required: "신청자 이메일을 입력해주십시오.",
                   ...trimValidation("신청자 이메일을 입력해주십시오."),
+                  required: "신청자 이메일을 입력해주십시오.",
                   pattern: {
                     value: EAMIL_REGEX,
                     message: "이메일 형식을 맞춰주십시오.",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message: "글자 수가 너무 많습니다.",
                   },
                 }),
               }}
@@ -365,15 +404,21 @@ const ApplicationForm = ({
               )}
             </ApplicationInput>
             <ApplicationInput
-              placeholder="000-0000-0000"
+              placeholder="(-) 포함 입력"
               label="연락처"
+              disabled={isFillCustomerChecked}
+              onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantPhone", {
-                  required: "신청자 연락처를 입력해주십시오.",
                   ...trimValidation("신청자 연락처를 입력해주십시오."),
+                  required: "신청자 연락처를 입력해주십시오.",
                   pattern: {
                     value: PHONE_REGEX,
                     message: "전화번호 형식을 맞춰주십시오.",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message: "글자 수가 너무 많습니다.",
                   },
                 }),
               }}
@@ -389,21 +434,40 @@ const ApplicationForm = ({
       </Stack>
       <Divider sx={{ mt: 1 }} />
       <Box>
-        <Box display="flex" gap={2} alignContent="center">
+        <Box display="flex" alignContent="center">
           <Typography
-            sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
+            sx={{
+              fontSize: "24px",
+              fontFamily: "Freesentation-6-SemiBold",
+              mr: 2,
+            }}
           >
             수강자
           </Typography>
-          <FormControlLabel
-            label="신청자 정보와 같음"
-            control={
-              <Checkbox
-                checked={isFillCustomerChecked}
-                onChange={onIsFillCustomerCheckedChange}
-              />
-            }
-          />
+          <Box sx={{ position: "relative" }}>
+            <FormControlLabel
+              label="신청자 정보와 같음"
+              control={
+                <Checkbox
+                  checked={isFillCustomerChecked}
+                  onChange={onIsFillCustomerCheckedChange}
+                />
+              }
+            />
+            {showFillCustomerError && (
+              <Typography
+                sx={{
+                  color: "red",
+                  fontSize: "12px",
+                  alignSelf: "center",
+                  position: "absolute",
+                  bottom: -12,
+                }}
+              >
+                {showFillCustomerError}
+              </Typography>
+            )}
+          </Box>
         </Box>
         <Stack
           gap={4}
@@ -516,7 +580,7 @@ const ApplicationForm = ({
                     )}
                 </ApplicationInput>
                 <ApplicationInput
-                  placeholder="000-0000-0000"
+                  placeholder="(-) 포함 입력"
                   label="연락처"
                   disabled={index === 0 && isFillCustomerChecked}
                   shrink={customerValues?.[index]?.phone}

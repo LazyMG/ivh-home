@@ -33,16 +33,16 @@ const CalendarLegend = () => {
     <Box sx={{ display: "flex", gap: 1 }}>
       {[
         {
-          color: RESERVATION_STATUS_COLOR.OPEN.color,
-          text: RESERVATION_STATUS_COLOR.OPEN.label,
+          color: RESERVATION_STATUS_COLOR?.OPEN.color || "transparent",
+          text: RESERVATION_STATUS_COLOR?.OPEN.label || "",
         },
         {
-          color: RESERVATION_STATUS_COLOR.CLOSED.color,
-          text: RESERVATION_STATUS_COLOR.CLOSED.label,
+          color: RESERVATION_STATUS_COLOR?.CLOSED.color || "transparent",
+          text: RESERVATION_STATUS_COLOR?.CLOSED.label || "",
         },
         {
-          color: RESERVATION_STATUS_COLOR.CANCELLED.color,
-          text: RESERVATION_STATUS_COLOR.CANCELLED.label,
+          color: RESERVATION_STATUS_COLOR?.CANCELLED.color || "transparent",
+          text: RESERVATION_STATUS_COLOR?.CANCELLED.label || "",
         },
       ].map((legend) => (
         <Legend key={legend.color} color={legend.color} text={legend.text} />

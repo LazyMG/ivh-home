@@ -11,9 +11,13 @@ import {
   RESERVATION_TYPE,
 } from "../../utils/constants";
 
-const formattingDate = (targetDate: string) => {
-  const [year, month, date] = targetDate.split("-");
-  return `${year}년 ${month}월 ${date}일`;
+const formattingDate = (isoString: string) => {
+  // ISO 문자열을 로컬 시간으로 변환
+  const date = new Date(isoString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}년 ${month}월 ${day}일`;
 };
 
 const calculateValue = (maxPeople: number, currentPeople: number) => {
@@ -44,7 +48,8 @@ const CalendarModalContent = ({
             fontSize: "18px",
             borderRadius: "15px",
             backgroundColor:
-              RESERVATION_STATUS_COLOR[reservation.reservationStatus].color,
+              RESERVATION_STATUS_COLOR[reservation.reservationStatus]?.color ||
+              "transparent",
             width: "fit-content",
             color: "#ffffff",
             fontWeight: "bold",
@@ -52,7 +57,7 @@ const CalendarModalContent = ({
             py: 0.5,
           }}
         >
-          {RESERVATION_STATUS_COLOR[reservation.reservationStatus].label}
+          {RESERVATION_STATUS_COLOR[reservation.reservationStatus]?.label || ""}
         </Typography>
         <Typography
           sx={{
@@ -66,9 +71,9 @@ const CalendarModalContent = ({
           {reservation.reservationName}
         </Typography>
         <Typography sx={{ fontSize: "14px", opacity: 0.6, mt: 1 }}>
-          {`${RESERVATION_TYPE[reservation.reservationType]} | ${formattingDate(
-            reservation.startDate.split("T")[0]
-          )}`}
+          {`${
+            RESERVATION_TYPE[reservation.reservationType] || ""
+          } | ${formattingDate(reservation.startDate)}`}
         </Typography>
         <Box sx={{ mt: 2 }}>
           <Typography>{`비용: ${reservation.cost.toLocaleString()}원`}</Typography>

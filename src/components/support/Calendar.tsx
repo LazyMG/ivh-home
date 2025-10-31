@@ -38,11 +38,22 @@ const formattingEvent = (dataList: ReservationResponse[] | null) => {
   return eventList;
 };
 
+const formatTimeWithPeriod = (date: Date | null): string => {
+  if (!date) return "";
+
+  const hours = date.getHours();
+  const period = hours < 12 ? "오전" : "오후";
+  const displayHours = hours % 12 || 12;
+
+  return `${period} ${displayHours}시`;
+};
+
 const Calendar = ({
   reservationList,
 }: {
   reservationList: ReservationResponse[] | null;
 }) => {
+  console.log("reservationList", reservationList);
   const [selectedReservation, setSelectedReservation] =
     useState<ReservationResponse | null>(null);
 
@@ -98,7 +109,8 @@ const Calendar = ({
             style={{
               minWidth: "10px",
               height: "16px",
-              backgroundColor: RESERVATION_STATUS_COLOR[props.status].color,
+              backgroundColor:
+                RESERVATION_STATUS_COLOR[props.status]?.color || "transparent",
               borderRadius: "15px",
             }}
           />
@@ -106,7 +118,9 @@ const Calendar = ({
         <span
           className="fc-event-title"
           style={{ fontSize: "14px", fontFamily: "Freesentation-6-SemiBold" }}
-        >{`${eventInfo.event.title} (${props.reservatedPeople}/${props.maxPeople})`}</span>
+        >{`${formatTimeWithPeriod(eventInfo.event.start)} ${
+          eventInfo.event.title
+        } (${props.reservatedPeople}/${props.maxPeople})`}</span>
       </Box>
     );
   };
@@ -124,7 +138,6 @@ const Calendar = ({
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         height="auto"
-        timeZone="UTC"
         headerToolbar={{
           start: "prev next today",
           center: "title",

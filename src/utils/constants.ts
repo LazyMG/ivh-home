@@ -33,7 +33,7 @@ export const RESERVATION_STATUS_COLOR: ReservationStatusColorType = {
 export const EAMIL_REGEX =
   /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-.]*)[a-z0-9_+-]@([a-z0-9][a-z0-9-]*\.)+[a-z]{2,}$/i;
 
-export const PHONE_REGEX = /^\d{3}-\d{4}-\d{4}$/;
+export const PHONE_REGEX = /^(02-\d{3,4}-\d{4}|0[3-9]\d-\d{3,4}-\d{4}|01[016789]-\d{3,4}-\d{4})$/;
 
 export const RESERVATION_TYPE: ReservationTypeMap = {
   EDUCATION: "교육",
