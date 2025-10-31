@@ -8,9 +8,13 @@ import {
 import type { ReservationResponse } from "../../types/reservation";
 import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
 
-const formattingDate = (targetDate: string) => {
-  const [year, month, date] = targetDate.split("-");
-  return `${year}년 ${month}월 ${date}일`;
+const formattingDate = (isoString: string) => {
+  // ISO 문자열을 로컬 시간으로 변환
+  const date = new Date(isoString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}년 ${month}월 ${day}일`;
 };
 
 const calculateValue = (maxPeople: number, currentPeople: number) => {
@@ -46,7 +50,8 @@ const CalendarModalContent = ({
             fontSize: "14px",
             borderRadius: "15px",
             backgroundColor:
-              RESERVATION_STATUS_COLOR[reservation.reservationStatus].color,
+              RESERVATION_STATUS_COLOR[reservation.reservationStatus]?.color ||
+              "transparent",
             width: "fit-content",
             color: "#ffffff",
             fontWeight: "bold",
@@ -55,7 +60,7 @@ const CalendarModalContent = ({
             mb: 2,
           }}
         >
-          {RESERVATION_STATUS_COLOR[reservation.reservationStatus].label}
+          {RESERVATION_STATUS_COLOR[reservation.reservationStatus]?.label || ""}
         </Typography>
 
         {/* 제목 */}
@@ -97,7 +102,7 @@ const CalendarModalContent = ({
               📅 교육 일정
             </Typography>
             <Typography sx={{ fontSize: "14px", fontWeight: "600" }}>
-              {formattingDate(reservation.startDate.split("T")[0])}
+              {formattingDate(reservation.startDate)}
             </Typography>
           </Box>
 

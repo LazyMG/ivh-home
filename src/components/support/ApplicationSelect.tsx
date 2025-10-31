@@ -16,11 +16,13 @@ const filterPrevReservations = (list: ReservationResponse[]) => {
   today.setHours(0, 0, 0, 0);
 
   const futureReservations = list.filter((reservation) => {
-    return new Date(reservation.startDate) >= today;
+    const reservationDate = new Date(reservation.startDate);
+    reservationDate.setHours(0, 0, 0, 0);
+    return reservationDate >= today;
   });
 
   // 월별 색상 (최대 3종류)
-  const monthColors = ["#E3F2FD", "#FFF9C4", "#F1F8E9"];
+  const monthColors = ["#fafdffff", "#fffef1ff", "#f7f8f5ff"];
   const monthColorMap: { [key: number]: string } = {};
   let colorIndex = 0;
 
@@ -86,9 +88,14 @@ const ApplicationSelect = ({
                     },
                   }}
                 >
-                  {`${reservation.startDate.split("T")[0]} ${
-                    reservation.reservationName
-                  }`}
+                  {`${new Date(reservation.startDate).toLocaleDateString(
+                    "ko-KR",
+                    {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                    }
+                  )} ${reservation.reservationName}`}
                 </MenuItem>
               ))}
           </Select>
