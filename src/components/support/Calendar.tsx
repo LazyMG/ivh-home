@@ -145,6 +145,7 @@ const Calendar = ({
         locale={"ko"}
         events={formattingEvent(reservationList)}
         eventContent={renderEventContent}
+        hiddenDays={[0, 6]}
       />
       <CustomModal open={isModalOpen} onClose={handleModalClose}>
         <CalendarModalContent reservation={selectedReservation} />
