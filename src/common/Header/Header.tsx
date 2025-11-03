@@ -57,8 +57,9 @@ const Header = () => {
         setOpenLevel1Menu(null);
       }}
       sx={{
-        position: "relative",
+        position: isHomePage ? "fixed" : "relative",
         width: "100%",
+        zIndex: isHomePage ? 1000 : 0,
       }}
     >
       <AppBar

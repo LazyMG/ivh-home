@@ -2,7 +2,19 @@ import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
-const HomeContents = () => {
+interface HomeContentsProps {
+  title: string;
+  description: string;
+  description_sub?: string;
+  navigate_url: string;
+}
+
+const HomeContents = ({
+  title,
+  description,
+  description_sub,
+  navigate_url,
+}: HomeContentsProps) => {
   const navigate = useNavigate();
   const { isMobile } = useBreakpoint();
 
@@ -15,6 +27,7 @@ const HomeContents = () => {
           top: isMobile ? "50%" : "35%",
           left: isMobile ? "50%" : "7rem",
           transform: isMobile ? "translate(-50%, -50%)" : "none",
+          textAlign: isMobile ? "center" : "left",
           pl: "1.75rem",
           m: 0,
           width: isMobile ? "80%" : "auto",
@@ -32,29 +45,33 @@ const HomeContents = () => {
             mb: ".75rem",
           }}
         >
-          iVH Suite
+          {title}
         </Typography>
         <Typography
           component="dd"
           sx={{
+            width: isMobile ? "100%" : "40%",
             fontSize: isMobile ? "16px" : "18px",
             lineHeight: "1.75rem",
             textAlign: isMobile ? "center" : "left",
             color: "#fff",
+            whiteSpace: "pre-line",
           }}
         >
-          iVH Suite는 FMI, SSP, Open X 표준을 준수하는 성능 및 평가 도구입니다.
+          {description}
         </Typography>
         <Typography
           component="dd"
           sx={{
+            width: isMobile ? "100%" : "40%",
             fontSize: isMobile ? "16px" : "18px",
             lineHeight: "1.75rem",
             textAlign: isMobile ? "center" : "left",
             color: "#fff",
+            whiteSpace: "pre-line",
           }}
         >
-          사용자 친화적이고 효육적인 설계를 지원합니다.
+          {description_sub}
         </Typography>
         <Box
           component="dd"
@@ -67,7 +84,7 @@ const HomeContents = () => {
         >
           <Button
             onClick={() => {
-              navigate("/product");
+              navigate(navigate_url);
             }}
             sx={{
               fontSize: "16px",
