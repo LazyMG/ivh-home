@@ -141,6 +141,20 @@ const responsiveFonts = {
     tablet: "28px",
     desktop: "40px",
   },
+  contactTitleFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "24px",
+    mobileLandscape: "24px",
+    tablet: "30px",
+    desktop: "30px",
+  },
+  contactProductsLinkFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "14px",
+    mobileLandscape: "14px",
+    tablet: "14px",
+    desktop: "14px",
+  },
   // Support 페이지 제목 'iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.'
   supportTitleFont: {
     font: fontConfig["semiBold"],
@@ -238,6 +252,12 @@ const theme = createTheme({
     ),
     productImageBannerSubtitleFont: getResponsiveFontStyle(
       responsiveFonts["productImageBannerSubtitleFont"]
+    ),
+    contactTitleFont: getResponsiveFontStyle(
+      responsiveFonts["contactTitleFont"]
+    ),
+    contactProductsLinkFont: getResponsiveFontStyle(
+      responsiveFonts["contactProductsLinkFont"]
     ),
     supportTitleFont: getResponsiveFontStyle(
       responsiveFonts["supportTitleFont"]
@@ -431,6 +451,129 @@ const theme = createTheme({
       },
       [baseTheme.breakpoints.up("desktop")]: {
         gap: "96px",
+      },
+    },
+    // Contact 페이지 (/company/contact) 메인 컨테이너 스타일
+    contactMainContainer: {
+      padding: {
+        mobilePortrait: "0 32px",
+        mobileLandscape: "0 48px",
+        tablet: "0 80px",
+        desktop: "0 160px",
+      },
+      marginTop: {
+        mobilePortrait: "32px",
+        mobileLandscape: "48px",
+        tablet: "64px",
+        desktop: "80px",
+      },
+      marginBottom: {
+        mobilePortrait: "32px",
+        mobileLandscape: "48px",
+        tablet: "64px",
+        desktop: "80px",
+      },
+      display: "flex",
+      flexDirection: "column",
+      gap: "48px",
+    },
+    // Contact 페이지 상단 영역 (제목 + 폼) 컨테이너 스타일
+    contactTopContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "48px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        flexDirection: "row",
+      },
+    },
+    // Contact 페이지 지도 영역 컨테이너 스타일
+    contactMapContainer: {
+      width: "100%",
+      height: {
+        mobilePortrait: "300px",
+        mobileLandscape: "400px",
+        tablet: "450px",
+        desktop: "450px",
+      },
+      borderRadius: "8px",
+      overflow: "hidden",
+      border: "1px solid #e5e7eb",
+    },
+    // Contact 페이지 제목 영역 컨테이너 스타일
+    contactTitleContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "20px",
+      flex: 1,
+      [baseTheme.breakpoints.up("tablet")]: {
+        paddingRight: "100px",
+      },
+    },
+    // Contact 페이지 제품 둘러보기 링크 스타일
+    contactProductsLink: {
+      display: "flex",
+      alignItems: "center",
+      gap: "4px",
+      fontSize: "14px",
+      fontFamily: fontConfig["semiBold"],
+      lineHeight: 1.5,
+      color: "#374151", // gray-900
+      width: "fit-content",
+      cursor: "pointer",
+      transition: "all 0.3s",
+      textDecoration: "none",
+      "&:hover": {
+        color: "#1d4ed8", // blue-700
+        gap: "8px",
+      },
+    },
+
+    contactFormContainer: {
+      flex: 1,
+      display: "grid",
+      gridTemplateColumns: "1fr",
+      gap: "24px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        gridTemplateColumns: "1fr 1fr",
+        columnGap: "24px",
+      },
+    },
+    // Contact 페이지 폼 필드 기본 스타일
+    contactFormField: {
+      position: "relative",
+    },
+    // Contact 페이지 전체 너비 필드 (문의내용, 체크박스, 버튼) 스타일
+    contactFormFullWidthField: {
+      position: "relative",
+      [baseTheme.breakpoints.up("tablet")]: {
+        gridColumn: "span 2",
+      },
+    },
+    // Contact 페이지 체크박스 컨테이너 스타일
+    contactCheckboxContainer: {
+      position: "relative",
+      [baseTheme.breakpoints.up("tablet")]: {
+        gridColumn: "span 2",
+      },
+    },
+    contactformControlLabel: {
+      height: "32px",
+      color: "#6366f1", // indigo-600
+    },
+    // Contact 페이지 문의하기 버튼 스타일
+    contactButton: {
+      padding: "12px 32px",
+      fontSize: "14px",
+
+      fontFamily: fontConfig["semiBold"],
+      color: "white",
+      backgroundColor: "#1d4ed8", // blue-700
+      "&:hover": {
+        backgroundColor: "#1e40af", // blue-600
+      },
+      "&.Mui-disabled": {
+        backgroundColor: "#cccccc",
+        color: "#888888",
       },
     },
     productPageContainer: {

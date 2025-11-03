@@ -126,7 +126,7 @@
         { "name": "CEO" },
         { "name": "History" },
         { "name": "Partner" },
-        { "name": "Contact" }
+        { "name": "Contact", "path": "/company/contact" }
       ]
     }
   ]

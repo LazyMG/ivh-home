@@ -51,6 +51,7 @@ import Support from "./pages/support/Support";
 
 import Header from "./common/Header/Header";
 import PrivacyPolicy from "./components/support/PrivacyPolicy";
+import Contact from "./pages/company/Contact";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -123,6 +124,9 @@ function AppContent() {
           <Route path="/support" element={<Support />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
+
+          {/** company */}
+          <Route path="/company/contact" element={<Contact />} />
         </Routes>
       </ScrollToTop>
       {!hideLayout && (isMobile || isTablet ? <MobileFooter /> : <Footer />)}
