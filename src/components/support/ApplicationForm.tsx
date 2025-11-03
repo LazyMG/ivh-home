@@ -256,10 +256,6 @@ const ApplicationForm = ({
         display: "flex",
         flexDirection: "column",
         gap: 2,
-        width: "100%",
-        maxWidth: "1500px",
-        mx: "auto",
-        my: 4,
       }}
     >
       <Typography
@@ -471,10 +467,10 @@ const ApplicationForm = ({
         <Stack
           gap={4}
           sx={{
-            minHeight: "300px",
+            // minHeight: "300px",
             maxHeight: "500px",
             overflowY: "auto",
-            mt: 2,
+            my: 2,
           }}
         >
           {customerFields.map((_, index) => (

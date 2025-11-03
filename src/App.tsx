@@ -47,6 +47,8 @@ import Viswalk from "./pages/product/vissim/Viswalk";
 import Calendar from "./pages/Calendar";
 // Support
 import Training from "./pages/support/Training";
+import Support from "./pages/support/Support";
+
 import Header from "./common/Header/Header";
 import PrivacyPolicy from "./components/support/PrivacyPolicy";
 
@@ -118,6 +120,7 @@ function AppContent() {
           <Route path="/product/vissim/viswalk" element={<Viswalk />} />
           {/** support */}
           <Route path="/support/training" element={<Training />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
         </Routes>

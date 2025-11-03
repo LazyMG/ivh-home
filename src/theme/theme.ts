@@ -56,6 +56,7 @@ export const mediaQueries = {
 } as const;
 
 const fontConfig = {
+  regular: "Freesentation-4-Regular",
   medium: "Freesentation-5-Medium",
   semiBold: "Freesentation-6-SemiBold",
   bold: "Freesentation-7-Bold",
@@ -140,6 +141,22 @@ const responsiveFonts = {
     tablet: "28px",
     desktop: "40px",
   },
+  // Support 페이지 제목 'iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.'
+  supportTitleFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "24px",
+    mobileLandscape: "24px",
+    tablet: "40px",
+    desktop: "40px",
+  },
+  // Support 페이지 본문 '긴급 핫라인을 통한 빠른 답변부터...'
+  supportTextFont: {
+    font: fontConfig["regular"],
+    mobilePortrait: "16px",
+    mobileLandscape: "16px",
+    tablet: "16px",
+    desktop: "16px",
+  },
 };
 
 const getResponsiveFontStyle = (style: {
@@ -222,6 +239,10 @@ const theme = createTheme({
     productImageBannerSubtitleFont: getResponsiveFontStyle(
       responsiveFonts["productImageBannerSubtitleFont"]
     ),
+    supportTitleFont: getResponsiveFontStyle(
+      responsiveFonts["supportTitleFont"]
+    ),
+    supportTextFont: getResponsiveFontStyle(responsiveFonts["supportTextFont"]),
   },
   customStyles: {
     // 솔루션 페이지 (/solution) 메인 컨테이너 스타일
@@ -421,6 +442,53 @@ const theme = createTheme({
       [baseTheme.breakpoints.up("desktop")]: {
         pt: "50px",
         px: "120px",
+      },
+    },
+    // Support 페이지 (/support) 메인 컨테이너 스타일
+    supportContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "80px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        flexDirection: "row",
+      },
+    },
+    // Support 페이지 텍스트 영역 컨테이너 스타일
+    supportTextContainer: {
+      [baseTheme.breakpoints.up("tablet")]: {
+        width: "50%",
+      },
+    },
+    // Support 페이지 이미지 영역 컨테이너 스타일
+    supportImageContainer: {
+      display: "flex",
+      justifyContent: "center",
+      marginLeft: "auto",
+      marginRight: "auto",
+      width: "100%",
+      [baseTheme.breakpoints.up("tablet")]: {
+        justifyContent: "flex-end",
+        width: "50%",
+      },
+    },
+    // Support 페이지 링크 스타일 (기술지원 서비스로 연결)
+    supportLink: {
+      display: "flex",
+      alignItems: "center",
+      gap: "4px",
+      marginTop: "20px",
+      paddingBottom: "4px",
+      fontSize: "16px",
+      fontFamily: fontConfig["semiBold"],
+      lineHeight: 1,
+      color: "#1d4ed8", // blue-700
+      borderBottom: "1px solid #1d4ed8", // border-b-blue-700
+      width: "fit-content",
+      cursor: "pointer",
+      transition: "all 0.3s",
+      textDecoration: "none", // a 태그 기본 밑줄 제거
+      "&:hover": {
+        gap: "8px",
       },
     },
   },
