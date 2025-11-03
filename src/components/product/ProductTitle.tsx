@@ -26,7 +26,7 @@ const ProductTitle = ({
           variant="solutionTitleFont"
           sx={{
             color,
-            letterSpacing: "6.4px",
+            letterSpacing: "4px",
           }}
         >
           {title}

@@ -93,7 +93,7 @@ const responsiveFonts = {
     mobilePortrait: "22px",
     mobileLandscape: "24px",
     tablet: "30px",
-    desktop: "35px",
+    desktop: "32px",
   },
   // 솔루션의 각 페이지 (/solution/...) 상단 페이지 부제목 '원자력 - ...', ...
   solutionSubTitleFont: {
@@ -101,7 +101,7 @@ const responsiveFonts = {
     mobilePortrait: "18px",
     mobileLandscape: "22px",
     tablet: "25px",
-    desktop: "31px",
+    desktop: "26px",
   },
   // 솔루션의 각 페이지 (/solution/...) 본문 부제목 '개요', '기술적 배경', ...
   solutionTextTitleFont: {
@@ -117,7 +117,7 @@ const responsiveFonts = {
     mobilePortrait: "13px", // 본문 내용들 모바일 세로 사이즈
     mobileLandscape: "16px", // 본문 내용들 모바일 가로, 태블릿 세로 사이즈
     tablet: "16px", // 본문 내용들 태블릿 세로 사이즈
-    desktop: "24px", // 본문 내용들 데스크탑 사이즈
+    desktop: "22px", // 본문 내용들 데스크탑 사이즈
   },
   // 솔루션의 각 페이지 (/solution/...) 박스 부제목 '핵심 기술', '제공 서비스', ...
   solutionBoxTitleFont: {
@@ -431,6 +431,17 @@ const theme = createTheme({
       },
       [baseTheme.breakpoints.up("desktop")]: {
         gap: "96px",
+      },
+    },
+    productPageContainer: {
+      padding: "0 20px",
+      paddingTop: "20px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        px: 10,
+      },
+      [baseTheme.breakpoints.up("desktop")]: {
+        pt: "50px",
+        px: "120px",
       },
     },
     // Support 페이지 (/support) 메인 컨테이너 스타일

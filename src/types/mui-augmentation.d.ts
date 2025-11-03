@@ -15,6 +15,7 @@ declare module "@mui/material/styles" {
 
       productBranchPageOutline: React.CSSProperties;
       productStackComponent: React.CSSProperties;
+      productPageContainer: React.CSSProperties;
 
       supportContainer: SxProps<MuiTheme>;
       supportTextContainer: SxProps<MuiTheme>;
@@ -35,6 +36,7 @@ declare module "@mui/material/styles" {
 
       productBranchPageOutline?: React.CSSProperties;
       productStackComponent?: React.CSSProperties;
+      productPageContainer?: React.CSSProperties;
 
       supportContainer?: SxProps<MuiTheme>;
       supportTextContainer?: SxProps<MuiTheme>;
