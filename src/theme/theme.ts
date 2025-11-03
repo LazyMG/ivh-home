@@ -171,6 +171,22 @@ const responsiveFonts = {
     tablet: "16px",
     desktop: "16px",
   },
+  // Newsletter 아이템 제목
+  newsletterItemTitleFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "18px",
+    mobileLandscape: "20px",
+    tablet: "24px",
+    desktop: "28px",
+  },
+  // Newsletter 아이템 본문
+  newsletterItemContentFont: {
+    font: fontConfig["regular"],
+    mobilePortrait: "14px",
+    mobileLandscape: "16px",
+    tablet: "16px",
+    desktop: "18px",
+  },
 };
 
 const getResponsiveFontStyle = (style: {
@@ -263,6 +279,12 @@ const theme = createTheme({
       responsiveFonts["supportTitleFont"]
     ),
     supportTextFont: getResponsiveFontStyle(responsiveFonts["supportTextFont"]),
+    newsletterItemTitleFont: getResponsiveFontStyle(
+      responsiveFonts["newsletterItemTitleFont"]
+    ),
+    newsletterItemContentFont: getResponsiveFontStyle(
+      responsiveFonts["newsletterItemContentFont"]
+    ),
   },
   customStyles: {
     // 솔루션 페이지 (/solution) 메인 컨테이너 스타일
@@ -633,6 +655,54 @@ const theme = createTheme({
       "&:hover": {
         gap: "8px",
       },
+    },
+    homeNewsletterContainer: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      [baseTheme.breakpoints.up("tablet")]: {
+        position: "absolute",
+        top: "100px",
+        right: 0,
+        maxWidth: "500px",
+      },
+    },
+    // Newsletter 리스트 컨테이너 스타일
+    newsletterListContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "24px",
+      width: "100%",
+      zIndex: 9999,
+    },
+    // Newsletter 개별 아이템 스타일
+    newsletterItem: {
+      display: "flex",
+      flexDirection: "row",
+      maxHeight: "180px",
+      gap: "24px",
+      padding: "24px",
+      backgroundColor: "#ffffff",
+      borderRadius: "12px",
+      cursor: "pointer",
+      textDecoration: "none",
+    },
+    // Newsletter 아이템 이미지 스타일
+    newsletterItemImage: {
+      width: "100px",
+      height: "100px",
+      objectFit: "cover",
+      borderRadius: "8px",
+      flexShrink: 0,
+    },
+    // Newsletter 아이템 콘텐츠 영역 스타일
+    newsletterItemContent: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+      flex: 1,
+      justifyContent: "center",
+      overflow: "hidden",
     },
   },
 });
