@@ -1,0 +1,16 @@
+{
+  "parnter_image": "/images/pages/company/company_partner.jpg",
+  "parnter_parnter": "Partner",
+  "parnter_parnterList": [
+    "/images/pages/company/partner/partner_modelica.svg",
+    "/images/pages/company/partner/partner_modelon.svg",
+    "/images/pages/company/partner/partner_dassaultsystems.svg",
+    "/images/pages/company/partner/partner_hexagon.svg",
+    "/images/pages/company/partner/partner_asammember.svg",
+    "/images/pages/company/partner/partner_edi.svg",
+    "/images/pages/company/partner/partner_ptvgroup.svg",
+    "/images/pages/company/partner/partner_tlk.svg"
+  ],
+  "parnter_customer": "Customer",
+  "parnter_customerList": [""]
+}
