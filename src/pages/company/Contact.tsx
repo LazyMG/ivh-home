@@ -92,208 +92,232 @@ const Contact = () => {
         ...theme.customStyles.contactMainContainer,
       })}
     >
-      {/* 왼쪽 영역: 제목과 제품 둘러보기 링크 */}
+      {/* 상단 영역: 제목 + 폼 */}
       <Box
         sx={(theme) => ({
-          ...theme.customStyles.contactTitleContainer,
+          ...theme.customStyles.contactTopContainer,
         })}
       >
-        <Typography variant="contactTitleFont" component="h1">
-          {contact.contact_title}
-        </Typography>
+        {/* 왼쪽 영역: 제목과 제품 둘러보기 링크 */}
         <Box
-          component="a"
-          href={contact.products_link.url}
-          onClick={(e) => {
-            e.preventDefault();
-            navigate(contact.products_link.url);
-          }}
           sx={(theme) => ({
-            ...theme.customStyles.contactProductsLink,
+            ...theme.customStyles.contactTitleContainer,
           })}
         >
-          <Typography variant="contactProductsLinkFont">
-            {contact.products_link.text}
+          <Typography variant="contactTitleFont" component="h1">
+            {contact.contact_title}
           </Typography>
-          <Typography variant="contactProductsLinkFont">
-            {contact.products_link.arrow}
-          </Typography>
+          <Box
+            component="a"
+            href={contact.products_link.url}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(contact.products_link.url);
+            }}
+            sx={(theme) => ({
+              ...theme.customStyles.contactProductsLink,
+            })}
+          >
+            <Typography variant="contactProductsLinkFont">
+              {contact.products_link.text}
+            </Typography>
+            <Typography variant="contactProductsLinkFont">
+              {contact.products_link.arrow}
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* 오른쪽 영역: 문의 폼 */}
+        <Box
+          component="form"
+          onSubmit={handleSubmit(onSubmit)}
+          sx={(theme) => ({
+            ...theme.customStyles.contactFormContainer,
+          })}
+        >
+          {/* 회사명 */}
+          <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <TextField
+              size="small"
+              label="회사명"
+              placeholder="담당자 회사명을 입력해주십시오"
+              required
+              fullWidth
+              {...register("companyName", {
+                //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
+                validate: (value) => validateNotEmptyAndLength(value, 50),
+              })}
+            />
+            {errors.companyName && (
+              <ApplicationInputErrorText
+                text={errors.companyName.message || ""}
+              />
+            )}
+          </Box>
+
+          {/* 성함 */}
+          <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <TextField
+              size="small"
+              label="성함"
+              placeholder="담당자 성함을 입력해주십시오"
+              required
+              fullWidth
+              {...register("name", {
+                //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
+                validate: (value) => validateNotEmptyAndLength(value, 50),
+              })}
+            />
+            {errors.name && (
+              <ApplicationInputErrorText text={errors.name.message || ""} />
+            )}
+          </Box>
+
+          {/* 연락처 */}
+          <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <TextField
+              size="small"
+              label="연락처"
+              placeholder="담당자 연락처를 입력해주십시오 (-) 포함"
+              required
+              fullWidth
+              {...register("phone", {
+                validate: (value) => validatePhone(value),
+              })}
+            />
+            {errors.phone && (
+              <ApplicationInputErrorText text={errors.phone.message || ""} />
+            )}
+          </Box>
+
+          {/* 이메일 */}
+          <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <TextField
+              size="small"
+              label="이메일"
+              placeholder="담당자 이메일을 입력해주십시오"
+              required
+              fullWidth
+              {...register("email", {
+                validate: (value) => validateEmail(value),
+              })}
+            />
+            {errors.email && (
+              <ApplicationInputErrorText text={errors.email.message || ""} />
+            )}
+          </Box>
+
+          {/* 문의내용 */}
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.contactFormFullWidthField,
+            })}
+          >
+            <TextField
+              label="문의내용"
+              placeholder="문의내용을 입력해주십시오"
+              required
+              multiline
+              rows={6}
+              fullWidth
+              {...register("inquiry", {
+                validate: (value) =>
+                  validateNotEmpty(value, "문의내용을 입력해주십시오."),
+              })}
+            />
+            {errors.inquiry && (
+              <ApplicationInputErrorText text={errors.inquiry.message || ""} />
+            )}
+          </Box>
+
+          {/* 개인정보처리방침 동의 */}
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.contactCheckboxContainer,
+            })}
+          >
+            <Controller
+              name="isPrivacyAgreed"
+              control={control}
+              rules={{
+                required: "개인정보처리방침에 동의해주세요.",
+                validate: (value) =>
+                  validateCheckbox(value, "개인정보처리방침에 동의해주십시오."),
+              }}
+              render={({ field }) => (
+                <>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={field.value}
+                        onChange={field.onChange}
+                        sx={(theme) => ({
+                          ...theme.customStyles.contactformControlLabel,
+                          "&.Mui-checked": {
+                            color: "#6366f1",
+                          },
+                        })}
+                      />
+                    }
+                    label={
+                      <Typography
+                        sx={{
+                          fontSize: "14px",
+                          fontFamily: "Freesentation-5-Medium",
+                          color: "#111827", // gray-900
+                          cursor: "pointer",
+                        }}
+                      >
+                        {contact.products_link.checkbox_text}
+                      </Typography>
+                    }
+                  />
+                  {errors.isPrivacyAgreed && (
+                    <Box>
+                      <ApplicationInputErrorText
+                        text={errors.isPrivacyAgreed.message || ""}
+                      />
+                    </Box>
+                  )}
+                </>
+              )}
+            />
+          </Box>
+
+          {/* 문의하기 버튼 */}
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.contactFormFullWidthField,
+            })}
+          >
+            <Button
+              type="submit"
+              disabled={!isValid}
+              sx={(theme) => ({
+                ...theme.customStyles.contactButton,
+              })}
+            >
+              문의하기
+            </Button>
+          </Box>
         </Box>
       </Box>
 
-      {/* 오른쪽 영역: 문의 폼 */}
+      {/* 지도 영역 */}
       <Box
-        component="form"
-        onSubmit={handleSubmit(onSubmit)}
         sx={(theme) => ({
-          ...theme.customStyles.contactFormContainer,
+          ...theme.customStyles.contactMapContainer,
         })}
       >
-        {/* 회사명 */}
-        <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
-          <TextField
-            size="small"
-            label="회사명"
-            placeholder="담당자 회사명을 입력해주십시오"
-            required
-            fullWidth
-            {...register("companyName", {
-              //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
-              validate: (value) => validateNotEmptyAndLength(value, 50),
-            })}
-          />
-          {errors.companyName && (
-            <ApplicationInputErrorText
-              text={errors.companyName.message || ""}
-            />
-          )}
-        </Box>
-
-        {/* 성함 */}
-        <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
-          <TextField
-            size="small"
-            label="성함"
-            placeholder="담당자 성함을 입력해주십시오"
-            required
-            fullWidth
-            {...register("name", {
-              //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
-              validate: (value) => validateNotEmptyAndLength(value, 50),
-            })}
-          />
-          {errors.name && (
-            <ApplicationInputErrorText text={errors.name.message || ""} />
-          )}
-        </Box>
-
-        {/* 연락처 */}
-        <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
-          <TextField
-            size="small"
-            label="연락처"
-            placeholder="담당자 연락처를 입력해주십시오 (-) 포함"
-            required
-            fullWidth
-            {...register("phone", {
-              validate: (value) => validatePhone(value),
-            })}
-          />
-          {errors.phone && (
-            <ApplicationInputErrorText text={errors.phone.message || ""} />
-          )}
-        </Box>
-
-        {/* 이메일 */}
-        <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
-          <TextField
-            size="small"
-            label="이메일"
-            placeholder="담당자 이메일을 입력해주십시오"
-            required
-            fullWidth
-            {...register("email", {
-              validate: (value) => validateEmail(value),
-            })}
-          />
-          {errors.email && (
-            <ApplicationInputErrorText text={errors.email.message || ""} />
-          )}
-        </Box>
-
-        {/* 문의내용 */}
-        <Box
-          sx={(theme) => ({
-            ...theme.customStyles.contactFormFullWidthField,
-          })}
-        >
-          <TextField
-            label="문의내용"
-            placeholder="문의내용을 입력해주십시오"
-            required
-            multiline
-            rows={6}
-            fullWidth
-            {...register("inquiry", {
-              validate: (value) =>
-                validateNotEmpty(value, "문의내용을 입력해주십시오."),
-            })}
-          />
-          {errors.inquiry && (
-            <ApplicationInputErrorText text={errors.inquiry.message || ""} />
-          )}
-        </Box>
-
-        {/* 개인정보처리방침 동의 */}
-        <Box
-          sx={(theme) => ({
-            ...theme.customStyles.contactCheckboxContainer,
-          })}
-        >
-          <Controller
-            name="isPrivacyAgreed"
-            control={control}
-            rules={{
-              required: "개인정보처리방침에 동의해주세요.",
-              validate: (value) =>
-                validateCheckbox(value, "개인정보처리방침에 동의해주십시오."),
-            }}
-            render={({ field }) => (
-              <>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={field.value}
-                      onChange={field.onChange}
-                      sx={(theme) => ({
-                        ...theme.customStyles.formControlLabel,
-                        "&.Mui-checked": {
-                          color: "#6366f1",
-                        },
-                      })}
-                    />
-                  }
-                  label={
-                    <Typography
-                      sx={{
-                        fontSize: "14px",
-                        fontFamily: "Freesentation-5-Medium",
-                        color: "#111827", // gray-900
-                        cursor: "pointer",
-                      }}
-                    >
-                      {contact.products_link.checkbox_text}
-                    </Typography>
-                  }
-                />
-                {errors.isPrivacyAgreed && (
-                  <Box>
-                    <ApplicationInputErrorText
-                      text={errors.isPrivacyAgreed.message || ""}
-                    />
-                  </Box>
-                )}
-              </>
-            )}
-          />
-        </Box>
-
-        {/* 문의하기 버튼 */}
-        <Box
-          sx={(theme) => ({
-            ...theme.customStyles.contactFormFullWidthField,
-          })}
-        >
-          <Button
-            type="submit"
-            disabled={!isValid}
-            sx={(theme) => ({
-              ...theme.customStyles.contactButton,
-            })}
-          >
-            문의하기
-          </Button>
-        </Box>
+        <iframe
+          src={contact.products_link.map_src}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </Box>
 
       {/* 스낵바 */}

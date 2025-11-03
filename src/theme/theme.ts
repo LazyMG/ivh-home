@@ -468,20 +468,36 @@ const theme = createTheme({
         desktop: "80px",
       },
       marginBottom: {
-        mobilePortrait: "80px",
-        mobileLandscape: "100px",
-        tablet: "120px",
-        desktop: "160px",
+        mobilePortrait: "32px",
+        mobileLandscape: "48px",
+        tablet: "64px",
+        desktop: "80px",
       },
-
       display: "flex",
-      flexDirection: {
-        mobilePortrait: "column",
-        mobileLandscape: "column",
-        tablet: "row",
-        desktop: "row",
-      },
+      flexDirection: "column",
       gap: "48px",
+    },
+    // Contact 페이지 상단 영역 (제목 + 폼) 컨테이너 스타일
+    contactTopContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "48px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        flexDirection: "row",
+      },
+    },
+    // Contact 페이지 지도 영역 컨테이너 스타일
+    contactMapContainer: {
+      width: "100%",
+      height: {
+        mobilePortrait: "300px",
+        mobileLandscape: "400px",
+        tablet: "450px",
+        desktop: "450px",
+      },
+      borderRadius: "8px",
+      overflow: "hidden",
+      border: "1px solid #e5e7eb",
     },
     // Contact 페이지 제목 영역 컨테이너 스타일
     contactTitleContainer: {
@@ -489,6 +505,9 @@ const theme = createTheme({
       flexDirection: "column",
       gap: "20px",
       flex: 1,
+      [baseTheme.breakpoints.up("tablet")]: {
+        paddingRight: "100px",
+      },
     },
     // Contact 페이지 제품 둘러보기 링크 스타일
     contactProductsLink: {

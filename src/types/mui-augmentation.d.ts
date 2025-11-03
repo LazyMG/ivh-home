@@ -18,6 +18,7 @@ declare module "@mui/material/styles" {
 
       // Contact 페이지 스타일
       contactMainContainer: SxProps<MuiTheme>;
+      contactTopContainer: SxProps<MuiTheme>;
       contactTitleContainer: SxProps<MuiTheme>;
       contactProductsLink: SxProps<MuiTheme>;
       contactFormContainer: SxProps<MuiTheme>;
@@ -27,6 +28,7 @@ declare module "@mui/material/styles" {
       contactCheckboxContainer: SxProps<MuiTheme>;
       contactButton: SxProps<MuiTheme>;
       contactformControlLabel: React.CSSProperties;
+      contactMapContainer: SxProps<MuiTheme>;
       productPageContainer: React.CSSProperties;
 
       supportContainer: SxProps<MuiTheme>;
@@ -51,6 +53,7 @@ declare module "@mui/material/styles" {
 
       // Contact 페이지 스타일
       contactMainContainer?: SxProps<MuiTheme>;
+      contactTopContainer?: SxProps<MuiTheme>;
       contactTitleContainer?: SxProps<MuiTheme>;
       contactProductsLink?: SxProps<MuiTheme>;
       contactFormContainer?: SxProps<MuiTheme>;
@@ -60,6 +63,7 @@ declare module "@mui/material/styles" {
       contactCheckboxContainer?: SxProps<MuiTheme>;
       contactButton?: SxProps<MuiTheme>;
       contactformControlLabel?: React.CSSProperties;
+      contactMapContainer?: SxProps<MuiTheme>;
       productPageContainer?: React.CSSProperties;
 
       supportContainer?: SxProps<MuiTheme>;
