@@ -68,7 +68,7 @@ import CustomSnackbar from "../../components/support/CustomSnackbar";
 
 const Training = () => {
   const seoData = useSEO("support/training", training);
-  const { training_title, training_outline, training_title_image } = training;
+  const { training_title, training_outline } = training;
   const { training_curriculums } = curriculums;
 
   const [apiReservationList, setApiReservationList] = useState<
@@ -114,31 +114,14 @@ const Training = () => {
           position: "relative",
         }}
       >
-        <TrainingMainTitle titleList={training_title}>
-          <Box
-            component="img"
-            src={training_title_image}
-            sx={(theme) => ({
-              position: "absolute",
-              right: "-20%",
-              [theme.breakpoints.up("tablet")]: {
-                right: "-40%",
-              },
-              bottom: "-40%",
-              zIndex: -1,
-              maxWidth: "100%",
-              width: "80%",
-              objectFit: "contain",
-            })}
-          />
-        </TrainingMainTitle>
+        <TrainingMainTitle titleList={training_title} />
         <Divider
           sx={{
             border: "1px solid #23A16F",
             position: "absolute",
             left: 0,
             bottom: -16,
-            width: "40%",
+            width: "30%",
           }}
         />
       </Box>
