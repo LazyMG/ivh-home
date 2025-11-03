@@ -533,7 +533,7 @@ const theme = createTheme({
       display: "grid",
       gridTemplateColumns: "1fr",
       gap: "24px",
-      [baseTheme.breakpoints.up("mobileLandscape")]: {
+      [baseTheme.breakpoints.up("tablet")]: {
         gridTemplateColumns: "1fr 1fr",
         columnGap: "24px",
       },
@@ -545,14 +545,14 @@ const theme = createTheme({
     // Contact 페이지 전체 너비 필드 (문의내용, 체크박스, 버튼) 스타일
     contactFormFullWidthField: {
       position: "relative",
-      [baseTheme.breakpoints.up("mobileLandscape")]: {
+      [baseTheme.breakpoints.up("tablet")]: {
         gridColumn: "span 2",
       },
     },
     // Contact 페이지 체크박스 컨테이너 스타일
     contactCheckboxContainer: {
       position: "relative",
-      [baseTheme.breakpoints.up("mobileLandscape")]: {
+      [baseTheme.breakpoints.up("tablet")]: {
         gridColumn: "span 2",
       },
     },
