@@ -37,14 +37,7 @@ const TIL = () => {
       <Box
         component="main"
         sx={(theme) => ({
-          px: 4,
-          pt: "50px",
-          [theme.breakpoints.up("tablet")]: {
-            px: 10,
-          },
-          [theme.breakpoints.up("desktop")]: {
-            px: 20,
-          },
+          ...theme.customStyles.productPageContainer,
         })}
       >
         <ScrollButton

@@ -6,11 +6,9 @@ import TrainingMainTitle from "../../components/support/TrainingMainTitle";
 import GradientSectionLabel from "../../components/support/GradientSectionLabel";
 import CalendarLegend from "../../components/support/CalendarLegend";
 import Calendar from "../../components/support/Calendar";
-import TraingCurriculumTable from "../../components/support/TrainingCurriculumTable";
 import ApplicationForm from "../../components/support/ApplicationForm";
 
 import training from "../../data/support/training.json";
-import curriculums from "../../data/support/curriculum.json";
 import { useSEO } from "../../hooks/useSEO";
 import SEO from "../../common/SEO";
 import { useEffect, useState } from "react";
@@ -68,8 +66,7 @@ import CustomSnackbar from "../../components/support/CustomSnackbar";
 
 const Training = () => {
   const seoData = useSEO("support/training", training);
-  const { training_title, training_outline, training_title_image } = training;
-  const { training_curriculums } = curriculums;
+  const { training_title, training_outline } = training;
 
   const [apiReservationList, setApiReservationList] = useState<
     ReservationResponse[] | null
@@ -114,31 +111,14 @@ const Training = () => {
           position: "relative",
         }}
       >
-        <TrainingMainTitle titleList={training_title}>
-          <Box
-            component="img"
-            src={training_title_image}
-            sx={(theme) => ({
-              position: "absolute",
-              right: "-20%",
-              [theme.breakpoints.up("tablet")]: {
-                right: "-40%",
-              },
-              bottom: "-40%",
-              zIndex: -1,
-              maxWidth: "100%",
-              width: "80%",
-              objectFit: "contain",
-            })}
-          />
-        </TrainingMainTitle>
+        <TrainingMainTitle titleList={training_title} />
         <Divider
           sx={{
             border: "1px solid #23A16F",
             position: "absolute",
             left: 0,
             bottom: -16,
-            width: "40%",
+            width: "30%",
           }}
         />
       </Box>
@@ -194,11 +174,6 @@ const Training = () => {
         </Box>
 
         {/** Curriculum 섹션 */}
-        <GradientSectionLabel labelText="Curriculum" />
-        <TraingCurriculumTable curriculums={training_curriculums} />
-
-        {/** Schedule 섹션 */}
-        <GradientSectionLabel labelText="Schedule" />
         <Box
           sx={{
             maxWidth: "1500px",
@@ -208,13 +183,39 @@ const Training = () => {
             flexDirection: "column",
           }}
         >
+          <GradientSectionLabel labelText="Curriculum" />
+        </Box>
+        {/* <TraingCurriculumTable curriculums={training_curriculums} /> */}
+
+        {/** Schedule 섹션 */}
+        <Box
+          sx={{
+            maxWidth: "1500px",
+            width: "100%",
+            margin: "50px auto",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <GradientSectionLabel labelText="Schedule" />
           <CalendarLegend />
           <Calendar reservationList={apiReservationList} />
         </Box>
 
         {/** Application 섹션 */}
-        <GradientSectionLabel labelText="Application" />
-        <ApplicationForm reservationList={apiReservationList} />
+        <Box
+          sx={{
+            maxWidth: "1500px",
+            width: "100%",
+            margin: "50px auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+          }}
+        >
+          <GradientSectionLabel labelText="Application" />
+          <ApplicationForm reservationList={apiReservationList} />
+        </Box>
 
         {/** 데이터 불러올 때 발생한 에러 보여주는 스낵바 */}
         {/** 에러 문구 출력 */}

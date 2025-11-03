@@ -117,7 +117,7 @@
       "title": "SUPPORT",
       "subMenu": [
         { "name": "Training", "path": "/support/training" },
-        { "name": "Support" }
+        { "name": "Support", "path": "/support" }
       ]
     },
     {

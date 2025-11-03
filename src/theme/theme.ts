@@ -56,6 +56,7 @@ export const mediaQueries = {
 } as const;
 
 const fontConfig = {
+  regular: "Freesentation-4-Regular",
   medium: "Freesentation-5-Medium",
   semiBold: "Freesentation-6-SemiBold",
   bold: "Freesentation-7-Bold",
@@ -92,7 +93,7 @@ const responsiveFonts = {
     mobilePortrait: "22px",
     mobileLandscape: "24px",
     tablet: "30px",
-    desktop: "35px",
+    desktop: "32px",
   },
   // 솔루션의 각 페이지 (/solution/...) 상단 페이지 부제목 '원자력 - ...', ...
   solutionSubTitleFont: {
@@ -100,7 +101,7 @@ const responsiveFonts = {
     mobilePortrait: "18px",
     mobileLandscape: "22px",
     tablet: "25px",
-    desktop: "31px",
+    desktop: "26px",
   },
   // 솔루션의 각 페이지 (/solution/...) 본문 부제목 '개요', '기술적 배경', ...
   solutionTextTitleFont: {
@@ -116,7 +117,7 @@ const responsiveFonts = {
     mobilePortrait: "13px", // 본문 내용들 모바일 세로 사이즈
     mobileLandscape: "16px", // 본문 내용들 모바일 가로, 태블릿 세로 사이즈
     tablet: "16px", // 본문 내용들 태블릿 세로 사이즈
-    desktop: "24px", // 본문 내용들 데스크탑 사이즈
+    desktop: "22px", // 본문 내용들 데스크탑 사이즈
   },
   // 솔루션의 각 페이지 (/solution/...) 박스 부제목 '핵심 기술', '제공 서비스', ...
   solutionBoxTitleFont: {
@@ -153,6 +154,22 @@ const responsiveFonts = {
     mobileLandscape: "14px",
     tablet: "14px",
     desktop: "14px",
+  },
+  // Support 페이지 제목 'iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.'
+  supportTitleFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "24px",
+    mobileLandscape: "24px",
+    tablet: "40px",
+    desktop: "40px",
+  },
+  // Support 페이지 본문 '긴급 핫라인을 통한 빠른 답변부터...'
+  supportTextFont: {
+    font: fontConfig["regular"],
+    mobilePortrait: "16px",
+    mobileLandscape: "16px",
+    tablet: "16px",
+    desktop: "16px",
   },
 };
 
@@ -242,6 +259,10 @@ const theme = createTheme({
     contactProductsLinkFont: getResponsiveFontStyle(
       responsiveFonts["contactProductsLinkFont"]
     ),
+    supportTitleFont: getResponsiveFontStyle(
+      responsiveFonts["supportTitleFont"]
+    ),
+    supportTextFont: getResponsiveFontStyle(responsiveFonts["supportTextFont"]),
   },
   customStyles: {
     // 솔루션 페이지 (/solution) 메인 컨테이너 스타일
@@ -534,6 +555,64 @@ const theme = createTheme({
       "&.Mui-disabled": {
         backgroundColor: "#cccccc",
         color: "#888888",
+      },
+    },
+    productPageContainer: {
+      padding: "0 20px",
+      paddingTop: "20px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        px: 10,
+      },
+      [baseTheme.breakpoints.up("desktop")]: {
+        pt: "50px",
+        px: "120px",
+      },
+    },
+    // Support 페이지 (/support) 메인 컨테이너 스타일
+    supportContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "80px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        flexDirection: "row",
+      },
+    },
+    // Support 페이지 텍스트 영역 컨테이너 스타일
+    supportTextContainer: {
+      [baseTheme.breakpoints.up("tablet")]: {
+        width: "50%",
+      },
+    },
+    // Support 페이지 이미지 영역 컨테이너 스타일
+    supportImageContainer: {
+      display: "flex",
+      justifyContent: "center",
+      marginLeft: "auto",
+      marginRight: "auto",
+      width: "100%",
+      [baseTheme.breakpoints.up("tablet")]: {
+        justifyContent: "flex-end",
+        width: "50%",
+      },
+    },
+    // Support 페이지 링크 스타일 (기술지원 서비스로 연결)
+    supportLink: {
+      display: "flex",
+      alignItems: "center",
+      gap: "4px",
+      marginTop: "20px",
+      paddingBottom: "4px",
+      fontSize: "16px",
+      fontFamily: fontConfig["semiBold"],
+      lineHeight: 1,
+      color: "#1d4ed8", // blue-700
+      borderBottom: "1px solid #1d4ed8", // border-b-blue-700
+      width: "fit-content",
+      cursor: "pointer",
+      transition: "all 0.3s",
+      textDecoration: "none", // a 태그 기본 밑줄 제거
+      "&:hover": {
+        gap: "8px",
       },
     },
   },

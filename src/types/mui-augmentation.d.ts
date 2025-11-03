@@ -27,6 +27,12 @@ declare module "@mui/material/styles" {
       contactCheckboxContainer: SxProps<MuiTheme>;
       contactButton: SxProps<MuiTheme>;
       contactformControlLabel: React.CSSProperties;
+      productPageContainer: React.CSSProperties;
+
+      supportContainer: SxProps<MuiTheme>;
+      supportTextContainer: SxProps<MuiTheme>;
+      supportImageContainer: SxProps<MuiTheme>;
+      supportLink: SxProps<MuiTheme>;
     };
   }
 
@@ -54,6 +60,12 @@ declare module "@mui/material/styles" {
       contactCheckboxContainer?: SxProps<MuiTheme>;
       contactButton?: SxProps<MuiTheme>;
       contactformControlLabel?: React.CSSProperties;
+      productPageContainer?: React.CSSProperties;
+
+      supportContainer?: SxProps<MuiTheme>;
+      supportTextContainer?: SxProps<MuiTheme>;
+      supportImageContainer?: SxProps<MuiTheme>;
+      supportLink?: SxProps<MuiTheme>;
     };
   }
 
@@ -72,6 +84,8 @@ declare module "@mui/material/styles" {
     productImageBannerSubtitleFont: React.CSSProperties;
     contactTitleFont: React.CSSProperties;
     contactProductsLinkFont: React.CSSProperties;
+    supportTitleFont: React.CSSProperties;
+    supportTextFont: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
@@ -89,6 +103,8 @@ declare module "@mui/material/styles" {
     productImageBannerSubtitleFont?: React.CSSProperties;
     contactTitleFont?: React.CSSProperties;
     contactProductsLinkFont?: React.CSSProperties;
+    supportTitleFont?: React.CSSProperties;
+    supportTextFont?: React.CSSProperties;
   }
 
   interface BreakpointOverrides {
@@ -119,5 +135,7 @@ declare module "@mui/material/Typography" {
     productImageBannerSubtitleFont: true;
     contactTitleFont: true;
     contactProductsLinkFont: true;
+    supportTitleFont: true;
+    supportTextFont: true;
   }
 }
