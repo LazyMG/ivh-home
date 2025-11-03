@@ -30,7 +30,7 @@ const Legend = ({ color, text }: { color: string; text: string }) => {
 
 const CalendarLegend = () => {
   return (
-    <Box sx={{ display: "flex", gap: 1 }}>
+    <Box sx={{ display: "flex", gap: 1, mt: 4 }}>
       {[
         {
           color: RESERVATION_STATUS_COLOR?.OPEN.color || "transparent",
