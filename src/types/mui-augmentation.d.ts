@@ -15,6 +15,11 @@ declare module "@mui/material/styles" {
 
       productBranchPageOutline: React.CSSProperties;
       productStackComponent: React.CSSProperties;
+
+      supportContainer: SxProps<MuiTheme>;
+      supportTextContainer: SxProps<MuiTheme>;
+      supportImageContainer: SxProps<MuiTheme>;
+      supportLink: SxProps<MuiTheme>;
     };
   }
 
@@ -30,6 +35,11 @@ declare module "@mui/material/styles" {
 
       productBranchPageOutline?: React.CSSProperties;
       productStackComponent?: React.CSSProperties;
+
+      supportContainer?: SxProps<MuiTheme>;
+      supportTextContainer?: SxProps<MuiTheme>;
+      supportImageContainer?: SxProps<MuiTheme>;
+      supportLink?: SxProps<MuiTheme>;
     };
   }
 
@@ -46,6 +56,8 @@ declare module "@mui/material/styles" {
     solutionBoxTitleFont: React.CSSProperties;
     productImageBannerTitleFont: React.CSSProperties;
     productImageBannerSubtitleFont: React.CSSProperties;
+    supportTitleFont: React.CSSProperties;
+    supportTextFont: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
@@ -61,6 +73,8 @@ declare module "@mui/material/styles" {
     solutionBoxTitleFont?: React.CSSProperties;
     productImageBannerTitleFont?: React.CSSProperties;
     productImageBannerSubtitleFont?: React.CSSProperties;
+    supportTitleFont?: React.CSSProperties;
+    supportTextFont?: React.CSSProperties;
   }
 
   interface BreakpointOverrides {
@@ -89,5 +103,7 @@ declare module "@mui/material/Typography" {
     solutionBoxTitleFont: true;
     productImageBannerTitleFont: true;
     productImageBannerSubtitleFont: true;
+    supportTitleFont: true;
+    supportTextFont: true;
   }
 }
