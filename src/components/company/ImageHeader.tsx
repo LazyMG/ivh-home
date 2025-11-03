@@ -3,13 +3,17 @@ import { Box } from "@mui/material";
 const ImageHeader = ({ imgUrl }: { imgUrl: string }) => {
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         backgroundImage: `url(${imgUrl})`,
         width: "100%",
         height: "280px",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+        borderRadius: "16px",
+        [theme.breakpoints.up("tablet")]: {
+          m: 0,
+          borderRadius: 0,
+        },
+      })}
     />
   );
 };

@@ -13,26 +13,51 @@ const Partner = () => {
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <ImageHeader imgUrl={parnter_image} />
       <Box
-        sx={{
-          px: 40,
+        sx={(theme) => ({
+          px: "20px",
+          pt: "20px",
+          [theme.breakpoints.up("tablet")]: {
+            p: 0,
+          },
+        })}
+      >
+        <ImageHeader imgUrl={parnter_image} />
+      </Box>
+
+      <Box
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-          gap: 16,
-          my: 20,
-        }}
+          gap: 6,
+          my: 10,
+          px: "16px",
+          pt: "20px",
+          [theme.breakpoints.up("tablet")]: {
+            px: 10,
+          },
+          [theme.breakpoints.up("desktop")]: {
+            pt: "50px",
+            px: 40,
+          },
+        })}
       >
         <Stack gap={3}>
           <Typography
-            sx={{
+            sx={(theme) => ({
               textTransform: "uppercase",
               whiteSpace: "pre-line",
-              fontSize: "36px",
               fontFamily: "Freesentation-6-SemiBold",
               letterSpacing: "4px",
               color: "#3e3e45",
-            }}
+              fontSize: "24px",
+              [theme.breakpoints.up("tablet")]: {
+                fontSize: "28px",
+              },
+              [theme.breakpoints.up("desktop")]: {
+                fontSize: "36px",
+              },
+            })}
           >
             {parnter_parnter}
           </Typography>
@@ -40,25 +65,29 @@ const Partner = () => {
             component="ul"
             sx={{
               display: "flex",
-              width: "100%",
               justifyContent: "between",
+              alignItems: "center",
               flexWrap: "wrap",
               rowGap: 10,
+              pl: 0,
             }}
           >
             {parnter_parnterList.map((partnerImg, index) => (
               <Box
                 key={index}
-                sx={{
-                  width: "25%",
+                sx={(theme) => ({
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                }}
+                  width: "50%",
+                  [theme.breakpoints.up("desktop")]: {
+                    width: "25%",
+                  },
+                })}
               >
                 <img
                   src={partnerImg}
-                  style={{ width: "70%", maxWidth: "130px" }}
+                  style={{ width: "70%", maxWidth: "128px" }}
                 />
               </Box>
             ))}
@@ -66,14 +95,20 @@ const Partner = () => {
         </Stack>
         <Stack gap={3}>
           <Typography
-            sx={{
+            sx={(theme) => ({
               textTransform: "uppercase",
               whiteSpace: "pre-line",
-              fontSize: "36px",
               fontFamily: "Freesentation-6-SemiBold",
               letterSpacing: "4px",
               color: "#3e3e45",
-            }}
+              fontSize: "24px",
+              [theme.breakpoints.up("tablet")]: {
+                fontSize: "28px",
+              },
+              [theme.breakpoints.up("desktop")]: {
+                fontSize: "36px",
+              },
+            })}
           >
             {parnter_customer}
           </Typography>

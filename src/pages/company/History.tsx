@@ -6,25 +6,50 @@ const History = () => {
   const { history_list, history_title, history_image } = history;
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <ImageHeader imgUrl={history_image} />
       <Box
-        sx={{
-          px: 40,
+        sx={(theme) => ({
+          px: "20px",
+          pt: "20px",
+          [theme.breakpoints.up("tablet")]: {
+            p: 0,
+          },
+        })}
+      >
+        <ImageHeader imgUrl={history_image} />
+      </Box>
+
+      <Box
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
           gap: 6,
           my: 10,
-        }}
+          px: "20px",
+          pt: "20px",
+          [theme.breakpoints.up("tablet")]: {
+            px: 10,
+          },
+          [theme.breakpoints.up("desktop")]: {
+            pt: "50px",
+            px: 40,
+          },
+        })}
       >
         <Typography
-          sx={{
+          sx={(theme) => ({
             textTransform: "uppercase",
             whiteSpace: "pre-line",
-            fontSize: "36px",
             fontFamily: "Freesentation-6-SemiBold",
             letterSpacing: "4px",
             color: "#3e3e45",
-          }}
+            fontSize: "24px",
+            [theme.breakpoints.up("tablet")]: {
+              fontSize: "28px",
+            },
+            [theme.breakpoints.up("desktop")]: {
+              fontSize: "36px",
+            },
+          })}
         >
           {history_title}
         </Typography>

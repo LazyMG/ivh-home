@@ -7,23 +7,48 @@ const CEO = () => {
   const { ceo_image, ceo_title, ceo_contents, ceo_footer } = ceo;
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <ImageHeader imgUrl={ceo_image} />
       <Box
-        sx={{
-          px: 40,
+        sx={(theme) => ({
+          px: "20px",
+          pt: "20px",
+          [theme.breakpoints.up("tablet")]: {
+            p: 0,
+          },
+        })}
+      >
+        <ImageHeader imgUrl={ceo_image} />
+      </Box>
+      <Box
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
           gap: 6,
           my: 10,
-        }}
+          px: "20px",
+          pt: "20px",
+          [theme.breakpoints.up("tablet")]: {
+            px: 10,
+          },
+          [theme.breakpoints.up("desktop")]: {
+            pt: "50px",
+            px: 40,
+          },
+        })}
       >
         <Typography
-          sx={{
+          sx={(theme) => ({
             whiteSpace: "pre-line",
-            fontSize: "36px",
             fontFamily: "Freesentation-6-SemiBold",
+            wordBreak: "keep-all",
             color: "#3e3e45",
-          }}
+            fontSize: "24px",
+            [theme.breakpoints.up("tablet")]: {
+              fontSize: "28px",
+            },
+            [theme.breakpoints.up("desktop")]: {
+              fontSize: "36px",
+            },
+          })}
         >
           {ceo_title}
         </Typography>
