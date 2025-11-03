@@ -55,6 +55,8 @@ import CEO from "./pages/company/CEO";
 import History from "./pages/company/History";
 import Partner from "./pages/company/Partner";
 
+import Contact from "./pages/company/Contact";
+
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
   const location = useLocation();
@@ -129,6 +131,9 @@ function AppContent() {
           <Route path="/company/partner" element={<Partner />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
+
+          {/** company */}
+          <Route path="/company/contact" element={<Contact />} />
         </Routes>
       </ScrollToTop>
       {!hideLayout && (isMobile || isTablet ? <MobileFooter /> : <Footer />)}
