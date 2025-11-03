@@ -15,6 +15,7 @@ declare module "@mui/material/styles" {
 
       productBranchPageOutline: React.CSSProperties;
       productStackComponent: React.CSSProperties;
+      productPageContainer: React.CSSProperties;
     };
   }
 
@@ -30,6 +31,7 @@ declare module "@mui/material/styles" {
 
       productBranchPageOutline?: React.CSSProperties;
       productStackComponent?: React.CSSProperties;
+      productPageContainer?: React.CSSProperties;
     };
   }
 
