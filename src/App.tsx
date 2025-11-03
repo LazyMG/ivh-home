@@ -51,6 +51,10 @@ import Support from "./pages/support/Support";
 
 import Header from "./common/Header/Header";
 import PrivacyPolicy from "./components/support/PrivacyPolicy";
+import CEO from "./pages/company/CEO";
+import History from "./pages/company/History";
+import Partner from "./pages/company/Partner";
+
 import Contact from "./pages/company/Contact";
 
 function AppContent() {
@@ -122,6 +126,9 @@ function AppContent() {
           {/** support */}
           <Route path="/support/training" element={<Training />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/company/ceo" element={<CEO />} />
+          <Route path="/company/history" element={<History />} />
+          <Route path="/company/partner" element={<Partner />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
 
