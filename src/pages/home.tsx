@@ -2,8 +2,20 @@ import { Box, CssBaseline } from "@mui/material";
 import bgImg from "/images/home/home.jpg";
 import HomeContents from "../components/home/HomeContents";
 import SEO from "../common/SEO";
+import { useEffect } from "react";
+import "../App.css";
 
 const Home = () => {
+  useEffect(() => {
+    // 컴포넌트 마운트 시 body에 클래스 추가
+    document.body.classList.add("hide-scrollbar");
+
+    // 컴포넌트 언마운트 시 body에서 클래스 제거 (클린업 함수)
+    return () => {
+      document.body.classList.remove("hide-scrollbar");
+    };
+  }, []);
+
   return (
     <>
       <SEO
