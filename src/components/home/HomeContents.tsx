@@ -68,9 +68,9 @@ const HomeContents = ({
           }}
         >
           <Typography
-            component="span"
+            component="p"
             sx={{
-              fontSize: isMobile ? "16px" : "18px",
+              fontSize: isMobile ? "14px" : "15.5px",
               lineHeight: "1.75rem",
               color: "#fff",
               whiteSpace: isMobile ? "normal" : "pre-line",
@@ -81,7 +81,7 @@ const HomeContents = ({
           <Typography
             component="span"
             sx={{
-              fontSize: isMobile ? "16px" : "18px",
+              fontSize: isMobile ? "14px" : "15.5px",
               lineHeight: "1.75rem",
               color: "#fff",
               whiteSpace: isMobile ? "normal" : "pre-line",

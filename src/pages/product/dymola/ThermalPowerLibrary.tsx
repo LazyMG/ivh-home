@@ -10,6 +10,7 @@ import SEO from "../../../common/SEO";
 import { useSEO } from "../../../hooks/useSEO";
 import thermal from "../../../data/product/thermal.json";
 import ScrollButton from "../../../common/ScrollButton";
+import ProductForm from "../../../components/product/ProductForm";
 
 const ThermalPowerLibrary = () => {
   const seoData = useSEO("product/dymola/thermalPowerLibrary", thermal);
@@ -98,6 +99,27 @@ const ThermalPowerLibrary = () => {
                 />
               ))}
             </Stack>
+
+            {/** 하단 폼 영역 */}
+            <Box
+              component="section"
+              aria-label="form-heading"
+              sx={(theme) => ({
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+                my: 12,
+                [theme.breakpoints.up("tablet")]: {
+                  my: 24,
+                  gap: 22,
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  my: 30,
+                },
+              })}
+            >
+              <ProductForm productName="Thermal Power Library" />
+            </Box>
           </Box>
         </Box>
       </Box>

@@ -10,6 +10,16 @@ const Footer = () => {
   const { youtubeLogo, linkedinLogo, youtubeUrl, linkedinUrl } = socialMedia;
   const navigate = useNavigate();
 
+  const handleFooterLevelClick = (title: string, name: string) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate(location.pathname, {
+      state: {
+        footerOpenMenu: title,
+        footerLevel1Menu: name,
+      },
+    });
+  };
+
   return (
     // 정렬을 위한 부모 컨테이너
     <Box
@@ -226,10 +236,14 @@ const Footer = () => {
                       fontSize: "14px",
                       fontFamily: "Freesentation-4-Regular",
                       color: "white",
-                      cursor: subItem.path ? "pointer" : "default",
+                      cursor: "pointer",
                     }}
                     key={subIndex}
-                    onClick={() => subItem.path && navigate(subItem.path)}
+                    onClick={() =>
+                      subItem.path
+                        ? navigate(subItem.path)
+                        : handleFooterLevelClick(item.title, subItem.name)
+                    }
                   >
                     {subItem.name}
                   </Typography>

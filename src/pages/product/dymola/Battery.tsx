@@ -10,6 +10,7 @@ import BreadScrum from "../../../common/BreadScrum";
 import SEO from "../../../common/SEO";
 import battery from "../../../data/product/battery.json";
 import ScrollButton from "../../../common/ScrollButton";
+import ProductForm from "../../../components/product/ProductForm";
 
 const Battery = () => {
   const seoData = useSEO("product/dymola/battery", battery);
@@ -97,6 +98,27 @@ const Battery = () => {
                 />
               ))}
             </Stack>
+
+            {/** 하단 폼 영역 */}
+            <Box
+              component="section"
+              aria-label="form-heading"
+              sx={(theme) => ({
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+                my: 12,
+                [theme.breakpoints.up("tablet")]: {
+                  my: 24,
+                  gap: 22,
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  my: 30,
+                },
+              })}
+            >
+              <ProductForm productName="Battery" />
+            </Box>
           </Box>
         </Box>
       </Box>

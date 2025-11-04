@@ -224,9 +224,8 @@ const solutionMainImageStyle = {
   },
 
   [baseTheme.breakpoints.up("desktop")]: {
-    width: "60%",
+    width: "100%",
     maxWidth: "100%",
-    top: "80px",
   },
 };
 
@@ -314,7 +313,7 @@ const theme = createTheme({
         left: 0,
         right: 0,
         mx: "auto",
-        my: "auto",
+        my: "0",
         maxWidth: "90%",
         width: "100%",
       },
