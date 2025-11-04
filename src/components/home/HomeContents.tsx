@@ -28,9 +28,9 @@ const HomeContents = ({
           left: isMobile ? "50%" : "7rem",
           transform: isMobile ? "translate(-50%, -50%)" : "none",
           textAlign: isMobile ? "center" : "left",
-          pl: "1.75rem",
           m: 0,
-          width: isMobile ? "80%" : "auto",
+          width: isMobile ? "90%" : "100%",
+          pl: isMobile ? "0" : "1.75rem",
         }}
       >
         <Typography
@@ -56,6 +56,8 @@ const HomeContents = ({
             textAlign: isMobile ? "center" : "left",
             color: "#fff",
             whiteSpace: "pre-line",
+            fontFamily: "Freesentation-5-Medium",
+            wordBreak: "keep-all",
           }}
         >
           {description}
@@ -69,6 +71,8 @@ const HomeContents = ({
             textAlign: isMobile ? "center" : "left",
             color: "#fff",
             whiteSpace: "pre-line",
+            fontFamily: "Freesentation-5-Medium",
+            wordBreak: "keep-all",
           }}
         >
           {description_sub}
