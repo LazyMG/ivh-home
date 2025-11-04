@@ -38,8 +38,15 @@ declare module "@mui/material/styles" {
 
       // Newsletter 리스트 스타일
       newsletterListContainer: SxProps<MuiTheme>;
+      newsletterLogoContainer: SxProps<MuiTheme>;
+      newsletterIVHLogo: SxProps<MuiTheme>;
+      newsletterLinkedinIcon: SxProps<MuiTheme>;
+      newsletterContentContainer: SxProps<MuiTheme>;
+      newsletterDateFont: SxProps<MuiTheme>;
+      newsletterDateDetailContainer: SxProps<MuiTheme>;
+      newsletterDetailButton: SxProps<MuiTheme>;
+
       newsletterItem: SxProps<MuiTheme>;
-      newsletterItemImage: SxProps<MuiTheme>;
       newsletterItemContent: SxProps<MuiTheme>;
       homeNewsletterContainer: SxProps<MuiTheme>;
     };
@@ -80,8 +87,15 @@ declare module "@mui/material/styles" {
 
       // Newsletter 리스트 스타일
       newsletterListContainer?: SxProps<MuiTheme>;
+      newsletterLogoContainer?: SxProps<MuiTheme>;
+      newsletterIVHLogo?: SxProps<MuiTheme>;
+      newsletterLinkedinIcon?: SxProps<MuiTheme>;
+      newsletterContentContainer?: SxProps<MuiTheme>;
+      newsletterDateFont?: SxProps<MuiTheme>;
+      newsletterDateDetailContainer?: SxProps<MuiTheme>;
+      newsletterDetailButton?: SxProps<MuiTheme>;
+
       newsletterItem?: SxProps<MuiTheme>;
-      newsletterItemImage?: SxProps<MuiTheme>;
       newsletterItemContent?: SxProps<MuiTheme>;
       homeNewsletterContainer?: SxProps<MuiTheme>;
     };

@@ -29,23 +29,12 @@ const HomeContents = ({
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        transform: isMobile ? "translate(0, -50%)" : "0",
-        textAlign: isMobile ? "center" : "left",
+        transform: isMobile ? "translate(-50%, -50%)" : "none",
         alignItems: isMobile ? "center" : "flex-end",
         justifyContent: "center",
-        boxSizing: "border-box",
-        pl: isMobile ? "28px" : "0",
-        pr: isMobile ? "28px" : "0",
       }}
     >
-      <Box
-        component="div"
-        sx={{
-          width: isMobile ? "100%" : "42%",
-          mr: isMobile ? "0" : "8%",
-          boxSizing: "border-box",
-        }}
-      >
+      <Box component="div" sx={{ width: "42%", marginRight: "8%" }}>
         <Box component="div" sx={{ width: "100%" }}>
           <Typography
             component="p"
@@ -61,30 +50,25 @@ const HomeContents = ({
             {title}
           </Typography>
         </Box>
-        <Box
-          component="div"
-          sx={{
-            width: "100%",
-          }}
-        >
+        <Box component="div" sx={{ width: "100%" }}>
           <Typography
-            component="span"
+            component="p"
             sx={{
               fontSize: isMobile ? "16px" : "18px",
               lineHeight: "1.75rem",
               color: "#fff",
-              whiteSpace: isMobile ? "normal" : "pre-line",
+              whiteSpace: "pre-line",
             }}
           >
             {description}
           </Typography>
           <Typography
-            component="span"
+            component="p"
             sx={{
               fontSize: isMobile ? "16px" : "18px",
               lineHeight: "1.75rem",
               color: "#fff",
-              whiteSpace: isMobile ? "normal" : "pre-line",
+              whiteSpace: "pre-line",
             }}
           >
             {description_sub}

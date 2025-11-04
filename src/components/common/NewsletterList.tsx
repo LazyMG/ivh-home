@@ -1,74 +1,115 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Divider, Button } from "@mui/material";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import newsLogo from "/images/home/newsletter_ivh_logo.png";
+import linkedinLogo from "/images/home/newsletter_linkedin_logo.png";
 
 export interface NewsletterItem {
   title: string;
   content: string;
-  img_url: string;
   link_url: string;
+  date: string;
 }
 
 interface NewsletterListProps {
   items: NewsletterItem[];
 }
-
 const NewsletterList = ({ items }: NewsletterListProps) => {
+  // 상위 4개만 표시
+  const displayItems = items.slice(0, 4);
+
   return (
     <Box
       sx={(theme) => ({
         ...theme.customStyles.newsletterListContainer,
       })}
     >
-      {items.map((item, index) => (
+      {/* 최상단: 로고와 링크드인 아이콘 */}
+      <Box
+        sx={(theme) => ({
+          ...theme.customStyles.newsletterLogoContainer,
+        })}
+      >
+        {/* 로고 */}
         <Box
-          key={index}
+          sx={(theme) => ({
+            ...theme.customStyles.newsletterIVHLogo,
+          })}
+        >
+          <img
+            src={newsLogo}
+            alt="IVH Logo"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Box>
+
+        {/* 링크드인 아이콘 */}
+        <Box
           component="a"
-          href={item.link_url}
+          href="https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image"
           target="_blank"
           rel="noopener noreferrer"
           sx={(theme) => ({
-            ...theme.customStyles.newsletterItem,
+            ...theme.customStyles.newsletterLinkedinIcon,
           })}
         >
-          {/* 이미지 영역 */}
-          <Box
-            component="img"
-            src={item.img_url}
-            alt={item.title}
-            sx={(theme) => ({
-              ...theme.customStyles.newsletterItemImage,
-            })}
+          <img
+            src={linkedinLogo}
+            alt="LinkedIn"
+            style={{ width: "100%", height: "100%" }}
           />
+        </Box>
+      </Box>
 
-          {/* 텍스트 영역 */}
-          <Box
+      {/* 구분선 */}
+      <Divider
+        sx={{
+          borderColor: "#ffffff",
+        }}
+      />
+
+      {/* 뉴스레터 아이템 목록 */}
+      {displayItems.map((item, index) => (
+        <Box key={index}>
+          {/* 제목 (2줄만 표시) */}
+          <Typography
+            variant="newsletterItemTitleFont"
+            component="h3"
             sx={(theme) => ({
-              ...theme.customStyles.newsletterItemContent,
+              ...theme.customStyles.newsletterContentContainer,
             })}
           >
+            {item.title}
+          </Typography>
+
+          {/* 하단: 날짜와 자세히 보기 버튼 */}
+          <Box
+            sx={(theme) => ({
+              ...theme.customStyles.newsletterDateDetailContainer,
+            })}
+          >
+            {/* 좌측: 날짜 */}
             <Typography
-              variant="newsletterItemTitleFont"
-              component="h3"
-              sx={{
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-              }}
+              sx={(theme) => ({
+                ...theme.customStyles.newsletterDateFont,
+              })}
             >
-              {item.title}
+              {item.date}
             </Typography>
-            <Typography
-              variant="newsletterItemContentFont"
-              component="p"
-              sx={{
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                display: "-webkit-box",
-                WebkitLineClamp: 3,
-                WebkitBoxOrient: "vertical",
-              }}
+
+            {/* 우측: 자세히 보기 버튼 */}
+            <Button
+              component="a"
+              href={item.link_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="contained"
+              sx={(theme) => ({
+                ...theme.customStyles.newsletterDetailButton,
+              })}
+              endIcon={<PlayArrowIcon />}
             >
-              {item.content}
-            </Typography>
+              자세히 보기
+            </Button>
           </Box>
         </Box>
       ))}
