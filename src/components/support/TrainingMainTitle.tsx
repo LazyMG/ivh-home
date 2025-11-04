@@ -17,21 +17,24 @@ interface TrainingMainTitleProps {
 const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
   return (
     <Typography
-      sx={{
-        ml: "10%",
+      sx={(theme) => ({
         wordBreak: "keep-all",
         zIndex: 1,
         position: "relative",
         width: "fit-content",
-        fontFamily: "Freesentation-6-SemiBold",
-      }}
+        fontFamily: "Freesentation-7-Bold",
+        ml: 3,
+        [theme.breakpoints.up("tablet")]: {
+          ml: "10%",
+        },
+      })}
     >
       {titleList.map((title, index) => (
         <Typography
           key={index}
           component="span"
           sx={(theme) => ({
-            fontSize: "18px",
+            fontSize: "24px",
             [theme.breakpoints.up("tablet")]: {
               fontSize: "48px",
             },

@@ -47,10 +47,10 @@
     {
       "title": "COMPANY",
       "items": [
-        { "name": "CEO" },
-        { "name": "History" },
-        { "name": "Partner" },
-        { "name": "Contact" }
+        { "name": "CEO", "path": "/company/ceo" },
+        { "name": "History", "path": "/company/history" },
+        { "name": "Partner", "path": "/company/partner" },
+        { "name": "Contact", "path": "/company/contact" }
       ]
     }
   ]

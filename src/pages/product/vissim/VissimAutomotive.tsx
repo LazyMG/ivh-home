@@ -10,6 +10,7 @@ import vissim_automotive from "../../../data/product/vissim-automotive.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
+import ProductForm from "../../../components/product/ProductForm";
 
 const VissimAutomotive = () => {
   const seoData = useSEO("product/vissim/vissimautomotive", vissim_automotive);
@@ -98,6 +99,27 @@ const VissimAutomotive = () => {
                 />
               ))}
             </Stack>
+
+            {/** 하단 폼 영역 */}
+            <Box
+              component="section"
+              aria-label="form-heading"
+              sx={(theme) => ({
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+                my: 12,
+                [theme.breakpoints.up("tablet")]: {
+                  my: 24,
+                  gap: 22,
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  my: 30,
+                },
+              })}
+            >
+              <ProductForm productName="Vissim Automotive" />
+            </Box>
           </Box>
         </Box>
       </Box>

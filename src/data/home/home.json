@@ -2,7 +2,7 @@
   "slides": [
     {
       "title": "iVH Suite",
-      "description": "iVH Suite는 FMI, SSP, Open X 표준을 준수하는 성능 및 평가 도구입니다.",
+      "description": "iVH Suite는 FMI, SSP, Open X 표준을 준수하는 성능 예측 및 평가 도구입니다.",
       "description_sub": "사용자 친화적이고 효육적인 설계를 지원합니다.",
       "navigate_url": "/home",
       "imageUrl": "/images/home/home.jpg"

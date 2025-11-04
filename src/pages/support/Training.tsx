@@ -14,6 +14,9 @@ import SEO from "../../common/SEO";
 import { useEffect, useState } from "react";
 import { reservationService } from "../../service/reservationService";
 import CustomSnackbar from "../../components/support/CustomSnackbar";
+import TraingCurriculumTable from "../../components/support/TrainingCurriculumTable";
+
+import curriculums from "../../data/support/curriculum.json";
 
 // // 임시 교육 일정 데이터
 // const reservations: ReservationResponse[] = [
@@ -74,6 +77,8 @@ const Training = () => {
   const [submitStatus, setSubmitStatus] = useState<"error" | null>(null);
   const [snackbarMessage, setSnackbarMessage] = useState("");
 
+  const { training_curriculums } = curriculums;
+
   const handleCloseSnackbar = () => {
     setSubmitStatus(null);
   };
@@ -104,12 +109,15 @@ const Training = () => {
       {/** Training 페이지 타이틀 영역  */}
       <Box
         display="flex"
-        sx={{
-          mt: 24,
-          mb: 16,
+        sx={(theme) => ({
           flexDirection: "column",
           position: "relative",
-        }}
+          my: 12,
+          [theme.breakpoints.up("tablet")]: {
+            mt: 24,
+            mb: 16,
+          },
+        })}
       >
         <TrainingMainTitle titleList={training_title} />
         <Divider
@@ -165,6 +173,7 @@ const Training = () => {
                   wordBreak: "keep-all",
                   fontFamily: "Freesentation-5-Medium",
                   fontSize: "20px",
+                  whiteSpace: "pre-line",
                 }}
               >
                 {content}
@@ -184,8 +193,11 @@ const Training = () => {
           }}
         >
           <GradientSectionLabel labelText="Curriculum" />
+          <TraingCurriculumTable
+            reservationList={apiReservationList}
+            curriculums={training_curriculums}
+          />
         </Box>
-        {/* <TraingCurriculumTable curriculums={training_curriculums} /> */}
 
         {/** Schedule 섹션 */}
         <Box
