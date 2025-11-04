@@ -35,6 +35,20 @@ declare module "@mui/material/styles" {
       supportTextContainer: SxProps<MuiTheme>;
       supportImageContainer: SxProps<MuiTheme>;
       supportLink: SxProps<MuiTheme>;
+
+      // Newsletter 리스트 스타일
+      newsletterListContainer: SxProps<MuiTheme>;
+      newsletterLogoContainer: SxProps<MuiTheme>;
+      newsletterIVHLogo: SxProps<MuiTheme>;
+      newsletterLinkedinIcon: SxProps<MuiTheme>;
+      newsletterContentContainer: SxProps<MuiTheme>;
+      newsletterDateFont: SxProps<MuiTheme>;
+      newsletterDateDetailContainer: SxProps<MuiTheme>;
+      newsletterDetailButton: SxProps<MuiTheme>;
+
+      newsletterItem: SxProps<MuiTheme>;
+      newsletterItemContent: SxProps<MuiTheme>;
+      homeNewsletterContainer: SxProps<MuiTheme>;
     };
   }
 
@@ -70,6 +84,20 @@ declare module "@mui/material/styles" {
       supportTextContainer?: SxProps<MuiTheme>;
       supportImageContainer?: SxProps<MuiTheme>;
       supportLink?: SxProps<MuiTheme>;
+
+      // Newsletter 리스트 스타일
+      newsletterListContainer?: SxProps<MuiTheme>;
+      newsletterLogoContainer?: SxProps<MuiTheme>;
+      newsletterIVHLogo?: SxProps<MuiTheme>;
+      newsletterLinkedinIcon?: SxProps<MuiTheme>;
+      newsletterContentContainer?: SxProps<MuiTheme>;
+      newsletterDateFont?: SxProps<MuiTheme>;
+      newsletterDateDetailContainer?: SxProps<MuiTheme>;
+      newsletterDetailButton?: SxProps<MuiTheme>;
+
+      newsletterItem?: SxProps<MuiTheme>;
+      newsletterItemContent?: SxProps<MuiTheme>;
+      homeNewsletterContainer?: SxProps<MuiTheme>;
     };
   }
 
@@ -90,6 +118,8 @@ declare module "@mui/material/styles" {
     contactProductsLinkFont: React.CSSProperties;
     supportTitleFont: React.CSSProperties;
     supportTextFont: React.CSSProperties;
+    newsletterItemTitleFont: React.CSSProperties;
+    newsletterItemContentFont: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
@@ -109,6 +139,8 @@ declare module "@mui/material/styles" {
     contactProductsLinkFont?: React.CSSProperties;
     supportTitleFont?: React.CSSProperties;
     supportTextFont?: React.CSSProperties;
+    newsletterItemTitleFont?: React.CSSProperties;
+    newsletterItemContentFont?: React.CSSProperties;
   }
 
   interface BreakpointOverrides {
@@ -141,5 +173,7 @@ declare module "@mui/material/Typography" {
     contactProductsLinkFont: true;
     supportTitleFont: true;
     supportTextFont: true;
+    newsletterItemTitleFont: true;
+    newsletterItemContentFont: true;
   }
 }
