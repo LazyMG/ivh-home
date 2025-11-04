@@ -3,6 +3,14 @@ body {
   padding: 0;
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: "Freesentation-1-Thin";
   src: url("/fonts/Freesentation-1Thin.ttf") format("truetype");

@@ -1,11 +1,24 @@
 import { Box, CssBaseline } from "@mui/material";
-import bgImg from "/images/home/home.jpg";
-import HomeContents from "../components/home/HomeContents";
+
 import NewsletterList from "../components/common/NewsletterList";
 import newsletterData from "../data/newsletter/newsletter.json";
 import SEO from "../common/SEO";
+import { useEffect } from "react";
+import "../App.css";
+import CardSlide from "../components/home/CardSlide";
+import BackgroundBox from "../components/home/BackgroundBox";
 
 const Home = () => {
+  useEffect(() => {
+    // 컴포넌트 마운트 시 body에 클래스 추가
+    document.body.classList.add("hide-scrollbar");
+
+    // 컴포넌트 언마운트 시 body에서 클래스 제거 (클린업 함수)
+    return () => {
+      document.body.classList.remove("hide-scrollbar");
+    };
+  }, []);
+
   return (
     <>
       <SEO
@@ -28,22 +41,6 @@ const Home = () => {
         }}
       >
         <Box
-          component="img"
-          src={bgImg}
-          alt="home background"
-          sx={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            objectPosition: "center",
-            objectFit: "cover",
-            zIndex: 0,
-            userSelect: "none",
-            pointerEvents: "none",
-          }}
-        />
-
-        <Box
           sx={{
             position: "relative",
             width: "100%",
@@ -52,7 +49,10 @@ const Home = () => {
           }}
         >
           {/* 콘텐츠 */}
-          <HomeContents />
+          {/* <CardSlide /> */}
+          <BackgroundBox>
+            <CardSlide />
+          </BackgroundBox>
         </Box>
       </Box>
 
