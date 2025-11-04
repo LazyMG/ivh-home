@@ -10,11 +10,18 @@ const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
+  console.log("location", location);
+
   // 어떤 메인 메뉴가 클릭되어 열려있는지
   const [openMainMenu, setOpenMainMenu] = useState<string | null>(null);
 
   // 1단계 서브메뉴 중 어떤 것이 클릭되었는지
   const [openLevel1Menu, setOpenLevel1Menu] = useState<string | null>(null);
+
+  useEffect(() => {
+    setOpenMainMenu(location.state?.footerOpenMenu || null);
+    setOpenLevel1Menu(location.state?.footerLevel1Menu || null);
+  }, [location.state]);
 
   // 페이지 이동 시 메뉴 닫기
   useEffect(() => {
@@ -59,7 +66,8 @@ const Header = () => {
       sx={{
         position: isHomePage ? "fixed" : "relative",
         width: "100%",
-        zIndex: isHomePage ? 1000 : 0,
+        // zIndex: isHomePage ? 1000 : 0,
+        zIndex: 1000,
       }}
     >
       <AppBar
