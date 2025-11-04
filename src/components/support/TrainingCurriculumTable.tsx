@@ -13,6 +13,8 @@ type CurriculumType = {
   };
 };
 
+const BLANK_TEXT = "-";
+
 {
   /** 커리큘럼 섹션에 사용되는 테이블 컴포넌트 */
 }
@@ -161,7 +163,11 @@ const TraingCurriculumTable = ({
                 <td>
                   {currentMonthData ? (
                     currentMonthData.isClosed ? (
-                      <Typography fontSize="14px" color="error">
+                      <Typography
+                        fontSize="14px"
+                        color="error"
+                        fontWeight="bold"
+                      >
                         마감
                       </Typography>
                     ) : (
@@ -170,13 +176,17 @@ const TraingCurriculumTable = ({
                       </Typography>
                     )
                   ) : (
-                    "-"
+                    BLANK_TEXT
                   )}
                 </td>
                 <td>
                   {nextMonthData ? (
                     nextMonthData.isClosed ? (
-                      <Typography fontSize="14px" color="error">
+                      <Typography
+                        fontSize="14px"
+                        color="error"
+                        fontWeight="bold"
+                      >
                         마감
                       </Typography>
                     ) : (
@@ -185,7 +195,7 @@ const TraingCurriculumTable = ({
                       </Typography>
                     )
                   ) : (
-                    "-"
+                    BLANK_TEXT
                   )}
                 </td>
               </tr>

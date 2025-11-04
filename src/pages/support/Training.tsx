@@ -173,6 +173,7 @@ const Training = () => {
                   wordBreak: "keep-all",
                   fontFamily: "Freesentation-5-Medium",
                   fontSize: "20px",
+                  whiteSpace: "pre-line",
                 }}
               >
                 {content}
