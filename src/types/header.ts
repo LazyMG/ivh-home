@@ -2,6 +2,7 @@
 export interface MenuItem {
   name: string;
   path?: string;
+  description?: string; // 메뉴 설명 (프리뷰에 표시)
   items?: MenuItem[]; // 2단계 메뉴 (클릭 시 표시)
   subMenu?: MenuItem[]; // 3단계+ 메뉴 (호버 시 표시)
 }

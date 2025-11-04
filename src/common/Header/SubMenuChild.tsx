@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import type { MenuItem } from "../../types/header";
 import { useState } from "react";
+import { MenuHoverProgress } from "./MenuHoverProgress";
+import { useMenuHoverPreview } from "../../hooks/useMenuHoverPreview";
+import { previewDurations } from "./previewConstants";
 
 interface SubMenuChildProps {
   parentItem?: MenuItem;
@@ -8,6 +11,10 @@ interface SubMenuChildProps {
   navigate: (path: string) => void;
   level: number; // 현재 레벨 (2부터 시작)
   onHoverChange?: (itemName: string | null) => void;
+  onPreviewItemChange?: (
+    item: MenuItem | null,
+    position?: { x: number; y: number }
+  ) => void;
 }
 
 export const SubMenuChild = ({
@@ -16,8 +23,21 @@ export const SubMenuChild = ({
   navigate,
   level,
   onHoverChange,
+  onPreviewItemChange,
 }: SubMenuChildProps) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+
+  // 호버 프리뷰 커스텀 훅 사용
+  const {
+    hoveredItemForPreview,
+    itemRefs,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleClick,
+  } = useMenuHoverPreview({
+    onPreviewItemChange,
+    hoverDuration: previewDurations.hover,
+  });
 
   if (!parentItem) return null;
 
@@ -71,34 +91,66 @@ export const SubMenuChild = ({
       >
         {displayItems.map((item) => {
           const hasSubMenu = item.subMenu;
+          const isHoveredForPreview = hoveredItemForPreview === item.name;
 
           return (
-            <Typography
+            <Box
               key={item.name}
-              onMouseEnter={() => {
-                if (hasSubMenu) {
-                  setHoveredItem(item.name);
-                  onHoverChange?.(item.name);
-                }
-              }}
-              onClick={() => navigate(item.path || "")}
               sx={{
-                color: isHomePage
-                  ? "rgba(255,255,255,0.7)" // 기본 상태 - 70% 투명도
-                  : "rgba(0,0,0,0.6)",
-                fontSize: "14px",
-                cursor: "pointer",
-                padding: "8px 12px",
-                borderRadius: "4px",
-                "&:hover": {
-                  color: isHomePage ? "rgba(255,255,255,1)" : "#000",
-                  textDecoration: "underline",
-                  transform: "translateX(4px)",
-                },
+                position: "relative",
               }}
             >
-              {item.name}
-            </Typography>
+              <Typography
+                ref={(el) => {
+                  itemRefs.current[item.name] = el;
+                }}
+                onMouseEnter={() => {
+                  if (hasSubMenu) {
+                    setHoveredItem(item.name);
+                    onHoverChange?.(item.name);
+                  }
+                  // path가 있는 모든 메뉴 아이템에 대해 프리뷰 표시
+                  if (item.path) {
+                    handleMouseEnter(item);
+                  }
+                }}
+                onMouseLeave={() => {
+                  // path가 있는 메뉴 아이템에서 벗어날 때 프리뷰 숨김
+                  if (item.path) {
+                    handleMouseLeave();
+                  }
+                }}
+                onClick={() => {
+                  handleClick();
+                  navigate(item.path || "");
+                }}
+                sx={{
+                  color: isHomePage
+                    ? "rgba(255,255,255,0.7)" // 기본 상태 - 70% 투명도
+                    : "rgba(0,0,0,0.6)",
+                  fontSize: "14px",
+                  cursor: "pointer",
+                  padding: "8px 12px",
+                  borderRadius: "4px",
+                  "&:hover": {
+                    color: isHomePage ? "rgba(255,255,255,1)" : "#000",
+                    textDecoration: "underline",
+                    transform: "translateX(4px)",
+                  },
+                }}
+              >
+                {item.name}
+              </Typography>
+              {item.path && (
+                <MenuHoverProgress
+                  visible={isHoveredForPreview}
+                  duration={previewDurations.progress}
+                  size={20}
+                  strokeWidth={2}
+                  color={isHomePage ? "#ffffff" : "#000000"}
+                />
+              )}
+            </Box>
           );
         })}
       </Box>
@@ -116,6 +168,7 @@ export const SubMenuChild = ({
             navigate={navigate}
             level={level + 1}
             onHoverChange={onHoverChange}
+            onPreviewItemChange={onPreviewItemChange}
           />
         </Box>
       )}

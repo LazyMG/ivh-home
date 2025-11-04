@@ -9,6 +9,13 @@ export const headerColors = {
       active: "#fff",
       disabled: "#6b7280",
     },
+    preview: {
+      background: "#2a2a2af2",
+      text: "#ffffff",
+      border: "#ffffff1a",
+      color: "#ffffff",
+      borderColor: "#ffffff1a",
+    },
   },
   default: {
     background: "#ffffff",
@@ -19,6 +26,13 @@ export const headerColors = {
     submenu: {
       active: "#343538",
       disabled: "#9ca3af",
+    },
+    preview: {
+      background: "#fffffff2",
+      text: "#000000",
+      border: "#0000001a",
+      color: "#000000",
+      borderColor: "#0000001a",
     },
   },
 } as const;
