@@ -10,6 +10,7 @@ import vtd_simulate from "../../../data/product/vtd-simulate.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
+import ProductForm from "../../../components/product/ProductForm";
 
 const VTDSimulate = () => {
   const { isMobile } = useBreakpoint();
@@ -101,6 +102,27 @@ const VTDSimulate = () => {
                 />
               ))}
             </Stack>
+
+            {/** 하단 폼 영역 */}
+            <Box
+              component="section"
+              aria-label="form-heading"
+              sx={(theme) => ({
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+                my: 12,
+                [theme.breakpoints.up("tablet")]: {
+                  my: 24,
+                  gap: 22,
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  my: 30,
+                },
+              })}
+            >
+              <ProductForm productName="VTD FULLSTACK" />
+            </Box>
           </Box>
         </Box>
       </Box>
