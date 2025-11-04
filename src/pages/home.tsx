@@ -1,4 +1,7 @@
 import { Box, CssBaseline } from "@mui/material";
+
+import NewsletterList from "../components/common/NewsletterList";
+import newsletterData from "../data/newsletter/newsletter.json";
 import SEO from "../common/SEO";
 import { useEffect } from "react";
 import "../App.css";
@@ -51,6 +54,16 @@ const Home = () => {
             <CardSlide />
           </BackgroundBox>
         </Box>
+      </Box>
+
+      {/* Newsletter 섹션 */}
+      <Box
+        component="section"
+        sx={(theme) => ({
+          ...theme.customStyles.homeNewsletterContainer,
+        })}
+      >
+        <NewsletterList items={newsletterData.items} />
       </Box>
     </>
   );
