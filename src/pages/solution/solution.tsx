@@ -12,7 +12,8 @@ const Solution = () => {
       component="main"
       sx={(theme) => ({
         ...theme.customStyles.solutionMainContainer,
-        minHeight: "100vh",
+        minHeight: isMobile ? "calc(100vh - 66px)" : "calc(100vh - 86px)",
+        // minHeight: "100vh",
         position: "relative",
       })}
     >
