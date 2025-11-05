@@ -10,7 +10,7 @@ import BreadScrum from "../../../common/BreadScrum";
 import SEO from "../../../common/SEO";
 import battery from "../../../data/product/battery.json";
 import ScrollButton from "../../../common/ScrollButton";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const Battery = () => {
   const seoData = useSEO("product/dymola/battery", battery);
@@ -117,7 +117,7 @@ const Battery = () => {
                 },
               })}
             >
-              <ProductForm productName="Battery" />
+              <ProductBottom productName="Battery" />
             </Box>
           </Box>
         </Box>

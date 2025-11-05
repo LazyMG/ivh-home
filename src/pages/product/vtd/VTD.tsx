@@ -7,7 +7,7 @@ import vtd from "../../../data/product/vtd.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const VTD = () => {
   const seoData = useSEO("product/vtd", vtd);
@@ -85,7 +85,7 @@ const VTD = () => {
               },
             })}
           >
-            <ProductForm productName="VTD" />
+            <ProductBottom productName="VTD" />
           </Box>
         </Box>
       </Box>
