@@ -1,6 +1,5 @@
 import { Modal, Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useEffect, useState } from "react";
 
 const ChatModal = ({
@@ -14,7 +13,6 @@ const ChatModal = ({
   onCloseHandler: (handler: () => void) => void;
   children: React.ReactNode;
 }) => {
-  const { isMobile } = useBreakpoint();
   const [isClosing, setIsClosing] = useState(false);
 
   // open이 false가 되면 isClosing도 false로 리셋
@@ -49,6 +47,7 @@ const ChatModal = ({
         alignItems: { xs: "center", sm: "flex-end" },
         justifyContent: { xs: "center", sm: "flex-end" },
         pointerEvents: "none",
+        border: "none",
       }}
       BackdropProps={{
         sx: {
@@ -58,6 +57,11 @@ const ChatModal = ({
     >
       <Box
         sx={{
+          display: "flex",
+          flexDirection: "column",
+          outline: "none",
+          pointerEvents: "auto",
+          backgroundColor: "#fff",
           position: "fixed",
           // 모바일 (0~845px): 전체 화면
           top: { mobilePortrait: 0, mobileLandscape: 0, tablet: "auto" },
@@ -83,27 +87,15 @@ const ChatModal = ({
             tablet: "80vh",
             desktop: "80vh",
           },
-          backgroundColor: "#fff",
           borderRadius: {
             mobilePortrait: 0,
             mobileLandscape: 0,
             tablet: "16px",
             desktop: "16px",
           },
-          boxShadow: {
-            mobilePortrait: "none",
-            mobileLandscape: "none",
-            tablet: "0 -4px 20px rgba(0, 0, 0, 0.15)",
-            desktop: "0 -4px 20px rgba(0, 0, 0, 0.15)",
-          },
-          display: "flex",
-          flexDirection: "column",
-          pointerEvents: "auto",
           // 닫힐 때와 열릴 때 애니메이션 분리
           animation: isClosing
             ? "slideDown 0.3s ease-out forwards"
-            : isMobile
-            ? "slideInFromBottom 0.3s ease-out"
             : "slideUp 0.3s ease-out",
           "@keyframes slideUp": {
             from: {
@@ -125,25 +117,17 @@ const ChatModal = ({
               opacity: 0,
             },
           },
-          "@keyframes slideInFromBottom": {
-            from: {
-              transform: "translateY(100%)",
-            },
-            to: {
-              transform: "translateY(0)",
-            },
-          },
         }}
       >
         {/* 헤더 */}
         <Box
           sx={{
-            padding: "16px 20px",
-            borderBottom: "1px solid #e0e0e0",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             backgroundColor: "#f8f9fa",
+            padding: "16px 20px",
+            borderBottom: "1px solid #e0e0e0",
           }}
         >
           <Box sx={{ fontWeight: 600, fontSize: "16px" }}>고객 지원</Box>

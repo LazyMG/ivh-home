@@ -14,9 +14,6 @@ const ShowQuestionButton = ({
   return (
     <Box
       sx={{
-        display: "flex",
-        justifyContent: "flex-start",
-        marginBottom: "12px",
         animation: "fadeIn 0.3s ease-in",
         "@keyframes fadeIn": {
           from: { opacity: 0, transform: "translateY(10px)" },
@@ -28,6 +25,7 @@ const ShowQuestionButton = ({
         onClick={onClick}
         startIcon={<QuestionAnswerIcon />}
         sx={{
+          width: "100%",
           padding: "10px 16px",
           borderRadius: "16px",
           backgroundColor: "#ffffff",

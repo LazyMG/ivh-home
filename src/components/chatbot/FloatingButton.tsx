@@ -1,8 +1,9 @@
-import { Box, Button } from "@mui/material";
-import ChatIcon from "@mui/icons-material/Chat";
+import { Box } from "@mui/material";
+import chatbotIcon from "/images/home/chatbot.png";
 import { useRef, useState } from "react";
 import ChatModal from "./ChatModal";
 import ChatContent from "./ChatContent";
+import styled from "@emotion/styled";
 
 const FloatingButton = () => {
   const [open, setOpen] = useState(false);
@@ -36,44 +37,16 @@ const FloatingButton = () => {
             desktop: 40,
           },
           zIndex: 1999,
+          // 모바일 클릭시 파란 배경 제거
+          WebkitTapHighlightColor: "transparent",
         }}
       >
-        <Button
+        <FloatingButtonImage
+          src={chatbotIcon}
+          alt="chatbot"
           onClick={handleFloatingButtonClick}
-          sx={{
-            borderRadius: "50%",
-            width: {
-              mobilePortrait: 56,
-              mobileLandscape: 56,
-              tablet: 60,
-              desktop: 60,
-            },
-            height: {
-              mobilePortrait: 56,
-              mobileLandscape: 56,
-              tablet: 60,
-              desktop: 60,
-            },
-            backgroundColor: "#000000",
-            "&:hover": {
-              backgroundColor: "#333333",
-            },
-            minWidth: 0,
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-          }}
-        >
-          <ChatIcon
-            sx={{
-              fontSize: {
-                mobilePortrait: 28,
-                mobileLandscape: 28,
-                tablet: 30,
-                desktop: 30,
-              },
-              color: "white",
-            }}
-          />
-        </Button>
+        />
+        {/* </Button> */}
       </Box>
 
       <ChatModal
@@ -88,5 +61,14 @@ const FloatingButton = () => {
     </>
   );
 };
+
+const FloatingButtonImage = styled("img")`
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+`;
 
 export default FloatingButton;

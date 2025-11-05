@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Message } from "../../types/chatbot";
 import { Box } from "@mui/material";
 import { stripHtmlTags } from "../../utils/htmlUtils";
+import logoBlack from "/images/header/ivh_logo_black.png";
 
 // 메시지 말풍선 컴포넌트
 const MessageBubble = ({ message }: { message: Message }) => {
@@ -48,13 +49,27 @@ const MessageBubble = ({ message }: { message: Message }) => {
         },
       }}
     >
+      {isBot && (
+        <Box
+          sx={{
+            marginRight: "8px",
+          }}
+        >
+          <img
+            src={logoBlack}
+            alt="logo"
+            style={{ width: "36px", height: "18px" }}
+          />
+        </Box>
+      )}
       <Box
         sx={{
           maxWidth: "70%",
           padding: "10px 14px",
           borderRadius: isBot ? "4px 16px 16px 16px" : "16px 4px 16px 16px",
-          backgroundColor: isBot ? "#ffffff" : "#4A90E2",
-          color: isBot ? "#333" : "#fff",
+          backgroundColor: "#ffffff",
+          color: isBot ? "#333" : "#006699",
+          border: isBot ? "none" : "1px solid #006699",
           boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
           wordBreak: "break-word",
           fontSize: "14px",
