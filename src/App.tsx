@@ -49,7 +49,7 @@ import Calendar from "./pages/Calendar";
 import Training from "./pages/support/Training";
 import Support from "./pages/support/Support";
 
-import Header from "./common/header/Header";
+import Header from "./common/Header/Header";
 import PrivacyPolicy from "./components/support/PrivacyPolicy";
 import CEO from "./pages/company/CEO";
 import History from "./pages/company/History";
