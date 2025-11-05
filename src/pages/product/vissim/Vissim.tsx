@@ -11,7 +11,7 @@ import ScrollButton from "../../../common/ScrollButton";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import SEO from "../../../common/SEO";
 import { useSEO } from "../../../hooks/useSEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const Vissim = () => {
   const seoData = useSEO("product/vissim", vissim);
@@ -133,7 +133,7 @@ const Vissim = () => {
               },
             })}
           >
-            <ProductForm productName="Vissim" />
+            <ProductBottom productName="Vissim" />
           </Box>
         </Box>
       </Box>

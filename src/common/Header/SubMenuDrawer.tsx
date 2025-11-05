@@ -43,6 +43,7 @@ export const SubMenuDrawer = ({
         zIndex: 999,
         display: "flex",
         flexDirection: "row",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
       }}
       onClick={(e) => {
         // 빈 공간 클릭 시 닫기

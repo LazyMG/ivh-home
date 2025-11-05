@@ -10,7 +10,7 @@ import vissim_automotive from "../../../data/product/vissim-automotive.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const VissimAutomotive = () => {
   const seoData = useSEO("product/vissim/vissimautomotive", vissim_automotive);
@@ -118,7 +118,7 @@ const VissimAutomotive = () => {
                 },
               })}
             >
-              <ProductForm productName="Vissim Automotive" />
+              <ProductBottom productName="Vissim Automotive" />
             </Box>
           </Box>
         </Box>

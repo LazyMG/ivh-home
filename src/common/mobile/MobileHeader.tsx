@@ -53,7 +53,7 @@ const MobileHeader = () => {
     <>
       {/* 모바일 상단 바 */}
       <AppBar
-        position="sticky"
+        position={isHomePage ? "fixed" : "sticky"}
         sx={{
           backgroundColor: theme.background,
           boxShadow: "none",

@@ -10,7 +10,7 @@ import viswalk from "../../../data/product/viswalk.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const Viswalk = () => {
   const seoData = useSEO("product/viswalk", viswalk);
@@ -118,7 +118,7 @@ const Viswalk = () => {
                 },
               })}
             >
-              <ProductForm productName="Viswalk" />
+              <ProductBottom productName="Viswalk" />
             </Box>
           </Box>
         </Box>
