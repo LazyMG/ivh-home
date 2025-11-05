@@ -19,7 +19,7 @@
                     {
                       "name": "Battery",
                       "path": "/product/dymola/battery",
-                      "preview_img_path": "/images/pages/product/dymola/dymola-card-one.png",
+                      "preview_img_path": "/images/pages/product/battery/battery-preview.png",
                       "description": "복합 시스템 내 배터리 통합 및 성능 분석을 위한 Modelica 기반 시뮬레이션 라이브러리"
                     },
                     {
@@ -87,8 +87,7 @@
                 {
                   "name": "Viswalk",
                   "path": "/product/vissim/viswalk",
-                  "preview_img_path": "/images/pages/product/vissim/vissim-card-viswalk.png",
-                  "description": "현실적인 다중 환경 보행자 시뮬레이션 소프트웨어"
+                  "preview_img_path": "/images/pages/product/vissim/vissim-card-viswalk.png"
                 }
               ]
             },
