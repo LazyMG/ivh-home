@@ -28,7 +28,7 @@ const NewsletterList = () => {
       link_url: item.contentsUrl,
       date: dayjs(item.updatedAt).format("YYYY.MM.DD"),
     }));
-    setNewsletterItems(items);
+    setNewsletterItems(items.slice(0, 4));
   };
 
   useEffect(() => {
