@@ -10,8 +10,6 @@ const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
-  console.log("location", location);
-
   // 어떤 메인 메뉴가 클릭되어 열려있는지
   const [openMainMenu, setOpenMainMenu] = useState<string | null>(null);
 
