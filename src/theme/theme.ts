@@ -213,19 +213,20 @@ const solutionMainImageStyle = {
   top: 0,
   bottom: 0,
   maxWidth: "90%",
-  width: "100%",
+  width: "120%",
 
   [baseTheme.breakpoints.up("mobileLandscape")]: {
     width: "30%",
   },
 
   [baseTheme.breakpoints.up("tablet")]: {
-    width: "60%",
+    width: "120%",
   },
 
   [baseTheme.breakpoints.up("desktop")]: {
-    width: "100%",
-    maxWidth: "100%",
+    // width: "100%",
+    // maxWidth: "100%",
+    top: "-50px",
   },
 };
 
@@ -279,6 +280,7 @@ const theme = createTheme({
     solutionMainContainer: {
       display: "flex",
       flexDirection: "column",
+      boxSizing: "border-box",
       [baseTheme.breakpoints.up("mobilePortrait")]: {
         mt: 0,
       },
@@ -290,7 +292,7 @@ const theme = createTheme({
         flexDirection: "row",
         alignItems: "center",
         padding: "0 2rem",
-        gap: "2rem",
+        // gap: "2rem",
       },
 
       // 태블릿 이상: 기존 레이아웃 (중앙 이미지, 하단 네비)
@@ -326,7 +328,7 @@ const theme = createTheme({
         position: "relative",
         flex: "0 0 50%",
         maxWidth: "50%",
-        width: "50%",
+        width: "80%",
       },
 
       // 태블릿 이상: 기존 중앙 배치
