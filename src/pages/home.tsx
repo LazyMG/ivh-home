@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import "../App.css";
 import CardSlide from "../components/home/CardSlide";
 import BackgroundBox from "../components/home/BackgroundBox";
+import FloatingButton from "../components/chatbot/FloatingButton";
 
 const Home = () => {
   useEffect(() => {
@@ -55,6 +56,7 @@ const Home = () => {
           </BackgroundBox>
         </Box>
       </Box>
+      <FloatingButton />
 
       {/* Newsletter 섹션 */}
       <Box
