@@ -10,7 +10,7 @@ import vtd_fullstack from "../../../data/product/vtd-fullstack.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const VTDFullstack = () => {
   const { isMobile } = useBreakpoint();
@@ -121,7 +121,7 @@ const VTDFullstack = () => {
                 },
               })}
             >
-              <ProductForm productName="VTD SIMULATE" />
+              <ProductBottom productName="VTD SIMULATE" />
             </Box>
           </Box>
         </Box>

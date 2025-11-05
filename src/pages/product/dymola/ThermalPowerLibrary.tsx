@@ -10,7 +10,7 @@ import SEO from "../../../common/SEO";
 import { useSEO } from "../../../hooks/useSEO";
 import thermal from "../../../data/product/thermal.json";
 import ScrollButton from "../../../common/ScrollButton";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const ThermalPowerLibrary = () => {
   const seoData = useSEO("product/dymola/thermalPowerLibrary", thermal);
@@ -118,7 +118,7 @@ const ThermalPowerLibrary = () => {
                 },
               })}
             >
-              <ProductForm productName="Thermal Power Library" />
+              <ProductBottom productName="Thermal Power Library" />
             </Box>
           </Box>
         </Box>

@@ -11,7 +11,7 @@ import til from "../../../data/product/til.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const TIL = () => {
   const seoData = useSEO("product/dymola/til", til);
@@ -128,7 +128,7 @@ const TIL = () => {
                 },
               })}
             >
-              <ProductForm productName="TIL" />
+              <ProductBottom productName="TIL" />
             </Box>
           </Box>
         </Box>

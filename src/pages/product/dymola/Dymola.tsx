@@ -11,7 +11,7 @@ import ScrollButton from "../../../common/ScrollButton";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const Dymola = () => {
   const seoData = useSEO("product/dymola", dymola);
@@ -132,7 +132,7 @@ const Dymola = () => {
               },
             })}
           >
-            <ProductForm productName="Dymola" />
+            <ProductBottom productName="Dymola" />
           </Box>
         </Box>
       </Box>

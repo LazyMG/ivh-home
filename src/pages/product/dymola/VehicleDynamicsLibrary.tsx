@@ -11,7 +11,7 @@ import vehicle from "../../../data/product/vehicle.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const VehicleDynamicsLibrary = () => {
   const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", vehicle);
@@ -119,7 +119,7 @@ const VehicleDynamicsLibrary = () => {
                 },
               })}
             >
-              <ProductForm productName="Vehicle Dynamics Library" />
+              <ProductBottom productName="Vehicle Dynamics Library" />
             </Box>
           </Box>
         </Box>

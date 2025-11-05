@@ -10,7 +10,7 @@ import vtd_create from "../../../data/product/vtd-create.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
-import ProductForm from "../../../components/product/ProductForm";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const VTDCreate = () => {
   const { isMobile } = useBreakpoint();
@@ -118,7 +118,7 @@ const VTDCreate = () => {
                 },
               })}
             >
-              <ProductForm productName="VTD CREATE" />
+              <ProductBottom productName="VTD CREATE" />
             </Box>
           </Box>
         </Box>
