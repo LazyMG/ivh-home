@@ -18,7 +18,7 @@ const Home = () => {
           position: "relative",
           isolation: "isolate",
           // "&::after": {
-          //   content:  '""',
+          //   content:    '""',
           //   position: "absolute",
           //   zIndex: "-1",
           //   inset: "0",
