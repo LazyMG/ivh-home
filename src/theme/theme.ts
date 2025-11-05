@@ -171,6 +171,14 @@ const responsiveFonts = {
     tablet: "16px",
     desktop: "16px",
   },
+  // Newsletter 아이템 제목
+  newsletterItemTitleFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "19px",
+    mobileLandscape: "19px",
+    tablet: "19px",
+    desktop: "19px",
+  },
 };
 
 const getResponsiveFontStyle = (style: {
@@ -262,6 +270,9 @@ const theme = createTheme({
       responsiveFonts["supportTitleFont"]
     ),
     supportTextFont: getResponsiveFontStyle(responsiveFonts["supportTextFont"]),
+    newsletterItemTitleFont: getResponsiveFontStyle(
+      responsiveFonts["newsletterItemTitleFont"]
+    ),
   },
   customStyles: {
     // 솔루션 페이지 (/solution) 메인 컨테이너 스타일
@@ -632,6 +643,104 @@ const theme = createTheme({
       "&:hover": {
         gap: "8px",
       },
+    },
+    homeNewsletterContainer: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#000000",
+      zIndex: 999,
+      [baseTheme.breakpoints.up("desktop")]: {
+        position: "absolute",
+        top: "160px",
+        left: "160px",
+        maxWidth: "380px",
+        border: "1px solid rgba(0, 0, 0, 0.35) ",
+        borderRadius: "12px",
+        boxShadow: "3px 3px 1px rgba(0,0,0,0.15)",
+      },
+    },
+    // Newsletter 리스트 컨테이너 스타일
+    newsletterListContainer: {
+      display: "flex",
+      flexDirection: "column",
+      width: "100%",
+      padding: "28px",
+      gap: "20px",
+    },
+    newsletterLogoContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "100%",
+    },
+
+    newsletterIVHLogo: {
+      height: "36px",
+    },
+    newsletterLinkedinIcon: {
+      width: "36px",
+      height: "36px",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+    },
+    newsletterContentContainer: {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      display: "-webkit-box",
+      WebkitLineClamp: 2,
+      WebkitBoxOrient: "vertical",
+      marginBottom: "16px",
+      minHeight: "3em", // 2줄 높이 확보
+      color: "#ffffff",
+    },
+    newsletterDateDetailContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+
+    newsletterDateFont: {
+      fontSize: "14px",
+      color: "#ffffff",
+      fontStyle: "italic",
+    },
+    newsletterDetailButton: {
+      backgroundColor: "#ffffff",
+      color: "#000000",
+      fontSize: "14px",
+      fontFamily: fontConfig["bold"],
+      borderRadius: "8px",
+      padding: "4px 16px",
+      textTransform: "none",
+      "&:hover": {
+        backgroundColor: "rgba(255, 255, 255, 0.9)",
+      },
+      "& .MuiButton-endIcon": {
+        marginLeft: "4px", // 기본 8px → 4px로 변경
+      },
+    },
+    // Newsletter 개별 아이템 스타일
+    newsletterItem: {
+      display: "flex",
+      flexDirection: "row",
+      maxHeight: "180px",
+      gap: "24px",
+      padding: "24px",
+      backgroundColor: "#ffffff",
+      cursor: "pointer",
+      textDecoration: "none",
+      background: "transparent",
+    },
+    // Newsletter 아이템 콘텐츠 영역 스타일
+    newsletterItemContent: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+      flex: 1,
+      justifyContent: "center",
+      overflow: "hidden",
     },
   },
 });

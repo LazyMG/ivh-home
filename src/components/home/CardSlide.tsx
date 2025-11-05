@@ -41,6 +41,7 @@ const CardSlide = () => {
               sx={{
                 display: "flex",
                 height: "100%",
+                borderRadius: "0px", // 별도로 지정안하면 4px 들어가서 별도로 0px 지정
               }}
             >
               {/* 배경 이미지가 배경에만 있고 카드에는 별도 이미지를 넣는 예시 */}
@@ -48,7 +49,7 @@ const CardSlide = () => {
                 component="img"
                 image={slide.imageUrl}
                 alt="Live from space album cover"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", transform: "scaleX(-1)" }}
               />
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <CardContent sx={{ p: 0 }}>
