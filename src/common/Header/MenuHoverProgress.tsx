@@ -19,15 +19,18 @@ export const MenuHoverProgress = ({
   color = headerColors.home.preview.color,
 }: MenuHoverProgressProps) => {
   const [progress, setProgress] = useState(0);
+  const [shouldShow, setShouldShow] = useState(false);
 
   useEffect(() => {
     if (!visible) {
       setProgress(0);
+      setShouldShow(false);
       return;
     }
 
     // 프로그레스 리셋 및 시작
     setProgress(0);
+    setShouldShow(true);
     const startTime = Date.now();
     let animationFrameId: number;
 
@@ -36,7 +39,12 @@ export const MenuHoverProgress = ({
       const newProgress = Math.min((elapsed / duration) * 100, 100);
       setProgress(newProgress);
 
-      if (newProgress < 100) {
+      if (newProgress >= 100) {
+        // 100% 도달 시 약간의 딜레이 후 사라지게 함
+        setTimeout(() => {
+          setShouldShow(false);
+        }, 100);
+      } else {
         animationFrameId = requestAnimationFrame(updateProgress);
       }
     };
@@ -48,17 +56,18 @@ export const MenuHoverProgress = ({
         cancelAnimationFrame(animationFrameId);
       }
       setProgress(0);
+      setShouldShow(false);
     };
   }, [visible, duration]);
 
-  if (!visible) return null;
+  if (!visible || !shouldShow) return null;
 
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
 
   return (
-    <Fade in={visible} timeout={200}>
+    <Fade in={shouldShow} timeout={200}>
       <Box
         sx={{
           position: "absolute",

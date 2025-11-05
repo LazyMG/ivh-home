@@ -62,14 +62,14 @@ export const SubMenuParents = ({
                 itemRefs.current[item.name] = el;
               }}
               onMouseEnter={() => {
-                // path가 있는 메뉴 아이템에 대해 프리뷰 표시
-                if (item.path) {
+                // description이 있는 메뉴 아이템에 대해 프리뷰 표시
+                if (item.description) {
                   handleMouseEnter(item);
                 }
               }}
               onMouseLeave={() => {
-                // path가 있는 메뉴 아이템에서 벗어날 때 프리뷰 숨김
-                if (item.path) {
+                // description이 있는 메뉴 아이템에서 벗어날 때 프리뷰 숨김
+                if (item.description) {
                   handleMouseLeave();
                 }
               }}
@@ -95,6 +95,7 @@ export const SubMenuParents = ({
                 fontWeight: isActive ? "bold" : "normal",
                 cursor: "pointer",
                 padding: "8px 12px",
+                paddingRight: item.description ? "36px" : "12px", // 프로그레스바 공간 확보
                 borderRadius: "2px",
                 transition: "all 0.2s ease",
                 "&:hover": {
@@ -105,7 +106,7 @@ export const SubMenuParents = ({
             >
               {item.name}
             </Typography>
-            {item.path && (
+            {item.description && (
               <MenuHoverProgress
                 visible={isHoveredForPreview}
                 duration={previewDurations.progress}

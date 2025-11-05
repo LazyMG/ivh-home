@@ -13,27 +13,32 @@
                 {
                   "name": "Dymola",
                   "path": "/product/dymola",
-                  "description": "Modelica 기반의 시뮬레이션 및 분석 도구로, 복잡한 다물리 시스템 모델링을 지원합니다.",
+                  "preview_img_path": "/images/pages/product/dymola/dymola-main.jpg",
+                  "description": "복합 시스템 모델 기반 설계를 위한 물리 모델링 및 시뮬레이션 툴",
                   "subMenu": [
                     {
                       "name": "Battery",
                       "path": "/product/dymola/battery",
-                      "description": "배터리 시스템 모델링 및 시뮬레이션을 위한 전문 라이브러리입니다."
+                      "preview_img_path": "/images/pages/product/dymola/dymola-card-one.png",
+                      "description": "복합 시스템 내 배터리 통합 및 성능 분석을 위한 Modelica 기반 시뮬레이션 라이브러리"
                     },
                     {
                       "name": "TIL",
                       "path": "/product/dymola/til",
-                      "description": "Thermal Interface Library로 열 관리 시스템 설계를 지원합니다."
+                      "preview_img_path": "/images/pages/product/dymola/dymola-card-two.png",
+                      "description": "유연한 구성과 고정밀 시뮬레이션을 지원하는 다분야 시스템 모델링 라이브러리"
                     },
                     {
                       "name": "Thermal Power Library",
                       "path": "/product/dymola/thermalpowerlibrary",
-                      "description": "열전력 시스템 모델링을 위한 종합 라이브러리입니다."
+                      "preview_img_path": "/images/pages/product/dymola/dymola-card-three.png",
+                      "description": "열반전 시스템 설계 및 최적화를 위한 통합 시뮬레이션 라이브러리"
                     },
                     {
                       "name": "Vehicle Dynamics Library",
                       "path": "/product/dymola/vehicledynamicslibrary",
-                      "description": "차량 동역학 시뮬레이션을 위한 전문 라이브러리입니다."
+                      "preview_img_path": "/images/pages/product/dymola/dymola-card-four.png",
+                      "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
                     }
                   ]
                 },
@@ -44,39 +49,46 @@
             {
               "name": "VTD",
               "path": "/product/vtd",
-              "description": "가상 테스트 드라이브 소프트웨어로 자율주행 시뮬레이션을 제공합니다.",
+              "preview_img_path": "/images/pages/product/vtd/vtd-main.jpg",
+              "description": "Virtual Test Drive : 자율주행 가상검증 솔루션",
               "subMenu": [
                 {
                   "name": "VTD CREATE",
                   "path": "/product/vtd/vtdcreate",
-                  "description": "VTD 시뮬레이션을 위한 3D 환경 및 시나리오 생성 도구입니다."
+                  "preview_img_path": "/images/pages/product/vtd/vtd-card-create.png",
+                  "description": "열반전 시스템 설계 및 최적화를 위한 통합 시뮬레이션 라이브러리"
                 },
                 {
                   "name": "VTD SIMULATE",
                   "path": "/product/vtd/vtdsimulate",
-                  "description": "실시간 자율주행 시뮬레이션 엔진입니다."
+                  "preview_img_path": "/images/pages/product/vtd/vtd-card-simulate.png",
+                  "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
                 },
                 {
                   "name": "VTD FULLSTACK",
                   "path": "/product/vtd/vtdfullstack",
-                  "description": "VTD의 전체 기능을 포함한 통합 솔루션입니다."
+                  "preview_img_path": "/images/pages/product/vtd/vtd-card-fullstack.png",
+                  "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
                 }
               ]
             },
             {
               "name": "Vissim",
               "path": "/product/vissim",
-              "description": "교통 시뮬레이션 소프트웨어로 교통 흐름 분석을 제공합니다.",
+              "preview_img_path": "/images/pages/product/vissim/vissim-main.jpg",
+              "description": "다중 모드 교통 시뮬레이션 소프트웨어",
               "subMenu": [
                 {
                   "name": "Vissim Automotive",
                   "path": "/product/vissim/vissimautomotive",
-                  "description": "자동차 산업을 위한 전문 교통 시뮬레이션 솔루션입니다."
+                  "preview_img_path": "/images/pages/product/vissim/vissim-card-auto.png",
+                  "description": "자동차 테스트 및 교통 시뮬레이션을 위한 전문 솔루션"
                 },
                 {
                   "name": "Viswalk",
                   "path": "/product/vissim/viswalk",
-                  "description": "보행자 시뮬레이션 및 분석 도구입니다."
+                  "preview_img_path": "/images/pages/product/vissim/vissim-card-viswalk.png",
+                  "description": "현실적인 다중 환경 보행자 시뮬레이션 소프트웨어"
                 }
               ]
             },
@@ -102,7 +114,6 @@
         {
           "name": "Services",
           "path": "/product/services",
-          "description": "제품 및 서비스에 대한 종합적인 지원을 제공합니다.",
           "items": []
         }
       ]
@@ -113,60 +124,50 @@
       "subMenu": [
         {
           "name": "Smart Factory",
-          "path": "/solution/smartFactory",
-          "description": "스마트 팩토리 솔루션으로 제조업의 디지털 전환을 지원합니다."
+          "path": "/solution/smartFactory"
         },
         {
           "name": "Mobility",
           "path": "/solution/mobility/multiCommunicateTech",
-          "description": "모빌리티 솔루션으로 자율주행 및 차량 기술 개발을 지원합니다.",
+
           "items": [
             {
               "name": "다중 통신기술 네트워크 로드밸런싱 기술개발",
-              "path": "/solution/mobility/multiCommunicateTech",
-              "description": "다중 통신 기술을 활용한 네트워크 로드밸런싱 기술 개발 솔루션입니다."
+              "path": "/solution/mobility/multiCommunicateTech"
             },
             {
               "name": "AI 운전능력평가 표준화 및 평가 프로세스 개발",
-              "path": "/solution/mobility/aiDrivingAbilityTest",
-              "description": "AI 기반 운전 능력 평가의 표준화 및 평가 프로세스 개발 솔루션입니다."
+              "path": "/solution/mobility/aiDrivingAbilityTest"
             },
             {
               "name": "가상내구로 주행 기술",
-              "path": "/solution/mobility/virtualDurability",
-              "description": "가상 환경에서의 내구성 테스트를 통한 주행 기술 개발 솔루션입니다."
+              "path": "/solution/mobility/virtualDurability"
             },
             {
               "name": "현가 장치 설계 툴 개발",
-              "path": "/solution/mobility/suspensionEquipment",
-              "description": "차량 현가 장치 설계를 위한 전문 툴 개발 솔루션입니다."
+              "path": "/solution/mobility/suspensionEquipment"
             },
             {
               "name": "EV 열관리 설계 기술",
-              "path": "/solution/mobility/ev",
-              "description": "전기차 열관리 시스템 설계를 위한 기술 솔루션입니다."
+              "path": "/solution/mobility/ev"
             }
           ]
         },
         {
           "name": "Home Appliances",
-          "path": "/solution/homeappliance",
-          "description": "가전 제품 개발을 위한 시뮬레이션 및 분석 솔루션입니다."
+          "path": "/solution/homeappliance"
         },
         {
           "name": "Energy",
-          "path": "/solution/energy",
-          "description": "에너지 시스템 설계 및 최적화 솔루션입니다."
+          "path": "/solution/energy"
         },
         {
           "name": "BEMS",
-          "path": "/solution/bems",
-          "description": "Building Energy Management System으로 건물 에너지 관리 솔루션입니다."
+          "path": "/solution/bems"
         },
         {
           "name": "AI Innovation Hub",
-          "path": "/solution/aIinnovationhub",
-          "description": "AI 혁신 허브를 통한 인공지능 기술 개발 및 지원 솔루션입니다."
+          "path": "/solution/aIinnovationhub"
         }
       ]
     },
@@ -175,13 +176,11 @@
       "subMenu": [
         {
           "name": "Training",
-          "path": "/support/training",
-          "description": "제품 및 솔루션에 대한 전문 교육 프로그램을 제공합니다."
+          "path": "/support/training"
         },
         {
           "name": "Support",
-          "path": "/support",
-          "description": "기술 지원 및 고객 서비스를 제공합니다."
+          "path": "/support"
         }
       ]
     },
@@ -190,23 +189,19 @@
       "subMenu": [
         {
           "name": "CEO",
-          "path": "/company/ceo",
-          "description": "CEO 인사말을 확인하실 수 있습니다."
+          "path": "/company/ceo"
         },
         {
           "name": "History",
-          "path": "/company/history",
-          "description": "회사 연혁과 발전 과정을 확인하실 수 있습니다."
+          "path": "/company/history"
         },
         {
           "name": "Partner",
-          "path": "/company/partner",
-          "description": "파트너사 정보를 확인하실 수 있습니다."
+          "path": "/company/partner"
         },
         {
           "name": "Contact",
-          "path": "/company/contact",
-          "description": "연락처 및 위치 정보를 확인하실 수 있습니다."
+          "path": "/company/contact"
         }
       ]
     }
