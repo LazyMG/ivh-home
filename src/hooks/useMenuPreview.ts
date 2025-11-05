@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import type { MenuItem } from "../types/header";
-import { previewDurations } from "../common/Header/previewConstants";
+import { previewDurations } from "../common/header/previewConstants";
 
 interface UseMenuPreviewOptions {
   fadeOutDuration?: number; // 프리뷰 사라지는 애니메이션 시간 (ms)
