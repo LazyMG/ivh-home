@@ -36,7 +36,7 @@ const ChatContent = () => {
         {
           id: "welcome",
           type: "bot",
-          content: "안녕하세요 iVH입니다. 무엇을 도와드릴까요?",
+          content: "안녕하세요 iVH입니다.\n무엇을 도와드릴까요?",
         },
       ]);
 

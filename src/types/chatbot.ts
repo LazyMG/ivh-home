@@ -1,3 +1,4 @@
+// 질문/대답 데이터 리스트 상태
 export interface ChatMessage {
   id: number;
   question: string;
@@ -6,13 +7,7 @@ export interface ChatMessage {
   updatedAt: string;
 }
 
-export interface ChatBubble {
-  id: string;
-  type: "question" | "answer" | "questionList";
-  content: string;
-  isTyping?: boolean;
-}
-
+// 현재 채팅방에 출력된 메시지 리스트 상태
 export interface Message {
   id: string;
   type: "bot" | "user" | "showQuestionButton";

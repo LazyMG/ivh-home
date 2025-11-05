@@ -74,6 +74,7 @@ const MessageBubble = ({ message }: { message: Message }) => {
           wordBreak: "break-word",
           fontSize: "14px",
           lineHeight: "1.5",
+          whiteSpace: "pre-wrap",
         }}
       >
         {displayedText}
