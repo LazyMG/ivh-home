@@ -5,16 +5,16 @@ import api from "./api";
 type NewsStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
 
 interface NewsResponse {
-  author: string;
+  title: string;
   content: string;
+  contentsUrl: string;
+  updatedAt: string;
+  author: string;
   createdAt: string;
   id: number;
   publishedAt: string;
   status: NewsStatus;
   tags: string[];
-  thumbnailUrl: string;
-  title: string;
-  updatedAt: string;
   viewCount: number;
 }
 
