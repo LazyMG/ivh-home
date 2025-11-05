@@ -7,6 +7,9 @@ import youtubeBlack from "/images/header/youtube_black.png";
 import linkedinBlack from "/images/header/linkedin_black.png";
 import { SubMenuParents } from "./SubMenuParents";
 import { SubMenuChild } from "./SubMenuChild";
+import { MenuPreview } from "./MenuPreview";
+import { useMenuPreview } from "../../hooks/useMenuPreview";
+import { previewDurations } from "./previewConstants";
 
 interface SubMenuDrawerProps {
   allMenuItems: MainMenuItem[];
@@ -29,6 +32,15 @@ export const SubMenuDrawer = ({
 }: SubMenuDrawerProps) => {
   const openedMenu = allMenuItems[openedMenuIndex];
 
+  // 프리뷰 상태 관리 커스텀 훅 사용
+  const {
+    previewItem,
+    previewPosition,
+    previewVisible,
+    handlePreviewItemChange,
+  } = useMenuPreview({
+    fadeOutDuration: previewDurations.fadeOut,
+  });
   // 2단계 메뉴의 배경색
   const level2BackgroundColor = "#2a2a2a";
 
@@ -43,12 +55,17 @@ export const SubMenuDrawer = ({
         zIndex: 999,
         display: "flex",
         flexDirection: "row",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
       }}
       onClick={(e) => {
         // 빈 공간 클릭 시 닫기
         if (e.target === e.currentTarget) {
           onClose();
         }
+      }}
+      onMouseLeave={() => {
+        // 메뉴 영역을 벗어날 때 프리뷰 숨기기
+        handlePreviewItemChange(null);
       }}
     >
       {/* 왼쪽 영역: 로고 + 1단계 메뉴 (검은색) */}
@@ -85,6 +102,7 @@ export const SubMenuDrawer = ({
               navigate={navigate}
               openLevel1Menu={openLevel1Menu}
               onLevel1Click={onLevel1Click}
+              onPreviewItemChange={handlePreviewItemChange}
             />
           </SubMenuColumn>
         </Box>
@@ -166,6 +184,7 @@ export const SubMenuDrawer = ({
               isHomePage={isHomePage}
               navigate={navigate}
               level={2}
+              onPreviewItemChange={handlePreviewItemChange}
             />
           </Box>
         )}
@@ -203,6 +222,16 @@ export const SubMenuDrawer = ({
           ))}
         </Box>
       </Box>
+
+      {/* 메뉴 프리뷰 */}
+      {previewItem && (
+        <MenuPreview
+          item={previewItem}
+          isHomePage={isHomePage}
+          position={previewPosition}
+          visible={previewVisible}
+        />
+      )}
     </Box>
   );
 };

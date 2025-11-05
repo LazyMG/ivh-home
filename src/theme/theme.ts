@@ -56,6 +56,7 @@ export const mediaQueries = {
 } as const;
 
 const fontConfig = {
+  regular: "Freesentation-4-Regular",
   medium: "Freesentation-5-Medium",
   semiBold: "Freesentation-6-SemiBold",
   bold: "Freesentation-7-Bold",
@@ -92,7 +93,7 @@ const responsiveFonts = {
     mobilePortrait: "22px",
     mobileLandscape: "24px",
     tablet: "30px",
-    desktop: "35px",
+    desktop: "32px",
   },
   // 솔루션의 각 페이지 (/solution/...) 상단 페이지 부제목 '원자력 - ...', ...
   solutionSubTitleFont: {
@@ -100,7 +101,7 @@ const responsiveFonts = {
     mobilePortrait: "18px",
     mobileLandscape: "22px",
     tablet: "25px",
-    desktop: "31px",
+    desktop: "26px",
   },
   // 솔루션의 각 페이지 (/solution/...) 본문 부제목 '개요', '기술적 배경', ...
   solutionTextTitleFont: {
@@ -116,7 +117,7 @@ const responsiveFonts = {
     mobilePortrait: "13px", // 본문 내용들 모바일 세로 사이즈
     mobileLandscape: "16px", // 본문 내용들 모바일 가로, 태블릿 세로 사이즈
     tablet: "16px", // 본문 내용들 태블릿 세로 사이즈
-    desktop: "24px", // 본문 내용들 데스크탑 사이즈
+    desktop: "22px", // 본문 내용들 데스크탑 사이즈
   },
   // 솔루션의 각 페이지 (/solution/...) 박스 부제목 '핵심 기술', '제공 서비스', ...
   solutionBoxTitleFont: {
@@ -139,6 +140,44 @@ const responsiveFonts = {
     mobileLandscape: "18px",
     tablet: "28px",
     desktop: "40px",
+  },
+  contactTitleFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "24px",
+    mobileLandscape: "24px",
+    tablet: "30px",
+    desktop: "30px",
+  },
+  contactProductsLinkFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "14px",
+    mobileLandscape: "14px",
+    tablet: "14px",
+    desktop: "14px",
+  },
+  // Support 페이지 제목 'iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.'
+  supportTitleFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "24px",
+    mobileLandscape: "24px",
+    tablet: "40px",
+    desktop: "40px",
+  },
+  // Support 페이지 본문 '긴급 핫라인을 통한 빠른 답변부터...'
+  supportTextFont: {
+    font: fontConfig["regular"],
+    mobilePortrait: "16px",
+    mobileLandscape: "16px",
+    tablet: "16px",
+    desktop: "16px",
+  },
+  // Newsletter 아이템 제목
+  newsletterItemTitleFont: {
+    font: fontConfig["semiBold"],
+    mobilePortrait: "19px",
+    mobileLandscape: "19px",
+    tablet: "19px",
+    desktop: "19px",
   },
 };
 
@@ -174,20 +213,20 @@ const solutionMainImageStyle = {
   top: 0,
   bottom: 0,
   maxWidth: "90%",
-  width: "100%",
+  width: "120%",
 
   [baseTheme.breakpoints.up("mobileLandscape")]: {
     width: "30%",
   },
 
   [baseTheme.breakpoints.up("tablet")]: {
-    width: "60%",
+    width: "120%",
   },
 
   [baseTheme.breakpoints.up("desktop")]: {
-    width: "60%",
-    maxWidth: "100%",
-    top: "80px",
+    // width: "100%",
+    // maxWidth: "100%",
+    top: "-50px",
   },
 };
 
@@ -222,12 +261,26 @@ const theme = createTheme({
     productImageBannerSubtitleFont: getResponsiveFontStyle(
       responsiveFonts["productImageBannerSubtitleFont"]
     ),
+    contactTitleFont: getResponsiveFontStyle(
+      responsiveFonts["contactTitleFont"]
+    ),
+    contactProductsLinkFont: getResponsiveFontStyle(
+      responsiveFonts["contactProductsLinkFont"]
+    ),
+    supportTitleFont: getResponsiveFontStyle(
+      responsiveFonts["supportTitleFont"]
+    ),
+    supportTextFont: getResponsiveFontStyle(responsiveFonts["supportTextFont"]),
+    newsletterItemTitleFont: getResponsiveFontStyle(
+      responsiveFonts["newsletterItemTitleFont"]
+    ),
   },
   customStyles: {
     // 솔루션 페이지 (/solution) 메인 컨테이너 스타일
     solutionMainContainer: {
       display: "flex",
       flexDirection: "column",
+      boxSizing: "border-box",
       [baseTheme.breakpoints.up("mobilePortrait")]: {
         mt: 0,
       },
@@ -239,7 +292,7 @@ const theme = createTheme({
         flexDirection: "row",
         alignItems: "center",
         padding: "0 2rem",
-        gap: "2rem",
+        // gap: "2rem",
       },
 
       // 태블릿 이상: 기존 레이아웃 (중앙 이미지, 하단 네비)
@@ -262,7 +315,7 @@ const theme = createTheme({
         left: 0,
         right: 0,
         mx: "auto",
-        my: "auto",
+        my: "0",
         maxWidth: "90%",
         width: "100%",
       },
@@ -275,7 +328,7 @@ const theme = createTheme({
         position: "relative",
         flex: "0 0 50%",
         maxWidth: "50%",
-        width: "50%",
+        width: "80%",
       },
 
       // 태블릿 이상: 기존 중앙 배치
@@ -411,6 +464,285 @@ const theme = createTheme({
       [baseTheme.breakpoints.up("desktop")]: {
         gap: "96px",
       },
+    },
+    // Contact 페이지 (/company/contact) 메인 컨테이너 스타일
+    contactMainContainer: {
+      padding: {
+        mobilePortrait: "0 32px",
+        mobileLandscape: "0 48px",
+        tablet: "0 80px",
+        desktop: "0 160px",
+      },
+      marginTop: {
+        mobilePortrait: "32px",
+        mobileLandscape: "48px",
+        tablet: "64px",
+        desktop: "80px",
+      },
+      marginBottom: {
+        mobilePortrait: "32px",
+        mobileLandscape: "48px",
+        tablet: "64px",
+        desktop: "80px",
+      },
+      display: "flex",
+      flexDirection: "column",
+      gap: "48px",
+    },
+    // Contact 페이지 상단 영역 (제목 + 폼) 컨테이너 스타일
+    contactTopContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "48px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        flexDirection: "row",
+      },
+    },
+    // Contact 페이지 지도 영역 컨테이너 스타일
+    contactMapContainer: {
+      width: "100%",
+      height: {
+        mobilePortrait: "300px",
+        mobileLandscape: "400px",
+        tablet: "450px",
+        desktop: "450px",
+      },
+      borderRadius: "8px",
+      overflow: "hidden",
+      border: "1px solid #e5e7eb",
+    },
+    // Contact 페이지 제목 영역 컨테이너 스타일
+    contactTitleContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "20px",
+      flex: 1,
+      [baseTheme.breakpoints.up("tablet")]: {
+        paddingRight: "100px",
+      },
+    },
+    // Contact 페이지 제품 둘러보기 링크 스타일
+    contactProductsLink: {
+      display: "flex",
+      alignItems: "center",
+      gap: "4px",
+      fontSize: "14px",
+      fontFamily: fontConfig["semiBold"],
+      lineHeight: 1.5,
+      color: "#374151", // gray-900
+      width: "fit-content",
+      cursor: "pointer",
+      transition: "all 0.3s",
+      textDecoration: "none",
+      "&:hover": {
+        color: "#1d4ed8", // blue-700
+        gap: "8px",
+      },
+    },
+
+    contactFormContainer: {
+      flex: 1,
+      display: "grid",
+      gridTemplateColumns: "1fr",
+      gap: "24px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        gridTemplateColumns: "1fr 1fr",
+        columnGap: "24px",
+      },
+    },
+    // Contact 페이지 폼 필드 기본 스타일
+    contactFormField: {
+      position: "relative",
+    },
+    // Contact 페이지 전체 너비 필드 (문의내용, 체크박스, 버튼) 스타일
+    contactFormFullWidthField: {
+      position: "relative",
+      [baseTheme.breakpoints.up("tablet")]: {
+        gridColumn: "span 2",
+      },
+    },
+    // Contact 페이지 체크박스 컨테이너 스타일
+    contactCheckboxContainer: {
+      position: "relative",
+      [baseTheme.breakpoints.up("tablet")]: {
+        gridColumn: "span 2",
+      },
+    },
+    contactformControlLabel: {
+      height: "32px",
+      color: "#6366f1", // indigo-600
+    },
+    // Contact 페이지 문의하기 버튼 스타일
+    contactButton: {
+      padding: "12px 32px",
+      fontSize: "14px",
+
+      fontFamily: fontConfig["semiBold"],
+      color: "white",
+      backgroundColor: "#1d4ed8", // blue-700
+      "&:hover": {
+        backgroundColor: "#1e40af", // blue-600
+      },
+      "&.Mui-disabled": {
+        backgroundColor: "#cccccc",
+        color: "#888888",
+      },
+    },
+    productPageContainer: {
+      padding: "0 20px",
+      paddingTop: "20px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        px: 10,
+      },
+      [baseTheme.breakpoints.up("desktop")]: {
+        pt: "50px",
+        px: "120px",
+      },
+    },
+    // Support 페이지 (/support) 메인 컨테이너 스타일
+    supportContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "80px",
+      [baseTheme.breakpoints.up("tablet")]: {
+        flexDirection: "row",
+      },
+    },
+    // Support 페이지 텍스트 영역 컨테이너 스타일
+    supportTextContainer: {
+      [baseTheme.breakpoints.up("tablet")]: {
+        width: "50%",
+      },
+    },
+    // Support 페이지 이미지 영역 컨테이너 스타일
+    supportImageContainer: {
+      display: "flex",
+      justifyContent: "center",
+      marginLeft: "auto",
+      marginRight: "auto",
+      width: "100%",
+      [baseTheme.breakpoints.up("tablet")]: {
+        justifyContent: "flex-end",
+        width: "50%",
+      },
+    },
+    // Support 페이지 링크 스타일 (기술지원 서비스로 연결)
+    supportLink: {
+      display: "flex",
+      alignItems: "center",
+      gap: "4px",
+      marginTop: "20px",
+      paddingBottom: "4px",
+      fontSize: "16px",
+      fontFamily: fontConfig["semiBold"],
+      lineHeight: 1,
+      color: "#1d4ed8", // blue-700
+      borderBottom: "1px solid #1d4ed8", // border-b-blue-700
+      width: "fit-content",
+      cursor: "pointer",
+      transition: "all 0.3s",
+      textDecoration: "none", // a 태그 기본 밑줄 제거
+      "&:hover": {
+        gap: "8px",
+      },
+    },
+    homeNewsletterContainer: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#000000",
+      zIndex: 999,
+      [baseTheme.breakpoints.up("desktop")]: {
+        position: "absolute",
+        top: "160px",
+        left: "160px",
+        maxWidth: "380px",
+        border: "1px solid rgba(0, 0, 0, 0.35) ",
+        borderRadius: "12px",
+        boxShadow: "3px 3px 1px rgba(0,0,0,0.15)",
+      },
+    },
+    // Newsletter 리스트 컨테이너 스타일
+    newsletterListContainer: {
+      display: "flex",
+      flexDirection: "column",
+      width: "100%",
+      padding: "28px",
+      gap: "20px",
+    },
+    newsletterLogoContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "100%",
+    },
+
+    newsletterIVHLogo: {
+      height: "36px",
+    },
+    newsletterLinkedinIcon: {
+      width: "36px",
+      height: "36px",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+    },
+    newsletterContentContainer: {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      display: "-webkit-box",
+      WebkitLineClamp: 2,
+      WebkitBoxOrient: "vertical",
+      marginBottom: "16px",
+      minHeight: "3em", // 2줄 높이 확보
+      color: "#ffffff",
+    },
+    newsletterDateDetailContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+
+    newsletterDateFont: {
+      fontSize: "14px",
+      color: "#ffffff",
+      fontStyle: "italic",
+    },
+    newsletterDetailButton: {
+      backgroundColor: "#ffffff",
+      color: "#000000",
+      fontSize: "14px",
+      fontFamily: fontConfig["bold"],
+      borderRadius: "8px",
+      padding: "4px 16px",
+      textTransform: "none",
+      "&:hover": {
+        backgroundColor: "rgba(255, 255, 255, 0.9)",
+      },
+      "& .MuiButton-endIcon": {
+        marginLeft: "4px", // 기본 8px → 4px로 변경
+      },
+    },
+    // Newsletter 개별 아이템 스타일
+    newsletterItem: {
+      display: "flex",
+      flexDirection: "row",
+      maxHeight: "180px",
+      gap: "24px",
+      padding: "24px",
+      backgroundColor: "#ffffff",
+      cursor: "pointer",
+      textDecoration: "none",
+      background: "transparent",
+    },
+    // Newsletter 아이템 콘텐츠 영역 스타일
+    newsletterItemContent: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+      flex: 1,
+      justifyContent: "center",
+      overflow: "hidden",
     },
   },
 });

@@ -7,6 +7,7 @@ import vtd from "../../../data/product/vtd.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const VTD = () => {
   const seoData = useSEO("product/vtd", vtd);
@@ -61,6 +62,30 @@ const VTD = () => {
             })}
           >
             <ProductCard cards={vtd_cards} />
+          </Box>
+
+          {/** 하단 폼 영역 */}
+          <Box
+            component="section"
+            aria-label="form-heading"
+            sx={(theme) => ({
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+              my: 12,
+              px: 4,
+              [theme.breakpoints.up("tablet")]: {
+                my: 24,
+                px: 10,
+                gap: 22,
+              },
+              [theme.breakpoints.up("desktop")]: {
+                my: 30,
+                px: 20,
+              },
+            })}
+          >
+            <ProductBottom productName="VTD" />
           </Box>
         </Box>
       </Box>

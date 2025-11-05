@@ -1,0 +1,24 @@
+{
+  "history_title": "History",
+  "history_image": "/images/pages/company/company_history.jpg",
+  "history_list": [
+    {
+      "year": "2021",
+      "contents": [
+        "본사 및 연구전담부서 이전 (서울시 서초구 양재동)",
+        "ASAM Member 가입"
+      ]
+    },
+    {
+      "year": "2018",
+      "contents": [
+        "Modelica Association 가입",
+        "다쏘시스템코리아 Dymola Var사 등록"
+      ]
+    },
+    {
+      "year": "2015",
+      "contents": ["벤처기업등록", "연구전담부서 이전 (국민대학교 산학협력관)"]
+    }
+  ]
+}

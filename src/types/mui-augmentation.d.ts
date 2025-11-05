@@ -15,6 +15,40 @@ declare module "@mui/material/styles" {
 
       productBranchPageOutline: React.CSSProperties;
       productStackComponent: React.CSSProperties;
+
+      // Contact 페이지 스타일
+      contactMainContainer: SxProps<MuiTheme>;
+      contactTopContainer: SxProps<MuiTheme>;
+      contactTitleContainer: SxProps<MuiTheme>;
+      contactProductsLink: SxProps<MuiTheme>;
+      contactFormContainer: SxProps<MuiTheme>;
+      contactFormGrid: SxProps<MuiTheme>;
+      contactFormField: React.CSSProperties;
+      contactFormFullWidthField: SxProps<MuiTheme>;
+      contactCheckboxContainer: SxProps<MuiTheme>;
+      contactButton: SxProps<MuiTheme>;
+      contactformControlLabel: React.CSSProperties;
+      contactMapContainer: SxProps<MuiTheme>;
+      productPageContainer: React.CSSProperties;
+
+      supportContainer: SxProps<MuiTheme>;
+      supportTextContainer: SxProps<MuiTheme>;
+      supportImageContainer: SxProps<MuiTheme>;
+      supportLink: SxProps<MuiTheme>;
+
+      // Newsletter 리스트 스타일
+      newsletterListContainer: SxProps<MuiTheme>;
+      newsletterLogoContainer: SxProps<MuiTheme>;
+      newsletterIVHLogo: SxProps<MuiTheme>;
+      newsletterLinkedinIcon: SxProps<MuiTheme>;
+      newsletterContentContainer: SxProps<MuiTheme>;
+      newsletterDateFont: SxProps<MuiTheme>;
+      newsletterDateDetailContainer: SxProps<MuiTheme>;
+      newsletterDetailButton: SxProps<MuiTheme>;
+
+      newsletterItem: SxProps<MuiTheme>;
+      newsletterItemContent: SxProps<MuiTheme>;
+      homeNewsletterContainer: SxProps<MuiTheme>;
     };
   }
 
@@ -30,6 +64,40 @@ declare module "@mui/material/styles" {
 
       productBranchPageOutline?: React.CSSProperties;
       productStackComponent?: React.CSSProperties;
+
+      // Contact 페이지 스타일
+      contactMainContainer?: SxProps<MuiTheme>;
+      contactTopContainer?: SxProps<MuiTheme>;
+      contactTitleContainer?: SxProps<MuiTheme>;
+      contactProductsLink?: SxProps<MuiTheme>;
+      contactFormContainer?: SxProps<MuiTheme>;
+      contactFormGrid?: SxProps<MuiTheme>;
+      contactFormField?: React.CSSProperties;
+      contactFormFullWidthField?: SxProps<MuiTheme>;
+      contactCheckboxContainer?: SxProps<MuiTheme>;
+      contactButton?: SxProps<MuiTheme>;
+      contactformControlLabel?: React.CSSProperties;
+      contactMapContainer?: SxProps<MuiTheme>;
+      productPageContainer?: React.CSSProperties;
+
+      supportContainer?: SxProps<MuiTheme>;
+      supportTextContainer?: SxProps<MuiTheme>;
+      supportImageContainer?: SxProps<MuiTheme>;
+      supportLink?: SxProps<MuiTheme>;
+
+      // Newsletter 리스트 스타일
+      newsletterListContainer?: SxProps<MuiTheme>;
+      newsletterLogoContainer?: SxProps<MuiTheme>;
+      newsletterIVHLogo?: SxProps<MuiTheme>;
+      newsletterLinkedinIcon?: SxProps<MuiTheme>;
+      newsletterContentContainer?: SxProps<MuiTheme>;
+      newsletterDateFont?: SxProps<MuiTheme>;
+      newsletterDateDetailContainer?: SxProps<MuiTheme>;
+      newsletterDetailButton?: SxProps<MuiTheme>;
+
+      newsletterItem?: SxProps<MuiTheme>;
+      newsletterItemContent?: SxProps<MuiTheme>;
+      homeNewsletterContainer?: SxProps<MuiTheme>;
     };
   }
 
@@ -46,6 +114,12 @@ declare module "@mui/material/styles" {
     solutionBoxTitleFont: React.CSSProperties;
     productImageBannerTitleFont: React.CSSProperties;
     productImageBannerSubtitleFont: React.CSSProperties;
+    contactTitleFont: React.CSSProperties;
+    contactProductsLinkFont: React.CSSProperties;
+    supportTitleFont: React.CSSProperties;
+    supportTextFont: React.CSSProperties;
+    newsletterItemTitleFont: React.CSSProperties;
+    newsletterItemContentFont: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
@@ -61,6 +135,12 @@ declare module "@mui/material/styles" {
     solutionBoxTitleFont?: React.CSSProperties;
     productImageBannerTitleFont?: React.CSSProperties;
     productImageBannerSubtitleFont?: React.CSSProperties;
+    contactTitleFont?: React.CSSProperties;
+    contactProductsLinkFont?: React.CSSProperties;
+    supportTitleFont?: React.CSSProperties;
+    supportTextFont?: React.CSSProperties;
+    newsletterItemTitleFont?: React.CSSProperties;
+    newsletterItemContentFont?: React.CSSProperties;
   }
 
   interface BreakpointOverrides {
@@ -89,5 +169,11 @@ declare module "@mui/material/Typography" {
     solutionBoxTitleFont: true;
     productImageBannerTitleFont: true;
     productImageBannerSubtitleFont: true;
+    contactTitleFont: true;
+    contactProductsLinkFont: true;
+    supportTitleFont: true;
+    supportTextFont: true;
+    newsletterItemTitleFont: true;
+    newsletterItemContentFont: true;
   }
 }

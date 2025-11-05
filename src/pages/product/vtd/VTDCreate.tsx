@@ -10,6 +10,7 @@ import vtd_create from "../../../data/product/vtd-create.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const VTDCreate = () => {
   const { isMobile } = useBreakpoint();
@@ -34,14 +35,7 @@ const VTDCreate = () => {
       <Box
         component="main"
         sx={(theme) => ({
-          px: 4,
-          pt: "50px",
-          [theme.breakpoints.up("tablet")]: {
-            px: 10,
-          },
-          [theme.breakpoints.up("desktop")]: {
-            px: 20,
-          },
+          ...theme.customStyles.productPageContainer,
         })}
       >
         <ScrollButton
@@ -105,6 +99,27 @@ const VTDCreate = () => {
                 />
               ))}
             </Stack>
+
+            {/** 하단 폼 영역 */}
+            <Box
+              component="section"
+              aria-label="form-heading"
+              sx={(theme) => ({
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+                my: 12,
+                [theme.breakpoints.up("tablet")]: {
+                  my: 24,
+                  gap: 22,
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  my: 30,
+                },
+              })}
+            >
+              <ProductBottom productName="VTD CREATE" />
+            </Box>
           </Box>
         </Box>
       </Box>

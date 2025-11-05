@@ -11,6 +11,7 @@ import til from "../../../data/product/til.json";
 import ScrollButton from "../../../common/ScrollButton";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const TIL = () => {
   const seoData = useSEO("product/dymola/til", til);
@@ -37,14 +38,7 @@ const TIL = () => {
       <Box
         component="main"
         sx={(theme) => ({
-          px: 4,
-          pt: "50px",
-          [theme.breakpoints.up("tablet")]: {
-            px: 10,
-          },
-          [theme.breakpoints.up("desktop")]: {
-            px: 20,
-          },
+          ...theme.customStyles.productPageContainer,
         })}
       >
         <ScrollButton
@@ -115,6 +109,27 @@ const TIL = () => {
                 />
               ))}
             </Stack>
+
+            {/** 하단 폼 영역 */}
+            <Box
+              component="section"
+              aria-label="form-heading"
+              sx={(theme) => ({
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+                my: 12,
+                [theme.breakpoints.up("tablet")]: {
+                  my: 24,
+                  gap: 22,
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  my: 30,
+                },
+              })}
+            >
+              <ProductBottom productName="TIL" />
+            </Box>
           </Box>
         </Box>
       </Box>

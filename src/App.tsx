@@ -47,8 +47,16 @@ import Viswalk from "./pages/product/vissim/Viswalk";
 import Calendar from "./pages/Calendar";
 // Support
 import Training from "./pages/support/Training";
-import Header from "./common/Header/Header";
+import Support from "./pages/support/Support";
+
+import Header from "./common/header/Header";
 import PrivacyPolicy from "./components/support/PrivacyPolicy";
+import CEO from "./pages/company/CEO";
+import History from "./pages/company/History";
+import Partner from "./pages/company/Partner";
+
+import Contact from "./pages/company/Contact";
+import FloatingButton from "./components/chatbot/FloatingButton";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -56,10 +64,12 @@ function AppContent() {
 
   // 헤더/푸터를 숨길 페이지 경로
   const hideLayout = location.pathname === "/support/privacyPolicy";
+  const isHomePage = location.pathname === "/";
 
   return (
     <>
       <ScrollToTop>
+        {/** header */}
         {!hideLayout && (isMobile || isTablet ? <MobileHeader /> : <Header />)}
         <Routes>
           {/** pages */}
@@ -118,10 +128,20 @@ function AppContent() {
           <Route path="/product/vissim/viswalk" element={<Viswalk />} />
           {/** support */}
           <Route path="/support/training" element={<Training />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/company/ceo" element={<CEO />} />
+          <Route path="/company/history" element={<History />} />
+          <Route path="/company/partner" element={<Partner />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
+
+          {/** company */}
+          <Route path="/company/contact" element={<Contact />} />
         </Routes>
       </ScrollToTop>
+      {/** chatbot button */}
+      <FloatingButton isHomePage={isHomePage} />
+      {/** footer */}
       {!hideLayout && (isMobile || isTablet ? <MobileFooter /> : <Footer />)}
     </>
   );

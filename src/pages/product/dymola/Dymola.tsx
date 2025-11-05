@@ -11,6 +11,7 @@ import ScrollButton from "../../../common/ScrollButton";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
+import ProductBottom from "../../../components/product/ProductBottom";
 
 const Dymola = () => {
   const seoData = useSEO("product/dymola", dymola);
@@ -108,6 +109,30 @@ const Dymola = () => {
             })}
           >
             <ProductCard cards={dymola_cards} />
+          </Box>
+
+          {/** 하단 폼 영역 */}
+          <Box
+            component="section"
+            aria-label="form-heading"
+            sx={(theme) => ({
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+              my: 12,
+              px: 4,
+              [theme.breakpoints.up("tablet")]: {
+                my: 24,
+                px: 10,
+                gap: 22,
+              },
+              [theme.breakpoints.up("desktop")]: {
+                my: 30,
+                px: 20,
+              },
+            })}
+          >
+            <ProductBottom productName="Dymola" />
           </Box>
         </Box>
       </Box>

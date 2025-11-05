@@ -13,16 +13,32 @@
                 {
                   "name": "Dymola",
                   "path": "/product/dymola",
+                  "preview_img_path": "/images/pages/product/dymola/dymola-main.jpg",
+                  "description": "복합 시스템 모델 기반 설계를 위한 물리 모델링 및 시뮬레이션 툴",
                   "subMenu": [
-                    { "name": "Battery", "path": "/product/dymola/battery" },
-                    { "name": "TIL", "path": "/product/dymola/til" },
+                    {
+                      "name": "Battery",
+                      "path": "/product/dymola/battery",
+                      "preview_img_path": "/images/pages/product/battery/battery-preview.png",
+                      "description": "복합 시스템 내 배터리 통합 및 성능 분석을 위한 Modelica 기반 시뮬레이션 라이브러리"
+                    },
+                    {
+                      "name": "TIL",
+                      "path": "/product/dymola/til",
+                      "preview_img_path": "/images/pages/product/dymola/dymola-card-two.png",
+                      "description": "유연한 구성과 고정밀 시뮬레이션을 지원하는 다분야 시스템 모델링 라이브러리"
+                    },
                     {
                       "name": "Thermal Power Library",
-                      "path": "/product/dymola/thermalpowerlibrary"
+                      "path": "/product/dymola/thermalpowerlibrary",
+                      "preview_img_path": "/images/pages/product/dymola/dymola-card-three.png",
+                      "description": "열반전 시스템 설계 및 최적화를 위한 통합 시뮬레이션 라이브러리"
                     },
                     {
                       "name": "Vehicle Dynamics Library",
-                      "path": "/product/dymola/vehicledynamicslibrary"
+                      "path": "/product/dymola/vehicledynamicslibrary",
+                      "preview_img_path": "/images/pages/product/dymola/dymola-card-four.png",
+                      "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
                     }
                   ]
                 },
@@ -33,21 +49,46 @@
             {
               "name": "VTD",
               "path": "/product/vtd",
+              "preview_img_path": "/images/pages/product/vtd/vtd-main.jpg",
+              "description": "Virtual Test Drive : 자율주행 가상검증 솔루션",
               "subMenu": [
-                { "name": "VTD CREATE", "path": "/product/vtd/vtdcreate" },
-                { "name": "VTD SIMULATE", "path": "/product/vtd/vtdsimulate" },
-                { "name": "VTD FULLSTACK", "path": "/product/vtd/vtdfullstack" }
+                {
+                  "name": "VTD CREATE",
+                  "path": "/product/vtd/vtdcreate",
+                  "preview_img_path": "/images/pages/product/vtd/vtd-card-create.png",
+                  "description": "열반전 시스템 설계 및 최적화를 위한 통합 시뮬레이션 라이브러리"
+                },
+                {
+                  "name": "VTD SIMULATE",
+                  "path": "/product/vtd/vtdsimulate",
+                  "preview_img_path": "/images/pages/product/vtd/vtd-card-simulate.png",
+                  "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
+                },
+                {
+                  "name": "VTD FULLSTACK",
+                  "path": "/product/vtd/vtdfullstack",
+                  "preview_img_path": "/images/pages/product/vtd/vtd-card-fullstack.png",
+                  "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
+                }
               ]
             },
             {
               "name": "Vissim",
               "path": "/product/vissim",
+              "preview_img_path": "/images/pages/product/vissim/vissim-main.jpg",
+              "description": "다중 모드 교통 시뮬레이션 소프트웨어",
               "subMenu": [
                 {
                   "name": "Vissim Automotive",
-                  "path": "/product/vissim/vissimautomotive"
+                  "path": "/product/vissim/vissimautomotive",
+                  "preview_img_path": "/images/pages/product/vissim/vissim-card-auto.png",
+                  "description": "자동차 테스트 및 교통 시뮬레이션을 위한 전문 솔루션"
                 },
-                { "name": "Viswalk", "path": "/product/vissim/viswalk" }
+                {
+                  "name": "Viswalk",
+                  "path": "/product/vissim/viswalk",
+                  "preview_img_path": "/images/pages/product/vissim/vissim-card-viswalk.png"
+                }
               ]
             },
             { "name": "SFE" }
@@ -80,10 +121,14 @@
       "title": "SOLUTIONS",
       "path": "/solution",
       "subMenu": [
-        { "name": "Smart Factory", "path": "/solution/smartFactory" },
+        {
+          "name": "Smart Factory",
+          "path": "/solution/smartFactory"
+        },
         {
           "name": "Mobility",
           "path": "/solution/mobility/multiCommunicateTech",
+
           "items": [
             {
               "name": "다중 통신기술 네트워크 로드밸런싱 기술개발",
@@ -107,26 +152,56 @@
             }
           ]
         },
-        { "name": "Home Appliances", "path": "/solution/homeappliance" },
-        { "name": "Energy", "path": "/solution/energy" },
-        { "name": "BEMS", "path": "/solution/bems" },
-        { "name": "AI Innovation Hub", "path": "/solution/aIinnovationhub" }
+        {
+          "name": "Home Appliances",
+          "path": "/solution/homeappliance"
+        },
+        {
+          "name": "Energy",
+          "path": "/solution/energy"
+        },
+        {
+          "name": "BEMS",
+          "path": "/solution/bems"
+        },
+        {
+          "name": "AI Innovation Hub",
+          "path": "/solution/aIinnovationhub"
+        }
       ]
     },
     {
       "title": "SUPPORT",
       "subMenu": [
-        { "name": "Training", "path": "/support/training" },
-        { "name": "Support" }
+        {
+          "name": "Training",
+          "path": "/support/training"
+        },
+        {
+          "name": "Support",
+          "path": "/support"
+        }
       ]
     },
     {
       "title": "COMPANY",
       "subMenu": [
-        { "name": "CEO" },
-        { "name": "History" },
-        { "name": "Partner" },
-        { "name": "Contact" }
+        {
+          "name": "CEO",
+          "path": "/company/ceo"
+        },
+        {
+          "name": "History",
+          "path": "/company/history"
+        },
+        {
+          "name": "Partner",
+          "path": "/company/partner"
+        },
+        {
+          "name": "Contact",
+          "path": "/company/contact"
+        }
       ]
     }
   ]

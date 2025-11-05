@@ -6,7 +6,6 @@ interface TrainingMainTitleProps {
     font: string;
     color: string;
   }[];
-  children?: React.ReactNode;
 }
 
 {
@@ -15,26 +14,29 @@ interface TrainingMainTitleProps {
 {
   /** JSON 파일에서 폰트와 굵기 정보를 가져옴 */
 }
-const TrainingMainTitle = ({ children, titleList }: TrainingMainTitleProps) => {
+const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
   return (
     <Typography
-      sx={{
-        ml: "10%",
+      sx={(theme) => ({
         wordBreak: "keep-all",
         zIndex: 1,
         position: "relative",
         width: "fit-content",
-        fontFamily: "Freesentation-6-SemiBold",
-      }}
+        fontFamily: "Freesentation-7-Bold",
+        ml: 3,
+        [theme.breakpoints.up("tablet")]: {
+          ml: "10%",
+        },
+      })}
     >
       {titleList.map((title, index) => (
         <Typography
           key={index}
           component="span"
           sx={(theme) => ({
-            fontSize: "18px",
+            fontSize: "24px",
             [theme.breakpoints.up("tablet")]: {
-              fontSize: "32px",
+              fontSize: "48px",
             },
             color: title.color,
             fontFamily: title.font,
@@ -43,7 +45,6 @@ const TrainingMainTitle = ({ children, titleList }: TrainingMainTitleProps) => {
           {title.text}
         </Typography>
       ))}
-      {children}
     </Typography>
   );
 };

@@ -2,72 +2,104 @@ import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
-const HomeContents = () => {
+interface HomeContentsProps {
+  title: string;
+  description: string;
+  description_sub?: string;
+  navigate_url: string;
+}
+
+const HomeContents = ({
+  title,
+  description,
+  description_sub,
+  navigate_url,
+}: HomeContentsProps) => {
   const navigate = useNavigate();
   const { isMobile } = useBreakpoint();
 
   return (
-    <>
+    <Box
+      component="div"
+      sx={{
+        position: "absolute",
+        top: isMobile ? "50%" : "40%",
+        left: "0%",
+        m: 0,
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        transform: isMobile ? "translate(0, -50%)" : "0",
+        textAlign: isMobile ? "center" : "left",
+        alignItems: isMobile ? "center" : "flex-end",
+        justifyContent: "center",
+        boxSizing: "border-box",
+        pl: isMobile ? "28px" : "0",
+        pr: isMobile ? "28px" : "0",
+      }}
+    >
       <Box
-        component="dl"
+        component="div"
         sx={{
-          position: "absolute",
-          top: isMobile ? "50%" : "35%",
-          left: isMobile ? "50%" : "7rem",
-          transform: isMobile ? "translate(-50%, -50%)" : "none",
-          pl: "1.75rem",
-          m: 0,
-          width: isMobile ? "80%" : "auto",
+          width: isMobile ? "100%" : "42%",
+          mr: isMobile ? "0" : "8%",
+          boxSizing: "border-box",
         }}
       >
-        <Typography
-          component="dt"
-          variant="h2"
-          sx={{
-            fontSize: isMobile ? "3.25rem" : "5rem",
-            fontWeight: "700",
-            lineHeight: 1,
-            textAlign: isMobile ? "center" : "left",
-            color: "#fff",
-            mb: ".75rem",
-          }}
-        >
-          iVH Suite
-        </Typography>
-        <Typography
-          component="dd"
-          sx={{
-            fontSize: isMobile ? "16px" : "18px",
-            lineHeight: "1.75rem",
-            textAlign: isMobile ? "center" : "left",
-            color: "#fff",
-          }}
-        >
-          iVH Suite는 FMI, SSP, Open X 표준을 준수하는 성능 및 평가 도구입니다.
-        </Typography>
-        <Typography
-          component="dd"
-          sx={{
-            fontSize: isMobile ? "16px" : "18px",
-            lineHeight: "1.75rem",
-            textAlign: isMobile ? "center" : "left",
-            color: "#fff",
-          }}
-        >
-          사용자 친화적이고 효육적인 설계를 지원합니다.
-        </Typography>
+        <Box component="div" sx={{ width: "100%" }}>
+          <Typography
+            component="p"
+            variant="h2"
+            sx={{
+              fontSize: isMobile ? "3.25rem" : "5rem",
+              fontWeight: "700",
+              lineHeight: 1,
+              color: "#fff",
+              mb: ".75rem",
+            }}
+          >
+            {title}
+          </Typography>
+        </Box>
         <Box
-          component="dd"
+          component="div"
           sx={{
-            display: "flex",
-            justifyContent: isMobile ? "center" : "flex-start",
-            ml: 0,
+            width: "100%",
+          }}
+        >
+          <Typography
+            component="p"
+            sx={{
+              fontSize: isMobile ? "14px" : "15.5px",
+              lineHeight: "1.75rem",
+              color: "#fff",
+              whiteSpace: isMobile ? "normal" : "pre-line",
+            }}
+          >
+            {description}
+          </Typography>
+          <Typography
+            component="span"
+            sx={{
+              fontSize: isMobile ? "14px" : "15.5px",
+              lineHeight: "1.75rem",
+              color: "#fff",
+              whiteSpace: isMobile ? "normal" : "pre-line",
+            }}
+          >
+            {description_sub}
+          </Typography>
+        </Box>
+        <Box
+          component="div"
+          sx={{
+            width: "100%",
             mt: "1rem",
           }}
         >
           <Button
             onClick={() => {
-              navigate("/product");
+              navigate(navigate_url);
             }}
             sx={{
               fontSize: "16px",
@@ -75,7 +107,6 @@ const HomeContents = () => {
               borderRadius: 0,
               px: "1.25rem",
               color: "#fff",
-
               "&:hover": {
                 backgroundColor: "#fff",
                 color: "#000",
@@ -86,7 +117,7 @@ const HomeContents = () => {
           </Button>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

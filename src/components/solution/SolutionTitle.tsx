@@ -44,9 +44,7 @@ const SolutionTitle = ({
       >
         <Typography
           // aIInnovationHub 페이지는 더 작은 폰트 스타일 적용
-          variant={
-            pageKey === "alinnovationhub" ? undefined : "solutionSubTitleFont"
-          }
+          variant={"solutionSubTitleFont"}
           component="p"
           color={"#3b4551"}
           sx={(theme) => ({
