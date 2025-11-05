@@ -1,13 +1,12 @@
 import { Box, CssBaseline } from "@mui/material";
 
 import NewsletterList from "../components/common/NewsletterList";
-import newsletterData from "../data/newsletter/newsletter.json";
 import SEO from "../common/SEO";
 import { useEffect } from "react";
 import "../App.css";
 import CardSlide from "../components/home/CardSlide";
 import BackgroundBox from "../components/home/BackgroundBox";
-import FloatingButton from "../components/chatbot/FloatingButton";
+// import FloatingButton from "../components/chatbot/FloatingButton";
 
 const Home = () => {
   useEffect(() => {
@@ -56,7 +55,7 @@ const Home = () => {
           </BackgroundBox>
         </Box>
       </Box>
-      <FloatingButton />
+      {/* <FloatingButton /> */}
 
       {/* Newsletter 섹션 */}
       <Box
@@ -65,7 +64,7 @@ const Home = () => {
           ...theme.customStyles.homeNewsletterContainer,
         })}
       >
-        <NewsletterList items={newsletterData.items} />
+        <NewsletterList />
       </Box>
     </>
   );

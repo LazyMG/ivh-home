@@ -2,6 +2,9 @@ import { Box, Typography, Divider, Button } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import newsLogo from "/images/home/newsletter_ivh_logo.png";
 import linkedinLogo from "/images/home/newsletter_linkedin_logo.png";
+import { useState, useEffect } from "react";
+import { newsService } from "../../service/newsService";
+import dayjs from "dayjs";
 
 export interface NewsletterItem {
   title: string;
@@ -10,12 +13,27 @@ export interface NewsletterItem {
   date: string;
 }
 
-interface NewsletterListProps {
-  items: NewsletterItem[];
-}
-const NewsletterList = ({ items }: NewsletterListProps) => {
+const NewsletterList = () => {
   // 상위 4개만 표시
-  const displayItems = items.slice(0, 4);
+  const [newsletterItems, setNewsletterItems] = useState<NewsletterItem[]>([]);
+
+  /**
+   * 뉴스레터 아이템 목록 조회
+   */
+  const fetchNewsletterItems = async () => {
+    const response = await newsService.getNews();
+    const items = response.map((item) => ({
+      title: item.title,
+      content: item.content,
+      link_url: item.contentsUrl,
+      date: dayjs(item.updatedAt).format("YYYY.MM.DD"),
+    }));
+    setNewsletterItems(items);
+  };
+
+  useEffect(() => {
+    fetchNewsletterItems();
+  }, []);
 
   return (
     <Box
@@ -68,7 +86,7 @@ const NewsletterList = ({ items }: NewsletterListProps) => {
       />
 
       {/* 뉴스레터 아이템 목록 */}
-      {displayItems.map((item, index) => (
+      {newsletterItems.map((item, index) => (
         <Box key={index}>
           {/* 제목 (2줄만 표시) */}
           <Typography
