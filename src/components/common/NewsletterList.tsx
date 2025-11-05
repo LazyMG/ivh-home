@@ -17,22 +17,22 @@ const NewsletterList = () => {
   // 상위 4개만 표시
   const [newsletterItems, setNewsletterItems] = useState<NewsletterItem[]>([]);
 
+  /**
+   * 뉴스레터 아이템 목록 조회
+   */
   const fetchNewsletterItems = async () => {
     const response = await newsService.getNews();
-    console.log("response", response);
     const items = response.map((item) => ({
       title: item.title,
       content: item.content,
       link_url: item.contentsUrl,
       date: dayjs(item.updatedAt).format("YYYY.MM.DD"),
     }));
-    console.log("items", items);
     setNewsletterItems(items);
   };
 
   useEffect(() => {
     fetchNewsletterItems();
-    console.log("newsletterItems", newsletterItems);
   }, []);
 
   return (

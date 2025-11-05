@@ -56,6 +56,7 @@ import History from "./pages/company/History";
 import Partner from "./pages/company/Partner";
 
 import Contact from "./pages/company/Contact";
+import FloatingButton from "./components/chatbot/FloatingButton";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -67,6 +68,7 @@ function AppContent() {
   return (
     <>
       <ScrollToTop>
+        {/** header */}
         {!hideLayout && (isMobile || isTablet ? <MobileHeader /> : <Header />)}
         <Routes>
           {/** pages */}
@@ -136,6 +138,9 @@ function AppContent() {
           <Route path="/company/contact" element={<Contact />} />
         </Routes>
       </ScrollToTop>
+      {/** chatbot button */}
+      <FloatingButton />
+      {/** footer */}
       {!hideLayout && (isMobile || isTablet ? <MobileFooter /> : <Footer />)}
     </>
   );
