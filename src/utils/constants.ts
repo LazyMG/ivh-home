@@ -21,6 +21,7 @@ export const API_ENDPOINTS = {
   },
   CUSTOMER: {
     SEND_PRODUCT_INFO: "/customers/send-product-info",
+    SEND_CONTACT: "/customers/send-customer-inquiry",
   },
 } as const;
 

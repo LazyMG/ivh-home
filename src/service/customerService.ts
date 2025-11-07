@@ -10,6 +10,13 @@ export interface CustomerRequestForm {
   productName: string;
 }
 
+export interface ContactRequestForm {
+  company: string;
+  name: string;
+  phone: string;
+  email: string;
+  inquiry: string;
+}
 const catchInvaildLoginError = (message: string) => {
   if (message.includes("Invalid login")) {
     return "서버 오류입니다. 잠시 후에 이용해주세요.";
@@ -34,6 +41,25 @@ export const customerService = {
         );
       }
       throw error;
+    }
+  },
+
+  async postContact(contactRequestForm: ContactRequestForm) {
+    try {
+      const response = await api.post(
+        API_ENDPOINTS.CUSTOMER.SEND_CONTACT,
+        contactRequestForm
+      );
+      return response.data;
+    } catch (error) {
+      console.error("error", error);
+      if (isAxiosError(error)) {
+        throw new Error(
+          error.response?.data?.message
+            ? catchInvaildLoginError(error.response.data.message as string)
+            : "전송에 실패했습니다. 다시 시도해주세요."
+        );
+      }
     }
   },
 };

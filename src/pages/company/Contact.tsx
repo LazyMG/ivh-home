@@ -20,9 +20,10 @@ import {
 } from "../../utils/validation";
 import CustomSnackbar from "../../components/support/CustomSnackbar";
 import ApplicationInputErrorText from "../../components/support/ApplicationInputErrorText";
+import { customerService } from "../../service/customerService";
 
 interface ContactFormType {
-  companyName: string;
+  company: string;
   name: string;
   phone: string;
   email: string;
@@ -40,13 +41,14 @@ const Contact = () => {
   const {
     control,
     register,
+    getValues,
     handleSubmit,
     formState: { errors, isValid },
     reset,
   } = useForm<ContactFormType>({
     mode: "onChange",
     defaultValues: {
-      companyName: "",
+      company: "",
       name: "",
       phone: "",
       email: "",
@@ -60,11 +62,13 @@ const Contact = () => {
     setSnackbarMessage("문의사항을 전송 중입니다...");
 
     try {
-      // TODO: 실제 API 엔드포인트로 폼 데이터 전송
-      // await contactService.postContact(data);
-
-      // 임시로 성공 처리
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await customerService.postContact({
+        company: getValues("company"),
+        name: getValues("name"),
+        phone: getValues("phone"),
+        email: getValues("email"),
+        inquiry: getValues("inquiry"),
+      });
 
       setSubmitStatus("success");
       setSnackbarMessage("문의사항이 성공적으로 전송되었습니다.");
@@ -143,15 +147,13 @@ const Contact = () => {
               placeholder="담당자 회사명을 입력해주십시오"
               required
               fullWidth
-              {...register("companyName", {
+              {...register("company", {
                 //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
                 validate: (value) => validateNotEmptyAndLength(value, 50),
               })}
             />
-            {errors.companyName && (
-              <ApplicationInputErrorText
-                text={errors.companyName.message || ""}
-              />
+            {errors.company && (
+              <ApplicationInputErrorText text={errors.company.message || ""} />
             )}
           </Box>
 
