@@ -112,10 +112,9 @@ const Training = () => {
         sx={(theme) => ({
           flexDirection: "column",
           position: "relative",
-          my: 12,
+          my: 10,
           [theme.breakpoints.up("tablet")]: {
-            mt: 24,
-            mb: 16,
+            mb: 8,
           },
         })}
       >
