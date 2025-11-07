@@ -13,7 +13,7 @@ interface UseMenuHoverPreviewOptions {
 interface UseMenuHoverPreviewReturn {
   hoveredItemForPreview: string | null; // 현재 호버된 아이템 이름
   itemRefs: React.MutableRefObject<{ [key: string]: HTMLElement | null }>; // 아이템 요소 참조
-  handleMouseEnter: (item: MenuItem) => void; // 호버 시작 시 프리뷰 표시
+  handleMouseEnter: (item: MenuItem, level?: number) => void; // 호버 시작 시 프리뷰 표시
   handleMouseLeave: () => void; // 호버 종료 시 프리뷰 숨김
   handleClick: () => void; // 클릭 시 프리뷰 숨김
 }
@@ -58,9 +58,11 @@ export const useMenuHoverPreview = ({
         const itemElement = itemRefs.current[item.name];
         if (itemElement) {
           const rect = itemElement.getBoundingClientRect();
+          const styles = window.getComputedStyle(itemElement);
+          const paddingRight = parseFloat(styles.paddingRight); // 숫자(px)로 변환
           onPreviewItemChange?.(item, {
-            x: rect.left,
-            y: rect.top + rect.height,
+            x: rect.left + rect.width - paddingRight,
+            y: rect.top + rect.height / 2,
           });
         } else {
           onPreviewItemChange?.(item);
