@@ -111,7 +111,7 @@ export const SubMenuChild = ({
                   }
                   // description이 있는 모든 메뉴 아이템에 대해 프리뷰 표시
                   if (item.description) {
-                    handleMouseEnter(item);
+                    handleMouseEnter(item, level);
                   }
                 }}
                 onMouseLeave={() => {
