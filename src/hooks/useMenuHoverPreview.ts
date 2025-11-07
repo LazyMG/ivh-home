@@ -44,7 +44,7 @@ export const useMenuHoverPreview = ({
 
   // 호버 시작 시 타이머 설정
   const handleMouseEnter = useCallback(
-    (item: MenuItem, level?: number) => {
+    (item: MenuItem) => {
       // 기존 타이머 클리어
       if (hoverTimerRef.current) {
         clearTimeout(hoverTimerRef.current);
@@ -53,20 +53,16 @@ export const useMenuHoverPreview = ({
       // 프로그레스 표시 시작
       setHoveredItemForPreview(item.name);
 
-      console.log("level", level);
-
       // 일정 시간 후 프리뷰 표시
       hoverTimerRef.current = setTimeout(() => {
         const itemElement = itemRefs.current[item.name];
         if (itemElement) {
           const rect = itemElement.getBoundingClientRect();
-
-          // 레벨에 따른 위치 계산
-          const isLevel4 = level === 4;
-
+          const styles = window.getComputedStyle(itemElement);
+          const paddingRight = parseFloat(styles.paddingRight); // 숫자(px)로 변환
           onPreviewItemChange?.(item, {
-            x: isLevel4 ? rect.left : rect.left + rect.width / 3,
-            y: rect.top + rect.height,
+            x: rect.left + rect.width - paddingRight,
+            y: rect.top + rect.height / 2,
           });
         } else {
           onPreviewItemChange?.(item);
