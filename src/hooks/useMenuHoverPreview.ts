@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import type { MenuItem } from "../types/header";
-import { previewDurations } from "../common/Header/previewConstants";
+import { previewDurations } from "../common/header/previewConstants";
 
 interface UseMenuHoverPreviewOptions {
   onPreviewItemChange?: (
@@ -13,7 +13,7 @@ interface UseMenuHoverPreviewOptions {
 interface UseMenuHoverPreviewReturn {
   hoveredItemForPreview: string | null; // 현재 호버된 아이템 이름
   itemRefs: React.MutableRefObject<{ [key: string]: HTMLElement | null }>; // 아이템 요소 참조
-  handleMouseEnter: (item: MenuItem) => void; // 호버 시작 시 프리뷰 표시
+  handleMouseEnter: (item: MenuItem, level?: number) => void; // 호버 시작 시 프리뷰 표시
   handleMouseLeave: () => void; // 호버 종료 시 프리뷰 숨김
   handleClick: () => void; // 클릭 시 프리뷰 숨김
 }
@@ -44,7 +44,7 @@ export const useMenuHoverPreview = ({
 
   // 호버 시작 시 타이머 설정
   const handleMouseEnter = useCallback(
-    (item: MenuItem) => {
+    (item: MenuItem, level?: number) => {
       // 기존 타이머 클리어
       if (hoverTimerRef.current) {
         clearTimeout(hoverTimerRef.current);
@@ -53,13 +53,19 @@ export const useMenuHoverPreview = ({
       // 프로그레스 표시 시작
       setHoveredItemForPreview(item.name);
 
+      console.log("level", level);
+
       // 일정 시간 후 프리뷰 표시
       hoverTimerRef.current = setTimeout(() => {
         const itemElement = itemRefs.current[item.name];
         if (itemElement) {
           const rect = itemElement.getBoundingClientRect();
+
+          // 레벨에 따른 위치 계산
+          const isLevel4 = level === 4;
+
           onPreviewItemChange?.(item, {
-            x: rect.left,
+            x: isLevel4 ? rect.left : rect.left + rect.width / 3,
             y: rect.top + rect.height,
           });
         } else {

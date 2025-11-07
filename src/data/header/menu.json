@@ -123,7 +123,9 @@
       "subMenu": [
         {
           "name": "Smart Factory",
-          "path": "/solution/smartFactory"
+          "path": "/solution/smartFactory",
+          "preview_img_path": "/images/header/preview/smart-factory.jpg",
+          "description": "배터리 제조라인용 스마트 팩토리 Kit 개발"
         },
         {
           "name": "Mobility",
@@ -132,41 +134,59 @@
           "items": [
             {
               "name": "다중 통신기술 네트워크 로드밸런싱 기술개발",
-              "path": "/solution/mobility/multiCommunicateTech"
+              "path": "/solution/mobility/multiCommunicateTech",
+              "preview_img_path": "/images/header/preview/mobility.jpg",
+              "description": "다중 통신기술 네트워크 로드밸런싱 기술개발"
             },
             {
               "name": "AI 운전능력평가 표준화 및 평가 프로세스 개발",
-              "path": "/solution/mobility/aiDrivingAbilityTest"
+              "path": "/solution/mobility/aiDrivingAbilityTest",
+              "preview_img_path": "/images/header/preview/mobility.jpg",
+              "description": "AI 운전능력평가 표준화 및 평가 프로세스 개발"
             },
             {
               "name": "가상내구로 주행 기술",
-              "path": "/solution/mobility/virtualDurability"
+              "path": "/solution/mobility/virtualDurability",
+              "preview_img_path": "/images/header/preview/mobility.jpg",
+              "description": "가상내구로 주행 기술"
             },
             {
               "name": "현가 장치 설계 툴 개발",
-              "path": "/solution/mobility/suspensionEquipment"
+              "path": "/solution/mobility/suspensionEquipment",
+              "preview_img_path": "/images/header/preview/mobility.jpg",
+              "description": "현가 장치 설계 툴 개발"
             },
             {
               "name": "EV 열관리 설계 기술",
-              "path": "/solution/mobility/ev"
+              "path": "/solution/mobility/ev",
+              "preview_img_path": "/images/header/preview/mobility.jpg",
+              "description": "EV 열관리 설계 기술"
             }
           ]
         },
         {
           "name": "Home Appliances",
-          "path": "/solution/homeappliance"
+          "path": "/solution/homeappliance",
+          "preview_img_path": "/images/header/preview/home-appliance.jpg",
+          "description": "PCB 열관리 성능 예측"
         },
         {
           "name": "Energy",
-          "path": "/solution/energy"
+          "path": "/solution/energy",
+          "preview_img_path": "/images/header/preview/energy.jpg",
+          "description": "원자력 - 재생에너지 하이브리드 에너지 시스템"
         },
         {
           "name": "BEMS",
-          "path": "/solution/bems"
+          "path": "/solution/bems",
+          "preview_img_path": "/images/header/preview/bems.jpg",
+          "description": "건물 에너지 관리 기술"
         },
         {
           "name": "AI Innovation Hub",
-          "path": "/solution/aIinnovationhub"
+          "path": "/solution/aIinnovationhub",
+          "preview_img_path": "/images/header/preview/aiinnovation-hub.jpg",
+          "description": "iVH의 모든 기술을 연결하고 강화하는 중추적인 기술 조직입니다."
         }
       ]
     },
