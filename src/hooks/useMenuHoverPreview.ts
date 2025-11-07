@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import type { MenuItem } from "../types/header";
-import { previewDurations } from "../common/Header/previewConstants";
+import { previewDurations } from "../common/header/previewConstants";
 
 interface UseMenuHoverPreviewOptions {
   onPreviewItemChange?: (
