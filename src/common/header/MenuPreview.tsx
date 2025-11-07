@@ -18,7 +18,7 @@ export const MenuPreview = ({
   position,
   visible,
 }: MenuPreviewProps) => {
-  if (!item || !visible) return null;
+  if (!item || !visible || !position) return null;
 
   // menu.json에서 description을 직접 사용
   const description =
@@ -28,18 +28,14 @@ export const MenuPreview = ({
   const previewImgPath = item.preview_img_path;
 
   // 삼각형 크기 (커스터마이징 가능)
-  const triangleWidth = 150;
-  const triangleHeight = 100;
-
-  // 위치 오프셋 (커스터마이징 가능)
-  const offsetX = 100; // 오른쪽으로 더 이동
-  const offsetY = 100; // 아래로 더 이동
+  const triangleWidth = 75;
+  const triangleHeight = 70;
 
   return (
     <Fade in={visible} timeout={300}>
       <Box
         sx={{
-          position: position ? "fixed" : "absolute",
+          position: "fixed",
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
@@ -48,35 +44,26 @@ export const MenuPreview = ({
         }}
       >
         {/* 삼각형 - 메뉴 아이템 기준으로 배치 */}
-        {position && (
-          <Box
-            sx={{
-              position: "fixed",
-              left: `${position.x + offsetX}px`,
-              top: `${position.y + offsetY}px`,
-              transform: "translateY(-120px) translateX(5px)",
-              width: `${triangleWidth}px`,
-              height: `${triangleHeight}px`,
-              background:
-                "linear-gradient(to right, rgba(34, 34, 34, 1), rgba(71, 69, 68, 1))",
-              clipPath: "polygon(100% 55%, 100% 0, 0 0)",
-            }}
-          />
-        )}
+        <Box
+          sx={{
+            position: "fixed",
+            left: `${position.x}px`,
+            top: `${position.y}px`,
+            width: `${triangleWidth}px`,
+            height: `${triangleHeight}px`,
+            background:
+              "linear-gradient(to right, rgba(34, 34, 34, 1), rgba(71, 69, 68, 1))",
+            clipPath: "polygon(100% 55%, 100% 0, 0 0)",
+          }}
+        />
 
         {/* 프리뷰 박스 - 삼각형 오른쪽에 붙어서 배치 */}
         <Box
           sx={{
-            position: position ? "fixed" : "absolute",
-            left: position
-              ? `${position.x + triangleWidth + offsetX}px`
-              : "auto",
-            top: position ? `${position.y + offsetY}px` : "auto",
-            right: position ? "auto" : "24px",
-            marginTop: position ? 0 : "16px",
-            transform: position ? "translateY(-50%)" : "translateY(0)",
-
-            width: "380px",
+            position: "fixed",
+            left: `${position.x + triangleWidth}px`,
+            top: `${position.y}px`,
+            width: "350px",
             minHeight: "240px",
             backgroundColor: previewImgPath
               ? "transparent"
@@ -96,13 +83,14 @@ export const MenuPreview = ({
           {previewImgPath && (
             <Box
               sx={{
+                height: "50%",
                 position: "absolute",
-                top: 0,
+                top: "50%",
                 left: 0,
                 right: 0,
                 bottom: 0,
                 background:
-                  "linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5))",
+                  "linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8))",
                 zIndex: 1,
               }}
             />
