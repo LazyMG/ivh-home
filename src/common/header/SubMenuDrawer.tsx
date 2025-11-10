@@ -87,7 +87,11 @@ export const SubMenuDrawer = ({
           }}
         >
           {/* 로고 영역 빈 공간 */}
-          <SubMenuColumn sx={{ flex: 3 }} />
+          {openedMenuIndex === 3 ? (
+            <SubMenuColumn sx={{ flex: 18 }} />
+          ) : (
+            <SubMenuColumn sx={{ flex: 3 }} />
+          )}
           {/* 1단계 서브메뉴 영역 */}
           <SubMenuColumn
             $isProductPage={openedMenu.path === "/product"}
@@ -144,85 +148,85 @@ export const SubMenuDrawer = ({
           ))}
         </Box>
       </Box>
-
       {/* 오른쪽 영역: 나머지 메뉴들 (2단계 메뉴 열릴 때 회색) */}
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          backgroundColor: openLevel1Menu
-            ? level2BackgroundColor
-            : isHomePage
-            ? "#000"
-            : "#ffffff",
-          flex: 2,
-          position: "relative",
-          zIndex: 1,
-          minHeight: "300px",
-        }}
-      >
-        {/* 2단계 이상 중첩 서브메뉴 - absolute로 배치 */}
-        {openLevel1Menu && (
+      {openedMenuIndex !== 3 && (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            backgroundColor: openLevel1Menu
+              ? level2BackgroundColor
+              : isHomePage
+              ? "#000"
+              : "#ffffff",
+            flex: 2,
+            position: "relative",
+            zIndex: 1,
+            minHeight: "300px",
+          }}
+        >
+          {/* 2단계 이상 중첩 서브메뉴 - absolute로 배치 */}
+          {openLevel1Menu && (
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+
+                display: "flex",
+                flexDirection: "row",
+                zIndex: 10,
+                backgroundColor: level2BackgroundColor,
+                // minHeight: "300px",
+                height: "100%",
+                width: "100%",
+              }}
+            >
+              <SubMenuChild
+                parentItem={openedMenu.subMenu?.find(
+                  (subItem) => subItem.name === openLevel1Menu
+                )}
+                isHomePage={isHomePage}
+                navigate={navigate}
+                level={2}
+                onPreviewItemChange={handlePreviewItemChange}
+              />
+            </Box>
+          )}
+          {/* 상단: 나머지 메뉴 컬럼들 */}
           <Box
             sx={{
-              position: "absolute",
-              top: 0,
-
               display: "flex",
               flexDirection: "row",
-              zIndex: 10,
-              backgroundColor: level2BackgroundColor,
-              // minHeight: "300px",
-              height: "100%",
-              width: "100%",
+              justifyContent: "space-evenly",
             }}
           >
-            <SubMenuChild
-              parentItem={openedMenu.subMenu?.find(
-                (subItem) => subItem.name === openLevel1Menu
-              )}
-              isHomePage={isHomePage}
-              navigate={navigate}
-              level={2}
-              onPreviewItemChange={handlePreviewItemChange}
-            />
+            {/* openedMenuIndex+1부터 끝까지의 컬럼들 */}
+            {allMenuItems.slice(openedMenuIndex + 1).map((item, index) => (
+              <SubMenuColumn
+                key={openedMenuIndex + 1 + index}
+                $isProductPage={item.path === "/product"}
+              />
+            ))}
           </Box>
-        )}
-        {/* 상단: 나머지 메뉴 컬럼들 */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-          }}
-        >
-          {/* openedMenuIndex+1부터 끝까지의 컬럼들 */}
-          {allMenuItems.slice(openedMenuIndex + 1).map((item, index) => (
-            <SubMenuColumn
-              key={openedMenuIndex + 1 + index}
-              $isProductPage={item.path === "/product"}
-            />
-          ))}
-        </Box>
 
-        {/* 하단: 빈 공간 */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-          }}
-        >
-          {/* openedMenuIndex+1부터 끝까지의 빈 공간 */}
-          {allMenuItems.slice(openedMenuIndex + 1).map((item, index) => (
-            <SubMenuColumn
-              key={`empty-right-${index}`}
-              $isProductPage={item.path === "/product"}
-            />
-          ))}
+          {/* 하단: 빈 공간 */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+            }}
+          >
+            {/* openedMenuIndex+1부터 끝까지의 빈 공간 */}
+            {allMenuItems.slice(openedMenuIndex + 1).map((item, index) => (
+              <SubMenuColumn
+                key={`empty-right-${index}`}
+                $isProductPage={item.path === "/product"}
+              />
+            ))}
+          </Box>
         </Box>
-      </Box>
-
+      )}
       {/* 메뉴 프리뷰 */}
       {previewItem && (
         <MenuPreview
