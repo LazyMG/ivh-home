@@ -6,13 +6,15 @@ interface UseMenuPreviewOptions {
   fadeOutDuration?: number; // 프리뷰 사라지는 애니메이션 시간 (ms)
 }
 
+type PreviewPosition = { x: number; y: number; align?: "left" | "right" };
+
 interface UseMenuPreviewReturn {
   previewItem: MenuItem | null; // 현재 프리뷰 아이템
-  previewPosition: { x: number; y: number } | undefined; // 프리뷰 위치
+  previewPosition: PreviewPosition | undefined; // 프리뷰 위치
   previewVisible: boolean; // 프리뷰 표시 여부
   handlePreviewItemChange: (
     item: MenuItem | null,
-    position?: { x: number; y: number }
+    position?: PreviewPosition
   ) => void; // 프리뷰 아이템 변경 핸들러
 }
 
@@ -26,7 +28,7 @@ export const useMenuPreview = ({
 }: UseMenuPreviewOptions = {}): UseMenuPreviewReturn => {
   const [previewItem, setPreviewItem] = useState<MenuItem | null>(null);
   const [previewPosition, setPreviewPosition] = useState<
-    { x: number; y: number } | undefined
+    PreviewPosition | undefined
   >(undefined);
   const [previewVisible, setPreviewVisible] = useState(false);
   const fadeOutTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
