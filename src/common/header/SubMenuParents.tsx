@@ -10,7 +10,7 @@ interface SubMenuParentsProps {
   onLevel1Click: (name: string) => void;
   onPreviewItemChange?: (
     item: MenuItem | null,
-    position?: { x: number; y: number }
+    position?: { x: number; y: number; align?: "left" | "right" }
   ) => void;
 }
 
