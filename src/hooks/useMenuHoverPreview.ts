@@ -10,7 +10,7 @@ interface UseMenuHoverPreviewOptions {
 
 interface UseMenuHoverPreviewReturn {
   itemRefs: React.MutableRefObject<{ [key: string]: HTMLElement | null }>; // 아이템 요소 참조
-  handleMouseEnter: (item: MenuItem) => void; // 호버 시작 시 프리뷰 표시
+  handleMouseEnter: (item: MenuItem, level?: number) => void; // 호버 시작 시 프리뷰 표시
   handleMouseLeave: () => void; // 호버 종료 시 프리뷰 숨김
   handleClick: () => void; // 클릭 시 프리뷰 숨김
 }
@@ -26,16 +26,17 @@ export const useMenuHoverPreview = ({
   const itemRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
   const triggerPreview = useCallback(
-    (item: MenuItem) => {
+    (item: MenuItem, level?: number) => {
       const itemElement = itemRefs.current[item.name];
       if (itemElement) {
         const rect = itemElement.getBoundingClientRect();
-        const styles = window.getComputedStyle(itemElement);
-        const paddingRight = parseFloat(styles.paddingRight) || 0;
+        const align: "left" | "right" =
+          level !== undefined && level >= 3 ? "left" : "right";
 
         onPreviewItemChange?.(item, {
-          x: rect.left + rect.width - paddingRight,
+          x: rect.left + rect.width / 2,
           y: rect.top + rect.height / 2,
+          align,
         });
       } else {
         onPreviewItemChange?.(item);
@@ -46,8 +47,8 @@ export const useMenuHoverPreview = ({
 
   // 호버 시작 시 즉시 프리뷰 표시
   const handleMouseEnter = useCallback(
-    (item: MenuItem) => {
-      triggerPreview(item);
+    (item: MenuItem, level?: number) => {
+      triggerPreview(item, level);
     },
     [triggerPreview]
   );

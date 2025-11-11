@@ -8,6 +8,7 @@ interface MenuPreviewProps {
   position?: {
     x: number;
     y: number;
+    align?: "left" | "right";
   };
   visible: boolean;
 }
@@ -27,44 +28,53 @@ export const MenuPreview = ({
   // preview_img_path가 없으면 기본 배경색 사용
   const previewImgPath = item.preview_img_path;
 
-  // 삼각형 크기 (커스터마이징 가능)
-  const triangleWidth = 75;
-  const triangleHeight = 70;
+  const horizontalMargin = 40;
+  const viewportWidth =
+    typeof window !== "undefined" && typeof window.innerWidth === "number"
+      ? window.innerWidth
+      : 1080;
+  const viewportHeight =
+    typeof window !== "undefined" && typeof window.innerHeight === "number"
+      ? window.innerHeight
+      : 720;
+
+  const previewWidth = Math.max(viewportWidth * 0.43, 350);
+  const previewHeight = Math.max(viewportHeight * 0.38, 3);
+
+  const align = position.align ?? "right";
+
+  const baseLeft =
+    align === "right"
+      ? viewportWidth - previewWidth - horizontalMargin
+      : horizontalMargin;
+  const calculatedLeft = Math.max(
+    horizontalMargin,
+    Math.min(baseLeft, viewportWidth - previewWidth - horizontalMargin)
+  );
+
+  const desiredTop = 100;
+  const calculatedTop = Math.max(
+    horizontalMargin,
+    Math.min(desiredTop, viewportHeight - previewHeight - horizontalMargin)
+  );
 
   return (
     <Fade in={visible} timeout={300}>
       <Box
         sx={{
           position: "fixed",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
           zIndex: 10000,
           pointerEvents: "none",
         }}
       >
-        {/* 삼각형 - 메뉴 아이템 기준으로 배치 */}
+        {/* 프리뷰 박스 */}
         <Box
           sx={{
             position: "fixed",
-            left: `${position.x}px`,
-            top: `${position.y}px`,
-            width: `${triangleWidth}px`,
-            height: `${triangleHeight}px`,
-            background:
-              "linear-gradient(to right, rgba(34, 34, 34, 1), rgba(71, 69, 68, 1))",
-            clipPath: "polygon(100% 55%, 100% 0, 0 0)",
-          }}
-        />
-
-        {/* 프리뷰 박스 - 삼각형 오른쪽에 붙어서 배치 */}
-        <Box
-          sx={{
-            position: "fixed",
-            left: `${position.x + triangleWidth}px`,
-            top: `${position.y}px`,
-            width: "350px",
-            minHeight: "240px",
+            left: `${calculatedLeft}px`,
+            top: `${calculatedTop}px`,
+            width: `${previewWidth}px`,
+            minHeight: `${previewHeight}px`,
             backgroundColor: previewImgPath
               ? "transparent"
               : isHomePage
