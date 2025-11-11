@@ -5,12 +5,20 @@ export interface ChatMessage {
   answer: string;
   createdAt: string;
   updatedAt: string;
+  children?: ChatMessage[];
 }
+
+export type MessageType =
+  | "bot"
+  | "user"
+  | "showQuestionButton"
+  | "questionOptions";
 
 // 현재 채팅방에 출력된 메시지 리스트 상태
 export interface Message {
   id: string;
-  type: "bot" | "user" | "showQuestionButton";
+  type: MessageType;
   content: string;
   isTyping?: boolean;
+  options?: ChatMessage[];
 }

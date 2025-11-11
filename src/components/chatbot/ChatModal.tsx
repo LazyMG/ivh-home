@@ -128,6 +128,13 @@ const ChatModal = ({
             backgroundColor: "#f8f9fa",
             padding: "16px 20px",
             borderBottom: "1px solid #e0e0e0",
+
+            borderRadius: {
+              mobilePortrait: 0,
+              mobileLandscape: 0,
+              tablet: "16px 16px 0 0",
+              desktop: "16px 16px 0 0",
+            },
           }}
         >
           <Box sx={{ fontWeight: 600, fontSize: "16px" }}>고객 지원</Box>

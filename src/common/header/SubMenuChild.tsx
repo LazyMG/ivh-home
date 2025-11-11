@@ -11,7 +11,7 @@ interface SubMenuChildProps {
   onHoverChange?: (itemName: string | null) => void;
   onPreviewItemChange?: (
     item: MenuItem | null,
-    position?: { x: number; y: number }
+    position?: { x: number; y: number; align?: "left" | "right" }
   ) => void;
 }
 

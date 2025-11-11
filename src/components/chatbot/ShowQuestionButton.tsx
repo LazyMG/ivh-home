@@ -2,15 +2,7 @@ import { Box, Button } from "@mui/material";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 
 // "다른 질문이 있으신가요?" 버튼 컴포넌트
-const ShowQuestionButton = ({
-  onClick,
-  visible,
-}: {
-  onClick: () => void;
-  visible: boolean;
-}) => {
-  if (visible) return null;
-
+const ShowQuestionButton = ({ onClick }: { onClick: () => void }) => {
   return (
     <Box
       sx={{
