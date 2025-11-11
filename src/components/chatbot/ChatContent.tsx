@@ -5,6 +5,7 @@ import api from "../../service/api";
 import ShowQuestionButton from "./ShowQuestionButton";
 import MessageBubble from "./MessageBubble";
 import QuestionList from "./QuestionList";
+import { stripHtmlTags } from "../../utils/htmlUtils";
 
 const ChatContent = () => {
   // 현재 채팅방에 출력된 메시지 리스트 상태
@@ -132,6 +133,20 @@ const ChatContent = () => {
     const answerText = detailedChatData?.answer ?? chatData.answer;
     const childQuestions =
       detailedChatData?.children ?? chatData.children ?? [];
+    const isAnswerEmpty = stripHtmlTags(answerText).trim().length === 0;
+
+    if (isAnswerEmpty) {
+      // 답변이 비어있는 경우: 사용자 메시지 제거 후 하위 질문만 노출
+      setMessages((prev) => prev.filter((msg) => msg.id !== userMessage.id));
+      setIsAnswering(false);
+
+      if (childQuestions.length > 0) {
+        appendQuestionOptions(childQuestions);
+      } else {
+        appendShowQuestionButton();
+      }
+      return;
+    }
 
     // 봇 타이핑 연출 및 답변 출력
     setTimeout(() => {
@@ -197,6 +212,13 @@ const ChatContent = () => {
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
+
+        borderRadius: {
+          mobilePortrait: 0,
+          mobileLandscape: 0,
+          tablet: "16px",
+          desktop: "16px",
+        },
       }}
     >
       <Box
