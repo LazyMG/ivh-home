@@ -4,7 +4,7 @@ import type { MenuItem } from "../types/header";
 interface UseMenuHoverPreviewOptions {
   onPreviewItemChange?: (
     item: MenuItem | null, // 프리뷰 아이템
-    position?: { x: number; y: number } // 프리뷰 위치 (x, y)
+    position?: { x: number; y: number; align?: "left" | "right" } // 프리뷰 위치 (x, y)
   ) => void;
 }
 
