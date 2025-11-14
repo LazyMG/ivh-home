@@ -1,9 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import type { MenuItem } from "../../types/header";
 import { useState } from "react";
-import { MenuHoverProgress } from "./MenuHoverProgress";
 import { useMenuHoverPreview } from "../../hooks/useMenuHoverPreview";
-import { previewDurations } from "./previewConstants";
 
 interface SubMenuChildProps {
   parentItem?: MenuItem;
@@ -13,7 +11,7 @@ interface SubMenuChildProps {
   onHoverChange?: (itemName: string | null) => void;
   onPreviewItemChange?: (
     item: MenuItem | null,
-    position?: { x: number; y: number }
+    position?: { x: number; y: number; align?: "left" | "right" }
   ) => void;
 }
 
@@ -28,16 +26,10 @@ export const SubMenuChild = ({
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   // 호버 프리뷰 커스텀 훅 사용
-  const {
-    hoveredItemForPreview,
-    itemRefs,
-    handleMouseEnter,
-    handleMouseLeave,
-    handleClick,
-  } = useMenuHoverPreview({
-    onPreviewItemChange,
-    hoverDuration: previewDurations.hover,
-  });
+  const { itemRefs, handleMouseEnter, handleMouseLeave, handleClick } =
+    useMenuHoverPreview({
+      onPreviewItemChange,
+    });
 
   if (!parentItem) return null;
 
@@ -91,7 +83,6 @@ export const SubMenuChild = ({
       >
         {displayItems.map((item) => {
           const hasSubMenu = item.subMenu;
-          const isHoveredForPreview = hoveredItemForPreview === item.name;
 
           return (
             <Box
@@ -131,7 +122,6 @@ export const SubMenuChild = ({
                   fontSize: "14px",
                   cursor: "pointer",
                   padding: "8px 12px",
-                  paddingRight: item.description ? "36px" : "12px", // 프로그레스바 공간 확보
                   borderRadius: "4px",
                   "&:hover": {
                     color: isHomePage ? "rgba(255,255,255,1)" : "#000",
@@ -142,15 +132,6 @@ export const SubMenuChild = ({
               >
                 {item.name}
               </Typography>
-              {item.description && (
-                <MenuHoverProgress
-                  visible={isHoveredForPreview}
-                  duration={previewDurations.progress}
-                  size={20}
-                  strokeWidth={2}
-                  color={isHomePage ? "#ffffff" : "#000000"}
-                />
-              )}
             </Box>
           );
         })}
