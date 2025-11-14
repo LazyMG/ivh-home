@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   ivh-homepage:
@@ -8,19 +8,15 @@ services:
     container_name: ivh-homepage
     ports:
       - "80:80"
-      - "443:443"  # HTTPS 포트 (SSL 사용 시 주석 해제)
+      - "443:443" # HTTPS 포트 (SSL 사용 시 주석 해제)
     volumes:
-      # SSL 인증서 마운트 (SSL 사용 시 주석 해제)
-      #
-      # 방법 1: Let's Encrypt 표준 경로로 마운트 (추천)
-      # - C:/ProgramData/win-acme/certificates/your-domain.com:/etc/letsencrypt/live/your-domain.com:ro
-      #
-      # 방법 2: 전체 폴더를 다른 경로로 마운트
-      # - C:/ProgramData/win-acme/certificates:/certificates:ro
-      # (이 경우 nginx.conf에서 ssl_certificate 경로를 /certificates/... 로 변경 필요)
-      #
-      # 예시) 도메인이 example.com인 경우:
-      # - C:/ProgramData/win-acme/certificates/example.com:/etc/letsencrypt/live/example.com:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    networks:
+      - app-network
     restart: unless-stopped
     environment:
       - NODE_ENV=production
+
+networks:
+  app-network:
+    external: true
