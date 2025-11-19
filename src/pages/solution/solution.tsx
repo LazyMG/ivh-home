@@ -70,7 +70,7 @@ const Solution = () => {
               },
             })}
           >
-            <ImageIcon {...energy} />
+            <ImageIcon {...energy} animationDelay={1} />
           </Box>
           <Box
             sx={(theme) => ({
@@ -126,7 +126,7 @@ const Solution = () => {
               },
             })}
           >
-            <ImageIcon {...factory} />
+            <ImageIcon {...factory} animationDelay={1} />
           </Box>
 
           {/* 세 번째 행: BEMS, Mobility */}
@@ -146,7 +146,7 @@ const Solution = () => {
               },
             })}
           >
-            <ImageIcon {...bems} />
+            <ImageIcon {...bems} animationDelay={1} />
           </Box>
           <Box
             sx={(theme) => ({
