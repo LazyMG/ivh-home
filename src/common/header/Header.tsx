@@ -16,11 +16,6 @@ const Header = () => {
   // 1단계 서브메뉴 중 어떤 것이 클릭되었는지
   const [openLevel1Menu, setOpenLevel1Menu] = useState<string | null>(null);
 
-  useEffect(() => {
-    setOpenMainMenu(location.state?.footerOpenMenu || null);
-    setOpenLevel1Menu(location.state?.footerLevel1Menu || null);
-  }, [location.state]);
-
   // 페이지 이동 시 메뉴 닫기
   useEffect(() => {
     setOpenMainMenu(null);
@@ -40,6 +35,8 @@ const Header = () => {
   };
 
   const handleLevel1Click = (name: string) => {
+    console.log("click");
+
     if (openLevel1Menu === name) {
       // 같은 1단계 메뉴 클릭 시 닫기
       setOpenLevel1Menu(null);
