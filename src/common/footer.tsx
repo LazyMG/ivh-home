@@ -10,14 +10,8 @@ const Footer = () => {
   const { youtubeLogo, linkedinLogo, youtubeUrl, linkedinUrl } = socialMedia;
   const navigate = useNavigate();
 
-  const handleFooterLevelClick = (title: string, name: string) => {
+  const handleFooterLevelClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    navigate(location.pathname, {
-      state: {
-        footerOpenMenu: title,
-        footerLevel1Menu: name,
-      },
-    });
   };
 
   return (
@@ -230,24 +224,27 @@ const Footer = () => {
                   flex: item.title === "PRODUCT & SERVICES" ? 1.5 : 1,
                 }}
               >
-                {item.items.map((subItem, subIndex) => (
-                  <Typography
-                    sx={{
-                      fontSize: "14px",
-                      fontFamily: "Freesentation-4-Regular",
-                      color: "white",
-                      cursor: "pointer",
-                    }}
-                    key={subIndex}
-                    onClick={() =>
-                      subItem.path
-                        ? navigate(subItem.path)
-                        : handleFooterLevelClick(item.title, subItem.name)
-                    }
-                  >
-                    {subItem.name}
-                  </Typography>
-                ))}
+                {item.items.map((subItem, subIndex) => {
+                  if (subItem?.state === "hide") return null;
+                  return (
+                    <Typography
+                      sx={{
+                        fontSize: "14px",
+                        fontFamily: "Freesentation-4-Regular",
+                        color: "white",
+                        cursor: "pointer",
+                      }}
+                      key={subIndex}
+                      onClick={() =>
+                        subItem.path
+                          ? navigate(subItem.path)
+                          : handleFooterLevelClick()
+                      }
+                    >
+                      {subItem.name}
+                    </Typography>
+                  );
+                })}
               </Box>
             ))}
           </Box>
