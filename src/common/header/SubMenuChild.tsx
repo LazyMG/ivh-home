@@ -83,6 +83,7 @@ export const SubMenuChild = ({
       >
         {displayItems.map((item) => {
           const hasSubMenu = item.subMenu;
+          if (item?.state === "hide") return null;
 
           return (
             <Box

@@ -40,6 +40,15 @@ export const SubMenuParents = ({
       {items.map((item) => {
         const hasSubMenu = item.items; // 2단계 메뉴가 있는지
         const isActive = openLevel1Menu === item.name; // 현재 열려있는 1단계 메뉴인지
+        if (item?.state === "hide") return null;
+
+        // 모든 자식 메뉴가 hide 상태인지 확인
+        const allChildrenHidden = hasSubMenu &&
+          item.items?.every((child) => child.state === "hide");
+
+        // 모든 자식이 숨겨진 경우 부모도 숨김
+        if (allChildrenHidden) return null;
+
         return (
           <Box
             key={item.name}

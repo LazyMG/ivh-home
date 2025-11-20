@@ -6,6 +6,7 @@ export interface MenuItem {
   preview_img_path?: string; // 프리뷰 이미지 경로
   items?: MenuItem[]; // 2단계 메뉴 (클릭 시 표시)
   subMenu?: MenuItem[]; // 3단계+ 메뉴 (호버 시 표시)
+  state?: string;
 }
 
 // 메인 메뉴

@@ -6,7 +6,7 @@
         {
           "name": "All Products",
           "items": [
-            { "name": "iSuite" },
+            { "name": "iSuite", "state": "hide" },
             {
               "name": "Modelica",
               "subMenu": [
@@ -42,8 +42,8 @@
                     }
                   ]
                 },
-                { "name": "Modelon" },
-                { "name": "TLK" }
+                { "name": "Modelon", "state": "hide" },
+                { "name": "TLK", "state": "hide" }
               ]
             },
             {
@@ -91,23 +91,23 @@
                 }
               ]
             },
-            { "name": "SFE" }
+            { "name": "SFE", "state": "hide" }
           ]
         },
         {
           "name": "Technology",
           "items": [
-            { "name": "Digital Twin" },
-            { "name": "MBSE" },
-            { "name": "AI" }
+            { "name": "Digital Twin", "state": "hide" },
+            { "name": "MBSE", "state": "hide" },
+            { "name": "AI", "state": "hide" }
           ]
         },
         {
           "name": "Application",
           "items": [
-            { "name": "AMR Development" },
-            { "name": "Battery Package Design" },
-            { "name": "Building Energy Management" }
+            { "name": "AMR Development", "state": "hide" },
+            { "name": "Battery Package Design", "state": "hide" },
+            { "name": "Building Energy Management", "state": "hide" }
           ]
         },
         {

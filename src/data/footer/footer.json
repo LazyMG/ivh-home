@@ -20,7 +20,7 @@
         { "name": "Modelica" },
         { "name": "VTD", "path": "/product/vtd" },
         { "name": "Vissim", "path": "/product/vissim" },
-        { "name": "SFE" }
+        { "name": "SFE", "state": "hide" }
       ]
     },
     {
@@ -41,7 +41,7 @@
       "title": "SUPPORT",
       "items": [
         { "name": "Training", "path": "/support/training" },
-        { "name": "Support" }
+        { "name": "Support", "path": "/support" }
       ]
     },
     {
