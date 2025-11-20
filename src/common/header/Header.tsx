@@ -35,8 +35,6 @@ const Header = () => {
   };
 
   const handleLevel1Click = (name: string) => {
-    console.log("click");
-
     if (openLevel1Menu === name) {
       // 같은 1단계 메뉴 클릭 시 닫기
       setOpenLevel1Menu(null);
