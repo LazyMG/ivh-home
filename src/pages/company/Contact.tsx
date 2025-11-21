@@ -321,6 +321,9 @@ const Contact = () => {
                 body { margin: 0; padding: 0; }
                 .root_daum_roughmap { height: 100vh; width:100% !important;}
                 .root_daum_roughmap_landing {width:100%;}
+                .root_daum_roughmap_landing .wrap_map{
+                  height: 100% !important;
+                }
               </style>
             </head>
             <body>
