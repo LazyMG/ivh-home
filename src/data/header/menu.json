@@ -9,6 +9,7 @@
             { "name": "iSuite", "state": "hide" },
             {
               "name": "Modelica",
+              "path": "#",
               "subMenu": [
                 {
                   "name": "Dymola",
@@ -87,7 +88,8 @@
                 {
                   "name": "Viswalk",
                   "path": "/product/vissim/viswalk",
-                  "preview_img_path": "/images/pages/product/vissim/vissim-card-viswalk.png"
+                  "preview_img_path": "/images/pages/product/vissim/vissim-card-viswalk.png",
+                  "description": "현실적인 다중 환경 보행자 시뮬레이션 소프트웨어"
                 }
               ]
             },
