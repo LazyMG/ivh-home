@@ -33,6 +33,27 @@ export const MenuColumn = styled(Box, {
       maxWidth: max,
       position: "relative",
 
+      // 삼각형 화살표
+      "&::before": {
+        content: '""',
+        position: "absolute",
+        bottom: headerLayout.hoverLineHeight,
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: 0,
+        height: 0,
+        borderLeft: "8px solid transparent",
+        borderRight: "8px solid transparent",
+        borderBottom: `8px solid ${theme.hoverLine}`,
+        opacity: $isActive && !$isLogoColumn ? 1 : 0,
+        transition: "opacity 0.3s ease",
+        zIndex: 2,
+      },
+
+      "&:hover::before": {
+        opacity: $isLogoColumn ? 0 : 1,
+      },
+
       "&::after": {
         content: '""',
         position: "absolute",
