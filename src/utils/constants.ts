@@ -3,7 +3,9 @@ import type {
   ReservationTypeMap,
 } from "../types/reservation";
 
-export const API_BASE_URL = import.meta.env.VITE_BASE_API_URL;
+// export const API_BASE_URL = import.meta.env.VITE_BASE_API_URL;
+
+export const API_BASE_URL = "https://lazymg.com:8443/api";
 
 export const API_ENDPOINTS = {
   MENU: {
