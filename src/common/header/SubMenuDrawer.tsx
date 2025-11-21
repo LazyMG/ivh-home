@@ -154,7 +154,7 @@ export const SubMenuDrawer = ({
                 src={
                   isHomePage
                     ? isSolution
-                      ? youtubeBlack
+                      ? linkedinBlack
                       : linkedinWhite
                     : linkedinBlack
                 }
