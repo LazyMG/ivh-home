@@ -312,13 +312,37 @@ const Contact = () => {
         })}
       >
         <iframe
-          src={contact.products_link.map_src}
+          srcDoc={`
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="UTF-8">
+              <style>
+                body { margin: 0; padding: 0; }
+                .root_daum_roughmap { height: 100vh; width:100% !important;}
+                .root_daum_roughmap_landing {width:100%;}
+                .root_daum_roughmap_landing .wrap_map{
+                  height: 100% !important;
+                }
+              </style>
+            </head>
+            <body>
+              <div id="daumRoughmapContainer1763706405091" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+              <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+              <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                  "timestamp" : "1763706405091",
+                  "key" : "cjr4kop8knq",
+                  "mapHeight" : "100%"
+                }).render();
+              </script>
+            </body>
+            </html>
+          `}
           width="100%"
           height="100%"
           style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          title="Daum Map"
         />
       </Box>
 
