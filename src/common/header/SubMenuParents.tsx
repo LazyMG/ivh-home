@@ -1,8 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import type { MenuItem } from "../../types/header";
-import { MenuHoverProgress } from "./MenuHoverProgress";
 import { useMenuHoverPreview } from "../../hooks/useMenuHoverPreview";
-import { previewDurations } from "./previewConstants";
 
 interface SubMenuParentsProps {
   items: MenuItem[];
@@ -12,7 +10,7 @@ interface SubMenuParentsProps {
   onLevel1Click: (name: string) => void;
   onPreviewItemChange?: (
     item: MenuItem | null,
-    position?: { x: number; y: number }
+    position?: { x: number; y: number; align?: "left" | "right" }
   ) => void;
 }
 
@@ -25,16 +23,10 @@ export const SubMenuParents = ({
   onPreviewItemChange,
 }: SubMenuParentsProps) => {
   // 호버 프리뷰 커스텀 훅 사용
-  const {
-    hoveredItemForPreview,
-    itemRefs,
-    handleMouseEnter,
-    handleMouseLeave,
-    handleClick,
-  } = useMenuHoverPreview({
-    onPreviewItemChange,
-    hoverDuration: previewDurations.hover,
-  });
+  const { itemRefs, handleMouseEnter, handleMouseLeave, handleClick } =
+    useMenuHoverPreview({
+      onPreviewItemChange,
+    });
 
   return (
     <Box
@@ -48,7 +40,14 @@ export const SubMenuParents = ({
       {items.map((item) => {
         const hasSubMenu = item.items; // 2단계 메뉴가 있는지
         const isActive = openLevel1Menu === item.name; // 현재 열려있는 1단계 메뉴인지
-        const isHoveredForPreview = hoveredItemForPreview === item.name; // 현재 호버된 아이템 이름과 일치하는지
+        if (item?.state === "hide") return null;
+
+        // 모든 자식 메뉴가 hide 상태인지 확인
+        const allChildrenHidden = hasSubMenu &&
+          item.items?.every((child) => child.state === "hide");
+
+        // 모든 자식이 숨겨진 경우 부모도 숨김
+        if (allChildrenHidden) return null;
 
         return (
           <Box
@@ -95,7 +94,6 @@ export const SubMenuParents = ({
                 fontWeight: isActive ? "bold" : "normal",
                 cursor: "pointer",
                 padding: "8px 12px",
-                paddingRight: item.description ? "36px" : "12px", // 프로그레스바 공간 확보
                 borderRadius: "2px",
                 transition: "all 0.2s ease",
                 "&:hover": {
@@ -106,15 +104,6 @@ export const SubMenuParents = ({
             >
               {item.name}
             </Typography>
-            {item.description && (
-              <MenuHoverProgress
-                visible={isHoveredForPreview}
-                duration={previewDurations.progress}
-                size={20}
-                strokeWidth={2}
-                color={isHomePage ? "#ffffff" : "#000000"}
-              />
-            )}
           </Box>
         );
       })}

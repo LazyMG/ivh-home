@@ -4,7 +4,7 @@
       "title": "iVH Suite",
       "description": "iVH Suite는 FMI, SSP, Open X 표준을 준수하는 성능 예측 및 평가 도구입니다.",
       "description_sub": "사용자 친화적이고 효육적인 설계를 지원합니다.",
-      "navigate_url": "/home",
+      "navigate_url": "/",
       "imageUrl": "/images/home/home.jpg"
     },
     {
@@ -25,7 +25,7 @@
       "title": "iVH Factory",
       "description": "iVH Factory는 배터리 생산라인 전용 스마트 팩토리 툴킷을 제공합니다.",
       "description_sub": "스마트 팩토리 툴킷은 디지털 트윈 기반의 장비 예지보전, 배터리 생산품질관리, 공정 및 환경 모니터링 기능을 제공합니다. iVH Factory는 Industry4.0 시대의 요구사항을 만족하는 생산공정 구축을 지원합니다.",
-      "navigate_url": "/product/ivhfactory",
+      "navigate_url": "/",
       "imageUrl": "/images/home/ivh_factory.jpg"
     },
     {
@@ -39,7 +39,7 @@
       "title": "Modelon Library Suite",
       "description": "광범위한 산업, 다양한 도메인 및 응용 프로그램을 다룰 수 있는 Modelica 기반 라이브러리로 구성된 솔루션 도구입니다.",
       "description_sub": "17개의 전문적인 라이브러리를 활용하여 Multi-Physics 모델링 및 시뮬레이션, 시스템 최적화가 가능합니다.",
-      "navigate_url": "/product/modelon",
+      "navigate_url": "/",
       "imageUrl": "/images/home/modelon.jpg"
     },
     {
@@ -53,7 +53,7 @@
       "title": "SFE",
       "description": "설계 초기 단계의 시뮬레이션 중심 개념 설계를 위한 최적의 솔루션입니다.",
       "description_sub": "차체 구조 설계 시 초기 단계부터 신속하게 개념적 형상을 만들며, 이를 통해 다양한 변형 사항을 연구에 용이하도록 수정하고 즉시 실행 가능한 형상 시뮬레이션 모델을 만들 수 있습니다.",
-      "navigate_url": "/product/sfe",
+      "navigate_url": "/",
       "imageUrl": "/images/home/sfe.jpg"
     }
   ]

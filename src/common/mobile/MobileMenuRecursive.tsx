@@ -50,9 +50,19 @@ export const MobileMenuRecursive = ({
   return (
     <Box>
       {items.map((item) => {
+        // hide 상태인 항목 제외
+        if (item?.state === "hide") return null;
+
         const hasChildren = item.items || item.subMenu; // 자식 메뉴가 있는지
         const isOpen = openItems.has(item.name);
         const childItems = item.items || item.subMenu || []; // 자식의 자식 메뉴가 있으면 재귀에 전달 없으면 빈 배열
+
+        // 모든 자식 메뉴가 hide 상태인지 확인
+        const allChildrenHidden = hasChildren &&
+          childItems.every((child) => child.state === "hide");
+
+        // 모든 자식이 숨겨진 경우 부모도 숨김
+        if (allChildrenHidden) return null;
 
         return (
           <Box key={item.name}>
