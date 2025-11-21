@@ -11,6 +11,7 @@ interface MenuPreviewProps {
     align?: "left" | "right";
   };
   visible: boolean;
+  drawerBottom?: number;
 }
 
 export const MenuPreview = ({
@@ -18,6 +19,7 @@ export const MenuPreview = ({
   isHomePage,
   position,
   visible,
+  drawerBottom,
 }: MenuPreviewProps) => {
   if (!item || !visible || !position) return null;
 
@@ -38,21 +40,25 @@ export const MenuPreview = ({
       ? window.innerHeight
       : 720;
 
-  const previewWidth = Math.max(viewportWidth * 0.43, 350);
-  const previewHeight = Math.max(viewportHeight * 0.38, 3);
+  const previewWidth = Math.max(viewportWidth * 0.3, 350);
+  const previewHeight = Math.max(viewportHeight * 0.32, 3);
 
   const align = position.align ?? "right";
 
+  // align이 "left"면 최하단 레벨 메뉴 → 해당 컬럼 내부의 왼쪽에 배치
+  // align이 "right"면 하위 메뉴 있음 → 화면 오른쪽에 배치
   const baseLeft =
-    align === "right"
-      ? viewportWidth - previewWidth - horizontalMargin
-      : horizontalMargin;
+    align === "left"
+      ? position.x + 20 // 최하단 레벨 메뉴 컬럼 내부 왼쪽에 20px 간격으로 배치
+      : viewportWidth - previewWidth - horizontalMargin; // 화면 오른쪽에 배치
   const calculatedLeft = Math.max(
     horizontalMargin,
     Math.min(baseLeft, viewportWidth - previewWidth - horizontalMargin)
   );
 
-  const desiredTop = 100;
+  // 메뉴 드로어의 하단 위치를 기준으로 프리뷰를 배치
+  const menuDrawerBottom = drawerBottom ?? position.y + 300;
+  const desiredTop = menuDrawerBottom - previewHeight - 20; // 드로어 하단에서 프리뷰 높이 + 20px 여백만큼 위로
   const calculatedTop = Math.max(
     horizontalMargin,
     Math.min(desiredTop, viewportHeight - previewHeight - horizontalMargin)
@@ -142,6 +148,7 @@ export const MenuPreview = ({
                 color: "#ffffff",
                 textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)",
                 maxWidth: "77%",
+                wordBreak: "keep-all",
               }}
             >
               {description}
