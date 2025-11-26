@@ -26,7 +26,7 @@ const NewsletterList = () => {
       title: item.title,
       content: item.content,
       link_url: item.contentsUrl,
-      date: dayjs(item.updatedAt).format("YYYY.MM.DD"),
+      date: dayjs(item.publishedAt).format("YYYY.MM.DD"),
     }));
     setNewsletterItems(items.slice(0, 4));
   };
