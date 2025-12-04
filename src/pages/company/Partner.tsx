@@ -1,6 +1,12 @@
 import { Box, Stack, Typography } from "@mui/material";
 import partner from "../../data/company/partner.json";
 import ImageHeader from "../../components/company/ImageHeader";
+import CustomerContainer from "../../components/company/CustomerContainer";
+
+interface CustomerListObj {
+  src: string;
+  maxWidth: string;
+}
 
 const Partner = () => {
   const {
@@ -10,6 +16,33 @@ const Partner = () => {
     parnter_customer,
     parnter_customerList,
   } = partner;
+
+  const { customer_company, customer_institution, customer_education } =
+    parnter_customerList;
+
+  // 작은 화면용: 3개씩 chunk로 나누기
+  const chunkArray = (arr: CustomerListObj[], size: number) => {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const companyMobileChunks = chunkArray(
+    customer_company.flatMap((c) => c.list),
+    3
+  );
+
+  const institutionMobileChunks = chunkArray(
+    customer_institution.flatMap((c) => c.list),
+    3
+  );
+
+  const educationMobileChunks = chunkArray(
+    customer_education.flatMap((c) => c.list),
+    3
+  );
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -29,7 +62,7 @@ const Partner = () => {
         sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-          gap: 6,
+          gap: 24,
           my: 10,
           px: "16px",
           pt: "20px",
@@ -38,7 +71,7 @@ const Partner = () => {
           },
           [theme.breakpoints.up("desktop")]: {
             pt: "50px",
-            px: 40,
+            px: 30,
           },
         })}
       >
@@ -113,31 +146,25 @@ const Partner = () => {
             {parnter_customer}
           </Typography>
           <Box
-            component="ul"
+            // component="ul"
             sx={{
               display: "flex",
               width: "100%",
-              justifyContent: "between",
-              flexWrap: "wrap",
-              rowGap: 10,
+              flexDirection: "column",
             }}
           >
-            {parnter_customerList.map((customerImg, index) => (
-              <Box
-                key={index}
-                sx={{
-                  width: "25%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src={customerImg}
-                  style={{ width: "70%", maxWidth: "130px" }}
-                />
-              </Box>
-            ))}
+            <CustomerContainer
+              chunkList={companyMobileChunks}
+              customerList={customer_company}
+            />
+            <CustomerContainer
+              chunkList={institutionMobileChunks}
+              customerList={customer_institution}
+            />
+            <CustomerContainer
+              chunkList={educationMobileChunks}
+              customerList={customer_education}
+            />
           </Box>
         </Stack>
       </Box>
