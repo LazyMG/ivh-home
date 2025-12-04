@@ -2,15 +2,272 @@
   "parnter_image": "/images/pages/company/company_partner.jpg",
   "parnter_parnter": "Partner",
   "parnter_parnterList": [
+    "/images/pages/company/partner/partner_dassaultsystems.svg",
     "/images/pages/company/partner/partner_modelica.svg",
     "/images/pages/company/partner/partner_modelon.svg",
-    "/images/pages/company/partner/partner_dassaultsystems.svg",
     "/images/pages/company/partner/partner_hexagon.svg",
-    "/images/pages/company/partner/partner_asammember.svg",
-    "/images/pages/company/partner/partner_edi.svg",
     "/images/pages/company/partner/partner_ptvgroup.svg",
+    "/images/pages/company/partner/partner_edi.svg",
+    "/images/pages/company/partner/partner_asammember.svg",
     "/images/pages/company/partner/partner_tlk.svg"
   ],
   "parnter_customer": "Customer",
-  "parnter_customerList": [""]
+  "parnter_customerList": {
+    "customer_company": [
+      {
+        "layout": "space-between",
+        "list": [
+          { "src": "/images/pages/company/customer/1.svg", "maxWidth": "12%" },
+          {
+            "src": "/images/pages/company/customer/2.png",
+            "maxWidth": "18%"
+          },
+          {
+            "src": "/images/pages/company/customer/3.png",
+            "maxWidth": "18%"
+          },
+          {
+            "src": "/images/pages/company/customer/4.webp",
+            "maxWidth": "16%"
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/5.svg",
+            "maxWidth": "20%"
+          },
+          {
+            "src": "/images/pages/company/customer/6.png",
+            "maxWidth": "8%"
+          },
+          {
+            "src": "/images/pages/company/customer/7.png",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/8.svg",
+            "maxWidth": "14%"
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/9.svg",
+            "maxWidth": "14%"
+          },
+          {
+            "src": "/images/pages/company/customer/10.png",
+            "maxWidth": "6%"
+          },
+          {
+            "src": "/images/pages/company/customer/11.png",
+            "maxWidth": "14%"
+          },
+          {
+            "src": "/images/pages/company/customer/12.svg",
+            "maxWidth": "18%"
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/13.svg",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/14.png",
+            "maxWidth": "12%"
+          },
+          {
+            "src": "/images/pages/company/customer/15.svg",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/16.png",
+            "maxWidth": "18%"
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/17.png",
+            "maxWidth": "14%"
+          },
+          {
+            "src": "/images/pages/company/customer/18.jpg",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/19.jpg",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/20.png",
+            "maxWidth": "16%"
+          }
+        ]
+      },
+      {
+        "layout": "start",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/21.png",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/22.jpg",
+            "maxWidth": "30%"
+          },
+          {
+            "src": "/images/pages/company/customer/23.png",
+            "maxWidth": "18%"
+          }
+        ]
+      }
+    ],
+    "customer_institution": [
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/24.png",
+            "maxWidth": "18%"
+          },
+          {
+            "src": "/images/pages/company/customer/25.png",
+            "maxWidth": "22%"
+          },
+          {
+            "src": "/images/pages/company/customer/26.png",
+            "maxWidth": "20%"
+          },
+          {
+            "src": "/images/pages/company/customer/27.svg",
+            "maxWidth": "18%"
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/28.svg",
+            "maxWidth": "28%"
+          },
+          {
+            "src": "/images/pages/company/customer/29.svg",
+            "maxWidth": "28%"
+          },
+          {
+            "src": "/images/pages/company/customer/30.png",
+            "maxWidth": "22%"
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/31.svg",
+            "maxWidth": "28%"
+          },
+          {
+            "src": "/images/pages/company/customer/32.svg",
+            "maxWidth": "28%"
+          },
+          {
+            "src": "/images/pages/company/customer/33.svg",
+            "maxWidth": "24%"
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/34.jpg",
+            "maxWidth": "30%"
+          },
+          {
+            "src": "/images/pages/company/customer/35.png",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/36.png",
+            "maxWidth": "14%"
+          },
+          {
+            "src": "/images/pages/company/customer/37.jpg",
+            "maxWidth": "20%"
+          }
+        ]
+      }
+    ],
+    "customer_education": [
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/38.png",
+            "maxWidth": "6%"
+          },
+          {
+            "src": "/images/pages/company/customer/39.jpg",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/40.png",
+            "maxWidth": "16%"
+          },
+          {
+            "src": "/images/pages/company/customer/41.png",
+            "maxWidth": "18%"
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/42.jpg",
+            "maxWidth": "18%"
+          },
+          {
+            "src": "/images/pages/company/customer/43.png",
+            "maxWidth": "18%"
+          },
+          {
+            "src": "/images/pages/company/customer/44.jpg",
+            "maxWidth": "18%"
+          },
+          {
+            "src": "/images/pages/company/customer/45.jpg",
+            "maxWidth": "22%"
+          }
+        ]
+      },
+      {
+        "layout": "start",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/46.png",
+            "maxWidth": "22%"
+          },
+          {
+            "src": "/images/pages/company/customer/47.svg",
+            "maxWidth": "22%"
+          }
+        ]
+      }
+    ]
+  }
 }
