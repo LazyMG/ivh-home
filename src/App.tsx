@@ -57,6 +57,7 @@ import Partner from "./pages/company/Partner";
 
 import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
+import Mobility from "./pages/solution/Mobility";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -83,7 +84,7 @@ function AppContent() {
           <Route path="/solution/homeappliance" element={<HomeAppliance />} />
           <Route path="/solution/smartfactory" element={<SmartFactory />} />
           <Route path="/solution/bems" element={<Bems />} />
-          <Route path="/solution/mobility" element={<MultiCommunicateTech />} />
+          <Route path="/solution/mobility" element={<Mobility />} />
           <Route
             path="/solution/mobility/multiCommunicateTech"
             element={<MultiCommunicateTech />}

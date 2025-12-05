@@ -376,7 +376,7 @@
       ]
     }
   },
-  "mobility": {
+  "oldMobility": {
     "multiCommunicateTech": {
       "outline": {
         "outlineTitle": "• 개요",
@@ -979,6 +979,167 @@
           }
         ]
       }
+    }
+  },
+  "mobility": {
+    "outline": {
+      "outlineTitle": "• 개요",
+      "outlineContents": "BEMS(Building Energy Management System)는 건물의 전력·열·가스·수처리 등 다종 설비와 분산에너지자원(DER)을 통합 감시·제어하여 에너지 효율, 쾌적도, 안정성을 향상하는 지능형 운영 시스템입니다. 본 문서는 Modelica/Dymola 기반 디지털 트윈을 핵심으로 하는 BEMS 고도화 기술과 적용 방법을 설명합니다.\n 이에 따라 가상주행환경 기반 검증 기법이 주목받고 있으며, 특히 ASAM 표준 기반 시뮬레이션 환경은 국제적 호환성과 신뢰성 측면에서 효과적인 대안으로 평가받고 있습니다."
+    },
+    "marketTrend": {
+      "marketTrendTitle": "• 솔루션 도입 필요성",
+      "marketTrendContents": [
+        "1. 자율주행 검증의 패러다임 전환",
+        "자율주행차 검증 체계는 실차 시험, Lab 평가, 시뮬레이션 기반 가상환경으로 다변화되고 있습니다. ISO 26262, UNECE WP.29 등 국제 표준은 시뮬레이션 검증을 강조하며, ASAM OpenX 시리즈가 시뮬레이션 환경 표준화의 핵심 프레임워크로 자리잡았습니다.",
+        "2. 디지털 트윈 및 MBSE의 중요성",
+        "디지털 트윈은 도로, 교통, 차량 동역학을 가상화하여 반복적인 성능 검증을 가능하게 하고, 실차 시험 대비 비용과 기간을 절감합니다. MBSE는 요구사항부터 검증까지 모델 중심으로 통합 관리하며, 디지털 트윈 데이터로 성능 예측과 위험 분석을 지원합니다. 두 기술의 결합은 선행 검증을 강화하고 실차 시험 의존도를 줄이며 안전성을 확보하는 핵심 전략입니다."
+      ],
+      "marketTrendContentImgUrl": [
+        "/images/pages/solution/mobility/solution_mobility_trend.png"
+      ],
+      "marketTrendContentImgText": "< Front Loading 구현을 위한 V-Cycle 검증 프로세스 >"
+    },
+    "colorBoxes": [
+      {
+        "boxColor": "#cc5268",
+        "layout": [[12], [12], [12]],
+        "boxes": [
+          {
+            "title": "• 핵심 기술",
+            "hyphen": "-",
+            "subSections": [
+              {
+                "title": "[ 도로 네트워크 및 노면 모델링 ]",
+                "items": [
+                  "MMS 기반 실도로 스캐닝으로 라이다·카메라 데이터 취득 및 LAS 포인트 클라우드 생성",
+                  "차선, 차폭 등 도로 속성 추출 후 ASAM openDRIVE 표준으로 모델링",
+                  "openCRG 표준 기반 노면 모델링: 3D 라이다 표면 데이터를 그리드화하여 차량 동역학 평가",
+                  "실측 데이터 대비 형상, 주파수 응답 비교를 통한 모델 신뢰성 검증"
+                ],
+                "images": [
+                  {
+                    "src": "/images/pages/solution/mobility/solution_mobility_box_first.png",
+                    "width": "100%",
+                    "height": "auto",
+                    "caption": "< MMS기반 도로 스캐닝 및 도로생성 프로세스 >"
+                  }
+                ],
+                "imagePosition": "bottom",
+                "contentLayout": "vertical"
+              },
+              {
+                "title": "[ 평가용 시나리오 및 교통환경 모사 ]",
+                "items": [
+                  "openSCENARIO 표준으로 정지, 출발, 차선 변경 등 대표 시나리오 구현",
+                  "랜덤 트래픽 모델을 통한 복잡한 교통 흐름 재현",
+                  "PTV VISSIM, SUMO 등 전문 교통 시뮬레이션 툴 연계",
+                  "DOE 기반 시나리오 자동 생성 및 KPI 기반 자동 평가 환경 구축"
+                ],
+                "images": [
+                  {
+                    "src": "/images/pages/solution/mobility/solution_mobility_box_second.png",
+                    "width": "100%",
+                    "height": "auto",
+                    "caption": "< 교통환경 모델 >"
+                  }
+                ],
+                "imagePosition": "bottom",
+                "contentLayout": "vertical"
+              },
+              {
+                "title": "[ Modelica 기반 차량 동역학 모델 ]",
+                "items": [
+                  "Modelica 언어로 섀시, 동력계, 조향계, 현가장치 등 모듈화 및 물리적 거동 정밀 반영",
+                  "가속, 제동, 더블레인체인지 실차 데이터 기반 모델 검증",
+                  "UDP/TCP 인터페이스로 VTD 가상환경과 양방향 연동",
+                  "주행 중 차량 상태 데이터 실시간 전달을 통한 자율주행 알고리즘 사전 검증"
+                ],
+                "images": [
+                  {
+                    "src": "/images/pages/solution/mobility/solution_mobility_box_third.png",
+                    "width": "100%",
+                    "height": "auto",
+                    "caption": "< 가상환경 및 요소모델 연동 환경 예시 >"
+                  }
+                ],
+                "imagePosition": "bottom",
+                "contentLayout": "vertical"
+              },
+              {
+                "title": "[ 날씨 및 센서 모델 ]",
+                "items": [
+                  "시뮬레이션 툴 이미지 생성기로 맑음, 비, 눈, 안개 등 기후 상황 및 노면 상태 구현",
+                  "PBR 및 BRDF 기반 재질 특성 적용",
+                  "레이트레이싱 기법으로 카메라, 라이다, 레이더의 물리적 특성 정밀 모사",
+                  "센서 데이터 획득 시 왜곡, 반사 등 재현을 통한 인식 알고리즘 검증 지원"
+                ],
+                "images": [
+                  {
+                    "src": "/images/pages/solution/mobility/solution_mobility_box_fourth.png",
+                    "width": "100%",
+                    "height": "auto",
+                    "caption": "< 가상 센서 및 환경 모델 예시 >"
+                  }
+                ],
+                "imagePosition": "bottom",
+                "contentLayout": "vertical"
+              }
+            ],
+            "subSectionColumns": {
+              "xs": 12,
+              "sm": 6
+            }
+          },
+          {
+            "title": "• 적용 사례",
+            "hyphen": "-",
+            "subSections": [
+              {
+                "title": "[ 전기동력 대용량 BRT 자율주행 기반기술 연구 ]",
+                "items": [
+                  "MMS 기반 openDRIVE 도로 모델 및 청라지구 BRT 노선 구축",
+                  "Modelica 언어 활용 BRT(굴절형 버스) 차량 동역학 모델 개발",
+                  "openSCENARIO 표준 적용 주행 시나리오 및 랜덤 트래픽 모델 구현",
+                  "다양한 센서 모델 통합을 통한 실도로 조건 정밀 재현",
+                  "다양한 트래픽 조건 하 충돌 여부, 차선 이탈 등 핵심 KPI 자동 분석",
+                  "자율주행 알고리즘의 안정성·신뢰성·주행 안전성 정량적 평가",
+                  "실차 적용 이전 선행 검증(Front Loading) 효과 입증"
+                ]
+              }
+            ],
+            "subSectionColumns": {
+              "xs": 12
+            },
+            "images": [
+              {
+                "src": "/images/pages/solution/mobility/solution_mobility_box_case.png",
+                "width": "100%",
+                "height": "320px",
+                "caption": "< 디지털 트윈 기반 BRT 자율주행 평가환경 개요 >"
+              }
+            ],
+            "imagePosition": "bottom",
+            "contentLayout": "horizontal",
+            "imageLayout": "row"
+          },
+          {
+            "title": "• 기대 효과",
+            "hyphen": "-",
+            "items": [
+              "실차 시험 대비 비용·시간 획기적 절감",
+              "복잡한 도심 환경 및 다양한 교통 시나리오 가상 재현",
+              "자율주행 시스템의 안전성·신뢰성 사전 검증",
+              "국제 표준 기반 검증 체계로 글로벌 경쟁력 확보",
+              "설계~검증 전 과정 자동화로 개발 효율 극대화",
+              "제품 출시 리드타임 단축 및 R&D 역량 강화"
+            ]
+          }
+        ]
+      }
+    ],
+    "relatedSoftware": {
+      "relatedSoftwareTitle": "• 관련 소프트웨어 (Software)",
+      "relatedSoftwareContents": "VTD(Hexagon), VISSIM(PTV Group), Dymola(Dassault), VDL(Modelon)"
     }
   },
   "aiInnovationHub": {
