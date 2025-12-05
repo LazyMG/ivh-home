@@ -29,7 +29,7 @@
         { "name": "Smart Factory", "path": "/solution/smartfactory" },
         {
           "name": "Mobility",
-          "path": "/solution/mobility/multiCommunicateTech"
+          "path": "/solution/mobility"
         },
         { "name": "Home Appliances", "path": "/solution/homeappliance" },
         { "name": "Energy", "path": "/solution/energy" },
