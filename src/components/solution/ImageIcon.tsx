@@ -2,8 +2,6 @@ import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import mobilityJson from "../../data/solution/mobilityData.json";
-
 interface ImageIconProps {
   src: string;
   text: string;
@@ -15,7 +13,6 @@ interface ImageIconProps {
   path: string;
   animationDelay?: number;
 }
-const MOBILITY = "Mobility";
 
 {
   /** Solution 메인 페이지에 사용되는 아이콘 */
@@ -35,8 +32,6 @@ const ImageIcon = (icon: ImageIconProps) => {
     path,
     animationDelay = 0,
   } = icon;
-
-  const { mobilityData } = mobilityJson;
 
   const navigate = useNavigate();
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
@@ -94,13 +89,8 @@ const ImageIcon = (icon: ImageIconProps) => {
             alignItems,
           },
         })}
-        onClick={(e) => {
-          if (text === MOBILITY) {
-            e.stopPropagation();
-            setIsTooltipOpen(!isTooltipOpen);
-          } else {
-            navigate(path);
-          }
+        onClick={() => {
+          navigate(path);
         }}
       >
         {textPosition === "left" && (
@@ -136,7 +126,7 @@ const ImageIcon = (icon: ImageIconProps) => {
             {text}
           </Typography>
         )}
-        {isTooltipOpen && (
+        {/* {isTooltipOpen && (
           <Box
             ref={tooltipRef}
             sx={(theme) => ({
@@ -246,7 +236,7 @@ const ImageIcon = (icon: ImageIconProps) => {
               </Box>
             ))}
           </Box>
-        )}
+        )} */}
       </Box>
     </Box>
   );

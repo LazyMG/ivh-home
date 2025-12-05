@@ -65,16 +65,31 @@ const BoxContentRenderer = ({
         }}
       >
         {images.map((img, index) => {
-          const resolvedSrc = new URL(img.src, import.meta.url).href;
           return (
-            <img
-              key={index}
-              src={resolvedSrc}
-              alt={img.alt || `image-${index}`}
-              width={img.width || "300px"}
-              height={img.height || "300px"}
-              style={{ objectFit: "contain" }}
-            />
+            <Box key={index} sx={{ display: "flex", flexDirection: "column" }}>
+              <img
+                src={img.src}
+                alt={img.alt || `image-${index}`}
+                style={{
+                  objectFit: "contain",
+                  width: img.width || "300px",
+                  height: img.height || "300px",
+                }}
+              />
+              {img.caption && (
+                <Typography
+                  variant="solutionTextFont"
+                  component="p"
+                  sx={(theme) => ({
+                    ...theme.typography.solutionTextFont,
+                    mt: 1,
+                    textAlign: "center",
+                  })}
+                >
+                  {img.caption}
+                </Typography>
+              )}
+            </Box>
           );
         })}
       </Box>
@@ -115,19 +130,64 @@ const BoxContentRenderer = ({
           }} // 동적으로 컬럼 설정
           key={index}
         >
-          {section.title && (
-            <Typography
-              variant="solutionTextFont"
-              component="p"
-              sx={(theme) => ({
-                ...theme.typography.solutionTextFont,
-                mb: 1,
-              })}
-            >
-              {section.title}
-            </Typography>
-          )}
-          {renderItems(section.items)}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
+            }}
+          >
+            {/* 텍스트 콘텐츠 */}
+            <Box>
+              {section.title && (
+                <Typography
+                  variant="solutionTextFont"
+                  component="p"
+                  sx={(theme) => ({
+                    ...theme.typography.solutionTextFont,
+                    mb: 1,
+                  })}
+                >
+                  {section.title}
+                </Typography>
+              )}
+              {renderItems(section.items)}
+            </Box>
+
+            {/* 각 서브섹션의 이미지 렌더링 */}
+            {section.images && section.images.length > 0 && (
+              <Box sx={{ mt: 3 }}>
+                {section.images.map((img, imgIndex) => (
+                  <Box key={imgIndex}>
+                    <img
+                      src={img.src}
+                      alt={img.alt || `section-${index}-image-${imgIndex}`}
+                      style={{
+                        objectFit: "contain",
+                        width: img.width || "300px",
+                        height: img.height || "300px",
+                        display: "block",
+                      }}
+                    />
+                    {img.caption && (
+                      <Typography
+                        variant="solutionTextFont"
+                        component="p"
+                        sx={(theme) => ({
+                          ...theme.typography.solutionTextFont,
+                          mt: 1,
+                          textAlign: "center",
+                        })}
+                      >
+                        {img.caption}
+                      </Typography>
+                    )}
+                  </Box>
+                ))}
+              </Box>
+            )}
+          </Box>
         </Grid>
       ))}
     </Grid>

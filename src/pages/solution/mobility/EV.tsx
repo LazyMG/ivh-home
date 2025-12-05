@@ -17,7 +17,7 @@ const EV = () => {
     subColor,
     EV: { subtitle: EVSubTitle },
   } = header.Mobility;
-  const { EV } = body.mobility;
+  const { EV } = body.oldMobility;
   const { isMobile } = useBreakpoint();
   const THRESHOLD = 100;
   const seoData = useSEO("solution/mobility/ev", mobility.mobility.ev);

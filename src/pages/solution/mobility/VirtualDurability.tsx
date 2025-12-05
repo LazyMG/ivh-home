@@ -17,7 +17,7 @@ const VirtualDurability = () => {
     subColor,
     virtualDurability: { subtitle: virtualDurabilitySubTitle },
   } = header.Mobility;
-  const { virtualDurability } = body.mobility;
+  const { virtualDurability } = body.oldMobility;
   const { isMobile } = useBreakpoint();
   const THRESHOLD = 100;
   const seoData = useSEO(

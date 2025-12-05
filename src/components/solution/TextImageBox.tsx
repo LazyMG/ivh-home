@@ -28,7 +28,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
           }}
         >
           {contents.map((content, index) => {
-            const isSection = /^[A-Z]\.\s/.test(content);
+            const isSection = /^([A-Z]|\d+)\.\s/.test(content);
             return (
               <Box
                 key={index}
