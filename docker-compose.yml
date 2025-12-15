@@ -7,10 +7,23 @@ services:
       dockerfile: Dockerfile
     container_name: ivh-homepage
     ports:
-      - "80:80"
-      - "443:443" # HTTPS 포트 (SSL 사용 시 주석 해제)
+      - "8080:80"
+      # - "443:443" # HTTPS 포트 (SSL 사용 시 주석 해제)
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
+    networks:
+      - app-network
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+
+  ivh-homepage-sub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ivh-homepage-sub
+    ports:
+      - "8081:80"
     networks:
       - app-network
     restart: unless-stopped
