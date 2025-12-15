@@ -1,0 +1,284 @@
+{
+  "name": "AMR 자율주행로봇",
+  "title": "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다. 정밀한 자율주행 기술, 실시간 환경 인식, 외부 시스템과의 통합 연동 기능을 통해, 다양한 산업 분야에서 무인화된 작업 흐름과 지능형 공정 운영을 가능하게 합니다.",
+  "main_image": "/images/pages/product/iMOVA/iMOVA_top.png",
+  "title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
+  "main_function": [
+    {
+      "function_title": "고정밀 자율주행 기술",
+      "function_description": "3D LiDAR와 IMU 센서를 기반으로 ±10mm 수준의 고정밀 자율주행을 구현합니다.",
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_one.png"
+    },
+    {
+      "function_title": "고강성 섀시 및 내구성",
+      "function_description": "1톤 이상의 고하중 적재가 가능하며, 방진 설계를 통해 진동에 강하고 장거리 연속 운행에도 안정적인 성능을 유지합니다.",
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_two.png"
+    },
+    {
+      "function_title": "지능형 작업 분배 시스템",
+      "function_description": "Task Dispatcher 기반의 스케줄링 시스템을 통해 작업을 자동으로 분배하여, 관리자의 개입 없이도 유연한 작업 흐름을 유지할 수 있습니다.",
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_three.png"
+    },
+    {
+      "function_title": "AI 기반 환경 모니터링",
+      "function_description": "온도, 습도, 먼지, 소음 등을 감지할 수 있는 센서를 탑재하고 있으며, AI 기반의 이상 감지 알고리즘을 통해 실시간으로 환경 상태를 분석합니다.",
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_four.png"
+    },
+    {
+      "function_title": "무선 충전 및 에너지 최적화",
+      "function_description": "SOC 기반의 자율 충전 기능을 통해, 충전소의 혼잡도를 고려한 최적의 충전 전략을 선택함으로써 에너지 효율을 극대화합니다.",
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_five.png"
+    }
+  ],
+  "control_system": [
+    {
+      "control_system_topic": "AMR 운영 및 공정 환경 모니터링",
+      "control_system_description": "공장 내 자율주행 로봇(AMR)의 위치와 상태를 실시간으로 파악하고, 환경 센서를 통해 공정 상태를 모니터링함으로써 운영자는 물류 흐름과 생산 환경을 직관적으로 관리할 수 있습니다.",
+      "control_system_image_url": ""
+    },
+    {
+      "control_system_topic": "작업 자동 할당 및 경로 최적화",
+      "control_system_description": "작업 요청을 자동으로 수신하고, 각 AMR의 상태와 위치를 고려해 최적의 작업을 배정합니다. 동시에 충돌을 회피하는 경로를 자동 생성해 안전하고 효율적인 작업을 유지합니다.",
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_one.png"
+    },
+    {
+      "control_system_topic": "충전 제어 및 에너지 최적화",
+      "control_system_description": "AMR의 배터리 상태와 작업 일정을 고려해 충전 시점을 자동 판단하고, 충전소 혼잡도를 분석해 충전 순서를 최적화합니다.",
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_two.png"
+    },
+    {
+      "control_system_topic": "장애 감지 및 예지 보전",
+      "control_system_description": "운행 중 발생할 수 있는 장애를 실시간으로 감지하고 경보를 발생시키며, 과거 장애 패턴을 분석하여 고장을 예측하고 사전 정비를 수행합니다.",
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_three.png"
+    },
+    {
+      "control_system_topic": "AI 기반 환경 및 보안 모니터링",
+      "control_system_description": "AMR에 장착된 다양한 센서를 통해 공장 내 환경 상태를 실시간으로 감시하고, AI 분석을 통해 이상 징후를 조기에 탐지하여 작업자 안전과 품질 관리를 동시에 실현합니다.",
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_four.png"
+    },
+    {
+      "control_system_topic": "MES, ERP 등 외부 시스템과의 통합 운영",
+      "control_system_description": "산업 표준 프로토콜을 통해 MES, ERP, WMS 등 외부 시스템과 유연하게 연동하며, 공장 운영 데이터를 통합 관리해 생산성과 대응력을 높입니다.",
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_five.png"
+    }
+  ],
+  "production_line": {
+    "production_line_title": "이차전지 생산라인",
+    "production_line_image_url": "/images/pages/product/iMOVA/iMOVA_usecase.png",
+    "production_line_list": [
+      {
+        "production_line_topic": "초고속·고안전 무선 충전",
+        "production_line_description": "iMOVA는 2500W급의 강력한 무선 충전 성능을 갖춘 초고속·고안전 충전 기술을 제공합니다. TMS(열 관리 시스템)로 발열을 제어하고, BMS(배터리 관리 시스템)로 충전 안정성을 강화하여 빠르고 안전한 무선 충전 환경을 구현합니다."
+      },
+      {
+        "production_line_topic": "고중량 적재가능 자율주행 이동로봇(AMR)",
+        "production_line_description": "고중량 이차전지 전극재의 안정적 이송을 통해 생산공정의 효율성과 품질을 동시에 확보합니다."
+      },
+      {
+        "production_line_topic": "생산공정 환경 모니터링 시스템",
+        "production_line_description": "AMR에 탑재된 온도, 습도, 미세먼지, 카메라 등 다양한 센서의 데이터가 실시간으로 중앙 서버에 전송됩니다. 이상 수치 감지 시 즉시 알림을 제공하여 공정 중 발생 가능한 위험 요소를 효과적으로 관리합니다."
+      },
+      {
+        "production_line_topic": "이차전지 생산 라인 무인화",
+        "production_line_description": "전극재 이송 및 공급 공정을 AMR 기반 무인화로 전환하여 운영 효율성을 극대화했습니다. 센서와 AI 기반 경로 최적화 기술을 통해 장애물을 실시간 감지하고, 변화하는 환경에 유연하게 대응합니다. 중앙 관제 시스템과 연동되어 작업 지시와 데이터 수집이 자동화됩니다."
+      },
+      {
+        "production_line_topic": "자율주행 협동로봇 통합 관제 시스템",
+        "production_line_description": "공장 내 다수의 AMR을 통합 제어 모니터링하는 관제시스템을 통해 생산 자동화와 현장 안전성을 강화했습니다. MES와 연동된 iSuite34는 작업 지시를 실시간으로 AMR에 전달하며, 공정 최적화와 품질 향상에 기여합니다."
+      },
+      {
+        "production_line_topic": "고정밀 자율주행 및 도킹",
+        "production_line_description": "고정밀 자율주행과 자동 도킹 기능을 통해 작업자의 개입 없이 전극재를 정확히 공급합니다. 이 자동화 기술은 공정의 일관성을 높이고 전체 생산 자동화 수준을 향상시킵니다."
+      }
+    ]
+  },
+  "technology_spec": {
+    "technology_spec_title": "iMOVA 품별 주요 기술 사양",
+    "technology_spec_products": [
+      {
+        "product": "iMOVA 200",
+        "product_standard": {
+          "color": "Silver",
+          "size": "884 x 690 x 275 mm",
+          "weight": "90.0 kg",
+          "box_size": "880 x 680 mm"
+        },
+        "performance": {
+          "max_load": "200.0 kg",
+          "speed": "2.0m/s",
+          "motor_performance": "400W 11A 1.27 N·m",
+          "motor_rated_output": "30.0 mm",
+          "permitted_step": "30.0 mm",
+          "permitted_gap_width": "50.0 mm",
+          "max_inclination_angle": "5.0 deg",
+          "noise": "50 dB @ 1500 RPM"
+        },
+        "electrical": {
+          "input_voltage": "AC 100~240V, 5A, 50/60Hz",
+          "output_voltage": "29.4V, 10A",
+          "input_voltage_battery": "24V",
+          "capacity": "15Ah",
+          "permitted_voltage": "21~29.4 V"
+        },
+        "environment": {
+          "ip_rating": "IP-3",
+          "wifi_frequency": "2.4 GHz",
+          "wifi_current": "40mA"
+        },
+        "battery": {
+          "lifespan": "약 1.8h",
+          "charging_time": "1.8~2.0h"
+        },
+        "environmental_monitoring": {
+          "temperature": {
+            "range": "20~90%",
+            "accuracy": "±5%"
+          },
+          "humidity": {
+            "range": "0~50°C",
+            "accuracy": "±2°C"
+          },
+          "dust": {
+            "particle_size": "1㎛ (최소)",
+            "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
+            "accuracy": "≤ 95%"
+          },
+          "camera": {
+            "sensor": "Sony IMX219",
+            "resolution": "3280 × 2464"
+          }
+        }
+      },
+      {
+        "product": "iMOVA 500",
+        "product_standard": {
+          "color": "Silver",
+          "size": "1000 x 800 x 300 mm",
+          "weight": "150.0 kg",
+          "box_size": "1000 x 800 mm"
+        },
+        "performance": {
+          "max_load": "500.0 kg",
+          "speed": "2.0m/s",
+          "motor_performance": "600W 16A 1.91 N·m",
+          "motor_rated_output": "600Wx 2ea",
+          "permitted_step": "30.0 mm",
+          "permitted_gap_width": "50.0 mm",
+          "max_inclination_angle": "5.0 deg",
+          "noise": "50 dB @ 1500 RPM"
+        },
+        "electrical": {
+          "input_voltage": "AC 220V, max. 12A",
+          "output_voltage": "52V~58V, 10A~40A",
+          "input_voltage_battery": "48V",
+          "capacity": "70A",
+          "permitted_voltage": "21~29.4 V"
+        },
+        "environment": {
+          "ip_rating": "IP-3",
+          "wifi_frequency": "2.4 GHz",
+          "wifi_current": "40mA"
+        },
+        "battery": {
+          "lifespan": "약 2.9h",
+          "charging_time": "1.0~1.2h"
+        },
+        "environmental_monitoring": {
+          "temperature": {
+            "range": "20~90%",
+            "accuracy": "±5%"
+          },
+          "humidity": {
+            "range": "0~50°C",
+            "accuracy": "±2°C"
+          },
+          "dust": {
+            "particle_size": "1㎛ (최소)",
+            "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
+            "accuracy": "≤ 95%"
+          },
+          "camera": {
+            "sensor": "Sony IMX219",
+            "resolution": "3280 × 2464"
+          }
+        }
+      },
+      {
+        "product": "iMOVA 1000",
+        "product_standard": {
+          "color": "Silver",
+          "size": "1500 x 910 x 300 mm",
+          "weight": "200.0 kg",
+          "box_size": "1,500 x 900 mm"
+        },
+        "performance": {
+          "max_load": "1000.0 kg",
+          "speed": "2.0m/s",
+          "motor_performance": "750W 20.85A 2.39 N·m",
+          "motor_rated_output": "750Wx 2ea",
+          "permitted_step": "30.0 mm",
+          "permitted_gap_width": "50.0 mm",
+          "max_inclination_angle": "5.0 deg",
+          "noise": "50 dB @ 1500 RPM"
+        },
+        "electrical": {
+          "input_voltage": "AC 220V, max. 12A",
+          "output_voltage": "52V~58V, 10A~40A",
+          "input_voltage_battery": "48V",
+          "capacity": "70A",
+          "permitted_voltage": "21~29.4 V"
+        },
+        "environment": {
+          "ip_rating": "IP-3",
+          "wifi_frequency": "2.4 GHz",
+          "wifi_current": "40mA"
+        },
+        "battery": {
+          "lifespan": "약 2.9h",
+          "charging_time": "1.0~1.2h"
+        },
+        "environmental_monitoring": {
+          "temperature": {
+            "range": "20~90%",
+            "accuracy": "±5%"
+          },
+          "humidity": {
+            "range": "0~50°C",
+            "accuracy": "±2°C"
+          },
+          "dust": {
+            "particle_size": "1㎛ (최소)",
+            "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
+            "accuracy": "≤ 95%"
+          },
+          "camera": {
+            "sensor": "Sony IMX219",
+            "resolution": "3280 × 2464"
+          }
+        }
+      }
+    ],
+    "technology_spec_example": "스마트 팩토리: 공정 간 자재 자동 이송, MES/ERP 연계 물류 자동화 물류센터 / 창고: 피킹, 패킹, 분류 작업 자동화 반도체 / 배터리 산업: 공정 간 무인 이송 무인화 / 야간 자동 운송: 야간 근무 대체, 24시간 무정지 물류 실현",
+    "technology_spec_sub": "Charging Station"
+  },
+  "wireless_charging": {
+    "transmitter": {
+      "charging_module": {
+        "power": "2500W",
+        "size": "463 × 106 × 223",
+        "weight": "6.8 kg",
+        "input_voltage": "AC 220V / 12A",
+        "current": "40A (10A~40A, 1A 단위로 세팅 가능)",
+        "voltage": "58V (54V ~ 58V, 0.5V 단위로 세팅 가능)"
+      },
+      "charging_coil_pad": {
+        "power": "-",
+        "size": "355 × 181 × 59",
+        "weight": "6.0 kg",
+        "input_voltage": "-",
+        "current": "-",
+        "voltage": "-"
+      }
+    }
+  }
+}
