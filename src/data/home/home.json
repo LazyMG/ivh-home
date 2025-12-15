@@ -56,5 +56,10 @@
       "navigate_url": "/",
       "imageUrl": "/images/home/sfe.jpg"
     }
-  ]
+  ],
+  "iMOVA": {
+    "imageUrl": "/images/home/iMOVA.png",
+    "mainText": "Intelligent Manufacturing Begins",
+    "subText": "스마트 제조의 미래, iMOVA가 이끕니다."
+  }
 }
