@@ -15,6 +15,8 @@ export interface ContactRequestForm {
   name: string;
   phone: string;
   email: string;
+  position: string;
+  division: string;
   inquiry: string;
 }
 const catchInvaildLoginError = (message: string) => {

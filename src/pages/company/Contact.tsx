@@ -24,9 +24,11 @@ import { customerService } from "../../service/customerService";
 
 interface ContactFormType {
   company: string;
+  division: string;
   name: string;
-  phone: string;
+  position: string;
   email: string;
+  phone: string;
   inquiry: string;
   isPrivacyAgreed: boolean;
 }
@@ -49,9 +51,11 @@ const Contact = () => {
     mode: "onChange",
     defaultValues: {
       company: "",
+      division: "",
       name: "",
       phone: "",
       email: "",
+      position: "",
       inquiry: "",
       isPrivacyAgreed: false,
     },
@@ -67,6 +71,8 @@ const Contact = () => {
         name: getValues("name"),
         phone: getValues("phone"),
         email: getValues("email"),
+        position: getValues("position"),
+        division: getValues("division"),
         inquiry: getValues("inquiry"),
       });
 
@@ -157,6 +163,24 @@ const Contact = () => {
             )}
           </Box>
 
+          {/* 부서 */}
+          <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <TextField
+              size="small"
+              label="부서명"
+              placeholder="담당자 부서명을 입력해주십시오"
+              required
+              fullWidth
+              {...register("division", {
+                //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
+                validate: (value) => validateNotEmptyAndLength(value, 50),
+              })}
+            />
+            {errors.company && (
+              <ApplicationInputErrorText text={errors.company.message || ""} />
+            )}
+          </Box>
+
           {/* 성함 */}
           <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
             <TextField
@@ -175,20 +199,20 @@ const Contact = () => {
             )}
           </Box>
 
-          {/* 연락처 */}
+          {/* 직급 */}
           <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
             <TextField
               size="small"
-              label="연락처"
-              placeholder="담당자 연락처를 입력해주십시오 (-) 포함"
+              label="직급"
+              placeholder="담당자 직급을 입력해주십시오"
               required
               fullWidth
-              {...register("phone", {
-                validate: (value) => validatePhone(value),
+              {...register("position", {
+                validate: (value) => validateNotEmptyAndLength(value, 50),
               })}
             />
-            {errors.phone && (
-              <ApplicationInputErrorText text={errors.phone.message || ""} />
+            {errors.position && (
+              <ApplicationInputErrorText text={errors.position.message || ""} />
             )}
           </Box>
 
@@ -206,6 +230,23 @@ const Contact = () => {
             />
             {errors.email && (
               <ApplicationInputErrorText text={errors.email.message || ""} />
+            )}
+          </Box>
+
+          {/* 연락처 */}
+          <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <TextField
+              size="small"
+              label="연락처"
+              placeholder="담당자 연락처를 입력해주십시오 (-) 포함"
+              required
+              fullWidth
+              {...register("phone", {
+                validate: (value) => validatePhone(value),
+              })}
+            />
+            {errors.phone && (
+              <ApplicationInputErrorText text={errors.phone.message || ""} />
             )}
           </Box>
 
