@@ -1,7 +1,4 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Mousewheel, Navigation } from "swiper/modules";
 import { Card, CardContent, CardMedia, Box, Typography } from "@mui/material";
-import HomeContents from "./HomeContents";
 import homeData from "../../data/home/home.json";
 
 // Swiper CSS import

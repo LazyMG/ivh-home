@@ -4,7 +4,7 @@ import NewsletterList from "../components/common/NewsletterList";
 import SEO from "../common/SEO";
 import { useEffect } from "react";
 import "../App.css";
-import CardSlide from "../components/home/CardSlide";
+// import CardSlide from "../components/home/CardSlide";
 import BackgroundBox from "../components/home/BackgroundBox";
 import TempCardSlide from "../components/home/TempCardSlide";
 // import FloatingButton from "../components/chatbot/FloatingButton";
