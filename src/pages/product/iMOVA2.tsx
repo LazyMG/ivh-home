@@ -1,6 +1,7 @@
 import { Box, Divider, Paper, Typography } from "@mui/material";
 import iMOVA from "../../data/product/iMOVA.json";
 import TechSpecTable from "../../components/product/iMOVA/TechSpecTable";
+import WirelessChargingTable from "../../components/product/iMOVA/WirelessChargingTable";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, Navigation } from "swiper/modules";
@@ -22,8 +23,8 @@ const IMOVA2 = () => {
     title_image2,
     control_system,
     production_line,
-    production_line_image_url2,
     technology_spec,
+    wireless_charging,
   } = iMOVA;
 
   return (
@@ -159,6 +160,9 @@ const IMOVA2 = () => {
               width: "100%",
               alignItems: "center",
               [theme.breakpoints.up("tablet")]: {
+                gap: 8,
+              },
+              [theme.breakpoints.up("desktop")]: {
                 gap: 10,
               },
             })}
@@ -493,7 +497,9 @@ const IMOVA2 = () => {
                     transform: "translate(-50%, -50%)",
                     width: "95%",
                     padding: 2,
+                    paddingBottom: 1,
                     alignItems: "center",
+                    maxWidth: "400px",
                   },
                 })}
               >
@@ -502,19 +508,16 @@ const IMOVA2 = () => {
                   direction={"horizontal"}
                   slidesPerView={1}
                   spaceBetween={8}
-                  mousewheel={false} // 마우스 휠 지원
-                  // pagination={{
-                  //   type: "fraction", // 점 대신 "1 / 8" 형식으로 변경
-                  //   clickable: true,
-                  // }}
+                  mousewheel={false}
+                  navigation={true}
                   loop={true}
-                  // navigation={true} // 화살표 버튼 추가
                   modules={[Mousewheel, Pagination, Navigation]}
                   style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
                     color: "white",
+                    paddingBottom: "50px",
                   }}
                 >
                   {production_line.production_line_list.map((item, index) => (
@@ -620,11 +623,14 @@ const IMOVA2 = () => {
           </Box> */}
         </Box>
         <TechSpecTable
-          technology_spec_example={technology_spec.technology_spec_example}
+          technology_spec_application={
+            technology_spec.technology_spec_application
+          }
           technology_spec_products={technology_spec.technology_spec_products}
           technology_spec_sub={technology_spec.technology_spec_sub}
           technology_spec_title={technology_spec.technology_spec_title}
         />
+        <WirelessChargingTable wireless_charging={wireless_charging} />
       </Box>
     </Box>
   );

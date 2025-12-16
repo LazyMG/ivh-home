@@ -276,7 +276,7 @@
         }
       }
     ],
-    "technology_spec_example": "스마트 팩토리: 공정 간 자재 자동 이송, MES/ERP 연계 물류 자동화 물류센터 / 창고: 피킹, 패킹, 분류 작업 자동화 반도체 / 배터리 산업: 공정 간 무인 이송 무인화 / 야간 자동 운송: 야간 근무 대체, 24시간 무정지 물류 실현",
+    "technology_spec_application": "스마트 팩토리: 공정 간 자재 자동 이송, MES/ERP 연계 물류 자동화 물류센터 / 배터리 산업: 공정 간 무인 이송\n무인화 / 야간 자동 운송: 야간 근무 대체, 24시간 무정지 물류 실현",
     "technology_spec_sub": "Charging Station"
   },
   "wireless_charging": {

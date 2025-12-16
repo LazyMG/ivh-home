@@ -9,7 +9,6 @@ type IMOVAMainFunction = {
 };
 
 const MainFunction = ({ function_list }: IMOVAMainFunction) => {
-  console.log(Array.isArray(function_list));
   return (
     <Box
       sx={(theme) => ({
@@ -17,6 +16,10 @@ const MainFunction = ({ function_list }: IMOVAMainFunction) => {
         gap: 6,
         flexDirection: "column",
         [theme.breakpoints.up("tablet")]: {
+          flexDirection: "row",
+          gap: 6,
+        },
+        [theme.breakpoints.up("desktop")]: {
           flexDirection: "row",
           gap: 16,
         },
@@ -41,7 +44,6 @@ const MainFunction = ({ function_list }: IMOVAMainFunction) => {
             src={func.function_image_url}
             sx={{
               mb: 3,
-
               objectFit: "contain",
             }}
           />
