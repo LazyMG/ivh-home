@@ -59,7 +59,9 @@ type IMOVATechnologySpec = {
   technology_spec_example: string;
   technology_spec_sub: string;
 };
-
+{
+  /*모바일에서는 드롭다운으로 정리*/
+}
 const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
   return (
     <Box
@@ -68,8 +70,6 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
         flexDirection: "column",
         justifyContent: "center",
         width: "100%",
-        gap: 8,
-        mt: 20,
       }}
     >
       <Typography variant="h5" sx={{ fontWeight: "bold", mb: 4 }}>

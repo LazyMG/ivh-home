@@ -127,7 +127,7 @@ const IMOVA2 = () => {
           justifyContent: "center",
           gap: 14,
           px: "20px",
-          mt: 10,
+          mt: 6,
           [theme.breakpoints.up("desktop")]: {
             px: "120px",
           },
@@ -147,7 +147,6 @@ const IMOVA2 = () => {
             sx={{
               fontWeight: "bold",
               fontFamily: "Freesentation-7-Bold",
-              textAlign: "center",
             }}
           >
             주요 기능
@@ -620,12 +619,12 @@ const IMOVA2 = () => {
             />
           </Box> */}
         </Box>
-        {/* <TechSpecTable
+        <TechSpecTable
           technology_spec_example={technology_spec.technology_spec_example}
           technology_spec_products={technology_spec.technology_spec_products}
           technology_spec_sub={technology_spec.technology_spec_sub}
           technology_spec_title={technology_spec.technology_spec_title}
-        /> */}
+        />
       </Box>
     </Box>
   );
