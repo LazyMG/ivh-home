@@ -2,7 +2,11 @@
   "name": "AMR 자율주행로봇",
   "title": "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다. 정밀한 자율주행 기술, 실시간 환경 인식, 외부 시스템과의 통합 연동 기능을 통해, 다양한 산업 분야에서 무인화된 작업 흐름과 지능형 공정 운영을 가능하게 합니다.",
   "main_image": "/images/pages/product/iMOVA/iMOVA_top.png",
+  "main_image2": "/images/home/iMOVA.png",
+
   "title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
+  "title_image2": "/images/pages/product/iMOVA/iMOVA_title2.png",
+
   "main_function": [
     {
       "function_title": "고정밀 자율주행 기술",
@@ -65,30 +69,44 @@
   "production_line": {
     "production_line_title": "이차전지 생산라인",
     "production_line_image_url": "/images/pages/product/iMOVA/iMOVA_usecase.png",
+    "production_line_image_url2": "/images/pages/product/iMOVA/iMOVA_usecase2.svg",
+
     "production_line_list": [
       {
         "production_line_topic": "초고속·고안전 무선 충전",
-        "production_line_description": "iMOVA는 2500W급의 강력한 무선 충전 성능을 갖춘 초고속·고안전 충전 기술을 제공합니다. TMS(열 관리 시스템)로 발열을 제어하고, BMS(배터리 관리 시스템)로 충전 안정성을 강화하여 빠르고 안전한 무선 충전 환경을 구현합니다."
+        "production_line_description": "iMOVA는 2500W급의 강력한 무선 충전 성능을 갖춘 초고속·고안전 충전 기술을 제공합니다. TMS(열 관리 시스템)로 발열을 제어하고, BMS(배터리 관리 시스템)로 충전 안정성을 강화하여 빠르고 안전한 무선 충전 환경을 구현합니다.",
+        "production_line_color": "#CF750C",
+        "position": { "top": "12%", "left": "4%" }
       },
       {
         "production_line_topic": "고중량 적재가능 자율주행 이동로봇(AMR)",
-        "production_line_description": "고중량 이차전지 전극재의 안정적 이송을 통해 생산공정의 효율성과 품질을 동시에 확보합니다."
+        "production_line_description": "고중량 이차전지 전극재의 안정적 이송을 통해 생산공정의 효율성과 품질을 동시에 확보합니다.",
+        "production_line_color": "#5B5B5B",
+        "position": { "top": "22%", "left": "36%" }
       },
       {
         "production_line_topic": "생산공정 환경 모니터링 시스템",
-        "production_line_description": "AMR에 탑재된 온도, 습도, 미세먼지, 카메라 등 다양한 센서의 데이터가 실시간으로 중앙 서버에 전송됩니다. 이상 수치 감지 시 즉시 알림을 제공하여 공정 중 발생 가능한 위험 요소를 효과적으로 관리합니다."
+        "production_line_description": "AMR에 탑재된 온도, 습도, 미세먼지, 카메라 등 다양한 센서의 데이터가 실시간으로 중앙 서버에 전송됩니다. 이상 수치 감지 시 즉시 알림을 제공하여 공정 중 발생 가능한 위험 요소를 효과적으로 관리합니다.",
+        "production_line_color": "#267B65",
+        "position": { "top": "2%", "right": "2%" }
       },
       {
         "production_line_topic": "이차전지 생산 라인 무인화",
-        "production_line_description": "전극재 이송 및 공급 공정을 AMR 기반 무인화로 전환하여 운영 효율성을 극대화했습니다. 센서와 AI 기반 경로 최적화 기술을 통해 장애물을 실시간 감지하고, 변화하는 환경에 유연하게 대응합니다. 중앙 관제 시스템과 연동되어 작업 지시와 데이터 수집이 자동화됩니다."
+        "production_line_description": "전극재 이송 및 공급 공정을 AMR 기반 무인화로 전환하여 운영 효율성을 극대화했습니다. 센서와 AI 기반 경로 최적화 기술을 통해 장애물을 실시간 감지하고, 변화하는 환경에 유연하게 대응합니다. 중앙 관제 시스템과 연동되어 작업 지시와 데이터 수집이 자동화됩니다.",
+        "production_line_color": "#B8991D",
+        "position": { "bottom": "34%", "right": "10%" }
       },
       {
         "production_line_topic": "자율주행 협동로봇 통합 관제 시스템",
-        "production_line_description": "공장 내 다수의 AMR을 통합 제어 모니터링하는 관제시스템을 통해 생산 자동화와 현장 안전성을 강화했습니다. MES와 연동된 iSuite34는 작업 지시를 실시간으로 AMR에 전달하며, 공정 최적화와 품질 향상에 기여합니다."
+        "production_line_description": "공장 내 다수의 AMR을 통합 제어 모니터링하는 관제시스템을 통해 생산 자동화와 현장 안전성을 강화했습니다. MES와 연동된 iSuite34는 작업 지시를 실시간으로 AMR에 전달하며, 공정 최적화와 품질 향상에 기여합니다.",
+        "production_line_color": "#514381",
+        "position": { "bottom": "4%", "left": "10%" }
       },
       {
         "production_line_topic": "고정밀 자율주행 및 도킹",
-        "production_line_description": "고정밀 자율주행과 자동 도킹 기능을 통해 작업자의 개입 없이 전극재를 정확히 공급합니다. 이 자동화 기술은 공정의 일관성을 높이고 전체 생산 자동화 수준을 향상시킵니다."
+        "production_line_description": "고정밀 자율주행과 자동 도킹 기능을 통해 작업자의 개입 없이 전극재를 정확히 공급합니다. 이 자동화 기술은 공정의 일관성을 높이고 전체 생산 자동화 수준을 향상시킵니다.",
+        "production_line_color": "#1A7795",
+        "position": { "bottom": "4%", "right": "8%" }
       }
     ]
   },
