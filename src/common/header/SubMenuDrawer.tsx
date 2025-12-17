@@ -90,7 +90,7 @@ export const SubMenuDrawer = ({
             openedMenuIndex === 1 || openedMenuIndex === 3
               ? 1
               : openedMenuIndex === 2
-              ? 5
+              ? 4.7
               : 0.8,
           justifyContent: "space-between",
           position: "relative",
