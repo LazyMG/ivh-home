@@ -5,6 +5,7 @@ import linkedinLogo from "/images/home/newsletter_linkedin_logo.png";
 import { useState, useEffect } from "react";
 import { newsService } from "../../service/newsService";
 import dayjs from "dayjs";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 export interface NewsletterItem {
   title: string;
@@ -16,6 +17,32 @@ export interface NewsletterItem {
 const NewsletterList = () => {
   // 상위 4개만 표시
   const [newsletterItems, setNewsletterItems] = useState<NewsletterItem[]>([]);
+  const { isDesktop } = useBreakpoint();
+
+  const shouldHideNewsletter = () => {
+    try {
+      const storedValue = localStorage.getItem("isHide");
+      if (!storedValue) return false;
+
+      const storedHideInfo = JSON.parse(storedValue);
+      const today = dayjs(new Date().toString()).format("YYYY.MM.DD");
+
+      // 저장된 날짜와 오늘 날짜가 같으면 숨김
+      if (storedHideInfo.date === today) {
+        return true;
+      }
+
+      // 날짜가 다르면 localStorage 삭제하고 표시
+      localStorage.removeItem("isHide");
+      return false;
+    } catch {
+      // 파싱 에러 발생 시 localStorage 삭제
+      localStorage.removeItem("isHide");
+      return false;
+    }
+  };
+
+  const [isHide, setIsHide] = useState(shouldHideNewsletter());
 
   /**
    * 뉴스레터 아이템 목록 조회
@@ -34,6 +61,18 @@ const NewsletterList = () => {
   useEffect(() => {
     fetchNewsletterItems();
   }, []);
+
+  // const hideAllDay = () => {
+  //   const hideInfo = {
+  //     date: dayjs(new Date().toString()).format("YYYY.MM.DD"),
+  //   };
+  //   localStorage.setItem("isHide", JSON.stringify(hideInfo));
+  //   setIsHide(true);
+  // };
+
+  if (isHide) {
+    return null;
+  }
 
   return (
     <Box
@@ -131,6 +170,44 @@ const NewsletterList = () => {
           </Box>
         </Box>
       ))}
+      {isDesktop && (
+        <Box sx={{ display: "flex", justifyContent: "", gap: 1 }}>
+          {/* <Button
+            size="small"
+            variant="outlined"
+            sx={{
+              borderColor: "#ffffff",
+              color: "#ffffff",
+              fontFamily: "Freesentation-5-Medium",
+              fontSize: "12px",
+              "&:hover": {
+                borderColor: "#ffffff",
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+              },
+            }}
+            onClick={hideAllDay}
+          >
+            하루 닫기
+          </Button> */}
+          <Button
+            size="small"
+            variant="outlined"
+            sx={{
+              borderColor: "#ffffff",
+              color: "#ffffff",
+              fontFamily: "Freesentation-5-Medium",
+              fontSize: "14px",
+              "&:hover": {
+                borderColor: "#ffffff",
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+              },
+            }}
+            onClick={() => setIsHide(true)}
+          >
+            닫기
+          </Button>
+        </Box>
+      )}
     </Box>
   );
 };
