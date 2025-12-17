@@ -43,7 +43,12 @@ const TempCardSlide = () => {
               marginBottom: isMobile ? "0" : "-20%",
             }}
           />
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <CardContent sx={{ p: 0 }}>
               <Box
                 component="div"
@@ -79,12 +84,19 @@ const TempCardSlide = () => {
                       sx={{
                         fontSize: isMobile ? "1.5rem" : "33.9px",
                         fontWeight: "700",
-                        lineHeight: 1,
-                        color: "#fff",
+                        lineHeight: 1.2,
+                        background:
+                          "linear-gradient(90deg, #fff 0%, #a0a0a0 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
                         mb: ".75rem",
                         fontFamily: "Freesentation-7-Bold",
                         textAlign: isMobile ? "center" : "right",
                         fontStyle: "italic",
+                        display: "inline-block",
+                        width: "100%",
+                        paddingRight: "3px",
                       }}
                     >
                       {iMOVA.mainText}
