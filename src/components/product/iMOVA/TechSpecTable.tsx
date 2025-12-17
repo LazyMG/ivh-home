@@ -81,9 +81,19 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
         width: "100%",
       }}
     >
-      <Typography variant="h5" sx={{ fontWeight: "bold", mb: 4 }}>
-        {technology_spec.technology_spec_title}
-      </Typography>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
+        <Typography
+          sx={{ fontFamily: "Freesentation-5-Medium", fontSize: "18px" }}
+        >
+          기술 사양
+        </Typography>
+        <Typography
+          variant="h5"
+          sx={{ mb: 4, fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
+        >
+          {technology_spec.technology_spec_title}
+        </Typography>
+      </Box>
 
       {isTabletOrBelow ? (
         // 모바일/태블릿: 토글 리스트
@@ -94,10 +104,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               expandIcon={<ExpandMoreIcon />}
               sx={{
                 backgroundColor: "#f5f5f5",
-                fontWeight: "bold",
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>제품규격</Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+              >
+                제품규격
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -106,7 +119,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontWeight: "bold",
+                          fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #000",
@@ -129,10 +142,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             색상
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.product_standard.color}
                           </Typography>
                         </Box>
@@ -144,10 +168,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             크기(길이 × 폭 × 높이)
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.product_standard.size}
                           </Typography>
                         </Box>
@@ -159,18 +194,40 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             중량
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.product_standard.weight}
                           </Typography>
                         </Box>
                         <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             적재함 크기(길이 × 폭)
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.product_standard.box_size}
                           </Typography>
                         </Box>
@@ -191,7 +248,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                 fontWeight: "bold",
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>성능</Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+              >
+                성능
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -200,10 +261,10 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontWeight: "bold",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #000",
+                          fontFamily: "Freesentation-7-Bold",
                         }}
                       >
                         {product.product}
@@ -223,10 +284,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             최대 적재량
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.performance.max_load}
                           </Typography>
                         </Box>
@@ -238,10 +310,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             주행 속도
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.performance.speed}
                           </Typography>
                         </Box>
@@ -253,10 +336,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             구동모터 성능
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.performance.motor_performance}
                           </Typography>
                         </Box>
@@ -268,10 +362,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             구동모터 정격출력
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.performance.motor_rated_output}
                           </Typography>
                         </Box>
@@ -283,10 +388,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             허용 바닥 단차
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.performance.permitted_step}
                           </Typography>
                         </Box>
@@ -298,10 +414,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             허용 바닥 틈새 폭
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.performance.permitted_gap_width}
                           </Typography>
                         </Box>
@@ -313,18 +440,40 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             최대 주행 가능 경사각
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.performance.max_inclination_angle}
                           </Typography>
                         </Box>
                         <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             소음
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.performance.noise}
                           </Typography>
                         </Box>
@@ -342,10 +491,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               expandIcon={<ExpandMoreIcon />}
               sx={{
                 backgroundColor: "#f5f5f5",
-                fontWeight: "bold",
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>전기사양</Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+              >
+                전기사양
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -354,7 +506,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontWeight: "bold",
+                          fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #000",
@@ -377,10 +529,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             입력 전압
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.electrical.input_voltage}
                           </Typography>
                         </Box>
@@ -392,10 +555,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             출력 전압
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.electrical.output_voltage}
                           </Typography>
                         </Box>
@@ -407,10 +581,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             배터리 입력 전압
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.electrical.input_voltage_battery}
                           </Typography>
                         </Box>
@@ -422,18 +607,40 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             용량
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.electrical.capacity}
                           </Typography>
                         </Box>
                         <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             허용 전압
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.electrical.permitted_voltage}
                           </Typography>
                         </Box>
@@ -451,10 +658,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               expandIcon={<ExpandMoreIcon />}
               sx={{
                 backgroundColor: "#f5f5f5",
-                fontWeight: "bold",
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>환경사양</Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+              >
+                환경사양
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -463,7 +673,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontWeight: "bold",
+                          fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #000",
@@ -486,10 +696,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             IP 등급
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.environment.ip_rating}
                           </Typography>
                         </Box>
@@ -501,18 +722,40 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             Wi-Fi 주파수
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.environment.wifi_frequency}
                           </Typography>
                         </Box>
                         <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             Wi-Fi 전류
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.environment.wifi_current}
                           </Typography>
                         </Box>
@@ -530,10 +773,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               expandIcon={<ExpandMoreIcon />}
               sx={{
                 backgroundColor: "#f5f5f5",
-                fontWeight: "bold",
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>배터리</Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+              >
+                배터리
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -542,7 +788,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontWeight: "bold",
+                          fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #000",
@@ -565,18 +811,40 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             수명
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.battery.lifespan}
                           </Typography>
                         </Box>
                         <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             충전 시간
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.battery.charging_time}
                           </Typography>
                         </Box>
@@ -594,10 +862,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               expandIcon={<ExpandMoreIcon />}
               sx={{
                 backgroundColor: "#f5f5f5",
-                fontWeight: "bold",
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>환경 모니터링</Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+              >
+                환경 모니터링
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -606,7 +877,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontWeight: "bold",
+                          fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #000",
@@ -629,10 +900,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             온도 범위
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.environmental_monitoring.temperature.range}
                           </Typography>
                         </Box>
@@ -644,10 +926,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             온도 정확도
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {
                               product.environmental_monitoring.temperature
                                 .accuracy
@@ -662,10 +955,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             습도 범위
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.environmental_monitoring.humidity.range}
                           </Typography>
                         </Box>
@@ -677,10 +981,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             습도 정확도
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.environmental_monitoring.humidity.accuracy}
                           </Typography>
                         </Box>
@@ -692,10 +1007,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             미세먼지 입자 크기
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {
                               product.environmental_monitoring.dust
                                 .particle_size
@@ -710,10 +1036,22 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                             gap: 2,
                           }}
                         >
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             미세먼지 농도 범위
                           </Typography>
-                          <Typography sx={{ fontSize: "12px", flex: 1 }}>
+                          <Typography
+                            sx={{
+                              fontSize: "12px",
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {
                               product.environmental_monitoring.dust
                                 .concentration_range
@@ -721,10 +1059,21 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           </Typography>
                         </Box>
                         <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                          <Typography
+                            sx={{
+                              flex: "0 0 180px",
+                              color: "#666",
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             카메라
                           </Typography>
-                          <Typography sx={{ flex: 1 }}>
+                          <Typography
+                            sx={{
+                              flex: 1,
+                              fontFamily: "Freesentation-5-Medium",
+                            }}
+                          >
                             {product.environmental_monitoring.camera.sensor}
                             <br />
                             {product.environmental_monitoring.camera.resolution}
@@ -749,9 +1098,9 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
           >
             <Typography
               sx={{
-                fontWeight: "bold",
+                fontFamily: "Freesentation-7-Bold",
                 mb: 2,
-                fontSize: { mobile: "16px", tablet: "17px", desktop: "18px" },
+                fontSize: { mobile: "24px", tablet: "24px", desktop: "18px" },
               }}
             >
               적용 분야
@@ -761,6 +1110,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                 lineHeight: 1.8,
                 fontSize: { mobile: "14px", tablet: "15px", desktop: "16px" },
                 whiteSpace: "pre-line",
+                fontFamily: "Freesentation-5-Medium",
               }}
             >
               {technology_spec.technology_spec_application}
@@ -777,6 +1127,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
             border: "1px solid #e0e0e0",
             borderTop: "none",
             borderLeft: "none",
+            mx: "auto",
           }}
         >
           <Box component="thead">
@@ -810,7 +1161,12 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       border: "1px solid #e0e0e0",
                     }}
                   >
-                    <Typography sx={{ fontWeight: "bold", fontSize: "18px" }}>
+                    <Typography
+                      sx={{
+                        fontSize: "20px",
+                        fontFamily: "Freesentation-7-Bold",
+                      }}
+                    >
                       {product.product}
                     </Typography>
                   </Box>
@@ -835,7 +1191,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   verticalAlign: "middle",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>제품 규격</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  제품 규격
+                </Typography>
               </Box>
               <Box
                 component="th"
@@ -845,7 +1205,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>색상</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  색상
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -858,7 +1226,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.product_standard.color}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.product_standard.color}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -872,7 +1248,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>크기 (L x W x H)</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  크기 (L x W x H)
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -885,7 +1269,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.product_standard.size}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.product_standard.size}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -899,7 +1291,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>중량</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  중량
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -912,7 +1312,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.product_standard.weight}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.product_standard.weight}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -926,7 +1334,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>적재함 치수</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  적재함 치수
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -939,7 +1355,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.product_standard.box_size}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.product_standard.box_size}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -961,7 +1385,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   verticalAlign: "middle",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>구동 성능</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  구동 성능
+                </Typography>
               </Box>
               <Box
                 component="th"
@@ -971,7 +1399,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>최대 적재량</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  최대 적재량
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -984,7 +1420,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.performance.max_load}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.performance.max_load}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -998,7 +1442,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>주행 속도</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  주행 속도
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1011,7 +1463,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.performance.speed}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.performance.speed}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1025,7 +1485,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>구동모터 성능</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  구동모터 성능
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1038,7 +1506,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.performance.motor_performance}
                     </Typography>
                   </Box>
@@ -1054,7 +1528,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>구동모터 정격출력</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  구동모터 정격출력
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1067,7 +1549,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.performance.motor_rated_output}
                     </Typography>
                   </Box>
@@ -1083,7 +1571,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>허용 바닥 단차</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  허용 바닥 단차
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1096,7 +1592,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.performance.permitted_step}
                     </Typography>
                   </Box>
@@ -1112,7 +1614,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>허용 바닥 틈새 폭</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  허용 바닥 틈새 폭
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1125,7 +1635,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.performance.permitted_gap_width}
                     </Typography>
                   </Box>
@@ -1141,7 +1657,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>최대 주행 가능 경사각</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  최대 주행 가능 경사각
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1154,7 +1678,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.performance.max_inclination_angle}
                     </Typography>
                   </Box>
@@ -1170,7 +1700,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>소음</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  소음
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1183,7 +1721,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.performance.noise}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.performance.noise}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1205,7 +1751,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   verticalAlign: "middle",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>전기 사양</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  전기 사양
+                </Typography>
               </Box>
               <Box
                 component="th"
@@ -1215,7 +1765,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>입력 전압</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  입력 전압
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1228,7 +1786,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.electrical.input_voltage}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.electrical.input_voltage}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1242,7 +1808,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>출력 전압</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  출력 전압
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1255,7 +1829,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.electrical.output_voltage}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.electrical.output_voltage}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1269,7 +1851,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>배터리 입력 전압</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  배터리 입력 전압
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1282,7 +1872,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.electrical.input_voltage_battery}
                     </Typography>
                   </Box>
@@ -1298,7 +1894,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>용량</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  용량
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1311,7 +1915,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.electrical.capacity}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.electrical.capacity}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1325,7 +1937,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>허용 전압</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  허용 전압
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1338,7 +1958,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.electrical.permitted_voltage}
                     </Typography>
                   </Box>
@@ -1362,7 +1988,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   verticalAlign: "middle",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>환경</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  환경
+                </Typography>
               </Box>
               <Box
                 component="th"
@@ -1372,7 +2002,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>IP 등급</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  IP 등급
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1385,7 +2023,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.environment.ip_rating}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.environment.ip_rating}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1399,7 +2045,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>Wi-Fi 주파수</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  Wi-Fi 주파수
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1412,7 +2066,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.environment.wifi_frequency}
                     </Typography>
                   </Box>
@@ -1428,7 +2088,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>Wi-Fi 전류</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  Wi-Fi 전류
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1441,7 +2109,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.environment.wifi_current}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.environment.wifi_current}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1463,7 +2139,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   verticalAlign: "middle",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>배터리</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  배터리
+                </Typography>
               </Box>
               <Box
                 component="th"
@@ -1473,7 +2153,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>수명</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  수명
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1486,7 +2174,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.battery.lifespan}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.battery.lifespan}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1500,7 +2196,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>충전 시간</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  충전 시간
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1513,7 +2217,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>{product.battery.charging_time}</Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
+                      {product.battery.charging_time}
+                    </Typography>
                   </Box>
                 )
               )}
@@ -1535,7 +2247,9 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   verticalAlign: "middle",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
                   환경 모니터링
                 </Typography>
               </Box>
@@ -1547,7 +2261,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>온도 범위</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  온도 범위
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1560,7 +2282,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.environmental_monitoring.temperature.range}
                     </Typography>
                   </Box>
@@ -1576,7 +2304,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>온도 정확도</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  온도 정확도
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1589,7 +2325,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.environmental_monitoring.temperature.accuracy}
                     </Typography>
                   </Box>
@@ -1605,7 +2347,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>습도 범위</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  습도 범위
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1618,7 +2368,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.environmental_monitoring.humidity.range}
                     </Typography>
                   </Box>
@@ -1634,7 +2390,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>습도 정확도</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  습도 정확도
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1663,7 +2427,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>미세먼지 입자 크기</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  미세먼지 입자 크기
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1676,7 +2448,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.environmental_monitoring.dust.particle_size}
                     </Typography>
                   </Box>
@@ -1692,7 +2470,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>미세먼지 농도 범위</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  미세먼지 농도 범위
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1705,7 +2491,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography sx={{ fontSize: "12px" }}>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "14px",
+                      }}
+                    >
                       {
                         product.environmental_monitoring.dust
                           .concentration_range
@@ -1724,7 +2516,15 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography>카메라</Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "18px",
+                  }}
+                >
+                  카메라
+                </Typography>
               </Box>
               {technology_spec.technology_spec_products.map(
                 (product, index) => (
@@ -1737,7 +2537,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       textAlign: "center",
                     }}
                   >
-                    <Typography>
+                    <Typography
+                      sx={{
+                        color: "#364B60",
+                        fontFamily: "Freesentation-5-Medium",
+                        fontSize: "16px",
+                      }}
+                    >
                       {product.environmental_monitoring.camera.sensor}
                       <br />
                       {product.environmental_monitoring.camera.resolution}
@@ -1763,7 +2569,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   verticalAlign: "middle",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>적용 분야</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  적용 분야
+                </Typography>
               </Box>
               <Box
                 component="td"
@@ -1778,6 +2588,9 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                   sx={{
                     lineHeight: 1.8,
                     whiteSpace: "pre-line",
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
                   }}
                 >
                   {technology_spec.technology_spec_application}

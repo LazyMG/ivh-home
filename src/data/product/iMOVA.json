@@ -38,7 +38,7 @@
     {
       "control_system_topic": "AMR 운영 및 공정 환경 모니터링",
       "control_system_description": "공장 내 자율주행 로봇(AMR)의 위치와 상태를 실시간으로 파악하고, 환경 센서를 통해 공정 상태를 모니터링함으로써 운영자는 물류 흐름과 생산 환경을 직관적으로 관리할 수 있습니다.",
-      "control_system_image_url": ""
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_zero.png"
     },
     {
       "control_system_topic": "작업 자동 할당 및 경로 최적화",
@@ -276,7 +276,7 @@
         }
       }
     ],
-    "technology_spec_application": "스마트 팩토리: 공정 간 자재 자동 이송, MES/ERP 연계 물류 자동화 물류센터 / 배터리 산업: 공정 간 무인 이송\n무인화 / 야간 자동 운송: 야간 근무 대체, 24시간 무정지 물류 실현",
+    "technology_spec_application": "스마트 팩토리: 공정 간 자재 자동 이송, MES/ERP 연계 물류 자동화 물류센터 / 배터리 산업: 공정 간 무인 이송 무인화 / 야간 자동 운송: 야간 근무 대체, 24시간 무정지 물류 실현",
     "technology_spec_sub": "Charging Station"
   },
   "wireless_charging": {

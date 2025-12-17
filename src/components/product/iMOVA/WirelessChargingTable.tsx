@@ -48,10 +48,11 @@ const WirelessChargingTable = ({
         justifyContent: "center",
         width: "100%",
         mt: 6,
+        mb: 12,
       }}
     >
-      <Typography variant="h5" sx={{ fontWeight: "bold", mb: 4 }}>
-        충전부 (TX)
+      <Typography sx={{ mb: 4, fontFamily: "Freesentation-7-Bold" }}>
+        Chargin Station
       </Typography>
 
       {isTabletOrBelow ? (
@@ -63,10 +64,13 @@ const WirelessChargingTable = ({
               expandIcon={<ExpandMoreIcon />}
               sx={{
                 backgroundColor: "#f5f5f5",
-                fontWeight: "bold",
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>송전 제어기</Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+              >
+                송전 제어기
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
@@ -78,10 +82,18 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     소비 전력
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_module.power}
                   </Typography>
                 </Box>
@@ -93,10 +105,18 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     크기 (L×W×H)
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_module.size}
                   </Typography>
                 </Box>
@@ -108,10 +128,18 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     중량
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_module.weight}
                   </Typography>
                 </Box>
@@ -123,10 +151,18 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     입력
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {
                       wireless_charging.transmitter.charging_module
                         .input_voltage
@@ -141,18 +177,34 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     전류
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_module.current}
                   </Typography>
                 </Box>
                 <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     전압
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_module.voltage}
                   </Typography>
                 </Box>
@@ -166,10 +218,13 @@ const WirelessChargingTable = ({
               expandIcon={<ExpandMoreIcon />}
               sx={{
                 backgroundColor: "#f5f5f5",
-                fontWeight: "bold",
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>송전 코일패드</Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+              >
+                송전 코일패드
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
@@ -181,10 +236,18 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     소비 전력
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_coil_pad.power}
                   </Typography>
                 </Box>
@@ -196,10 +259,18 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     크기 (L×W×H)
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_coil_pad.size}
                   </Typography>
                 </Box>
@@ -211,10 +282,18 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     중량
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_coil_pad.weight}
                   </Typography>
                 </Box>
@@ -226,10 +305,18 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     입력
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {
                       wireless_charging.transmitter.charging_coil_pad
                         .input_voltage
@@ -244,18 +331,34 @@ const WirelessChargingTable = ({
                     gap: 2,
                   }}
                 >
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     전류
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_coil_pad.current}
                   </Typography>
                 </Box>
                 <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                  <Typography sx={{ flex: "0 0 180px", color: "#666" }}>
+                  <Typography
+                    sx={{
+                      flex: "0 0 180px",
+                      color: "#666",
+                      fontFamily: "Freesentation-5-Medium",
+                    }}
+                  >
                     전압
                   </Typography>
-                  <Typography sx={{ flex: 1 }}>
+                  <Typography
+                    sx={{ flex: 1, fontFamily: "Freesentation-5-Medium" }}
+                  >
                     {wireless_charging.transmitter.charging_coil_pad.voltage}
                   </Typography>
                 </Box>
@@ -294,11 +397,12 @@ const WirelessChargingTable = ({
                   color: "#fff",
                   p: 2,
                   textAlign: "center",
-                  fontWeight: "bold",
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold", fontSize: "18px" }}>
+                <Typography
+                  sx={{ fontSize: "20px", fontFamily: "Freesentation-7-Bold" }}
+                >
                   송전부 (TX)
                 </Typography>
               </Box>
@@ -319,11 +423,12 @@ const WirelessChargingTable = ({
                   color: "#fff",
                   p: 2,
                   textAlign: "center",
-                  fontWeight: "bold",
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold", fontSize: "18px" }}>
+                <Typography
+                  sx={{ fontSize: "20px", fontFamily: "Freesentation-7-Bold" }}
+                >
                   송전 제어기
                 </Typography>
               </Box>
@@ -334,11 +439,13 @@ const WirelessChargingTable = ({
                   color: "#fff",
                   p: 2,
                   textAlign: "center",
-                  fontWeight: "bold",
+
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold", fontSize: "18px" }}>
+                <Typography
+                  sx={{ fontSize: "20px", fontFamily: "Freesentation-7-Bold" }}
+                >
                   송전 코일패드
                 </Typography>
               </Box>
@@ -357,7 +464,11 @@ const WirelessChargingTable = ({
                   color: "#fff",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>소비 전력</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  소비 전력
+                </Typography>
               </Box>
               <Box
                 component="td"
@@ -367,7 +478,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_module.power}
                 </Typography>
               </Box>
@@ -379,7 +496,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_coil_pad.power}
                 </Typography>
               </Box>
@@ -397,7 +520,9 @@ const WirelessChargingTable = ({
                   color: "#fff",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
                   크기 (L×W×H)
                 </Typography>
               </Box>
@@ -409,7 +534,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_module.size}
                 </Typography>
               </Box>
@@ -421,7 +552,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_coil_pad.size}
                 </Typography>
               </Box>
@@ -439,7 +576,11 @@ const WirelessChargingTable = ({
                   color: "#fff",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>중량</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  중량
+                </Typography>
               </Box>
               <Box
                 component="td"
@@ -449,7 +590,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_module.weight}
                 </Typography>
               </Box>
@@ -461,7 +608,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_coil_pad.weight}
                 </Typography>
               </Box>
@@ -479,7 +632,11 @@ const WirelessChargingTable = ({
                   color: "#fff",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>입력</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  입력
+                </Typography>
               </Box>
               <Box
                 component="td"
@@ -489,7 +646,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_module.input_voltage}
                 </Typography>
               </Box>
@@ -501,7 +664,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {
                     wireless_charging.transmitter.charging_coil_pad
                       .input_voltage
@@ -522,7 +691,11 @@ const WirelessChargingTable = ({
                   color: "#fff",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>전류</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  전류
+                </Typography>
               </Box>
               <Box
                 component="td"
@@ -532,7 +705,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_module.current}
                 </Typography>
               </Box>
@@ -544,7 +723,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_coil_pad.current}
                 </Typography>
               </Box>
@@ -562,7 +747,11 @@ const WirelessChargingTable = ({
                   color: "#fff",
                 }}
               >
-                <Typography sx={{ fontWeight: "bold" }}>전압</Typography>
+                <Typography
+                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                >
+                  전압
+                </Typography>
               </Box>
               <Box
                 component="td"
@@ -572,7 +761,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_module.voltage}
                 </Typography>
               </Box>
@@ -584,7 +779,13 @@ const WirelessChargingTable = ({
                   textAlign: "center",
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    color: "#364B60",
+                    fontFamily: "Freesentation-5-Medium",
+                    fontSize: "16px",
+                  }}
+                >
                   {wireless_charging.transmitter.charging_coil_pad.voltage}
                 </Typography>
               </Box>

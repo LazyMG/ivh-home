@@ -58,8 +58,7 @@ import Partner from "./pages/company/Partner";
 import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
 import Mobility from "./pages/solution/Mobility";
-import IMOVA from "./pages/product/IMOVA";
-import IMOVA2 from "./pages/product/iMOVA2";
+import IMOVA from "./pages/product/iMOVA";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -106,7 +105,6 @@ function AppContent() {
           <Route path="/solution/mobility/ev" element={<EV />} />
           <Route path="/solution/aIinnovationhub" element={<AIInnovation />} />
           <Route path="/product/imova" element={<IMOVA />} />
-          <Route path="/product/imova2" element={<IMOVA2 />} />
 
           {/** dymola */}
           <Route path="/product/dymola" element={<Dymola />} />

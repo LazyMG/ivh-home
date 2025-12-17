@@ -37,6 +37,10 @@ const MainFunction = ({ function_list }: IMOVAMainFunction) => {
             boxSizing: "border-box",
             width: "290px",
             justifyContent: "center",
+            transition: "transform 0.5s ease",
+            ":hover": {
+              transform: "scale(1.05)",
+            },
           }}
         >
           <Box
