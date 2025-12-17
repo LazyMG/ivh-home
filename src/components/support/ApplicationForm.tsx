@@ -38,6 +38,7 @@ interface ApplicantForm {
   applicantCompany: string;
   applicantPosition: string;
   applicantPhone: string;
+  applicantDivision: string;
 }
 
 export interface ApplicationFormType {
@@ -104,7 +105,14 @@ const ApplicationForm = ({
 
   const addCustomerList = () => {
     append(
-      { name: "", email: "", company: "", position: "", phone: "" },
+      {
+        name: "",
+        email: "",
+        company: "",
+        position: "",
+        phone: "",
+        division: "",
+      },
       { shouldFocus: false }
     );
   };
@@ -172,7 +180,13 @@ const ApplicationForm = ({
           message: "신청자 정보를 먼저 입력해주세요.",
         });
       }
-
+      if (!applicantValue?.applicantDivision?.trim()) {
+        emptyFields.push("applicantDivision");
+        setError("applicant.applicantDivision", {
+          type: "manual",
+          message: "신청자 정보를 먼저 입력해주세요.",
+        });
+      }
       // 모든 필드가 채워져 있을 때만 체크박스 활성화
       if (emptyFields.length === 0) {
         setIsFillCustomerChecked(true);
@@ -184,6 +198,7 @@ const ApplicationForm = ({
           position: applicantValue.applicantPosition,
           company: applicantValue.applicantCompany,
           phone: applicantValue.applicantPhone,
+          division: applicantValue.applicantDivision,
         });
       } else {
         // 빈 필드가 있으면 체크 해제
@@ -283,29 +298,12 @@ const ApplicationForm = ({
               gridTemplateColumns: "repeat(1,1fr)",
               gap: 4,
               [theme.breakpoints.up("mobileLandscape")]: {
-                gridTemplateColumns: "repeat(5,1fr)",
+                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 2,
+                rowGap: 3,
               },
             })}
           >
-            {/* <Box sx={{ position: "relative" }}>
-              <TextField
-                size="small"
-                placeholder="iVH"
-                label="회사명"
-                required
-                sx={{ width: "100%" }}
-                {...register("applicant.applicantCompany", {
-                  required: "신청자 회사명을 입력해주십시오.",
-                  ...trimValidation("신청자 회사명을 입력해주십시오."),
-                })}
-              />
-              {errors.applicant && errors.applicant.applicantCompany && (
-                <ApplicationInputErrorText
-                  text={errors.applicant.applicantCompany.message || ""}
-                />
-              )}
-            </Box> */}
             <ApplicationInput
               label="회사명"
               placeholder="iVH"
@@ -334,9 +332,31 @@ const ApplicationForm = ({
               disabled={isFillCustomerChecked}
               onFocus={handleApplicantFieldFocus}
               register={{
-                ...register("applicant.applicantPosition", {
+                ...register("applicant.applicantDivision", {
                   ...trimValidation("신청자 부서를 입력해주십시오."),
                   required: "신청자 부서를 입력해주십시오.",
+                  maxLength: {
+                    value: 50,
+                    message: "글자 수가 너무 많습니다.",
+                  },
+                }),
+              }}
+            >
+              {errors.applicant && errors.applicant.applicantDivision && (
+                <ApplicationInputErrorText
+                  text={errors.applicant.applicantDivision.message || ""}
+                />
+              )}
+            </ApplicationInput>
+            <ApplicationInput
+              placeholder="사원"
+              label="직급"
+              disabled={isFillCustomerChecked}
+              onFocus={handleApplicantFieldFocus}
+              register={{
+                ...register("applicant.applicantPosition", {
+                  ...trimValidation("신청자 직급을 입력해주십시오."),
+                  required: "신청자 직급을 입력해주십시오.",
                   maxLength: {
                     value: 50,
                     message: "글자 수가 너무 많습니다.",
@@ -467,7 +487,6 @@ const ApplicationForm = ({
         <Stack
           gap={4}
           sx={{
-            // minHeight: "300px",
             maxHeight: "500px",
             overflowY: "auto",
             my: 2,
@@ -485,8 +504,9 @@ const ApplicationForm = ({
                   gridTemplateColumns: "repeat(1,1fr)",
                   gap: 4,
                   [theme.breakpoints.up("mobileLandscape")]: {
-                    gridTemplateColumns: "repeat(5,1fr)",
+                    gridTemplateColumns: "repeat(3,1fr)",
                     gap: 2,
+                    rowGap: 3,
                   },
                 })}
               >
@@ -514,11 +534,31 @@ const ApplicationForm = ({
                   placeholder="IT"
                   label="부서"
                   disabled={index === 0 && isFillCustomerChecked}
+                  shrink={customerValues?.[index]?.division}
+                  register={{
+                    ...register(`customer.${index}.division`, {
+                      required: "수강자 부서를 입력해주십시오.",
+                      ...trimValidation("수강자 부서를 입력해주십시오."),
+                    }),
+                  }}
+                >
+                  {errors.customer &&
+                    errors.customer[index] &&
+                    errors.customer[index].division && (
+                      <ApplicationInputErrorText
+                        text={errors.customer[index].division.message || ""}
+                      />
+                    )}
+                </ApplicationInput>
+                <ApplicationInput
+                  placeholder="사원"
+                  label="직급"
+                  disabled={index === 0 && isFillCustomerChecked}
                   shrink={customerValues?.[index]?.position}
                   register={{
                     ...register(`customer.${index}.position`, {
-                      required: "수강자 부서를 입력해주십시오.",
-                      ...trimValidation("수강자 부서를 입력해주십시오."),
+                      required: "수강자 작급을 입력해주십시오.",
+                      ...trimValidation("수강자 직급을 입력해주십시오."),
                     }),
                   }}
                 >
