@@ -86,7 +86,12 @@ export const SubMenuDrawer = ({
               ? "#ececec"
               : "#000"
             : "#ffffff",
-          flex: openedMenuIndex === 1 || openedMenuIndex === 3 ? 1 : 0.8,
+          flex:
+            openedMenuIndex === 1 || openedMenuIndex === 3
+              ? 1
+              : openedMenuIndex === 2
+              ? 4.7
+              : 0.8,
           justifyContent: "space-between",
           position: "relative",
         }}
@@ -105,6 +110,8 @@ export const SubMenuDrawer = ({
             {/* 로고 영역 빈 공간 */}
             {openedMenuIndex === 3 ? (
               <SubMenuColumn sx={{ flex: 12 }} />
+            ) : openedMenuIndex === 2 ? (
+              <SubMenuColumn sx={{ flex: 60 }} />
             ) : (
               <SubMenuColumn sx={{ flex: 2 }} />
             )}
