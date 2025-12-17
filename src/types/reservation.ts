@@ -35,6 +35,7 @@ export interface ReservationCustomer {
   position: string;
   email: string;
   phone: string;
+  division: string;
 }
 
 // validation 확인 - 이메일 등
@@ -46,6 +47,7 @@ export interface ReservationRequestForm {
   applicantCompany: string;
   applicantPosition: string;
   applicantPhone: string;
+  applicantDivision: string;
   requestedPeople: number;
   customerList: ReservationCustomer[];
   memo?: string;
@@ -59,6 +61,7 @@ export interface ReservationRequestResponse {
   applicantEmail: string;
   applicantPosition: string;
   applicantPhone: string;
+  applicantDivision: string;
   requestedPeople: number;
   status: RequestStatus;
   memo: string;
