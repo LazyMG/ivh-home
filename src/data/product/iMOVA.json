@@ -1,11 +1,8 @@
 {
   "name": "AMR 자율주행로봇",
   "title": "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다. 정밀한 자율주행 기술, 실시간 환경 인식, 외부 시스템과의 통합 연동 기능을 통해, 다양한 산업 분야에서 무인화된 작업 흐름과 지능형 공정 운영을 가능하게 합니다.",
-  "main_image": "/images/pages/product/iMOVA/iMOVA_top.png",
-  "main_image2": "/images/home/iMOVA.png",
-
+  "main_image": "/images/home/iMOVA.png",
   "title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
-  "title_image2": "/images/pages/product/iMOVA/iMOVA_title2.png",
 
   "main_function": [
     {

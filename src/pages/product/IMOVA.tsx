@@ -21,8 +21,8 @@ const IMOVA = () => {
     title,
     name,
     main_function,
-    main_image2,
-    title_image2,
+    main_image,
+    title_image,
     control_system,
     production_line,
     technology_spec,
@@ -111,7 +111,7 @@ const IMOVA = () => {
       >
         <Box
           component="img"
-          src={main_image2}
+          src={main_image}
           sx={(theme) => ({
             width: "100%",
             height: "auto",
@@ -140,7 +140,7 @@ const IMOVA = () => {
         >
           <Box
             component="img"
-            src={title_image2}
+            src={title_image}
             sx={(theme) => ({
               width: "200px",
               [theme.breakpoints.down("tablet")]: {

@@ -58,7 +58,7 @@ import Partner from "./pages/company/Partner";
 import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
 import Mobility from "./pages/solution/Mobility";
-import IMOVA from "./pages/product/iMOVA";
+import IMOVA from "./pages/product/IMOVA";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
