@@ -59,6 +59,7 @@ import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
 import Mobility from "./pages/solution/Mobility";
 import IMOVA from "./pages/product/IMOVA";
+import NewDymola from "./pages/product/dymola/NewDymola";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -108,6 +109,7 @@ function AppContent() {
 
           {/** dymola */}
           <Route path="/product/dymola" element={<Dymola />} />
+          <Route path="/product/new-dymola" element={<NewDymola />} />
           <Route path="/product/dymola/battery" element={<Battery />} />
           <Route path="/product/dymola/til" element={<TIL />} />
           <Route

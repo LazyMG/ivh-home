@@ -1,0 +1,108 @@
+{
+  "battery_title": "Battery",
+  "battery_subTitle": "복합 시스템 내 배터리 통합 및 성능 분석을 위한 Modelica 기반 시뮬레이션 라이브러리",
+  "battery_introduction": [
+    {
+      "text": "Battery Library는 복잡한 시스템 내 배터리 셀의 통합과 전기 저장장치 설계를 지원하기 위해 개발된 Modelica 기반 시뮬레이션 라이브러리입니다. 시스템 시뮬레이션 접근 방식을 배터리 모델링에 적용함으로써, 차량, 전력망, 항공기 등 다양한 환경에서 배터리 시스템의 동작 특성을 정밀하게 평가할 수 있습니다."
+    },
+    {
+      "text": "이 라이브러리는 저장장치 내부에서 발생하는 다양한 물리적 현상을 분석할 수 있도록 설계되어 있으며, 셀 간의 온도 및 전압 분포, 셀 특성의 편차, 초기값 및 경계 조건에 따른 영향을 효율적으로 시뮬레이션할 수 있습니다. 또한 열적 특성과 노화 현상을 포함한 배터리 시스템의 실제 성능을 정량적으로 계산할 수 있어, 보다 신뢰도 높은 설계 및 검증이 가능합니다."
+    }
+  ],
+  "battery_features": [
+    {
+      "imgObj": [
+        {
+          "imgUrl": [
+            "/images/pages/product/battery/battery-feat-one-first.png"
+          ],
+          "imgText": "<Battery Library>",
+          "col": 6
+        },
+        {
+          "imgUrl": [
+            "/images/pages/product/battery/battery-feat-one-second.png"
+          ],
+          "imgText": "<Pack Model>",
+          "col": 6
+        },
+        {
+          "imgUrl": [
+            "/images/pages/product/battery/battery-feat-one-third.png"
+          ],
+          "imgText": "<Cell Model>",
+          "col": 6
+        }
+      ],
+      "textObj": {
+        "title": "단일 셀 및 팩의 전기적 성능과 열적 거동 계산",
+        "text": "Battery Library는 셀 및 팩 단위의 전기적 특성과 열적 거동을 정밀하게 시뮬레이션할 수 있도록 설계되어 있습니다. 셀 모델은 등가 회로 기반의 전기 모델, 전기화학 기반 모델, Geometry 기반의 열 모델, 수명 예측 모델 등 다양한 방식으로 구성할 수 있으며, RC 모델, 물성 기반 예제, 단품 성능 예측 등 실무에 바로 적용 가능한 예제도 함께 제공됩니다. 팩 모델은 Scaled Pack과 Discretized Pack 방식 모두를 지원하며, 사용자의 요구에 따라 유연하게 구성할 수 있습니다. 또한 Geometry 기반의 열 모델링, 시스템 수준의 성능 예측, BMS 연동 시뮬레이션까지 폭넓게 활용할 수 있으며, 계측 데이터를 기반으로 룩업 테이블을 자동 생성하는 기능도 제공합니다.",
+        "col": 6
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": [
+            "/images/pages/product/battery/battery-feat-two-first.png"
+          ],
+          "imgText": "<BMS Diagram>",
+          "col": 6
+        },
+        {
+          "imgUrl": [
+            "/images/pages/product/battery/battery-feat-two-second.png"
+          ],
+          "imgText": "<Dymola BMS System model>",
+          "col": 6
+        }
+      ],
+      "textObj": {
+        "col": 12,
+        "text": "충전 및 방전 시 배터리의 상태(SOC)에 따라 과전류, 과전압, 저전압, 열 제어 여부를 판단하고, 냉각 또는 가열이 필요한 상황을 시뮬레이션할 수 있는 BMS 예제 모델을 제공합니다. 팩 내 최소·최대 SOC를 기준으로 사용 가능한 전력, 전류, 에너지를 계산할 수 있으며, 팩에 요구된 전류 입력에 대해 셀의 전류, 전압, 온도, SOC, SOH 한계를 고려한 최대 허용 전류를 출력합니다. 또한 측정 데이터를 기반으로 파라미터용 룩업 테이블을 자동 생성할 수 있어, 실제 운영 환경에 가까운 시뮬레이션이 가능합니다.",
+        "title": "Battery Management System 예제 모델 지원"
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": [
+            "/images/pages/product/battery/battery-feat-three-first.png"
+          ],
+          "col": 6,
+          "imgSize": "small"
+        },
+        {
+          "imgUrl": [
+            "/images/pages/product/battery/battery-feat-three-second.png"
+          ],
+          "imgText": "<Dymola Electrochemical Battery model>",
+          "col": 6
+        }
+      ],
+      "textObj": {
+        "col": 12,
+        "title": "Electrochemical 모델 지원",
+        "text": "Newman-Doyle-Fuller 모델 기반의 Pseudo 2D 전기화학 모델을 지원하여, 셀 내부의 공간 분포와 반응 특성을 정밀하게 재현할 수 있습니다. 음극–분리막–양극 구조를 기반으로 체적 이산화 및 확산에 따른 성능 변화를 예측할 수 있으며, 물성 기반 예제와 함께 셀 및 팩 단위의 성능 예측 모델도 제공되어 고정밀 시뮬레이션이 가능합니다."
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": [
+            "/images/pages/product/battery/battery-feat-four-first.png",
+            "/images/pages/product/battery/battery-feat-four-second.png"
+          ],
+          "imgText": "<ECM Model Based equivalent circuit model Generation>",
+          "col": 6,
+          "imgSize": "small"
+        }
+      ],
+      "textObj": {
+        "col": 6,
+        "text": "측정 데이터를 기반으로 최적의 모델 파라미터를 자동 도출할 수 있는 파라미터 피팅 기능을 제공합니다. 알고리즘 기반의 최적화 과정을 통해 모델과 실험 데이터 간의 오차를 최소화하며, Python 라이브러리 형태로 제공되는 최적화 툴을 통해 Dymola와 연동하여 파라미터 피팅을 손쉽게 수행할 수 있습니다.",
+        "title": "Battery Parameter Fitting 모델 지원"
+      }
+    }
+  ]
+}

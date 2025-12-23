@@ -67,7 +67,7 @@ const Header = () => {
         position="sticky"
         sx={{
           backgroundColor: isHomePage ? "#000" : "#ffffff",
-          boxShadow: "none",
+          boxShadow: "0 1px 1px rgba(0,0,0,0.05), 0 1px 1px rgba(0,0,0,0.1)",
           p: 0,
           width: "100%",
           maxWidth: "100vw",
