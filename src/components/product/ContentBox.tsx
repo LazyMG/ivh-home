@@ -76,7 +76,11 @@ const ContentBox = ({ textObj, imgObj }: ContentBoxProps) => {
             {textObj.title}
           </Typography>
           <Typography
-            sx={{ fontSize: "16px", fontFamily: "Freesentation-4-Regular" }}
+            sx={{
+              fontSize: "16px",
+              fontFamily: "Freesentation-4-Regular",
+              whiteSpace: "pre-wrap",
+            }}
           >
             {textObj.text}
           </Typography>

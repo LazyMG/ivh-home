@@ -3,6 +3,7 @@ import ProductIntroduction, {
   type ProductIntroductionProps,
 } from "./ProductIntroduction";
 import ContentBox, { type ContentBoxProps } from "./ContentBox";
+import ProductSectionTitle from "./ProductSectionTitle";
 
 interface SubSectionProps {
   title: string;
@@ -25,7 +26,11 @@ const SubSection = ({
     <Box id={id} sx={{ display: "flex", flexDirection: "column" }}>
       <Typography
         variant="h5"
-        sx={{ fontFamily: "Freesentation-6-SemiBold", fontSize: "24px" }}
+        sx={{
+          fontFamily: "Freesentation-6-SemiBold",
+          fontSize: "24px",
+          letterSpacing: "4px",
+        }}
       >
         {title}
       </Typography>
@@ -53,16 +58,7 @@ const SubSection = ({
         ))}
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 4, mt: 20 }}>
-        <Typography
-          variant="h5"
-          sx={{
-            fontFamily: "Freesentation-6-SemiBold",
-            fontSize: "24px",
-            mb: 4,
-          }}
-        >
-          특징
-        </Typography>
+        <ProductSectionTitle titleText="특징" />
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           {features.map((item, index) => (
             <ContentBox key={index} {...item} />

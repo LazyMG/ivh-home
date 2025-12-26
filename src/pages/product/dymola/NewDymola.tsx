@@ -9,8 +9,13 @@ import thermal from "../../../data/product/new-thermal.json";
 import vehicle from "../../../data/product/new-vehicle.json";
 import SubSection from "../../../components/product/SubSection";
 import ScrollButton from "../../../common/ScrollButton";
+import ProductSectionTitle from "../../../components/product/ProductSectionTitle";
+import ProductInquiry from "../../../components/product/ProductInquiry";
+import { useSEO } from "../../../hooks/useSEO";
+import SEO from "../../../common/SEO";
 
 const NewDymola = () => {
+  const seoData = useSEO("product/dymola", dymola);
   const {
     dymola_mainImg,
     dymola_title,
@@ -45,124 +50,120 @@ const NewDymola = () => {
   } = vehicle;
 
   return (
-    <Box
-      component="main"
-      sx={(theme) => ({
-        ...theme.customStyles.productPageContainer,
-        display: "flex",
-        gap: 8,
-        boxSizing: "border-box",
-      })}
-    >
-      <ScrollButton threshold={120} />
-      <StickySideMenu menuList={dymola_menu} />
+    <>
+      <SEO {...seoData} />
       <Box
-        sx={{
-          flex: 1,
+        component="main"
+        sx={(theme) => ({
+          ...theme.customStyles.productPageContainer,
           display: "flex",
-          flexDirection: "column",
+          gap: 8,
           boxSizing: "border-box",
-          position: "relative",
-          minWidth: 0,
-          mr: "4%",
-          gap: 20,
-          my: "8%",
-        }}
+        })}
       >
+        <ScrollButton />
+        <StickySideMenu menuList={dymola_menu} />
         <Box
-          id="introduction"
           sx={{
+            flex: 1,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            gap: 9,
+            boxSizing: "border-box",
+            position: "relative",
+            minWidth: 0,
+            // ml: 8,
+            mr: "4%",
+            gap: 20,
+            my: "8%",
           }}
         >
           <Box
-            component="img"
-            src={dymola_mainImg}
-            sx={{ objectFit: "contain", width: "100%" }}
-          />
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Typography
-              sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "36px" }}
-            >
-              {dymola_title}
-            </Typography>
-            <Typography
-              sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
-            >
-              {dymola_subTitle}
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-              {dymola_text.map((text, index) => (
-                <Typography
-                  key={index}
-                  sx={{
-                    fontFamily: "Freesentation-4-Regular",
-                    fontSize: "18px",
-                  }}
-                >
-                  {text}
-                </Typography>
+            id="introduction"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: 9,
+            }}
+          >
+            <Box
+              component="img"
+              src={dymola_mainImg}
+              sx={{ objectFit: "contain", width: "100%" }}
+            />
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "36px" }}
+              >
+                {dymola_title}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
+              >
+                {dymola_subTitle}
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                {dymola_text.map((text, index) => (
+                  <Typography
+                    key={index}
+                    sx={{
+                      fontFamily: "Freesentation-4-Regular",
+                      fontSize: "18px",
+                    }}
+                  >
+                    {text}
+                  </Typography>
+                ))}
+              </Box>
+            </Box>
+          </Box>
+          <Box
+            id="feature"
+            sx={{ display: "flex", flexDirection: "column", gap: 4 }}
+          >
+            <ProductSectionTitle titleText="특징" />
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              {dymola_features.map((item, index) => (
+                <ContentBox key={index} {...item} />
               ))}
             </Box>
           </Box>
+          <SubSection
+            id="battery"
+            title={battery_title}
+            subTitle={battery_subTitle}
+            introduction={battery_introduction}
+            features={battery_features}
+            color={dymola_color}
+          />
+          <SubSection
+            id="til"
+            title={til_title}
+            subTitle={til_subTitle}
+            introduction={til_introduction}
+            features={til_features}
+            color={dymola_color}
+          />
+          <SubSection
+            id="thermal_power_liabrary"
+            title={thermal_title}
+            subTitle={thermal_subTitle}
+            introduction={thermal_introduction}
+            features={thermal_features}
+            color={dymola_color}
+          />
+          <SubSection
+            id="vechle_dynamics_library"
+            title={vehicle_title}
+            subTitle={vehicle_subTitle}
+            introduction={vehicle_introduction}
+            features={vehicle_feature}
+            color={dymola_color}
+          />
         </Box>
-        <Box
-          id="feature"
-          sx={{ display: "flex", flexDirection: "column", gap: 4 }}
-        >
-          <Typography
-            variant="h5"
-            sx={{
-              fontFamily: "Freesentation-6-SemiBold",
-              fontSize: "24px",
-              mb: 4,
-            }}
-          >
-            특징
-          </Typography>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            {dymola_features.map((item, index) => (
-              <ContentBox key={index} {...item} />
-            ))}
-          </Box>
-        </Box>
-        <SubSection
-          id="battery"
-          title={battery_title}
-          subTitle={battery_subTitle}
-          introduction={battery_introduction}
-          features={battery_features}
-          color={dymola_color}
-        />
-        <SubSection
-          id="til"
-          title={til_title}
-          subTitle={til_subTitle}
-          introduction={til_introduction}
-          features={til_features}
-          color={dymola_color}
-        />
-        <SubSection
-          id="thermal_power_liabrary"
-          title={thermal_title}
-          subTitle={thermal_subTitle}
-          introduction={thermal_introduction}
-          features={thermal_features}
-          color={dymola_color}
-        />
-        <SubSection
-          id="vechle_dynamics_library"
-          title={vehicle_title}
-          subTitle={vehicle_subTitle}
-          introduction={vehicle_introduction}
-          features={vehicle_feature}
-          color={dymola_color}
-        />
+        <ProductInquiry />
       </Box>
-    </Box>
+    </>
   );
 };
 

@@ -6,11 +6,11 @@ import { useBreakpoint } from "../hooks/useBreakpoint";
 
 const ScrollButton = ({
   color = "#000000",
-  threshold,
+  threshold = 100,
   show,
 }: {
   color?: string;
-  threshold: number;
+  threshold?: number;
   show?: boolean;
 }) => {
   const isMobile = useBreakpoint();
