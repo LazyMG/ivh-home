@@ -6,7 +6,7 @@ const ProductSectionTitle = ({ titleText }: { titleText: string }) => {
       variant="h5"
       sx={{
         fontFamily: "Freesentation-6-SemiBold",
-        fontSize: "24px",
+        fontSize: "32px",
         mb: 4,
         letterSpacing: "4px",
       }}
