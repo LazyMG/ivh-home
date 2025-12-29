@@ -17,6 +17,7 @@ import CustomSnackbar from "../../components/support/CustomSnackbar";
 import TraingCurriculumTable from "../../components/support/TrainingCurriculumTable";
 
 import curriculums from "../../data/support/curriculum.json";
+import ScrollButton from "../../common/ScrollButton";
 
 const Training = () => {
   const seoData = useSEO("support/training", training);
@@ -54,22 +55,12 @@ const Training = () => {
     fetchReservationList();
   }, []);
 
+  const THRESHOLD = 100;
+
   return (
     <>
       <SEO {...seoData} />
-      {/** Training 페이지 타이틀 영역  */}
-      {/* <Box
-        display="flex"
-        sx={(theme) => ({
-          flexDirection: "column",
-          my: 10,
-          [theme.breakpoints.up("tablet")]: {
-            mb: 8,
-          },
-        })}
-      >
-        <TrainingMainTitle titleList={training_title} />
-      </Box> */}
+      <ScrollButton threshold={THRESHOLD} />
 
       {/** 개요, Curriculum, Schedule, Application 섹션 전체 컨테이너 */}
       <Box
