@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Checkbox,
-  Divider,
   FormControlLabel,
   Stack,
   TextField,
@@ -275,7 +274,11 @@ const ApplicationForm = ({
     >
       <Typography
         component="h4"
-        sx={{ fontSize: "32px", fontFamily: "Freesentation-6-SemiBold" }}
+        sx={{
+          fontSize: "20px",
+          fontFamily: "Freesentation-6-SemiBold",
+          color: "#1755C2",
+        }}
       >
         수강신청
       </Typography>
@@ -286,7 +289,11 @@ const ApplicationForm = ({
       />
       <Stack gap={2}>
         <Typography
-          sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
+          sx={{
+            fontSize: "20px",
+            fontFamily: "Freesentation-6-SemiBold",
+            color: "#1755C2",
+          }}
         >
           신청자
         </Typography>
@@ -299,7 +306,7 @@ const ApplicationForm = ({
               gap: 4,
               [theme.breakpoints.up("mobileLandscape")]: {
                 gridTemplateColumns: "repeat(3,1fr)",
-                gap: 2,
+                gap: 4,
                 rowGap: 3,
               },
             })}
@@ -447,18 +454,20 @@ const ApplicationForm = ({
           </Box>
         </Box>
       </Stack>
-      <Divider sx={{ mt: 1 }} />
-      <Box>
+      <Box sx={{ position: "relative" }}>
         <Box display="flex" alignContent="center">
           <Typography
             sx={{
-              fontSize: "24px",
+              fontSize: "20px",
               fontFamily: "Freesentation-6-SemiBold",
+              color: "#1755C2",
               mr: 2,
+              alignSelf: "center",
             }}
           >
             수강자
           </Typography>
+
           <Box sx={{ position: "relative" }}>
             <FormControlLabel
               label="신청자 정보와 같음"
@@ -495,7 +504,11 @@ const ApplicationForm = ({
           {customerFields.map((_, index) => (
             <Box
               key={index}
-              sx={{ display: "flex", alignItems: "center", pt: 1 }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                pt: 1,
+              }}
             >
               <Box
                 sx={(theme) => ({
@@ -505,7 +518,7 @@ const ApplicationForm = ({
                   gap: 4,
                   [theme.breakpoints.up("mobileLandscape")]: {
                     gridTemplateColumns: "repeat(3,1fr)",
-                    gap: 2,
+                    gap: 4,
                     rowGap: 3,
                   },
                 })}
@@ -639,7 +652,20 @@ const ApplicationForm = ({
                     )}
                 </ApplicationInput>
               </Box>
-              <Box display="flex" gap={1} sx={{ mx: 1 }}>
+              <Box
+                gap={1}
+                sx={(theme) => ({
+                  mx: 1,
+                  display: "flex",
+                  flexDirection: "row",
+                  position: "relative",
+                  [theme.breakpoints.up("tablet")]: {
+                    position: "absolute",
+                    right: "-48px",
+                    flexDirection: "column",
+                  },
+                })}
+              >
                 <ApplicationButton>
                   <RemoveIcon onClick={() => removeCustomerList(index)} />
                 </ApplicationButton>

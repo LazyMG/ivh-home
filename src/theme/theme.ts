@@ -612,6 +612,8 @@ const theme = createTheme({
     supportTextContainer: {
       [baseTheme.breakpoints.up("tablet")]: {
         width: "50%",
+        alignSelf: "flex-start",
+        paddingTop: "48px",
       },
     },
     // Support 페이지 이미지 영역 컨테이너 스타일
@@ -624,6 +626,7 @@ const theme = createTheme({
       [baseTheme.breakpoints.up("tablet")]: {
         justifyContent: "flex-end",
         width: "50%",
+        alignSelf: "center",
       },
     },
     // Support 페이지 링크 스타일 (기술지원 서비스로 연결)
@@ -631,20 +634,20 @@ const theme = createTheme({
       display: "flex",
       alignItems: "center",
       gap: "4px",
-      marginTop: "20px",
+      // marginTop: "20px",
       paddingBottom: "4px",
       fontSize: "16px",
       fontFamily: fontConfig["semiBold"],
-      lineHeight: 1,
-      color: "#1d4ed8", // blue-700
-      borderBottom: "1px solid #1d4ed8", // border-b-blue-700
+      // lineHeight: 1,
+      color: "#fff", // blue-700
+      // borderBottom: "1px solid #1d4ed8", // border-b-blue-700
       width: "fit-content",
       cursor: "pointer",
-      transition: "all 0.3s",
+      // transition: "all 0.3s",
       textDecoration: "none", // a 태그 기본 밑줄 제거
-      "&:hover": {
-        gap: "8px",
-      },
+      // "&:hover": {
+      //   gap: "8px",
+      // },
     },
     homeNewsletterContainer: {
       display: "flex",
