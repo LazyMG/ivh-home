@@ -5,7 +5,7 @@ import { useSEO } from "../../hooks/useSEO";
 const Support = () => {
   // TODO: 실제 support_image.svg 파일이 준비되면 이 경로를 사용하세요
   // 현재는 임시로 빈 div를 사용합니다
-  const supportImageSrc = "/images/pages/support/support/support_page.svg";
+  // const supportImageSrc = "/images/pages/support/support/support_page.svg";
   const seoData = useSEO("support/support", support);
   return (
     <>
