@@ -67,14 +67,15 @@ tr {
 
 /* View 버튼 그룹 배경 */
 .fc .fc-toolbar-chunk:last-child {
-  background-color: #888888;
+  background-color: #d4ddfa;
   border-radius: 0.25rem;
   line-height: 0;
 }
 
 .fc .fc-toolbar-chunk:last-child .fc-button-active {
-  background-color: #5e5e5e !important;
+  background-color: #3450ad !important;
   box-shadow: none !important;
+  color: #fff !important;
 }
 
 .fc .fc-toolbar-chunk:last-child .fc-button:active {
@@ -90,6 +91,9 @@ tr {
   padding: 6px 24px !important;
   font-family: "Freesentation-7-Bold" !important;
   font-size: 14.7px !important;
+  color: #3c3c3c !important;
+  width: 110px;
+  height: 42px;
 }
 
 /* ========================================
@@ -98,8 +102,10 @@ tr {
 
 .fc-prev-button,
 .fc-next-button {
-  background-color: #5e5e5e !important;
+  background-color: #3450ad !important;
   border-radius: 0 !important;
+  height: 42px;
+  width: 55px;
 }
 
 .fc-prev-button {
@@ -128,11 +134,13 @@ tr {
    ======================================== */
 
 .fc-today-button {
-  border: 1px solid #888888 !important;
+  border: 1px solid #979797 !important;
   color: black !important;
-  background-color: #effdff !important;
-  font-family: "Freesentation-7-Bold" !important;
-  font-size: 14.7px !important;
+  background-color: #d4ddfa !important;
+  font-family: "Freesentation-6-SemiBold" !important;
+  font-size: 17px !important;
+  height: 42px;
+  width: 110px;
 }
 
 .fc-today-button:active {

@@ -20,12 +20,11 @@ const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
       sx={(theme) => ({
         wordBreak: "keep-all",
         zIndex: 1,
-        position: "relative",
         width: "fit-content",
         fontFamily: "Freesentation-7-Bold",
-        ml: 3,
+        // ml: 3,
         [theme.breakpoints.up("tablet")]: {
-          ml: "10%",
+          // ml: "10%",
         },
       })}
     >
@@ -36,7 +35,7 @@ const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
           sx={(theme) => ({
             fontSize: "24px",
             [theme.breakpoints.up("tablet")]: {
-              fontSize: "48px",
+              fontSize: "36px",
             },
             color: title.color,
             fontFamily: title.font,

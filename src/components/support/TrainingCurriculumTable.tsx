@@ -128,8 +128,8 @@ const TraingCurriculumTable = ({
   const lastQuarterYear = quarterYears[2];
   const tableTitle =
     lastQuarterYear > year
-      ? `${year}년 ${month}월~${lastQuarterYear}년 ${lastQuarterMonth}월 교육일정`
-      : `${year}년 ${month}~${lastQuarterMonth}월 교육일정`;
+      ? `${year}년 ${month}월~${lastQuarterYear}년 ${lastQuarterMonth}월`
+      : `${year}년 ${month}~${lastQuarterMonth}월`;
 
   return (
     <Box
@@ -141,14 +141,15 @@ const TraingCurriculumTable = ({
         maxWidth: "1500px",
         mx: "auto",
         [theme.breakpoints.up("desktop")]: {
-          mx: 24,
+          // mx: 24,
+          mx: 0,
         },
       })}
     >
       <Typography
         sx={{
-          fontSize: "24px",
-          color: "#3d67bc",
+          fontSize: "18px",
+          color: "#1755C2",
           fontFamily: "Freesentation-7-Bold",
         }}
       >

@@ -6,6 +6,10 @@
     "ogImage": "https://ivh.co.kr/images/support/support/support_page.png"
   },
   "support_title": "iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.",
+  "support_title_parts": {
+    "gradient": "iVH 기술지원 서비스는 ",
+    "normal": "고객 요청에 정확하고 빠르게 답변합니다."
+  },
   "support_text": {
     "text": "긴급 핫라인을 통한 빠른 답변부터 기술 지원에 이르기까지 당사 엔지니어링 팀은 즉각적이고 전문적인 지원 서비스를 제공합니다.",
     "color": "#a1a1aa"
@@ -14,5 +18,5 @@
     "text": "기술지원 서비스로 연결",
     "url": "http://121.134.143.182/redmine/"
   },
-  "support_image": "/images/support/support/support_page.png"
+  "support_image": "/images/pages/support/support/support-main.png"
 }

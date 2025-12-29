@@ -6,13 +6,21 @@
     "ogImage": "https://ivh.co.kr/images/header/ivh_logo_black.png"
   },
   "training_title": [
-    { "text": "표준화", "font": "Freesentation-7-Bold", "color": "#3b995f" },
+    {
+      "text": "표준화",
+      "font": "Freesentation-6-SemiBold",
+      "color": "#3b995f"
+    },
     {
       "text": "된 과정과 ",
       "font": "Freesentation-6-SemiBold",
       "color": "#000000"
     },
-    { "text": "맞춤형", "font": "Freesentation-7-Bold", "color": "#3d67bc" },
+    {
+      "text": "맞춤형",
+      "font": "Freesentation-6-SemiBold",
+      "color": "#3d67bc"
+    },
     {
       "text": " 교육 모두 제공합니다.",
       "font": "Freesentation-6-SemiBold",
