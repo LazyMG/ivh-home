@@ -56,53 +56,55 @@ const StickySideMenu = ({ menuList }: StickySideMenuProps) => {
   };
 
   return (
-    <Box
-      sx={{
-        position: "sticky",
-        top: "32%",
-        width: "254px",
-        height: "fit-content",
-        display: "flex",
-        flexDirection: "column",
-        flexShrink: 0,
-        left: 80,
-      }}
-    >
-      {menuList.map((menu) => (
-        <Box
-          key={menu.id}
-          sx={{
-            borderBottom: "1px solid #e0e0e0",
-            cursor: "pointer",
-            transition: "all 0.3s ease",
-            height: "49px",
-            display: "flex",
-            alignItems: "center",
-            backgroundColor: activeId === menu.id ? "#1339B4" : "transparent",
-            boxShadow:
-              activeId === menu.id ? "0 4px 8px rgba(0, 0, 0, 0.2)" : "none",
-            "&:hover": {
-              backgroundColor: "#1339B4",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-              "& .MuiTypography-root": {
-                color: "#fff",
-                paddingLeft: "17px",
-              },
-            },
-          }}
-          onClick={() => scrollCallBack(menu.id)}
-        >
-          <Typography
+    <Box sx={{ pt: 18 }}>
+      <Box
+        sx={{
+          position: "sticky",
+          top: "16%",
+          width: "254px",
+          height: "fit-content",
+          display: "flex",
+          flexDirection: "column",
+          flexShrink: 0,
+          left: 80,
+        }}
+      >
+        {menuList.map((menu) => (
+          <Box
+            key={menu.id}
             sx={{
-              fontSize: "13px",
-              color: activeId === menu.id ? "#fff" : "inherit",
-              paddingLeft: activeId === menu.id ? "17px" : 0,
+              borderBottom: "1px solid #e0e0e0",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              height: "49px",
+              display: "flex",
+              alignItems: "center",
+              backgroundColor: activeId === menu.id ? "#1339B4" : "#fff",
+              boxShadow:
+                activeId === menu.id ? "0 4px 8px rgba(0, 0, 0, 0.2)" : "none",
+              "&:hover": {
+                backgroundColor: "#1339B4",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                "& .MuiTypography-root": {
+                  color: "#fff",
+                  paddingLeft: "17px",
+                },
+              },
             }}
+            onClick={() => scrollCallBack(menu.id)}
           >
-            {menu.text}
-          </Typography>
-        </Box>
-      ))}
+            <Typography
+              sx={{
+                fontSize: "13px",
+                color: activeId === menu.id ? "#fff" : "inherit",
+                paddingLeft: activeId === menu.id ? "17px" : 0,
+              }}
+            >
+              {menu.text}
+            </Typography>
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };
