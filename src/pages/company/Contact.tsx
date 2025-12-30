@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import contact from "../../data/company/contact.json";
 import {
@@ -34,7 +33,6 @@ interface ContactFormType {
 }
 
 const Contact = () => {
-  const navigate = useNavigate();
   const [submitStatus, setSubmitStatus] = useState<
     "loading" | "success" | "error" | null
   >(null);
@@ -102,42 +100,86 @@ const Contact = () => {
         ...theme.customStyles.contactMainContainer,
       })}
     >
-      {/* 상단 영역: 제목 + 폼 */}
       <Box
         sx={(theme) => ({
           ...theme.customStyles.contactTopContainer,
         })}
       >
-        {/* 왼쪽 영역: 제목과 제품 둘러보기 링크 */}
+        {/* 상단 영역: 제목 + 이미지 */}
         <Box
           sx={(theme) => ({
-            ...theme.customStyles.contactTitleContainer,
+            display: "flex",
+            flexDirection: "column-reverse",
+            alignItems: "center",
+            [theme.breakpoints.up("tablet")]: {
+              flexDirection: "row",
+              alignItems: "flex-start",
+            },
           })}
         >
-          <Typography variant="contactTitleFont" component="h1">
-            {contact.contact_title}
-          </Typography>
+          {/* 왼쪽 영역: 제목과 제품 둘러보기 링크 */}
           <Box
-            component="a"
-            href={contact.products_link.url}
-            onClick={(e) => {
-              e.preventDefault();
-              navigate(contact.products_link.url);
-            }}
             sx={(theme) => ({
-              ...theme.customStyles.contactProductsLink,
+              ...theme.customStyles.contactTitleContainer,
             })}
           >
-            <Typography variant="contactProductsLinkFont">
-              {contact.products_link.text}
+            <Typography
+              variant="contactTitleFont"
+              component="h1"
+              sx={{ wordBreak: "keep-all" }}
+            >
+              {contact.contact_title}
             </Typography>
-            <Typography variant="contactProductsLinkFont">
-              {contact.products_link.arrow}
-            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {contact.contact_texts.map((text, index) => (
+                <Typography
+                  key={index}
+                  sx={{
+                    fontFamily: "Freesentation-4-Regular",
+                    fontSize: "16px",
+                    color: "#2A2A2A",
+                  }}
+                >
+                  {text}
+                </Typography>
+              ))}
+            </Box>
+          </Box>
+          <Box
+            sx={(theme) => ({
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              mb: 3,
+              [theme.breakpoints.up("tablet")]: {
+                width: "auto",
+                marginLeft: "-20%",
+                marginBottom: 0,
+              },
+              [theme.breakpoints.up("desktop")]: {
+                marginLeft: "-15%",
+              },
+            })}
+          >
+            <Box
+              component="img"
+              src={contact.contact_imgUrl}
+              sx={(theme) => ({
+                width: "80%",
+                height: "auto",
+                [theme.breakpoints.up("tablet")]: {
+                  width: "auto",
+                  maxWidth: "550px",
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  maxWidth: "650px",
+                },
+              })}
+            />
           </Box>
         </Box>
 
-        {/* 오른쪽 영역: 문의 폼 */}
+        {/* 하단 영역: 문의 폼 */}
         <Box
           component="form"
           onSubmit={handleSubmit(onSubmit)}
@@ -290,6 +332,7 @@ const Contact = () => {
               render={({ field }) => (
                 <>
                   <FormControlLabel
+                    sx={{ marginRight: 0 }}
                     control={
                       <Checkbox
                         checked={field.value}
@@ -297,7 +340,7 @@ const Contact = () => {
                         sx={(theme) => ({
                           ...theme.customStyles.contactformControlLabel,
                           "&.Mui-checked": {
-                            color: "#6366f1",
+                            color: "#267B65",
                           },
                         })}
                       />
@@ -331,6 +374,12 @@ const Contact = () => {
           <Box
             sx={(theme) => ({
               ...theme.customStyles.contactFormFullWidthField,
+              [theme.breakpoints.up("mobilePortrait")]: {
+                justifySelf: "end",
+              },
+              [theme.breakpoints.up("tablet")]: {
+                gridColumn: "span 3",
+              },
             })}
           >
             <Button

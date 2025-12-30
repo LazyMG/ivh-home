@@ -1,7 +1,15 @@
 {
   "history_title": "History",
-  "history_image": "/images/pages/company/company_history.jpg",
+  "history_image": "/images/pages/company/company_history.png",
   "history_list": [
+    {
+      "year": "2024",
+      "contents": [
+        "Inno-Biz 인증 획득",
+        "'주식회사 아이브이에이치' 법인명 변경",
+        "기업부설연구소 설립"
+      ]
+    },
     {
       "year": "2021",
       "contents": [
@@ -11,14 +19,21 @@
     },
     {
       "year": "2018",
-      "contents": [
-        "Modelica Association 가입",
-        "다쏘시스템코리아 Dymola Var사 등록"
-      ]
+      "contents": ["Modelica Association 가입"]
     },
     {
       "year": "2015",
-      "contents": ["벤처기업등록", "연구전담부서 이전 (국민대학교 산학협력관)"]
+      "contents": ["벤처기업등록"]
+    },
+    {
+      "year": "2014",
+      "contents": ["연구개발전담부서 설립"]
+    },
+    {
+      "year": "2013",
+      "contents": ["주식회사 자동차공학연구소 설립"]
     }
-  ]
+  ],
+  "history_color": "#179EBD",
+  "history_image_position": "50% 50%"
 }

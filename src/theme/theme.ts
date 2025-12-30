@@ -142,11 +142,11 @@ const responsiveFonts = {
     desktop: "40px",
   },
   contactTitleFont: {
-    font: fontConfig["semiBold"],
+    font: fontConfig["bold"],
     mobilePortrait: "24px",
     mobileLandscape: "24px",
     tablet: "30px",
-    desktop: "30px",
+    desktop: "40px",
   },
   contactProductsLinkFont: {
     font: fontConfig["semiBold"],
@@ -471,7 +471,7 @@ const theme = createTheme({
         mobilePortrait: "0 32px",
         mobileLandscape: "0 48px",
         tablet: "0 80px",
-        desktop: "0 160px",
+        desktop: "0 200px",
       },
       marginTop: {
         mobilePortrait: "32px",
@@ -493,9 +493,11 @@ const theme = createTheme({
     contactTopContainer: {
       display: "flex",
       flexDirection: "column",
-      gap: "48px",
-      [baseTheme.breakpoints.up("tablet")]: {
-        flexDirection: "row",
+      gap: {
+        mobilePortrait: "64px",
+        mobileLandscape: "64px",
+        tablet: "64px",
+        desktop: "128px",
       },
     },
     // Contact 페이지 지도 영역 컨테이너 스타일
@@ -515,7 +517,7 @@ const theme = createTheme({
     contactTitleContainer: {
       display: "flex",
       flexDirection: "column",
-      gap: "20px",
+      gap: "36px",
       flex: 1,
       [baseTheme.breakpoints.up("tablet")]: {
         paddingRight: "100px",
@@ -546,7 +548,7 @@ const theme = createTheme({
       gridTemplateColumns: "1fr",
       gap: "24px",
       [baseTheme.breakpoints.up("tablet")]: {
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: "repeat(3,1fr)",
         columnGap: "24px",
       },
     },
@@ -558,30 +560,29 @@ const theme = createTheme({
     contactFormFullWidthField: {
       position: "relative",
       [baseTheme.breakpoints.up("tablet")]: {
-        gridColumn: "span 2",
+        gridColumn: "span 3",
       },
     },
     // Contact 페이지 체크박스 컨테이너 스타일
     contactCheckboxContainer: {
       position: "relative",
+      justifySelf: "end",
       [baseTheme.breakpoints.up("tablet")]: {
-        gridColumn: "span 2",
+        gridColumn: "span 3",
       },
     },
     contactformControlLabel: {
       height: "32px",
-      color: "#6366f1", // indigo-600
     },
     // Contact 페이지 문의하기 버튼 스타일
     contactButton: {
-      padding: "12px 32px",
-      fontSize: "14px",
-
+      padding: "8px 32px",
+      fontSize: "16px",
       fontFamily: fontConfig["semiBold"],
-      color: "white",
-      backgroundColor: "#1d4ed8", // blue-700
+      color: "#fff",
+      backgroundColor: "#267B65", // blue-700
       "&:hover": {
-        backgroundColor: "#1e40af", // blue-600
+        backgroundColor: "#2b8d73ff", // blue-600
       },
       "&.Mui-disabled": {
         backgroundColor: "#cccccc",

@@ -63,7 +63,6 @@ const CustomerContainer = ({
             boxSizing: "border-box",
             px: 2,
             py: 3,
-            borderBottom: "2px solid #caceccff",
             gap: 2,
             [theme.breakpoints.up("tablet")]: {
               display: "none",
@@ -113,7 +112,6 @@ const CustomerContainer = ({
               height: "160px",
               maxHeight: "160px",
               px: 4,
-              borderBottom: "2px solid #caceccff",
               overflow: "hidden",
               gap: content.layout === "start" ? 10 : 0,
             },
