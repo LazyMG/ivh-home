@@ -6,5 +6,7 @@
     "iVH는 협력, 공유, 기술적 진보를 경영의 나침반으로 삼고 사람을 이롭게 하는 기술을 만드는 기업이 되겠습니다."
   ],
   "ceo_footer": "대표이사 강대오",
-  "ceo_image": "/images/pages/company/company_ceo.jpg"
+  "ceo_image": "/images/pages/company/company_ceo.png",
+  "ceo_color": "#179EBD",
+  "ceo_image_position": "70% 50%"
 }

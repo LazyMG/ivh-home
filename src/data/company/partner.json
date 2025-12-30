@@ -1,5 +1,6 @@
 {
-  "parnter_image": "/images/pages/company/company_partner.jpg",
+  "parnter_image": "/images/pages/company/company_partner.png",
+  "parnter_image_position": "20% 50%",
   "parnter_parnter": "Partner",
   "parnter_parnterList": [
     "/images/pages/company/partner/partner_dassaultsystems.svg",

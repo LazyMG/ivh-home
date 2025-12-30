@@ -15,6 +15,7 @@ const Partner = () => {
     parnter_parnterList,
     parnter_customer,
     parnter_customerList,
+    parnter_image_position,
   } = partner;
 
   const { customer_company, customer_institution, customer_education } =
@@ -55,7 +56,10 @@ const Partner = () => {
           },
         })}
       >
-        <ImageHeader imgUrl={parnter_image} />
+        <ImageHeader
+          imgUrl={parnter_image}
+          imgPosition={parnter_image_position}
+        />
       </Box>
 
       <Box
@@ -80,7 +84,7 @@ const Partner = () => {
             sx={(theme) => ({
               textTransform: "uppercase",
               whiteSpace: "pre-line",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: "Freesentation-7-Bold",
               letterSpacing: "4px",
               color: "#3e3e45",
               fontSize: "24px",
@@ -88,7 +92,7 @@ const Partner = () => {
                 fontSize: "28px",
               },
               [theme.breakpoints.up("desktop")]: {
-                fontSize: "36px",
+                fontSize: "30px",
               },
             })}
           >
@@ -131,7 +135,7 @@ const Partner = () => {
             sx={(theme) => ({
               textTransform: "uppercase",
               whiteSpace: "pre-line",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: "Freesentation-7-Bold",
               letterSpacing: "4px",
               color: "#3e3e45",
               fontSize: "24px",
@@ -139,7 +143,7 @@ const Partner = () => {
                 fontSize: "28px",
               },
               [theme.breakpoints.up("desktop")]: {
-                fontSize: "36px",
+                fontSize: "30px",
               },
             })}
           >
