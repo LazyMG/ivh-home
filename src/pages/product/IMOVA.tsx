@@ -1,7 +1,6 @@
 import { Box, Divider, Paper, Typography } from "@mui/material";
 import iMOVA from "../../data/product/iMOVA.json";
 import TechSpecTable from "../../components/product/iMOVA/TechSpecTable";
-import WirelessChargingTable from "../../components/product/iMOVA/WirelessChargingTable";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, Navigation } from "swiper/modules";
@@ -13,7 +12,7 @@ import "swiper/css/navigation";
 
 import "../../style/home-slider.css";
 import MainFunction from "../../components/product/iMOVA/MainFunction";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ScrollButton from "../../common/ScrollButton";
 
 const IMOVA = () => {
@@ -26,13 +25,11 @@ const IMOVA = () => {
     control_system,
     production_line,
     technology_spec,
-    wireless_charging,
   } = iMOVA;
   const THRESHOLD = 100;
   const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);
   const boxRefs = useRef<(HTMLDivElement | null)[]>([]);
   const controlSystemRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [scrollProgress, setScrollProgress] = useState<number[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -63,42 +60,6 @@ const IMOVA = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const newProgress: number[] = [];
-
-      controlSystemRefs.current.forEach((ref) => {
-        if (ref) {
-          const rect = ref.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
-
-          // 요소가 화면 아래에서 위로 올라올 때의 진행도 계산
-          // 화면 아래: 0, 화면 중앙: 1
-          const elementCenter = rect.top + rect.height / 2;
-          const progress = Math.max(
-            0,
-            Math.min(1, (windowHeight - elementCenter) / (windowHeight / 2))
-          );
-
-          newProgress.push(progress);
-        } else {
-          newProgress.push(0);
-        }
-      });
-
-      setScrollProgress(newProgress);
-    };
-
-    handleScroll(); // 초기 실행
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
-
   return (
     <Box>
       <ScrollButton threshold={THRESHOLD} />
@@ -117,53 +78,47 @@ const IMOVA = () => {
             height: "auto",
             objectFit: "contain",
             display: "block",
-            clipPath: "inset(10% 0 0 0)",
-            marginTop: "-10%",
-            marginBottom: "0",
+            clipPath: "inset(0% 0 -8% 0)",
+            marginTop: "-0%",
+            marginBottom: "0%",
             [theme.breakpoints.up("desktop")]: {
-              clipPath: "inset(20% 0 22% 0)",
-              marginTop: "-20%",
-              marginBottom: "-22%",
+              clipPath: "inset(10% 0 4% 0)",
+              marginTop: "-10%",
+              marginBottom: "-2%",
             },
           })}
         />
         <Box
           sx={(theme) => ({
             position: "absolute",
-            bottom: "4%",
+            bottom: "2%",
             left: "5%",
             [theme.breakpoints.up("tablet")]: {
-              bottom: "5%",
+              bottom: "3%",
+              left: "2%",
+            },
+            [theme.breakpoints.up("desktop")]: {
               left: "5%",
             },
           })}
         >
-          <Box
-            component="img"
-            src={title_image}
-            sx={(theme) => ({
-              width: "200px",
-              [theme.breakpoints.down("tablet")]: {
-                width: "100px",
-              },
-              [theme.breakpoints.down("mobilePortrait")]: {
-                width: "100px",
-              },
-            })}
-          />
-          <Box
-            sx={(theme) => ({
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-              [theme.breakpoints.up("tablet")]: {
-                gap: 4,
-              },
-            })}
-          >
+          <Box sx={{ display: "flex", alignItems: "end", gap: 1 }}>
+            <Box
+              component="img"
+              src={title_image}
+              sx={(theme) => ({
+                width: "200px",
+                [theme.breakpoints.down("tablet")]: {
+                  width: "100px",
+                },
+                [theme.breakpoints.down("mobilePortrait")]: {
+                  width: "100px",
+                },
+              })}
+            />
             <Typography
               sx={(theme) => ({
-                color: "white",
+                color: "#2c2c2c",
                 fontSize: "14px",
                 fontWeight: "bold",
                 fontFamily: "Freesentation-7-Bold",
@@ -174,24 +129,54 @@ const IMOVA = () => {
             >
               {name}
             </Typography>
-            <Typography
-              sx={(theme) => ({
-                color: "white",
-                maxWidth: "90%",
-                fontSize: "12px",
-                wordBreak: "keep-all",
-                fontFamily: "Freesentation-5-Medium",
-                [theme.breakpoints.up("tablet")]: {
-                  fontSize: "18px",
-                  maxWidth: "60%",
-                },
-              })}
-            >
-              {title}
-            </Typography>
           </Box>
+          <Typography
+            sx={(theme) => ({
+              color: "#2c2c2c",
+              maxWidth: "90%",
+              fontSize: "12px",
+              wordBreak: "keep-all",
+              fontFamily: "Freesentation-5-Medium",
+              display: "none",
+              [theme.breakpoints.up("tablet")]: {
+                fontSize: "18px",
+                maxWidth: "60%",
+              },
+              [theme.breakpoints.up("desktop")]: {
+                display: "block",
+                mt: 2,
+              },
+            })}
+          >
+            {title}
+          </Typography>
         </Box>
       </Box>
+      <Box
+        sx={(theme) => ({
+          mt: 1,
+          display: "block",
+          px: "20px",
+          [theme.breakpoints.up("desktop")]: {
+            display: "none",
+          },
+        })}
+      >
+        <Typography
+          sx={(theme) => ({
+            color: "#2c2c2c",
+            fontSize: "12px",
+            wordBreak: "keep-all",
+            fontFamily: "Freesentation-5-Medium",
+            [theme.breakpoints.up("tablet")]: {
+              fontSize: "18px",
+            },
+          })}
+        >
+          {title}
+        </Typography>
+      </Box>
+
       <Box
         sx={(theme) => ({
           width: "100%",
@@ -260,142 +245,124 @@ const IMOVA = () => {
             지능형 관제 시스템
           </Typography>
           <Box
-            sx={{
+            sx={(theme) => ({
               display: "flex",
               flexDirection: "column",
-              gap: 10,
+              gap: 4,
               width: "100%",
               alignItems: "center",
-            }}
+              [theme.breakpoints.up("desktop")]: {
+                gap: 10,
+              },
+            })}
           >
             {control_system.map((system, index) => {
-              const progress = scrollProgress[index] || 0;
-              const scale = 0.85 + progress * 0.15; // 0.85 ~ 1
-              const opacity = 0.6 + progress * 0.4; // 0.6 ~ 1
-
               return (
-                <Box
-                  key={index}
-                  ref={(el: HTMLDivElement | null) => {
-                    controlSystemRefs.current[index] = el;
-                  }}
-                  sx={(theme) => ({
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
-                    width: "100%",
-                    justifyContent: "center",
-                    flexDirection: "column",
-
-                    [theme.breakpoints.up("desktop")]: {
-                      flexDirection: "row",
-                      gap: 8,
-                      transform: `scale(${scale})`,
-                      opacity: opacity,
-                      transition:
-                        "transform 0.3s ease-out, opacity 0.3s ease-out",
-                    },
-                  })}
-                >
-                  {/* 왼쪽 이미지 (홀수 인덱스) */}
-                  {index % 2 !== 0 && system.control_system_image_url && (
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        border: "1px solid rgba(0, 0, 0, 0.06)",
-                        borderRadius: "4px",
-                        order: 0,
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={system.control_system_image_url}
-                        sx={{
-                          width: "100%",
-                          height: "auto",
-                          objectFit: "contain",
-                        }}
-                      />
-                    </Box>
-                  )}
-
-                  {/* 텍스트 박스 */}
-                  <Paper
-                    elevation={3}
+                <React.Fragment key={index}>
+                  <Box
+                    key={index}
+                    ref={(el: HTMLDivElement | null) => {
+                      controlSystemRefs.current[index] = el;
+                    }}
                     sx={(theme) => ({
                       display: "flex",
-                      flexDirection: "column",
-                      p: 2,
+                      alignItems: "end",
+                      gap: 2,
                       width: "100%",
-                      order: 1,
-                      boxSizing: "border-box",
+                      justifyContent: "center",
+                      flexDirection: "column",
+
                       [theme.breakpoints.up("desktop")]: {
-                        maxWidth: "40%",
-                        p: 6,
-                        order: 0,
-                        alignItems: index % 2 === 0 ? "end" : "start",
+                        flexDirection: "row",
+                        gap: 2,
                       },
                     })}
                   >
-                    <Typography
-                      variant="h6"
-                      sx={(theme) => ({
-                        fontFamily: "Freesentation-7-Bold",
-                        mb: 2,
-                        textAlign: "left",
-                        [theme.breakpoints.up("desktop")]: {
-                          textAlign: index % 2 === 0 ? "right" : "left",
-                        },
-                      })}
-                    >
-                      {system.control_system_topic}
-                    </Typography>
-                    <Typography
-                      sx={(theme) => ({
-                        wordBreak: "keep-all",
-                        textAlign: "left",
-                        lineHeight: 1.6,
-                        fontSize: "16px",
-                        fontFamily: "Freesentation-5-Medium",
-                        [theme.breakpoints.up("desktop")]: {
-                          textAlign: index % 2 === 0 ? "right" : "left",
-                        },
-                      })}
-                    >
-                      {system.control_system_description}
-                    </Typography>
-                  </Paper>
-
-                  {/* 오른쪽 이미지 (짝수 인덱스) */}
-                  {index % 2 === 0 && system.control_system_image_url && (
+                    {system.control_system_image_url && (
+                      <Box
+                        sx={(theme) => ({
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "4px",
+                          order: 0,
+                          width: "100%",
+                          [theme.breakpoints.up("desktop")]: {
+                            width: "50%",
+                          },
+                        })}
+                      >
+                        <Box
+                          component="img"
+                          src={system.control_system_image_url}
+                          sx={(theme) => ({
+                            height: "auto",
+                            objectFit: "contain",
+                            maxWidth: "100%",
+                            [theme.breakpoints.up("desktop")]: {
+                              maxWidth: "90%",
+                            },
+                          })}
+                        />
+                      </Box>
+                    )}
                     <Box
                       sx={(theme) => ({
                         display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        border: "1px solid rgba(0, 0, 0, 0.06)",
-                        borderRadius: "4px",
-                        order: 0,
-                        minWidth: "100%",
+                        flexDirection: "column",
+                        width: "100%",
+                        order: 1,
+                        boxSizing: "border-box",
+                        [theme.breakpoints.up("tablet")]: {
+                          p: 2,
+                        },
                         [theme.breakpoints.up("desktop")]: {
-                          minWidth: "680px",
+                          maxWidth: "40%",
+                          order: 0,
+                          alignItems: "start",
                         },
                       })}
                     >
-                      <Box
-                        component="img"
-                        src={system.control_system_image_url}
-                        sx={{
-                          width: "100%",
-                          height: "auto",
-                          objectFit: "contain",
-                        }}
-                      />
+                      <Typography
+                        variant="h6"
+                        sx={(theme) => ({
+                          fontFamily: "Freesentation-7-Bold",
+                          mb: 2,
+                          textAlign: "left",
+                          [theme.breakpoints.up("desktop")]: {
+                            textAlign: "left",
+                          },
+                        })}
+                      >
+                        {system.control_system_topic}
+                      </Typography>
+                      <Typography
+                        sx={(theme) => ({
+                          wordBreak: "keep-all",
+                          textAlign: "left",
+                          lineHeight: 1.6,
+                          fontSize: "16px",
+                          fontFamily: "Freesentation-5-Medium",
+                          [theme.breakpoints.up("desktop")]: {
+                            textAlign: "left",
+                          },
+                        })}
+                      >
+                        {system.control_system_description}
+                      </Typography>
                     </Box>
-                  )}
-                </Box>
+                  </Box>
+                  <Divider
+                    sx={(theme) => ({
+                      borderColor: "#2c2c2c",
+                      height: "2px",
+                      width: "100%",
+                      [theme.breakpoints.up("tablet")]: {
+                        width: "95%",
+                      },
+                    })}
+                  />
+                </React.Fragment>
               );
             })}
           </Box>
@@ -588,34 +555,11 @@ const IMOVA = () => {
               </Box>
             </Box>
           </Box>
-          {/* <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 10,
-              width: "100%",
-              alignItems: "flex-end",
-            }}
-          >
-            <Box
-              sx={{
-                width: "100%",
-                backgroundImage: `url(${production_line.production_line_image_url2})`,
-                backgroundSize: "100% 100%",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "right center",
-                position: "relative",
-                aspectRatio: "1398/991",
-              }}
-            />
-          </Box> */}
         </Box>
         <Box
-          sx={(theme) => ({
-            display: "flex",
-            flexDirection: "column",
-            [theme.breakpoints.up("desktop")]: { gap: 12 },
-          })}
+          sx={{
+            mb: 16,
+          }}
         >
           <TechSpecTable
             technology_spec_application={
@@ -625,7 +569,6 @@ const IMOVA = () => {
             technology_spec_sub={technology_spec.technology_spec_sub}
             technology_spec_title={technology_spec.technology_spec_title}
           />
-          <WirelessChargingTable wireless_charging={wireless_charging} />
         </Box>
       </Box>
     </Box>
