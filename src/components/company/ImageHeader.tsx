@@ -18,6 +18,7 @@ const ImageHeader = ({
         [theme.breakpoints.up("tablet")]: {
           m: 0,
           borderRadius: 0,
+          marginTop: "-2%",
         },
       })}
     />
