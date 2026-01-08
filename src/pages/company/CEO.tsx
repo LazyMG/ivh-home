@@ -13,7 +13,7 @@ const CEO = () => {
     ceo_image_position,
   } = ceo;
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
       <Box
         sx={(theme) => ({
           px: "20px",

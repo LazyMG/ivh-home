@@ -483,11 +483,11 @@ const theme = createTheme({
         mobilePortrait: "32px",
         mobileLandscape: "48px",
         tablet: "64px",
-        desktop: "80px",
+        desktop: "240px",
       },
       display: "flex",
       flexDirection: "column",
-      gap: "48px",
+      gap: "128px",
     },
     // Contact 페이지 상단 영역 (제목 + 폼) 컨테이너 스타일
     contactTopContainer: {

@@ -11,7 +11,7 @@ const History = () => {
     history_image_position,
   } = history;
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
       <Box
         sx={(theme) => ({
           px: "20px",
@@ -31,12 +31,13 @@ const History = () => {
         sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-          gap: 6,
+          gap: 4,
           my: 10,
           px: "20px",
           pt: "20px",
           [theme.breakpoints.up("tablet")]: {
             px: 10,
+            gap: 6,
           },
           [theme.breakpoints.up("desktop")]: {
             pt: "50px",
@@ -62,10 +63,9 @@ const History = () => {
           {history_title}
         </Typography>
         <Stack
-          sx={(theme) => ({
-            gap: 3,
-            [theme.breakpoints.up("desktop")]: { gap: 8 },
-          })}
+          sx={{
+            gap: 8,
+          }}
         >
           {history_list.map((item, index) => (
             <Box

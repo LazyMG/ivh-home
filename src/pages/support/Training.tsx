@@ -71,6 +71,7 @@ const Training = () => {
           },
           [theme.breakpoints.up("desktop")]: {
             px: 32,
+            mb: 24,
           },
         })}
       >

@@ -114,6 +114,7 @@ const Battery = () => {
                 },
                 [theme.breakpoints.up("desktop")]: {
                   my: 30,
+                  mb: 36,
                 },
               })}
             >
