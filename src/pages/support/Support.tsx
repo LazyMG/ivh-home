@@ -29,7 +29,7 @@ const Support = () => {
             mobilePortrait: "80px",
             mobileLandscape: "100px",
             tablet: "120px",
-            desktop: "160px",
+            desktop: "240px",
           },
         }}
       >

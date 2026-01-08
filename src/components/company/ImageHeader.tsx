@@ -12,13 +12,13 @@ const ImageHeader = ({
       sx={(theme) => ({
         backgroundImage: `url(${imgUrl})`,
         width: "100%",
-        height: "640px",
+        height: "457px",
         backgroundPosition: imgPosition,
         borderRadius: "16px",
+        backgroundRepeat: "no-repeat",
         [theme.breakpoints.up("tablet")]: {
           m: 0,
           borderRadius: 0,
-          marginTop: "-2%",
         },
       })}
     />

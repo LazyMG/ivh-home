@@ -116,6 +116,7 @@ const VehicleDynamicsLibrary = () => {
                 },
                 [theme.breakpoints.up("desktop")]: {
                   my: 30,
+                  mb: 36,
                 },
               })}
             >

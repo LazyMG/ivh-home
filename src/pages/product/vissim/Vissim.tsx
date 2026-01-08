@@ -130,6 +130,7 @@ const Vissim = () => {
               [theme.breakpoints.up("desktop")]: {
                 my: 30,
                 px: 20,
+                mb: 36,
               },
             })}
           >

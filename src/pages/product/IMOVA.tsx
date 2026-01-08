@@ -558,7 +558,7 @@ const IMOVA = () => {
         </Box>
         <Box
           sx={{
-            mb: 16,
+            mb: 36,
           }}
         >
           <TechSpecTable
