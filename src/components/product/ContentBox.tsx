@@ -50,7 +50,7 @@ const ContentBox = ({ textObj, imgObj }: ContentBoxProps) => {
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <Typography
                     sx={{
-                      fontSize: "16px",
+                      fontSize: "14px",
                       fontFamily: "Freesentation-5-Medium",
                       textAlign: "center",
                     }}

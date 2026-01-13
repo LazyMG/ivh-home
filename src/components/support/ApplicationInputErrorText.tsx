@@ -19,6 +19,7 @@ const ApplicationInputErrorText = ({
         position: "absolute",
         color: "red",
         lineHeight: 1.2,
+        fontSize: "12px",
       }}
     >
       {text}

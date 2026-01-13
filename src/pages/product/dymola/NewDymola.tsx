@@ -1,18 +1,13 @@
 import { Box, Typography } from "@mui/material";
-import StickySideMenu from "../../../common/StickySideMenu";
 import ContentBox from "../../../components/product/ContentBox";
 
 import dymola from "../../../data/product/new-dymola.json";
-import battery from "../../../data/product/new-battery.json";
-import til from "../../../data/product/new-til.json";
-import thermal from "../../../data/product/new-thermal.json";
-import vehicle from "../../../data/product/new-vehicle.json";
-import SubSection from "../../../components/product/SubSection";
 import ScrollButton from "../../../common/ScrollButton";
 import ProductSectionTitle from "../../../components/product/ProductSectionTitle";
-import ProductInquiry from "../../../components/product/ProductInquiry";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
+import ProductBottom from "../../../components/product/ProductBottom";
+import { useNavigate } from "react-router-dom";
 
 const NewDymola = () => {
   const seoData = useSEO("product/dymola", dymola);
@@ -21,60 +16,34 @@ const NewDymola = () => {
     dymola_title,
     dymola_subTitle,
     dymola_text,
-    dymola_color,
-    dymola_menu,
     dymola_features,
+    dymola_libraries,
   } = dymola;
 
-  const {
-    battery_title,
-    battery_subTitle,
-    battery_introduction,
-    battery_features,
-  } = battery;
-
-  const { til_title, til_subTitle, til_introduction, til_features } = til;
-
-  const {
-    thermal_title,
-    thermal_subTitle,
-    thermal_introduction,
-    thermal_features,
-  } = thermal;
-
-  const {
-    vehicle_title,
-    vehicle_subTitle,
-    vehicle_introduction,
-    vehicle_feature,
-  } = vehicle;
+  const navigate = useNavigate();
 
   return (
     <>
       <SEO {...seoData} />
       <Box
         component="main"
-        sx={(theme) => ({
-          ...theme.customStyles.productPageContainer,
+        sx={{
           display: "flex",
           gap: 8,
           boxSizing: "border-box",
-        })}
+          mt: 0,
+          mx: 24,
+        }}
       >
         <ScrollButton />
-        <StickySideMenu menuList={dymola_menu} />
         <Box
           sx={{
             flex: 1,
             display: "flex",
             flexDirection: "column",
             boxSizing: "border-box",
-            position: "relative",
             minWidth: 0,
-            // ml: 8,
-            mr: "4%",
             gap: 20,
-            my: "8%",
           }}
         >
           <Box
@@ -93,12 +62,12 @@ const NewDymola = () => {
             />
             <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
               <Typography
-                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "36px" }}
+                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "32px" }}
               >
                 {dymola_title}
               </Typography>
               <Typography
-                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
+                sx={{ fontFamily: "Freesentation-5-Medium", fontSize: "16px" }}
               >
                 {dymola_subTitle}
               </Typography>
@@ -107,8 +76,9 @@ const NewDymola = () => {
                   <Typography
                     key={index}
                     sx={{
-                      fontFamily: "Freesentation-4-Regular",
-                      fontSize: "18px",
+                      fontFamily: "Freesentation-5-Medium",
+                      fontSize: "16px",
+                      color: "#5B5B5B",
                     }}
                   >
                     {text}
@@ -128,40 +98,64 @@ const NewDymola = () => {
               ))}
             </Box>
           </Box>
-          <SubSection
-            id="battery"
-            title={battery_title}
-            subTitle={battery_subTitle}
-            introduction={battery_introduction}
-            features={battery_features}
-            color={dymola_color}
-          />
-          <SubSection
-            id="til"
-            title={til_title}
-            subTitle={til_subTitle}
-            introduction={til_introduction}
-            features={til_features}
-            color={dymola_color}
-          />
-          <SubSection
-            id="thermal_power_liabrary"
-            title={thermal_title}
-            subTitle={thermal_subTitle}
-            introduction={thermal_introduction}
-            features={thermal_features}
-            color={dymola_color}
-          />
-          <SubSection
-            id="vechle_dynamics_library"
-            title={vehicle_title}
-            subTitle={vehicle_subTitle}
-            introduction={vehicle_introduction}
-            features={vehicle_feature}
-            color={dymola_color}
-          />
+          <Box
+            id="libraries"
+            sx={{
+              boxSizing: "border-box",
+              display: "grid",
+              gridTemplateColumns: "repeat(4,1fr)",
+              columnGap: 10,
+              rowGap: 6,
+              mb: 16,
+              width: "100%",
+            }}
+          >
+            {dymola_libraries.map((library) => (
+              <Box
+                key={library.text}
+                sx={{
+                  border: "1.5px solid #179EBD",
+                  width: "100%",
+                  aspectRatio: "1/1",
+                  boxShadow: "2px 4px 7px rgba(0,0,0,0.5)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  boxSizing: "border-box",
+                  px: 2,
+                  gap: 3,
+                  cursor: "pointer",
+                  minWidth: 0,
+                  transition: "all 0.3s ease",
+                  ":hover": {
+                    background:
+                      "linear-gradient(to right bottom, #31B386 5%, #266DEA 100%)",
+                    "& img": {
+                      filter: "invert(1) brightness(2)",
+                    },
+                    "& .MuiTypography-root": {
+                      color: "white",
+                    },
+                  },
+                }}
+                onClick={() => navigate(library.url)}
+              >
+                <Box component="img" src={library.imgUrl} />
+                <Typography
+                  sx={{
+                    fontSize: "18px",
+                    fontFamily: "Freesentation-6-SemiBold",
+                    textAlign: "center",
+                  }}
+                >
+                  {library.text}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+          <ProductBottom productName="Vehicle Dynamics Library" />
         </Box>
-        <ProductInquiry />
       </Box>
     </>
   );

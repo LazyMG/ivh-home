@@ -60,7 +60,6 @@ import FloatingButton from "./components/chatbot/FloatingButton";
 import Mobility from "./pages/solution/Mobility";
 import IMOVA from "./pages/product/IMOVA";
 import NewDymola from "./pages/product/dymola/NewDymola";
-import TempDymola from "./pages/product/dymola/TempDymola";
 import NewVTD from "./pages/product/vtd/NewVTD";
 import NewVissim from "./pages/product/vissim/NewVissim";
 
@@ -113,7 +112,6 @@ function AppContent() {
           {/** dymola */}
           <Route path="/product/dymola" element={<Dymola />} />
           <Route path="/product/new-dymola" element={<NewDymola />} />
-          <Route path="/product/temp-dymola" element={<TempDymola />} />
           <Route path="/product/dymola/battery" element={<Battery />} />
           <Route path="/product/dymola/til" element={<TIL />} />
           <Route
