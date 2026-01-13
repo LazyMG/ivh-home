@@ -1,36 +1,52 @@
 import { Box } from "@mui/material";
-import RowNav from "../../components/solution/RowNav";
-import { useBreakpoint } from "../../hooks/useBreakpoint";
+// import { useBreakpoint } from "../../hooks/useBreakpoint";
 
-import SolutionIslandButtons from "../../components/solution/SolutionIslandButtons";
-import SolutionIslandImage from "../../components/solution/SolutionIslandImage";
+import solution from "../../data/solution/solution.json";
+import SolutionMainBox from "../../components/solution/SolutionMainBox";
 
 const Solution = () => {
-  const { isMobile } = useBreakpoint();
+  // const { isMobile } = useBreakpoint();
+
+  const { solution_box, solution_main_image } = solution;
 
   return (
     <Box
       component="main"
-      sx={(theme) => ({
-        ...theme.customStyles.solutionMainContainer,
-        minHeight: isMobile ? "calc(100vh - 66px)" : "calc(100vh - 86px)",
-        // minHeight: "100vh",
-        position: "relative",
-      })}
+      sx={{
+        display: "flex",
+        gap: 8,
+        boxSizing: "border-box",
+        mx: 24,
+        my: 5,
+      }}
     >
       <Box
-        sx={(theme) => ({
-          ...theme.customStyles.solutionMainImageContainer,
-          position: "relative", // 이미지 컨테이너를 relative로 설정
-        })}
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(5,1fr)",
+          gridTemplateRows: "repeat(3,1fr)",
+          columnGap: 3,
+          rowGap: 4,
+          width: "100%",
+        }}
       >
-        <SolutionIslandImage />
+        {solution_box.map((box, index) => (
+          <SolutionMainBox key={index} {...box} />
+        ))}
 
-        {/* 버튼들을 이미지 위에 absolute로 배치 */}
-        <SolutionIslandButtons />
+        {/* 이미지: 1~3행, 2~4열 */}
+        <Box
+          component="img"
+          src={solution_main_image}
+          sx={{
+            gridColumn: "2 / 5",
+            gridRow: "1 / 4",
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+          }}
+        />
       </Box>
-
-      <RowNav />
     </Box>
   );
 };
