@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import SolutionTitle from "../../components/solution/SolutionTitle";
 
 import { useBreakpoint } from "../../hooks/useBreakpoint";
@@ -11,8 +11,7 @@ import SEO from "../../common/SEO";
 import { useSEO } from "../../hooks/useSEO";
 
 import new_body from "../../data/solution/new-body.json";
-import SolutionContent from "../../components/solution/SolutionContent";
-import { calculateContentDivider } from "../../utils/solutionUtils";
+import SolutionContentGrid from "../../components/solution/SolutionContentGrid";
 
 const THRESHOLD = 100;
 
@@ -58,43 +57,11 @@ const SmartFactory = () => {
           )}
           {/* body section */}
 
-          <Grid
-            container
-            spacing={12}
-            sx={{
-              width: "100%",
-              mt: 6,
-              mb: 20,
-            }}
-          >
-            {smart_factory.map((item, index) => {
-              const needsDivider = calculateContentDivider(
-                smart_factory,
-                index
-              );
-              return (
-                <Grid
-                  size={isMobile ? 12 : item.size}
-                  sx={{
-                    position: "relative",
-                    ...(needsDivider && {
-                      "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        right: "-48px",
-                        top: 0,
-                        height: "100%",
-                        width: "1px",
-                        backgroundColor: "rgba(0, 0, 0, 0.12)",
-                      },
-                    }),
-                  }}
-                >
-                  <SolutionContent key={index} {...item} color={color} />
-                </Grid>
-              );
-            })}
-          </Grid>
+          <SolutionContentGrid
+            items={smart_factory}
+            color={color}
+            isMobile={isMobile}
+          />
 
           {/* 핵심 기술, 제공 서비스, 기대 효과 */}
           {/* 모든 ColorBox를 반복 렌더링 */}

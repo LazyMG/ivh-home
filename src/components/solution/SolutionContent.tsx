@@ -10,11 +10,14 @@ interface SolutionText {
   text?: string[];
 }
 
-export interface SolutionContentProps {
+export interface SolutionContentItem {
   imgObj?: SolutionImage[];
   textObj: SolutionText;
-  color: string;
   size: number;
+}
+
+export interface SolutionContentProps extends SolutionContentItem {
+  color: string;
 }
 
 const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
@@ -79,7 +82,7 @@ const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
                     sx={{
                       objectFit: "contain",
                       width: img.imgSize === "small" ? "auto" : "100%",
-                      maxWidth: "100%",
+                      maxWidth: "80%",
                     }}
                   />
                 </Box>

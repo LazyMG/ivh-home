@@ -2,17 +2,15 @@ import SolutionTitle from "../../components/solution/SolutionTitle";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import "../../style/solution.css";
 import header from "../../data/solution/header.json";
-import body from "../../data/solution/body.json";
-import TextBox from "../../components/solution/TextBox";
 import { Box } from "@mui/material";
-import TextImageBox from "../../components/solution/TextImageBox";
-import ColorBox from "../../components/solution/ColorBox";
-import List from "../../components/solution/List";
 import BreadScrum from "../../common/BreadScrum";
 import ScrollButton from "../../common/ScrollButton";
 import energy from "../../data/solution/seo.json";
 import SEO from "../../common/SEO";
 import { useSEO } from "../../hooks/useSEO";
+
+import new_body from "../../data/solution/new-body.json";
+import SolutionContentGrid from "../../components/solution/SolutionContentGrid";
 
 const THRESHOLD = 100;
 
@@ -23,16 +21,7 @@ const Energy = () => {
 
   const seoData = useSEO("solution/energy", energy.energy);
 
-  // body
-  const {
-    outline,
-    technicalBackground,
-    marketTrend,
-    systemArchitecture,
-    colorBoxes,
-    relatedSoftware,
-    frequentlyAskedQuestions,
-  } = body.energy;
+  const { energy: new_energy } = new_body;
 
   return (
     <>
@@ -66,55 +55,11 @@ const Energy = () => {
             />
           )}
           {/* body section */}
-          {/* 개요 */}
-          <TextBox
-            title={outline.outlineTitle}
-            contents={outline.outlineContents}
-            marginTop={8}
-          />
-          {/* 기술적 배경 */}
-          <TextBox
-            title={technicalBackground.technicalBackgroundTitle}
-            contents={technicalBackground.technicalBackgroundContents}
-          />
-          {/* 시장 동향 및 필요성 */}
-          <TextBox
-            title={marketTrend.marketTrendTitle}
-            contents={marketTrend.marketTrendContents}
-          />
-          {/* 시스템 아키텍처 */}
-          <TextImageBox
-            title={systemArchitecture.systemArchitectureTitle}
-            imgurl={[systemArchitecture.systemArchitectureImgUrl]}
-            listHeader={systemArchitecture.systemArchitectureListHeader}
-            width="1200px"
-            height="700px"
-          />
-          {/* 핵심 기술, 제공 서비스, 기대 효과 */}
-          {/* 모든 ColorBox를 반복 렌더링 */}
-          {colorBoxes.map((colorBox, index) => (
-            <Box
-              component="section"
-              aria-label="box-content-section"
-              key={index}
-              sx={{ mt: 8, mb: 16 }}
-            >
-              <ColorBox
-                boxColor={colorBox.boxColor}
-                layout={colorBox.layout}
-                boxes={colorBox.boxes}
-              />
-            </Box>
-          ))}
-          {/* 관련 소프트웨어 */}
-          <TextBox
-            title={relatedSoftware.relatedSoftwareTitle}
-            contents={relatedSoftware.relatedSoftwareContents}
-          />
-          {/* 자주 묻는 질문 */}
-          <List
-            title={frequentlyAskedQuestions.frequentlyAskedQuestionsTitle}
-            contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
+
+          <SolutionContentGrid
+            items={new_energy}
+            color={color}
+            isMobile={isMobile}
           />
         </Box>
       </Box>
