@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import ContentBox from "../../../components/product/ContentBox";
+import ProductContent from "../../../components/product/ProductContent";
 
 import dymola from "../../../data/product/new-dymola.json";
 import ScrollButton from "../../../common/ScrollButton";
@@ -94,7 +94,7 @@ const NewDymola = () => {
             <ProductSectionTitle titleText="특징" />
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               {dymola_features.map((item, index) => (
-                <ContentBox key={index} {...item} />
+                <ProductContent key={index} {...item} />
               ))}
             </Box>
           </Box>

@@ -9,7 +9,7 @@ import SubSection from "../../../components/product/SubSection";
 import ScrollButton from "../../../common/ScrollButton";
 import ProductInquiry from "../../../components/product/ProductInquiry";
 import ProductSectionTitle from "../../../components/product/ProductSectionTitle";
-import ContentBox from "../../../components/product/ContentBox";
+import ProductContent from "../../../components/product/ProductContent";
 
 const NewVissim = () => {
   const {
@@ -110,7 +110,7 @@ const NewVissim = () => {
             <ProductSectionTitle titleText="특징" />
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               {vissim_features.map((item, index) => (
-                <ContentBox key={index} {...item} />
+                <ProductContent key={index} {...item} />
               ))}
             </Box>
           </Box>

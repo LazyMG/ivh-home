@@ -65,7 +65,7 @@ const fontConfig = {
 
 const responsiveFonts = {
   breadScrumFont: {
-    font: fontConfig["bold"],
+    // font: fontConfig["bold"],
     mobilePortrait: "11px",
     mobileLandscape: "13px",
     tablet: "16px",
