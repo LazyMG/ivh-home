@@ -17,6 +17,10 @@ export const MenuTitle = styled(Typography, {
     cursor: "pointer",
     position: "relative",
     paddingBottom: "8px",
+
+    "&:hover": {
+      color: theme.hoverLine,
+    },
   };
 });
 

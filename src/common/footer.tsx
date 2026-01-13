@@ -1,5 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
-import logoWhite from "/images/header/ivh_logo_white.png";
+import logoBlack from "/images/header/ivh_logo_black.png";
 import footer from "../data/footer/footer.json";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +7,8 @@ const Footer = () => {
   const { compantInfo, menu } = footer;
   const { companyName, address, phone, email, copyright, socialMedia } =
     compantInfo;
-  const { youtubeLogo, linkedinLogo, youtubeUrl, linkedinUrl } = socialMedia;
+  const { youtubeUrl, linkedinUrl, youtubeLogoBlack, linkedinLogoBlack } =
+    socialMedia;
   const navigate = useNavigate();
 
   const handleFooterLevelClick = () => {
@@ -23,10 +24,11 @@ const Footer = () => {
         flexDirection: "row",
         justifyContent: "center",
         gap: "10px",
-        backgroundColor: "black",
+        backgroundColor: "white",
         minHeight: "400px",
         py: 7,
         px: 20,
+        boxShadow: "0 -2px 12px rgba(0,0,0,0.05), 0 -2px 15px rgba(0,0,0,0.1)",
       }}
     >
       {/** 왼쪽, 오른쪽 자식 컨테이너를 정렬하는 컨테이너 */}
@@ -58,7 +60,7 @@ const Footer = () => {
             }}
           >
             <img
-              src={logoWhite}
+              src={logoBlack}
               alt="logo"
               style={{
                 width: "64px",
@@ -72,7 +74,7 @@ const Footer = () => {
               sx={{
                 fontSize: "16px",
                 fontFamily: "Freesentation-6-SemiBold",
-                color: "white",
+                color: "black",
                 height: "24px",
                 lineHeight: "34px",
               }}
@@ -91,13 +93,13 @@ const Footer = () => {
             >
               <img
                 onClick={() => window.open(youtubeUrl)}
-                src={youtubeLogo}
+                src={youtubeLogoBlack}
                 alt="youtube"
                 style={{ width: "35px", height: "35px", cursor: "pointer" }}
               />
               <img
                 onClick={() => window.open(linkedinUrl)}
-                src={linkedinLogo}
+                src={linkedinLogoBlack}
                 alt="linkedin"
                 style={{ width: "35px", height: "35px", cursor: "pointer" }}
               />
@@ -114,7 +116,7 @@ const Footer = () => {
                 sx={{
                   fontSize: "14px",
                   fontFamily: "Freesentation-4-Regular",
-                  color: "white",
+                  color: "black",
                 }}
                 component="p"
               >
@@ -131,7 +133,7 @@ const Footer = () => {
                   sx={{
                     fontSize: "14px",
                     fontFamily: "Freesentation-4-Regular",
-                    color: "white",
+                    color: "black",
                   }}
                   component="p"
                 >
@@ -141,7 +143,7 @@ const Footer = () => {
                   sx={{
                     fontSize: "14px",
                     fontFamily: "Freesentation-4-Regular",
-                    color: "white",
+                    color: "black",
                   }}
                   component="p"
                 >
@@ -152,7 +154,7 @@ const Footer = () => {
                 sx={{
                   fontSize: "14px",
                   fontFamily: "Freesentation-4-Regular",
-                  color: "white",
+                  color: "black",
                 }}
                 component="p"
               >
@@ -166,7 +168,7 @@ const Footer = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            color: "white",
+            color: "black",
             width: "1000px",
           }}
         >
@@ -191,7 +193,7 @@ const Footer = () => {
                   sx={{
                     fontSize: "19px",
                     fontFamily: "Freesentation-7-Bold",
-                    color: "white",
+                    color: "black",
                   }}
                   component="p"
                 >
@@ -231,7 +233,7 @@ const Footer = () => {
                       sx={{
                         fontSize: "14px",
                         fontFamily: "Freesentation-4-Regular",
-                        color: "white",
+                        color: "black",
                         cursor: "pointer",
                       }}
                       key={subIndex}

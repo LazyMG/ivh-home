@@ -59,6 +59,9 @@ import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
 import Mobility from "./pages/solution/Mobility";
 import IMOVA from "./pages/product/IMOVA";
+import NewDymola from "./pages/product/dymola/NewDymola";
+import NewVTD from "./pages/product/vtd/NewVTD";
+import NewVissim from "./pages/product/vissim/NewVissim";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -108,6 +111,7 @@ function AppContent() {
 
           {/** dymola */}
           <Route path="/product/dymola" element={<Dymola />} />
+          <Route path="/product/new-dymola" element={<NewDymola />} />
           <Route path="/product/dymola/battery" element={<Battery />} />
           <Route path="/product/dymola/til" element={<TIL />} />
           <Route
@@ -120,11 +124,14 @@ function AppContent() {
           />
           {/** vtd */}
           <Route path="/product/vtd" element={<VTD />} />
+          <Route path="/product/new-vtd" element={<NewVTD />} />
           <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
           <Route path="/product/vtd/vtdsimulate" element={<VTDSimulate />} />
           <Route path="/product/vtd/vtdfullstack" element={<VTDFullstack />} />
           {/** vissim */}
           <Route path="/product/vissim" element={<Vissim />} />
+          <Route path="/product/new-vissim" element={<NewVissim />} />
+
           <Route
             path="/product/vissim/vissimautomotive"
             element={<VissimAutomotive />}

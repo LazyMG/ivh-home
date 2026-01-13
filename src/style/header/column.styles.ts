@@ -33,6 +33,10 @@ export const MenuColumn = styled(Box, {
       maxWidth: max,
       position: "relative",
 
+      "&:hover": {
+        color: theme.hoverLine,
+      },
+
       // 삼각형 화살표
       "&::before": {
         content: '""',
@@ -69,9 +73,9 @@ export const MenuColumn = styled(Box, {
         zIndex: 1,
       },
 
-      "&:hover::after": {
-        backgroundColor: $isLogoColumn ? "transparent" : theme.hoverLine,
-      },
+      // "&:hover::after": {
+      //   backgroundColor: $isLogoColumn ? "transparent" : theme.hoverLine,
+      // },
     };
   }
 );

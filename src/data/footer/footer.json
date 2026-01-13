@@ -7,7 +7,9 @@
     "copyright": "© iVH All rights reserved.",
     "socialMedia": {
       "youtubeLogo": "/images/header/youtube_white.png",
+      "youtubeLogoBlack": "/images/header/youtube_black.png",
       "linkedinLogo": "/images/header/linkedin_white.png",
+      "linkedinLogoBlack": "/images/header/linkedin_black.png",
       "youtubeUrl": "https://www.youtube.com/@ivhkorea",
       "linkedinUrl": "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image"
     }
