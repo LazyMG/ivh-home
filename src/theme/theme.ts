@@ -233,7 +233,7 @@ const solutionMainImageStyle = {
 const theme = createTheme({
   breakpoints: baseTheme.breakpoints,
   typography: {
-    breadScrumFont: getResponsiveFontStyle(responsiveFonts["breadScrumFont"]),
+    // breadScrumFont: getResponsiveFontStyle(responsiveFonts["breadScrumFont"]),
     solutionMainTitle: getResponsiveFontStyle(
       responsiveFonts["solutionMainTitle"]
     ),

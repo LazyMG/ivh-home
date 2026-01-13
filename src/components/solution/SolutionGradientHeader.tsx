@@ -1,8 +1,7 @@
-import { alpha, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const GradientHeader = ({
   color,
-  subColor,
   subtitle,
 }: {
   color: string;

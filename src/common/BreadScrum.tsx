@@ -2,7 +2,6 @@ import { Box, Typography, Button } from "@mui/material";
 import breadcrumbs from "../data/common/breadscrum.json";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 
 interface BreadcrumbItem {
