@@ -37,14 +37,18 @@ const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
           gap: 2,
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          <Box sx={{ height: "18px", width: "10px", backgroundColor: color }} />
-          <Typography
-            sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
-          >
-            {textObj.title}
-          </Typography>
-        </Box>
+        {textObj.title && (
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Box
+              sx={{ height: "18px", width: "10px", backgroundColor: color }}
+            />
+            <Typography
+              sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
+            >
+              {textObj.title}
+            </Typography>
+          </Box>
+        )}
 
         {textObj.text && (
           <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
