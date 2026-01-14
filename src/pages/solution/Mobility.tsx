@@ -4,12 +4,12 @@ import { useBreakpoint } from "../../hooks/useBreakpoint";
 import BreadScrum from "../../common/BreadScrum";
 import ScrollButton from "../../common/ScrollButton";
 
-import body from "../../data/solution/body.json";
 import header from "../../data/solution/header.json";
-import TextBox from "../../components/solution/TextBox";
-import TextImageBox from "../../components/solution/TextImageBox";
-import ColorBox from "../../components/solution/ColorBox";
+
 import SolutionTitle from "../../components/solution/SolutionTitle";
+
+import new_body from "../../data/solution/new-body.json";
+import SolutionContentGrid from "../../components/solution/SolutionContentGrid";
 
 const THRESHOLD = 643;
 
@@ -19,7 +19,7 @@ const Mobility = () => {
   // 각각의 헤더에서 소제목 분리
   const { headerTitle, subColor, color, subtitle } = header.Mobility;
 
-  const { outline, marketTrend, colorBoxes, relatedSoftware } = body.mobility;
+  const { mobility: new_mobility } = new_body;
 
   return (
     <Box className="solution-body">
@@ -54,41 +54,11 @@ const Mobility = () => {
       )}
 
       {/* body section */}
-      {/* 개요 */}
-      <TextBox
-        title={outline.outlineTitle}
-        contents={outline.outlineContents}
-        marginTop={8}
-      />
 
-      <TextImageBox
-        title={marketTrend.marketTrendTitle}
-        contents={marketTrend.marketTrendContents}
-        width="700px"
-        height="400px"
-        imgurl={marketTrend.marketTrendContentImgUrl}
-        imgText={marketTrend.marketTrendContentImgText}
-      />
-      {/* 핵심 기술, 제공 서비스, 기대 효과 */}
-      {/* 모든 ColorBox를 반복 렌더링 */}
-      {colorBoxes.map((colorBox, index) => (
-        <Box
-          component="section"
-          aria-label="box-content-section"
-          key={index}
-          sx={{ mt: 8, mb: 16 }}
-        >
-          <ColorBox
-            boxColor={colorBox.boxColor}
-            layout={colorBox.layout}
-            boxes={colorBox.boxes}
-          />
-        </Box>
-      ))}
-      {/* 관련 소프트웨어 */}
-      <TextBox
-        title={relatedSoftware.relatedSoftwareTitle}
-        contents={relatedSoftware.relatedSoftwareContents}
+      <SolutionContentGrid
+        items={new_mobility}
+        isMobile={isMobile}
+        color={color}
       />
     </Box>
   );

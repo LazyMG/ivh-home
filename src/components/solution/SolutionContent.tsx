@@ -14,6 +14,8 @@ export interface SolutionContentItem {
   imgObj?: SolutionImage[];
   textObj: SolutionText;
   size: number;
+  divider?: boolean;
+  spacingAfter?: number;
 }
 
 export interface SolutionContentProps extends SolutionContentItem {

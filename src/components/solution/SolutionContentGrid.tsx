@@ -16,7 +16,7 @@ const SolutionContentGrid = ({
   return (
     <Grid
       container
-      spacing={12}
+      columnSpacing={12}
       sx={{
         width: "100%",
         mt: 6,
@@ -24,13 +24,20 @@ const SolutionContentGrid = ({
       }}
     >
       {items.map((item, index) => {
-        const needsDivider = calculateContentDivider(items, index);
+        const autoCalculatedDivider = calculateContentDivider(items, index);
+        const needsDivider = item.divider !== undefined ? item.divider : autoCalculatedDivider;
+        const prevItem = items[index - 1];
+        const spacing = prevItem?.spacingAfter !== undefined ? prevItem.spacingAfter : 12;
+
         return (
           <Grid
             key={index}
             size={isMobile ? 12 : item.size}
             sx={{
               position: "relative",
+              ...(index > 0 && {
+                mt: `${spacing * 8}px`,
+              }),
               ...(needsDivider && {
                 "&::after": {
                   content: '""',
