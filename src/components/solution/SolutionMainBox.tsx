@@ -6,8 +6,16 @@ interface SolutionBoxProps {
   title: string;
   description: string;
   color: string;
-  col: number;
-  row: number;
+  col: {
+    desktop: number;
+    tablet: number;
+    mobile: number;
+  };
+  row: {
+    desktop: number;
+    tablet: number;
+    mobile: number;
+  };
   url: string;
 }
 
@@ -23,16 +31,24 @@ const SolutionMainBox = ({
   const navigate = useNavigate();
   return (
     <Box
-      sx={{
-        gridColumn: col,
-        gridRow: row,
+      sx={(theme) => ({
+        gridColumn: col.mobile,
+        gridRow: row.mobile,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-      }}
+        [theme.breakpoints.up("tablet")]: {
+          gridColumn: col.tablet,
+          gridRow: row.tablet,
+        },
+        [theme.breakpoints.up("desktop")]: {
+          gridColumn: col.desktop,
+          gridRow: row.desktop,
+        },
+      })}
     >
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           border: `2px solid ${color}`,
           flexDirection: "column",
@@ -47,9 +63,9 @@ const SolutionMainBox = ({
           boxSizing: "border-box",
           ":hover": {
             backgroundColor: color,
-            justifyContent: "flex-start",
-            pt: 3,
-            gap: 2,
+            justifyContent: "center",
+            pt: 0,
+            gap: 0.5,
 
             "& .idle": {
               display: "none",
@@ -67,7 +83,12 @@ const SolutionMainBox = ({
               display: "block",
             },
           },
-        }}
+          [theme.breakpoints.up("tablet")]: {
+            pt: 3,
+            gap: 2,
+            justifyContent: "flex-start",
+          },
+        })}
         onClick={() => navigate(url)}
       >
         <Box
@@ -82,12 +103,15 @@ const SolutionMainBox = ({
         >
           <Box component="img" src={imgUrl} sx={{ width: "35%" }} />
           <Typography
-            sx={{
+            sx={(theme) => ({
               color,
               fontFamily: "Freesentation-7-Bold",
-              fontSize: "20px",
+              fontSize: "14px",
               textAlign: "center",
-            }}
+              [theme.breakpoints.up("tablet")]: {
+                fontSize: "20px",
+              },
+            })}
           >
             {title}
           </Typography>
@@ -95,13 +119,16 @@ const SolutionMainBox = ({
 
         <Typography
           className="hover-title"
-          sx={{
+          sx={(theme) => ({
             display: "none",
             color: "white",
             fontFamily: "Freesentation-7-Bold",
-            fontSize: "20px",
+            fontSize: "14px",
             textAlign: "center",
-          }}
+            [theme.breakpoints.up("tablet")]: {
+              fontSize: "20px",
+            },
+          })}
         >
           {title}
         </Typography>
@@ -117,15 +144,18 @@ const SolutionMainBox = ({
         />
         <Typography
           className="description"
-          sx={{
+          sx={(theme) => ({
             display: "none",
             color: "white",
             fontFamily: "Freesentation-5-Medium",
             textAlign: "center",
-            fontSize: "14px",
+            fontSize: "10px",
             whiteSpace: "pre-line",
             maxWidth: "80%",
-          }}
+            [theme.breakpoints.up("tablet")]: {
+              fontSize: "14px",
+            },
+          })}
         >
           {description}
         </Typography>

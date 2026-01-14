@@ -6,8 +6,16 @@
       "title": "Energy",
       "description": "원자력 - 재생에너지\n하이브리드 에너지 시스템",
       "color": "#279576",
-      "row": 1,
-      "col": 1,
+      "row": {
+        "desktop": 1,
+        "tablet": 1,
+        "mobile": 3
+      },
+      "col": {
+        "desktop": 1,
+        "tablet": 1,
+        "mobile": 1
+      },
       "url": "/solution/energy"
     },
     {
@@ -15,8 +23,16 @@
       "title": "AI Innovation Hub",
       "description": "iVH의 모든 기술을 연결하고 강화하는 중추적인 기술 조직입니다.",
       "color": "#0095D7",
-      "row": 1,
-      "col": 5,
+      "row": {
+        "desktop": 1,
+        "tablet": 5,
+        "mobile": 4
+      },
+      "col": {
+        "desktop": 5,
+        "tablet": 1,
+        "mobile": 1
+      },
       "url": "/solution/aIinnovationhub"
     },
     {
@@ -24,8 +40,16 @@
       "title": "Home Appliance",
       "description": "PCB 열관리 성능 예측",
       "color": "#82A932",
-      "row": 2,
-      "col": 1,
+      "row": {
+        "desktop": 2,
+        "tablet": 1,
+        "mobile": 3
+      },
+      "col": {
+        "desktop": 1,
+        "tablet": 2,
+        "mobile": 2
+      },
       "url": "/solution/homeappliance"
     },
     {
@@ -33,8 +57,16 @@
       "title": "Smart Factory",
       "description": "배터리 제조라인용 스마트 팩토리 Kit 개발",
       "color": "#0C307B",
-      "row": 2,
-      "col": 5,
+      "row": {
+        "desktop": 2,
+        "tablet": 5,
+        "mobile": 4
+      },
+      "col": {
+        "desktop": 5,
+        "tablet": 2,
+        "mobile": 2
+      },
       "url": "/solution/smartfactory"
     },
     {
@@ -42,8 +74,16 @@
       "title": "BEMS",
       "description": "건물 에너지 관리 기술",
       "color": "#E98A0D",
-      "row": 3,
-      "col": 1,
+      "row": {
+        "desktop": 3,
+        "tablet": 1,
+        "mobile": 3
+      },
+      "col": {
+        "desktop": 1,
+        "tablet": 3,
+        "mobile": 3
+      },
       "url": "/solution/bems"
     },
     {
@@ -51,8 +91,16 @@
       "title": "Mobility",
       "description": "ASAM 표준 가상주행환경 기반 자율주행 검증 솔루션",
       "color": "#CC5268",
-      "row": 3,
-      "col": 5,
+      "row": {
+        "desktop": 3,
+        "tablet": 5,
+        "mobile": 4
+      },
+      "col": {
+        "desktop": 5,
+        "tablet": 3,
+        "mobile": 3
+      },
       "url": "/solution/mobility"
     }
   ]

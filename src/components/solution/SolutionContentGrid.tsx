@@ -25,9 +25,11 @@ const SolutionContentGrid = ({
     >
       {items.map((item, index) => {
         const autoCalculatedDivider = calculateContentDivider(items, index);
-        const needsDivider = item.divider !== undefined ? item.divider : autoCalculatedDivider;
+        const needsDivider =
+          item.divider !== undefined ? item.divider : autoCalculatedDivider;
         const prevItem = items[index - 1];
-        const spacing = prevItem?.spacingAfter !== undefined ? prevItem.spacingAfter : 12;
+        const spacing =
+          prevItem?.spacingAfter !== undefined ? prevItem.spacingAfter : 12;
 
         return (
           <Grid

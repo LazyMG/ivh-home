@@ -12,23 +12,41 @@ const Solution = () => {
   return (
     <Box
       component="main"
-      sx={{
+      sx={(theme) => ({
         display: "flex",
         gap: 8,
         boxSizing: "border-box",
-        mx: 24,
-        my: 5,
-      }}
+        mx: 2,
+        my: 4,
+        [theme.breakpoints.up("tablet")]: {
+          mx: 8,
+          my: 10,
+          height: "100vh",
+        },
+        [theme.breakpoints.up("desktop")]: {
+          mx: 24,
+          my: 5,
+          height: "100%",
+        },
+      })}
     >
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "grid",
-          gridTemplateColumns: "repeat(5,1fr)",
-          gridTemplateRows: "repeat(3,1fr)",
-          columnGap: 3,
+          gridTemplateColumns: "repeat(3,1fr)",
+          gridTemplateRows: "repeat(4,1fr)",
+          columnGap: 2,
           rowGap: 4,
           width: "100%",
-        }}
+          [theme.breakpoints.up("tablet")]: {
+            columnGap: 3,
+            rowGap: 4,
+          },
+          [theme.breakpoints.up("desktop")]: {
+            gridTemplateColumns: "repeat(5,1fr)",
+            gridTemplateRows: "repeat(3,1fr)",
+          },
+        })}
       >
         {solution_box.map((box, index) => (
           <SolutionMainBox key={index} {...box} />
@@ -38,13 +56,21 @@ const Solution = () => {
         <Box
           component="img"
           src={solution_main_image}
-          sx={{
-            gridColumn: "2 / 5",
-            gridRow: "1 / 4",
+          sx={(theme) => ({
+            gridColumn: "1 / 4",
+            gridRow: "1 / 3",
             width: "100%",
             height: "100%",
             objectFit: "contain",
-          }}
+            [theme.breakpoints.up("tablet")]: {
+              gridColumn: "1 / 4",
+              gridRow: "1 / 6",
+            },
+            [theme.breakpoints.up("desktop")]: {
+              gridColumn: "2 / 5",
+              gridRow: "1 / 4",
+            },
+          })}
         />
       </Box>
     </Box>
