@@ -40,20 +40,23 @@ const SolutionMainBox = ({
           justifyContent: "center",
           gap: 1,
           height: "100%",
-          width: "90%",
+          width: "100%",
           cursor: "pointer",
           backgroundColor: "transparent",
           boxShadow: "0 2px 4px rgba(0,0,0,0.25)",
+          boxSizing: "border-box",
           ":hover": {
             backgroundColor: color,
+            justifyContent: "flex-start",
+            pt: 3,
             gap: 2,
 
-            "& img": {
+            "& .idle": {
               display: "none",
             },
 
-            "& .MuiTypography-root": {
-              color: "white",
+            "& .hover-title": {
+              display: "block",
             },
 
             "& .divider": {
@@ -67,10 +70,34 @@ const SolutionMainBox = ({
         }}
         onClick={() => navigate(url)}
       >
-        <Box component="img" src={imgUrl} sx={{ width: "35%" }} />
-        <Typography
+        <Box
+          className="idle"
           sx={{
-            color,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 2,
+          }}
+        >
+          <Box component="img" src={imgUrl} sx={{ width: "35%" }} />
+          <Typography
+            sx={{
+              color,
+              fontFamily: "Freesentation-7-Bold",
+              fontSize: "20px",
+              textAlign: "center",
+            }}
+          >
+            {title}
+          </Typography>
+        </Box>
+
+        <Typography
+          className="hover-title"
+          sx={{
+            display: "none",
+            color: "white",
             fontFamily: "Freesentation-7-Bold",
             fontSize: "20px",
             textAlign: "center",
@@ -78,6 +105,7 @@ const SolutionMainBox = ({
         >
           {title}
         </Typography>
+
         <Box
           className="divider"
           sx={{
@@ -91,12 +119,12 @@ const SolutionMainBox = ({
           className="description"
           sx={{
             display: "none",
+            color: "white",
             fontFamily: "Freesentation-5-Medium",
             textAlign: "center",
             fontSize: "14px",
             whiteSpace: "pre-line",
-            wordBreak: "keep-all",
-            px: 0.5,
+            maxWidth: "80%",
           }}
         >
           {description}
