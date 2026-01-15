@@ -2,14 +2,14 @@ import { Box, Typography } from "@mui/material";
 import ProductIntroduction, {
   type ProductIntroductionProps,
 } from "./ProductIntroduction";
-import ContentBox, { type ContentBoxProps } from "./ContentBox";
+import ProductContent, { type ProductContentProps } from "./ProductContent";
 import ProductSectionTitle from "./ProductSectionTitle";
 
 interface SubSectionProps {
   title: string;
   subTitle: string;
   introduction: ProductIntroductionProps[];
-  features: ContentBoxProps[];
+  features: ProductContentProps[];
   color: string;
   id: string;
 }
@@ -61,7 +61,7 @@ const SubSection = ({
         <ProductSectionTitle titleText="특징" />
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           {features.map((item, index) => (
-            <ContentBox key={index} {...item} />
+            <ProductContent key={index} {...item} />
           ))}
         </Box>
       </Box>

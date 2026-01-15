@@ -1,8 +1,7 @@
-import { alpha, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const GradientHeader = ({
   color,
-  subColor,
   subtitle,
 }: {
   color: string;
@@ -14,7 +13,7 @@ const GradientHeader = ({
       component="section"
       aria-label="gradient-header-section"
       sx={(theme) => ({
-        background: `linear-gradient(${alpha(subColor, 0.36)}, #ffffff)`,
+        backgroundColor: color,
         py: 3,
         borderTop: `1px solid ${color}`,
         mt: 9,

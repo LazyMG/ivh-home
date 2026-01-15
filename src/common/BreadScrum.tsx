@@ -2,7 +2,6 @@ import { Box, Typography, Button } from "@mui/material";
 import breadcrumbs from "../data/common/breadscrum.json";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 
 interface BreadcrumbItem {
@@ -64,6 +63,7 @@ const BreadScrum = ({ pageKey }: BreadScrumProps) => {
               variant="breadScrumFont"
               sx={{
                 mr: index === breadcrumbPath.length - 1 ? 0 : "10px",
+                fontSize: "16px",
               }}
             >
               {item.title}
@@ -84,10 +84,12 @@ const StyledButton = styled(Button, {
   shouldForwardProp: (prop) => prop !== "$isLast",
 })<{ $isLast?: boolean }>(({ $isLast = false }) => ({
   textTransform: "none",
-  color: $isLast ? "#333" : "#717171", // 마지막 항목은 더 진한 색상
+  // color: $isLast ? "#333" : "#717171", // 마지막 항목은 더 진한 색상
+  color: "#737373",
   padding: 0,
   minWidth: 0,
-  fontWeight: $isLast ? 600 : 400, // 마지막 항목은 더 굵게
+  // fontWeight: $isLast ? 600 : 400, // 마지막 항목은 더 굵게
+  fontFamily: $isLast ? "Freesentation-7-Bold" : "Freesentation-5-Medium",
   "&:hover": {
     backgroundColor: "transparent",
   },
@@ -101,12 +103,10 @@ const ArrowIcon = ({ isMobile }: { isMobile: boolean }) => {
         display: "inline-flex",
         width: isMobile ? 8 : 16,
         height: isMobile ? 8 : 16,
-        borderRadius: "50%",
-        backgroundColor: "#9e9e9e",
-        color: "white",
+        color: "#737373",
         alignItems: "center",
         justifyContent: "center",
-        fontWeight: "bold",
+        fontFamily: "Freesentation-5-Medium",
         verticalAlign: "middle",
         mr: isMobile ? "5px" : "10px",
         fontSize: isMobile ? 10 : 16,
@@ -115,7 +115,8 @@ const ArrowIcon = ({ isMobile }: { isMobile: boolean }) => {
         },
       })}
     >
-      <KeyboardArrowRightIcon fontSize="inherit" />
+      {/* <KeyboardArrowRightIcon fontSize="inherit" /> */}
+      {">"}
     </Box>
   );
 };

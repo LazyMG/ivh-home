@@ -12,12 +12,12 @@ interface FeatureText {
   col: number;
 }
 
-export interface ContentBoxProps {
+export interface ProductContentProps {
   imgObj?: FeatureImage[];
   textObj: FeatureText;
 }
 
-const ContentBox = ({ textObj, imgObj }: ContentBoxProps) => {
+const ProductContent = ({ textObj, imgObj }: ProductContentProps) => {
   const isImgTextExist = imgObj && imgObj.some((img) => img.imgText);
   return (
     <>
@@ -91,4 +91,4 @@ const ContentBox = ({ textObj, imgObj }: ContentBoxProps) => {
   );
 };
 
-export default ContentBox;
+export default ProductContent;

@@ -1,36 +1,80 @@
 import { Box } from "@mui/material";
-import RowNav from "../../components/solution/RowNav";
-import { useBreakpoint } from "../../hooks/useBreakpoint";
+// import { useBreakpoint } from "../../hooks/useBreakpoint";
 
-import SolutionIslandButtons from "../../components/solution/SolutionIslandButtons";
-import SolutionIslandImage from "../../components/solution/SolutionIslandImage";
+import solution from "../../data/solution/solution.json";
+import SolutionMainBox from "../../components/solution/SolutionMainBox";
 
 const Solution = () => {
-  const { isMobile } = useBreakpoint();
+  // const { isMobile } = useBreakpoint();
+
+  const { solution_box, solution_main_image } = solution;
 
   return (
     <Box
       component="main"
       sx={(theme) => ({
-        ...theme.customStyles.solutionMainContainer,
-        minHeight: isMobile ? "calc(100vh - 66px)" : "calc(100vh - 86px)",
-        // minHeight: "100vh",
-        position: "relative",
+        display: "flex",
+        gap: 8,
+        boxSizing: "border-box",
+        mx: 2,
+        my: 4,
+        [theme.breakpoints.up("tablet")]: {
+          mx: 8,
+          my: 10,
+          height: "100vh",
+        },
+        [theme.breakpoints.up("desktop")]: {
+          mx: 24,
+          my: 5,
+          height: "100%",
+        },
       })}
     >
       <Box
         sx={(theme) => ({
-          ...theme.customStyles.solutionMainImageContainer,
-          position: "relative", // 이미지 컨테이너를 relative로 설정
+          display: "grid",
+          gridTemplateColumns: "repeat(3,1fr)",
+          gridTemplateRows: "repeat(4,1fr)",
+          columnGap: 2,
+          rowGap: 4,
+          width: "100%",
+          [theme.breakpoints.up("tablet")]: {
+            gridTemplateColumns: "repeat(3,1fr)",
+            gridTemplateRows: "repeat(5,1fr)",
+            columnGap: 3,
+            rowGap: 4,
+          },
+          [theme.breakpoints.up("desktop")]: {
+            gridTemplateColumns: "repeat(5,1fr)",
+            gridTemplateRows: "repeat(3,1fr)",
+          },
         })}
       >
-        <SolutionIslandImage />
+        {solution_box.map((box, index) => (
+          <SolutionMainBox key={index} {...box} />
+        ))}
 
-        {/* 버튼들을 이미지 위에 absolute로 배치 */}
-        <SolutionIslandButtons />
+        {/* 이미지: 1~3행, 2~4열 */}
+        <Box
+          component="img"
+          src={solution_main_image}
+          sx={(theme) => ({
+            gridColumn: "1 / 4",
+            gridRow: "1 / 3",
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            [theme.breakpoints.up("tablet")]: {
+              gridColumn: "1 / 4",
+              gridRow: "1 / 6",
+            },
+            [theme.breakpoints.up("desktop")]: {
+              gridColumn: "2 / 5",
+              gridRow: "1 / 4",
+            },
+          })}
+        />
       </Box>
-
-      <RowNav />
     </Box>
   );
 };

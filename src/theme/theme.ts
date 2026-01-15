@@ -65,7 +65,7 @@ const fontConfig = {
 
 const responsiveFonts = {
   breadScrumFont: {
-    font: fontConfig["bold"],
+    // font: fontConfig["bold"],
     mobilePortrait: "11px",
     mobileLandscape: "13px",
     tablet: "16px",
@@ -233,7 +233,7 @@ const solutionMainImageStyle = {
 const theme = createTheme({
   breakpoints: baseTheme.breakpoints,
   typography: {
-    breadScrumFont: getResponsiveFontStyle(responsiveFonts["breadScrumFont"]),
+    // breadScrumFont: getResponsiveFontStyle(responsiveFonts["breadScrumFont"]),
     solutionMainTitle: getResponsiveFontStyle(
       responsiveFonts["solutionMainTitle"]
     ),

@@ -51,6 +51,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
                   sx={{
                     mt: isSection && index !== 0 ? 2 : 0,
                     wordBreak: "keep-all",
+                    color: "#424242",
                   }}
                 >
                   {content}
