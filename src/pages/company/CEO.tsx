@@ -18,8 +18,10 @@ const CEO = () => {
         sx={(theme) => ({
           px: "20px",
           pt: "20px",
+          display: "none",
           [theme.breakpoints.up("tablet")]: {
             p: 0,
+            display: "block",
           },
         })}
       >
@@ -32,9 +34,10 @@ const CEO = () => {
           gap: 6,
           my: 10,
           px: "20px",
-          pt: "20px",
+          pt: 0,
           [theme.breakpoints.up("tablet")]: {
             px: 10,
+            pt: "20px",
           },
           [theme.breakpoints.up("desktop")]: {
             pt: "50px",

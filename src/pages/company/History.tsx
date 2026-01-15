@@ -15,9 +15,10 @@ const History = () => {
       <Box
         sx={(theme) => ({
           px: "20px",
-          pt: "20px",
+          display: "none",
           [theme.breakpoints.up("tablet")]: {
             p: 0,
+            display: "block",
           },
         })}
       >
@@ -34,10 +35,11 @@ const History = () => {
           gap: 4,
           my: 10,
           px: "20px",
-          pt: "20px",
+          pt: 0,
           [theme.breakpoints.up("tablet")]: {
             px: 10,
             gap: 6,
+            pt: "20px",
           },
           [theme.breakpoints.up("desktop")]: {
             pt: "50px",
@@ -50,7 +52,7 @@ const History = () => {
             textTransform: "uppercase",
             whiteSpace: "pre-line",
             fontFamily: "Freesentation-7-Bold",
-            color: "#2A2A2A",
+            color: history_color,
             fontSize: "24px",
             [theme.breakpoints.up("tablet")]: {
               fontSize: "28px",

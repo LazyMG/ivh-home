@@ -10,16 +10,17 @@ interface CustomerListObj {
 
 const Partner = () => {
   const {
-    parnter_image,
-    parnter_parnter,
-    parnter_parnterList,
-    parnter_customer,
-    parnter_customerList,
-    parnter_image_position,
+    partner_image,
+    partner_partner,
+    partner_partnerList,
+    partner_customer,
+    partner_customerList,
+    partner_image_position,
+    partner_color,
   } = partner;
 
   const { customer_company, customer_institution, customer_education } =
-    parnter_customerList;
+    partner_customerList;
 
   // 작은 화면용: 3개씩 chunk로 나누기
   const chunkArray = (arr: CustomerListObj[], size: number) => {
@@ -50,15 +51,15 @@ const Partner = () => {
       <Box
         sx={(theme) => ({
           px: "20px",
-          pt: "20px",
+          display: "none",
           [theme.breakpoints.up("tablet")]: {
             p: 0,
           },
         })}
       >
         <ImageHeader
-          imgUrl={parnter_image}
-          imgPosition={parnter_image_position}
+          imgUrl={partner_image}
+          imgPosition={partner_image_position}
         />
       </Box>
 
@@ -69,9 +70,9 @@ const Partner = () => {
           gap: 24,
           my: 10,
           px: "16px",
-          pt: "20px",
           [theme.breakpoints.up("tablet")]: {
             px: 10,
+            pt: "20px",
           },
           [theme.breakpoints.up("desktop")]: {
             pt: "50px",
@@ -86,7 +87,7 @@ const Partner = () => {
               whiteSpace: "pre-line",
               fontFamily: "Freesentation-7-Bold",
               letterSpacing: "4px",
-              color: "#3e3e45",
+              color: partner_color,
               fontSize: "24px",
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "28px",
@@ -96,7 +97,7 @@ const Partner = () => {
               },
             })}
           >
-            {parnter_parnter}
+            {partner_partner}
           </Typography>
           <Box
             component="ul"
@@ -109,7 +110,7 @@ const Partner = () => {
               pl: 0,
             }}
           >
-            {parnter_parnterList.map((partnerImg, index) => (
+            {partner_partnerList.map((partnerImg, index) => (
               <Box
                 key={index}
                 sx={(theme) => ({
@@ -137,7 +138,7 @@ const Partner = () => {
               whiteSpace: "pre-line",
               fontFamily: "Freesentation-7-Bold",
               letterSpacing: "4px",
-              color: "#3e3e45",
+              color: partner_color,
               fontSize: "24px",
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "28px",
@@ -147,7 +148,7 @@ const Partner = () => {
               },
             })}
           >
-            {parnter_customer}
+            {partner_customer}
           </Typography>
           <Box
             // component="ul"
