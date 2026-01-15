@@ -39,6 +39,8 @@ const Solution = () => {
           rowGap: 4,
           width: "100%",
           [theme.breakpoints.up("tablet")]: {
+            gridTemplateColumns: "repeat(3,1fr)",
+            gridTemplateRows: "repeat(5,1fr)",
             columnGap: 3,
             rowGap: 4,
           },

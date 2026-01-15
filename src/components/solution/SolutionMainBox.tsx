@@ -82,11 +82,12 @@ const SolutionMainBox = ({
             "& .description": {
               display: "block",
             },
-          },
-          [theme.breakpoints.up("tablet")]: {
-            pt: 3,
-            gap: 2,
-            justifyContent: "flex-start",
+
+            [theme.breakpoints.up("tablet")]: {
+              pt: 3,
+              gap: 2,
+              justifyContent: "flex-start",
+            },
           },
         })}
         onClick={() => navigate(url)}
