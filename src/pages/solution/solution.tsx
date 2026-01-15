@@ -62,8 +62,11 @@ const Solution = () => {
             gridColumn: "1 / 4",
             gridRow: "1 / 3",
             width: "100%",
-            height: "100%",
+            height: "auto",
+            maxHeight: "100%",
             objectFit: "contain",
+            alignSelf: "start",
+            justifySelf: "center",
             [theme.breakpoints.up("tablet")]: {
               gridColumn: "1 / 4",
               gridRow: "1 / 6",
