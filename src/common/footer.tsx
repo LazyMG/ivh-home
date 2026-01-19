@@ -194,8 +194,9 @@ const Footer = () => {
           <Divider
             style={{
               gridColumn: "1 / -1",
-              backgroundColor: "#ababab",
-              height: "2px",
+              color: "#e0e0e0",
+              borderTopWidth: 2,
+              height: 0,
             }}
           />
 
