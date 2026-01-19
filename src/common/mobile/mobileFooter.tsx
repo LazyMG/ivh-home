@@ -4,8 +4,8 @@ import logoGradient from "/images/header/ivh_logo_gradient.png";
 import { useNavigate } from "react-router-dom";
 
 const MobileFooter = () => {
-  const { compantInfo } = footer;
-  const { companyName, address, phone, email, socialMedia } = compantInfo;
+  const { companyInfo } = footer;
+  const { companyName, address, phone, email, socialMedia } = companyInfo;
   const { youtubeLogoBlack, linkedinLogoBlack, youtubeUrl, linkedinUrl } =
     socialMedia;
   const navigate = useNavigate();

@@ -4,52 +4,173 @@
       "title": "PRODUCT & SERVICES",
       "subMenu": [
         {
-          "name": "All Products",
+          "name": "Products",
           "items": [
-            { "name": "iSuite", "state": "hide" },
-            { "name": "iMOVA", "path": "/product/imova" },
+            {
+              "name": "iMOVA",
+              "path": "/product/imova",
+              "preview_img_path": "/images/pages/product/iMOVA/iMOVA_top.png",
+              "description": "스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼"
+            },
+            { "name": "iSuite" },
+            {
+              "name": "Dymola",
+              "preview_img_path": "/images/pages/product/dymola/dymola-main.jpg",
+              "description": "복합 시스템 모델 기반 설계를 위한 물리 모델링 및 시뮬레이션 툴",
+              "subMenu": [
+                {
+                  "name": "Aviation Systems Library"
+                },
+                {
+                  "name": "Battery Library"
+                },
+                {
+                  "name": "Binary Model Export"
+                },
+                {
+                  "name": "Brushless DC Drives Library"
+                },
+                {
+                  "name": "ClaRa Plus Library"
+                },
+                {
+                  "name": "Cooling Library"
+                },
+                {
+                  "name": "Design Optimization"
+                },
+                {
+                  "name": "Electric Power Systems Library"
+                },
+                {
+                  "name": "Electrified Powertrains Library"
+                },
+                {
+                  "name": "Flexible Bodies Library"
+                },
+                {
+                  "name": "Flight Dynamics Library"
+                },
+                {
+                  "name": "Fluid Dynamics Library"
+                },
+                {
+                  "name": "Fluid Power Library"
+                },
+                {
+                  "name": "HVAC Library"
+                },
+                {
+                  "name": "Human Comfort Library"
+                },
+                {
+                  "name": "Hydrogen Library"
+                },
+                {
+                  "name": "Industrial Process Simulation Library"
+                },
+                {
+                  "name": "Model Calibration"
+                },
+                {
+                  "name": "Model Management"
+                },
+                {
+                  "name": "Pneumatic Systems Library"
+                },
+                {
+                  "name": "Process Modeling and Engineering Library"
+                },
+                {
+                  "name": "Real-Time Simulation"
+                },
+                {
+                  "name": "Simulink Interface"
+                },
+                {
+                  "name": "Source Code Generation"
+                },
+                {
+                  "name": "Sustainable Supply Systems Library"
+                },
+                {
+                  "name": "TIL"
+                },
+                {
+                  "name": "TIL Hydrogen Library"
+                },
+                {
+                  "name": "TIL Mobile Air Conditioning Library"
+                },
+                {
+                  "name": "TIL Thermal Storages Library"
+                },
+                {
+                  "name": "Thermal Power Library"
+                },
+
+                {
+                  "name": "Thermodynamics Connector"
+                },
+
+                {
+                  "name": "Vehicle Dynamics Library"
+                },
+                {
+                  "name": "VeSyMA Engines Library"
+                },
+                {
+                  "name": "VeSyMA Library"
+                },
+
+                {
+                  "name": "VeSyMA Powertrain Library"
+                },
+                {
+                  "name": "VeSyMA Suspensions Library"
+                },
+                {
+                  "name": "Wind Power Library"
+                }
+              ]
+            },
             {
               "name": "Modelica",
               "path": "#",
               "subMenu": [
                 {
-                  "name": "Dymola",
-                  "path": "/product/dymola",
-                  "preview_img_path": "/images/pages/product/dymola/dymola-main.jpg",
-                  "description": "복합 시스템 모델 기반 설계를 위한 물리 모델링 및 시뮬레이션 툴",
-                  "subMenu": [
-                    {
-                      "name": "Battery",
-                      "path": "/product/dymola/battery",
-                      "preview_img_path": "/images/pages/product/battery/battery-preview.png",
-                      "description": "복합 시스템 내 배터리 통합 및 성능 분석을 위한 Modelica 기반 시뮬레이션 라이브러리"
-                    },
-                    {
-                      "name": "TIL",
-                      "path": "/product/dymola/til",
-                      "preview_img_path": "/images/pages/product/dymola/dymola-card-two.png",
-                      "description": "유연한 구성과 고정밀 시뮬레이션을 지원하는 다분야 시스템 모델링 라이브러리"
-                    },
-                    {
-                      "name": "Thermal Power Library",
-                      "path": "/product/dymola/thermalpowerlibrary",
-                      "preview_img_path": "/images/pages/product/dymola/dymola-card-three.png",
-                      "description": "열반전 시스템 설계 및 최적화를 위한 통합 시뮬레이션 라이브러리"
-                    },
-                    {
-                      "name": "Vehicle Dynamics Library",
-                      "path": "/product/dymola/vehicledynamicslibrary",
-                      "preview_img_path": "/images/pages/product/dymola/dymola-card-four.png",
-                      "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
-                    }
-                  ]
+                  "name": "Battery",
+                  "path": "/product/dymola/battery",
+                  "preview_img_path": "/images/pages/product/battery/battery-preview.png",
+                  "description": "복합 시스템 내 배터리 통합 및 성능 분석을 위한 Modelica 기반 시뮬레이션 라이브러리"
+                },
+                {
+                  "name": "TIL",
+                  "path": "/product/dymola/til",
+                  "preview_img_path": "/images/pages/product/dymola/dymola-card-two.png",
+                  "description": "유연한 구성과 고정밀 시뮬레이션을 지원하는 다분야 시스템 모델링 라이브러리"
+                },
+                {
+                  "name": "Thermal Power Library",
+                  "path": "/product/dymola/thermalpowerlibrary",
+                  "preview_img_path": "/images/pages/product/dymola/dymola-card-three.png",
+                  "description": "열반전 시스템 설계 및 최적화를 위한 통합 시뮬레이션 라이브러리"
+                },
+                {
+                  "name": "Vehicle Dynamics Library",
+                  "path": "/product/dymola/vehicledynamicslibrary",
+                  "preview_img_path": "/images/pages/product/dymola/dymola-card-four.png",
+                  "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
                 },
                 { "name": "Modelon", "state": "hide" },
                 { "name": "TLK", "state": "hide" }
               ]
             },
             {
-              "name": "VTD",
+              "name": "Modelon"
+            },
+            {
+              "name": "Virtual Test Driving",
               "path": "/product/vtd",
               "preview_img_path": "/images/pages/product/vtd/vtd-main.jpg",
               "description": "Virtual Test Drive : 자율주행 가상검증 솔루션",
@@ -75,26 +196,8 @@
               ]
             },
             {
-              "name": "Vissim",
-              "path": "/product/vissim",
-              "preview_img_path": "/images/pages/product/vissim/vissim-main.jpg",
-              "description": "다중 모드 교통 시뮬레이션 소프트웨어",
-              "subMenu": [
-                {
-                  "name": "Vissim Automotive",
-                  "path": "/product/vissim/vissimautomotive",
-                  "preview_img_path": "/images/pages/product/vissim/vissim-card-auto.png",
-                  "description": "자동차 테스트 및 교통 시뮬레이션을 위한 전문 솔루션"
-                },
-                {
-                  "name": "Viswalk",
-                  "path": "/product/vissim/viswalk",
-                  "preview_img_path": "/images/pages/product/vissim/vissim-card-viswalk.png",
-                  "description": "현실적인 다중 환경 보행자 시뮬레이션 소프트웨어"
-                }
-              ]
-            },
-            { "name": "SFE", "state": "hide" }
+              "name": "PTV"
+            }
           ]
         },
         {
@@ -114,9 +217,9 @@
           ]
         },
         {
-          "name": "Services",
+          "name": "Service",
           "path": "/product/services",
-          "items": []
+          "items": [{ "name": "Service" }]
         }
       ]
     },
@@ -185,8 +288,12 @@
           "path": "/company/history"
         },
         {
-          "name": "Partner",
+          "name": "Partners & Customers",
           "path": "/company/partner"
+        },
+        {
+          "name": "News",
+          "path": "/"
         },
         {
           "name": "Contact",

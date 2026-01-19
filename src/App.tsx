@@ -49,7 +49,7 @@ import Calendar from "./pages/Calendar";
 import Training from "./pages/support/Training";
 import Support from "./pages/support/Support";
 
-import Header from "./common/header/Header";
+import NewHeader from "./common/header/NewHeader";
 import PrivacyPolicy from "./components/support/PrivacyPolicy";
 import CEO from "./pages/company/CEO";
 import History from "./pages/company/History";
@@ -75,7 +75,7 @@ function AppContent() {
     <>
       <ScrollToTop>
         {/** header */}
-        {!hideLayout && (isMobile || isTablet ? <MobileHeader /> : <Header />)}
+        {!hideLayout && (isMobile || isTablet ? <MobileHeader /> : <NewHeader />)}
         <Routes>
           {/** pages */}
           <Route path="/" element={<Home />} />

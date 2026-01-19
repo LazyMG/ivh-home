@@ -4,9 +4,9 @@ import footer from "../data/footer/footer.json";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const { compantInfo, menu } = footer;
+  const { companyInfo, menu } = footer;
   const { companyName, address, phone, email, copyright, socialMedia } =
-    compantInfo;
+    companyInfo;
   const { youtubeUrl, linkedinUrl, youtubeLogoBlack, linkedinLogoBlack } =
     socialMedia;
   const navigate = useNavigate();
@@ -212,7 +212,7 @@ const Footer = () => {
               }}
             >
               {item.items.map((subItem, subIndex) => {
-                if (subItem?.state === "hide") return null;
+                // if (subItem?.state === "hide") return null;
                 return (
                   <Typography
                     key={subIndex}

@@ -33,17 +33,17 @@ const Partner = () => {
 
   const companyMobileChunks = chunkArray(
     customer_company.flatMap((c) => c.list),
-    3
+    3,
   );
 
   const institutionMobileChunks = chunkArray(
     customer_institution.flatMap((c) => c.list),
-    3
+    3,
   );
 
   const educationMobileChunks = chunkArray(
     customer_education.flatMap((c) => c.list),
-    3
+    3,
   );
 
   return (
@@ -54,6 +54,7 @@ const Partner = () => {
           display: "none",
           [theme.breakpoints.up("tablet")]: {
             p: 0,
+            display: "block",
           },
         })}
       >

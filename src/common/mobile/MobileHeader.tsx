@@ -84,7 +84,7 @@ const MobileHeader = () => {
           }}
         >
           <Box
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer", display: "flex", alignItems: "center" }}
             onClick={() => {
               navigate("/");
               setIsMenuOpen(false);
