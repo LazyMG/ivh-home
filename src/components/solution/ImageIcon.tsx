@@ -30,7 +30,6 @@ const ImageIcon = (icon: ImageIconProps) => {
     alignItems,
     textPosition,
     path,
-    animationDelay = 0,
   } = icon;
 
   const navigate = useNavigate();
@@ -57,20 +56,7 @@ const ImageIcon = (icon: ImageIconProps) => {
   }, [isTooltipOpen]);
 
   return (
-    <Box
-      sx={{
-        animation: "float 3s ease-in-out infinite",
-        animationDelay: `${animationDelay}s`,
-        "@keyframes float": {
-          "0%, 100%": {
-            transform: "translateY(0px)",
-          },
-          "50%": {
-            transform: "translateY(-8px)",
-          },
-        },
-      }}
-    >
+    <Box>
       <Box
         sx={(theme) => ({
           display: "flex",

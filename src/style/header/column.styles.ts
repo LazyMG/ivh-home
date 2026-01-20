@@ -11,74 +11,55 @@ export const MenuColumn = styled(Box, {
     prop !== "$isProductPage" &&
     prop !== "$isHomePage" &&
     prop !== "$isActive",
-})<ColumnStyleProps>(
-  ({
-    $isProductPage,
-    $isLogoColumn,
-    $isHomePage = false,
-    $isActive = false,
-  }) => {
-    const theme = getHeaderTheme($isHomePage);
-    const { min, max } = getColumnWidth($isLogoColumn, $isProductPage);
+})<ColumnStyleProps>(({
+  $isProductPage,
+  $isLogoColumn,
+  $isHomePage = false,
+  $isActive = false,
+}) => {
+  const theme = getHeaderTheme($isHomePage);
+  const { min, max } = getColumnWidth($isLogoColumn, $isProductPage);
 
-    return {
-      color: theme.text,
-      padding: headerLayout.padding,
-      flex: getColumnFlex($isLogoColumn),
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      minWidth: min,
-      maxWidth: max,
-      position: "relative",
+  return {
+    color: "#424242",
+    padding: headerLayout.padding,
+    flex: getColumnFlex($isLogoColumn),
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    minWidth: min,
+    maxWidth: max,
+    position: "relative",
 
-      "&:hover": {
-        color: theme.hoverLine,
-      },
+    "&:hover": {
+      color: theme.hoverLine,
+    },
 
-      // 삼각형 화살표
-      "&::before": {
-        content: '""',
-        position: "absolute",
-        bottom: headerLayout.hoverLineHeight,
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: 0,
-        height: 0,
-        borderLeft: "8px solid transparent",
-        borderRight: "8px solid transparent",
-        borderBottom: `8px solid ${theme.hoverLine}`,
-        opacity: $isActive && !$isLogoColumn ? 1 : 0,
-        transition: "opacity 0.3s ease",
-        zIndex: 2,
-      },
+    "&:hover::before": {
+      opacity: $isLogoColumn ? 0 : 1,
+    },
 
-      "&:hover::before": {
-        opacity: $isLogoColumn ? 0 : 1,
-      },
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: "0px",
+      left: 0,
+      right: 0,
+      height: headerLayout.hoverLineHeight,
+      backgroundColor:
+        $isActive && !$isLogoColumn
+          ? theme.hoverLine // 클릭된 상태에도 밑줄 유지
+          : "transparent",
+      transition: "background-color 0.3s ease",
+      zIndex: 1,
+    },
 
-      "&::after": {
-        content: '""',
-        position: "absolute",
-        bottom: "0px",
-        left: 0,
-        right: 0,
-        height: headerLayout.hoverLineHeight,
-        backgroundColor:
-          $isActive && !$isLogoColumn
-            ? theme.hoverLine // 클릭된 상태에도 밑줄 유지
-            : "transparent",
-        transition: "background-color 0.3s ease",
-        zIndex: 1,
-      },
-
-      // "&:hover::after": {
-      //   backgroundColor: $isLogoColumn ? "transparent" : theme.hoverLine,
-      // },
-    };
-  }
-);
+    // "&:hover::after": {
+    //   backgroundColor: $isLogoColumn ? "transparent" : theme.hoverLine,
+    // },
+  };
+});
 
 // 서브 메뉴 컬럼
 export const SubMenuColumn = styled(Box, {

@@ -1,17 +1,15 @@
 import { Box } from "@mui/material";
 import logoBlack from "/images/header/ivh_logo_black.png";
-import logoWhite from "/images/header/ivh_logo_white.png";
 
 interface LogoProps {
-  isHomePage: boolean;
   onClick: () => void;
 }
 
-export const Logo = ({ isHomePage, onClick }: LogoProps) => {
+export const Logo = ({ onClick }: LogoProps) => {
   return (
     <Box sx={{ cursor: "pointer" }} onClick={onClick}>
       <img
-        src={isHomePage ? logoWhite : logoBlack}
+        src={logoBlack}
         alt="logo"
         style={{ width: "64px", height: "27.4px" }}
       />

@@ -5,11 +5,9 @@ import { getHeaderTheme, headerFonts } from "../../theme/headerTheme";
 // 메인 메뉴 타이틀
 export const MenuTitle = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "$isHomePage",
-})<MenuTitleStyleProps>(({ $isHomePage = false }) => {
-  const theme = getHeaderTheme($isHomePage);
-
+})<MenuTitleStyleProps>(() => {
   return {
-    color: theme.text,
+    color: "#424242",
     fontSize: "19px",
     fontWeight: "bold",
     fontFamily: headerFonts.bold,
@@ -19,7 +17,7 @@ export const MenuTitle = styled(Typography, {
     paddingBottom: "8px",
 
     "&:hover": {
-      color: theme.hoverLine,
+      color: "#179EBD",
     },
   };
 });

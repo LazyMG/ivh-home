@@ -29,12 +29,12 @@ export const MainMenuBar = ({
         width: "100%",
         maxWidth: "100vw",
         overflowX: "hidden",
-        borderBottom: isHomePage ? "2px solid #312f2f" : "2px solid #e0e0e0",
+        borderBottom: "2px solid #e0e0e0",
       }}
     >
       {/* 로고 컬럼 */}
       <MenuColumn $isLogoColumn={true}>
-        <Logo isHomePage={isHomePage} onClick={() => navigate("/")} />
+        <Logo onClick={() => navigate("/")} />
       </MenuColumn>
 
       {/* 메뉴 타이틀들 */}

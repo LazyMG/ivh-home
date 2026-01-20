@@ -1,14 +1,12 @@
 {
-  "compantInfo": {
+  "companyInfo": {
     "companyName": "주식회사 아이브이에이치",
     "address": "서울특별시 서초구 양재천로 17길 19,2층,3층 (양재동, 태암빌딩)",
     "phone": "T. 02-577-5010",
     "email": "E. ivh@ivh.co.kr",
     "copyright": "© iVH All rights reserved.",
     "socialMedia": {
-      "youtubeLogo": "/images/header/youtube_white.png",
       "youtubeLogoBlack": "/images/header/youtube_black.png",
-      "linkedinLogo": "/images/header/linkedin_white.png",
       "linkedinLogoBlack": "/images/header/linkedin_black.png",
       "youtubeUrl": "https://www.youtube.com/@ivhkorea",
       "linkedinUrl": "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image"
@@ -18,26 +16,27 @@
     {
       "title": "PRODUCT & SERVICES",
       "items": [
-        { "name": "All Products" },
         { "name": "iMOVA", "path": "/product/imova" },
+        { "name": "iSuite" },
+        { "name": "Dymola", "path": "/product/dymola" },
         { "name": "Modelica" },
-        { "name": "VTD", "path": "/product/vtd" },
-        { "name": "Vissim", "path": "/product/vissim" },
-        { "name": "SFE", "state": "hide" }
+        { "name": "Modelon" },
+        { "name": "Virtual Test Driving", "path": "/product/vtd" },
+        { "name": "PTV" }
       ]
     },
     {
       "title": "SOLUTIONS",
       "items": [
-        { "name": "Smart Factory", "path": "/solution/smartfactory" },
+        { "name": "AI Innovation Hub", "path": "/solution/aIinnovationhub" },
+        { "name": "BEMS", "path": "/solution/bems" },
+        { "name": "Energy", "path": "/solution/energy" },
+        { "name": "Home Appliances", "path": "/solution/homeappliance" },
         {
           "name": "Mobility",
           "path": "/solution/mobility"
         },
-        { "name": "Home Appliances", "path": "/solution/homeappliance" },
-        { "name": "Energy", "path": "/solution/energy" },
-        { "name": "BEMS", "path": "/solution/bems" },
-        { "name": "AI Innovation Hub", "path": "/solution/aIinnovationhub" }
+        { "name": "Smart Factory", "path": "/solution/smartfactory" }
       ]
     },
     {
@@ -52,7 +51,8 @@
       "items": [
         { "name": "CEO", "path": "/company/ceo" },
         { "name": "History", "path": "/company/history" },
-        { "name": "Partner", "path": "/company/partner" },
+        { "name": "Partner & Customer", "path": "/company/partner" },
+        { "name": "News" },
         { "name": "Contact", "path": "/company/contact" }
       ]
     }

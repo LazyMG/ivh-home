@@ -58,8 +58,8 @@ export const MobileMenuRecursive = ({
         const childItems = item.items || item.subMenu || []; // 자식의 자식 메뉴가 있으면 재귀에 전달 없으면 빈 배열
 
         // 모든 자식 메뉴가 hide 상태인지 확인
-        const allChildrenHidden = hasChildren &&
-          childItems.every((child) => child.state === "hide");
+        const allChildrenHidden =
+          hasChildren && childItems.every((child) => child.state === "hide");
 
         // 모든 자식이 숨겨진 경우 부모도 숨김
         if (allChildrenHidden) return null;
@@ -68,7 +68,6 @@ export const MobileMenuRecursive = ({
           <Box key={item.name}>
             <MobileItemButton
               onClick={() => handleItemClick(item)}
-              $isHomePage={isHomePage}
               $level={level}
             >
               <Typography
@@ -113,23 +112,20 @@ export const MobileMenuRecursive = ({
 const MobileItemButton = styled(Box, {
   shouldForwardProp: (prop) => prop !== "$isHomePage" && prop !== "$level",
 })<{
-  $isHomePage: boolean;
   $level: number;
-}>(({ $isHomePage, $level }) => ({
+}>(({ $level }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
   padding: $level === 1 ? "12px 8px" : "8px 8px",
   cursor: "pointer",
   borderRadius: "4px",
-  color: $isHomePage ? "#fff" : "#000",
+  color: "#424242",
   transition: "all 0.2s ease",
   marginBottom: "4px",
 
   "&:hover": {
-    backgroundColor: $isHomePage
-      ? "rgba(255, 255, 255, 0.1)"
-      : "rgba(0, 0, 0, 0.05)",
+    backgroundColor: "rgba(0, 0, 0, 0.05)",
   },
 
   "&:active": {
