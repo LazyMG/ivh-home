@@ -21,7 +21,8 @@ export const NewDrawer = ({
   return (
     <Box
       sx={{
-        position: "relative",
+        position: "absolute",
+        top: "100%", // 헤더 바로 아래
         left: 0,
         width: "100%",
         maxWidth: "100vw",
@@ -33,6 +34,7 @@ export const NewDrawer = ({
         flexDirection: "column",
         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
         background: "linear-gradient(to bottom, #FFFFFF 0%, #E5EFF2 100%)",
+        // 롤백: position: "relative"로 변경하고 top: "100%" 제거
       }}
     >
       {/* 스크롤 가능한 콘텐츠 영역 */}
