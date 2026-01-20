@@ -489,6 +489,10 @@ const IMOVA = () => {
                     maxWidth: "100%",
                     width: "100%",
                     justifySelf: "center",
+                    px: "20px",
+                    pt: 4,
+                    pb: 0,
+                    boxSizing: "border-box",
                   },
                 })}
               >
@@ -500,6 +504,7 @@ const IMOVA = () => {
                   mousewheel={false}
                   navigation={true}
                   loop={true}
+                  centeredSlides={true}
                   modules={[Mousewheel, Pagination, Navigation]}
                   style={{
                     width: "100%",
@@ -508,7 +513,7 @@ const IMOVA = () => {
                     color: "white",
                     display: "flex",
                     alignItems: "center",
-                    padding: "56px 20px",
+                    paddingBottom: "60px",
                   }}
                 >
                   {production_line.production_line_list.map((item, index) => (
@@ -517,6 +522,7 @@ const IMOVA = () => {
                         elevation={3}
                         sx={{
                           p: 2,
+                          mx: 2,
                           borderTop: `3px solid ${item.production_line_color}`,
                           backgroundColor: "rgba(255, 255, 255, 0.95)",
                           display: "flex",
