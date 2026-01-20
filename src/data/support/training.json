@@ -9,22 +9,26 @@
     {
       "text": "표준화",
       "font": "Freesentation-6-SemiBold",
-      "color": "#3b995f"
+      "color": "#3b995f",
+      "size": "28px"
     },
     {
       "text": "된 과정과 ",
       "font": "Freesentation-6-SemiBold",
-      "color": "#000000"
+      "color": "#000000",
+      "size": "22px"
     },
     {
       "text": "맞춤형",
       "font": "Freesentation-6-SemiBold",
-      "color": "#3d67bc"
+      "color": "#3d67bc",
+      "size": "28px"
     },
     {
       "text": " 교육 모두 제공합니다.",
       "font": "Freesentation-6-SemiBold",
-      "color": "#000000"
+      "color": "#000000",
+      "size": "22px"
     }
   ],
   "training_outline": {

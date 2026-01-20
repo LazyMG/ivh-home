@@ -112,7 +112,7 @@ const ApplicationForm = ({
         phone: "",
         division: "",
       },
-      { shouldFocus: false }
+      { shouldFocus: false },
     );
   };
 
@@ -131,7 +131,7 @@ const ApplicationForm = ({
   };
 
   const onIsFillCustomerCheckedChange = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     if (event.target.checked) {
       if (errors.applicant) {
@@ -222,7 +222,7 @@ const ApplicationForm = ({
     if (
       reservationList &&
       !reservationList.some(
-        (reservation) => reservation.id === data.reservationId
+        (reservation) => reservation.id === data.reservationId,
       )
     )
       return;
@@ -496,7 +496,7 @@ const ApplicationForm = ({
         <Stack
           gap={4}
           sx={{
-            maxHeight: "500px",
+            // maxHeight: "500px",
             overflowY: "auto",
             my: 2,
           }}
@@ -504,11 +504,16 @@ const ApplicationForm = ({
           {customerFields.map((_, index) => (
             <Box
               key={index}
-              sx={{
+              sx={(theme) => ({
                 display: "flex",
-                alignItems: "center",
+                alignItems: "auto",
                 pt: 1,
-              }}
+                flexDirection: "column",
+                [theme.breakpoints.up("tablet")]: {
+                  flexDirection: "row",
+                  alignItems: "center",
+                },
+              })}
             >
               <Box
                 sx={(theme) => ({
@@ -655,14 +660,21 @@ const ApplicationForm = ({
               <Box
                 gap={1}
                 sx={(theme) => ({
-                  mx: 1,
                   display: "flex",
                   flexDirection: "row",
                   position: "relative",
+                  width: "100%",
+                  mx: 0,
+                  mt: 1,
+                  justifyContent: "flex-end",
                   [theme.breakpoints.up("tablet")]: {
-                    position: "absolute",
-                    right: "-48px",
                     flexDirection: "column",
+                    position: "absolute",
+                    width: "auto",
+                    mx: 1,
+                    mt: 0,
+                    justifyContent: "auto",
+                    right: "-48px",
                   },
                 })}
               >
