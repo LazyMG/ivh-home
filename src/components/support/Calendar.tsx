@@ -13,6 +13,7 @@ import type {
 import { useState } from "react";
 import CustomModal from "./CustomModal";
 import CalendarModalContent from "./CalendarModalContent";
+import CalendarLegend from "./CalendarLegend";
 
 // 캘린더에 사용되는 이벤트 디자인을 위한 타입
 interface ExtendedCalendarEventProps {
@@ -76,7 +77,7 @@ const Calendar = ({
   const handleClickReservation = (eventId: string) => {
     if (!reservationList) return;
     const reservation = reservationList.find(
-      (el) => el.id.toString() === eventId
+      (el) => el.id.toString() === eventId,
     );
     if (reservation) {
       setIsModalOpen(true);
@@ -125,32 +126,49 @@ const Calendar = ({
   };
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        mt: 2,
-      }}
-    >
-      <FullCalendar
-        plugins={[dayGridPlugin]}
-        initialView="dayGridMonth"
-        height="auto"
-        headerToolbar={{
-          start: "prev next today",
-          center: "title",
-          end: "dayGridMonth dayGridWeek dayGridDay",
-        }}
-        locale={"ko"}
-        events={formattingEvent(reservationList)}
-        eventContent={renderEventContent}
-        hiddenDays={[0, 6]}
-      />
-      <CustomModal open={isModalOpen} onClose={handleModalClose}>
-        <CalendarModalContent reservation={selectedReservation} />
-      </CustomModal>
-    </Box>
+    <>
+      <Box
+        sx={(theme) => ({
+          display: "none",
+          [theme.breakpoints.up("tablet")]: {
+            display: "block",
+          },
+        })}
+      >
+        <CalendarLegend />
+      </Box>
+      <Box
+        sx={(theme) => ({
+          width: "100%",
+          display: "none",
+          justifyContent: "center",
+          mt: 2,
+          [theme.breakpoints.up("tablet")]: {
+            display: "flex",
+          },
+        })}
+      >
+        <FullCalendar
+          plugins={[dayGridPlugin]}
+          initialView="dayGridMonth"
+          height="auto"
+          headerToolbar={{
+            start: "prev next today",
+            center: "title",
+            end: "dayGridMonth dayGridWeek dayGridDay",
+          }}
+          locale={"ko"}
+          events={formattingEvent(reservationList)}
+          eventContent={renderEventContent}
+          hiddenDays={[0, 6]}
+          showNonCurrentDates={false}
+          fixedWeekCount={false}
+        />
+        <CustomModal open={isModalOpen} onClose={handleModalClose}>
+          <CalendarModalContent reservation={selectedReservation} />
+        </CustomModal>
+      </Box>
+    </>
   );
 };
 

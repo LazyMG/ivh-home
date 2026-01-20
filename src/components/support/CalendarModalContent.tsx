@@ -32,7 +32,7 @@ const CalendarModalContent = ({
     : 0;
   const percentage = calculateValue(
     reservation?.maxPeople || 0,
-    reservation?.reservatedPeople || 0
+    reservation?.reservatedPeople || 0,
   );
 
   useEffect(() => {
@@ -220,7 +220,7 @@ const CalendarModalContent = ({
             backgroundColor: "#f8f9fa",
             borderRadius: "12px",
             mb: 3,
-            maxHeight: "200px",
+            maxHeight: "160px",
             overflow: "auto",
           }}
         >

@@ -4,7 +4,6 @@ import { Box, Typography } from "@mui/material";
 
 import TrainingMainTitle from "../../components/support/TrainingMainTitle";
 import GradientSectionLabel from "../../components/support/GradientSectionLabel";
-import CalendarLegend from "../../components/support/CalendarLegend";
 import Calendar from "../../components/support/Calendar";
 import ApplicationForm from "../../components/support/ApplicationForm";
 
@@ -18,6 +17,7 @@ import TraingCurriculumTable from "../../components/support/TrainingCurriculumTa
 
 import curriculums from "../../data/support/curriculum.json";
 import ScrollButton from "../../common/ScrollButton";
+import MobileScheduleContainer from "../../components/support/MobileScheduleContainer";
 
 const Training = () => {
   const seoData = useSEO("support/training", training);
@@ -70,12 +70,21 @@ const Training = () => {
             px: 10,
           },
           [theme.breakpoints.up("desktop")]: {
-            px: 32,
+            px: 20,
             mb: 24,
           },
         })}
       >
-        <Box sx={{ mt: 10, mb: 8 }}>
+        <Box
+          sx={(theme) => ({
+            mt: 10,
+            mb: 8,
+            display: "none",
+            [theme.breakpoints.up("desktop")]: {
+              display: "block",
+            },
+          })}
+        >
           <TrainingMainTitle titleList={training_title} />
         </Box>
         {/** 개요 영역 */}
@@ -83,13 +92,16 @@ const Training = () => {
           display="grid"
           sx={(theme) => ({
             gridTemplateColumns: "repeat(1,1fr)",
-            [theme.breakpoints.up("tablet")]: {
+            gap: 4,
+            alignItems: "center",
+            my: 12,
+            [theme.breakpoints.up("desktop")]: {
               px: 5,
               gridTemplateColumns: "repeat(2,1fr)",
+              mt: 8,
+              mb: 16,
+              gap: 8,
             },
-            gap: 8,
-            alignItems: "center",
-            mb: 16,
           })}
         >
           <Box
@@ -99,6 +111,17 @@ const Training = () => {
             }}
           >
             <img src={training_outline.image} style={{ maxWidth: "100%" }} />
+          </Box>
+          <Box
+            sx={(theme) => ({
+              display: "flex",
+              justifyContent: "center",
+              [theme.breakpoints.up("desktop")]: {
+                display: "none",
+              },
+            })}
+          >
+            <TrainingMainTitle titleList={training_title} />
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             {training_outline.contents.map((content, index) => (
@@ -119,14 +142,16 @@ const Training = () => {
 
         {/** Curriculum 섹션 */}
         <Box
-          sx={{
-            maxWidth: "1500px",
+          sx={(theme) => ({
             width: "100%",
             margin: "50px auto",
-            display: "flex",
+            display: "none",
             flexDirection: "column",
             mb: 16,
-          }}
+            [theme.breakpoints.up("tablet")]: {
+              display: "flex",
+            },
+          })}
         >
           <GradientSectionLabel labelText="Curriculum" />
           <TraingCurriculumTable
@@ -138,7 +163,6 @@ const Training = () => {
         {/** Schedule 섹션 */}
         <Box
           sx={{
-            maxWidth: "1500px",
             width: "100%",
             margin: "50px auto",
             display: "flex",
@@ -147,19 +171,18 @@ const Training = () => {
           }}
         >
           <GradientSectionLabel labelText="Schedule" />
-          <CalendarLegend />
           <Calendar reservationList={apiReservationList} />
+          <MobileScheduleContainer reservationList={apiReservationList} />
         </Box>
 
         {/** Application 섹션 */}
         <Box
           sx={{
-            maxWidth: "1500px",
             width: "100%",
             margin: "50px auto",
-            display: "flex",
             flexDirection: "column",
             gap: 4,
+            display: "flex",
           }}
         >
           <GradientSectionLabel labelText="Application" />

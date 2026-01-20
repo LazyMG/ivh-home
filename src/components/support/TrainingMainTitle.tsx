@@ -5,6 +5,7 @@ interface TrainingMainTitleProps {
     text: string;
     font: string;
     color: string;
+    size: string;
   }[];
 }
 
@@ -22,9 +23,10 @@ const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
         zIndex: 1,
         width: "fit-content",
         fontFamily: "Freesentation-7-Bold",
-        // ml: 3,
-        [theme.breakpoints.up("tablet")]: {
-          // ml: "10%",
+        textAlign: "center",
+        maxWidth: "80%",
+        [theme.breakpoints.up("desktop")]: {
+          maxWidth: "100%",
         },
       })}
     >
@@ -33,7 +35,7 @@ const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
           key={index}
           component="span"
           sx={(theme) => ({
-            fontSize: "24px",
+            fontSize: title.size,
             [theme.breakpoints.up("tablet")]: {
               fontSize: "36px",
             },
