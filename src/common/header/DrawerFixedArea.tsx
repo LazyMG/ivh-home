@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import youtubeBlack from "/images/header/youtube_black.png";
 import linkedinBlack from "/images/header/linkedin_black.png";
 import footer from "../../data/footer/footer.json";
-import search_icon from "../../../public/images/header/search_icon.png";
+import search_icon from "/images/header/search_icon.png";
 
 export const DrawerFixedArea = () => {
   const { companyInfo } = footer;
