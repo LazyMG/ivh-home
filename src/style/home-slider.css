@@ -2,7 +2,7 @@
 .custom-swiper .swiper-button-prev,
 .custom-swiper .swiper-button-next {
   top: auto;
-  bottom: 0px;
+  bottom: 15px;
   width: 40px;
   height: 40px;
   color: #000;

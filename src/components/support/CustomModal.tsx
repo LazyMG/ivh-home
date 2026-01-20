@@ -1,18 +1,5 @@
 import { Box, Button, Modal } from "@mui/material";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "70%",
-  maxWidth: 600,
-  bgcolor: "background.paper",
-  p: 8,
-  outline: "none",
-  borderRadius: "8px",
-};
-
 const CustomModal = ({
   open,
   onClose,
@@ -30,7 +17,24 @@ const CustomModal = ({
       aria-describedby="modal-modal-description"
       autoFocus={false} // 자동 focus 방지
     >
-      <Box sx={style}>
+      <Box
+        sx={(theme) => ({
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "70%",
+          maxWidth: 600,
+          maxHeight: "70%",
+          bgcolor: "background.paper",
+          p: 4,
+          outline: "none",
+          borderRadius: "8px",
+          [theme.breakpoints.up("tablet")]: {
+            p: 8,
+          },
+        })}
+      >
         {children}
         <Button
           onClick={onClose}

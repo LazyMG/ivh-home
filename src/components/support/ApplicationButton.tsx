@@ -12,14 +12,13 @@ const ApplicationButton = ({ children }: ApplicationButtonProps) => {
     <Box
       sx={{
         borderRadius: "50%",
-        width: "20px",
-        height: "20px",
-        border: "2px solid black",
+        width: "30px",
+        height: "30px",
+        border: "2px solid #626262",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         cursor: "pointer",
-        // mx: 1,
       }}
     >
       {children}

@@ -87,10 +87,11 @@ const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
                     src={url}
                     sx={(theme) => ({
                       objectFit: "contain",
-                      width: img.imgSize === "small" ? "auto" : "100%",
+                      width: "100%",
                       maxWidth: "100%",
                       [theme.breakpoints.up("desktop")]: {
                         maxWidth: "80%",
+                        width: img.imgSize === "small" ? "auto" : "100%",
                       },
                     })}
                   />
