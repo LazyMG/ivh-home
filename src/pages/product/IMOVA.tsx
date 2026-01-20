@@ -46,7 +46,7 @@ const IMOVA = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     boxRefs.current.forEach((ref) => {
@@ -477,21 +477,18 @@ const IMOVA = () => {
                   </Typography>
                 </Box>
               ))}
+              {/** 컨테이너 크기 변경, 슬라이더 하나만 보이도록 */}
               <Box
                 sx={(theme) => ({
                   display: "none",
                   [theme.breakpoints.down("desktop")]: {
                     display: "flex",
                     gap: 2,
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    width: "95%",
-                    padding: 2,
-                    paddingBottom: 1,
+                    mt: 3,
                     alignItems: "center",
-                    maxWidth: "400px",
+                    maxWidth: "100%",
+                    width: "100%",
+                    justifySelf: "center",
                   },
                 })}
               >
@@ -509,7 +506,9 @@ const IMOVA = () => {
                     height: "100%",
                     objectFit: "cover",
                     color: "white",
-                    paddingBottom: "50px",
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "56px 20px",
                   }}
                 >
                   {production_line.production_line_list.map((item, index) => (
