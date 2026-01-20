@@ -59,15 +59,14 @@ const Header = () => {
       sx={{
         position: isHomePage ? "fixed" : "relative",
         width: "100%",
-        // zIndex: isHomePage ? 1000 : 0,
         zIndex: 1000,
       }}
     >
       <AppBar
         position="sticky"
         sx={{
-          backgroundColor: isHomePage ? "#000" : "#ffffff",
-          boxShadow: "none",
+          backgroundColor: "#ffffff",
+          boxShadow: "0 1px 1px rgba(0,0,0,0.05), 0 1px 1px rgba(0,0,0,0.1)",
           p: 0,
           width: "100%",
           maxWidth: "100vw",
@@ -92,7 +91,7 @@ const Header = () => {
         <SubMenuDrawer
           allMenuItems={menu.mainMenu}
           openedMenuIndex={menu.mainMenu.findIndex(
-            (item) => item.title === openMainMenu
+            (item) => item.title === openMainMenu,
           )}
           isHomePage={isHomePage}
           navigate={navigate}

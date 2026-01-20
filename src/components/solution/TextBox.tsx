@@ -21,6 +21,7 @@ const TextBox = (textBoxProps: TextBoxProps) => {
         sx={{
           mt: 1.5,
           wordBreak: "keep-all",
+          whiteSpace: "pre-line",
         }}
       >
         {contents}

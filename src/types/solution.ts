@@ -43,6 +43,9 @@ interface ColorBoxProps2 {
 interface BoxSubSection {
   title?: string;
   items: string[];
+  images?: BoxImage[];
+  imagePosition?: string;
+  contentLayout?: string;
 }
 
 interface BoxImage {
@@ -50,6 +53,7 @@ interface BoxImage {
   width?: string;
   height?: string;
   alt?: string;
+  caption?: string;
 }
 
 interface BoxContent {

@@ -17,7 +17,7 @@ const SuspensionEquipment = () => {
     subColor,
     suspensionEquipment: { subtitle: suspensionEquipmentSubTitle },
   } = header.Mobility;
-  const { suspensionEquipment } = body.mobility;
+  const { suspensionEquipment } = body.oldMobility;
   const { isMobile } = useBreakpoint();
   const THRESHOLD = 100;
   const seoData = useSEO(

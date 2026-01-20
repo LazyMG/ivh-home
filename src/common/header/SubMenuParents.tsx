@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { useRef } from "react";
 import type { MenuItem } from "../../types/header";
 import { useMenuHoverPreview } from "../../hooks/useMenuHoverPreview";
 
@@ -22,14 +23,25 @@ export const SubMenuParents = ({
   onLevel1Click,
   onPreviewItemChange,
 }: SubMenuParentsProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   // 호버 프리뷰 커스텀 훅 사용
   const { itemRefs, handleMouseEnter, handleMouseLeave, handleClick } =
     useMenuHoverPreview({
       onPreviewItemChange,
     });
 
+  // 컬럼 요소 찾기 (containerRef의 부모가 SubMenuColumn)
+  const getColumnElement = () => {
+    if (containerRef.current?.parentElement) {
+      return containerRef.current.parentElement;
+    }
+    return null;
+  };
+
   return (
     <Box
+      ref={containerRef}
       sx={{
         width: "100%",
         display: "flex",
@@ -43,8 +55,8 @@ export const SubMenuParents = ({
         if (item?.state === "hide") return null;
 
         // 모든 자식 메뉴가 hide 상태인지 확인
-        const allChildrenHidden = hasSubMenu &&
-          item.items?.every((child) => child.state === "hide");
+        const allChildrenHidden =
+          hasSubMenu && item.items?.every((child) => child.state === "hide");
 
         // 모든 자식이 숨겨진 경우 부모도 숨김
         if (allChildrenHidden) return null;
@@ -63,7 +75,7 @@ export const SubMenuParents = ({
               onMouseEnter={() => {
                 // description이 있는 메뉴 아이템에 대해 프리뷰 표시
                 if (item.description) {
-                  handleMouseEnter(item, 1);
+                  handleMouseEnter(item, 1, !!hasSubMenu, getColumnElement());
                 }
               }}
               onMouseLeave={() => {

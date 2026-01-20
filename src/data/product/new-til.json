@@ -1,0 +1,131 @@
+{
+  "til_title": "TIL",
+  "til_subTitle": "유연한 구성과 고정밀 시뮬레이션을 지원하는 다분야 시스템 모델링 라이브러리",
+  "til_introduction": [
+    {
+      "text": "TIL은 다양한 구성요소 및 시스템 모델을 제공하는 Modelica 기반 시뮬레이션 라이브러리입니다. 기본 라이브러리인 TIL과 물성 데이터 라이브러리인 TILMedia, 그리고 Addon 라이브러리로 구성되어 있습니다. 시뮬레이션, 테스트, 소프트웨어 개발 등 다양한 서비스 및 연구 프로젝트를 통해 축적된 경험이 TIL에 반영되어 있습니다.",
+      "imgObj": [
+        {
+          "imgUrl": "/images/pages/product/til/til-head.png",
+          "imgText": "<TIL + Addon Library>"
+        }
+      ]
+    },
+    {
+      "text": "TIL을 통해 개별 컴포넌트를 상세하게 모델링하고 계산할 수 있으며, 포함된 모델은 대규모 또는 다층 구조의 시스템 설계 및 최적화에 적합합니다. 높은 정확도와 시뮬레이션 속도는 물론, TIL은 컴포넌트의 유연성과 확장성이 뛰어난 것이 특징입니다. 그래픽 인터페이스를 통해 컴포넌트 모델을 손쉽게 교체하거나 시스템 단위로 연결·구성할 수 있으며, 세부 설정까지 자유롭게 조정할 수 있습니다. 라이브러리 내 모델 코드는 대부분 공개되어 있으며, 객체 지향 구조를 기반으로 구성되어 있어 모델의 세부 내용을 확인하고 복사·수정·확장하는 것이 가능합니다.",
+      "imgObj": [
+        {
+          "imgUrl": "/images/pages/product/til/til-subOutline-first.png",
+          "imgText": "< 다양한 컴포넌트 모델 지원 >"
+        },
+        {
+          "imgUrl": "/images/pages/product/til/til-subOutline-second.png",
+          "imgText": "< 객체 지향 모델링 >"
+        }
+      ]
+    }
+  ],
+  "til_features": [
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-one.png"],
+          "imgText": "< 단일 모델 내 정상해석과 과도해석 설정 >",
+          "col": 12
+        }
+      ],
+      "textObj": {
+        "col": 12,
+        "title": "정상 상태 및 과도 상태 시뮬레이션 지원",
+        "text": "TIL은 하나의 모델 내에서 정상 상태(steady-state)와 과도 상태(transient) 시뮬레이션을 모두 수행할 수 있어, 설계 초기 단계부터 운전 조건 변화에 따른 동적 거동까지 폭넓은 해석이 가능합니다. 이를 통해 시스템의 안정성과 응답 특성을 동시에 고려한 설계 및 검증이 가능합니다."
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-two-first.png"],
+          "imgText": "< TILMedia 인터페이스 >",
+          "col": 6
+        },
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-two-second.png"],
+          "imgText": "< 사용 가능한 VLEFluids(REFPROP) >",
+          "col": 6
+        }
+      ],
+      "textObj": {
+        "col": 12,
+        "title": "TILMedia 기반의 유체 물성 연동",
+        "text": "TILMedia는 액체, 기체, 실제 유체의 상평형 및 혼합물에 대한 열물리 특성을 정밀하게 계산할 수 있으며, REFPROP, NASA, VDI 등 다양한 외부 물성 데이터베이스와의 연동도 지원합니다. 사용자 정의 혼합물 구성이나 질량 분율 변화에 따른 시뮬레이션도 가능하여, 복잡한 유체 시스템의 거동을 현실적으로 예측할 수 있습니다."
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-three.png"],
+          "imgText": "< 열전달, 압력 강하, 결빙 상관식 모델 >",
+          "col": 12,
+          "imgSize": "small"
+        }
+      ],
+      "textObj": {
+        "col": 12,
+        "title": "고정밀 열전달 및 압력강하 모델 내장",
+        "text": "열교환기, 튜브, 밸브 등 주요 컴포넌트에는 상세한 열전달 및 압력강하 상관식이 구현되어 있어, 실제 시스템과 유사한 열적·유체적 거동을 정밀하게 재현할 수 있습니다. 이를 통해 구성 요소의 성능을 정확하게 평가하고, 시스템 효율을 최적화할 수 있습니다."
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-four.png"],
+          "imgText": "< 열역학 다이어그램 (DaVE와 연동) >",
+          "col": 12,
+          "imgSize": "small"
+        }
+      ],
+      "textObj": {
+        "col": 12,
+        "title": "DaVE와 연동하는 시각화 기능",
+        "text": "TIL은 DaVE와의 연동을 통해 압력-엔탈피(p-h), 온도-엔트로피(T-s) 등의 열역학 다이어그램을 시각화할 수 있습니다. 특히 다양한 작동 유체의 phase diagram을 제공하고 있기 때문에, 대부분의 열시스템 상태를 시각화하는데 효과적으로 활용할 수 있습니다."
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-five-first.png"],
+          "imgText": "Simple ACC",
+          "col": 2.4
+        },
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-five-second.png"],
+          "imgText": "Automotive Secondary loop",
+          "col": 2.4
+        },
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-five-third.png"],
+          "imgText": "Automotive Secondary loop",
+          "col": 2.4
+        },
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-five-fourth.png"],
+          "imgText": "Automotive HVAC",
+          "col": 2.4
+        },
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-five-fifth.png"],
+          "imgText": "Industrial Refrigerator",
+          "col": 2.4
+        },
+        {
+          "imgText": "< 다양한 분야의 열시스템 예제 제공 >",
+          "col": 12
+        }
+      ],
+      "textObj": {
+        "col": 12,
+        "title": "다양한 컴포넌트 및 예제 모델 제공",
+        "text": "가스, 액체, 2상 유체를 포함한 다양한 유체 조건에 대응하는 튜브, 펌프, 밸브, 팬 등의 기본 컴포넌트와 함께, 열교환기, 압축기, 센서, 제어기 등 다양한 요소 모델이 포함되어 있습니다. HVAC, 냉동 사이클, 열펌프, 차량 열관리 시스템 등 다양한 시스템 구성에 활용할 수 있는 예제 모델도 함께 제공되어 실무 적용성과 확장성이 뛰어납니다."
+      }
+    }
+  ]
+}

@@ -49,7 +49,7 @@ import Calendar from "./pages/Calendar";
 import Training from "./pages/support/Training";
 import Support from "./pages/support/Support";
 
-import Header from "./common/header/Header";
+import NewHeader from "./common/header/NewHeader";
 import PrivacyPolicy from "./components/support/PrivacyPolicy";
 import CEO from "./pages/company/CEO";
 import History from "./pages/company/History";
@@ -57,6 +57,11 @@ import Partner from "./pages/company/Partner";
 
 import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
+import Mobility from "./pages/solution/Mobility";
+import IMOVA from "./pages/product/IMOVA";
+import NewDymola from "./pages/product/dymola/NewDymola";
+import NewVTD from "./pages/product/vtd/NewVTD";
+import NewVissim from "./pages/product/vissim/NewVissim";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -70,7 +75,7 @@ function AppContent() {
     <>
       <ScrollToTop>
         {/** header */}
-        {!hideLayout && (isMobile || isTablet ? <MobileHeader /> : <Header />)}
+        {!hideLayout && (isMobile || isTablet ? <MobileHeader /> : <NewHeader />)}
         <Routes>
           {/** pages */}
           <Route path="/" element={<Home />} />
@@ -83,7 +88,7 @@ function AppContent() {
           <Route path="/solution/homeappliance" element={<HomeAppliance />} />
           <Route path="/solution/smartfactory" element={<SmartFactory />} />
           <Route path="/solution/bems" element={<Bems />} />
-          <Route path="/solution/mobility" element={<MultiCommunicateTech />} />
+          <Route path="/solution/mobility" element={<Mobility />} />
           <Route
             path="/solution/mobility/multiCommunicateTech"
             element={<MultiCommunicateTech />}
@@ -102,8 +107,11 @@ function AppContent() {
           />
           <Route path="/solution/mobility/ev" element={<EV />} />
           <Route path="/solution/aIinnovationhub" element={<AIInnovation />} />
+          <Route path="/product/imova" element={<IMOVA />} />
+
           {/** dymola */}
           <Route path="/product/dymola" element={<Dymola />} />
+          <Route path="/product/new-dymola" element={<NewDymola />} />
           <Route path="/product/dymola/battery" element={<Battery />} />
           <Route path="/product/dymola/til" element={<TIL />} />
           <Route
@@ -116,11 +124,14 @@ function AppContent() {
           />
           {/** vtd */}
           <Route path="/product/vtd" element={<VTD />} />
+          <Route path="/product/new-vtd" element={<NewVTD />} />
           <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
           <Route path="/product/vtd/vtdsimulate" element={<VTDSimulate />} />
           <Route path="/product/vtd/vtdfullstack" element={<VTDFullstack />} />
           {/** vissim */}
           <Route path="/product/vissim" element={<Vissim />} />
+          <Route path="/product/new-vissim" element={<NewVissim />} />
+
           <Route
             path="/product/vissim/vissimautomotive"
             element={<VissimAutomotive />}

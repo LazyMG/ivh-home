@@ -8,10 +8,11 @@ const GradientSectionLabel = ({ labelText }: { labelText: string }) => {
     <Typography
       sx={{
         fontFamily: "Freesentation-7-Bold",
-        fontSize: "18.7px",
+        fontSize: "20px",
         width: "128px",
         color: "#ffffff",
-        px: 2,
+        px: 4,
+        py: "6px",
         borderRadius: "24px",
         background: "linear-gradient(to right, #28a759 30%, #3167d5)",
         display: "flex",

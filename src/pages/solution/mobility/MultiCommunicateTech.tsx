@@ -17,7 +17,7 @@ const MultiCommunicateTech = () => {
     subColor,
     multiCommunicateTech: { subtitle: multiCommunicateTechSubTitle },
   } = header.Mobility;
-  const { multiCommunicateTech } = body.mobility;
+  const { multiCommunicateTech } = body.oldMobility;
   const { isMobile } = useBreakpoint();
   const THRESHOLD = 100;
   const seoData = useSEO(

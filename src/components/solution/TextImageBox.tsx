@@ -28,7 +28,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
           }}
         >
           {contents.map((content, index) => {
-            const isSection = /^[A-Z]\.\s/.test(content);
+            const isSection = /^([A-Z]|\d+)\.\s/.test(content);
             return (
               <Box
                 key={index}
@@ -51,6 +51,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
                   sx={{
                     mt: isSection && index !== 0 ? 2 : 0,
                     wordBreak: "keep-all",
+                    color: "#424242",
                   }}
                 >
                   {content}
@@ -69,6 +70,7 @@ const TextImageBox = (textImageBoxProps: TextImageBoxProps) => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              width: "100%",
             }}
             key={index}
           >

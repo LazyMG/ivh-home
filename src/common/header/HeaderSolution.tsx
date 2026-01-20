@@ -10,8 +10,8 @@ const HeaderSolution = () => {
         width: "100%",
         height: "fit-content",
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: "flex-start",
+        alignItems: "start",
         position: "relative",
       }}
     >

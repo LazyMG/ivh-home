@@ -21,7 +21,7 @@ export const headerColors = {
     background: "#ffffff",
     text: "#000000",
     border: "#e0e0e0",
-    hoverLine: "#000000",
+    hoverLine: "#179EBD",
     logo: "black",
     submenu: {
       active: "#343538",

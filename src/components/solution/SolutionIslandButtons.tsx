@@ -32,7 +32,7 @@ const SolutionIslandButtons = () => {
           },
         })}
       >
-        <ImageIcon {...energy} animationDelay={1} />
+        <ImageIcon {...energy} />
       </Box>
       <Box
         sx={(theme) => ({
@@ -88,7 +88,7 @@ const SolutionIslandButtons = () => {
           },
         })}
       >
-        <ImageIcon {...factory} animationDelay={1} />
+        <ImageIcon {...factory} />
       </Box>
 
       {/* 세 번째 행: BEMS, Mobility */}
@@ -96,33 +96,33 @@ const SolutionIslandButtons = () => {
         sx={(theme) => ({
           position: "absolute",
           top: "60%",
-          left: "30%",
+          left: "24%",
           transform: "translate(-50%, -50%)",
           [theme.breakpoints.up("tablet")]: {
             top: "75%",
-            left: "30%",
+            left: "24%",
           },
           [theme.breakpoints.up("desktop")]: {
             top: "75%",
-            left: "30%",
+            left: "24%",
           },
         })}
       >
-        <ImageIcon {...bems} animationDelay={1} />
+        <ImageIcon {...bems} />
       </Box>
       <Box
         sx={(theme) => ({
           position: "absolute",
           top: "60%",
-          right: "30%",
+          right: "24%",
           transform: "translate(50%, -50%)",
           [theme.breakpoints.up("tablet")]: {
             top: "75%",
-            right: "30%",
+            right: "24%",
           },
           [theme.breakpoints.up("desktop")]: {
             top: "75%",
-            right: "30%",
+            right: "24%",
           },
         })}
       >

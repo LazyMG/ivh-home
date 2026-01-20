@@ -1,6 +1,6 @@
 import type { ReservationResponse } from "../../types/reservation";
 
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import TrainingMainTitle from "../../components/support/TrainingMainTitle";
 import GradientSectionLabel from "../../components/support/GradientSectionLabel";
@@ -17,55 +17,7 @@ import CustomSnackbar from "../../components/support/CustomSnackbar";
 import TraingCurriculumTable from "../../components/support/TrainingCurriculumTable";
 
 import curriculums from "../../data/support/curriculum.json";
-
-// // 임시 교육 일정 데이터
-// const reservations: ReservationResponse[] = [
-//   {
-//     id: 1,
-//     reservationName: "VTD 후반기 교육",
-//     startDate: "2025-10-02",
-//     endDate: "2025-10-02",
-//     reservationStatus: "CLOSED",
-//     reservationType: "EDUCATION",
-//     cost: 1234,
-//     reservationDescription: "VTD 후반기 교육",
-//     maxPeople: 5,
-//     minPeople: 1,
-//     reservatedPeople: 5,
-//     createdAt: "2025-10-01",
-//     updatedAt: "2025-10-01",
-//   },
-//   {
-//     id: 2,
-//     reservationName: "Dymola 후반기 교육",
-//     startDate: "2025-10-12",
-//     endDate: "2025-10-12",
-//     reservationStatus: "OPEN",
-//     reservationType: "EDUCATION",
-//     cost: 1234,
-//     reservationDescription: "Dymola 후반기 교육",
-//     maxPeople: 30,
-//     minPeople: 1,
-//     reservatedPeople: 10,
-//     createdAt: "2025-10-01",
-//     updatedAt: "2025-10-01",
-//   },
-//   {
-//     id: 3,
-//     reservationName: "Dymola 후반기 교육2",
-//     startDate: "2025-10-31",
-//     endDate: "2025-10-31",
-//     reservationStatus: "OPEN",
-//     reservationType: "EDUCATION",
-//     cost: 1234,
-//     reservationDescription: "Dymola 후반기 교육2",
-//     maxPeople: 30,
-//     minPeople: 1,
-//     reservatedPeople: 10,
-//     createdAt: "2025-10-01",
-//     updatedAt: "2025-10-01",
-//   },
-// ];
+import ScrollButton from "../../common/ScrollButton";
 
 const Training = () => {
   const seoData = useSEO("support/training", training);
@@ -103,32 +55,12 @@ const Training = () => {
     fetchReservationList();
   }, []);
 
+  const THRESHOLD = 100;
+
   return (
     <>
       <SEO {...seoData} />
-      {/** Training 페이지 타이틀 영역  */}
-      <Box
-        display="flex"
-        sx={(theme) => ({
-          flexDirection: "column",
-          position: "relative",
-          my: 10,
-          [theme.breakpoints.up("tablet")]: {
-            mb: 8,
-          },
-        })}
-      >
-        <TrainingMainTitle titleList={training_title} />
-        <Divider
-          sx={{
-            border: "1px solid #23A16F",
-            position: "absolute",
-            left: 0,
-            bottom: -16,
-            width: "30%",
-          }}
-        />
-      </Box>
+      <ScrollButton threshold={THRESHOLD} />
 
       {/** 개요, Curriculum, Schedule, Application 섹션 전체 컨테이너 */}
       <Box
@@ -138,10 +70,14 @@ const Training = () => {
             px: 10,
           },
           [theme.breakpoints.up("desktop")]: {
-            px: 20,
+            px: 32,
+            mb: 24,
           },
         })}
       >
+        <Box sx={{ mt: 10, mb: 8 }}>
+          <TrainingMainTitle titleList={training_title} />
+        </Box>
         {/** 개요 영역 */}
         <Box
           display="grid"
@@ -189,6 +125,7 @@ const Training = () => {
             margin: "50px auto",
             display: "flex",
             flexDirection: "column",
+            mb: 16,
           }}
         >
           <GradientSectionLabel labelText="Curriculum" />
@@ -206,6 +143,7 @@ const Training = () => {
             margin: "50px auto",
             display: "flex",
             flexDirection: "column",
+            mb: 16,
           }}
         >
           <GradientSectionLabel labelText="Schedule" />

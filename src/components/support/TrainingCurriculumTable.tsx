@@ -29,21 +29,54 @@ const TraingCurriculumTable = ({
   const month = dateInfo.getMonth() + 1;
   const year = dateInfo.getFullYear();
   const currentMonth = month.toString().padStart(2, "0");
-  const nextMonthValue = month === 12 ? 1 : month + 1;
-  const nextMonth = nextMonthValue.toString().padStart(2, "0");
-  const nextYear = month === 12 ? year + 1 : year;
+
+  // 분기별 일정 계산
+  // 분기 마지막 달(3,6,9,12월)이면 다음 분기, 아니면 현재 분기
+  const currentQuarter = Math.floor((month - 1) / 3); // 0: Q1, 1: Q2, 2: Q3, 3: Q4
+  const isLastMonthOfQuarter = month % 3 === 0; // 3, 6, 9, 12월 체크
+
+  const targetQuarter = isLastMonthOfQuarter
+    ? (currentQuarter + 1) % 4
+    : currentQuarter;
+
+  const quarterStartMonth = targetQuarter * 3 + 1; // 1, 4, 7, 10
+
+  // 분기 3개월 계산
+  const quarterMonths = [
+    quarterStartMonth,
+    quarterStartMonth + 1,
+    quarterStartMonth + 2,
+  ];
+
+  // 년도 계산 (12월에서 다음해 1월로 넘어가는 경우)
+  const quarterYears = quarterMonths.map(() =>
+    isLastMonthOfQuarter && currentQuarter === 3 ? year + 1 : year
+  );
 
   // 교육 일정 데이터 처리
   const getCurriculumSchedule = () => {
     if (!reservationList) return {};
 
-    // 이번 달과 다음 달 필터링
+    // 현재 달과 다음 분기 3개월 필터링
     const filteredReservations = reservationList.filter((reservation) => {
       const [resYear, resMonth] = reservation.startDate.split("-");
-      return (
-        (resYear === year.toString() && resMonth === currentMonth) ||
-        (resYear === nextYear.toString() && resMonth === nextMonth)
-      );
+      const resMonthNum = parseInt(resMonth, 10);
+      const resYearNum = parseInt(resYear, 10);
+
+      // 현재 달 체크
+      if (resYearNum === year && resMonthNum === month) return true;
+
+      // 다음 분기 3개월 체크
+      for (let i = 0; i < 3; i++) {
+        if (
+          resYearNum === quarterYears[i] &&
+          resMonthNum === quarterMonths[i]
+        ) {
+          return true;
+        }
+      }
+
+      return false;
     });
 
     // 월별로 분류
@@ -83,12 +116,20 @@ const TraingCurriculumTable = ({
 
   const scheduleByMonth = getCurriculumSchedule();
   const currentMonthKey = `${year}-${currentMonth}`;
-  const nextMonthKey = `${nextYear}-${nextMonth}`;
 
+  // 다음 분기 3개월 키 생성
+  const quarterMonthKeys = quarterMonths.map((m, i) => {
+    const monthStr = m.toString().padStart(2, "0");
+    return `${quarterYears[i]}-${monthStr}`;
+  });
+
+  // 테이블 제목 생성
+  const lastQuarterMonth = quarterMonths[2];
+  const lastQuarterYear = quarterYears[2];
   const tableTitle =
-    month === 12
-      ? `${year}년 ${month}월~${year + 1}년 ${nextMonth}월 교육일정`
-      : `${year}년 ${month}~${nextMonth}월 교육일정`;
+    lastQuarterYear > year
+      ? `${year}년 ${month}월~${lastQuarterYear}년 ${lastQuarterMonth}월`
+      : `${year}년 ${month}~${lastQuarterMonth}월`;
 
   return (
     <Box
@@ -100,14 +141,15 @@ const TraingCurriculumTable = ({
         maxWidth: "1500px",
         mx: "auto",
         [theme.breakpoints.up("desktop")]: {
-          mx: 24,
+          // mx: 24,
+          mx: 0,
         },
       })}
     >
       <Typography
         sx={{
-          fontSize: "24px",
-          color: "#3d67bc",
+          fontSize: "18px",
+          color: "#1755C2",
           fontFamily: "Freesentation-7-Bold",
         }}
       >
@@ -127,6 +169,9 @@ const TraingCurriculumTable = ({
             "&:last-child": {
               borderRight: 0,
             },
+            "&:nth-of-type(2)": {
+              borderRight: "1px solid #00000062",
+            },
           },
           "& th": {
             fontFamily: "Freesentation-7-Bold",
@@ -143,7 +188,9 @@ const TraingCurriculumTable = ({
           <tr>
             <th>{"교육명"}</th>
             <th>{`${month}월`}</th>
-            <th>{`${nextMonthValue}월`}</th>
+            <th>{`${quarterMonths[0]}월`}</th>
+            <th>{`${quarterMonths[1]}월`}</th>
+            <th>{`${quarterMonths[2]}월`}</th>
           </tr>
         </thead>
         <tbody
@@ -155,49 +202,37 @@ const TraingCurriculumTable = ({
           {curriculums.map((curriculum, index) => {
             const currentMonthData =
               scheduleByMonth[currentMonthKey]?.[curriculum];
-            const nextMonthData = scheduleByMonth[nextMonthKey]?.[curriculum];
+            const quarterMonthsData = quarterMonthKeys.map(
+              (key) => scheduleByMonth[key]?.[curriculum]
+            );
+
+            const renderCell = (
+              data: { isClosed: boolean; date?: string } | undefined
+            ) => {
+              if (!data) return BLANK_TEXT;
+
+              if (data.isClosed) {
+                return (
+                  <Typography fontSize="14px" color="error" fontWeight="bold">
+                    마감
+                  </Typography>
+                );
+              }
+
+              return (
+                <Typography fontSize="14px">
+                  {data.date?.split("T")[0].replace(".", "/")}
+                </Typography>
+              );
+            };
 
             return (
               <tr key={index}>
                 <td>{curriculum}</td>
-                <td>
-                  {currentMonthData ? (
-                    currentMonthData.isClosed ? (
-                      <Typography
-                        fontSize="14px"
-                        color="error"
-                        fontWeight="bold"
-                      >
-                        마감
-                      </Typography>
-                    ) : (
-                      <Typography fontSize="14px">
-                        {currentMonthData.date?.split("T")[0].replace(".", "/")}
-                      </Typography>
-                    )
-                  ) : (
-                    BLANK_TEXT
-                  )}
-                </td>
-                <td>
-                  {nextMonthData ? (
-                    nextMonthData.isClosed ? (
-                      <Typography
-                        fontSize="14px"
-                        color="error"
-                        fontWeight="bold"
-                      >
-                        마감
-                      </Typography>
-                    ) : (
-                      <Typography fontSize="14px">
-                        {nextMonthData.date?.split("T")[0].replace(".", "/")}
-                      </Typography>
-                    )
-                  ) : (
-                    BLANK_TEXT
-                  )}
-                </td>
+                <td>{renderCell(currentMonthData)}</td>
+                <td>{renderCell(quarterMonthsData[0])}</td>
+                <td>{renderCell(quarterMonthsData[1])}</td>
+                <td>{renderCell(quarterMonthsData[2])}</td>
               </tr>
             );
           })}

@@ -1,44 +1,83 @@
 import { Box, Stack, Typography } from "@mui/material";
 import partner from "../../data/company/partner.json";
 import ImageHeader from "../../components/company/ImageHeader";
+import CustomerContainer from "../../components/company/CustomerContainer";
+
+interface CustomerListObj {
+  src: string;
+  maxWidth: string;
+}
 
 const Partner = () => {
   const {
-    parnter_image,
-    parnter_parnter,
-    parnter_parnterList,
-    parnter_customer,
-    parnter_customerList,
+    partner_image,
+    partner_partner,
+    partner_partnerList,
+    partner_customer,
+    partner_customerList,
+    partner_image_position,
+    partner_color,
   } = partner;
 
+  const { customer_company, customer_institution, customer_education } =
+    partner_customerList;
+
+  // 작은 화면용: 3개씩 chunk로 나누기
+  const chunkArray = (arr: CustomerListObj[], size: number) => {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const companyMobileChunks = chunkArray(
+    customer_company.flatMap((c) => c.list),
+    3,
+  );
+
+  const institutionMobileChunks = chunkArray(
+    customer_institution.flatMap((c) => c.list),
+    3,
+  );
+
+  const educationMobileChunks = chunkArray(
+    customer_education.flatMap((c) => c.list),
+    3,
+  );
+
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
       <Box
         sx={(theme) => ({
           px: "20px",
-          pt: "20px",
+          display: "none",
           [theme.breakpoints.up("tablet")]: {
             p: 0,
+            display: "block",
           },
         })}
       >
-        <ImageHeader imgUrl={parnter_image} />
+        <ImageHeader
+          imgUrl={partner_image}
+          imgPosition={partner_image_position}
+        />
       </Box>
 
       <Box
         sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-          gap: 6,
+          gap: 24,
           my: 10,
           px: "16px",
-          pt: "20px",
           [theme.breakpoints.up("tablet")]: {
             px: 10,
+            pt: "20px",
           },
           [theme.breakpoints.up("desktop")]: {
             pt: "50px",
-            px: 40,
+            px: 30,
           },
         })}
       >
@@ -47,19 +86,19 @@ const Partner = () => {
             sx={(theme) => ({
               textTransform: "uppercase",
               whiteSpace: "pre-line",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: "Freesentation-7-Bold",
               letterSpacing: "4px",
-              color: "#3e3e45",
+              color: partner_color,
               fontSize: "24px",
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "28px",
               },
               [theme.breakpoints.up("desktop")]: {
-                fontSize: "36px",
+                fontSize: "30px",
               },
             })}
           >
-            {parnter_parnter}
+            {partner_partner}
           </Typography>
           <Box
             component="ul"
@@ -72,7 +111,7 @@ const Partner = () => {
               pl: 0,
             }}
           >
-            {parnter_parnterList.map((partnerImg, index) => (
+            {partner_partnerList.map((partnerImg, index) => (
               <Box
                 key={index}
                 sx={(theme) => ({
@@ -98,46 +137,40 @@ const Partner = () => {
             sx={(theme) => ({
               textTransform: "uppercase",
               whiteSpace: "pre-line",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: "Freesentation-7-Bold",
               letterSpacing: "4px",
-              color: "#3e3e45",
+              color: partner_color,
               fontSize: "24px",
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "28px",
               },
               [theme.breakpoints.up("desktop")]: {
-                fontSize: "36px",
+                fontSize: "30px",
               },
             })}
           >
-            {parnter_customer}
+            {partner_customer}
           </Typography>
           <Box
-            component="ul"
+            // component="ul"
             sx={{
               display: "flex",
               width: "100%",
-              justifyContent: "between",
-              flexWrap: "wrap",
-              rowGap: 10,
+              flexDirection: "column",
             }}
           >
-            {parnter_customerList.map((customerImg, index) => (
-              <Box
-                key={index}
-                sx={{
-                  width: "25%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src={customerImg}
-                  style={{ width: "70%", maxWidth: "130px" }}
-                />
-              </Box>
-            ))}
+            <CustomerContainer
+              chunkList={companyMobileChunks}
+              customerList={customer_company}
+            />
+            <CustomerContainer
+              chunkList={institutionMobileChunks}
+              customerList={customer_institution}
+            />
+            <CustomerContainer
+              chunkList={educationMobileChunks}
+              customerList={customer_education}
+            />
           </Box>
         </Stack>
       </Box>

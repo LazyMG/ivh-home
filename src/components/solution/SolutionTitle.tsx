@@ -1,5 +1,5 @@
 import type { ContentProps } from "../../types/solution";
-import { alpha, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import BreadScrum from "../../common/BreadScrum";
 
 const SolutionTitle = ({
@@ -11,7 +11,7 @@ const SolutionTitle = ({
   isMobile?: boolean;
   pageKey?: string;
 }) => {
-  const { title, subtitle, color, subColor } = contentProps;
+  const { title, subtitle, color } = contentProps;
 
   return (
     <Box component="header">
@@ -24,10 +24,11 @@ const SolutionTitle = ({
         }}
       >
         <Typography
-          variant="solutionTitleFont"
           sx={{
             color,
-            letterSpacing: "6.4px",
+            letterSpacing: "2px",
+            fontSize: "30px",
+            fontFamily: "Freesentation-7-Bold",
           }}
         >
           {title}
@@ -36,34 +37,20 @@ const SolutionTitle = ({
       {isMobile && pageKey && <BreadScrum pageKey={pageKey} />}
       <Box
         sx={{
-          background: `linear-gradient(${alpha(subColor, 0.36)}, #ffffff)`,
+          backgroundColor: color,
           mt: 3,
-          py: 3,
-          borderTop: `1px solid ${color}`,
+          py: 1,
+          px: 3,
         }}
       >
         <Typography
           // aIInnovationHub 페이지는 더 작은 폰트 스타일 적용
           variant={"solutionSubTitleFont"}
           component="p"
-          color={"#3b4551"}
-          sx={(theme) => ({
-            whiteSpace: "pre-wrap",
-            ...(pageKey === "alinnovationhub" && {
-              [theme.breakpoints.up("mobilePortrait")]: {
-                fontSize: "13px",
-              },
-              [theme.breakpoints.up("mobileLandscape")]: {
-                fontSize: "16px",
-              },
-              [theme.breakpoints.up("tablet")]: {
-                fontSize: "18px",
-              },
-              [theme.breakpoints.up("desktop")]: {
-                fontSize: "24px",
-              },
-            }),
-          })}
+          color="#fff"
+          sx={{
+            fontSize: "18px",
+          }}
         >
           {subtitle}
         </Typography>

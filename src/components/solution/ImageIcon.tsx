@@ -2,8 +2,6 @@ import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import mobilityJson from "../../data/solution/mobilityData.json";
-
 interface ImageIconProps {
   src: string;
   text: string;
@@ -15,7 +13,6 @@ interface ImageIconProps {
   path: string;
   animationDelay?: number;
 }
-const MOBILITY = "Mobility";
 
 {
   /** Solution 메인 페이지에 사용되는 아이콘 */
@@ -33,10 +30,7 @@ const ImageIcon = (icon: ImageIconProps) => {
     alignItems,
     textPosition,
     path,
-    animationDelay = 0,
   } = icon;
-
-  const { mobilityData } = mobilityJson;
 
   const navigate = useNavigate();
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
@@ -62,20 +56,7 @@ const ImageIcon = (icon: ImageIconProps) => {
   }, [isTooltipOpen]);
 
   return (
-    <Box
-      sx={{
-        animation: "float 3s ease-in-out infinite",
-        animationDelay: `${animationDelay}s`,
-        "@keyframes float": {
-          "0%, 100%": {
-            transform: "translateY(0px)",
-          },
-          "50%": {
-            transform: "translateY(-8px)",
-          },
-        },
-      }}
-    >
+    <Box>
       <Box
         sx={(theme) => ({
           display: "flex",
@@ -94,13 +75,8 @@ const ImageIcon = (icon: ImageIconProps) => {
             alignItems,
           },
         })}
-        onClick={(e) => {
-          if (text === MOBILITY) {
-            e.stopPropagation();
-            setIsTooltipOpen(!isTooltipOpen);
-          } else {
-            navigate(path);
-          }
+        onClick={() => {
+          navigate(path);
         }}
       >
         {textPosition === "left" && (
@@ -136,7 +112,7 @@ const ImageIcon = (icon: ImageIconProps) => {
             {text}
           </Typography>
         )}
-        {isTooltipOpen && (
+        {/* {isTooltipOpen && (
           <Box
             ref={tooltipRef}
             sx={(theme) => ({
@@ -246,7 +222,7 @@ const ImageIcon = (icon: ImageIconProps) => {
               </Box>
             ))}
           </Box>
-        )}
+        )} */}
       </Box>
     </Box>
   );

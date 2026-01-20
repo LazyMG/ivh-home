@@ -10,6 +10,7 @@ const style = {
   bgcolor: "background.paper",
   p: 8,
   outline: "none",
+  borderRadius: "8px",
 };
 
 const CustomModal = ({

@@ -4,19 +4,28 @@ import ceo from "../../data/company/ceo.json";
 import ImageHeader from "../../components/company/ImageHeader";
 
 const CEO = () => {
-  const { ceo_image, ceo_title, ceo_contents, ceo_footer } = ceo;
+  const {
+    ceo_image,
+    ceo_title,
+    ceo_contents,
+    ceo_footer,
+    ceo_color,
+    ceo_image_position,
+  } = ceo;
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
       <Box
         sx={(theme) => ({
           px: "20px",
           pt: "20px",
+          display: "none",
           [theme.breakpoints.up("tablet")]: {
             p: 0,
+            display: "block",
           },
         })}
       >
-        <ImageHeader imgUrl={ceo_image} />
+        <ImageHeader imgUrl={ceo_image} imgPosition={ceo_image_position} />
       </Box>
       <Box
         sx={(theme) => ({
@@ -25,9 +34,10 @@ const CEO = () => {
           gap: 6,
           my: 10,
           px: "20px",
-          pt: "20px",
+          pt: 0,
           [theme.breakpoints.up("tablet")]: {
             px: 10,
+            pt: "20px",
           },
           [theme.breakpoints.up("desktop")]: {
             pt: "50px",
@@ -40,13 +50,13 @@ const CEO = () => {
             whiteSpace: "pre-line",
             fontFamily: "Freesentation-6-SemiBold",
             wordBreak: "keep-all",
-            color: "#3e3e45",
+            color: ceo_color,
             fontSize: "24px",
             [theme.breakpoints.up("tablet")]: {
               fontSize: "28px",
             },
             [theme.breakpoints.up("desktop")]: {
-              fontSize: "36px",
+              fontSize: "40px",
             },
           })}
         >
@@ -59,8 +69,9 @@ const CEO = () => {
               sx={{
                 whiteSpace: "pre-line",
                 fontSize: "18px",
-                color: "#acacacff",
-                fontFamily: "Freesentation-5-Medium",
+                color: "#2A2A2A",
+                fontFamily: "Freesentation-4-Regular",
+                wordBreak: "keep-all",
               }}
             >
               {content}
@@ -68,7 +79,11 @@ const CEO = () => {
           ))}
         </Stack>
         <Typography
-          sx={{ fontSize: "18px", fontFamily: "Freesentation-6-SemiBold" }}
+          sx={{
+            fontSize: "18px",
+            fontFamily: "Freesentation-6-SemiBold",
+            color: "#2A2A2A",
+          }}
         >
           {ceo_footer}
         </Typography>

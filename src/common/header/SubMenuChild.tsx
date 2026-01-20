@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import type { MenuItem } from "../../types/header";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useMenuHoverPreview } from "../../hooks/useMenuHoverPreview";
 
 interface SubMenuChildProps {
@@ -24,6 +24,7 @@ export const SubMenuChild = ({
   onPreviewItemChange,
 }: SubMenuChildProps) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const columnRef = useRef<HTMLDivElement>(null);
 
   // 호버 프리뷰 커스텀 훅 사용
   const { itemRefs, handleMouseEnter, handleMouseLeave, handleClick } =
@@ -72,13 +73,14 @@ export const SubMenuChild = ({
       onMouseLeave={() => setHoveredItem(null)}
     >
       <Box
+        ref={columnRef}
         sx={{
-          minWidth: "250px",
-          maxWidth: "350px",
-          padding: "24px 24px",
+          minWidth: "240px",
+          maxWidth: "280px",
+          padding: "24px 20px",
           display: "flex",
           flexDirection: "column",
-          gap: "12px",
+          gap: "8px",
         }}
       >
         {displayItems.map((item) => {
@@ -103,7 +105,12 @@ export const SubMenuChild = ({
                   }
                   // description이 있는 모든 메뉴 아이템에 대해 프리뷰 표시
                   if (item.description) {
-                    handleMouseEnter(item, level);
+                    handleMouseEnter(
+                      item,
+                      level,
+                      !!hasSubMenu,
+                      columnRef.current
+                    );
                   }
                 }}
                 onMouseLeave={() => {

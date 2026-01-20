@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import {
   validateEmail,
@@ -74,104 +74,104 @@ const ProductForm = ({ productName }: { productName: string }) => {
       <Box
         component="form"
         onSubmit={handleSubmit(onSubmit)}
-        sx={(theme) => ({
+        sx={{
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
+          flexDirection: "row",
+          width: "100%",
           gap: 3,
-          [theme.breakpoints.up("desktop")]: {
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            gap: 0,
-          },
-        })}
+        }}
       >
-        <Box
-          sx={(theme) => ({
-            display: "flex",
-            gap: 4,
-            flexDirection: "column",
-            [theme.breakpoints.up("desktop")]: {
-              flexDirection: "row",
-              gap: 1,
+        <Box sx={{ position: "relative", width: "100%" }}>
+          <TextField
+            {...register("name", {
+              validate: (value) => validateNotEmptyAndLength(value, 50),
+            })}
+            size="small"
+            placeholder="성함"
+            variant="outlined"
+            label="성함"
+            required
+            sx={{ width: "100%" }}
+          />
+          {errors.name && (
+            <ApplicationInputErrorText text={errors.name.message || ""} />
+          )}
+        </Box>
+        <Box sx={{ position: "relative", width: "100%" }}>
+          <TextField
+            {...register("company", {
+              validate: (value) => validateNotEmptyAndLength(value, 50),
+            })}
+            size="small"
+            placeholder="소속"
+            label="소속"
+            required
+            sx={{ width: "100%" }}
+          />
+          {errors.company && (
+            <ApplicationInputErrorText text={errors.company.message || ""} />
+          )}
+        </Box>
+        <Box sx={{ position: "relative", width: "100%" }}>
+          <TextField
+            {...register("email", {
+              validate: (value) => validateEmail(value),
+            })}
+            type="email"
+            size="small"
+            placeholder="이메일"
+            label="이메일"
+            required
+            sx={{ width: "100%" }}
+          />
+          {errors.email && (
+            <ApplicationInputErrorText text={errors.email.message || ""} />
+          )}
+        </Box>
+        <Box sx={{ position: "relative", width: "100%" }}>
+          <TextField
+            {...register("phone", {
+              validate: (value) => validatePhone(value),
+            })}
+            size="small"
+            placeholder="연락처"
+            label="연락처"
+            required
+            sx={{ width: "100%" }}
+          />
+          {errors.phone && (
+            <ApplicationInputErrorText text={errors.phone.message || ""} />
+          )}
+        </Box>
+        <Button
+          type="submit"
+          disabled={!isValid || submitStatus === "loading"}
+          sx={{
+            py: 1,
+            px: 4,
+            backgroundColor: "#1755C2",
+            minWidth: "fit-content",
+            borderRadius: 0,
+            "&.Mui-disabled": {
+              opacity: 0.5,
+              backgroundColor: "#707070",
+              "& .MuiTypography-root": {
+                color: "#9e9e9e",
+              },
             },
-          })}
+          }}
         >
-          <Box sx={{ position: "relative", px: 1 }}>
-            <TextField
-              {...register("name", {
-                validate: (value) => validateNotEmptyAndLength(value, 50),
-              })}
-              size="small"
-              placeholder="성함"
-              variant="outlined"
-              label="성함"
-              required
-              sx={{ width: "100%" }}
-            />
-            {errors.name && (
-              <ApplicationInputErrorText text={errors.name.message || ""} />
-            )}
-          </Box>
-
-          <Box sx={{ position: "relative", px: 1 }}>
-            <TextField
-              {...register("company", {
-                validate: (value) => validateNotEmptyAndLength(value, 50),
-              })}
-              size="small"
-              placeholder="소속"
-              label="소속"
-              required
-              sx={{ width: "100%" }}
-            />
-            {errors.company && (
-              <ApplicationInputErrorText text={errors.company.message || ""} />
-            )}
-          </Box>
-          <Box sx={{ position: "relative", px: 1 }}>
-            <TextField
-              {...register("email", {
-                validate: (value) => validateEmail(value),
-              })}
-              type="email"
-              size="small"
-              placeholder="이메일"
-              label="이메일"
-              required
-              sx={{ width: "100%" }}
-            />
-            {errors.email && (
-              <ApplicationInputErrorText text={errors.email.message || ""} />
-            )}
-          </Box>
-
-          <Box sx={{ position: "relative", px: 1 }}>
-            <TextField
-              {...register("phone", {
-                validate: (value) => validatePhone(value),
-              })}
-              size="small"
-              placeholder="연락처"
-              label="연락처"
-              required
-              sx={{ width: "100%" }}
-            />
-            {errors.phone && (
-              <ApplicationInputErrorText text={errors.phone.message || ""} />
-            )}
-          </Box>
-        </Box>
-        <Box sx={{ display: "flex", justifyContent: "flex-end", px: 1 }}>
-          <Button
-            type="submit"
-            disabled={!isValid || submitStatus === "loading"}
-            variant="contained"
-            sx={{ backgroundColor: "#000", px: 2 }}
+          <Typography
+            sx={{
+              color: "#fff",
+              fontSize: "16px",
+              fontFamily: "Freesentation-6-SemiBold",
+              textAlign: "center",
+            }}
           >
-            요청
-          </Button>
-        </Box>
+            요청하기
+          </Typography>
+        </Button>
       </Box>
       <CustomSnackbar
         submitStatus={submitStatus}

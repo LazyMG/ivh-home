@@ -10,7 +10,13 @@ interface UseMenuHoverPreviewOptions {
 
 interface UseMenuHoverPreviewReturn {
   itemRefs: React.MutableRefObject<{ [key: string]: HTMLElement | null }>; // 아이템 요소 참조
-  handleMouseEnter: (item: MenuItem, level?: number) => void; // 호버 시작 시 프리뷰 표시
+  handleMouseEnter: (
+    item: MenuItem,
+    level?: number,
+    hasSubMenu?: boolean,
+    columnElement?: HTMLElement | null,
+    isChildOpen?: boolean
+  ) => void; // 호버 시작 시 프리뷰 표시
   handleMouseLeave: () => void; // 호버 종료 시 프리뷰 숨김
   handleClick: () => void; // 클릭 시 프리뷰 숨김
 }
@@ -26,15 +32,31 @@ export const useMenuHoverPreview = ({
   const itemRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
   const triggerPreview = useCallback(
-    (item: MenuItem, level?: number) => {
+    (
+      item: MenuItem,
+      _level?: number,
+      _hasSubMenu?: boolean,
+      columnElement?: HTMLElement | null
+    ) => {
       const itemElement = itemRefs.current[item.name];
       if (itemElement) {
         const rect = itemElement.getBoundingClientRect();
-        const align: "left" | "right" =
-          level !== undefined && level >= 3 ? "left" : "right";
+        const align: "left" | "right" = "left";
+
+        let xPosition = rect.left;
+
+        // 수평 위치: 컬럼 왼쪽 기준
+        if (columnElement) {
+          const columnRect = columnElement.getBoundingClientRect();
+          xPosition = columnRect.left;
+
+          if (item.subMenu) {
+            xPosition = rect.right + 16;
+          }
+        }
 
         onPreviewItemChange?.(item, {
-          x: rect.left + rect.width / 2,
+          x: xPosition,
           y: rect.top + rect.height / 2,
           align,
         });
@@ -47,8 +69,13 @@ export const useMenuHoverPreview = ({
 
   // 호버 시작 시 즉시 프리뷰 표시
   const handleMouseEnter = useCallback(
-    (item: MenuItem, level?: number) => {
-      triggerPreview(item, level);
+    (
+      item: MenuItem,
+      level?: number,
+      hasSubMenu?: boolean,
+      columnElement?: HTMLElement | null
+    ) => {
+      triggerPreview(item, level, hasSubMenu, columnElement);
     },
     [triggerPreview]
   );

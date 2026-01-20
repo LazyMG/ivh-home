@@ -1,20 +1,18 @@
 import { Box } from "@mui/material";
 import SolutionTitle from "../../components/solution/SolutionTitle";
-import TextBox from "../../components/solution/TextBox";
-import TextImageBox from "../../components/solution/TextImageBox";
-import ColorBox from "../../components/solution/ColorBox";
-import List from "../../components/solution/List";
 import BreadScrum from "../../common/BreadScrum";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import header from "../../data/solution/header.json";
-import body from "../../data/solution/body.json";
 
 import "../../style/solution.css";
 import ScrollButton from "../../common/ScrollButton";
 import homeappliance from "../../data/solution/seo.json";
 import SEO from "../../common/SEO";
 import { useSEO } from "../../hooks/useSEO";
+
+import new_body from "../../data/solution/new-body.json";
+import SolutionContentGrid from "../../components/solution/SolutionContentGrid";
 
 const THRESHOLD = 100;
 
@@ -25,16 +23,7 @@ const HomeAppliance = () => {
 
   const seoData = useSEO("solution/homeappliance", homeappliance.homeappliance);
 
-  // body
-  const {
-    outline,
-    technicalBackground,
-    marketTrend,
-    systemArchitecture,
-    colorBoxes,
-    relatedSoftware,
-    frequentlyAskedQuestions,
-  } = body.homeAppliance;
+  const { home_appliance } = new_body;
 
   return (
     <>
@@ -68,61 +57,11 @@ const HomeAppliance = () => {
             />
           )}
           {/* body section */}
-          {/* 개요 */}
-          <TextBox
-            title={outline.outlineTitle}
-            contents={outline.outlineContents}
-            marginTop={8}
-          />
-          {/* 기술적 배경 */}
-          <TextImageBox
-            title={technicalBackground.technicalBackgroundTitle}
-            listHeader={technicalBackground.technicalBackgroundListHeader}
-            contents={technicalBackground.technicalBackgroundContents}
-            width="1200px"
-            height="700px"
-          />
-          {/* 시장 동향 및 필요성 */}
-          <TextImageBox
-            title={marketTrend.marketTrendTitle}
-            listHeader={marketTrend.marketTrendListHeader}
-            contents={marketTrend.marketTrendContents}
-            width="1200px"
-            height="700px"
-          />
-          {/* 시스템 아키텍처 */}
-          <TextImageBox
-            title={systemArchitecture.systemArchitectureTitle}
-            listHeader={systemArchitecture.systemArchitectureListHeader}
-            contents={systemArchitecture.systemArchitectureContents}
-            width="1200px"
-            height="700px"
-          />
-          {/* 핵심 기술, 제공 서비스, 기대 효과 */}
-          {/* 모든 ColorBox를 반복 렌더링 */}
-          {colorBoxes.map((colorBox, index) => (
-            <Box
-              component="section"
-              aria-label="box-content-section"
-              key={index}
-              sx={{ mt: 8, mb: 16 }}
-            >
-              <ColorBox
-                boxColor={colorBox.boxColor}
-                layout={colorBox.layout}
-                boxes={colorBox.boxes}
-              />
-            </Box>
-          ))}
-          {/* 관련 소프트웨어 */}
-          <TextBox
-            title={relatedSoftware.relatedSoftwareTitle}
-            contents={relatedSoftware.relatedSoftwareContents}
-          />
-          {/* 자주 묻는 질문 */}
-          <List
-            title={frequentlyAskedQuestions.frequentlyAskedQuestionsTitle}
-            contents={frequentlyAskedQuestions.frequentlyAskedQuestionsContents}
+
+          <SolutionContentGrid
+            items={home_appliance}
+            isMobile={isMobile}
+            color={color}
           />
         </Box>
       </Box>

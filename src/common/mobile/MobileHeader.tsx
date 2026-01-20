@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import { AppBar, IconButton, Box, Typography, Divider } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import logoWhite from "/images/header/ivh_logo_white.png";
-import logoBlack from "/images/header/ivh_logo_black.png";
+// import logoWhite from "/images/header/ivh_logo_white.png";
+// import logoBlack from "/images/header/ivh_logo_black.png";
+import logoGradient from "/images/header/ivh_logo_gradient.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import menu from "../../data/header/menu.json";
-import { getHeaderTheme } from "../../theme/headerTheme";
 import youtubeWhite from "/images/header/youtube_white.png";
 import linkedinWhite from "/images/header/linkedin_white.png";
 import youtubeBlack from "/images/header/youtube_black.png";
@@ -21,7 +21,6 @@ const MobileHeader = () => {
   const menuDrawerRef = useRef<HTMLDivElement>(null);
 
   const isHomePage = location.pathname === "/";
-  const theme = getHeaderTheme(isHomePage);
 
   // 메뉴가 열렸을 때 바디 스크롤 방지
   useEffect(() => {
@@ -55,17 +54,23 @@ const MobileHeader = () => {
       <AppBar
         position={isHomePage ? "fixed" : "sticky"}
         sx={{
-          backgroundColor: theme.background,
-          boxShadow: "none",
+          backgroundColor: "#ffffff",
+          boxShadow: "0 3px 10px rgba(0, 0, 0, 0.2)",
           p: 2,
           zIndex: 1100,
-          borderBottom: isHomePage ? "2px solid #312f2f" : "2px solid #e0e0e0",
+          borderBottom: "2px solid #e0e0e0",
         }}
       >
         {/* 햄버거 아이콘 */}
         <IconButton
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          sx={{ color: theme.text, position: "absolute", left: 8 }}
+          sx={{
+            color: "#000000",
+            position: "absolute",
+            left: 8,
+            top: 0,
+            bottom: 0,
+          }}
         >
           {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
@@ -79,14 +84,14 @@ const MobileHeader = () => {
           }}
         >
           <Box
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer", display: "flex", alignItems: "center" }}
             onClick={() => {
               navigate("/");
               setIsMenuOpen(false);
             }}
           >
             <img
-              src={isHomePage ? logoWhite : logoBlack}
+              src={logoGradient}
               alt="logo"
               style={{ width: "64px", height: "27.4px" }}
             />
@@ -95,11 +100,7 @@ const MobileHeader = () => {
       </AppBar>
 
       {/* 햄버거 메뉴 드로어 */}
-      <MobileMenuDrawer
-        ref={menuDrawerRef}
-        $isOpen={isMenuOpen}
-        $isHomePage={isHomePage}
-      >
+      <MobileMenuDrawer ref={menuDrawerRef} $isOpen={isMenuOpen}>
         {menu.mainMenu.map((mainItem, index) => (
           <Box key={index} sx={{ mb: 3 }}>
             {/* 메인 메뉴 타이틀 */}
@@ -115,7 +116,6 @@ const MobileHeader = () => {
                   ? true
                   : false
               }
-              $isHomePage={isHomePage}
             >
               {mainItem.title}
             </MobileMainMenuTitle>
@@ -172,7 +172,7 @@ const MobileHeader = () => {
             onClick={() =>
               window.open(
                 "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image",
-                "_blank"
+                "_blank",
               )
             }
           />
@@ -203,10 +203,7 @@ const MobileMenuDrawer = styled(Box, {
   shouldForwardProp: (prop) => prop !== "$isOpen" && prop !== "$isHomePage",
 })<{
   $isOpen: boolean;
-  $isHomePage: boolean;
-}>(({ $isOpen, $isHomePage }) => {
-  const theme = getHeaderTheme($isHomePage);
-
+}>(({ $isOpen }) => {
   return {
     position: "fixed",
     top: 0,
@@ -215,7 +212,7 @@ const MobileMenuDrawer = styled(Box, {
     maxWidth: "400px",
     height: "100vh",
     boxSizing: "border-box",
-    backgroundColor: theme.background,
+    backgroundColor: "#ffffff",
     transform: $isOpen ? "translateX(0)" : "translateX(-100%)",
     transition: "transform 0.3s ease",
     zIndex: 1050,
@@ -228,13 +225,13 @@ const MobileMenuDrawer = styled(Box, {
       width: "8px",
     },
     "&::-webkit-scrollbar-track": {
-      backgroundColor: $isHomePage ? "#1a1a1a" : "#f0f0f0",
+      backgroundColor: "#f0f0f0",
     },
     "&::-webkit-scrollbar-thumb": {
-      backgroundColor: $isHomePage ? "#4a4a4a" : "#d0d0d0",
+      backgroundColor: "#d0d0d0",
       borderRadius: "4px",
       "&:hover": {
-        backgroundColor: $isHomePage ? "#666" : "#b0b0b0",
+        backgroundColor: "#b0b0b0",
       },
     },
   };
@@ -244,20 +241,15 @@ const MobileMainMenuTitle = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "$isActive" && prop !== "$isHomePage",
 })<{
   $isActive?: boolean;
-  $isHomePage: boolean;
-}>(({ $isActive, $isHomePage }) => {
-  const theme = getHeaderTheme($isHomePage);
-
+}>(({ $isActive }) => {
   return {
-    color: theme.text,
+    color: "#424242",
     fontSize: "18px",
     fontWeight: "bold",
     cursor: "pointer",
     marginBottom: "8px",
     paddingBottom: "8px",
-    borderBottom: $isActive
-      ? `2px solid ${theme.text}`
-      : `2px solid ${$isHomePage ? "#333" : "#e0e0e0"}`,
+    borderBottom: $isActive ? `2px solid #424242` : `2px solid #e0e0e0`,
     transition: "all 0.2s ease",
 
     "&:hover": {

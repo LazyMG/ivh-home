@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import contact from "../../data/company/contact.json";
 import {
@@ -24,15 +23,16 @@ import { customerService } from "../../service/customerService";
 
 interface ContactFormType {
   company: string;
+  division: string;
   name: string;
-  phone: string;
+  position: string;
   email: string;
+  phone: string;
   inquiry: string;
   isPrivacyAgreed: boolean;
 }
 
 const Contact = () => {
-  const navigate = useNavigate();
   const [submitStatus, setSubmitStatus] = useState<
     "loading" | "success" | "error" | null
   >(null);
@@ -49,9 +49,11 @@ const Contact = () => {
     mode: "onChange",
     defaultValues: {
       company: "",
+      division: "",
       name: "",
       phone: "",
       email: "",
+      position: "",
       inquiry: "",
       isPrivacyAgreed: false,
     },
@@ -67,6 +69,8 @@ const Contact = () => {
         name: getValues("name"),
         phone: getValues("phone"),
         email: getValues("email"),
+        position: getValues("position"),
+        division: getValues("division"),
         inquiry: getValues("inquiry"),
       });
 
@@ -96,42 +100,86 @@ const Contact = () => {
         ...theme.customStyles.contactMainContainer,
       })}
     >
-      {/* 상단 영역: 제목 + 폼 */}
       <Box
         sx={(theme) => ({
           ...theme.customStyles.contactTopContainer,
         })}
       >
-        {/* 왼쪽 영역: 제목과 제품 둘러보기 링크 */}
+        {/* 상단 영역: 제목 + 이미지 */}
         <Box
           sx={(theme) => ({
-            ...theme.customStyles.contactTitleContainer,
+            display: "flex",
+            flexDirection: "column-reverse",
+            alignItems: "center",
+            [theme.breakpoints.up("tablet")]: {
+              flexDirection: "row",
+              alignItems: "flex-start",
+            },
           })}
         >
-          <Typography variant="contactTitleFont" component="h1">
-            {contact.contact_title}
-          </Typography>
+          {/* 왼쪽 영역: 제목과 제품 둘러보기 링크 */}
           <Box
-            component="a"
-            href={contact.products_link.url}
-            onClick={(e) => {
-              e.preventDefault();
-              navigate(contact.products_link.url);
-            }}
             sx={(theme) => ({
-              ...theme.customStyles.contactProductsLink,
+              ...theme.customStyles.contactTitleContainer,
             })}
           >
-            <Typography variant="contactProductsLinkFont">
-              {contact.products_link.text}
+            <Typography
+              variant="contactTitleFont"
+              component="h1"
+              sx={{ wordBreak: "keep-all" }}
+            >
+              {contact.contact_title}
             </Typography>
-            <Typography variant="contactProductsLinkFont">
-              {contact.products_link.arrow}
-            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {contact.contact_texts.map((text, index) => (
+                <Typography
+                  key={index}
+                  sx={{
+                    fontFamily: "Freesentation-4-Regular",
+                    fontSize: "16px",
+                    color: "#2A2A2A",
+                  }}
+                >
+                  {text}
+                </Typography>
+              ))}
+            </Box>
+          </Box>
+          <Box
+            sx={(theme) => ({
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              mb: 3,
+              [theme.breakpoints.up("tablet")]: {
+                width: "auto",
+                marginLeft: "-20%",
+                marginBottom: 0,
+              },
+              [theme.breakpoints.up("desktop")]: {
+                marginLeft: "-15%",
+              },
+            })}
+          >
+            <Box
+              component="img"
+              src={contact.contact_imgUrl}
+              sx={(theme) => ({
+                width: "80%",
+                height: "auto",
+                [theme.breakpoints.up("tablet")]: {
+                  width: "auto",
+                  maxWidth: "550px",
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  maxWidth: "650px",
+                },
+              })}
+            />
           </Box>
         </Box>
 
-        {/* 오른쪽 영역: 문의 폼 */}
+        {/* 하단 영역: 문의 폼 */}
         <Box
           component="form"
           onSubmit={handleSubmit(onSubmit)}
@@ -148,6 +196,24 @@ const Contact = () => {
               required
               fullWidth
               {...register("company", {
+                //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
+                validate: (value) => validateNotEmptyAndLength(value, 50),
+              })}
+            />
+            {errors.company && (
+              <ApplicationInputErrorText text={errors.company.message || ""} />
+            )}
+          </Box>
+
+          {/* 부서 */}
+          <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <TextField
+              size="small"
+              label="부서명"
+              placeholder="담당자 부서명을 입력해주십시오"
+              required
+              fullWidth
+              {...register("division", {
                 //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
                 validate: (value) => validateNotEmptyAndLength(value, 50),
               })}
@@ -175,20 +241,20 @@ const Contact = () => {
             )}
           </Box>
 
-          {/* 연락처 */}
+          {/* 직급 */}
           <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
             <TextField
               size="small"
-              label="연락처"
-              placeholder="담당자 연락처를 입력해주십시오 (-) 포함"
+              label="직급"
+              placeholder="담당자 직급을 입력해주십시오"
               required
               fullWidth
-              {...register("phone", {
-                validate: (value) => validatePhone(value),
+              {...register("position", {
+                validate: (value) => validateNotEmptyAndLength(value, 50),
               })}
             />
-            {errors.phone && (
-              <ApplicationInputErrorText text={errors.phone.message || ""} />
+            {errors.position && (
+              <ApplicationInputErrorText text={errors.position.message || ""} />
             )}
           </Box>
 
@@ -206,6 +272,23 @@ const Contact = () => {
             />
             {errors.email && (
               <ApplicationInputErrorText text={errors.email.message || ""} />
+            )}
+          </Box>
+
+          {/* 연락처 */}
+          <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <TextField
+              size="small"
+              label="연락처"
+              placeholder="담당자 연락처를 입력해주십시오 (-) 포함"
+              required
+              fullWidth
+              {...register("phone", {
+                validate: (value) => validatePhone(value),
+              })}
+            />
+            {errors.phone && (
+              <ApplicationInputErrorText text={errors.phone.message || ""} />
             )}
           </Box>
 
@@ -249,6 +332,7 @@ const Contact = () => {
               render={({ field }) => (
                 <>
                   <FormControlLabel
+                    sx={{ marginRight: 0 }}
                     control={
                       <Checkbox
                         checked={field.value}
@@ -256,7 +340,7 @@ const Contact = () => {
                         sx={(theme) => ({
                           ...theme.customStyles.contactformControlLabel,
                           "&.Mui-checked": {
-                            color: "#6366f1",
+                            color: "#267B65",
                           },
                         })}
                       />
@@ -290,6 +374,12 @@ const Contact = () => {
           <Box
             sx={(theme) => ({
               ...theme.customStyles.contactFormFullWidthField,
+              [theme.breakpoints.up("mobilePortrait")]: {
+                justifySelf: "end",
+              },
+              [theme.breakpoints.up("tablet")]: {
+                gridColumn: "span 3",
+              },
             })}
           >
             <Button
@@ -312,13 +402,38 @@ const Contact = () => {
         })}
       >
         <iframe
-          src={contact.products_link.map_src}
+          srcDoc={`
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+              <style>
+                body { margin: 0; padding: 0; }
+                .root_daum_roughmap { height: 100vh; width:100% !important;}
+                .root_daum_roughmap_landing {width:100%;}
+                .root_daum_roughmap_landing .wrap_map{
+                  height: 100% !important;
+                }
+              </style>
+            </head>
+            <body>
+              <div id="daumRoughmapContainer1763975355746" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+              <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+              <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                  "timestamp" : "1763975355746",
+                  "key" : "d538jqcryz6",
+                  "mapHeight" : "100%"
+                }).render();
+              </script>
+            </body>
+            </html>
+          `}
           width="100%"
           height="100%"
           style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          title="Daum Map"
         />
       </Box>
 

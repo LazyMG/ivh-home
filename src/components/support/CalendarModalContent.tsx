@@ -209,7 +209,7 @@ const CalendarModalContent = ({
               textAlign: "right",
             }}
           >
-            최소 인원: {reservation.maxPeople}명
+            최소 인원: {reservation.minPeople}명
           </Typography>
         </Box>
 

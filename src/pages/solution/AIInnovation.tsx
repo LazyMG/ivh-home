@@ -2,17 +2,16 @@ import { Box } from "@mui/material";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import BreadScrum from "../../common/BreadScrum";
-import TextImageBox from "../../components/solution/TextImageBox";
-import ColorBox from "../../components/solution/ColorBox";
-import TextBox from "../../components/solution/TextBox";
 
 import header from "../../data/solution/header.json";
-import body from "../../data/solution/body.json";
 import SolutionTitle from "../../components/solution/SolutionTitle";
 import ScrollButton from "../../common/ScrollButton";
 import aiinnovationhub from "../../data/solution/seo.json";
 import SEO from "../../common/SEO";
 import { useSEO } from "../../hooks/useSEO";
+
+import new_body from "../../data/solution/new-body.json";
+import SolutionContentGrid from "../../components/solution/SolutionContentGrid";
 
 const THRESHOLD = 100;
 
@@ -26,15 +25,7 @@ const AIInnovation = () => {
     aiinnovationhub.aiinnovationhub
   );
 
-  // body
-  const {
-    aiPlatformBuild,
-    coreAITechResearch,
-    techInternalizationAndOrgSupport,
-    responsibleAIDevelopment,
-    colorBoxes,
-    globalTechTrendHandle,
-  } = body.aiInnovationHub;
+  const { ai } = new_body;
 
   return (
     <>
@@ -69,50 +60,8 @@ const AIInnovation = () => {
             />
           )}
           {/* body section */}
-          {/* 개요 */}
-          <TextBox
-            title={aiPlatformBuild.aiPlatformBuildTitle}
-            contents={aiPlatformBuild.aiPlatformBuildContents}
-          />
-          {/* 기술적 배경 */}
-          <TextImageBox
-            title={coreAITechResearch.coreAITechResearchTitle}
-            contents={coreAITechResearch.coreAITechResearchContents}
-          />
-          {/* 시장 동향 및 필요성 */}
-          <TextImageBox
-            title={
-              techInternalizationAndOrgSupport.techInternalizationAndOrgSupportTitle
-            }
-            contents={
-              techInternalizationAndOrgSupport.techInternalizationAndOrgSupportContents
-            }
-          />
-          {/* 시스템 아키텍처 */}
-          <TextImageBox
-            title={responsibleAIDevelopment.responsibleAIDevelopmentTitle}
-            contents={responsibleAIDevelopment.responsibleAIDevelopmentContents}
-          />
-          <TextImageBox
-            title={globalTechTrendHandle.globalTechTrendHandleTitle}
-            contents={globalTechTrendHandle.globalTechTrendHandleContents}
-          />
-          {/* 핵심 기술, 제공 서비스, 기대 효과 */}
-          {/* 모든 ColorBox를 반복 렌더링 */}
-          {colorBoxes.map((colorBox, index) => (
-            <Box
-              component="section"
-              aria-label="box-content-section"
-              key={index}
-              sx={{ mt: 8, mb: 16 }}
-            >
-              <ColorBox
-                boxColor={colorBox.boxColor}
-                layout={colorBox.layout}
-                boxes={colorBox.boxes}
-              />
-            </Box>
-          ))}
+
+          <SolutionContentGrid items={ai} isMobile={isMobile} color={color} />
         </Box>
       </Box>
     </>

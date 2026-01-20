@@ -4,8 +4,9 @@ import NewsletterList from "../components/common/NewsletterList";
 import SEO from "../common/SEO";
 import { useEffect } from "react";
 import "../App.css";
-import CardSlide from "../components/home/CardSlide";
+// import CardSlide from "../components/home/CardSlide";
 import BackgroundBox from "../components/home/BackgroundBox";
+import TempCardSlide from "../components/home/TempCardSlide";
 // import FloatingButton from "../components/chatbot/FloatingButton";
 
 const Home = () => {
@@ -34,10 +35,11 @@ const Home = () => {
         sx={{
           position: "relative",
           width: "100%",
-          height: "100vh",
-          maxHeight: "100vh",
+          // height: "100vh",
+          // maxHeight: "100vh",
           maxWidth: "100vw",
-          overflow: "hidden",
+          // overflow: "hidden",
+          backgroundColor: "black",
         }}
       >
         <Box
@@ -51,7 +53,8 @@ const Home = () => {
           {/* 콘텐츠 */}
           {/* <CardSlide /> */}
           <BackgroundBox>
-            <CardSlide />
+            {/* <CardSlide /> */}
+            <TempCardSlide />
           </BackgroundBox>
         </Box>
       </Box>

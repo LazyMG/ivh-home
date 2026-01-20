@@ -65,7 +65,7 @@ const fontConfig = {
 
 const responsiveFonts = {
   breadScrumFont: {
-    font: fontConfig["bold"],
+    // font: fontConfig["bold"],
     mobilePortrait: "11px",
     mobileLandscape: "13px",
     tablet: "16px",
@@ -142,11 +142,11 @@ const responsiveFonts = {
     desktop: "40px",
   },
   contactTitleFont: {
-    font: fontConfig["semiBold"],
+    font: fontConfig["bold"],
     mobilePortrait: "24px",
     mobileLandscape: "24px",
     tablet: "30px",
-    desktop: "30px",
+    desktop: "40px",
   },
   contactProductsLinkFont: {
     font: fontConfig["semiBold"],
@@ -233,7 +233,7 @@ const solutionMainImageStyle = {
 const theme = createTheme({
   breakpoints: baseTheme.breakpoints,
   typography: {
-    breadScrumFont: getResponsiveFontStyle(responsiveFonts["breadScrumFont"]),
+    // breadScrumFont: getResponsiveFontStyle(responsiveFonts["breadScrumFont"]),
     solutionMainTitle: getResponsiveFontStyle(
       responsiveFonts["solutionMainTitle"]
     ),
@@ -471,7 +471,7 @@ const theme = createTheme({
         mobilePortrait: "0 32px",
         mobileLandscape: "0 48px",
         tablet: "0 80px",
-        desktop: "0 160px",
+        desktop: "0 200px",
       },
       marginTop: {
         mobilePortrait: "32px",
@@ -483,19 +483,21 @@ const theme = createTheme({
         mobilePortrait: "32px",
         mobileLandscape: "48px",
         tablet: "64px",
-        desktop: "80px",
+        desktop: "240px",
       },
       display: "flex",
       flexDirection: "column",
-      gap: "48px",
+      gap: "128px",
     },
     // Contact 페이지 상단 영역 (제목 + 폼) 컨테이너 스타일
     contactTopContainer: {
       display: "flex",
       flexDirection: "column",
-      gap: "48px",
-      [baseTheme.breakpoints.up("tablet")]: {
-        flexDirection: "row",
+      gap: {
+        mobilePortrait: "64px",
+        mobileLandscape: "64px",
+        tablet: "64px",
+        desktop: "128px",
       },
     },
     // Contact 페이지 지도 영역 컨테이너 스타일
@@ -515,7 +517,7 @@ const theme = createTheme({
     contactTitleContainer: {
       display: "flex",
       flexDirection: "column",
-      gap: "20px",
+      gap: "36px",
       flex: 1,
       [baseTheme.breakpoints.up("tablet")]: {
         paddingRight: "100px",
@@ -546,7 +548,7 @@ const theme = createTheme({
       gridTemplateColumns: "1fr",
       gap: "24px",
       [baseTheme.breakpoints.up("tablet")]: {
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: "repeat(3,1fr)",
         columnGap: "24px",
       },
     },
@@ -558,30 +560,29 @@ const theme = createTheme({
     contactFormFullWidthField: {
       position: "relative",
       [baseTheme.breakpoints.up("tablet")]: {
-        gridColumn: "span 2",
+        gridColumn: "span 3",
       },
     },
     // Contact 페이지 체크박스 컨테이너 스타일
     contactCheckboxContainer: {
       position: "relative",
+      justifySelf: "end",
       [baseTheme.breakpoints.up("tablet")]: {
-        gridColumn: "span 2",
+        gridColumn: "span 3",
       },
     },
     contactformControlLabel: {
       height: "32px",
-      color: "#6366f1", // indigo-600
     },
     // Contact 페이지 문의하기 버튼 스타일
     contactButton: {
-      padding: "12px 32px",
-      fontSize: "14px",
-
+      padding: "8px 32px",
+      fontSize: "16px",
       fontFamily: fontConfig["semiBold"],
-      color: "white",
-      backgroundColor: "#1d4ed8", // blue-700
+      color: "#fff",
+      backgroundColor: "#267B65", // blue-700
       "&:hover": {
-        backgroundColor: "#1e40af", // blue-600
+        backgroundColor: "#2b8d73ff", // blue-600
       },
       "&.Mui-disabled": {
         backgroundColor: "#cccccc",
@@ -612,6 +613,8 @@ const theme = createTheme({
     supportTextContainer: {
       [baseTheme.breakpoints.up("tablet")]: {
         width: "50%",
+        alignSelf: "flex-start",
+        paddingTop: "48px",
       },
     },
     // Support 페이지 이미지 영역 컨테이너 스타일
@@ -624,6 +627,7 @@ const theme = createTheme({
       [baseTheme.breakpoints.up("tablet")]: {
         justifyContent: "flex-end",
         width: "50%",
+        alignSelf: "center",
       },
     },
     // Support 페이지 링크 스타일 (기술지원 서비스로 연결)
@@ -631,20 +635,20 @@ const theme = createTheme({
       display: "flex",
       alignItems: "center",
       gap: "4px",
-      marginTop: "20px",
+      // marginTop: "20px",
       paddingBottom: "4px",
       fontSize: "16px",
       fontFamily: fontConfig["semiBold"],
-      lineHeight: 1,
-      color: "#1d4ed8", // blue-700
-      borderBottom: "1px solid #1d4ed8", // border-b-blue-700
+      // lineHeight: 1,
+      color: "#fff", // blue-700
+      // borderBottom: "1px solid #1d4ed8", // border-b-blue-700
       width: "fit-content",
       cursor: "pointer",
-      transition: "all 0.3s",
+      // transition: "all 0.3s",
       textDecoration: "none", // a 태그 기본 밑줄 제거
-      "&:hover": {
-        gap: "8px",
-      },
+      // "&:hover": {
+      //   gap: "8px",
+      // },
     },
     homeNewsletterContainer: {
       display: "flex",

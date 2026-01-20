@@ -5,6 +5,8 @@ import type {
 
 export const API_BASE_URL = import.meta.env.VITE_BASE_API_URL;
 
+// export const API_BASE_URL = "http://localhost:9550/";
+
 export const API_ENDPOINTS = {
   MENU: {
     LIST: "/menu",

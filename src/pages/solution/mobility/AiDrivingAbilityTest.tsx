@@ -17,7 +17,7 @@ const AiDrivingAbilityTest = () => {
     subColor,
     aiDrivingAbilityTest: { subtitle: aiDrivingAbilityTestSubTitle },
   } = header.Mobility;
-  const { aiDrivingAbilityTest } = body.mobility;
+  const { aiDrivingAbilityTest } = body.oldMobility;
   const { isMobile } = useBreakpoint();
   const THRESHOLD = 100;
   const seoData = useSEO(

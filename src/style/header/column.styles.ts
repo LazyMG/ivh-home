@@ -11,49 +11,55 @@ export const MenuColumn = styled(Box, {
     prop !== "$isProductPage" &&
     prop !== "$isHomePage" &&
     prop !== "$isActive",
-})<ColumnStyleProps>(
-  ({
-    $isProductPage,
-    $isLogoColumn,
-    $isHomePage = false,
-    $isActive = false,
-  }) => {
-    const theme = getHeaderTheme($isHomePage);
-    const { min, max } = getColumnWidth($isLogoColumn, $isProductPage);
+})<ColumnStyleProps>(({
+  $isProductPage,
+  $isLogoColumn,
+  $isHomePage = false,
+  $isActive = false,
+}) => {
+  const theme = getHeaderTheme($isHomePage);
+  const { min, max } = getColumnWidth($isLogoColumn, $isProductPage);
 
-    return {
-      color: theme.text,
-      padding: headerLayout.padding,
-      flex: getColumnFlex($isLogoColumn),
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      minWidth: min,
-      maxWidth: max,
-      position: "relative",
+  return {
+    color: "#424242",
+    padding: headerLayout.padding,
+    flex: getColumnFlex($isLogoColumn),
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    minWidth: min,
+    maxWidth: max,
+    position: "relative",
 
-      "&::after": {
-        content: '""',
-        position: "absolute",
-        bottom: "0px",
-        left: 0,
-        right: 0,
-        height: headerLayout.hoverLineHeight,
-        backgroundColor:
-          $isActive && !$isLogoColumn
-            ? theme.hoverLine // 클릭된 상태에도 밑줄 유지
-            : "transparent",
-        transition: "background-color 0.3s ease",
-        zIndex: 1,
-      },
+    "&:hover": {
+      color: theme.hoverLine,
+    },
 
-      "&:hover::after": {
-        backgroundColor: $isLogoColumn ? "transparent" : theme.hoverLine,
-      },
-    };
-  }
-);
+    "&:hover::before": {
+      opacity: $isLogoColumn ? 0 : 1,
+    },
+
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: "0px",
+      left: 0,
+      right: 0,
+      height: headerLayout.hoverLineHeight,
+      backgroundColor:
+        $isActive && !$isLogoColumn
+          ? theme.hoverLine // 클릭된 상태에도 밑줄 유지
+          : "transparent",
+      transition: "background-color 0.3s ease",
+      zIndex: 1,
+    },
+
+    // "&:hover::after": {
+    //   backgroundColor: $isLogoColumn ? "transparent" : theme.hoverLine,
+    // },
+  };
+});
 
 // 서브 메뉴 컬럼
 export const SubMenuColumn = styled(Box, {

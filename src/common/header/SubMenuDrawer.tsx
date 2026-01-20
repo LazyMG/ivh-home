@@ -11,6 +11,7 @@ import { MenuPreview } from "./MenuPreview";
 import { useMenuPreview } from "../../hooks/useMenuPreview";
 import { previewDurations } from "./previewConstants";
 import HeaderSolution from "./HeaderSolution";
+import { useRef } from "react";
 
 interface SubMenuDrawerProps {
   allMenuItems: MainMenuItem[];
@@ -22,8 +23,6 @@ interface SubMenuDrawerProps {
   onClose: () => void;
 }
 
-const SOLUTIONS = "SOLUTIONS";
-
 export const SubMenuDrawer = ({
   allMenuItems,
   openedMenuIndex,
@@ -34,8 +33,7 @@ export const SubMenuDrawer = ({
   onClose,
 }: SubMenuDrawerProps) => {
   const openedMenu = allMenuItems[openedMenuIndex];
-
-  const isSolution = openedMenu.title === SOLUTIONS;
+  const drawerRef = useRef<HTMLDivElement>(null);
 
   // 프리뷰 상태 관리 커스텀 훅 사용
   const {
@@ -46,16 +44,22 @@ export const SubMenuDrawer = ({
   } = useMenuPreview({
     fadeOutDuration: previewDurations.fadeOut,
   });
+
+  // 드로어의 bottom 위치 계산
+  const drawerBottom = drawerRef.current?.getBoundingClientRect().bottom;
+
   // 2단계 메뉴의 배경색
   const level2BackgroundColor = "#2a2a2a";
 
   return (
     <Box
+      ref={drawerRef}
+      data-drawer="true"
       sx={{
         position: "absolute",
         left: 0,
         width: "100%",
-        minHeight: "400px",
+        minHeight: openedMenuIndex === 0 ? "64vh" : "400px",
         zIndex: 999,
         display: "flex",
         flexDirection: "row",
@@ -78,17 +82,22 @@ export const SubMenuDrawer = ({
           display: "flex",
           flexDirection: "column",
           backgroundColor: isHomePage
-            ? isSolution
+            ? openedMenuIndex === 1
               ? "#ececec"
               : "#000"
             : "#ffffff",
-          flex: 1,
+          flex:
+            openedMenuIndex === 1 || openedMenuIndex === 3
+              ? 1
+              : openedMenuIndex === 2
+                ? 4.7
+                : 0.8,
           justifyContent: "space-between",
           position: "relative",
         }}
       >
         {/* 상단: 메뉴 영역 */}
-        {isSolution ? (
+        {openedMenuIndex === 1 ? (
           <HeaderSolution />
         ) : (
           <Box
@@ -100,16 +109,18 @@ export const SubMenuDrawer = ({
           >
             {/* 로고 영역 빈 공간 */}
             {openedMenuIndex === 3 ? (
-              <SubMenuColumn sx={{ flex: 18 }} />
+              <SubMenuColumn sx={{ flex: 12 }} />
+            ) : openedMenuIndex === 2 ? (
+              <SubMenuColumn sx={{ flex: 60 }} />
             ) : (
-              <SubMenuColumn sx={{ flex: 3 }} />
+              <SubMenuColumn sx={{ flex: 2 }} />
             )}
             {/* 1단계 서브메뉴 영역 */}
             <SubMenuColumn
               $isProductPage={openedMenu.path === "/product"}
               sx={{
                 position: "relative",
-                flex: 3,
+                flex: 2,
               }}
             >
               <SubMenuParents
@@ -137,7 +148,7 @@ export const SubMenuDrawer = ({
               <img
                 src={
                   isHomePage
-                    ? isSolution
+                    ? openedMenuIndex === 1
                       ? youtubeBlack
                       : youtubeWhite
                     : youtubeBlack
@@ -153,7 +164,7 @@ export const SubMenuDrawer = ({
               <img
                 src={
                   isHomePage
-                    ? isSolution
+                    ? openedMenuIndex === 1
                       ? linkedinBlack
                       : linkedinWhite
                     : linkedinBlack
@@ -162,7 +173,7 @@ export const SubMenuDrawer = ({
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
                 onClick={() =>
                   window.open(
-                    "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image"
+                    "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image",
                   )
                 }
               />
@@ -178,7 +189,7 @@ export const SubMenuDrawer = ({
         </Box>
       </Box>
       {/* 오른쪽 영역: 나머지 메뉴들 (2단계 메뉴 열릴 때 회색) */}
-      {!isSolution && openedMenuIndex !== 3 && (
+      {openedMenuIndex !== 1 && openedMenuIndex !== 3 && (
         <Box
           sx={{
             display: "flex",
@@ -186,8 +197,8 @@ export const SubMenuDrawer = ({
             backgroundColor: openLevel1Menu
               ? level2BackgroundColor
               : isHomePage
-              ? "#000"
-              : "#ffffff",
+                ? "#000"
+                : "#ffffff",
             flex: 2,
             position: "relative",
             zIndex: 1,
@@ -212,7 +223,7 @@ export const SubMenuDrawer = ({
             >
               <SubMenuChild
                 parentItem={openedMenu.subMenu?.find(
-                  (subItem) => subItem.name === openLevel1Menu
+                  (subItem) => subItem.name === openLevel1Menu,
                 )}
                 isHomePage={isHomePage}
                 navigate={navigate}
@@ -263,6 +274,7 @@ export const SubMenuDrawer = ({
           isHomePage={isHomePage}
           position={previewPosition}
           visible={previewVisible}
+          drawerBottom={drawerBottom}
         />
       )}
     </Box>
