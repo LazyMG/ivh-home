@@ -21,6 +21,7 @@ const SolutionContentGrid = ({
         width: "100%",
         mt: 6,
         mb: 20,
+        overflow: "hidden",
       }}
     >
       {items.map((item, index) => {
