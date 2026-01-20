@@ -1,7 +1,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 import type { MainMenuItem, MenuItem } from "../../types/header";
 import { AccordionMenu } from "./AccordionMenu";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import HeaderSolution from "./HeaderSolution";
 
 interface DrawerContentProps {
@@ -22,9 +22,15 @@ export const DrawerContent = ({
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [hoverMenu, setHoverMenu] = useState<MenuItem | null>(null);
   const [isPreview, setIsPreview] = useState(false);
+  const [previewPosition, setPreviewPosition] = useState<{
+    top: number;
+    left: number;
+  } | null>(null);
+  const hoverItemRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (hoverMenu && hoverMenu.name === "iMOVA") {
+      // if (hoverMenu && hoverMenu.preview_img_path && hoverMenu.description) {
       setIsPreview(true);
     }
   }, [hoverMenu]);
@@ -134,14 +140,23 @@ export const DrawerContent = ({
                   return (
                     <Box
                       key={itemIndex}
+                      ref={hoverMenu?.name === item.name ? hoverItemRef : null}
                       sx={{
                         position: "relative",
-                        width: "fit-content",
+                        width: isOpen ? "100%" : "fit-content",
                       }}
-                      onMouseOver={() => setHoverMenu(item)}
+                      onMouseOver={(e) => {
+                        setHoverMenu(item);
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        setPreviewPosition({
+                          top: rect.top,
+                          left: rect.right + 56,
+                        });
+                      }}
                       onMouseLeave={() => {
                         setHoverMenu(null);
                         setIsPreview(false);
+                        setPreviewPosition(null);
                       }}
                     >
                       <Typography
@@ -166,14 +181,12 @@ export const DrawerContent = ({
                       >
                         {item.name}
                       </Typography>
-                      {/** iMOVA로 하드 코딩 */}
-                      {/** 왜 right 기준으로 배치가 되지 않는지 확인 필요 */}
                       {isPreview && hoverMenu?.name === item.name && (
                         <>
                           <Box
                             sx={{
                               position: "absolute",
-                              left: 60,
+                              left: "calc(100% + 10px)",
                               top: 0,
                               bottom: 0,
                               my: "auto",
@@ -200,9 +213,10 @@ export const DrawerContent = ({
 
                           <Box
                             sx={{
-                              position: "absolute",
+                              position: "fixed",
                               backgroundColor: "#ffffff",
-                              left: 100,
+                              left: previewPosition?.left ?? 0,
+                              top: previewPosition?.top ?? 0,
                               width: "380px",
                               minHeight: "184px",
                               border: "2px solid #179EBD",
@@ -210,10 +224,8 @@ export const DrawerContent = ({
                               flexDirection: "column",
                               justifyContent: "center",
                               alignItems: "center",
-                              top: 0,
-                              bottom: 0,
                               zIndex: 9999,
-                              py: 2,
+                              py: 1,
                               boxSizing: "border-box",
                               boxShadow: "2px 4px 4px 0 rgba(0, 0, 0, 0.25)",
                             }}
@@ -226,7 +238,6 @@ export const DrawerContent = ({
                             <Box
                               sx={{
                                 display: "flex",
-                                justifyContent: "center",
                                 gap: 2,
                                 px: 4,
                                 py: 1,
@@ -238,6 +249,7 @@ export const DrawerContent = ({
                                   color: "#179EBD",
                                   fontSize: "20px",
                                   fontFamily: "Freesentation-6-SemiBold",
+                                  lineHeight: "20px",
                                 }}
                               >
                                 {hoverMenu.name}
@@ -248,7 +260,7 @@ export const DrawerContent = ({
                                 sx={{
                                   bgcolor: "#179EBD",
                                   width: 2,
-                                  height: "80%",
+                                  height: "30px",
                                 }}
                               />
                               <Typography

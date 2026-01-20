@@ -76,12 +76,11 @@ export const AccordionMenu = ({
                 color: "#797979",
                 cursor: "pointer",
                 py: 0.5,
+                maxWidth: "280px",
+                wordBreak: "keep-all",
                 "&:hover": {
                   color: "#179EBD",
                 },
-                // 이름이 긴 라이브러리는 대응 불가
-                // 왜 너비를 제한 받는지 확인 필요
-                width: "256px",
               }}
             >
               {item.name}
