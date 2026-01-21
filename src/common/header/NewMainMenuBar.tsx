@@ -6,15 +6,17 @@ interface NewMainMenuBarProps {
   menuItems: MainMenuItem[];
   isHomePage: boolean;
   navigate: (path: string) => void;
-  onMenuHover: (title: string) => void;
+  onMenuClick: (title: string) => void;
   openMainMenu: string | null;
+  onClose: () => void;
 }
 
 export const NewMainMenuBar = ({
   menuItems,
   navigate,
-  onMenuHover,
+  onMenuClick,
   openMainMenu,
+  onClose,
 }: NewMainMenuBarProps) => {
   return (
     <Box
@@ -46,7 +48,7 @@ export const NewMainMenuBar = ({
         sx={{
           display: "flex",
           flexDirection: "row",
-          gap: "48px",
+          gap: 6,
           flex: 1,
           justifyContent: "space-around",
         }}
@@ -54,7 +56,13 @@ export const NewMainMenuBar = ({
         {menuItems.map((item, index) => (
           <Box
             key={index}
-            onMouseEnter={() => onMenuHover(item.title)}
+            onClick={() => {
+              if (openMainMenu === item.title) {
+                onClose();
+              } else {
+                onMenuClick(item.title);
+              }
+            }}
             sx={{
               position: "relative",
               py: "24px",

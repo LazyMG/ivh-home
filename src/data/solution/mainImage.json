@@ -13,7 +13,7 @@
     "src": "/images/pages/solution/energy-saving.png",
     "text": "Home appliance",
     "color": "#92b843",
-    "flexDirection": "column",
+    "flexDirection": "row",
     "justifyContent": "flex-end",
     "alignItems": "flex-end",
     "textPosition": "right",
@@ -26,7 +26,7 @@
     "flexDirection": "row",
     "justifyContent": "flex-end",
     "alignItems": "flex-end",
-    "textPosition": "left",
+    "textPosition": "right",
     "path": "/solution/bems"
   },
   "mobility": {
@@ -43,9 +43,9 @@
     "src": "/images/pages/solution/factory.png",
     "text": "Smart factory",
     "color": "#0c307b",
-    "flexDirection": "column",
-    "justifyContent": "flex-start",
-    "alignItems": "flex-start",
+    "flexDirection": "row",
+    "justifyContent": "flex-end",
+    "alignItems": "flex-end",
     "textPosition": "right",
     "path": "/solution/smartfactory"
   },

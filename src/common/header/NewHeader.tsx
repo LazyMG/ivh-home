@@ -18,7 +18,7 @@ const NewHeader = () => {
     setOpenMainMenu(null);
   }, [location.pathname]);
 
-  const handleMainMenuHover = (title: string) => {
+  const handleMainMenuClick = (title: string) => {
     setOpenMainMenu(title);
   };
 
@@ -29,7 +29,6 @@ const NewHeader = () => {
   return (
     <Box
       component="header"
-      onMouseLeave={handleClose}
       sx={{
         position: isHomePage ? "fixed" : "relative",
         width: "100%",
@@ -54,19 +53,35 @@ const NewHeader = () => {
           menuItems={menu.mainMenu}
           isHomePage={isHomePage}
           navigate={navigate}
-          onMenuHover={handleMainMenuHover}
+          onMenuClick={handleMainMenuClick}
           openMainMenu={openMainMenu}
+          onClose={handleClose}
         />
       </AppBar>
 
       {/* drawer 영역 */}
       {openMainMenu && (
-        <NewDrawer
-          menuItems={menu.mainMenu}
-          openMainMenu={openMainMenu}
-          navigate={navigate}
-          onClose={handleClose}
-        />
+        <>
+          {/* 어두운 배경 오버레이 */}
+          <Box
+            onClick={handleClose}
+            sx={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              zIndex: 998,
+            }}
+          />
+          <NewDrawer
+            menuItems={menu.mainMenu}
+            openMainMenu={openMainMenu}
+            navigate={navigate}
+            onClose={handleClose}
+          />
+        </>
       )}
     </Box>
   );
