@@ -1,16 +1,84 @@
 import { Box, Typography, Divider, Button } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { useState, useEffect } from "react";
-import { newsService } from "../../service/newsService";
+// import { newsService } from "../../service/newsService";
 import dayjs from "dayjs";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 export interface NewsletterItem {
   title: string;
-  content: string;
+  // content: string;
   link_url: string;
   date: string;
 }
+
+const DUMMY_DATA = [
+  {
+    id: 16,
+    title:
+      "iVH 강대오 대표이사, Modelica Association eFMI 프로젝트 부대표 선임",
+    description: "",
+    contentsUrl:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7404689544186359809",
+    tags: ["뉴스"],
+    publishedAt: "2025-12-15T15:30:49.000Z",
+  },
+  {
+    id: 15,
+    title:
+      "Highlights from ASAM Regional Meeting South Korea 2025 – Relive the moments!",
+    description: null,
+    contentsUrl:
+      "https://www.linkedin.com/posts/ivhkr_asam-ivh-asamregionalmeetingsouthkorea2025-activity-7403945625924653056-BHGu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFMhy2oB56RN_cDECvQ0b9Acno1kl23GWFA",
+    tags: ["뉴스"],
+    publishedAt: "2025-12-08T15:13:04.000Z",
+  },
+  {
+    id: 13,
+    title: "iMOVA - iVH의 첫 번째 하드웨어 혁신을 공개합니다.",
+    description: null,
+    contentsUrl:
+      "https://www.linkedin.com/posts/ivhkr_ivh-imova-amr-activity-7400102926725148672-KgmD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFMhy2oB56RN_cDECvQ0b9Acno1kl23GWFA",
+    tags: ["뉴스"],
+    publishedAt: "2025-12-01T17:08:33.000Z",
+  },
+  {
+    id: 9,
+    title:
+      "ASAM Regional Meeting South Korea가 오는 11월 27~28일 #제주국제컨벤션센터 에서 열립니다. ",
+    description: null,
+    contentsUrl:
+      "https://kr.linkedin.com/posts/ivhkr_%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EC%BB%A8%EB%B2%A4%EC%85%98%EC%84%BC%ED%84%B0-standard-automotive-activity-7396830907292319744-lKFt",
+    tags: ["행사"],
+    publishedAt: "2025-11-19T15:00:55.000Z",
+  },
+  {
+    id: 8,
+    title: "HEXAGON VTD 2025.2 릴리즈 – 시뮬레이션의 새로운 기준",
+    description: null,
+    contentsUrl:
+      "https://kr.linkedin.com/posts/ivhkr_vtd-adas-autonomousdriving-activity-7386643043233226752-DEvm",
+    tags: ["뉴스"],
+    publishedAt: "2025-10-15T15:00:42.000Z",
+  },
+  {
+    id: 4,
+    title: "산업부, 에이로봇·아이브이에이치 등 산업융합 규제샌드박스 40건 승인",
+    description: null,
+    contentsUrl: "https://www.ajunews.com/view/20250925140628259",
+    tags: ["뉴스"],
+    publishedAt: "2025-09-24T15:00:41.000Z",
+  },
+  {
+    id: 3,
+    title:
+      "아이브이에이치, 한양대·헥사곤과 자율주행·스마트 모빌리티 협력 MOU 체결… 100억원 상당 소프트웨어 기부",
+    description: null,
+    contentsUrl: "https://www.senews.kr/29217",
+    tags: ["뉴스"],
+    publishedAt: "2025-07-30T15:00:40.000Z",
+  },
+];
 
 const NewsletterList = () => {
   // 상위 4개만 표시
@@ -45,19 +113,26 @@ const NewsletterList = () => {
   /**
    * 뉴스레터 아이템 목록 조회
    */
-  const fetchNewsletterItems = async () => {
-    const response = await newsService.getNews();
-    const items = response.map((item) => ({
-      title: item.title,
-      content: item.content,
-      link_url: item.contentsUrl,
-      date: dayjs(item.publishedAt).format("YYYY.MM.DD"),
-    }));
-    setNewsletterItems(items.slice(0, 4));
-  };
+  // const fetchNewsletterItems = async () => {
+  //   const response = await newsService.getNews();
+  //   const items = response.map((item) => ({
+  //     title: item.title,
+  //     content: item.content,
+  //     link_url: item.contentsUrl,
+  //     date: dayjs(item.publishedAt).format("YYYY.MM.DD"),
+  //   }));
+  //   setNewsletterItems(items.slice(0, 4));
+  // };
+
+  const items = DUMMY_DATA.map((item) => ({
+    title: item.title,
+    link_url: item.contentsUrl,
+    date: dayjs(item.publishedAt).format("YYYY.MM.DD"),
+  }));
 
   useEffect(() => {
-    fetchNewsletterItems();
+    // fetchNewsletterItems();
+    setNewsletterItems(items);
   }, []);
 
   // const hideAllDay = () => {
