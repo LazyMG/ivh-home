@@ -1,0 +1,12 @@
+{
+  "contact_us": {
+    "title": "Contact Us",
+    "url": "/company/contact",
+    "text": "iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다. 긴급 핫라인을 통한 빠른 답변부터 기술 지원에 이르기까지 당사 엔지니어링 팀은 즉각적이고 전문적인 지원 서비스를 제공합니다."
+  },
+  "training": {
+    "title": "Training",
+    "url": "/support/training",
+    "text": "iVH의 표준 교육 과정은 Dymola, Modelon, 그리고 VTD의 전체 제품 범위에 대해 초급부터 고급까지 다양한 수준에서 정기적으로 제공됩니다. 예정된 과정에 대한 정보는 일정을 참고하거나 iVH 교육에 문의해주십시오."
+  }
+}
