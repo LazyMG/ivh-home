@@ -292,110 +292,6 @@ export const DrawerContent = ({
             );
           })}
         </Box>
-
-        {/* <Box sx={{ display: "flex", flexDirection: "row", gap: 10 }}>
-          {menu.subMenu?.map((column, colIndex) => {
-            if (column.state === "hide") return null;
-
-            // 모든 아이템이 hide이면 컬럼 전체를 숨김
-            const hasVisibleItems = column.items?.some(
-              (item) => item.state !== "hide",
-            );
-            if (!hasVisibleItems) return null;
-
-            // Service 컬럼인지 확인
-            const isServiceColumn = column.name === "Service";
-
-            // 아코디언이 열렸고 Service 컬럼이면 타이틀만 표시
-            if (isAccordionOpen && isServiceColumn) {
-              return (
-                <Box key={colIndex} sx={{ minWidth: "350px" }}>
-                  <Typography
-                    sx={{
-                      fontSize: "14px",
-                      fontFamily: "Freesentation-6-SemiBold",
-                      color: "#000000",
-                      mb: 2,
-                      pb: 1,
-                      borderBottom: `1px solid #828282`,
-                    }}
-                  >
-                    {column.name}
-                  </Typography>
-                </Box>
-              );
-            }
-
-            return (
-              <Box
-                key={colIndex}
-                sx={{
-                  minWidth: "350px",
-                  // 아코디언이 열리면 Products 컬럼이 확장
-                  flex:
-                    isAccordionOpen && column.name === "Products" ? 1 : "none",
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: "14px",
-                    fontFamily: "Freesentation-6-SemiBold",
-                    color: "#000000",
-                    mb: 2,
-                    pb: 1,
-                    borderBottom: `1px solid #828282`,
-                  }}
-                >
-                  {column.name}
-                </Typography>
-
-                <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                  {column.items?.map((item, itemIndex) => {
-                    if (item.state === "hide") return null;
-
-                    const hasSubMenu = item.subMenu && item.subMenu.length > 0;
-                    const isOpen = openAccordion === item.name;
-
-                    return (
-                      <Box key={itemIndex}>
-                        <Typography
-                          onClick={() => {
-                            if (hasSubMenu) {
-                              handleAccordionClick(item.name);
-                            } else {
-                              handleNavigate(item.path);
-                            }
-                          }}
-                          sx={{
-                            fontSize: "14px",
-                            fontFamily: "Freesentation-6-SemiBold",
-                            color: "#424242",
-                            cursor: "pointer",
-                            py: 0.5,
-                            width: "fit-content",
-                            "&:hover": {
-                              color: "#179EBD",
-                            },
-                          }}
-                        >
-                          {item.name}
-                        </Typography>
-
-                        {hasSubMenu && isOpen && (
-                          <AccordionMenu
-                            items={item.subMenu || []}
-                            navigate={navigate}
-                            onClose={onClose}
-                          />
-                        )}
-                      </Box>
-                    );
-                  })}
-                </Box>
-              </Box>
-            );
-          })}
-        </Box> */}
       </Box>
     );
   }
@@ -404,51 +300,55 @@ export const DrawerContent = ({
     return <HeaderSolution />;
   }
 
-  // SUPPORT, COMPANY 메뉴 (함께 표시)
-  const supportMenu = menuItems.find((item) => item.title === "SUPPORT");
-  const companyMenu = menuItems.find((item) => item.title === "COMPANY");
+  if (openMainMenu === "SUPPORT") {
+    const supportMenu = menuItems.find((item) => item.title === "SUPPORT");
 
+    return (
+      <Box
+        sx={{
+          pt: 4,
+          ml: "64%",
+        }}
+      >
+        {supportMenu && (
+          <Box sx={{ pl: 3 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {supportMenu.subMenu?.map((item, index) => {
+                if (item.state === "hide") return null;
+                return (
+                  <Typography
+                    key={index}
+                    onClick={() => handleNavigate(item.path)}
+                    sx={{
+                      fontSize: "14px",
+                      fontFamily: "Freesentation-4-Regular",
+                      color: "#000000",
+                      cursor: "pointer",
+                      py: 0.5,
+                      width: "fit-content",
+                      "&:hover": {
+                        color: "#179EBD",
+                      },
+                    }}
+                  >
+                    {item.name}
+                  </Typography>
+                );
+              })}
+            </Box>
+          </Box>
+        )}
+      </Box>
+    );
+  }
+  const companyMenu = menuItems.find((item) => item.title === "COMPANY");
   return (
     <Box
       sx={{
-        flex: 1,
-        display: "flex",
-        flexDirection: "row",
-        gap: "40%",
         pt: 4,
-        ml: "65%",
+        ml: "82%",
       }}
     >
-      {/* SUPPORT */}
-      {supportMenu && (
-        <Box sx={{ pl: 2 }}>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            {supportMenu.subMenu?.map((item, index) => {
-              if (item.state === "hide") return null;
-              return (
-                <Typography
-                  key={index}
-                  onClick={() => handleNavigate(item.path)}
-                  sx={{
-                    fontSize: "14px",
-                    fontFamily: "Freesentation-4-Regular",
-                    color: "#000000",
-                    cursor: "pointer",
-                    py: 0.5,
-                    width: "fit-content",
-                    "&:hover": {
-                      color: "#179EBD",
-                    },
-                  }}
-                >
-                  {item.name}
-                </Typography>
-              );
-            })}
-          </Box>
-        </Box>
-      )}
-
       {/* COMPANY */}
       {companyMenu && (
         <Box sx={{ pl: 1 }}>
