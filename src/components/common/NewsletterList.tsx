@@ -1,7 +1,5 @@
 import { Box, Typography, Divider, Button } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import newsLogo from "/images/home/newsletter_ivh_logo.png";
-import linkedinLogo from "/images/home/newsletter_linkedin_logo.png";
 import { useState, useEffect } from "react";
 import { newsService } from "../../service/newsService";
 import dayjs from "dayjs";
@@ -77,7 +75,15 @@ const NewsletterList = () => {
   return (
     <Box
       sx={(theme) => ({
-        ...theme.customStyles.newsletterListContainer,
+        background:
+          "linear-gradient(white, white) padding-box, linear-gradient(to right, #339070, #1755C2) border-box",
+        border: "2px solid transparent",
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        padding: "28px",
+        borderRadius: 2,
+        boxShadow: "4px 4px 4px 0 rgba(0,0,0,0.25)",
       })}
     >
       {/* 최상단: 로고와 링크드인 아이콘 */}
@@ -92,84 +98,102 @@ const NewsletterList = () => {
             ...theme.customStyles.newsletterIVHLogo,
           })}
         >
-          <img
-            src={newsLogo}
-            alt="IVH Logo"
-            style={{ width: "100%", height: "100%" }}
-          />
+          <Typography
+            sx={{
+              fontStyle: "italic",
+              fontSize: "20px",
+              color: "#000000",
+              fontFamily: "Freesentation-7-Bold",
+            }}
+          >
+            iVH NEWs
+          </Typography>
         </Box>
-
-        {/* 링크드인 아이콘 */}
-        <Box
+        <Button
           component="a"
           href="https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image"
           target="_blank"
           rel="noopener noreferrer"
+          variant="contained"
           sx={(theme) => ({
-            ...theme.customStyles.newsletterLinkedinIcon,
+            ...theme.customStyles.newsletterRedirectButton,
           })}
+          endIcon={<PlayArrowIcon />}
         >
-          <img
-            src={linkedinLogo}
-            alt="LinkedIn"
-            style={{ width: "100%", height: "100%" }}
-          />
-        </Box>
+          뉴스 모두 보기
+        </Button>
       </Box>
 
       {/* 구분선 */}
       <Divider
         sx={{
-          borderColor: "#ffffff",
+          borderColor: "#000000",
         }}
       />
-
       {/* 뉴스레터 아이템 목록 */}
-      {newsletterItems.map((item, index) => (
-        <Box key={index}>
-          {/* 제목 (2줄만 표시) */}
-          <Typography
-            variant="newsletterItemTitleFont"
-            component="h3"
-            sx={(theme) => ({
-              ...theme.customStyles.newsletterContentContainer,
-            })}
-          >
-            {item.title}
-          </Typography>
-
-          {/* 하단: 날짜와 자세히 보기 버튼 */}
-          <Box
-            sx={(theme) => ({
-              ...theme.customStyles.newsletterDateDetailContainer,
-            })}
-          >
-            {/* 좌측: 날짜 */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+          my: 3,
+        }}
+      >
+        {newsletterItems.map((item, index) => (
+          <Box key={index}>
+            {/* 제목 (2줄만 표시) */}
             <Typography
+              variant="newsletterItemTitleFont"
+              component="h3"
               sx={(theme) => ({
-                ...theme.customStyles.newsletterDateFont,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                marginBottom: "16px",
+                color: "#000000",
               })}
             >
-              {item.date}
+              {item.title}
             </Typography>
 
-            {/* 우측: 자세히 보기 버튼 */}
-            <Button
-              component="a"
-              href={item.link_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="contained"
+            {/* 하단: 날짜와 자세히 보기 버튼 */}
+            <Box
               sx={(theme) => ({
-                ...theme.customStyles.newsletterDetailButton,
+                ...theme.customStyles.newsletterDateDetailContainer,
               })}
-              endIcon={<PlayArrowIcon />}
             >
-              자세히 보기
-            </Button>
+              {/* 좌측: 날짜 */}
+              <Typography
+                sx={(theme) => ({
+                  fontSize: "14px",
+                  color: "#737373",
+                  fontStyle: "italic",
+                })}
+              >
+                {item.date}
+              </Typography>
+
+              {/* 우측: 자세히 보기 버튼 */}
+              <Button
+                component="a"
+                href={item.link_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="contained"
+                sx={(theme) => ({
+                  ...theme.customStyles.newsletterDetailButton,
+                })}
+                endIcon={<PlayArrowIcon />}
+              >
+                자세히 보기
+              </Button>
+            </Box>
           </Box>
-        </Box>
-      ))}
+        ))}
+      </Box>
+
       {isDesktop && (
         <Box sx={{ display: "flex", justifyContent: "", gap: 1 }}>
           {/* <Button
@@ -193,14 +217,10 @@ const NewsletterList = () => {
             size="small"
             variant="outlined"
             sx={{
-              borderColor: "#ffffff",
-              color: "#ffffff",
-              fontFamily: "Freesentation-5-Medium",
+              borderColor: "#1755C2",
+              color: "#1755C2",
+              fontFamily: "Freesentation-7-Bold",
               fontSize: "14px",
-              "&:hover": {
-                borderColor: "#ffffff",
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-              },
             }}
             onClick={() => setIsHide(true)}
           >
