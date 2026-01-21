@@ -22,6 +22,8 @@ const MobileFooter = () => {
         boxSizing: "border-box",
         gap: 3,
         boxShadow: "0 -3px 10px rgba(0, 0, 0, 0.2)",
+        position: "relative",
+        zIndex: 10,
       }}
     >
       {/** 로고 영역 */}

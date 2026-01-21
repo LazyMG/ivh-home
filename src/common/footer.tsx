@@ -27,7 +27,9 @@ const Footer = () => {
         background: "linear-gradient(to bottom,  #FFFFFF 0%, #E5EFF2 100%)",
         py: 7,
         px: "8%",
-        boxShadow: "0 -2px 12px rgba(0,0,0,0.05), 0 -2px 15px rgba(0,0,0,0.1)",
+        boxShadow: "0 -6px 15px 0 rgba(0,0,0,0.25)",
+        position: "relative",
+        zIndex: 10,
         minHeight: "400px",
         boxSizing: "border-box",
       }}
