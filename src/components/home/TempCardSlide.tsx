@@ -31,7 +31,7 @@ const TempCardSlide = () => {
           {/* 배경 이미지가 배경에만 있고 카드에는 별도 이미지를 넣는 예시 */}
           <CardMedia
             component="img"
-            image={iMOVA.newImageUrl}
+            image={iMOVA.imageUrl}
             alt="Live from space album cover"
             sx={{
               width: "100%",
