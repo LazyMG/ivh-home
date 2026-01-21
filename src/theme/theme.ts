@@ -18,7 +18,7 @@ export const mediaQueries = {
   // === 기본 범위 (화면 크기만) ===
   mobilePortrait: baseTheme.breakpoints.between(
     "mobilePortrait",
-    "mobileLandscape"
+    "mobileLandscape",
   ), // 0~480px
   mobileLandscape: baseTheme.breakpoints.between("mobileLandscape", "tablet"), // 481~845px
   tablet: baseTheme.breakpoints.between("tablet", "desktop"), // 846~1279px
@@ -30,24 +30,24 @@ export const mediaQueries = {
   // === Orientation 조합 ===
   // 스마트폰 세로 (0~480px + portrait)
   phonePortrait: `${baseTheme.breakpoints.down(
-    "mobileLandscape"
+    "mobileLandscape",
   )} and (orientation: portrait)`,
 
   // 스마트폰 가로 (0~768px + landscape)
   phoneLandscape: `${baseTheme.breakpoints.down(
-    "tablet"
+    "tablet",
   )} and (orientation: landscape)`,
 
   // 태블릿 세로 (481~768px + portrait)
   tabletPortrait: `${baseTheme.breakpoints.between(
     "mobileLandscape",
-    "tablet"
+    "tablet",
   )} and (orientation: portrait)`,
 
   // 태블릿 가로 (769~1279px + landscape)
   tabletLandscape: `${baseTheme.breakpoints.between(
     "tablet",
-    "desktop"
+    "desktop",
   )} and (orientation: landscape)`,
 
   // 일반 landscape/portrait
@@ -235,44 +235,44 @@ const theme = createTheme({
   typography: {
     // breadScrumFont: getResponsiveFontStyle(responsiveFonts["breadScrumFont"]),
     solutionMainTitle: getResponsiveFontStyle(
-      responsiveFonts["solutionMainTitle"]
+      responsiveFonts["solutionMainTitle"],
     ),
     solutionMainNavFont: getResponsiveFontStyle(
-      responsiveFonts["solutionMainNavFont"]
+      responsiveFonts["solutionMainNavFont"],
     ),
     solutionTitleFont: getResponsiveFontStyle(
-      responsiveFonts["solutionTitleFont"]
+      responsiveFonts["solutionTitleFont"],
     ),
     solutionSubTitleFont: getResponsiveFontStyle(
-      responsiveFonts["solutionSubTitleFont"]
+      responsiveFonts["solutionSubTitleFont"],
     ),
     solutionTextTitleFont: getResponsiveFontStyle(
-      responsiveFonts["solutionTextTitleFont"]
+      responsiveFonts["solutionTextTitleFont"],
     ),
     solutionTextFont: getResponsiveFontStyle(
-      responsiveFonts["solutionTextFont"]
+      responsiveFonts["solutionTextFont"],
     ),
     solutionBoxTitleFont: getResponsiveFontStyle(
-      responsiveFonts["solutionBoxTitleFont"]
+      responsiveFonts["solutionBoxTitleFont"],
     ),
     productImageBannerTitleFont: getResponsiveFontStyle(
-      responsiveFonts["productImageBannerTitleFont"]
+      responsiveFonts["productImageBannerTitleFont"],
     ),
     productImageBannerSubtitleFont: getResponsiveFontStyle(
-      responsiveFonts["productImageBannerSubtitleFont"]
+      responsiveFonts["productImageBannerSubtitleFont"],
     ),
     contactTitleFont: getResponsiveFontStyle(
-      responsiveFonts["contactTitleFont"]
+      responsiveFonts["contactTitleFont"],
     ),
     contactProductsLinkFont: getResponsiveFontStyle(
-      responsiveFonts["contactProductsLinkFont"]
+      responsiveFonts["contactProductsLinkFont"],
     ),
     supportTitleFont: getResponsiveFontStyle(
-      responsiveFonts["supportTitleFont"]
+      responsiveFonts["supportTitleFont"],
     ),
     supportTextFont: getResponsiveFontStyle(responsiveFonts["supportTextFont"]),
     newsletterItemTitleFont: getResponsiveFontStyle(
-      responsiveFonts["newsletterItemTitleFont"]
+      responsiveFonts["newsletterItemTitleFont"],
     ),
   },
   customStyles: {
@@ -287,7 +287,7 @@ const theme = createTheme({
       // 스마트폰 가로만: 481~768px + landscape
       [`${baseTheme.breakpoints.between(
         "mobileLandscape",
-        "tablet"
+        "tablet",
       )} and (orientation: landscape) and (max-height: 500px)`]: {
         flexDirection: "row",
         alignItems: "center",
@@ -323,7 +323,7 @@ const theme = createTheme({
       // 스마트폰 가로만: 왼쪽 배치
       [`${baseTheme.breakpoints.between(
         "mobileLandscape",
-        "tablet"
+        "tablet",
       )} and (orientation: landscape) and (max-height: 500px)`]: {
         position: "relative",
         flex: "0 0 50%",
@@ -347,7 +347,7 @@ const theme = createTheme({
       // 스마트폰 가로만: 오른쪽 배치
       [`${baseTheme.breakpoints.between(
         "mobileLandscape",
-        "tablet"
+        "tablet",
       )} and (orientation: landscape) and (max-height: 500px)`]: {
         position: "relative",
         flex: "0 0 50%",
@@ -381,7 +381,7 @@ const theme = createTheme({
       // 스마트폰 가로만: 2×3 그리드
       [`${baseTheme.breakpoints.between(
         "mobileLandscape",
-        "tablet"
+        "tablet",
       )} and (orientation: landscape) and (max-height: 500px)`]: {
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
@@ -416,7 +416,7 @@ const theme = createTheme({
       // 스마트폰 가로만: grid 적용
       [`${baseTheme.breakpoints.between(
         "mobileLandscape",
-        "tablet"
+        "tablet",
       )} and (orientation: landscape) and (max-height: 500px)`]: {
         display: "contents",
       },
@@ -713,18 +713,34 @@ const theme = createTheme({
       fontStyle: "italic",
     },
     newsletterDetailButton: {
-      backgroundColor: "#ffffff",
-      color: "#000000",
+      backgroundColor: "#000000",
+      color: "#ffffff",
       fontSize: "14px",
       fontFamily: fontConfig["bold"],
       borderRadius: "8px",
       padding: "4px 16px",
       textTransform: "none",
       "&:hover": {
-        backgroundColor: "rgba(255, 255, 255, 0.9)",
+        backgroundColor: "rgba(0, 0, 0, 0.9)",
       },
       "& .MuiButton-endIcon": {
         marginLeft: "4px", // 기본 8px → 4px로 변경
+      },
+    },
+    newsletterRedirectButton: {
+      backgroundColor: "transparent",
+      color: "#000000",
+      fontSize: "14px",
+      fontFamily: fontConfig["bold"],
+      padding: "0px",
+      textTransform: "none",
+      boxShadow: "none",
+      "&:hover": {
+        backgroundColor: "transparent",
+        boxShadow: "none",
+      },
+      "& .MuiButton-endIcon": {
+        marginLeft: "0px", // 기본 8px → 4px로 변경
       },
     },
     // Newsletter 개별 아이템 스타일

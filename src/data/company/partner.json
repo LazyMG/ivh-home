@@ -5,13 +5,13 @@
   "partner_partner": "Partner",
   "partner_partnerList": [
     "/images/pages/company/partner/partner_dassaultsystems.svg",
-    "/images/pages/company/partner/partner_modelica.svg",
+    "/images/pages/company/partner/partner_tlk.svg",
     "/images/pages/company/partner/partner_modelon.svg",
-    "/images/pages/company/partner/partner_hexagon.svg",
-    "/images/pages/company/partner/partner_ptvgroup.svg",
-    "/images/pages/company/partner/partner_edi.svg",
+    "/images/pages/company/partner/partner_modelica.svg",
     "/images/pages/company/partner/partner_asammember.svg",
-    "/images/pages/company/partner/partner_tlk.svg"
+    "/images/pages/company/partner/partner_edi.svg",
+    "/images/pages/company/partner/partner_hexagon.svg",
+    "/images/pages/company/partner/partner_ptvgroup.svg"
   ],
   "partner_customer": "Customer",
   "partner_customerList": {

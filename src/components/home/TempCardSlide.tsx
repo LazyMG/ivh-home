@@ -37,10 +37,10 @@ const TempCardSlide = () => {
               width: "100%",
               height: "auto",
               objectFit: "contain",
-              clipPath: isMobile ? "inset(0% 0 0% 0)" : "inset(4% 0 20% 0)", // 모바일에서는 자르지 않음
+              // clipPath: isMobile ? "inset(0% 0 0% 0)" : "inset(4% 0 20% 0)", // 모바일에서는 자르지 않음
               display: "block",
-              marginTop: isMobile ? "0" : "-4%", // 모바일에서는 마진 없음
-              marginBottom: isMobile ? "0" : "-20%",
+              marginTop: isMobile ? "0" : 10, // 모바일에서는 마진 없음
+              // marginBottom: isMobile ? "0" : "-20%",
             }}
           />
           <Box
