@@ -132,7 +132,7 @@ const NewsletterList = () => {
 
   useEffect(() => {
     // fetchNewsletterItems();
-    setNewsletterItems(items);
+    setNewsletterItems(items.slice(0, 4));
   }, []);
 
   // const hideAllDay = () => {
