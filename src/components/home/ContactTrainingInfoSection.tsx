@@ -122,13 +122,13 @@ const ContactTrainingInfoSection = () => {
         px: 4,
         py: 4,
         background:
-          "linear-gradient(to right,  rgba(255, 255, 255, 1) 20%,  rgba(239, 239, 239, 1) 100%)",
+          "linear-gradient(to left,  rgba(255, 255, 255, 1) 33%,  rgba(243, 243, 243, 1) 100%)",
         display: "grid",
         gridTemplateColumns: "repeat(1,1fr)",
         gap: 6,
         [theme.breakpoints.up("tablet")]: {
           gridTemplateColumns: "repeat(2,1fr)",
-          px: 18,
+          px: "8%",
           py: 14,
           gap: 20,
         },

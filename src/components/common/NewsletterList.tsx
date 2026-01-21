@@ -74,17 +74,17 @@ const NewsletterList = () => {
 
   return (
     <Box
-      sx={(theme) => ({
+      sx={{
         background:
           "linear-gradient(white, white) padding-box, linear-gradient(to right, #339070, #1755C2) border-box",
         border: "2px solid transparent",
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        padding: "28px",
+        p: 3,
         borderRadius: 2,
         boxShadow: "4px 4px 4px 0 rgba(0,0,0,0.25)",
-      })}
+      }}
     >
       {/* 최상단: 로고와 링크드인 아이콘 */}
       <Box
@@ -132,28 +132,33 @@ const NewsletterList = () => {
       />
       {/* 뉴스레터 아이템 목록 */}
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
           gap: 3,
           my: 3,
-        }}
+          maxHeight: "160px",
+          overflowY: "scroll",
+          [theme.breakpoints.up("desktop")]: {
+            maxHeight: "100%",
+            overflowY: "hidden",
+          },
+        })}
       >
         {newsletterItems.map((item, index) => (
           <Box key={index}>
             {/* 제목 (2줄만 표시) */}
             <Typography
               variant="newsletterItemTitleFont"
-              component="h3"
-              sx={(theme) => ({
+              sx={{
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 display: "-webkit-box",
                 WebkitLineClamp: 2,
                 WebkitBoxOrient: "vertical",
-                marginBottom: "16px",
+                mb: 1,
                 color: "#000000",
-              })}
+              }}
             >
               {item.title}
             </Typography>
@@ -166,11 +171,11 @@ const NewsletterList = () => {
             >
               {/* 좌측: 날짜 */}
               <Typography
-                sx={(theme) => ({
+                sx={{
                   fontSize: "14px",
                   color: "#737373",
                   fontStyle: "italic",
-                })}
+                }}
               >
                 {item.date}
               </Typography>
@@ -183,7 +188,26 @@ const NewsletterList = () => {
                 rel="noopener noreferrer"
                 variant="contained"
                 sx={(theme) => ({
-                  ...theme.customStyles.newsletterDetailButton,
+                  backgroundColor: "#1755C2",
+                  color: "#ffffff",
+                  fontSize: "14px",
+                  fontFamily: "Freesentation-7-Bold",
+                  borderRadius: "8px",
+                  padding: "4px 16px",
+                  textTransform: "none",
+                  "&:hover": {
+                    backgroundColor: "rgba(23, 86, 194, 0.9)",
+
+                    [theme.breakpoints.up("desktop")]: {
+                      backgroundColor: "rgba(0, 0, 0, 0.9)",
+                    },
+                  },
+                  "& .MuiButton-endIcon": {
+                    marginLeft: "4px", // 기본 8px → 4px로 변경
+                  },
+                  [theme.breakpoints.up("desktop")]: {
+                    backgroundColor: "#000000",
+                  },
                 })}
                 endIcon={<PlayArrowIcon />}
               >
