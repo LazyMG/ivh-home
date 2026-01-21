@@ -45,7 +45,7 @@ declare module "@mui/material/styles" {
       newsletterDateFont: SxProps<MuiTheme>;
       newsletterDateDetailContainer: SxProps<MuiTheme>;
       newsletterDetailButton: SxProps<MuiTheme>;
-
+      newsletterRedirectButton: SxProps<MuiTheme>;
       newsletterItem: SxProps<MuiTheme>;
       newsletterItemContent: SxProps<MuiTheme>;
       homeNewsletterContainer: SxProps<MuiTheme>;
@@ -94,7 +94,7 @@ declare module "@mui/material/styles" {
       newsletterDateFont?: SxProps<MuiTheme>;
       newsletterDateDetailContainer?: SxProps<MuiTheme>;
       newsletterDetailButton?: SxProps<MuiTheme>;
-
+      newsletterRedirectButton?: SxProps<MuiTheme>;
       newsletterItem?: SxProps<MuiTheme>;
       newsletterItemContent?: SxProps<MuiTheme>;
       homeNewsletterContainer?: SxProps<MuiTheme>;
