@@ -1,0 +1,81 @@
+{
+  "modelon_mainImg": "/images/pages/product/modelon/modelon-main.png",
+  "modelon_title": "Modelon",
+  "modelon_name": "",
+  "modelon_pageKey": "modelon",
+  "modelon_text": [
+    "Modelon은 다양한 산업 분야에서 제품 혁신, 개발 및 운영을 가속화하는 시스템 모델링 및 시뮬레이션 소프트웨어를 제공합니다."
+  ],
+  "modelon_libraries": [
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Air_Cooling_Library.png",
+      "text": "Air Cooling Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Aircraft_Dynamics_Library.png",
+      "text": "Aircraft Dynamics Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Electrification_Library.png",
+      "text": "Electrification Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Environmental_Control_Library.png",
+      "text": "Environmental Control Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Fuel_Cell_Library.png",
+      "text": "Fuel Cell Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Fuel_System_Library.png",
+      "text": "Fuel System Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Heat_Exchanger_Library.png",
+      "text": "Heat Exchanger Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Hydraulics_Library.png",
+      "text": "Hydraulics Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Jet_Propulsion_Library.png",
+      "text": "Jet Propulsion Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Liquid_Cooling_Library.png",
+      "text": "Liquid Cooling Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Modelon_Base_Library.png",
+      "text": "Modelon Base Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Thermal_Power_Library.png",
+      "text": "Thermal Power Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Vapor_Cycle_Library.png",
+      "text": "Vapor Cycle Library",
+      "url": "#"
+    },
+    {
+      "imgUrl": "/images/pages/product/modelon/libraries/Vehicle_Dynamics_Library.png",
+      "text": "Vehicle Dynamics Library",
+      "url": "#"
+    }
+  ]
+}

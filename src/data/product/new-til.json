@@ -1,6 +1,8 @@
 {
   "til_title": "TIL",
   "til_subTitle": "유연한 구성과 고정밀 시뮬레이션을 지원하는 다분야 시스템 모델링 라이브러리",
+  "til_pageKey": "til",
+  "til_name": "TIL",
   "til_introduction": [
     {
       "text": "TIL은 다양한 구성요소 및 시스템 모델을 제공하는 Modelica 기반 시뮬레이션 라이브러리입니다. 기본 라이브러리인 TIL과 물성 데이터 라이브러리인 TILMedia, 그리고 Addon 라이브러리로 구성되어 있습니다. 시뮬레이션, 테스트, 소프트웨어 개발 등 다양한 서비스 및 연구 프로젝트를 통해 축적된 경험이 TIL에 반영되어 있습니다.",
@@ -29,7 +31,16 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/til/til-feat-one.png"],
+          "imgUrl": ["/images/pages/product/til/til-feat-one-first.png"],
+          "col": 6,
+          "imgSize": "small"
+        },
+        {
+          "imgUrl": ["/images/pages/product/til/til-feat-one-second.png"],
+          "col": 6,
+          "imgSize": "small"
+        },
+        {
           "imgText": "< 단일 모델 내 정상해석과 과도해석 설정 >",
           "col": 12
         }
@@ -45,12 +56,14 @@
         {
           "imgUrl": ["/images/pages/product/til/til-feat-two-first.png"],
           "imgText": "< TILMedia 인터페이스 >",
-          "col": 6
+          "col": 6,
+          "imgSize": "small"
         },
         {
           "imgUrl": ["/images/pages/product/til/til-feat-two-second.png"],
           "imgText": "< 사용 가능한 VLEFluids(REFPROP) >",
-          "col": 6
+          "col": 6,
+          "imgSize": "small"
         }
       ],
       "textObj": {
@@ -94,27 +107,32 @@
         {
           "imgUrl": ["/images/pages/product/til/til-feat-five-first.png"],
           "imgText": "Simple ACC",
-          "col": 2.4
+          "col": 2.4,
+          "imgSize": "small"
         },
         {
           "imgUrl": ["/images/pages/product/til/til-feat-five-second.png"],
           "imgText": "Automotive Secondary loop",
-          "col": 2.4
+          "col": 2.4,
+          "imgSize": "small"
         },
         {
           "imgUrl": ["/images/pages/product/til/til-feat-five-third.png"],
           "imgText": "Automotive Secondary loop",
-          "col": 2.4
+          "col": 2.4,
+          "imgSize": "small"
         },
         {
           "imgUrl": ["/images/pages/product/til/til-feat-five-fourth.png"],
           "imgText": "Automotive HVAC",
-          "col": 2.4
+          "col": 2.4,
+          "imgSize": "small"
         },
         {
           "imgUrl": ["/images/pages/product/til/til-feat-five-fifth.png"],
           "imgText": "Industrial Refrigerator",
-          "col": 2.4
+          "col": 2.4,
+          "imgSize": "small"
         },
         {
           "imgText": "< 다양한 분야의 열시스템 예제 제공 >",
@@ -125,6 +143,10 @@
         "col": 12,
         "title": "다양한 컴포넌트 및 예제 모델 제공",
         "text": "가스, 액체, 2상 유체를 포함한 다양한 유체 조건에 대응하는 튜브, 펌프, 밸브, 팬 등의 기본 컴포넌트와 함께, 열교환기, 압축기, 센서, 제어기 등 다양한 요소 모델이 포함되어 있습니다. HVAC, 냉동 사이클, 열펌프, 차량 열관리 시스템 등 다양한 시스템 구성에 활용할 수 있는 예제 모델도 함께 제공되어 실무 적용성과 확장성이 뛰어납니다."
+      },
+      "imageLayoutStyle": {
+        "large": "container",
+        "small": "slide"
       }
     }
   ]

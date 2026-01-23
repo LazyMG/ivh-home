@@ -1,6 +1,8 @@
 {
   "vtd_create_title": "VTD(Virtual Test Drive) CREATE",
   "vtd_create_subTitle": "ASAM 표준기반 OpenDRIVE 가상환경 생성 툴킷",
+  "vtd_create_pageKey": "vtdCreate",
+  "vtd_create_name": "VTD CREATE",
   "vtd_create_introduction": [
     {
       "text": "VTD는 도로 및 철도 기반 시뮬레이션을 위한 가상 환경의 생성, 구성, 시각화 및 평가를 지원하는 전문 툴킷이며 ASAM OpenDRIVE 표준을 준수합니다. ADAS 및 자율주행 시스템 개발뿐 아니라 교육용 시뮬레이터의 핵심 구성 요소로 활용됩니다.\n6-layer 이상의 도로모델링이 가능하며 센서 시뮬레이션을 위한 PBR( Physics based rendering) 3D 가상주행환경 모델링이 가능합니다.",

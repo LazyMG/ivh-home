@@ -1,6 +1,8 @@
 {
   "vtd_fullstack_title": "VTD(Virtual Test Drive) FULLSTACK",
   "vtd_fullstack_subTitle": "자율주행 및 ADAS 개발을 위한 통합 시뮬레이션 플랫폼",
+  "vtd_fullstack_pageKey": "vtdFullstack",
+  "vtd_fullstack_name": "VTD FULLSTACK",
   "vtd_fullstack_introduction": [
     {
       "text": "VTD FULL-STACK은 자율주행차 및 첨단 운전자 지원 시스템(ADAS)의 개발·검증을 위한 전체 시뮬레이션 워크플로우를 하나의 환경에서 제공하는 통합 플랫폼입니다. 가상 환경의 설계, 시나리오 구성, 센서 및 이미지 시뮬레이션, 시뮬레이션 제어까지 모든 기능을 포함하고 있어, 개발 초기 단계부터 XiL(X-in-the-Loop) 테스트까지 폭넓게 활용할 수 있습니다."
