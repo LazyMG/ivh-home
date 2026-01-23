@@ -364,7 +364,7 @@ const Home = () => {
                       maxWidth: index < 6 ? "70%" : "48%",
                       [theme.breakpoints.up("tablet")]: {
                         minWidth: "40%",
-                        maxWidth: "50%",
+                        maxWidth: "40%",
                       },
                     })}
                   />
