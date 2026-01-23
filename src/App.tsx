@@ -22,25 +22,26 @@ import Energy from "./pages/solution/Energy";
 import Bems from "./pages/solution/Bems";
 import HomeAppliance from "./pages/solution/HomeAppliance";
 import SmartFactory from "./pages/solution/SmartFactory";
-import MultiCommunicateTech from "./pages/solution/mobility/MultiCommunicateTech";
-import AiDrivingAbilityTest from "./pages/solution/mobility/AiDrivingAbilityTest";
-import VirtualDurability from "./pages/solution/mobility/VirtualDurability";
+import Mobility from "./pages/solution/Mobility";
 import AIInnovation from "./pages/solution/AIInnovation";
-import SuspensionEquipment from "./pages/solution/mobility/SuspensionEquipment";
-import EV from "./pages/solution/mobility/EV";
+import IMOVA from "./pages/product/IMOVA";
 // Dymola
+import NewDymola from "./pages/product/dymola/NewDymola";
+import NewBattery from "./pages/product/dymola/NewBattery";
 import TIL from "./pages/product/dymola/TIL";
-import ThermalPowerLibrary from "./pages/product/dymola/ThermalPowerLibrary";
-import VehicleDynamicsLibrary from "./pages/product/dymola/VehicleDynamicsLibrary";
 // VTD
+import NewVTD from "./pages/product/vtd/NewVTD";
 import VTDCreate from "./pages/product/vtd/VTDCreate";
 import VTDSimulate from "./pages/product/vtd/VTDSimulate";
 import VTDFullstack from "./pages/product/vtd/VTDFullstack";
-// Vissim
+// PTV
+import PTV from "./pages/product/ptv/PTV";
+import NewVissim from "./pages/product/vissim/NewVissim";
 import VissimAutomotive from "./pages/product/vissim/VissimAutomotive";
 import Viswalk from "./pages/product/vissim/Viswalk";
-// Calendar
-import Calendar from "./pages/Calendar";
+// Modelon
+import Modelon from "./pages/product/modelon/Modelon";
+import VehicleDynamicsLibrary from "./pages/product/dymola/VehicleDynamicsLibrary";
 // Support
 import Training from "./pages/support/Training";
 import Support from "./pages/support/Support";
@@ -53,14 +54,6 @@ import Partner from "./pages/company/Partner";
 
 import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
-import Mobility from "./pages/solution/Mobility";
-import IMOVA from "./pages/product/IMOVA";
-import NewDymola from "./pages/product/dymola/NewDymola";
-import NewVTD from "./pages/product/vtd/NewVTD";
-import NewVissim from "./pages/product/vissim/NewVissim";
-import NewBattery from "./pages/product/dymola/NewBattery";
-import Modelon from "./pages/product/modelon/Modelon";
-import PTV from "./pages/product/ptv/PTV";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -89,55 +82,42 @@ function AppContent() {
           <Route path="/solution/smartfactory" element={<SmartFactory />} />
           <Route path="/solution/bems" element={<Bems />} />
           <Route path="/solution/mobility" element={<Mobility />} />
-          <Route
-            path="/solution/mobility/multiCommunicateTech"
-            element={<MultiCommunicateTech />}
-          />
-          <Route
-            path="/solution/mobility/aiDrivingAbilityTest"
-            element={<AiDrivingAbilityTest />}
-          />
-          <Route
-            path="/solution/mobility/virtualDurability"
-            element={<VirtualDurability />}
-          />
-          <Route
-            path="/solution/mobility/suspensionEquipment"
-            element={<SuspensionEquipment />}
-          />
-          <Route path="/solution/mobility/ev" element={<EV />} />
           <Route path="/solution/aIinnovationhub" element={<AIInnovation />} />
+
+          {/** Product */}
           <Route path="/product/imova" element={<IMOVA />} />
 
           {/** dymola */}
           <Route path="/product/dymola" element={<NewDymola />} />
           <Route path="/product/dymola/battery" element={<NewBattery />} />
-
           <Route path="/product/dymola/til" element={<TIL />} />
-          <Route
-            path="/product/dymola/thermalpowerlibrary"
-            element={<ThermalPowerLibrary />}
-          />
           <Route
             path="/product/dymola/vehicledynamicslibrary"
             element={<VehicleDynamicsLibrary />}
           />
+
+          {/** 26.01.23 미사용 */}
+          {/* <Route
+            path="/product/dymola/thermalpowerlibrary"
+            element={<ThermalPowerLibrary />}
+          /> */}
+
           {/** vtd */}
           <Route path="/product/vtd" element={<NewVTD />} />
           <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
           <Route path="/product/vtd/vtdsimulate" element={<VTDSimulate />} />
           <Route path="/product/vtd/vtdfullstack" element={<VTDFullstack />} />
-          {/** vissim */}
+
+          {/** ptv */}
           <Route path="/product/ptv" element={<PTV />} />
-
           <Route path="/product/ptv/vissim" element={<NewVissim />} />
-
           <Route
             path="/product/ptv/vissimautomotive"
             element={<VissimAutomotive />}
           />
           <Route path="/product/ptv/viswalk" element={<Viswalk />} />
 
+          {/** modelon */}
           <Route path="/product/modelon" element={<Modelon />} />
           <Route
             path="/product/modelon/vehicledynamicslibrary"
@@ -147,14 +127,13 @@ function AppContent() {
           {/** support */}
           <Route path="/support/training" element={<Training />} />
           <Route path="/support" element={<Support />} />
-          <Route path="/company/ceo" element={<CEO />} />
-          <Route path="/company/history" element={<History />} />
-          <Route path="/company/partner" element={<Partner />} />
-          <Route path="/calendar" element={<Calendar />} />
           <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
 
           {/** company */}
           <Route path="/company/contact" element={<Contact />} />
+          <Route path="/company/ceo" element={<CEO />} />
+          <Route path="/company/history" element={<History />} />
+          <Route path="/company/partner" element={<Partner />} />
         </Routes>
       </ScrollToTop>
       {/** chatbot button */}
