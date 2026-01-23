@@ -7,13 +7,36 @@
     ],
     "modelica_dymola": [{ "title": "Dymola", "url": "/product/dymola" }],
     "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
+    "modelon_base": [{ "title": "Modelon", "url": "/product/modelon" }],
+    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }],
     "vissim_base": [{ "title": "Vissim", "url": "/product/vissim" }]
   },
   "pages": {
+    "dymola": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "Dymola",
+        "url": "/product/dymola"
+      }
+    },
+    "modelon": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "Modelon",
+        "url": "/product/dymola"
+      }
+    },
+    "ptv": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "PTV",
+        "url": "/product/ptv"
+      }
+    },
     "battery": {
       "extends": ["home_product", "modelica_dymola"],
       "current": {
-        "title": "Battery",
+        "title": "Battery Library",
         "url": "/product/dymola/battery"
       }
     },
@@ -33,6 +56,13 @@
       "current": {
         "title": "Vehicle Dynamics Library",
         "url": "/product/dymola/vehicledynamicslibrary"
+      }
+    },
+    "vtd": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "VTD",
+        "url": "/product/vtd"
       }
     },
     "vtdCreate": {

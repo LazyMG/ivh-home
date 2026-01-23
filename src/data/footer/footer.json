@@ -20,9 +20,9 @@
         { "name": "iSuite" },
         { "name": "Dymola", "path": "/product/dymola" },
         { "name": "Modelica" },
-        { "name": "Modelon" },
+        { "name": "Modelon", "path": "/product/modelon" },
         { "name": "Virtual Test Driving", "path": "/product/vtd" },
-        { "name": "PTV" }
+        { "name": "PTV", "path": "/product/ptv" }
       ]
     },
     {
