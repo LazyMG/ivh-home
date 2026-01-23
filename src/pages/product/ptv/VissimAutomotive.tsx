@@ -5,7 +5,7 @@ import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const VissimAutomotive = () => {
-  const seoData = useSEO("product/vissim/vissimautomotive", vissim_automotive);
+  const seoData = useSEO("product/ptv/vissimautomotive", vissim_automotive);
 
   const {
     vissim_automotive_title,

@@ -4,7 +4,7 @@ import ptv from "../../../data/product/ptv/ptv.json";
 import { useSEO } from "../../../hooks/useSEO";
 
 const PTV = () => {
-  const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", ptv);
+  const seoData = useSEO("product/ptv", ptv);
 
   const {
     ptv_mainImg,

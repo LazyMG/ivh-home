@@ -4,7 +4,7 @@ import SEO from "../../../common/SEO";
 import { useSEO } from "../../../hooks/useSEO";
 
 const VTDCreate = () => {
-  const seoData = useSEO("product/dymola", vtd_create);
+  const seoData = useSEO("product/vtd/vtdcreate", vtd_create);
   const {
     vtd_create_title,
     vtd_create_subTitle,

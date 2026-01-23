@@ -4,7 +4,7 @@ import vissim from "../../../data/product/ptv/vissim.json";
 import { useSEO } from "../../../hooks/useSEO";
 
 const Vissim = () => {
-  const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", vissim);
+  const seoData = useSEO("product/ptv/vissim", vissim);
 
   const {
     vissim_title,

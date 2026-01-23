@@ -5,7 +5,7 @@ import vtd from "../../../data/product/vtd/vtd.json";
 import { useSEO } from "../../../hooks/useSEO";
 
 const VTD = () => {
-  const seoData = useSEO("product/dymola", vtd);
+  const seoData = useSEO("product/vtd", vtd);
   const {
     vtd_mainImg,
     vtd_title,

@@ -5,7 +5,7 @@ import modelon from "../../../data/product/modelon/modelon.json";
 import { useSEO } from "../../../hooks/useSEO";
 
 const Modelon = () => {
-  const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", modelon);
+  const seoData = useSEO("product/modelon", modelon);
 
   const {
     modelon_mainImg,

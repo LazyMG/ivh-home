@@ -5,7 +5,7 @@ import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const Viswalk = () => {
-  const seoData = useSEO("product/viswalk", viswalk);
+  const seoData = useSEO("product/ptv/viswalk", viswalk);
 
   const {
     viswalk_title,

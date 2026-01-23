@@ -5,7 +5,7 @@ import SEO from "../../../common/SEO";
 import { useSEO } from "../../../hooks/useSEO";
 
 const TIL = () => {
-  const seoData = useSEO("product/dymola/battery", til);
+  const seoData = useSEO("product/dymola/til", til);
 
   const {
     til_title,
