@@ -1,6 +1,6 @@
 import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
-import ptv from "../../../data/product/ptv.json";
+import ptv from "../../../data/product/ptv/ptv.json";
 import { useSEO } from "../../../hooks/useSEO";
 
 const PTV = () => {

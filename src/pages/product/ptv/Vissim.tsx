@@ -1,6 +1,6 @@
 import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
-import vissim from "../../../data/product/vissim.json";
+import vissim from "../../../data/product/ptv/vissim.json";
 import { useSEO } from "../../../hooks/useSEO";
 
 const Vissim = () => {

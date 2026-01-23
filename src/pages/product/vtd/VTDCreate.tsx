@@ -1,4 +1,4 @@
-import vtd_create from "../../../data/product/vtd-create.json";
+import vtd_create from "../../../data/product/vtd/vtd-create.json";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 import SEO from "../../../common/SEO";
 import { useSEO } from "../../../hooks/useSEO";

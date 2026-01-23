@@ -1,7 +1,7 @@
 import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
-import modelon from "../../../data/product/modelon.json";
+import modelon from "../../../data/product/modelon/modelon.json";
 import { useSEO } from "../../../hooks/useSEO";
 
 const Modelon = () => {

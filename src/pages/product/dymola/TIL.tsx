@@ -1,4 +1,4 @@
-import til from "../../../data/product/til.json";
+import til from "../../../data/product/dymola/til.json";
 
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 import SEO from "../../../common/SEO";

@@ -1,7 +1,7 @@
 import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
-import vtd from "../../../data/product/vtd.json";
+import vtd from "../../../data/product/vtd/vtd.json";
 import { useSEO } from "../../../hooks/useSEO";
 
 const VTD = () => {

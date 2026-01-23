@@ -1,4 +1,4 @@
-import vehicle from "../../../data/product/vehicle-dynamics-library.json";
+import vehicle from "../../../data/product/modelon/vehicle-dynamics-library.json";
 
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
