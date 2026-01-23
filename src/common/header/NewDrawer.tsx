@@ -66,7 +66,7 @@ export const NewDrawer = ({
           position: "absolute",
           left: 0,
           bottom: 0,
-          zIndex: 10,
+          zIndex: 0,
         }}
       >
         <DrawerFixedArea />
