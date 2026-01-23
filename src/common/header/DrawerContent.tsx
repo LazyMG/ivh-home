@@ -69,7 +69,7 @@ export const DrawerContent = ({
           sx={{
             display: "flex",
             flexDirection: "row",
-            gap: isAccordionOpen ? 0 : 10,
+            gap: isAccordionOpen ? 0 : 12,
             justifyContent: isAccordionOpen ? "space-between" : "auto",
           }}
         >
@@ -92,7 +92,7 @@ export const DrawerContent = ({
                 {/* 컬럼 타이틀 */}
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: "16px",
                     fontFamily: "Freesentation-6-SemiBold",
                     color: "#000000",
                     mb: 2,
@@ -168,7 +168,7 @@ export const DrawerContent = ({
                           }
                         }}
                         sx={{
-                          fontSize: "14px",
+                          fontSize: "16px",
                           fontFamily: "Freesentation-6-SemiBold",
                           color: "#424242",
                           cursor: "pointer",
