@@ -1,4 +1,4 @@
-import viswalk from "../../../data/product/new-viswalk.json";
+import viswalk from "../../../data/product/viswalk.json";
 
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";

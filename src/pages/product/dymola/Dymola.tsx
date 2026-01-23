@@ -1,4 +1,4 @@
-import dymola from "../../../data/product/new-dymola.json";
+import dymola from "../../../data/product/dymola.json";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";

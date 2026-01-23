@@ -1,4 +1,4 @@
-import til from "../../../data/product/new-til.json";
+import til from "../../../data/product/til.json";
 
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 import SEO from "../../../common/SEO";

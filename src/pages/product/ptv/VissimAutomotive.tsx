@@ -1,4 +1,4 @@
-import vissim_automotive from "../../../data/product/new-vissim-automotive.json";
+import vissim_automotive from "../../../data/product/vissim-automotive.json";
 
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";

@@ -1,4 +1,4 @@
-import vtd_simulate from "../../../data/product/new-vtd-simulate.json";
+import vtd_simulate from "../../../data/product/vtd-simulate.json";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";

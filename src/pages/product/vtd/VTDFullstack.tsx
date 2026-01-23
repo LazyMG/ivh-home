@@ -1,4 +1,4 @@
-import vtd_fullstack from "../../../data/product/new-vtd-fullstack.json";
+import vtd_fullstack from "../../../data/product/vtd-fullstack.json";
 
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";

@@ -1,4 +1,4 @@
-import battery from "../../../data/product/new-battery.json";
+import battery from "../../../data/product/battery.json";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
