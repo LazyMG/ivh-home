@@ -1,7 +1,11 @@
+import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 import vissim from "../../../data/product/new-vissim.json";
+import { useSEO } from "../../../hooks/useSEO";
 
 const NewVissim = () => {
+  const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", vissim);
+
   const {
     vissim_title,
     vissim_subTitle,
@@ -13,6 +17,8 @@ const NewVissim = () => {
 
   return (
     <>
+      <SEO {...seoData} />
+
       <LibraryPageTemplate
         title={vissim_title}
         subTitle={vissim_subTitle}

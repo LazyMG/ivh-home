@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "Dymola - 멀티도메인 시뮬레이션 도구",
+    "description": "Modelica 기반 멀티도메인 시스템 시뮬레이션 및 분석 도구 Dymola. 자동차, 항공우주, 에너지 시스템 모델링 지원.",
+    "keywords": "Dymola, Modelica, 시뮬레이션, 멀티도메인, 시스템 모델링, FMI, 자동차, 항공우주",
+    "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-feat-one.png"
+  },
   "dymola_mainImg": "/images/pages/product/dymola/dymola-new.png",
   "dymola_title": "Dymola",
   "dymola_subTitle": "복합 시스템 모델 기반 설계를 위한 물리 모델링 및 시뮬레이션 툴",

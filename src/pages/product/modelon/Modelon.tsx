@@ -1,8 +1,12 @@
+import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
 import modelon from "../../../data/product/modelon.json";
+import { useSEO } from "../../../hooks/useSEO";
 
 const Modelon = () => {
+  const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", modelon);
+
   const {
     modelon_mainImg,
     modelon_title,
@@ -13,6 +17,8 @@ const Modelon = () => {
   } = modelon;
   return (
     <>
+      <SEO {...seoData} />
+
       <ProductPageTemplate
         image={modelon_mainImg}
         title={modelon_title}

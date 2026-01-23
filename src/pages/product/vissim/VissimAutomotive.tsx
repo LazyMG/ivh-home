@@ -1,5 +1,4 @@
-import vissim_automotive from "../../../data/product/vissim-automotive.json";
-import new_vissim_automotive from "../../../data/product/new-vissim-automotive.json";
+import vissim_automotive from "../../../data/product/new-vissim-automotive.json";
 
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
@@ -15,7 +14,7 @@ const VissimAutomotive = () => {
     vissim_automotive_introduction,
     vissim_automotive_name,
     vissim_automotive_pageKey,
-  } = new_vissim_automotive;
+  } = vissim_automotive;
 
   return (
     <>

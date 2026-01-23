@@ -1,8 +1,12 @@
 import til from "../../../data/product/new-til.json";
 
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
+import SEO from "../../../common/SEO";
+import { useSEO } from "../../../hooks/useSEO";
 
 const TIL = () => {
+  const seoData = useSEO("product/dymola/battery", til);
+
   const {
     til_title,
     til_subTitle,
@@ -14,6 +18,8 @@ const TIL = () => {
 
   return (
     <>
+      <SEO {...seoData} />
+
       <LibraryPageTemplate
         title={til_title}
         subTitle={til_subTitle}

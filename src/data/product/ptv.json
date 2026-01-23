@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "PTV - 교통 계획, 시뮬레이션 및 실시간 관리를 위한 소프트웨어",
+    "description": "Planungsbüro für Verkehr / 교통 계획, 시뮬레이션 및 실시간 관리를 위한 소프트웨어",
+    "keywords": "Planungsbüro für Verkehr, 교통 계획, 교통 시뮬레이션, 소프트웨어, PTV",
+    "ogImage": "https://ivh.co.kr/images/pages/product/ptv/ptv-main.png"
+  },
   "ptv_mainImg": "/images/pages/product/ptv/ptv-main.png",
   "ptv_title": "PTV",
   "ptv_name": "",

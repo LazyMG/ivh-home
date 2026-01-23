@@ -1,5 +1,4 @@
-import vtd_fullstack from "../../../data/product/vtd-fullstack.json";
-import new_vtd_fullstack from "../../../data/product/new-vtd-fullstack.json";
+import vtd_fullstack from "../../../data/product/new-vtd-fullstack.json";
 
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
@@ -14,7 +13,7 @@ const VTDFullstack = () => {
     vtd_fullstack_name,
     vtd_fullstack_introduction,
     vtd_fullstack_features,
-  } = new_vtd_fullstack;
+  } = vtd_fullstack;
 
   return (
     <>

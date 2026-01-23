@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "Vehicle Dynamics Library - 차량 동역학 시뮬레이션 라이브러리",
+    "description": "Vehicle Dynamics Library는 전체 차량 및 차량 서브시스템의 해석을 위한 개방적이며, 사용자 확장 가능한 시뮬레이션 환겨을 제공합니다. 계층적 구조와 다양한 사전 정의된 차량 컴포넌트 라이브러리를 기반으로, 승용차, 트럭, 모터스포츠 차량, 중장비 등 다양한 종류의 차량을 손쉽게 구성할 수 있도록 설계되어 있습니다.",
+    "keywords": "Vehicle Dynamics Library, 차량, 동역학, 시뮬레이션, 라이브러리, 차량 컴포넌트, 차량 모델링",
+    "ogImage": "https://ivh.co.kr/images/pages/product/vehicle/vehicle-feat-one.png"
+  },
   "vehicle_title": "Vehicle Dynamics Library",
   "vehicle_subTitle": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리",
   "vehicle_pageKey": "vehicledynamicslibrary",

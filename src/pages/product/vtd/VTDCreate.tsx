@@ -1,7 +1,10 @@
 import vtd_create from "../../../data/product/new-vtd-create.json";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
+import SEO from "../../../common/SEO";
+import { useSEO } from "../../../hooks/useSEO";
 
 const VTDCreate = () => {
+  const seoData = useSEO("product/dymola", vtd_create);
   const {
     vtd_create_title,
     vtd_create_subTitle,
@@ -13,6 +16,7 @@ const VTDCreate = () => {
 
   return (
     <>
+      <SEO {...seoData} />
       <LibraryPageTemplate
         title={vtd_create_title}
         subTitle={vtd_create_subTitle}

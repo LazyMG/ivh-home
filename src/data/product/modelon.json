@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "Modelon",
+    "description": "Modelon: 다양한 산업 분야에서 제품 혁신, 개발 및 운영을 가속화하는 시스템 모델링 및 시뮬레이션 소프트웨어를 제공",
+    "keywords": "Modelon, 시스템 모델링, 시뮬레이션 소프트웨어, 소프트웨어",
+    "ogImage": "https://ivh.co.kr/images/pages/product/modelon/modelon-main.png"
+  },
   "modelon_mainImg": "/images/pages/product/modelon/modelon-main.png",
   "modelon_title": "Modelon",
   "modelon_name": "",

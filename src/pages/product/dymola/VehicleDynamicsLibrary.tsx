@@ -1,5 +1,4 @@
-import vehicle from "../../../data/product/vehicle.json";
-import new_vehicle from "../../../data/product/vehicle-dynamics-library.json";
+import vehicle from "../../../data/product/vehicle-dynamics-library.json";
 
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
@@ -15,7 +14,7 @@ const VehicleDynamicsLibrary = () => {
     vehicle_subTitle,
     vehicle_features,
     vehicle_introduction,
-  } = new_vehicle;
+  } = vehicle;
 
   return (
     <>

@@ -1,5 +1,4 @@
-import vtd_simulate from "../../../data/product/vtd-simulate.json";
-import new_vtd_simulate from "../../../data/product/new-vtd-simulate.json";
+import vtd_simulate from "../../../data/product/new-vtd-simulate.json";
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
@@ -13,7 +12,7 @@ const VTDSimulate = () => {
     vtd_simulate_features,
     vtd_simulate_pageKey,
     vtd_simaulte_name,
-  } = new_vtd_simulate;
+  } = vtd_simulate;
 
   return (
     <>

@@ -1,8 +1,11 @@
+import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
 import vtd from "../../../data/product/new-vtd.json";
+import { useSEO } from "../../../hooks/useSEO";
 
 const NewVTD = () => {
+  const seoData = useSEO("product/dymola", vtd);
   const {
     vtd_mainImg,
     vtd_title,
@@ -15,6 +18,7 @@ const NewVTD = () => {
 
   return (
     <>
+      <SEO {...seoData} />
       <ProductPageTemplate
         image={vtd_mainImg}
         title={vtd_title}

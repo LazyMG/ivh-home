@@ -1,7 +1,11 @@
+import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 import ptv from "../../../data/product/ptv.json";
+import { useSEO } from "../../../hooks/useSEO";
 
 const PTV = () => {
+  const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", ptv);
+
   const {
     ptv_mainImg,
     ptv_title,
@@ -12,6 +16,8 @@ const PTV = () => {
   } = ptv;
   return (
     <>
+      <SEO {...seoData} />
+
       <ProductPageTemplate
         image={ptv_mainImg}
         title={ptv_title}
