@@ -36,12 +36,12 @@ import VTDSimulate from "./pages/product/vtd/VTDSimulate";
 import VTDFullstack from "./pages/product/vtd/VTDFullstack";
 // PTV
 import PTV from "./pages/product/ptv/PTV";
-import NewVissim from "./pages/product/vissim/NewVissim";
-import VissimAutomotive from "./pages/product/vissim/VissimAutomotive";
-import Viswalk from "./pages/product/vissim/Viswalk";
+import NewVissim from "./pages/product/ptv/NewVissim";
+import VissimAutomotive from "./pages/product/ptv/VissimAutomotive";
+import Viswalk from "./pages/product/ptv/Viswalk";
 // Modelon
 import Modelon from "./pages/product/modelon/Modelon";
-import VehicleDynamicsLibrary from "./pages/product/dymola/VehicleDynamicsLibrary";
+import VehicleDynamicsLibrary from "./pages/product/modelon/VehicleDynamicsLibrary";
 // Support
 import Training from "./pages/support/Training";
 import Support from "./pages/support/Support";
