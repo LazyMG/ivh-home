@@ -149,7 +149,7 @@ const Home = () => {
               px: 2,
               [theme.breakpoints.up("desktop")]: {
                 position: "absolute",
-                top: "2%",
+                top: "4%",
                 left: "8%",
                 maxWidth: "380px",
                 border: "1px solid rgba(0, 0, 0, 0.35) ",
