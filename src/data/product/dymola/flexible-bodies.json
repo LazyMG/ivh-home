@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Flexible Bodies - 유연체와 강체를 결합한 복합 기계 시스템 모델링을 위한 Modelica 기반 시뮬레이션 라이브러리",
+    "description": "유연체와 강체를 결합한 복합 기계 시스템 모델링을 위한 Modelica 기반 시뮬레이션 라이브러리",
+    "keywords": "Flexible Bodies, 유연체, 강체, 시뮬레이션,  복합 기계 시스템 모델링, Modelica, Dymola",
+    "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-main.png"
+  },
+  "title": "Flexible Bodies",
+  "subTitle": "유연체와 강체를 결합한 복합 기계 시스템 모델링을 위한 Modelica 기반 시뮬레이션 라이브러리",
+  "pageKey": "flexibleBodies",
+  "name": "",
+  "introduction": [
+    {
+      "text": "Flexible Bodies Library는 유한요소(FE) 해석 기반의 유연한 구조와 강체를 결합하여, 실제 기계 시스템의 동역학을 정밀하게 모델링할 수 있도록 설계된 전문 라이브러리입니다. Nastran, Genesis, Abaqus 등 주요 유한요소 해석 도구에서 생성된 표준 출력 파일을 활용해 복잡한 FE 모델을 소수의 경계 노드와 주파수 모드로 축소, Dymola 환경에서 Modelica 시스템 모델의 일부로 손쉽게 통합할 수 있습니다.\n이러한 접근 방식은 구조물의 동적 거동을 전체 시스템의 시뮬레이션과 직접 연결할 수 있게 하며, 실제 테스트가 어렵거나 비용이 많이 드는 시나리오도 가상 환경에서 효율적으로 검증할 수 있습니다. Flexible Bodies Library는 표준 Modelica MultiBody 커넥터를 사용해 Vehicle Dynamics Library 등 다양한 Modelica 라이브러리와 완벽하게 호환됩니다."
+    }
+  ]
+}

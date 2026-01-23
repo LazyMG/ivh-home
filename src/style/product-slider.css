@@ -1,0 +1,97 @@
+/* Product Swiper - 슬라이드 전용 스타일 */
+
+/* 기본 Swiper 컨테이너 - Full Bleed (부모 컨테이너 벗어나기) */
+.product-swiper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 0;
+}
+
+/* 슬라이드 아이템 - 기본 스타일 */
+.product-swiper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Navigation 버튼 - 세로 중앙 배치 */
+.product-swiper .swiper-button-prev,
+.product-swiper .swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  color: #000;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.product-swiper .swiper-button-prev:hover,
+.product-swiper .swiper-button-next:hover {
+  opacity: 0.6;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.product-swiper .swiper-button-prev:after,
+.product-swiper .swiper-button-next:after {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* SVG 아이콘 크기 조절 */
+.product-swiper .swiper-button-prev svg,
+.product-swiper .swiper-button-next svg {
+  width: 50%;
+  height: 50%;
+  color: #fff;
+}
+
+/* 비활성 슬라이드 투명도 */
+.product-swiper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.5;
+}
+
+/* Large 화면 (769px+): 중앙 50%, 좌우 일부 보임 */
+@media (min-width: 769px) {
+  .product-swiper .swiper-slide {
+    width: 50%;
+  }
+
+  .product-swiper .swiper-button-prev {
+    left: 22%;
+  }
+
+  .product-swiper .swiper-button-next {
+    right: 22%;
+  }
+}
+
+/* 모바일 (768px 이하): 슬라이드 하나만 보임 */
+@media (max-width: 768px) {
+  .product-swiper .swiper-slide {
+    width: 80% !important;
+  }
+
+  .product-swiper .swiper-button-prev,
+  .product-swiper .swiper-button-next {
+    width: 20px;
+    height: 20px;
+  }
+
+  .product-swiper .swiper-button-prev {
+    left: calc(7.5% - 16px);
+  }
+
+  .product-swiper .swiper-button-next {
+    right: calc(7.5% - 16px);
+  }
+
+  .product-swiper .swiper-button-prev:after,
+  .product-swiper .swiper-button-next:after {
+    font-size: 10px;
+  }
+}

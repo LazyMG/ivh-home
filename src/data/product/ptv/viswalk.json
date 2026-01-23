@@ -1,0 +1,89 @@
+{
+  "seo": {
+    "title": "Viswalk - 현실적인 다중 환경 보행자 시뮬레이션 소프트웨어",
+    "description": "PTV Viswalk은 보행자 및 그들 간의 상호작용을 미시적 수준에서 정밀하게 재현하는 보행자 시뮬레이션 소프트웨어입니다. 도시 및 교통 계획자, 소방 안전 담당자, 철도역·공항·대형 행사장 운영자 등 다양한 분야의 전문가들이 Viswalk을 활용하여 보행자 흐름과 관련된 복잡한 문제를 효과적으로 모델링하고 해결할 수 있습니다. 통행 폭, 대기 공간의 크기, 이동 및 대기 시간 등을 분석함으로써, 안전성과 편의성을 동시에 확보할 수 있습니다.",
+    "keywords": "Viswalk, 보행자 시뮬레이션, 소프트웨어, PTV, 미시적 시뮬레이션, 보행자 흐름, 관련 복잡한 문제, 통행 폭, 대기 공간의 크기, 이동 및 대기 시간, 안전성, 편의성",
+    "ogImage": "https://ivh.co.kr/images/pages/product/viswalk/viswalk-feat-one.png"
+  },
+  "viswalk_title": "Viswalk",
+  "viswalk_subTitle": "현실적인 다중 환경 보행자 시뮬레이션 소프트웨어",
+  "viswalk_pageKey": "viswalk",
+  "viswalk_name": "Viswalk",
+  "viswalk_introduction": [
+    {
+      "text": "PTV Viswalk은 보행자 및 그들 간의 상호작용을 미시적 수준에서 정밀하게 재현하는 보행자 시뮬레이션 소프트웨어입니다. 도시 및 교통 계획자, 소방 안전 담당자, 철도역·공항·대형 행사장 운영자 등 다양한 분야의 전문가들이 Viswalk을 활용하여 보행자 흐름과 관련된 복잡한 문제를 효과적으로 모델링하고 해결할 수 있습니다. 통행 폭, 대기 공간의 크기, 이동 및 대기 시간 등을 분석함으로써, 안전성과 편의성을 동시에 확보할 수 있습니다."
+    }
+  ],
+  "viswalk_features": [
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-one.png"],
+          "imgSize": "small",
+          "col": 12
+        }
+      ],
+      "textObj": {
+        "title": "미시적 보행자 시뮬레이션 기능 제공",
+        "text": "PTV Viswalk은 개별 보행자의 움직임과 상호작용을 미시적 수준에서 정밀하게 재현합니다. 보행자의 심리적 행동까지 반영하는 Social Force Model 알고리즘을 기반으로, 다양한 도시 환경에서의 현실적인 보행 흐름을 시뮬레이션할 수 있습니다.",
+        "col": 12
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-two.png"],
+          "imgSize": "small",
+          "col": 12
+        }
+      ],
+      "textObj": {
+        "title": "군중 밀도 및 흐름 분석 기능 제공",
+        "text": "군중의 밀도, 이동 경로, 대기 시간 등을 시각적으로 분석할 수 있어, 혼잡 구간 식별 및 안전성 평가에 효과적입니다. 열지도(Heatmap)를 통해 서비스 수준을 직관적으로 확인할 수 있으며, 대피 시나리오나 이벤트 운영 계획에도 활용됩니다.",
+        "col": 12
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-three.png"],
+          "imgSize": "small",
+          "col": 12
+        }
+      ],
+      "textObj": {
+        "title": "100만 명 이상의 보행자 시뮬레이션 기능 제공",
+        "text": "대규모 군중 시뮬레이션이 가능하여, 복잡한 교통 허브나 대형 행사장 등에서의 보행자 흐름을 현실적으로 모델링할 수 있습니다. 고속 연산 기능을 통해 효율적인 시뮬레이션 수행이 가능합니다.",
+        "col": 12
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-four.png"],
+          "imgSize": "small",
+          "col": 12
+        }
+      ],
+      "textObj": {
+        "title": "PTV Vissim과 통합된 복합 시뮬레이션 기능 제공",
+        "text": "PTV Vissim과의 통합을 통해 차량, 자전거, 대중교통 등과 보행자 간의 상호작용을 함께 시뮬레이션할 수 있습니다. 이를 통해 교차로, 정류장, 환승 구간 등에서의 통합 교통 흐름을 정밀하게 분석할 수 있습니다.",
+        "col": 12
+      }
+    },
+    {
+      "imgObj": [
+        {
+          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-five.png"],
+          "imgSize": "small",
+          "col": 12
+        }
+      ],
+      "textObj": {
+        "title": "다양한 교통 모델과의 상호작용 시뮬레이션 기능 제공",
+        "text": "보행자와 차량, 철도, 버스, 자전거, 항공기 등 다양한 교통수단 간의 상호작용을 시뮬레이션할 수 있어, 복합 교통 환경에서의 운영 시나리오를 효과적으로 검토할 수 있습니다. 특히 환승 지점이나 대피 시나리오에서 유용하게 활용됩니다.",
+        "col": 12
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Sustainable Supply Systems Library - 다중 물리 도메인 통합 분석을 통한 최적의 지속 가능한 공급망 구축",
+    "description": "다중 물리 도메인 통합 분석을 통한 최적의 지속 가능한 공급망 구축",
+    "keywords": "Sustainable Supply Systems, 다중 물리 도메인, 지속 가능한 공급망, Modelica, Dymola",
+    "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-main.png"
+  },
+  "title": "Sustainable Supply Systems Library",
+  "subTitle": "다중 물리 도메인 통합 분석을 통한 최적의 지속 가능한 공급망 구축",
+  "pageKey": "sustainableSupplySystems",
+  "name": "",
+  "introduction": [
+    {
+      "text": "Sustainable Supply Systems Library는 지속 가능한 에너지 및 공급망 시스템의 설계, 분석, 최적화를 지원하는 Modelica 기반 라이브러리입니다.\n현대 산업은 에너지 효율, 탄소 배출 저감, 자원 최적화라는 과제를 안고 있으며, 이러한 목표를 달성하기 위해서는 단순한 정적 계산을 넘어 다양한 물리적 도메인(전기, 열, 유체, 제조) 간 상호작용을 고려한 동적 시뮬레이션이 필수적입니다.\n이 라이브러리는 초기 설계 단계부터 복잡한 시스템 운영 전략까지, 신뢰성 있는 의사결정을 지원하는 강력한 플랫폼을 제공합니다."
+    }
+  ]
+}

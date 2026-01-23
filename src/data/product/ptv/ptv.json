@@ -1,0 +1,32 @@
+{
+  "seo": {
+    "title": "PTV - 교통 계획, 시뮬레이션 및 실시간 관리를 위한 소프트웨어",
+    "description": "Planungsbüro für Verkehr / 교통 계획, 시뮬레이션 및 실시간 관리를 위한 소프트웨어",
+    "keywords": "Planungsbüro für Verkehr, 교통 계획, 교통 시뮬레이션, 소프트웨어, PTV",
+    "ogImage": "https://ivh.co.kr/images/pages/product/ptv/ptv-main.png"
+  },
+  "ptv_mainImg": "/images/pages/product/ptv/ptv-main.png",
+  "ptv_title": "PTV",
+  "ptv_name": "",
+  "ptv_pageKey": "ptv",
+  "ptv_text": [
+    "Planungsbüro für Verkehr / 교통 계획, 시뮬레이션 및 실시간 관리를 위한 소프트웨어"
+  ],
+  "ptv_libraries": [
+    {
+      "imgUrl": "/images/pages/product/ptv/libraries/Vissim.png",
+      "text": "Vissim",
+      "url": "/product/ptv/vissim"
+    },
+    {
+      "imgUrl": "/images/pages/product/ptv/libraries/Vissim_Automotive.png",
+      "text": "Vissim Automotive",
+      "url": "/product/ptv/vissimautomotive"
+    },
+    {
+      "imgUrl": "/images/pages/product/ptv/libraries/Viswalk.png",
+      "text": "Viswalk",
+      "url": "/product/ptv/viswalk"
+    }
+  ]
+}
