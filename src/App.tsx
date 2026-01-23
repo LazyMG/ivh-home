@@ -26,17 +26,17 @@ import Mobility from "./pages/solution/Mobility";
 import AIInnovation from "./pages/solution/AIInnovation";
 import IMOVA from "./pages/product/IMOVA";
 // Dymola
-import NewDymola from "./pages/product/dymola/NewDymola";
-import NewBattery from "./pages/product/dymola/NewBattery";
+import NewDymola from "./pages/product/dymola/Dymola";
+import NewBattery from "./pages/product/dymola/Battery";
 import TIL from "./pages/product/dymola/TIL";
 // VTD
-import NewVTD from "./pages/product/vtd/NewVTD";
+import NewVTD from "./pages/product/vtd/VTD";
 import VTDCreate from "./pages/product/vtd/VTDCreate";
 import VTDSimulate from "./pages/product/vtd/VTDSimulate";
 import VTDFullstack from "./pages/product/vtd/VTDFullstack";
 // PTV
 import PTV from "./pages/product/ptv/PTV";
-import NewVissim from "./pages/product/ptv/NewVissim";
+import NewVissim from "./pages/product/ptv/Vissim";
 import VissimAutomotive from "./pages/product/ptv/VissimAutomotive";
 import Viswalk from "./pages/product/ptv/Viswalk";
 // Modelon

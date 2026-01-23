@@ -4,7 +4,7 @@ import ProductPageTemplate from "../../../components/product/ProductPageTemplate
 import vtd from "../../../data/product/new-vtd.json";
 import { useSEO } from "../../../hooks/useSEO";
 
-const NewVTD = () => {
+const VTD = () => {
   const seoData = useSEO("product/dymola", vtd);
   const {
     vtd_mainImg,
@@ -32,4 +32,4 @@ const NewVTD = () => {
   );
 };
 
-export default NewVTD;
+export default VTD;

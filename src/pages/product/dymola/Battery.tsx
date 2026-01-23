@@ -3,7 +3,7 @@ import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate
 import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
 
-const NewBattery = () => {
+const Battery = () => {
   const seoData = useSEO("product/dymola/battery", battery);
   const {
     battery_features,
@@ -29,4 +29,4 @@ const NewBattery = () => {
   );
 };
 
-export default NewBattery;
+export default Battery;

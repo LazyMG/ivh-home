@@ -3,7 +3,7 @@ import { useSEO } from "../../../hooks/useSEO";
 import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
-const NewDymola = () => {
+const Dymola = () => {
   const seoData = useSEO("product/dymola", dymola);
   const {
     dymola_mainImg,
@@ -33,4 +33,4 @@ const NewDymola = () => {
   );
 };
 
-export default NewDymola;
+export default Dymola;

@@ -3,7 +3,7 @@ import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate
 import vissim from "../../../data/product/new-vissim.json";
 import { useSEO } from "../../../hooks/useSEO";
 
-const NewVissim = () => {
+const Vissim = () => {
   const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", vissim);
 
   const {
@@ -31,4 +31,4 @@ const NewVissim = () => {
   );
 };
 
-export default NewVissim;
+export default Vissim;
