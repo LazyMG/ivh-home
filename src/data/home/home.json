@@ -70,25 +70,29 @@
       "name": "iMOVA",
       "title_image": "/images/home/iMOVA_title_image.png",
       "pc_image": "/images/home/iMOVA_pc_image.png",
-      "mobile_image": "/images/home/iMOVA_mobile_image.png"
+      "mobile_image": "/images/home/iMOVA_mobile_image.png",
+      "path": "/product/imova"
     },
     {
       "name": "iSuite25",
       "title_image": "/images/home/iSuite25_title_image.png",
       "pc_image": "/images/home/iSuite25_pc_image.png",
-      "mobile_image": "/images/home/iSuite25_mobile_image.png"
+      "mobile_image": "/images/home/iSuite25_mobile_image.png",
+      "path": ""
     },
     {
       "name": "iSuite34",
       "title_image": "/images/home/iSuite34_title_image.png",
       "pc_image": "/images/home/iSuite34_pc_image.png",
-      "mobile_image": "/images/home/iSuite34_mobile_image.png"
+      "mobile_image": "/images/home/iSuite34_mobile_image.png",
+      "path": ""
     },
     {
       "name": "iSuite52",
       "title_image": "/images/home/iSuite52_title_image.png",
       "pc_image": "/images/home/iSuite52_pc_image.png",
-      "mobile_image": "/images/home/iSuite52_mobile_image.png"
+      "mobile_image": "/images/home/iSuite52_mobile_image.png",
+      "path": ""
     }
   ],
   "video": "/video/smart_factory.mp4"
