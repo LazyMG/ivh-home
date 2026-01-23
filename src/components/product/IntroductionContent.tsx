@@ -27,6 +27,7 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
               fontFamily: "Freesentation-5-Medium",
               fontSize: "16px",
               color: "#737373",
+              whiteSpace: "pre-line",
               [theme.breakpoints.up("tablet")]: {
                 color: "#424242",
               },
