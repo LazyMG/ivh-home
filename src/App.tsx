@@ -91,10 +91,6 @@ function AppContent() {
           <Route path="/product/dymola" element={<NewDymola />} />
           <Route path="/product/dymola/battery" element={<NewBattery />} />
           <Route path="/product/dymola/til" element={<TIL />} />
-          <Route
-            path="/product/dymola/vehicledynamicslibrary"
-            element={<VehicleDynamicsLibrary />}
-          />
 
           {/** 26.01.23 미사용 */}
           {/* <Route
