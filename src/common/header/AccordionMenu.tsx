@@ -41,7 +41,6 @@ export const AccordionMenu = ({
         display: "flex",
         flexDirection: "row",
         my: 1,
-        flex: 1,
         width: "100%",
       }}
     >
@@ -51,18 +50,17 @@ export const AccordionMenu = ({
           sx={{
             display: "flex",
             flexDirection: "column",
-            flex: 1,
             gap: 0.5,
             // 첫 번째 열 제외하고 왼쪽에 구분선
             ...(colIndex > 0 && {
               borderLeft: "1px solid #e0e0e0",
-              pl: 2,
+              pl: 3,
             }),
             // 마지막 열 제외하고 오른쪽 패딩
             ...(colIndex < columns.length - 1 && {
-              pr: 1,
+              pr: 3,
             }),
-            width: "100%",
+            // width: "100%",
             boxSizing: "border-box",
           }}
         >
