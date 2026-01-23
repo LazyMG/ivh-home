@@ -1,16 +1,15 @@
 import { Box, Typography } from "@mui/material";
 
-const ProductSectionTitle = ({ titleText }: { titleText: string }) => {
+const LibrarySectionTitle = ({ titleText }: { titleText: string }) => {
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
       <Box
-        sx={(theme) => ({
+        sx={{
           display: "block",
-          width: "8px",
-          height: "16px",
+          width: "6px",
+          height: "20px",
           backgroundColor: "#00758F",
-          [theme.breakpoints.up("tablet")]: { display: "none" },
-        })}
+        }}
       />
       <Typography
         sx={(theme) => ({
@@ -30,4 +29,4 @@ const ProductSectionTitle = ({ titleText }: { titleText: string }) => {
   );
 };
 
-export default ProductSectionTitle;
+export default LibrarySectionTitle;

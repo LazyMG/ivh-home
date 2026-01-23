@@ -22,15 +22,21 @@ const ProductBottom = ({ productName }: { productName: string }) => {
     >
       <GradientBox title="Application">
         <Box
-          sx={{
+          sx={(theme) => ({
             display: "flex",
             flexDirection: "column",
-            px: 6,
-            pt: 8,
-            pb: 6,
-            gap: 5,
+            px: 3,
+            pt: 5,
+            pb: 4,
+            gap: 2,
             width: "100%",
-          }}
+            [theme.breakpoints.up("tablet")]: {
+              px: 6,
+              pt: 8,
+              pb: 6,
+              gap: 5,
+            },
+          })}
         >
           <Box>
             <Typography
@@ -47,57 +53,75 @@ const ProductBottom = ({ productName }: { productName: string }) => {
           <ProductForm productName={productName} />
         </Box>
       </GradientBox>
-      <GradientBox title="Training">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            px: 6,
-            pt: 8,
-            pb: 6,
-            gap: 5,
-            width: "100%",
-          }}
-        >
-          <Box>
-            <Typography
-              sx={{
-                fontSize: "18px",
-                fontFamily: "Freesentation-5-Medium",
-                whiteSpace: "pre-line",
-                wordBreak: "keep-all",
-              }}
-            >
-              {product_form_training}
-            </Typography>
-          </Box>
+      {productName && (
+        <GradientBox title="Training">
           <Box
-            sx={{
+            sx={(theme) => ({
               display: "flex",
-              justifyContent: "flex-end",
-              justifySelf: "flex-end",
-            }}
+              flexDirection: "column",
+              px: 3,
+              pt: 5,
+              pb: 4,
+              gap: 2,
+              width: "100%",
+              [theme.breakpoints.up("tablet")]: {
+                px: 6,
+                pt: 8,
+                pb: 6,
+                gap: 5,
+              },
+            })}
           >
-            <Box
-              sx={{ cursor: "pointer" }}
-              onClick={() => navigate("/support/training")}
-            >
+            <Box>
               <Typography
                 sx={{
-                  fontSize: "16px",
-                  fontFamily: "Freesentation-6-SemiBold",
-                  color: "#fff",
-                  backgroundColor: "#1755C2",
-                  px: 4,
-                  py: 1,
+                  fontSize: "18px",
+                  fontFamily: "Freesentation-5-Medium",
+                  whiteSpace: "pre-line",
+                  wordBreak: "keep-all",
                 }}
               >
-                {`${productName} ${product_form_navigation}`}
+                {product_form_training}
               </Typography>
             </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                justifySelf: "flex-end",
+              }}
+            >
+              <Box
+                sx={(theme) => ({
+                  cursor: "pointer",
+                  width: "100%",
+                  [theme.breakpoints.up("tablet")]: {
+                    width: "auto",
+                  },
+                })}
+                onClick={() => navigate("/support/training")}
+              >
+                <Typography
+                  sx={(theme) => ({
+                    fontSize: "16px",
+                    fontFamily: "Freesentation-6-SemiBold",
+                    color: "#fff",
+                    backgroundColor: "#1755C2",
+                    px: 1,
+                    py: 1,
+                    textAlign: "center",
+                    [theme.breakpoints.up("tablet")]: {
+                      px: 4,
+                    },
+                  })}
+                >
+                  {`${productName} ${product_form_navigation}`}
+                </Typography>
+              </Box>
+            </Box>
           </Box>
-        </Box>
-      </GradientBox>
+        </GradientBox>
+      )}
     </Box>
   );
 };
