@@ -23,11 +23,11 @@ const CustomModal = ({
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "70%",
+          width: "80%",
           maxWidth: 600,
           maxHeight: "70%",
           bgcolor: "background.paper",
-          p: 4,
+          p: 3,
           outline: "none",
           borderRadius: "8px",
           [theme.breakpoints.up("tablet")]: {

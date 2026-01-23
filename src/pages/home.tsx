@@ -15,12 +15,15 @@ import "swiper/css";
 
 import homeData from "../data/home/home.json";
 import home_partner from "../data/company/partner.json";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { isMobile } = useBreakpoint();
 
   const { iMOVA, products, video } = homeData;
   const { partner_partnerList } = home_partner;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // 컴포넌트 마운트 시 body에 클래스 추가
@@ -149,7 +152,7 @@ const Home = () => {
               px: 2,
               [theme.breakpoints.up("desktop")]: {
                 position: "absolute",
-                top: "2%",
+                top: "4%",
                 left: "8%",
                 maxWidth: "380px",
                 border: "1px solid rgba(0, 0, 0, 0.35) ",
@@ -188,6 +191,15 @@ const Home = () => {
                   display: "flex",
                   alignItems: "center",
                   padding: "0 2px",
+                }}
+                onClick={(swiper) => {
+                  const clickedIndex = swiper.clickedIndex;
+                  if (
+                    clickedIndex !== undefined &&
+                    products[clickedIndex]?.path
+                  ) {
+                    navigate(products[clickedIndex].path);
+                  }
                 }}
               >
                 {products.map((product, index) => (
@@ -255,6 +267,12 @@ const Home = () => {
                       "&:hover .product-bg-image": {
                         filter: "brightness(1)",
                       },
+                      cursor: product.path ? "pointer" : "default",
+                    }}
+                    onClick={() => {
+                      if (product.path) {
+                        navigate(product.path);
+                      }
                     }}
                   >
                     <Box
@@ -364,7 +382,7 @@ const Home = () => {
                       maxWidth: index < 6 ? "70%" : "48%",
                       [theme.breakpoints.up("tablet")]: {
                         minWidth: "40%",
-                        maxWidth: "50%",
+                        maxWidth: "40%",
                       },
                     })}
                   />

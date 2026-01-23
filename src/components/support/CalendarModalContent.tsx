@@ -65,29 +65,39 @@ const CalendarModalContent = ({
 
         {/* 제목 */}
         <Typography
-          sx={{
+          sx={(theme) => ({
             mt: 1,
-            fontSize: "24px",
+            fontSize: "16px",
             fontWeight: "bold",
             wordBreak: "keep-all",
             lineHeight: 1.2,
-            mb: 3,
-          }}
+            mb: 2,
+            [theme.breakpoints.up("tablet")]: {
+              fontSize: "24px",
+              mb: 3,
+            },
+          })}
         >
           {reservation.reservationName}
         </Typography>
 
         {/* 주요 정보 카드 */}
         <Box
-          sx={{
+          sx={(theme) => ({
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: 2,
-            mb: 3,
-            p: 2,
+            gap: 1,
+            mb: 2,
+            px: 2,
+            py: 1,
             backgroundColor: "#f8f9fa",
             borderRadius: "12px",
-          }}
+            [theme.breakpoints.up("tablet")]: {
+              mb: 3,
+              p: 2,
+              gap: 2,
+            },
+          })}
         >
           {/* 날짜 정보 */}
           <Box>
