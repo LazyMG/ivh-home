@@ -320,7 +320,7 @@ export const DrawerContent = ({
                     key={index}
                     onClick={() => handleNavigate(item.path)}
                     sx={{
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontFamily: "Freesentation-4-Regular",
                       color: "#000000",
                       cursor: "pointer",
@@ -360,7 +360,7 @@ export const DrawerContent = ({
                   key={index}
                   onClick={() => handleNavigate(item.path)}
                   sx={{
-                    fontSize: "14px",
+                    fontSize: "16px",
                     fontFamily: "Freesentation-4-Regular",
                     color: "#000000",
                     cursor: "pointer",
