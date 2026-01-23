@@ -10,17 +10,17 @@
     {
       "imgUrl": "/images/pages/product/ptv/libraries/Vissim.png",
       "text": "Vissim",
-      "url": "#"
+      "url": "/product/ptv/vissim"
     },
     {
       "imgUrl": "/images/pages/product/ptv/libraries/Vissim_Automotive.png",
       "text": "Vissim Automotive",
-      "url": "#"
+      "url": "/product/ptv/vissimautomotive"
     },
     {
       "imgUrl": "/images/pages/product/ptv/libraries/Viswalk.png",
       "text": "Viswalk",
-      "url": "#"
+      "url": "/product/ptv/viswalk"
     }
   ]
 }

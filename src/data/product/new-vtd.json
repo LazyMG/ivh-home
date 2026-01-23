@@ -11,17 +11,17 @@
     {
       "imgUrl": "/images/pages/product/vtd/libraries/VTD(Virtual Test Drive)_CREATE.png",
       "text": "VTD(Virtual Test Drive) CREATE",
-      "url": "#"
+      "url": "/product/vtd/vtdcreate"
     },
     {
       "imgUrl": "/images/pages/product/vtd/libraries/VTD(Virtual Test Drive)_SIMULATE.png",
       "text": "VTD(Virtual Test Drive) SIMULATE",
-      "url": "#"
+      "url": "/product/vtd/vtdsimulate"
     },
     {
       "imgUrl": "/images/pages/product/vtd/libraries/VTD(Virtual Test Drive)_FULLSTACK.png",
       "text": "VTD(Virtual Test Drive) FULLSTACK",
-      "url": "#"
+      "url": "/product/vtd/vtdfullstack"
     }
   ]
 }

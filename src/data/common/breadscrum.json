@@ -6,10 +6,10 @@
       { "title": "Solution", "url": "/solution" }
     ],
     "modelica_dymola": [{ "title": "Dymola", "url": "/product/dymola" }],
+    "dymola_base": [{ "title": "Dymola", "url": "/product/dymola" }],
     "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
     "modelon_base": [{ "title": "Modelon", "url": "/product/modelon" }],
-    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }],
-    "vissim_base": [{ "title": "Vissim", "url": "/product/vissim" }]
+    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }]
   },
   "pages": {
     "dymola": {
@@ -34,14 +34,14 @@
       }
     },
     "battery": {
-      "extends": ["home_product", "modelica_dymola"],
+      "extends": ["home_product", "dymola_base"],
       "current": {
         "title": "Battery Library",
         "url": "/product/dymola/battery"
       }
     },
     "til": {
-      "extends": ["home_product", "modelica_dymola"],
+      "extends": ["home_product", "dymola_base"],
       "current": { "title": "TIL", "url": "/product/dymola/til" }
     },
     "thermalPowerLibrary": {
@@ -52,10 +52,10 @@
       }
     },
     "vehicledynamicslibrary": {
-      "extends": ["home_product", "modelica_dymola"],
+      "extends": ["home_product", "modelon_base"],
       "current": {
         "title": "Vehicle Dynamics Library",
-        "url": "/product/dymola/vehicledynamicslibrary"
+        "url": "/product/modelon/vehicledynamicslibrary"
       }
     },
     "vtd": {
@@ -86,16 +86,23 @@
         "url": "/product/vtd/vtdfullstack"
       }
     },
+    "vissim": {
+      "extends": ["home_product", "ptv_base"],
+      "current": {
+        "title": "Vissim",
+        "url": "/product/ptv/vissim"
+      }
+    },
     "vissimAutomotive": {
-      "extends": ["home_product", "vissim_base"],
+      "extends": ["home_product", "ptv_base"],
       "current": {
         "title": "Vissim Automotive",
-        "url": "/product/vissim/automotive"
+        "url": "/product/ptv/vissimautomotive"
       }
     },
     "viswalk": {
-      "extends": ["home_product", "vissim_base"],
-      "current": { "title": "Viswalk", "url": "/product/vissim/viswalk" }
+      "extends": ["home_product", "ptv_base"],
+      "current": { "title": "Viswalk", "url": "/product/ptv/viswalk" }
     },
     "energy": {
       "extends": ["home_solution"],
