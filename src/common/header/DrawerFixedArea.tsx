@@ -59,11 +59,11 @@ export const DrawerFixedArea = () => {
             style={{
               width: "100%",
               border: "2px solid #000000",
-              height: "28px",
+              height: "40px",
               backgroundColor: "#ffffff",
-              paddingLeft: "8px",
-              paddingRight: "24px",
+              padding: "2px 24px 2px 8px",
               boxSizing: "border-box",
+              fontSize: "16px",
             }}
           />
           <Box
@@ -75,26 +75,26 @@ export const DrawerFixedArea = () => {
               top: 0,
               bottom: 0,
               my: "auto",
-              width: "12px",
-              height: "12px",
+              width: "14px",
+              height: "14px",
               cursor: "pointer",
             }}
           />
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
           <Typography
-            sx={{ fontSize: "12px", fontFamily: "Freesentation-4-Regular" }}
+            sx={{ fontSize: "14px", fontFamily: "Freesentation-4-Regular" }}
           >
             {companyInfo.phone}
           </Typography>
           <Typography
-            sx={{ fontSize: "12px", fontFamily: "Freesentation-4-Regular" }}
+            sx={{ fontSize: "14px", fontFamily: "Freesentation-4-Regular" }}
           >
             {companyInfo.email}
           </Typography>
           <Typography
             sx={{
-              fontSize: "12px",
+              fontSize: "14px",
               fontFamily: "Freesentation-4-Regular",
               wordBreak: "keep-all",
               whiteSpace: "pre-wrap",
