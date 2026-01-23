@@ -68,6 +68,7 @@ const SolutionIslandButtons = () => {
             top: "50%",
             left: "20%",
           },
+          zIndex: 10,
         })}
       >
         <ImageIcon {...home} />
@@ -86,6 +87,7 @@ const SolutionIslandButtons = () => {
             top: "50%",
             right: "20%",
           },
+          zIndex: 10,
         })}
       >
         <ImageIcon {...factory} />
@@ -106,6 +108,7 @@ const SolutionIslandButtons = () => {
             top: "75%",
             left: "24%",
           },
+          zIndex: 10,
         })}
       >
         <ImageIcon {...bems} />

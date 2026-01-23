@@ -9,8 +9,8 @@ export const DrawerFixedArea = () => {
   return (
     <Box
       sx={{
-        px: 6,
-        py: 4,
+        pl: 6,
+        pb: 4,
         boxSizing: "border-box",
       }}
     >
@@ -20,7 +20,7 @@ export const DrawerFixedArea = () => {
           flexDirection: "column",
           justifyContent: "flex-end",
           height: "100%",
-          width: "80%",
+          width: "70%",
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
