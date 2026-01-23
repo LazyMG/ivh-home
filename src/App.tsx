@@ -29,18 +29,14 @@ import AIInnovation from "./pages/solution/AIInnovation";
 import SuspensionEquipment from "./pages/solution/mobility/SuspensionEquipment";
 import EV from "./pages/solution/mobility/EV";
 // Dymola
-import Dymola from "./pages/product/dymola/Dymola";
-import Battery from "./pages/product/dymola/Battery";
 import TIL from "./pages/product/dymola/TIL";
 import ThermalPowerLibrary from "./pages/product/dymola/ThermalPowerLibrary";
 import VehicleDynamicsLibrary from "./pages/product/dymola/VehicleDynamicsLibrary";
 // VTD
-import VTD from "./pages/product/vtd/VTD";
 import VTDCreate from "./pages/product/vtd/VTDCreate";
 import VTDSimulate from "./pages/product/vtd/VTDSimulate";
 import VTDFullstack from "./pages/product/vtd/VTDFullstack";
 // Vissim
-import Vissim from "./pages/product/vissim/Vissim";
 import VissimAutomotive from "./pages/product/vissim/VissimAutomotive";
 import Viswalk from "./pages/product/vissim/Viswalk";
 // Calendar
@@ -62,6 +58,9 @@ import IMOVA from "./pages/product/IMOVA";
 import NewDymola from "./pages/product/dymola/NewDymola";
 import NewVTD from "./pages/product/vtd/NewVTD";
 import NewVissim from "./pages/product/vissim/NewVissim";
+import NewBattery from "./pages/product/dymola/NewBattery";
+import Modelon from "./pages/product/modelon/Modelon";
+import PTV from "./pages/product/ptv/PTV";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -75,7 +74,8 @@ function AppContent() {
     <>
       <ScrollToTop>
         {/** header */}
-        {!hideLayout && (isMobile || isTablet ? <MobileHeader /> : <NewHeader />)}
+        {!hideLayout &&
+          (isMobile || isTablet ? <MobileHeader /> : <NewHeader />)}
         <Routes>
           {/** pages */}
           <Route path="/" element={<Home />} />
@@ -110,9 +110,9 @@ function AppContent() {
           <Route path="/product/imova" element={<IMOVA />} />
 
           {/** dymola */}
-          <Route path="/product/dymola" element={<Dymola />} />
-          <Route path="/product/new-dymola" element={<NewDymola />} />
-          <Route path="/product/dymola/battery" element={<Battery />} />
+          <Route path="/product/dymola" element={<NewDymola />} />
+          <Route path="/product/dymola/battery" element={<NewBattery />} />
+
           <Route path="/product/dymola/til" element={<TIL />} />
           <Route
             path="/product/dymola/thermalpowerlibrary"
@@ -123,20 +123,23 @@ function AppContent() {
             element={<VehicleDynamicsLibrary />}
           />
           {/** vtd */}
-          <Route path="/product/vtd" element={<VTD />} />
-          <Route path="/product/new-vtd" element={<NewVTD />} />
+          <Route path="/product/vtd" element={<NewVTD />} />
           <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
           <Route path="/product/vtd/vtdsimulate" element={<VTDSimulate />} />
           <Route path="/product/vtd/vtdfullstack" element={<VTDFullstack />} />
           {/** vissim */}
-          <Route path="/product/vissim" element={<Vissim />} />
-          <Route path="/product/new-vissim" element={<NewVissim />} />
+          <Route path="/product/ptv" element={<PTV />} />
+
+          <Route path="/product/vissim" element={<NewVissim />} />
 
           <Route
             path="/product/vissim/vissimautomotive"
             element={<VissimAutomotive />}
           />
           <Route path="/product/vissim/viswalk" element={<Viswalk />} />
+
+          <Route path="/product/modelon" element={<Modelon />} />
+
           {/** support */}
           <Route path="/support/training" element={<Training />} />
           <Route path="/support" element={<Support />} />
