@@ -147,12 +147,12 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Binary_Model_Export.png",
       "text": "Binary Model Export",
-      "url": "#"
+      "url": "/product/dymola/binarymodelexport"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Brushless_DC_Drives_Library.png",
       "text": "Brushless DC Drives Library",
-      "url": "#"
+      "url": "/product/dymola/brushlessdcdrives"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/ClaRa_Plus_Library.png",
@@ -162,7 +162,7 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Cooling_Library.png",
       "text": "Cooling Library",
-      "url": "#"
+      "url": "/product/dymola/cooling"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Design_Optimization.png",
@@ -172,7 +172,7 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Electric_Power_Systems_Library.png",
       "text": "Electric Power Systems Library",
-      "url": "#"
+      "url": "/product/dymola/electrifiedpowertrains"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Electrified_Powertrains_Library.png",
@@ -182,7 +182,7 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Flexible_Bodies_Library.png",
       "text": "Flexible Bodies Library",
-      "url": "#"
+      "url": "/product/dymola/flexiblebodies"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Flight_Dynamics_Library.png",
@@ -212,7 +212,7 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Hydrogen_Library.png",
       "text": "Hydrogen Library",
-      "url": "#"
+      "url": "/product/dymola/hydrogen"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Process_Modeling_and_Engineering_Library.png",
@@ -237,7 +237,7 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Sustainable_Supply_Systems_Library.png",
       "text": "Sustainable Supply Systems Library",
-      "url": "#"
+      "url": "/product/dymola/sustainablesupplysystems"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/TIL.png",
@@ -272,17 +272,17 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/VeSyMA_Library.png",
       "text": "VeSyMA Library",
-      "url": "#"
+      "url": "/product/dymola/veSyMa"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/VeSyMA_Powertrain_Library.png",
       "text": "VeSyMA Powertrain Library",
-      "url": "#"
+      "url": "/product/dymola/veSyMapowertrain"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/VeSyMA_Suspensions_Library.png",
       "text": "VeSyMA Suspensions Library",
-      "url": "#"
+      "url": "/product/dymola/veSyMasuspension"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Wind_Power_Library.png",

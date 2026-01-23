@@ -26,16 +26,19 @@
                   "path": "/product/dymola/battery"
                 },
                 {
-                  "name": "Binary Model Export"
+                  "name": "Binary Model Export",
+                  "path": "/product/dymola/binarymodelexport"
                 },
                 {
-                  "name": "Brushless DC Drives Library"
+                  "name": "Brushless DC Drives Library",
+                  "path": "/product/dymola/brushlessdcdrives"
                 },
                 {
                   "name": "ClaRa Plus Library"
                 },
                 {
-                  "name": "Cooling Library"
+                  "name": "Cooling Library",
+                  "path": "/product/dymola/cooling"
                 },
                 {
                   "name": "Design Optimization"
@@ -44,10 +47,12 @@
                   "name": "Electric Power Systems Library"
                 },
                 {
-                  "name": "Electrified Powertrains Library"
+                  "name": "Electrified Powertrains Library",
+                  "path": "/product/dymola/electrifiedpowertrains"
                 },
                 {
-                  "name": "Flexible Bodies Library"
+                  "name": "Flexible Bodies Library",
+                  "path": "/product/dymola/flexiblebodies"
                 },
                 {
                   "name": "Flight Dynamics Library"
@@ -65,7 +70,8 @@
                   "name": "Human Comfort Library"
                 },
                 {
-                  "name": "Hydrogen Library"
+                  "name": "Hydrogen Library",
+                  "path": "/product/dymola/hydrogen"
                 },
                 {
                   "name": "Industrial Process Simulation Library"
@@ -92,7 +98,8 @@
                   "name": "Source Code Generation"
                 },
                 {
-                  "name": "Sustainable Supply Systems Library"
+                  "name": "Sustainable Supply Systems Library",
+                  "path": "/product/dymola/sustainablesupplysystems"
                 },
                 {
                   "name": "TIL",
@@ -122,14 +129,16 @@
                   "name": "VeSyMA Engines Library"
                 },
                 {
-                  "name": "VeSyMA Library"
-                },
-
-                {
-                  "name": "VeSyMA Powertrain Library"
+                  "name": "VeSyMA Library",
+                  "path": "/product/dymola/veSyMa"
                 },
                 {
-                  "name": "VeSyMA Suspensions Library"
+                  "name": "VeSyMA Powertrain Library",
+                  "path": "/product/dymola/veSyMapowertrain"
+                },
+                {
+                  "name": "VeSyMA Suspensions Library",
+                  "path": "/product/dymola/veSyMasuspension"
                 },
                 {
                   "name": "Wind Power Library"
@@ -143,6 +152,58 @@
             {
               "name": "Modelon",
               "subMenu": [
+                {
+                  "name": "Air Cooling Library",
+                  "path": "/product/modelon/aircooling"
+                },
+                {
+                  "name": "Aircraft Dynamics Library",
+                  "path": "/product/modelon/aircraftdynamics"
+                },
+                {
+                  "name": "Electrification Library",
+                  "path": "/product/modelon/electrification"
+                },
+                {
+                  "name": "Environmental Control Library",
+                  "path": "/product/modelon/environmentalcontrol"
+                },
+                {
+                  "name": "Fuel Cell Library",
+                  "path": "/product/modelon/fuelcell"
+                },
+                {
+                  "name": "Fuel System Library",
+                  "path": "/product/modelon/fuelsystem"
+                },
+                {
+                  "name": "Heat Exchanger Library",
+                  "path": "/product/modelon/heatexchanger"
+                },
+                {
+                  "name": "Hydraulics Library",
+                  "path": "/product/modelon/hydraulics"
+                },
+                {
+                  "name": "Jet Propulsion Library",
+                  "path": "/product/modelon/jetpropulsion"
+                },
+                {
+                  "name": "Liquid Cooling Library",
+                  "path": "/product/modelon/liquidcooling"
+                },
+                {
+                  "name": "Modelon Base Library",
+                  "path": "/product/modelon/modelonbase"
+                },
+                {
+                  "name": "Thermal Power Library",
+                  "path": "/product/modelon/thermalpower"
+                },
+                {
+                  "name": "Vapor Cycle Library",
+                  "path": "/product/modelon/vaporcycle"
+                },
                 {
                   "name": "Vehicle Dynamics Library",
                   "path": "/product/modelon/vehicledynamicslibrary"

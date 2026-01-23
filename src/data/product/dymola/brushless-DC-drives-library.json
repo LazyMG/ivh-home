@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Brushless DC Drives Library - 브러시리스 DC 드라이브 시스템 통합 시뮬레이션 라이브러리",
+    "description": "브러시리스 DC 드라이브 시스템 통합 시뮬레이션 라이브러리",
+    "keywords": "Brushless, DC Drives, DC 드라이브, 시뮬레이션, Dymola",
+    "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-main.png"
+  },
+  "title": "Brushless DC Drives Library",
+  "subTitle": "브러시리스 DC 드라이브 시스템 통합 시뮬레이션 라이브러리",
+  "pageKey": "brushlessDCDrives",
+  "name": "",
+  "introduction": [
+    {
+      "text": "Brushless DC Drives Library는 Modelica 기반으로 다양한 브러시리스 DC 모터 및 드라이브 시스템을 통합적으로 모델링하고 시뮬레이션할 수 있는 라이브러리입니다.\n모터, 인버터, 제어기 등 주요 구성요소를 상세하게 구현하며, 실제 구동 환경에서의 동적 거동, 제어 전략, 효율 분석까지 폭넓게 지원합니다.\n이 라이브러리는 차량, 산업장비, 가전 등 다양한 분야의 구동 시스템 설계와 성능 평가에 활용할 수 있습니다. 전체 시스템 모델과 연동해 실시간 시뮬레이션, 파라미터 변경에 따른 성능 영향 분석, 제어기 개발 및 검증 등 개발 전 과정에 적용 가능합니다."
+    }
+  ]
+}
