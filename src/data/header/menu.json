@@ -22,19 +22,23 @@
                   "name": "Aviation Systems Library"
                 },
                 {
-                  "name": "Battery Library"
+                  "name": "Battery Library",
+                  "path": "/product/dymola/battery"
                 },
                 {
-                  "name": "Binary Model Export"
+                  "name": "Binary Model Export",
+                  "path": "/product/dymola/binarymodelexport"
                 },
                 {
-                  "name": "Brushless DC Drives Library"
+                  "name": "Brushless DC Drives Library",
+                  "path": "/product/dymola/brushlessdcdrives"
                 },
                 {
                   "name": "ClaRa Plus Library"
                 },
                 {
-                  "name": "Cooling Library"
+                  "name": "Cooling Library",
+                  "path": "/product/dymola/cooling"
                 },
                 {
                   "name": "Design Optimization"
@@ -43,10 +47,12 @@
                   "name": "Electric Power Systems Library"
                 },
                 {
-                  "name": "Electrified Powertrains Library"
+                  "name": "Electrified Powertrains Library",
+                  "path": "/product/dymola/electrifiedpowertrains"
                 },
                 {
-                  "name": "Flexible Bodies Library"
+                  "name": "Flexible Bodies Library",
+                  "path": "/product/dymola/flexiblebodies"
                 },
                 {
                   "name": "Flight Dynamics Library"
@@ -64,7 +70,8 @@
                   "name": "Human Comfort Library"
                 },
                 {
-                  "name": "Hydrogen Library"
+                  "name": "Hydrogen Library",
+                  "path": "/product/dymola/hydrogen"
                 },
                 {
                   "name": "Industrial Process Simulation Library"
@@ -91,10 +98,12 @@
                   "name": "Source Code Generation"
                 },
                 {
-                  "name": "Sustainable Supply Systems Library"
+                  "name": "Sustainable Supply Systems Library",
+                  "path": "/product/dymola/sustainablesupplysystems"
                 },
                 {
-                  "name": "TIL"
+                  "name": "TIL",
+                  "path": "/product/dymola/til"
                 },
                 {
                   "name": "TIL Hydrogen Library"
@@ -120,14 +129,16 @@
                   "name": "VeSyMA Engines Library"
                 },
                 {
-                  "name": "VeSyMA Library"
-                },
-
-                {
-                  "name": "VeSyMA Powertrain Library"
+                  "name": "VeSyMA Library",
+                  "path": "/product/dymola/veSyMa"
                 },
                 {
-                  "name": "VeSyMA Suspensions Library"
+                  "name": "VeSyMA Powertrain Library",
+                  "path": "/product/dymola/veSyMapowertrain"
+                },
+                {
+                  "name": "VeSyMA Suspensions Library",
+                  "path": "/product/dymola/veSyMasuspension"
                 },
                 {
                   "name": "Wind Power Library"
@@ -136,38 +147,68 @@
             },
             {
               "name": "Modelica",
-              "path": "#",
+              "path": "#"
+            },
+            {
+              "name": "Modelon",
               "subMenu": [
                 {
-                  "name": "Battery",
-                  "path": "/product/dymola/battery",
-                  "preview_img_path": "/images/pages/product/battery/battery-preview.png",
-                  "description": "복합 시스템 내 배터리 통합 및 성능 분석을 위한 Modelica 기반 시뮬레이션 라이브러리"
+                  "name": "Air Cooling Library",
+                  "path": "/product/modelon/aircooling"
                 },
                 {
-                  "name": "TIL",
-                  "path": "/product/dymola/til",
-                  "preview_img_path": "/images/pages/product/dymola/dymola-card-two.png",
-                  "description": "유연한 구성과 고정밀 시뮬레이션을 지원하는 다분야 시스템 모델링 라이브러리"
+                  "name": "Aircraft Dynamics Library",
+                  "path": "/product/modelon/aircraftdynamics"
+                },
+                {
+                  "name": "Electrification Library",
+                  "path": "/product/modelon/electrification"
+                },
+                {
+                  "name": "Environmental Control Library",
+                  "path": "/product/modelon/environmentalcontrol"
+                },
+                {
+                  "name": "Fuel Cell Library",
+                  "path": "/product/modelon/fuelcell"
+                },
+                {
+                  "name": "Fuel System Library",
+                  "path": "/product/modelon/fuelsystem"
+                },
+                {
+                  "name": "Heat Exchanger Library",
+                  "path": "/product/modelon/heatexchanger"
+                },
+                {
+                  "name": "Hydraulics Library",
+                  "path": "/product/modelon/hydraulics"
+                },
+                {
+                  "name": "Jet Propulsion Library",
+                  "path": "/product/modelon/jetpropulsion"
+                },
+                {
+                  "name": "Liquid Cooling Library",
+                  "path": "/product/modelon/liquidcooling"
+                },
+                {
+                  "name": "Modelon Base Library",
+                  "path": "/product/modelon/modelonbase"
                 },
                 {
                   "name": "Thermal Power Library",
-                  "path": "/product/dymola/thermalpowerlibrary",
-                  "preview_img_path": "/images/pages/product/dymola/dymola-card-three.png",
-                  "description": "열반전 시스템 설계 및 최적화를 위한 통합 시뮬레이션 라이브러리"
+                  "path": "/product/modelon/thermalpower"
+                },
+                {
+                  "name": "Vapor Cycle Library",
+                  "path": "/product/modelon/vaporcycle"
                 },
                 {
                   "name": "Vehicle Dynamics Library",
-                  "path": "/product/dymola/vehicledynamicslibrary",
-                  "preview_img_path": "/images/pages/product/dymola/dymola-card-four.png",
-                  "description": "차량 및 서브시스템 해석을 위한 개방형 다물체 시뮬레이션 라이브러리"
-                },
-                { "name": "Modelon", "state": "hide" },
-                { "name": "TLK", "state": "hide" }
+                  "path": "/product/modelon/vehicledynamicslibrary"
+                }
               ]
-            },
-            {
-              "name": "Modelon"
             },
             {
               "name": "Virtual Test Driving",
@@ -196,7 +237,21 @@
               ]
             },
             {
-              "name": "PTV"
+              "name": "PTV",
+              "subMenu": [
+                {
+                  "name": "Vissim",
+                  "path": "/product/ptv/vissim"
+                },
+                {
+                  "name": "Vissim Automotive",
+                  "path": "/product/ptv/vissimautomotive"
+                },
+                {
+                  "name": "Viswalk",
+                  "path": "/product/ptv/viswalk"
+                }
+              ]
             }
           ]
         },

@@ -6,33 +6,217 @@
       { "title": "Solution", "url": "/solution" }
     ],
     "modelica_dymola": [{ "title": "Dymola", "url": "/product/dymola" }],
+    "dymola_base": [{ "title": "Dymola", "url": "/product/dymola" }],
     "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
-    "vissim_base": [{ "title": "Vissim", "url": "/product/vissim" }]
+    "modelon_base": [{ "title": "Modelon", "url": "/product/modelon" }],
+    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }]
   },
   "pages": {
-    "battery": {
-      "extends": ["home_product", "modelica_dymola"],
+    "dymola": {
+      "extends": ["home_product"],
       "current": {
-        "title": "Battery",
+        "title": "Dymola",
+        "url": "/product/dymola"
+      }
+    },
+    "modelon": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "Modelon",
+        "url": "/product/dymola"
+      }
+    },
+    "ptv": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "PTV",
+        "url": "/product/ptv"
+      }
+    },
+    "battery": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "Battery Library",
         "url": "/product/dymola/battery"
       }
     },
     "til": {
-      "extends": ["home_product", "modelica_dymola"],
+      "extends": ["home_product", "dymola_base"],
       "current": { "title": "TIL", "url": "/product/dymola/til" }
     },
-    "thermalPowerLibrary": {
-      "extends": ["home_product", "modelica_dymola"],
+    "cooling": {
+      "extends": ["home_product", "dymola_base"],
       "current": {
-        "title": "Thermal Power Library",
-        "url": "/product/dymola/thermal"
+        "title": "Cooling Library",
+        "url": "/product/dymola/cooling"
       }
     },
-    "vehicledynamicslibrary": {
-      "extends": ["home_product", "modelica_dymola"],
+    "brushlessDCDrives": {
+      "extends": ["home_product", "dymola_base"],
       "current": {
-        "title": "Vehicle Dynamics Library",
-        "url": "/product/dymola/vehicledynamicslibrary"
+        "title": "Brushless DC Drives Library",
+        "url": "/product/dymola/brushlessdcdrives"
+      }
+    },
+    "electrifiedPowertrains": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "Electrified Powertrains Library",
+        "url": "/product/dymola/electrifiedpowertrains"
+      }
+    },
+    "flexibleBodies": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "Flexible Bodies",
+        "url": "/product/dymola/flexiblebodies"
+      }
+    },
+    "hydrogen": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "Hydrogen Library",
+        "url": "/product/dymola/hydrogen"
+      }
+    },
+    "sustainableSupplySystems": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "Sustainable Supply Systems Library",
+        "url": "/product/dymola/sustainablesupplysystems"
+      }
+    },
+    "veSyMa": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "VeSyMa Library",
+        "url": "/product/dymola/veSyMa"
+      }
+    },
+    "veSyMaSuspension": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "VeSyMa – Suspension Library",
+        "url": "/product/dymola/veSyMasuspension"
+      }
+    },
+    "veSyMaPowertrain": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "VeSyMa – Powertrain Library",
+        "url": "/product/dymola/veSyMapowertrain"
+      }
+    },
+    "binaryModelExport": {
+      "extends": ["home_product", "dymola_base"],
+      "current": {
+        "title": "Binary Model Export",
+        "url": "/product/dymola/binarymodelexport"
+      }
+    },
+    "vehicleDynamics": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Vehicle Dynamics",
+        "url": "/product/modelon/vehicledynamics"
+      }
+    },
+    "vaporCycle": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Vapor Cycle Library",
+        "url": "/product/modelon/vaporcycle"
+      }
+    },
+    "thermalPower": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Thermal Power Library",
+        "url": "/product/modelon/thermalpower"
+      }
+    },
+    "modelonBase": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Modelon Base Library",
+        "url": "/product/modelon/modelonbase"
+      }
+    },
+    "liquidCooling": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Liquid Cooling Library",
+        "url": "/product/modelon/liquidcooling"
+      }
+    },
+    "jetPropulsion": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Jet Propulsion Library",
+        "url": "/product/modelon/jetpropulsion"
+      }
+    },
+    "aircraftDynamics": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Aircraft Dynamics Library",
+        "url": "/product/modelon/aircraftdynamics"
+      }
+    },
+    "airCooling": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Air Cooling Library",
+        "url": "/product/modelon/aircooling"
+      }
+    },
+    "fuelCell": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Fuel Cell Library",
+        "url": "/product/modelon/fuelcell"
+      }
+    },
+    "hydraulics": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Hydraulics Library",
+        "url": "/product/modelon/hydraulics"
+      }
+    },
+    "heatExchanger": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Heat Exchanger Library",
+        "url": "/product/modelon/heatexchanger"
+      }
+    },
+    "fuelSystem": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Fuel System Library",
+        "url": "/product/modelon/fuelsystem"
+      }
+    },
+    "environmentalControl": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Environmental Control Library",
+        "url": "/product/modelon/environmentalcontrol"
+      }
+    },
+    "electrification": {
+      "extends": ["home_product", "modelon_base"],
+      "current": {
+        "title": "Electrification Library",
+        "url": "/product/modelon/electrification"
+      }
+    },
+    "vtd": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "VTD",
+        "url": "/product/vtd"
       }
     },
     "vtdCreate": {
@@ -56,16 +240,23 @@
         "url": "/product/vtd/vtdfullstack"
       }
     },
+    "vissim": {
+      "extends": ["home_product", "ptv_base"],
+      "current": {
+        "title": "Vissim",
+        "url": "/product/ptv/vissim"
+      }
+    },
     "vissimAutomotive": {
-      "extends": ["home_product", "vissim_base"],
+      "extends": ["home_product", "ptv_base"],
       "current": {
         "title": "Vissim Automotive",
-        "url": "/product/vissim/automotive"
+        "url": "/product/ptv/vissimautomotive"
       }
     },
     "viswalk": {
-      "extends": ["home_product", "vissim_base"],
-      "current": { "title": "Viswalk", "url": "/product/vissim/viswalk" }
+      "extends": ["home_product", "ptv_base"],
+      "current": { "title": "Viswalk", "url": "/product/ptv/viswalk" }
     },
     "energy": {
       "extends": ["home_solution"],

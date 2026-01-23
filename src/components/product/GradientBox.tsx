@@ -26,7 +26,7 @@ const GradientBox = ({
     >
       <>
         <Typography
-          sx={{
+          sx={(theme) => ({
             fontFamily: "Freesentation-7-Bold",
             color: "#fff",
             py: 0.5,
@@ -34,11 +34,14 @@ const GradientBox = ({
             textAlign: "center",
             position: "absolute",
             top: -16,
-            left: 48,
+            left: -2,
             width: "216px",
             fontSize: "24px",
             background: `linear-gradient(to right, #339070, #1755C2 100%)`,
-          }}
+            [theme.breakpoints.up("tablet")]: {
+              left: 48,
+            },
+          })}
         >
           {title}
         </Typography>

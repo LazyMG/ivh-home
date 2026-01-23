@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Binary Model Export - Dymola 모델 외부 활용을 위한 바이너리 변환 기능",
+    "description": "Dymola 모델 외부 활용을 위한 바이너리 변환 기능",
+    "keywords": "Binary Model Export, 바이너리, 모델, 내보내기, Dymola",
+    "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-main.png"
+  },
+  "title": "Binary Model Export",
+  "subTitle": "Dymola 모델 외부 활용을 위한 바이너리 변환 기능",
+  "pageKey": "binaryModelExport",
+  "name": "",
+  "introduction": [
+    {
+      "text": "Binary Model Export는 Dymola에서 개발한 시스템 모델을 독립 실행 파일 형태의 바이너리로 내보낼 수 있는 기능입니다.\n이 옵션을 활용하면 Modelica 기반의 시뮬레이션 모델을 FMU(Functional Mock-up Unit) 등 표준 포맷뿐만 아니라, 별도의 바이너리 파일로 변환하여 조직 내 또는 고객·협력사에 자유롭게 배포할 수 있습니다.\n내보낸 바이너리 모델은 Dymola나 기타 소프트웨어 없이도 독립적으로 실행 가능하며, 사용자가 모델 내부 변수·파라미터의 접근 권한을 직접 설정할 수 있어 지적 재산(IP) 보호에 유리합니다.\n또한, Simulink 등 외부 플랫폼과의 연동을 위한 FMU 변환도 지원되어, 다양한 시뮬레이션 환경에서 동일한 모델을 활용할 수 있습니다."
+    }
+  ]
+}

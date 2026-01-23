@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "VeSyMa Powertrain Library - 초기 컨셉부터 상세 분석까지, 파워트레인 다물체 동역학의 최적화 솔루션",
+    "description": "초기 컨셉부터 상세 분석까지, 파워트레인 다물체 동역학의 최적화 솔루션",
+    "keywords": "VeSyMa, Powertrain, 파워트레인, 다물체 동역학, 차량, 시스템, 모델링, 시뮬레이션, Modelica, Dymola",
+    "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-main.png"
+  },
+  "title": "VeSyMa Powertrain Library",
+  "subTitle": "초기 컨셉부터 상세 분석까지, 파워트레인 다물체 동역학의 최적화 솔루션",
+  "pageKey": "veSyMaPowertrain",
+  "name": "",
+  "introduction": [
+    {
+      "text": "VeSyMA - Powertrain Dynamics Library는 자동차 파워트레인과 같은 회전 다물체 시스템을 모델링하고 시뮬레이션하기 위한 Modelica 기반 라이브러리입니다.\n이 라이브러리는 복잡한 파워트레인 시스템을 효율적으로 구축할 수 있도록 설계되었으며, 1D 단순 모델을 통한 신속한 개념 검토부터 다물체 상세 모델을 활용한 정밀 동역학 분석까지 전체 개발 사이클을 폭넓게 지원합니다. 모든 구성 부품에 애니메이션 기능이 내장되어 시스템의 동적 거동을 직관적으로 이해할 수 있으며, Modelica 표준 커넥터를 준수하여 다른 자동차 관련 라이브러리들과 완벽한 호환성을 제공합니다."
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import breadcrumbs from "../data/common/breadscrum.json";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import { useBreakpoint } from "../hooks/useBreakpoint";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 interface BreadcrumbItem {
   title: string;
@@ -48,7 +49,7 @@ const BreadScrum = ({ pageKey }: BreadScrumProps) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        justifyContent: isMobile ? "flex-start" : "flex-end",
+        justifyContent: "flex-end",
         mb: isMobile ? 0 : 2,
         flexWrap: "wrap",
       }}
@@ -84,11 +85,9 @@ const StyledButton = styled(Button, {
   shouldForwardProp: (prop) => prop !== "$isLast",
 })<{ $isLast?: boolean }>(({ $isLast = false }) => ({
   textTransform: "none",
-  // color: $isLast ? "#333" : "#717171", // 마지막 항목은 더 진한 색상
   color: "#737373",
   padding: 0,
   minWidth: 0,
-  // fontWeight: $isLast ? 600 : 400, // 마지막 항목은 더 굵게
   fontFamily: $isLast ? "Freesentation-7-Bold" : "Freesentation-5-Medium",
   "&:hover": {
     backgroundColor: "transparent",
@@ -109,14 +108,14 @@ const ArrowIcon = ({ isMobile }: { isMobile: boolean }) => {
         fontFamily: "Freesentation-5-Medium",
         verticalAlign: "middle",
         mr: isMobile ? "5px" : "10px",
-        fontSize: isMobile ? 10 : 16,
+        fontSize: isMobile ? 14 : 16,
         [theme.breakpoints.up("tablet")]: {
           fontSize: 24,
         },
       })}
     >
-      {/* <KeyboardArrowRightIcon fontSize="inherit" /> */}
-      {">"}
+      <KeyboardArrowRightIcon fontSize="inherit" />
+      {/* {">"} */}
     </Box>
   );
 };

@@ -74,12 +74,15 @@ const ProductForm = ({ productName }: { productName: string }) => {
       <Box
         component="form"
         onSubmit={handleSubmit(onSubmit)}
-        sx={{
+        sx={(theme) => ({
           display: "flex",
-          flexDirection: "row",
+          flexDirection: "column",
           width: "100%",
           gap: 3,
-        }}
+          [theme.breakpoints.up("tablet")]: {
+            flexDirection: "row",
+          },
+        })}
       >
         <Box sx={{ position: "relative", width: "100%" }}>
           <TextField
@@ -143,35 +146,48 @@ const ProductForm = ({ productName }: { productName: string }) => {
             <ApplicationInputErrorText text={errors.phone.message || ""} />
           )}
         </Box>
-        <Button
-          type="submit"
-          disabled={!isValid || submitStatus === "loading"}
-          sx={{
-            py: 1,
-            px: 4,
-            backgroundColor: "#1755C2",
+        <Box
+          sx={(theme) => ({
             minWidth: "fit-content",
-            borderRadius: 0,
-            "&.Mui-disabled": {
-              opacity: 0.5,
-              backgroundColor: "#707070",
-              "& .MuiTypography-root": {
-                color: "#9e9e9e",
-              },
+            width: "auto",
+            display: "flex",
+            justifyContent: "flex-end",
+            [theme.breakpoints.up("tablet")]: {
+              display: "block",
+              width: "fit-content",
             },
-          }}
+          })}
         >
-          <Typography
+          <Button
+            type="submit"
+            disabled={!isValid || submitStatus === "loading"}
             sx={{
-              color: "#fff",
-              fontSize: "16px",
-              fontFamily: "Freesentation-6-SemiBold",
-              textAlign: "center",
+              py: 1,
+              px: 4,
+              backgroundColor: "#1755C2",
+              minWidth: "fit-content",
+              borderRadius: 0,
+              "&.Mui-disabled": {
+                opacity: 0.5,
+                backgroundColor: "#707070",
+                "& .MuiTypography-root": {
+                  color: "#9e9e9e",
+                },
+              },
             }}
           >
-            요청하기
-          </Typography>
-        </Button>
+            <Typography
+              sx={{
+                color: "#fff",
+                fontSize: "16px",
+                fontFamily: "Freesentation-6-SemiBold",
+                textAlign: "center",
+              }}
+            >
+              요청하기
+            </Typography>
+          </Button>
+        </Box>
       </Box>
       <CustomSnackbar
         submitStatus={submitStatus}

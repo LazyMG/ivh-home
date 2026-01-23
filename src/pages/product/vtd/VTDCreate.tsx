@@ -1,129 +1,30 @@
-import { Box, Stack } from "@mui/material";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import BreadScrum from "../../../common/BreadScrum";
-import ProductTitle from "../../../components/product/ProductTitle";
-import Outline from "../../../components/product/Outline";
-import Feature from "../../../components/product/Feature";
-import ProductTextImageBox from "../../../components/product/ProductTextImageBox";
-
-import vtd_create from "../../../data/product/vtd-create.json";
-import ScrollButton from "../../../common/ScrollButton";
-import { useSEO } from "../../../hooks/useSEO";
+import vtd_create from "../../../data/product/vtd/vtd-create.json";
+import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 import SEO from "../../../common/SEO";
-import ProductBottom from "../../../components/product/ProductBottom";
+import { useSEO } from "../../../hooks/useSEO";
 
 const VTDCreate = () => {
-  const { isMobile } = useBreakpoint();
   const seoData = useSEO("product/vtd/vtdcreate", vtd_create);
   const {
     vtd_create_title,
-    vtd_create_subtitle,
-    vtd_create_imgObj,
-    vtd_create_outline,
-    vtd_create_color,
-    vtd_create_featureColor,
-    vtd_create_subColor,
-    vtd_create_data,
+    vtd_create_subTitle,
+    vtd_create_introduction,
+    vtd_create_features,
+    vtd_create_name,
+    vtd_create_pageKey,
   } = vtd_create;
-
-  const THRESHOLD = 100;
 
   return (
     <>
-      {/* SEO 메타 태그 */}
       <SEO {...seoData} />
-      <Box
-        component="main"
-        sx={(theme) => ({
-          ...theme.customStyles.productPageContainer,
-        })}
-      >
-        <ScrollButton
-          color={vtd_create_color}
-          threshold={THRESHOLD}
-          show={!isMobile}
-        />
-        <Box component="article">
-          {/* breadcrumb section */}
-          {isMobile ? null : <BreadScrum pageKey="vtdCreate" />}
-          {/** 그라데이션이 있는 제목 영역 */}
-          {isMobile ? (
-            <ProductTitle
-              contentProps={{
-                title: vtd_create_title,
-                subtitle: vtd_create_subtitle,
-                color: vtd_create_color,
-                subColor: vtd_create_subColor,
-              }}
-              isMobile={isMobile}
-              pageKey="vtdCreate"
-            />
-          ) : (
-            <ProductTitle
-              contentProps={{
-                title: vtd_create_title,
-                subtitle: vtd_create_subtitle,
-                color: vtd_create_color,
-                subColor: vtd_create_subColor,
-              }}
-            />
-          )}
-
-          {/** 그라데이션 영역 바로 밑에 개요 영역 */}
-          <Outline outline={vtd_create_outline} imgObj={vtd_create_imgObj} />
-
-          {/** Features 영역 */}
-          <Box
-            component="section"
-            aria-label="features-heading"
-            sx={(theme) => ({
-              my: 12,
-              [theme.breakpoints.up("tablet")]: {
-                my: 22,
-              },
-            })}
-          >
-            <Feature color={vtd_create_featureColor} />
-
-            <Stack
-              sx={(theme) => ({
-                ...theme.customStyles.productStackComponent,
-              })}
-            >
-              {vtd_create_data.map((data, index) => (
-                <ProductTextImageBox
-                  key={`vtd-create-${index}`}
-                  title={data.title}
-                  contents={data.contents}
-                  imgObj={data.imgObj}
-                />
-              ))}
-            </Stack>
-
-            {/** 하단 폼 영역 */}
-            <Box
-              component="section"
-              aria-label="form-heading"
-              sx={(theme) => ({
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-                my: 12,
-                [theme.breakpoints.up("tablet")]: {
-                  my: 24,
-                  gap: 22,
-                },
-                [theme.breakpoints.up("desktop")]: {
-                  my: 30,
-                  mb: 36,
-                },
-              })}
-            >
-              <ProductBottom productName="VTD CREATE" />
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+      <LibraryPageTemplate
+        title={vtd_create_title}
+        subTitle={vtd_create_subTitle}
+        introduction={vtd_create_introduction}
+        pageKey={vtd_create_pageKey}
+        features={vtd_create_features}
+        name={vtd_create_name}
+      />
     </>
   );
 };

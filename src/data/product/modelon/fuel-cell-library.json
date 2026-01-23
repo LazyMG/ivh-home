@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Fuel Cell Library - 연료전지 시스템 통합 시뮬레이션 라이브러리",
+    "description": "연료전지 시스템 통합 시뮬레이션 라이브러리",
+    "keywords": "Fuel Cell Library, 연료전지, PEMFC, SOFC, Modelon, Modelica",
+    "ogImage": "https://ivh.co.kr/images/pages/product/modelon/modelon-main.png"
+  },
+  "title": "Fuel Cell Library",
+  "subTitle": "연료전지 시스템 통합 시뮬레이션 라이브러리",
+  "pageKey": "fuelCell",
+  "name": "",
+  "introduction": [
+    {
+      "text": "Fuel Cell Library는 Modelica 기반으로 연료전지 시스템을 정밀하게 모델링하고 시뮬레이션할 수 있는 라이브러리입니다. PEMFC, SOFC 등 다양한 연료전지 기술을 지원하며, 스택, 보조 시스템, 제어 전략을 포함한 전체 시스템의 동적 거동, 효율 분석, 에너지 흐름을 평가할 수 있습니다. 차량, 발전, 산업용 애플리케이션에서 성능 최적화, 제어기 개발 및 검증, 실시간 시뮬레이션(HiL) 등 연료전지 기반 시스템 개발 전 과정에 활용 가능합니다."
+    }
+  ]
+}

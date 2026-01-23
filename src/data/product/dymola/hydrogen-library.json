@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Hydrogen Library - 수소 에너지 시스템 통합 시뮬레이션 라이브러리",
+    "description": "수소 에너지 시스템 통합 시뮬레이션 라이브러리",
+    "keywords": "Hydrogen, 수소, 수소 에너지, 연료전지, 시뮬레이션, Modelica, Dymola",
+    "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-main.png"
+  },
+  "title": "Hydrogen Library",
+  "subTitle": "수소 에너지 시스템 통합 시뮬레이션 라이브러리",
+  "pageKey": "hydrogen",
+  "name": "",
+  "introduction": [
+    {
+      "text": "Hydrogen Library는 Modelica 기반으로 수소 생산, 저장, 공급, 연료전지 등 다양한 수소 에너지 시스템을 통합적으로 모델링하고 시뮬레이션할 수 있는 라이브러리입니다.\n수소 생산(전기분해, 개질), 저장 및 운송, 연료전지 스택, 공급 인프라 등 주요 구성요소를 상세하게 구현하며, 실제 운전 조건에서의 동적 거동, 에너지 흐름, 효율 분석, 제어 전략 검증까지 폭넓게 지원합니다.\n이 라이브러리는 전체 에너지 시스템과 연동해 수소 기반 발전, 모빌리티, 산업용 공급망 등 다양한 적용 분야에서 성능 평가와 최적화, 실시간 시뮬레이션(HiL), 제어기 개발 및 검증 등 수소 시스템 개발 전 과정에 활용할 수 있습니다."
+    }
+  ]
+}

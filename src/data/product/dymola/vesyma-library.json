@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "VeSyMa Library - 차량 시스템 시뮬레이션을 위한 통합 아키텍처",
+    "description": "차량 시스템 시뮬레이션을 위한 통합 아키텍처",
+    "keywords": "VeSyMa, 차량, 도로 주행 차량 시스템, 시스템, 모델링, Modelica, Dymola",
+    "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-main.png"
+  },
+  "title": "VeSyMa Library",
+  "subTitle": "차량 시스템 시뮬레이션을 위한 통합 아키텍처",
+  "pageKey": "veSyMa",
+  "name": "",
+  "introduction": [
+    {
+      "text": "VeSyMA Library는 도로 주행 차량 시스템의 모델링과 성능 분석을 위한 핵심 Modelica 라이브러리입니다.\n이 라이브러리는 차량의 열, 하이브리드, 전기 구동 시스템, 변속기, 드라이브트레인을 포함한 시스템 수준 정의를 기반으로, 표준 또는 사용자 정의 주행 사이클에 따라 연비, 배출가스, 동적 거동을 예측할 수 있도록 설계되었습니다.\nVeSyMA는 단일 라이브러리가 아니라, 서스펜션, 파워트레인, 엔진 등 특화된 Modelica 라이브러리의 기반 역할을 하며, 차량 시스템 개발의 초기 단계부터 상세 분석까지 지원합니다.\n이를 통해 엔지니어는 멀티도메인 시뮬레이션을 활용하여 차량의 성능을 빠르고 정확하게 평가하고, 다양한 설계 대안을 비교하며, 전동화 파워트레인 개발 및 차량 동역학 분석을 효율적으로 수행할 수 있습니다."
+    }
+  ]
+}
