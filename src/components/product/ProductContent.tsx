@@ -48,9 +48,13 @@ const ProductContent = ({
     if (!imgObj || imgObj.length === 0) return null;
 
     // imgUrl이 있는 항목만 슬라이더에 포함
-    const slideImages = imgObj.filter((img) => img.imgUrl && img.imgUrl.length > 0);
+    const slideImages = imgObj.filter(
+      (img) => img.imgUrl && img.imgUrl.length > 0,
+    );
     // imgUrl 없고 텍스트만 있는 항목
-    const textOnlyItems = imgObj.filter((img) => (!img.imgUrl || img.imgUrl.length === 0) && img.imgText);
+    const textOnlyItems = imgObj.filter(
+      (img) => (!img.imgUrl || img.imgUrl.length === 0) && img.imgText,
+    );
 
     if (slideImages.length === 0) return null;
 
@@ -217,7 +221,7 @@ const ProductContent = ({
           </Typography>
           <Typography
             sx={(theme) => ({
-              fontSize: "16px",
+              fontSize: "18px",
               fontFamily: "Freesentation-5-Medium",
               whiteSpace: "pre-wrap",
               color: "#737373",

@@ -247,7 +247,7 @@ export const DrawerContent = ({
                               <Typography
                                 sx={{
                                   color: "#179EBD",
-                                  fontSize: "20px",
+                                  fontSize: "22px",
                                   fontFamily: "Freesentation-6-SemiBold",
                                   lineHeight: "20px",
                                 }}
@@ -266,8 +266,9 @@ export const DrawerContent = ({
                               <Typography
                                 sx={{
                                   fontFamily: "Freesentation-5-Medium",
-                                  fontSize: "12px",
+                                  fontSize: "16px",
                                   wordBreak: "keep-all",
+                                  lineHeight: "18px",
                                 }}
                               >
                                 {hoverMenu.description}
