@@ -63,7 +63,7 @@ const ProductPageTemplate = ({
         position: "relative",
         flexDirection: "column",
         [theme.breakpoints.up("tablet")]: {
-          px: "8%",
+          px: "12%",
         },
       })}
     >
@@ -99,7 +99,7 @@ const ProductPageTemplate = ({
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            gap: 9,
+            gap: 5,
           }}
         >
           <Box
@@ -135,16 +135,17 @@ const ProductPageTemplate = ({
                 flexDirection: "column",
                 gap: 0,
                 [theme.breakpoints.up("tablet")]: {
-                  mt: 2,
+                  mt: 0,
+                  gap: 2,
                 },
               })}
             >
               <Typography
                 sx={(theme) => ({
                   fontFamily: "Freesentation-7-Bold",
-                  fontSize: "20px",
+                  fontSize: "28px",
                   [theme.breakpoints.up("tablet")]: {
-                    fontSize: "32px",
+                    fontSize: "36px",
                   },
                 })}
               >
@@ -154,7 +155,8 @@ const ProductPageTemplate = ({
                 <Typography
                   sx={{
                     fontFamily: "Freesentation-5-Medium",
-                    fontSize: "16px",
+                    fontSize: "20px",
+                    wordBreak: "keep-all",
                   }}
                 >
                   {subTitle}
@@ -162,13 +164,13 @@ const ProductPageTemplate = ({
               )}
             </Box>
 
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
               {textList.map((text, index) => (
                 <Typography
                   key={index}
                   sx={(theme) => ({
                     fontFamily: "Freesentation-5-Medium",
-                    fontSize: "16px",
+                    fontSize: "18px",
                     color: "#737373",
                     [theme.breakpoints.up("tablet")]: {
                       color: "#5B5B5B",
