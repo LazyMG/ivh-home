@@ -118,7 +118,7 @@ const Footer = () => {
             >
               <Typography
                 sx={{
-                  fontSize: "12px",
+                  fontSize: "14px",
                   fontFamily: "Freesentation-4-Regular",
                   color: "black",
                 }}
@@ -135,7 +135,7 @@ const Footer = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "12px",
+                    fontSize: "14px",
                     fontFamily: "Freesentation-4-Regular",
                     color: "black",
                   }}
@@ -145,7 +145,7 @@ const Footer = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: "12px",
+                    fontSize: "14px",
                     fontFamily: "Freesentation-4-Regular",
                     color: "black",
                   }}
@@ -156,7 +156,7 @@ const Footer = () => {
               </Box>
               <Typography
                 sx={{
-                  fontSize: "12px",
+                  fontSize: "14px",
                   fontFamily: "Freesentation-4-Regular",
                   color: "black",
                 }}
@@ -183,9 +183,9 @@ const Footer = () => {
               key={`title-${index}`}
               sx={{
                 fontSize: "18px",
-                fontFamily: "Freesentation-6-SemiBold",
+                fontFamily: "Freesentation-7-Bold",
                 color: "#179EBD",
-                px: 3,
+                px: 2,
               }}
             >
               {item.title}
@@ -210,7 +210,7 @@ const Footer = () => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "10px",
-                px: 3,
+                px: 2,
               }}
             >
               {item.items.map((subItem, subIndex) => {
@@ -219,8 +219,8 @@ const Footer = () => {
                   <Typography
                     key={subIndex}
                     sx={{
-                      fontSize: "14px",
-                      fontFamily: "Freesentation-4-Regular",
+                      fontSize: "16px",
+                      fontFamily: "Freesentation-7-Bold",
                       color: "black",
                       cursor: "pointer",
                       width: "fit-content",
