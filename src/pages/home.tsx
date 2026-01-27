@@ -156,7 +156,7 @@ const Home = () => {
                 left: "8%",
                 maxWidth: "380px",
                 border: "1px solid rgba(0, 0, 0, 0.35) ",
-                borderRadius: "12px",
+                borderRadius: "16px",
                 boxShadow: "3px 3px 1px rgba(0,0,0,0.15)",
                 px: 0,
               },
