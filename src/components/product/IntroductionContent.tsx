@@ -25,7 +25,7 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
           <Typography
             sx={(theme) => ({
               fontFamily: "Freesentation-5-Medium",
-              fontSize: "16px",
+              fontSize: "18px",
               color: "#737373",
               whiteSpace: "pre-line",
               [theme.breakpoints.up("tablet")]: {
