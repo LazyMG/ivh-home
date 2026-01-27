@@ -729,8 +729,8 @@ const theme = createTheme({
     },
     newsletterRedirectButton: {
       backgroundColor: "transparent",
-      color: "#000000",
-      fontSize: "14px",
+      color: "#fff",
+      fontSize: "16px",
       fontFamily: fontConfig["bold"],
       padding: "0px",
       textTransform: "none",
