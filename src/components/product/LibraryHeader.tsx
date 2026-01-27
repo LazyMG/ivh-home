@@ -6,8 +6,8 @@ const LibraryHeader = ({ text }: { text: string }) => {
     <Box
       sx={{
         py: 1,
-        borderTop: "1px solid",
-        borderBottom: "1px solid",
+        borderTop: "2px solid",
+        borderBottom: "2px solid",
         borderImage: "linear-gradient(90deg, #339070 0%, #1755C2 100%) 1",
       }}
     >
