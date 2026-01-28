@@ -12,7 +12,7 @@
               "preview_img_path": "/images/pages/product/iMOVA/iMOVA_top.png",
               "description": "스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼"
             },
-            { "name": "iSuite" },
+            { "name": "iSuite", "path": "/product/isuite" },
             {
               "name": "Dymola",
               "preview_img_path": "/images/pages/product/dymola/dymola-main.jpg",
@@ -172,7 +172,7 @@
             },
             {
               "name": "Modelica",
-              "path": "#"
+              "path": "/product/modelica"
             },
             {
               "name": "Modelon",
