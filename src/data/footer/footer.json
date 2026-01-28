@@ -17,9 +17,9 @@
       "title": "PRODUCT & SERVICES",
       "items": [
         { "name": "iMOVA", "path": "/product/imova" },
-        { "name": "iSuite" },
+        { "name": "iSuite", "path": "/product/isuite" },
         { "name": "Dymola", "path": "/product/dymola" },
-        { "name": "Modelica" },
+        { "name": "Modelica", "path": "/product/modelica" },
         { "name": "Modelon", "path": "/product/modelon" },
         { "name": "Virtual Test Driving", "path": "/product/vtd" },
         { "name": "PTV", "path": "/product/ptv" }
