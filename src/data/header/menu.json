@@ -12,14 +12,15 @@
               "preview_img_path": "/images/pages/product/iMOVA/iMOVA_top.png",
               "description": "스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼"
             },
-            { "name": "iSuite" },
+            { "name": "iSuite", "path": "/product/isuite" },
             {
               "name": "Dymola",
               "preview_img_path": "/images/pages/product/dymola/dymola-main.jpg",
               "description": "복합 시스템 모델 기반 설계를 위한 물리 모델링 및 시뮬레이션 툴",
               "subMenu": [
                 {
-                  "name": "Aviation Systems Library"
+                  "name": "Aviation Systems Library",
+                  "state": "hide"
                 },
                 {
                   "name": "Battery Library",
@@ -34,17 +35,20 @@
                   "path": "/product/dymola/brushlessdcdrives"
                 },
                 {
-                  "name": "ClaRa Plus Library"
+                  "name": "ClaRa Plus Library",
+                  "state": "hide"
                 },
                 {
                   "name": "Cooling Library",
                   "path": "/product/dymola/cooling"
                 },
                 {
-                  "name": "Design Optimization"
+                  "name": "Design Optimization",
+                  "state": "hide"
                 },
                 {
-                  "name": "Electric Power Systems Library"
+                  "name": "Electric Power Systems Library",
+                  "state": "hide"
                 },
                 {
                   "name": "Electrified Powertrains Library",
@@ -55,47 +59,60 @@
                   "path": "/product/dymola/flexiblebodies"
                 },
                 {
-                  "name": "Flight Dynamics Library"
+                  "name": "Flight Dynamics Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "Fluid Dynamics Library"
+                  "name": "Fluid Dynamics Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "Fluid Power Library"
+                  "name": "Fluid Power Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "HVAC Library"
+                  "name": "HVAC Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "Human Comfort Library"
+                  "name": "Human Comfort Library",
+                  "state": "hide"
                 },
                 {
                   "name": "Hydrogen Library",
                   "path": "/product/dymola/hydrogen"
                 },
                 {
-                  "name": "Industrial Process Simulation Library"
+                  "name": "Industrial Process Simulation Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "Model Calibration"
+                  "name": "Model Calibration",
+                  "state": "hide"
                 },
                 {
-                  "name": "Model Management"
+                  "name": "Model Management",
+                  "state": "hide"
                 },
                 {
-                  "name": "Pneumatic Systems Library"
+                  "name": "Pneumatic Systems Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "Process Modeling and Engineering Library"
+                  "name": "Process Modeling and Engineering Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "Real-Time Simulation"
+                  "name": "Real-Time Simulation",
+                  "state": "hide"
                 },
                 {
-                  "name": "Simulink Interface"
+                  "name": "Simulink Interface",
+                  "state": "hide"
                 },
                 {
-                  "name": "Source Code Generation"
+                  "name": "Source Code Generation",
+                  "state": "hide"
                 },
                 {
                   "name": "Sustainable Supply Systems Library",
@@ -106,27 +123,34 @@
                   "path": "/product/dymola/til"
                 },
                 {
-                  "name": "TIL Hydrogen Library"
+                  "name": "TIL Hydrogen Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "TIL Mobile Air Conditioning Library"
+                  "name": "TIL Mobile Air Conditioning Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "TIL Thermal Storages Library"
+                  "name": "TIL Thermal Storages Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "Thermal Power Library"
+                  "name": "Thermal Power Library",
+                  "state": "hide"
                 },
 
                 {
-                  "name": "Thermodynamics Connector"
+                  "name": "Thermodynamics Connector",
+                  "state": "hide"
                 },
 
                 {
-                  "name": "Vehicle Dynamics Library"
+                  "name": "Vehicle Dynamics Library",
+                  "state": "hide"
                 },
                 {
-                  "name": "VeSyMA Engines Library"
+                  "name": "VeSyMA Engines Library",
+                  "state": "hide"
                 },
                 {
                   "name": "VeSyMA Library",
@@ -141,13 +165,14 @@
                   "path": "/product/dymola/veSyMasuspension"
                 },
                 {
-                  "name": "Wind Power Library"
+                  "name": "Wind Power Library",
+                  "state": "hide"
                 }
               ]
             },
             {
               "name": "Modelica",
-              "path": "#"
+              "path": "/product/modelica"
             },
             {
               "name": "Modelon",

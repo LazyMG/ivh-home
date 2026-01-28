@@ -77,6 +77,7 @@ import Partner from "./pages/company/Partner";
 
 import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
+import ComingSoon from "./pages/ComingSoon";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -109,6 +110,8 @@ function AppContent() {
 
           {/** Product */}
           <Route path="/product/imova" element={<IMOVA />} />
+          <Route path="/product/isuite" element={<ComingSoon />} />
+          <Route path="/product/modelica" element={<ComingSoon />} />
 
           {/** dymola */}
           <Route path="/product/dymola" element={<NewDymola />} />
