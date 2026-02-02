@@ -373,7 +373,8 @@
         },
         {
           "name": "News",
-          "path": "/"
+          "path": "/",
+          "state": "hide"
         },
         {
           "name": "Contact",
