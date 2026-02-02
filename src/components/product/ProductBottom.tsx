@@ -2,12 +2,15 @@ import { Box, Typography } from "@mui/material";
 
 import product_form from "../../data/product/product-form.json";
 import { useNavigate } from "react-router-dom";
-import ProductForm from "./ProductForm";
+// import ProductForm from "./ProductForm";
 import GradientBox from "./GradientBox";
 
 const ProductBottom = ({ productName }: { productName: string }) => {
-  const { product_form_guide, product_form_training, product_form_navigation } =
-    product_form;
+  const {
+    // product_form_guide,
+    product_form_training,
+    product_form_navigation,
+  } = product_form;
   const navigate = useNavigate();
   return (
     <Box
@@ -20,7 +23,7 @@ const ProductBottom = ({ productName }: { productName: string }) => {
         mb: 20,
       }}
     >
-      <GradientBox title="Application">
+      {/* <GradientBox title="Application">
         <Box
           sx={(theme) => ({
             display: "flex",
@@ -52,7 +55,7 @@ const ProductBottom = ({ productName }: { productName: string }) => {
           </Box>
           <ProductForm productName={productName} />
         </Box>
-      </GradientBox>
+      </GradientBox> */}
       {productName && (
         <GradientBox title="Training">
           <Box
