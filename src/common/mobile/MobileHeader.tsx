@@ -4,7 +4,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 // import logoWhite from "/images/header/ivh_logo_white.png";
 // import logoBlack from "/images/header/ivh_logo_black.png";
-import logoGradient from "/images/header/ivh_logo_gradient.png";
+import logoGradient from "/images/header/iVH_logo_gra.svg";
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import menu from "../../data/header/menu.json";
