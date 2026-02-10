@@ -149,20 +149,22 @@ const NewsletterList = () => {
 
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         background:
           "linear-gradient(white, white) padding-box, linear-gradient(to right, #339070, #1755C2) border-box",
         border: "2px solid transparent",
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        minWidth: "380px",
         minHeight: "68px",
         p: 3,
         borderRadius: "16px",
         boxShadow: "4px 4px 4px 0 rgba(0,0,0,0.25)",
         position: "relative",
-      }}
+        [theme.breakpoints.up("desktop")]: {
+          minWidth: "380px",
+        },
+      })}
     >
       {/* 최상단: 로고와 링크드인 아이콘 */}
       <Box
@@ -245,9 +247,9 @@ const NewsletterList = () => {
             display: "flex",
             flexDirection: "column",
             gap: 3,
-            my: 3,
             maxHeight: "160px",
             overflowY: "scroll",
+            mt: 6,
             [theme.breakpoints.up("desktop")]: {
               maxHeight: "100%",
               overflowY: "hidden",
