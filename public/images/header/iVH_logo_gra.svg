@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 367.92 158.42">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_무제_그라디언트_879);
+      }
+
+      .cls-2 {
+        fill: url(#_무제_그라디언트_832);
+      }
+
+      .cls-3 {
+        fill: url(#_무제_그라디언트_886);
+      }
+
+      .cls-4 {
+        fill: url(#_무제_그라디언트_851);
+      }
+    </style>
+    <linearGradient id="_무제_그라디언트_851" data-name="무제 그라디언트 851" x1="165.34" y1="84.51" x2="462.27" y2="71.29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#40bbd7"/>
+      <stop offset=".12" stop-color="#2d9bbf"/>
+      <stop offset=".25" stop-color="#1c80ab"/>
+      <stop offset=".39" stop-color="#106a9b"/>
+      <stop offset=".55" stop-color="#065b90"/>
+      <stop offset=".73" stop-color="#01528a"/>
+      <stop offset="1" stop-color="#005088"/>
+    </linearGradient>
+    <linearGradient id="_무제_그라디언트_879" data-name="무제 그라디언트 879" x1="50.18" y1="31.76" x2="215.63" y2="104.52" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#529e81"/>
+      <stop offset=".13" stop-color="#4ba9a2"/>
+      <stop offset=".26" stop-color="#44b2bf"/>
+      <stop offset=".38" stop-color="#41b8d0"/>
+      <stop offset=".46" stop-color="#40bbd7"/>
+      <stop offset=".54" stop-color="#3cb5d2"/>
+      <stop offset=".65" stop-color="#33a5c6"/>
+      <stop offset=".77" stop-color="#238ab3"/>
+      <stop offset=".89" stop-color="#0d6698"/>
+      <stop offset=".96" stop-color="#005088"/>
+    </linearGradient>
+    <linearGradient id="_무제_그라디언트_832" data-name="무제 그라디언트 832" x1="28.06" y1="13.18" x2="77.39" y2="13.18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#529e81"/>
+      <stop offset=".22" stop-color="#519f84"/>
+      <stop offset=".43" stop-color="#4ea390"/>
+      <stop offset=".64" stop-color="#4aa9a3"/>
+      <stop offset=".84" stop-color="#45b2bd"/>
+      <stop offset=".99" stop-color="#40bbd7"/>
+    </linearGradient>
+    <linearGradient id="_무제_그라디언트_886" data-name="무제 그라디언트 886" x1="1.36" y1="96.92" x2="61.97" y2="106.21" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#529e81"/>
+      <stop offset=".28" stop-color="#519e83"/>
+      <stop offset=".48" stop-color="#4fa28d"/>
+      <stop offset=".65" stop-color="#4ca79c"/>
+      <stop offset=".81" stop-color="#47aeb2"/>
+      <stop offset=".96" stop-color="#41b8ce"/>
+      <stop offset=".99" stop-color="#40bbd7"/>
+    </linearGradient>
+  </defs>
+  <polygon class="cls-4" points="268.39 0 269.1 1.76 256.63 61.11 319.23 61.11 333.38 0 367.92 0 334.34 158.4 299.56 158.4 313.72 90.34 250.64 90.34 236.25 158.4 200.75 158.4 234.81 0 268.39 0"/>
+  <polygon class="cls-1" points="113.45 0 123.88 118.14 184.44 0 219.22 0 136.12 158.42 96.9 158.4 79.63 0 113.45 0"/>
+  <polygon class="cls-2" points="67.88 0 68.35 1.1 62.24 26.36 28.06 26.36 33.06 2.24 34.3 0 67.88 0"/>
+  <polygon class="cls-3" points="59.24 44.09 34.78 158.4 0 158.4 24.1 44.09 59.24 44.09"/>
+</svg>
