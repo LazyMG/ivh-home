@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import footer from "../../data/footer/footer.json";
-import logoGradient from "/images/header/ivh_logo_gradient.png";
+import logoGradient from "/images/header/iVH_logo_gra.svg";
 import { useNavigate } from "react-router-dom";
 
 const MobileFooter = () => {
