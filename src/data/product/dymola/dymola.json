@@ -172,12 +172,12 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Electric_Power_Systems_Library.png",
       "text": "Electric Power Systems Library",
-      "url": "/product/dymola/electrifiedpowertrains"
+      "url": "#"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Electrified_Powertrains_Library.png",
       "text": "Electrified Powertrains Library",
-      "url": "#"
+      "url": "/product/dymola/electrifiedpowertrains"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Flexible_Bodies_Library.png",
