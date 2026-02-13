@@ -9,9 +9,12 @@ import MainGradientText from "../components/common/MainGradientText";
 import HomeSectionTitle from "../components/home/HomeSectionTitle";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 import "../App.css";
 import "swiper/css";
+import "swiper/css/navigation";
+import "../style/home-slider.css";
 
 import homeData from "../data/home/home.json";
 import home_partner from "../data/company/partner.json";
@@ -183,6 +186,8 @@ const Home = () => {
                 slidesPerView={1}
                 spaceBetween={24}
                 centeredSlides={true}
+                navigation={true}
+                modules={[Navigation]}
                 style={{
                   width: "100%",
                   height: "100%",
