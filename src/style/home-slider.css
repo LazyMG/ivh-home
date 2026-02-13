@@ -1,128 +1,71 @@
-/* Navigation 버튼 스타일 - 활성화된 버전 */
+/* Navigation 버튼 스타일 */
 .custom-swiper .swiper-button-prev,
 .custom-swiper .swiper-button-next {
-  top: auto;
-  bottom: 15px;
-  width: 40px;
-  height: 40px;
-  color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
   margin: 0;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: none;
+  border: none;
 }
 
-/* 호버 효과 */
-.custom-swiper .swiper-button-prev:hover,
-.custom-swiper .swiper-button-next:hover {
-  background: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 0.5);
-  transform: scale(1.1);
-}
-
-.custom-swiper .swiper-button-prev {
-  left: calc(50% - 50px);
-  right: auto;
-  width: 30px;
-  height: 30px;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.custom-swiper .swiper-button-prev svg {
-  width: 70%;
-  height: 70%;
-  stroke-width: 8px;
-}
-
-.custom-swiper .swiper-button-next {
-  right: calc(50% - 50px);
-  left: auto;
-  width: 30px;
-  height: 30px;
-  color: rgba(0, 0, 0, 0.3);
-}
-
+/* 기본 SVG 아이콘 숨김 */
+.custom-swiper .swiper-button-prev svg,
 .custom-swiper .swiper-button-next svg {
-  width: 70%;
-  height: 70%;
-  stroke-width: 8px;
+  display: none;
 }
 
-/* 이전 스타일 - 주석 처리 (필요시 재사용 가능) */
-/* .custom-swiper .swiper-button-prev,
-.custom-swiper .swiper-button-next {
-  top: auto;
-  bottom: 26px;
-  right: 20px;
-  width: 15px;
-  height: 15px;
-  color: #ffffffb0;
-  margin: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.custom-swiper .swiper-button-prev:hover {
-  transform: translateX(-5px);
-  color: #ffffff;
-}
-
-.custom-swiper .swiper-button-next:hover {
-  transform: translateX(5px);
-  color: #ffffff;
-}
-
-.custom-swiper .swiper-button-prev::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 1px;
-  background: #ffffffb0;
-  margin-left: 11px;
-}
-
-.custom-swiper .swiper-button-next::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 1px;
-  background: #ffffffb0;
-  margin-right: 12px;
-}
-
-.custom-swiper .swiper-button-prev:hover::before,
-.custom-swiper .swiper-button-next:hover::before {
-  background: #ffffff;
-}
-
-.custom-swiper .swiper-button-prev {
-  left: calc(50% - 60px);
-  right: auto;
-}
-
-.custom-swiper .swiper-button-next {
-  right: calc(50% - 60px);
-  left: auto;
-} */
-
-.custom-swiper .swiper-pagination-fraction {
-  bottom: 20px;
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  width: auto;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
+/* ::before = 그라데이션 아웃라인, ::after = 흰색 내부 (동일 크기, clip-path로 균일 inset) */
+.custom-swiper .swiper-button-prev:before,
+.custom-swiper .swiper-button-next:before,
 .custom-swiper .swiper-button-prev:after,
 .custom-swiper .swiper-button-next:after {
-  font-size: 18px;
-  font-weight: bold;
+  content: "" !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+}
+
+/* ◀ prev - 아웃라인 (gradient) */
+.custom-swiper .swiper-button-prev:before {
+  background: linear-gradient(to bottom, #339070, #1755C2);
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+}
+
+/* ◀ prev - 내부 (white, 2px 균일 inset) */
+.custom-swiper .swiper-button-prev:after {
+  background: rgba(255, 255, 255, 0.9);
+  clip-path: polygon(15.4% 50%, 92.3% 11.5%, 92.3% 88.5%);
+}
+
+.custom-swiper .swiper-button-prev {
+  left: 12px;
+  right: auto;
+}
+
+/* ▶ next - 아웃라인 (gradient) */
+.custom-swiper .swiper-button-next:before {
+  background: linear-gradient(to bottom, #339070, #1755C2);
+  clip-path: polygon(100% 50%, 0% 0%, 0% 100%);
+}
+
+/* ▶ next - 내부 (white, 2px 균일 inset) */
+.custom-swiper .swiper-button-next:after {
+  background: rgba(255, 255, 255, 0.9);
+  clip-path: polygon(84.6% 50%, 7.7% 11.5%, 7.7% 88.5%);
+}
+
+.custom-swiper .swiper-button-next {
+  right: 12px;
+  left: auto;
+}
+
+/* 첫/마지막 슬라이드에서 화살표 숨김 */
+.custom-swiper .swiper-button-disabled {
+  display: none;
 }
