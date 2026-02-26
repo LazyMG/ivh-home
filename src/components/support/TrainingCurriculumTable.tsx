@@ -213,6 +213,17 @@ const TraingCurriculumTable = ({
           })}
         </tbody>
       </Box>
+      <Box sx={{ mt: 3 }}>
+        <Typography
+          sx={{
+            whiteSpace: "pre-wrap",
+            fontFamily: "Freesentation-5-Medium",
+            fontSize: "18px",
+          }}
+        >
+          {`※ 보다 양질의 교육 서비스 제공을 위해 2026년 4월부터 교육 프로그램이 유료화됩니다.\n단, iVH 제품 구매 고객사께는 기존과 동일하게 무료 교육 혜택이 제공됩니다.`}
+        </Typography>
+      </Box>
     </Box>
   );
 };
