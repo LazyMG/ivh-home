@@ -1,0 +1,5 @@
+/* IMOVA: Swiper 기본 내부 화살표 완전 제거 (커스텀 외부 버튼 사용) */
+.imova-swiper .swiper-button-prev,
+.imova-swiper .swiper-button-next {
+  display: none !important;
+}

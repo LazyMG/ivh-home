@@ -111,7 +111,6 @@ function AppContent() {
           {/** Product */}
           <Route path="/product/imova" element={<IMOVA />} />
           <Route path="/product/isuite" element={<ComingSoon />} />
-          <Route path="/product/modelica" element={<ComingSoon />} />
 
           {/** dymola */}
           <Route path="/product/dymola" element={<NewDymola />} />

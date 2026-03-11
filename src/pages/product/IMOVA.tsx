@@ -8,9 +8,7 @@ import { Pagination, Mousewheel, Navigation } from "swiper/modules";
 // Swiper CSS import
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import "../../style/home-slider.css";
+import "../../style/imova-slider.css";
 import MainFunction from "../../components/product/iMOVA/MainFunction";
 import React, { useEffect, useRef, useState } from "react";
 import ScrollButton from "../../common/ScrollButton";
@@ -482,13 +480,10 @@ const IMOVA = () => {
                 sx={(theme) => ({
                   display: "none",
                   [theme.breakpoints.down("desktop")]: {
-                    display: "flex",
-                    gap: 2,
+                    display: "block",
                     mt: 3,
-                    alignItems: "center",
-                    maxWidth: "100%",
+                    position: "relative",
                     width: "100%",
-                    justifySelf: "center",
                     px: "20px",
                     pt: 4,
                     pb: 0,
@@ -496,23 +491,81 @@ const IMOVA = () => {
                   },
                 })}
               >
+                {/* Prev 버튼 */}
+                <Box
+                  className="imova-prev-btn"
+                  sx={{
+                    position: "absolute",
+                    left: "4px",
+                    top: "calc(50% - 14px)",
+                    zIndex: 10,
+                    width: "28px",
+                    height: "28px",
+                    borderRadius: "50%",
+                    backgroundColor: "#b0b0b0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    "&:hover": { backgroundColor: "#888" },
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: "8px",
+                      height: "8px",
+                      borderTop: "2px solid #fff",
+                      borderRight: "2px solid #fff",
+                      transform: "rotate(-135deg)",
+                      ml: "2px",
+                    }}
+                  />
+                </Box>
+                {/* Next 버튼 */}
+                <Box
+                  className="imova-next-btn"
+                  sx={{
+                    position: "absolute",
+                    right: "4px",
+                    top: "calc(50% - 14px)",
+                    zIndex: 10,
+                    width: "28px",
+                    height: "28px",
+                    borderRadius: "50%",
+                    backgroundColor: "#b0b0b0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    "&:hover": { backgroundColor: "#888" },
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: "8px",
+                      height: "8px",
+                      borderTop: "2px solid #fff",
+                      borderRight: "2px solid #fff",
+                      transform: "rotate(45deg)",
+                      mr: "2px",
+                    }}
+                  />
+                </Box>
                 <Swiper
-                  className="custom-swiper"
                   direction={"horizontal"}
                   slidesPerView={1}
                   spaceBetween={8}
                   mousewheel={false}
-                  navigation={true}
+                  navigation={{
+                    prevEl: ".imova-prev-btn",
+                    nextEl: ".imova-next-btn",
+                  }}
                   loop={true}
                   centeredSlides={true}
                   modules={[Mousewheel, Pagination, Navigation]}
                   style={{
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover",
-                    color: "white",
-                    display: "flex",
-                    alignItems: "center",
                     paddingBottom: "60px",
                   }}
                 >

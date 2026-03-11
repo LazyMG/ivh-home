@@ -171,10 +171,6 @@
               ]
             },
             {
-              "name": "Modelica",
-              "path": "/product/modelica"
-            },
-            {
               "name": "Modelon",
               "subMenu": [
                 {
