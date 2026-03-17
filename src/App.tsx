@@ -13,9 +13,7 @@ import Footer from "./common/footer";
 import MobileFooter from "./common/mobile/mobileFooter";
 // pages
 import Home from "./pages/home";
-import Product from "./pages/product/product";
-import Service from "./pages/service";
-import Company from "./pages/company";
+
 // Solution
 import Solution from "./pages/solution/solution";
 import Energy from "./pages/solution/Energy";
@@ -78,6 +76,7 @@ import Partner from "./pages/company/Partner";
 import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
 import ComingSoon from "./pages/ComingSoon";
+import NotFound from "./pages/NotFound";
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -96,9 +95,6 @@ function AppContent() {
         <Routes>
           {/** pages */}
           <Route path="/" element={<Home />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/company" element={<Company />} />
           {/** Solution */}
           <Route path="/solution" element={<Solution />} />
           <Route path="/solution/energy" element={<Energy />} />
@@ -235,6 +231,9 @@ function AppContent() {
           <Route path="/company/ceo" element={<CEO />} />
           <Route path="/company/history" element={<History />} />
           <Route path="/company/partner" element={<Partner />} />
+
+          {/** 404 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </ScrollToTop>
       {/** chatbot button */}
