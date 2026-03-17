@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 
 import ceo from "../../data/company/ceo.json";
 import ImageHeader from "../../components/company/ImageHeader";
+import SEO from "../../common/SEO";
 
 const CEO = () => {
   const {
@@ -13,6 +14,13 @@ const CEO = () => {
     ceo_image_position,
   } = ceo;
   return (
+    <>
+      <SEO
+        title="CEO 인사말 - iVH"
+        description="iVH 대표이사 인사말. 시뮬레이션 및 모빌리티 솔루션 전문 기업 iVH의 비전과 가치를 소개합니다."
+        keywords="iVH, CEO, 대표이사, 인사말, 회사 소개"
+        canonical="https://ivh.co.kr/company/ceo"
+      />
     <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
       <Box
         sx={(theme) => ({
@@ -89,6 +97,7 @@ const CEO = () => {
         </Typography>
       </Box>
     </Box>
+    </>
   );
 };
 

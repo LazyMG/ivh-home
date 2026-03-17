@@ -5,6 +5,9 @@ import BreadScrum from "../../common/BreadScrum";
 import ScrollButton from "../../common/ScrollButton";
 
 import header from "../../data/solution/header.json";
+import mobilityData from "../../data/solution/seo.json";
+import SEO from "../../common/SEO";
+import { useSEO } from "../../hooks/useSEO";
 
 import SolutionTitle from "../../components/solution/SolutionTitle";
 
@@ -19,9 +22,13 @@ const Mobility = () => {
   // 각각의 헤더에서 소제목 분리
   const { headerTitle, subColor, color, subtitle } = header.Mobility;
 
+  const seoData = useSEO("solution/mobility", mobilityData.mobility);
+
   const { mobility: new_mobility } = new_body;
 
   return (
+    <>
+      <SEO {...seoData} />
     <Box className="solution-body">
       {/* breadcrumb section */}
       {isMobile ? null : <BreadScrum pageKey="mobility" />}
@@ -61,6 +68,7 @@ const Mobility = () => {
         color={color}
       />
     </Box>
+    </>
   );
 };
 

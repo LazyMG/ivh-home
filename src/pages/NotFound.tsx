@@ -1,11 +1,18 @@
 import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import SEO from "../common/SEO";
 
 const NotFound = () => {
   const navigate = useNavigate();
 
   return (
-    <Box
+    <>
+      <SEO
+        title="404 - 페이지를 찾을 수 없습니다"
+        description="요청하신 페이지를 찾을 수 없습니다."
+        robots="noindex, nofollow"
+      />
+      <Box
       component="main"
       sx={(theme) => ({
         display: "flex",
@@ -60,6 +67,7 @@ const NotFound = () => {
         홈으로 돌아가기
       </Button>
     </Box>
+    </>
   );
 };
 

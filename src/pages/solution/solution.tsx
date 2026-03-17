@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 
 import solution from "../../data/solution/solution.json";
 import SolutionMainBox from "../../components/solution/SolutionMainBox";
+import SEO from "../../common/SEO";
 
 const Solution = () => {
   // const { isMobile } = useBreakpoint();
@@ -10,6 +11,13 @@ const Solution = () => {
   const { solution_box, solution_main_image } = solution;
 
   return (
+    <>
+      <SEO
+        title="Solution - iVH 솔루션"
+        description="에너지, BEMS, 스마트팩토리, 모빌리티, AI 등 다양한 분야의 시뮬레이션 솔루션을 제공합니다."
+        keywords="iVH, 솔루션, 시뮬레이션, 에너지, BEMS, 스마트팩토리, 모빌리티, AI"
+        canonical="https://ivh.co.kr/solution"
+      />
     <Box
       component="main"
       sx={(theme) => ({
@@ -79,6 +87,7 @@ const Solution = () => {
         />
       </Box>
     </Box>
+    </>
   );
 };
 
