@@ -84,19 +84,22 @@ const MobileHeader = () => {
             alignItems: "center",
           }}
         >
-          <Box
-            sx={{ cursor: "pointer", display: "flex", alignItems: "center" }}
-            onClick={() => {
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
               navigate("/");
               setIsMenuOpen(false);
             }}
+            aria-label="iVH 홈으로 이동"
+            style={{ display: "inline-flex", alignItems: "center", cursor: "pointer" }}
           >
             <img
               src={logoGradient}
-              alt="logo"
+              alt="iVH 로고"
               style={{ width: "64px", height: "27.4px" }}
             />
-          </Box>
+          </a>
         </Box>
       </AppBar>
 

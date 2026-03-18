@@ -41,17 +41,26 @@ const MobileFooter = () => {
             flexDirection: "column",
           }}
         >
-          <img
-            src={logoGradient}
-            alt="logo"
-            style={{
-              width: "56px",
-              height: "22.7px",
-              marginRight: "10px",
-              cursor: "pointer",
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/");
             }}
-            onClick={() => navigate("/")}
-          />
+            aria-label="iVH 홈으로 이동"
+            style={{ display: "inline-flex" }}
+          >
+            <img
+              src={logoGradient}
+              alt="iVH 로고"
+              style={{
+                width: "56px",
+                height: "22.7px",
+                marginRight: "10px",
+                cursor: "pointer",
+              }}
+            />
+          </a>
           <Typography
             sx={{
               fontSize: "12px",
