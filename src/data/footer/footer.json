@@ -51,7 +51,6 @@
         { "name": "CEO", "path": "/company/ceo" },
         { "name": "History", "path": "/company/history" },
         { "name": "Partner & Customer", "path": "/company/partner" },
-        { "name": "News" },
         { "name": "Contact", "path": "/company/contact" }
       ]
     }
