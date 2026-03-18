@@ -78,6 +78,7 @@ const Home = () => {
             <Box
               component="img"
               src={isMobile ? iMOVA.mobile_imageUrl : iMOVA.imageUrl}
+              alt={isMobile ? iMOVA.mobile_image_alt : iMOVA.image_alt}
               sx={(theme) => ({
                 width: "100%",
                 mt: -2,
@@ -101,6 +102,7 @@ const Home = () => {
               })}
             >
               <MainGradientText
+                component="h1"
                 sx={(theme) => ({
                   fontFamily: "Freesentation-7-Bold",
                   fontSize: "20px",
@@ -127,6 +129,7 @@ const Home = () => {
             <Box
               component="img"
               src={isMobile ? iMOVA.mobile_effect : iMOVA.pc_effect}
+              alt={isMobile ? iMOVA.mobile_effect_alt : iMOVA.pc_effect_alt}
               sx={(theme) => ({
                 position: "absolute",
                 bottom: "-20%",
@@ -225,6 +228,7 @@ const Home = () => {
                       <Box
                         component="img"
                         src={product.mobile_image}
+                        alt={product.mobile_image_alt}
                         sx={{
                           width: "100%",
                           height: "100%",
@@ -235,6 +239,7 @@ const Home = () => {
                       <Box
                         component="img"
                         src={product.title_image}
+                        alt={product.title_image_alt}
                         sx={{
                           position: "absolute",
                           top: 0,
@@ -284,6 +289,7 @@ const Home = () => {
                       className="product-bg-image"
                       component="img"
                       src={product.pc_image}
+                      alt={product.pc_image_alt}
                       sx={{
                         width: "100%",
                         height: "100%",
@@ -296,6 +302,7 @@ const Home = () => {
                     <Box
                       component="img"
                       src={product.title_image}
+                      alt={product.title_image_alt}
                       sx={{
                         position: "absolute",
                         top: 0,
@@ -381,7 +388,8 @@ const Home = () => {
                 >
                   <Box
                     component="img"
-                    src={partnerImg}
+                    src={partnerImg.src}
+                    alt={partnerImg.alt}
                     sx={(theme) => ({
                       minWidth: index < 6 ? "50%" : "34%",
                       maxWidth: index < 6 ? "70%" : "48%",

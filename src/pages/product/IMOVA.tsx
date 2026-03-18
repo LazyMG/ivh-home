@@ -18,9 +18,12 @@ const IMOVA = () => {
   const {
     title,
     name,
+    page_name,
     main_function,
     main_image,
+    main_image_alt,
     title_image,
+    title_image_alt,
     control_system,
     production_line,
     technology_spec,
@@ -79,6 +82,7 @@ const IMOVA = () => {
           <Box
             component="img"
             src={main_image}
+            alt={main_image_alt}
             sx={(theme) => ({
               width: "100%",
               height: "auto",
@@ -112,6 +116,7 @@ const IMOVA = () => {
               <Box
                 component="img"
                 src={title_image}
+                alt={title_image_alt}
                 sx={(theme) => ({
                   width: "200px",
                   [theme.breakpoints.down("tablet")]: {
@@ -133,7 +138,7 @@ const IMOVA = () => {
                   },
                 })}
               >
-                {name}
+                {page_name}
               </Typography>
             </Box>
             <Typography
@@ -179,7 +184,7 @@ const IMOVA = () => {
               },
             })}
           >
-            {title}
+            {page_name}
           </Typography>
         </Box>
 
@@ -301,6 +306,7 @@ const IMOVA = () => {
                           <Box
                             component="img"
                             src={system.control_system_image_url}
+                            alt={system.control_system_image_alt}
                             sx={(theme) => ({
                               height: "auto",
                               objectFit: "contain",

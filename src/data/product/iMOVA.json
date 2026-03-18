@@ -1,66 +1,80 @@
 {
+  "page_name": "AMR 자율주행로봇",
   "name": "iMOVA - AMR 자율주행로봇",
   "title": "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다. 정밀한 자율주행 기술, 실시간 환경 인식, 외부 시스템과의 통합 연동 기능을 통해, 다양한 산업 분야에서 무인화된 작업 흐름과 지능형 공정 운영을 가능하게 합니다.",
   "main_image": "/images/pages/product/iMOVA/iMOVA.png",
+  "main_image_alt": "iMOVA - AMR 자율주행로봇",
   "title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
+  "title_image_alt": "iMOVA Logo",
 
   "main_function": [
     {
       "function_title": "고정밀 자율주행 기술",
       "function_description": "3D LiDAR와 IMU 센서를 기반으로 ±10mm 수준의 고정밀 자율주행을 구현합니다.",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_one.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_one.png",
+      "function_image_alt": "고정밀 자율주행 기술 아이콘"
     },
     {
       "function_title": "고강성 섀시 및 내구성",
       "function_description": "1톤 이상의 고하중 적재가 가능하며, 방진 설계를 통해 진동에 강하고 장거리 연속 운행에도 안정적인 성능을 유지합니다.",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_two.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_two.png",
+      "function_image_alt": "고강성 섀시 및 내구성 아이콘"
     },
     {
       "function_title": "지능형 작업 분배 시스템",
       "function_description": "Task Dispatcher 기반의 스케줄링 시스템을 통해 작업을 자동으로 분배하여, 관리자의 개입 없이도 유연한 작업 흐름을 유지할 수 있습니다.",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_three.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_three.png",
+      "function_image_alt": "지능형 작업 분배 시스템 아이콘"
     },
     {
       "function_title": "AI 기반 환경 모니터링",
       "function_description": "온도, 습도, 먼지, 소음 등을 감지할 수 있는 센서를 탑재하고 있으며, AI 기반의 이상 감지 알고리즘을 통해 실시간으로 환경 상태를 분석합니다.",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_four.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_four.png",
+      "function_image_alt": "AI 기반 환경 모니터링 아이콘"
     },
     {
       "function_title": "무선 충전 및 에너지 최적화",
       "function_description": "SOC 기반의 자율 충전 기능을 통해, 충전소의 혼잡도를 고려한 최적의 충전 전략을 선택함으로써 에너지 효율을 극대화합니다.",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_five.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_five.png",
+      "function_image_alt": "무선 충전 및 에너지 최적화 아이콘"
     }
   ],
   "control_system": [
     {
       "control_system_topic": "AMR 운영 및 공정 환경 모니터링",
       "control_system_description": "공장 내 자율주행 로봇(AMR)의 위치와 상태를 실시간으로 파악하고, 환경 센서를 통해 공정 상태를 모니터링함으로써 운영자는 물류 흐름과 생산 환경을 직관적으로 관리할 수 있습니다.",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_zero.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_zero.png",
+      "control_system_image_alt": "지능형 관제 시스템: AMR 운영 및 공정 환경 모니터링 이미지"
     },
     {
       "control_system_topic": "작업 자동 할당 및 경로 최적화",
       "control_system_description": "작업 요청을 자동으로 수신하고, 각 AMR의 상태와 위치를 고려해 최적의 작업을 배정합니다. 동시에 충돌을 회피하는 경로를 자동 생성해 안전하고 효율적인 작업을 유지합니다.",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_one.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_one.png",
+      "control_system_image_alt": "지능형 관제 시스템: 작업 자동 할당 및 경로 최적화 이미지"
     },
     {
       "control_system_topic": "충전 제어 및 에너지 최적화",
       "control_system_description": "AMR의 배터리 상태와 작업 일정을 고려해 충전 시점을 자동 판단하고, 충전소 혼잡도를 분석해 충전 순서를 최적화합니다.",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_two.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_two.png",
+      "control_system_image_alt": "지능형 관제 시스템: 충전 제어 및 에너지 최적화 이미지"
     },
     {
       "control_system_topic": "장애 감지 및 예지 보전",
       "control_system_description": "운행 중 발생할 수 있는 장애를 실시간으로 감지하고 경보를 발생시키며, 과거 장애 패턴을 분석하여 고장을 예측하고 사전 정비를 수행합니다.",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_three.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_three.png",
+      "control_system_image_alt": "지능형 관제 시스템: 장애 감지 및 예지 보전 이미지"
     },
     {
       "control_system_topic": "AI 기반 환경 및 보안 모니터링",
       "control_system_description": "AMR에 장착된 다양한 센서를 통해 공장 내 환경 상태를 실시간으로 감시하고, AI 분석을 통해 이상 징후를 조기에 탐지하여 작업자 안전과 품질 관리를 동시에 실현합니다.",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_four.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_four.png",
+      "control_system_image_alt": "지능형 관제 시스템: AI 기반 환경 및 보안 모니터링 이미지"
     },
     {
       "control_system_topic": "MES, ERP 등 외부 시스템과의 통합 운영",
       "control_system_description": "산업 표준 프로토콜을 통해 MES, ERP, WMS 등 외부 시스템과 유연하게 연동하며, 공장 운영 데이터를 통합 관리해 생산성과 대응력을 높입니다.",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_five.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_five.png",
+      "control_system_image_alt": "지능형 관제 시스템: MES, ERP 등 외부 시스템과의 통합 운영이미지"
     }
   ],
   "production_line": {
@@ -122,7 +136,7 @@
           "max_load": "200.0 kg",
           "speed": "2.0m/s",
           "motor_performance": "400W 11A 1.27 N·m",
-          "motor_rated_output": "30.0 mm",
+          "motor_rated_output": "400Wx 2ea",
           "permitted_step": "30.0 mm",
           "permitted_gap_width": "50.0 mm",
           "max_inclination_angle": "5.0 deg",

@@ -5,6 +5,7 @@ type IMOVAMainFunction = {
     function_title: string;
     function_description: string;
     function_image_url: string;
+    function_image_alt: string;
   }[];
 };
 
@@ -46,6 +47,7 @@ const MainFunction = ({ function_list }: IMOVAMainFunction) => {
           <Box
             component="img"
             src={func.function_image_url}
+            alt={func.function_image_alt}
             sx={{
               mb: 3,
               objectFit: "contain",
