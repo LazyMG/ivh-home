@@ -38,10 +38,10 @@ export const useSEO = (
     // JSON 데이터에 seo 필드가 있으면 우선 사용
     if (jsonData?.seo) {
       return {
-        title: jsonData.seo.title || "IVH Homepage",
+        title: jsonData.seo.title || "iVH Homepage",
         description: jsonData.seo.description || "",
         keywords: jsonData.seo.keywords || "",
-        ogImage: jsonData.seo.ogImage || `${baseUrl}/images/ivh_logo_black.png`,
+        ogImage: jsonData.seo.ogImage || `${baseUrl}/images/header/ivh_logo_black.png`,
         canonical: jsonData.seo.canonical || `${baseUrl}/${pageKey}`,
       };
     }
@@ -55,8 +55,8 @@ export const useSEO = (
       return {
         title,
         description: subtitle,
-        keywords: `${title}, IVH, 시뮬레이션`,
-        ogImage: `${baseUrl}/images/ivh_logo_black.png`,
+        keywords: `${title}, iVH, 시뮬레이션`,
+        ogImage: `${baseUrl}/images/header/ivh_logo_black.png`,
         canonical: `${baseUrl}/product/${pageKey}`,
       };
     }
@@ -66,18 +66,18 @@ export const useSEO = (
       return {
         title: jsonData.headerTitle,
         description: jsonData.subtitle || "",
-        keywords: `${jsonData.headerTitle}, IVH, 솔루션`,
-        ogImage: `${baseUrl}/images/ivh_logo_black.png`,
+        keywords: `${jsonData.headerTitle}, iVH, 솔루션`,
+        ogImage: `${baseUrl}/images/header/ivh_logo_black.png`,
         canonical: `${baseUrl}/solution/${pageKey}`,
       };
     }
 
     // 기본값
     return {
-      title: "IVH Homepage",
-      description: "IVH - 시뮬레이션 및 모빌리티 솔루션",
-      keywords: "IVH, 시뮬레이션",
-      ogImage: `${baseUrl}/images/ivh_logo_black.png`,
+      title: "iVH Homepage",
+      description: "iVH - 시뮬레이션 및 모빌리티 솔루션",
+      keywords: "iVH, 시뮬레이션",
+      ogImage: `${baseUrl}/images/header/ivh_logo_black.png`,
       canonical: `${baseUrl}`,
     };
   }, [pageKey, jsonData, baseUrl]);

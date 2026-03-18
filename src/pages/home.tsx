@@ -41,10 +41,10 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="IVH - 시뮬레이션 및 모빌리티 솔루션"
-        description="IVH는 Dymola, VTD, Vissim 등 최첨단 시뮬레이션 도구와 에너지, 모빌리티, 스마트팩토리 솔루션을 제공하는 전문 기업입니다."
-        keywords="IVH, 시뮬레이션, Dymola, VTD, Vissim, 모빌리티, 배터리, 자율주행, BEMS, 스마트팩토리, 에너지 시뮬레이션"
-        ogImage="https://ivh.co.kr/images/ivh_logo_black.png"
+        title="iVH - 시뮬레이션 및 모빌리티 솔루션"
+        description="iVH는 다이몰라(Dymola), 모델리카(Modelica), VTD, Vissim 등 최첨단 시뮬레이션 도구와 에너지, 모빌리티, 스마트팩토리 솔루션을 제공하는 전문 기업입니다."
+        keywords="iVH, 시뮬레이션, 다이몰라, Dymola, 모델리카, Modelica, VTD, Vissim, 모빌리티, 배터리, 자율주행, BEMS, 스마트팩토리, 에너지 시뮬레이션"
+        ogImage="https://ivh.co.kr/images/header/ivh_logo_black.png"
         canonical="https://ivh.co.kr"
       />
       <CssBaseline />
