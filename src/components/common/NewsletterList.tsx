@@ -221,6 +221,7 @@ const NewsletterList = () => {
                 <Button
                   component="a"
                   href={item.link_url}
+                  aria-label={`${item.title} 원문으로 이동`}
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="contained"
