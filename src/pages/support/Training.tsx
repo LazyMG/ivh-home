@@ -110,7 +110,11 @@ const Training = () => {
               justifyContent: "center",
             }}
           >
-            <img src={training_outline.image} style={{ maxWidth: "100%" }} />
+            <img
+              src={training_outline.image}
+              alt={training_outline.image_alt}
+              style={{ maxWidth: "100%" }}
+            />
           </Box>
           <Box
             sx={(theme) => ({
