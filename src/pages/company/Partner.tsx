@@ -7,6 +7,7 @@ import SEO from "../../common/SEO";
 interface CustomerListObj {
   src: string;
   maxWidth: string;
+  alt: string;
 }
 
 const Partner = () => {
@@ -133,7 +134,8 @@ const Partner = () => {
                 })}
               >
                 <img
-                  src={partnerImg}
+                  src={partnerImg.src}
+                  alt={partnerImg.alt}
                   style={{ width: "70%", maxWidth: "128px" }}
                 />
               </Box>
