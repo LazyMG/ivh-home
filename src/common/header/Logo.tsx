@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import logoBlack from "/images/header/ivh_logo_black.png";
 
 interface LogoProps {
@@ -7,12 +6,20 @@ interface LogoProps {
 
 export const Logo = ({ onClick }: LogoProps) => {
   return (
-    <Box sx={{ cursor: "pointer" }} onClick={onClick}>
+    <a
+      href="/"
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
+      aria-label="iVH 홈으로 이동"
+      style={{ display: "inline-flex", cursor: "pointer" }}
+    >
       <img
         src={logoBlack}
-        alt="logo"
+        alt="iVH 로고"
         style={{ width: "64px", height: "27.4px" }}
       />
-    </Box>
+    </a>
   );
 };
