@@ -41,10 +41,10 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="IVH - 시뮬레이션 및 모빌리티 솔루션"
-        description="IVH는 Dymola, VTD, Vissim 등 최첨단 시뮬레이션 도구와 에너지, 모빌리티, 스마트팩토리 솔루션을 제공하는 전문 기업입니다."
-        keywords="IVH, 시뮬레이션, Dymola, VTD, Vissim, 모빌리티, 배터리, 자율주행, BEMS, 스마트팩토리, 에너지 시뮬레이션"
-        ogImage="https://ivh.co.kr/images/ivh_logo_black.png"
+        title="iVH - 시뮬레이션 및 모빌리티 솔루션"
+        description="iVH는 다이몰라(Dymola), 모델리카(Modelica), VTD, Vissim 등 최첨단 시뮬레이션 도구와 에너지, 모빌리티, 스마트팩토리 솔루션을 제공하는 전문 기업입니다."
+        keywords="iVH, 시뮬레이션, 다이몰라, Dymola, 모델리카, Modelica, VTD, Vissim, 모빌리티, 배터리, 자율주행, BEMS, 스마트팩토리, 에너지 시뮬레이션"
+        ogImage="https://ivh.co.kr/images/header/ivh_logo_black.png"
         canonical="https://ivh.co.kr"
       />
       <CssBaseline />
@@ -78,6 +78,7 @@ const Home = () => {
             <Box
               component="img"
               src={isMobile ? iMOVA.mobile_imageUrl : iMOVA.imageUrl}
+              alt={isMobile ? iMOVA.mobile_image_alt : iMOVA.image_alt}
               sx={(theme) => ({
                 width: "100%",
                 mt: -2,
@@ -101,6 +102,7 @@ const Home = () => {
               })}
             >
               <MainGradientText
+                component="h1"
                 sx={(theme) => ({
                   fontFamily: "Freesentation-7-Bold",
                   fontSize: "20px",
@@ -127,6 +129,7 @@ const Home = () => {
             <Box
               component="img"
               src={isMobile ? iMOVA.mobile_effect : iMOVA.pc_effect}
+              alt={isMobile ? iMOVA.mobile_effect_alt : iMOVA.pc_effect_alt}
               sx={(theme) => ({
                 position: "absolute",
                 bottom: "-20%",
@@ -225,6 +228,7 @@ const Home = () => {
                       <Box
                         component="img"
                         src={product.mobile_image}
+                        alt={product.mobile_image_alt}
                         sx={{
                           width: "100%",
                           height: "100%",
@@ -235,6 +239,7 @@ const Home = () => {
                       <Box
                         component="img"
                         src={product.title_image}
+                        alt={product.title_image_alt}
                         sx={{
                           position: "absolute",
                           top: 0,
@@ -284,6 +289,7 @@ const Home = () => {
                       className="product-bg-image"
                       component="img"
                       src={product.pc_image}
+                      alt={product.pc_image_alt}
                       sx={{
                         width: "100%",
                         height: "100%",
@@ -296,6 +302,7 @@ const Home = () => {
                     <Box
                       component="img"
                       src={product.title_image}
+                      alt={product.title_image_alt}
                       sx={{
                         position: "absolute",
                         top: 0,
@@ -381,7 +388,8 @@ const Home = () => {
                 >
                   <Box
                     component="img"
-                    src={partnerImg}
+                    src={partnerImg.src}
+                    alt={partnerImg.alt}
                     sx={(theme) => ({
                       minWidth: index < 6 ? "50%" : "34%",
                       maxWidth: index < 6 ? "70%" : "48%",

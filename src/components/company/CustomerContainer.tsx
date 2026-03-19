@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 interface CustomerListObj {
   src: string;
   maxWidth: string;
+  alt: string;
 }
 
 interface CustomerList {
@@ -82,6 +83,7 @@ const CustomerContainer = ({
               <Box
                 component="img"
                 src={customerImg.src}
+                alt={customerImg.alt}
                 sx={(theme) => ({
                   width: "100%",
                   maxWidth: getMobileVerticalSizeFormatter(
@@ -122,6 +124,7 @@ const CustomerContainer = ({
               component="img"
               key={customerImg.src}
               src={customerImg.src}
+              alt={customerImg.alt}
               sx={(theme) => ({
                 width: "20%",
                 maxWidth: getTabletSizeFormatter(

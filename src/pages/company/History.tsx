@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import history from "../../data/company/history.json";
 import ImageHeader from "../../components/company/ImageHeader";
+import SEO from "../../common/SEO";
 
 const History = () => {
   const {
@@ -11,6 +12,13 @@ const History = () => {
     history_image_position,
   } = history;
   return (
+    <>
+      <SEO
+        title="History - iVH 연혁"
+        description="iVH의 설립부터 현재까지의 주요 연혁을 소개합니다."
+        keywords="iVH, 연혁, History, 회사 역사"
+        canonical="https://ivh.co.kr/company/history"
+      />
     <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
       <Box
         sx={(theme) => ({
@@ -110,6 +118,7 @@ const History = () => {
         </Stack>
       </Box>
     </Box>
+    </>
   );
 };
 

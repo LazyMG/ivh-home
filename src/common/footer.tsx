@@ -62,17 +62,26 @@ const Footer = () => {
               gap: "10px",
             }}
           >
-            <img
-              src={logoBlack}
-              alt="logo"
-              style={{
-                width: "64px",
-                height: "27.4px",
-                marginRight: "10px",
-                cursor: "pointer",
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/");
               }}
-              onClick={() => navigate("/")}
-            />
+              aria-label="iVH 홈으로 이동"
+              style={{ display: "inline-flex" }}
+            >
+              <img
+                src={logoBlack}
+                alt="iVH 로고"
+                style={{
+                  width: "64px",
+                  height: "27.4px",
+                  marginRight: "10px",
+                  cursor: "pointer",
+                }}
+              />
+            </a>
             <Typography
               sx={{
                 fontSize: "16px",

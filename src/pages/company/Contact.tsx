@@ -20,6 +20,7 @@ import {
 import CustomSnackbar from "../../components/support/CustomSnackbar";
 import ApplicationInputErrorText from "../../components/support/ApplicationInputErrorText";
 import { customerService } from "../../service/customerService";
+import SEO from "../../common/SEO";
 
 interface ContactFormType {
   company: string;
@@ -94,6 +95,13 @@ const Contact = () => {
   };
 
   return (
+    <>
+      <SEO
+        title="Contact - iVH 문의하기"
+        description="iVH에 제품 및 솔루션 관련 문의를 남겨주세요. 빠르게 답변 드리겠습니다."
+        keywords="iVH, 문의, Contact, 상담, 제품 문의"
+        canonical="https://ivh.co.kr/company/contact"
+      />
     <Box
       component="main"
       sx={(theme) => ({
@@ -444,6 +452,7 @@ const Contact = () => {
         handleCloseSnackbar={handleCloseSnackbar}
       />
     </Box>
+    </>
   );
 };
 

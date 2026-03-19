@@ -59,39 +59,55 @@
   ],
   "iMOVA": {
     "imageUrl": "/images/pages/product/iMOVA/iMOVA.png",
+    "image_alt": "iMOVA 대표 이미지 PC",
     "mobile_imageUrl": "/images/home/iMOVA_home_mobile.png",
+    "mobile_image_alt": "iMOVA 대표 이미지 모바일",
     "mainText": "Intelligent Manufacturing Begins",
     "subText": "스마트 제조의 미래, iMOVA가 이끕니다.",
     "pc_effect": "/images/home/home_pc.png",
-    "mobile_effect": "/images/home/home_mobile.png"
+    "pc_effect_alt": "PC iMOVA 효과 이미지",
+    "mobile_effect": "/images/home/home_mobile.png",
+    "mobile_effect_alt": "모바일 iMOVA 효과 이미지"
   },
   "products": [
     {
       "name": "iMOVA",
       "title_image": "/images/home/iMOVA_title_image.png",
+      "title_image_alt": "iMOVA 로고 이미지",
       "pc_image": "/images/home/iMOVA_pc_image.png",
+      "pc_image_alt": "Main Product - iMOVA PC 이미지",
       "mobile_image": "/images/home/iMOVA_mobile_image.png",
+      "mobile_image_alt": "Main Product - iMOVA 모바일 이미지",
       "path": "/product/imova"
     },
     {
       "name": "iSuite25",
       "title_image": "/images/home/iSuite25_title_image.png",
+      "title_image_alt": "iSuite25 로고 이미지",
       "pc_image": "/images/home/iSuite25_pc_image.png",
+      "pc_image_alt": "Main Product - iSuite25 PC 이미지",
       "mobile_image": "/images/home/iSuite25_mobile_image.png",
+      "mobile_image_alt": "Main Product - iSuite25 모바일 이미지",
       "path": ""
     },
     {
       "name": "iSuite34",
       "title_image": "/images/home/iSuite34_title_image.png",
+      "title_image_alt": "iSuite34 로고 이미지",
       "pc_image": "/images/home/iSuite34_pc_image.png",
+      "pc_image_alt": "Main Product - iSuite34 PC 이미지",
       "mobile_image": "/images/home/iSuite34_mobile_image.png",
+      "mobile_image_alt": "Main Product - iSuite34 모바일 이미지",
       "path": ""
     },
     {
       "name": "iSuite52",
       "title_image": "/images/home/iSuite52_title_image.png",
+      "title_image_alt": "iSuite52 로고 이미지",
       "pc_image": "/images/home/iSuite52_pc_image.png",
+      "pc_image_alt": "Main Product - iSuite52 PC 이미지",
       "mobile_image": "/images/home/iSuite52_mobile_image.png",
+      "mobile_image_alt": "Main Product - iSuite52 모바일 이미지",
       "path": ""
     }
   ],

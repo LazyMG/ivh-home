@@ -14,18 +14,18 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "IVH Homepage",
-  description = "IVH - 시뮬레이션 및 모빌리티 솔루션 전문 기업",
-  keywords = "IVH, 시뮬레이션, Dymola, VTD, Vissim, 모빌리티, 배터리, 자율주행, BEMS, 스마트팩토리",
+  title = "iVH Homepage",
+  description = "iVH - 시뮬레이션 및 모빌리티 솔루션 전문 기업",
+  keywords = "iVH, 시뮬레이션, Dymola, Modelica, AMR, VTD, Vissim, 모빌리티, 배터리, 자율주행, BEMS, 스마트팩토리",
   ogTitle,
   ogDescription,
-  ogImage = "https://ivh.co.kr/images/ivh_logo_black.png",
+  ogImage = "https://ivh.co.kr/images/header/ivh_logo_black.png",
   ogUrl,
   canonical,
-  author = "IVH",
+  author = "iVH",
   robots = "index, follow",
 }: SEOProps) => {
-  const fullTitle = title === "IVH Homepage" ? title : `${title} | IVH`;
+  const fullTitle = title === "iVH Homepage" ? title : `${title} | iVH`;
   const currentUrl =
     ogUrl || (typeof window !== "undefined" ? window.location.href : "");
 
@@ -47,7 +47,7 @@ const SEO = ({
       <meta property="og:description" content={ogDescription || description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={currentUrl} />
-      <meta property="og:site_name" content="IVH Homepage" />
+      <meta property="og:site_name" content="iVH" />
       <meta property="og:locale" content="ko_KR" />
 
       {/* Twitter Card */}
@@ -55,22 +55,6 @@ const SEO = ({
       <meta name="twitter:title" content={ogTitle || fullTitle} />
       <meta name="twitter:description" content={ogDescription || description} />
       <meta name="twitter:image" content={ogImage} />
-
-      {/* 추가 메타 태그 */}
-      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      {/* 네이버 검색 최적화 */}
-      {/* <meta
-        name="naver-site-verification"
-        content="YOUR_NAVER_VERIFICATION_CODE"
-      /> */}
-
-      {/* 구글 검색 최적화 */}
-      {/* <meta
-        name="google-site-verification"
-        content="YOUR_GOOGLE_VERIFICATION_CODE"
-      /> */}
     </Helmet>
   );
 };

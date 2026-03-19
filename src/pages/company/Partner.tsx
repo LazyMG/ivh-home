@@ -2,10 +2,12 @@ import { Box, Stack, Typography } from "@mui/material";
 import partner from "../../data/company/partner.json";
 import ImageHeader from "../../components/company/ImageHeader";
 import CustomerContainer from "../../components/company/CustomerContainer";
+import SEO from "../../common/SEO";
 
 interface CustomerListObj {
   src: string;
   maxWidth: string;
+  alt: string;
 }
 
 const Partner = () => {
@@ -47,6 +49,13 @@ const Partner = () => {
   );
 
   return (
+    <>
+      <SEO
+        title="Partner & Customer - iVH 파트너 및 고객사"
+        description="iVH와 함께하는 파트너사 및 고객사를 소개합니다."
+        keywords="iVH, 파트너, 고객사, Partner, Customer"
+        canonical="https://ivh.co.kr/company/partner"
+      />
     <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
       <Box
         sx={(theme) => ({
@@ -125,7 +134,8 @@ const Partner = () => {
                 })}
               >
                 <img
-                  src={partnerImg}
+                  src={partnerImg.src}
+                  alt={partnerImg.alt}
                   style={{ width: "70%", maxWidth: "128px" }}
                 />
               </Box>
@@ -175,6 +185,7 @@ const Partner = () => {
         </Stack>
       </Box>
     </Box>
+    </>
   );
 };
 
