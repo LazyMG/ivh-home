@@ -18,6 +18,7 @@ interface TrainingMainTitleProps {
 const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
   return (
     <Typography
+      component="h1"
       sx={(theme) => ({
         wordBreak: "keep-all",
         zIndex: 1,
