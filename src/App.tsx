@@ -6,77 +6,135 @@ import { useBreakpoint } from "./hooks/useBreakpoint";
 import theme from "./theme/theme";
 import ScrollToTop from "./common/ScrollToTop";
 import { HelmetProvider } from "react-helmet-async";
+import { lazy, Suspense } from "react";
 // Header
 import MobileHeader from "./common/mobile/MobileHeader";
 // Footer
 import Footer from "./common/footer";
 import MobileFooter from "./common/mobile/mobileFooter";
-// pages
+// 정적 로드 (항상 필요하거나 가벼운 페이지)
 import Home from "./pages/home";
-
-// Solution
-import Solution from "./pages/solution/solution";
-import Energy from "./pages/solution/Energy";
-import Bems from "./pages/solution/Bems";
-import HomeAppliance from "./pages/solution/HomeAppliance";
-import SmartFactory from "./pages/solution/SmartFactory";
-import Mobility from "./pages/solution/Mobility";
-import AIInnovation from "./pages/solution/AIInnovation";
-import IMOVA from "./pages/product/IMOVA";
-// Dymola
-import NewDymola from "./pages/product/dymola/Dymola";
-import NewBattery from "./pages/product/dymola/Battery";
-import TIL from "./pages/product/dymola/TIL";
-import CoolingLibrary from "./pages/product/dymola/CoolingLibrary";
-import BrushlessDCDrivesLibrary from "./pages/product/dymola/BrushlessDCDrivesLibrary";
-import ElectrifiedPowertrainsLibrary from "./pages/product/dymola/ElectrifiedPowertrainsLibrary";
-import FlexibleBodies from "./pages/product/dymola/FlexibleBodies";
-import HydrogenLibrary from "./pages/product/dymola/HydrogenLibrary";
-import SustainableSupplySystemsLibrary from "./pages/product/dymola/SustainableSupplySystemsLibrary";
-import VeSyMaLibrary from "./pages/product/dymola/VeSyMaLibrary";
-import VeSyMaSuspensionLibrary from "./pages/product/dymola/VeSyMaSuspensionLibrary";
-import VeSyMaPowertrainLibrary from "./pages/product/dymola/VeSyMaPowertrainLibrary";
-import BinaryModelExport from "./pages/product/dymola/BinaryModelExport";
-// VTD
-import NewVTD from "./pages/product/vtd/VTD";
-import VTDCreate from "./pages/product/vtd/VTDCreate";
-import VTDSimulate from "./pages/product/vtd/VTDSimulate";
-import VTDFullstack from "./pages/product/vtd/VTDFullstack";
-// PTV
-import PTV from "./pages/product/ptv/PTV";
-import NewVissim from "./pages/product/ptv/Vissim";
-import VissimAutomotive from "./pages/product/ptv/VissimAutomotive";
-import Viswalk from "./pages/product/ptv/Viswalk";
-// Modelon
-import Modelon from "./pages/product/modelon/Modelon";
-import VehicleDynamicsLibrary from "./pages/product/modelon/VehicleDynamicsLibrary";
-import ThermalPowerLibrary from "./pages/product/modelon/ThermalPowerLibrary";
-import VaporCycleLibrary from "./pages/product/modelon/VaporCycleLibrary";
-import ModelonBaseLibrary from "./pages/product/modelon/ModelonBaseLibrary";
-import LiquidCoolingLibrary from "./pages/product/modelon/LiquidCoolingLibrary";
-import JetPropulsionLibrary from "./pages/product/modelon/JetPropulsionLibrary";
-import AircraftDynamicsLibrary from "./pages/product/modelon/AircraftDynamicsLibrary";
-import AirCoolingLibrary from "./pages/product/modelon/AirCoolingLibrary";
-import FuelCellLibrary from "./pages/product/modelon/FuelCellLibrary";
-import HydraulicsLibrary from "./pages/product/modelon/HydraulicsLibrary";
-import HeatExchangerLibrary from "./pages/product/modelon/HeatExchangerLibrary";
-import FuelSystemLibrary from "./pages/product/modelon/FuelSystemLibrary";
-import EnvironmentalControlLibrary from "./pages/product/modelon/EnvironmentalControlLibrary";
-import ElectrificationLibrary from "./pages/product/modelon/ElectrificationLibrary";
-// Support
-import Training from "./pages/support/Training";
-import Support from "./pages/support/Support";
-
 import NewHeader from "./common/header/NewHeader";
-import PrivacyPolicy from "./components/support/PrivacyPolicy";
-import CEO from "./pages/company/CEO";
-import History from "./pages/company/History";
-import Partner from "./pages/company/Partner";
-
-import Contact from "./pages/company/Contact";
 import FloatingButton from "./components/chatbot/FloatingButton";
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
+
+// Solution (lazy 그룹)
+const Solution = lazy(() => import("./pages/solution/solution"));
+const Energy = lazy(() => import("./pages/solution/Energy"));
+const Bems = lazy(() => import("./pages/solution/Bems"));
+const HomeAppliance = lazy(() => import("./pages/solution/HomeAppliance"));
+const SmartFactory = lazy(() => import("./pages/solution/SmartFactory"));
+const Mobility = lazy(() => import("./pages/solution/Mobility"));
+const AIInnovation = lazy(() => import("./pages/solution/AIInnovation"));
+
+// iMOVA (lazy 개별)
+const IMOVA = lazy(() => import("./pages/product/IMOVA"));
+
+// Dymola (lazy 그룹)
+const Dymola = lazy(() => import("./pages/product/dymola/Dymola"));
+const Battery = lazy(() => import("./pages/product/dymola/Battery"));
+const TIL = lazy(() => import("./pages/product/dymola/TIL"));
+const CoolingLibrary = lazy(
+  () => import("./pages/product/dymola/CoolingLibrary"),
+);
+const BrushlessDCDrivesLibrary = lazy(
+  () => import("./pages/product/dymola/BrushlessDCDrivesLibrary"),
+);
+const ElectrifiedPowertrainsLibrary = lazy(
+  () => import("./pages/product/dymola/ElectrifiedPowertrainsLibrary"),
+);
+const FlexibleBodies = lazy(
+  () => import("./pages/product/dymola/FlexibleBodies"),
+);
+const HydrogenLibrary = lazy(
+  () => import("./pages/product/dymola/HydrogenLibrary"),
+);
+const SustainableSupplySystemsLibrary = lazy(
+  () => import("./pages/product/dymola/SustainableSupplySystemsLibrary"),
+);
+const VeSyMaLibrary = lazy(
+  () => import("./pages/product/dymola/VeSyMaLibrary"),
+);
+const VeSyMaSuspensionLibrary = lazy(
+  () => import("./pages/product/dymola/VeSyMaSuspensionLibrary"),
+);
+const VeSyMaPowertrainLibrary = lazy(
+  () => import("./pages/product/dymola/VeSyMaPowertrainLibrary"),
+);
+const BinaryModelExport = lazy(
+  () => import("./pages/product/dymola/BinaryModelExport"),
+);
+
+// VTD (lazy 그룹)
+const VTD = lazy(() => import("./pages/product/vtd/VTD"));
+const VTDCreate = lazy(() => import("./pages/product/vtd/VTDCreate"));
+const VTDSimulate = lazy(() => import("./pages/product/vtd/VTDSimulate"));
+const VTDFullstack = lazy(() => import("./pages/product/vtd/VTDFullstack"));
+
+// PTV (lazy 그룹)
+const PTV = lazy(() => import("./pages/product/ptv/PTV"));
+const Vissim = lazy(() => import("./pages/product/ptv/Vissim"));
+const VissimAutomotive = lazy(
+  () => import("./pages/product/ptv/VissimAutomotive"),
+);
+const Viswalk = lazy(() => import("./pages/product/ptv/Viswalk"));
+
+// Modelon (lazy 그룹)
+const Modelon = lazy(() => import("./pages/product/modelon/Modelon"));
+const VehicleDynamicsLibrary = lazy(
+  () => import("./pages/product/modelon/VehicleDynamicsLibrary"),
+);
+const ThermalPowerLibrary = lazy(
+  () => import("./pages/product/modelon/ThermalPowerLibrary"),
+);
+const VaporCycleLibrary = lazy(
+  () => import("./pages/product/modelon/VaporCycleLibrary"),
+);
+const ModelonBaseLibrary = lazy(
+  () => import("./pages/product/modelon/ModelonBaseLibrary"),
+);
+const LiquidCoolingLibrary = lazy(
+  () => import("./pages/product/modelon/LiquidCoolingLibrary"),
+);
+const JetPropulsionLibrary = lazy(
+  () => import("./pages/product/modelon/JetPropulsionLibrary"),
+);
+const AircraftDynamicsLibrary = lazy(
+  () => import("./pages/product/modelon/AircraftDynamicsLibrary"),
+);
+const AirCoolingLibrary = lazy(
+  () => import("./pages/product/modelon/AirCoolingLibrary"),
+);
+const FuelCellLibrary = lazy(
+  () => import("./pages/product/modelon/FuelCellLibrary"),
+);
+const HydraulicsLibrary = lazy(
+  () => import("./pages/product/modelon/HydraulicsLibrary"),
+);
+const HeatExchangerLibrary = lazy(
+  () => import("./pages/product/modelon/HeatExchangerLibrary"),
+);
+const FuelSystemLibrary = lazy(
+  () => import("./pages/product/modelon/FuelSystemLibrary"),
+);
+const EnvironmentalControlLibrary = lazy(
+  () => import("./pages/product/modelon/EnvironmentalControlLibrary"),
+);
+const ElectrificationLibrary = lazy(
+  () => import("./pages/product/modelon/ElectrificationLibrary"),
+);
+
+// Support (lazy 그룹)
+const Training = lazy(() => import("./pages/support/Training"));
+const Support = lazy(() => import("./pages/support/Support"));
+const PrivacyPolicy = lazy(() => import("./components/support/PrivacyPolicy"));
+
+// Company (lazy 그룹)
+const Contact = lazy(() => import("./pages/company/Contact"));
+const CEO = lazy(() => import("./pages/company/CEO"));
+const History = lazy(() => import("./pages/company/History"));
+const Partner = lazy(() => import("./pages/company/Partner"));
 
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
@@ -92,149 +150,160 @@ function AppContent() {
         {/** header */}
         {!hideLayout &&
           (isMobile || isTablet ? <MobileHeader /> : <NewHeader />)}
-        <Routes>
-          {/** pages */}
-          <Route path="/" element={<Home />} />
-          {/** Solution */}
-          <Route path="/solution" element={<Solution />} />
-          <Route path="/solution/energy" element={<Energy />} />
-          <Route path="/solution/homeappliance" element={<HomeAppliance />} />
-          <Route path="/solution/smartfactory" element={<SmartFactory />} />
-          <Route path="/solution/bems" element={<Bems />} />
-          <Route path="/solution/mobility" element={<Mobility />} />
-          <Route path="/solution/aIinnovationhub" element={<AIInnovation />} />
+        <Suspense fallback={<div style={{ minHeight: "100vh" }} />}>
+          <Routes>
+            {/** pages */}
+            <Route path="/" element={<Home />} />
+            {/** Solution */}
+            <Route path="/solution" element={<Solution />} />
+            <Route path="/solution/energy" element={<Energy />} />
+            <Route path="/solution/homeappliance" element={<HomeAppliance />} />
+            <Route path="/solution/smartfactory" element={<SmartFactory />} />
+            <Route path="/solution/bems" element={<Bems />} />
+            <Route path="/solution/mobility" element={<Mobility />} />
+            <Route
+              path="/solution/aIinnovationhub"
+              element={<AIInnovation />}
+            />
 
-          {/** Product */}
-          <Route path="/product/imova" element={<IMOVA />} />
-          <Route path="/product/isuite" element={<ComingSoon />} />
+            {/** Product */}
+            <Route path="/product/imova" element={<IMOVA />} />
+            <Route path="/product/isuite" element={<ComingSoon />} />
 
-          {/** dymola */}
-          <Route path="/product/dymola" element={<NewDymola />} />
-          <Route path="/product/dymola/battery" element={<NewBattery />} />
-          <Route path="/product/dymola/til" element={<TIL />} />
-          <Route path="/product/dymola/cooling" element={<CoolingLibrary />} />
-          <Route
-            path="/product/dymola/brushlessdcdrives"
-            element={<BrushlessDCDrivesLibrary />}
-          />
-          <Route
-            path="/product/dymola/electrifiedpowertrains"
-            element={<ElectrifiedPowertrainsLibrary />}
-          />
-          <Route
-            path="/product/dymola/flexiblebodies"
-            element={<FlexibleBodies />}
-          />
-          <Route
-            path="/product/dymola/hydrogen"
-            element={<HydrogenLibrary />}
-          />
-          <Route
-            path="/product/dymola/sustainablesupplysystems"
-            element={<SustainableSupplySystemsLibrary />}
-          />
-          <Route path="/product/dymola/veSyMa" element={<VeSyMaLibrary />} />
-          <Route
-            path="/product/dymola/veSyMasuspension"
-            element={<VeSyMaSuspensionLibrary />}
-          />
-          <Route
-            path="/product/dymola/veSyMapowertrain"
-            element={<VeSyMaPowertrainLibrary />}
-          />
-          <Route
-            path="/product/dymola/binarymodelexport"
-            element={<BinaryModelExport />}
-          />
+            {/** dymola */}
+            <Route path="/product/dymola" element={<Dymola />} />
+            <Route path="/product/dymola/battery" element={<Battery />} />
+            <Route path="/product/dymola/til" element={<TIL />} />
+            <Route
+              path="/product/dymola/cooling"
+              element={<CoolingLibrary />}
+            />
+            <Route
+              path="/product/dymola/brushlessdcdrives"
+              element={<BrushlessDCDrivesLibrary />}
+            />
+            <Route
+              path="/product/dymola/electrifiedpowertrains"
+              element={<ElectrifiedPowertrainsLibrary />}
+            />
+            <Route
+              path="/product/dymola/flexiblebodies"
+              element={<FlexibleBodies />}
+            />
+            <Route
+              path="/product/dymola/hydrogen"
+              element={<HydrogenLibrary />}
+            />
+            <Route
+              path="/product/dymola/sustainablesupplysystems"
+              element={<SustainableSupplySystemsLibrary />}
+            />
+            <Route path="/product/dymola/veSyMa" element={<VeSyMaLibrary />} />
+            <Route
+              path="/product/dymola/veSyMasuspension"
+              element={<VeSyMaSuspensionLibrary />}
+            />
+            <Route
+              path="/product/dymola/veSyMapowertrain"
+              element={<VeSyMaPowertrainLibrary />}
+            />
+            <Route
+              path="/product/dymola/binarymodelexport"
+              element={<BinaryModelExport />}
+            />
 
-          {/** vtd */}
-          <Route path="/product/vtd" element={<NewVTD />} />
-          <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
-          <Route path="/product/vtd/vtdsimulate" element={<VTDSimulate />} />
-          <Route path="/product/vtd/vtdfullstack" element={<VTDFullstack />} />
+            {/** vtd */}
+            <Route path="/product/vtd" element={<VTD />} />
+            <Route path="/product/vtd/vtdcreate" element={<VTDCreate />} />
+            <Route path="/product/vtd/vtdsimulate" element={<VTDSimulate />} />
+            <Route
+              path="/product/vtd/vtdfullstack"
+              element={<VTDFullstack />}
+            />
 
-          {/** ptv */}
-          <Route path="/product/ptv" element={<PTV />} />
-          <Route path="/product/ptv/vissim" element={<NewVissim />} />
-          <Route
-            path="/product/ptv/vissimautomotive"
-            element={<VissimAutomotive />}
-          />
-          <Route path="/product/ptv/viswalk" element={<Viswalk />} />
+            {/** ptv */}
+            <Route path="/product/ptv" element={<PTV />} />
+            <Route path="/product/ptv/vissim" element={<Vissim />} />
+            <Route
+              path="/product/ptv/vissimautomotive"
+              element={<VissimAutomotive />}
+            />
+            <Route path="/product/ptv/viswalk" element={<Viswalk />} />
 
-          {/** modelon */}
-          <Route path="/product/modelon" element={<Modelon />} />
-          <Route
-            path="/product/modelon/vehicledynamicslibrary"
-            element={<VehicleDynamicsLibrary />}
-          />
-          <Route
-            path="/product/modelon/thermalpower"
-            element={<ThermalPowerLibrary />}
-          />
-          <Route
-            path="/product/modelon/vaporcycle"
-            element={<VaporCycleLibrary />}
-          />
-          <Route
-            path="/product/modelon/modelonbase"
-            element={<ModelonBaseLibrary />}
-          />
-          <Route
-            path="/product/modelon/liquidcooling"
-            element={<LiquidCoolingLibrary />}
-          />
-          <Route
-            path="/product/modelon/jetpropulsion"
-            element={<JetPropulsionLibrary />}
-          />
-          <Route
-            path="/product/modelon/aircraftdynamics"
-            element={<AircraftDynamicsLibrary />}
-          />
-          <Route
-            path="/product/modelon/aircooling"
-            element={<AirCoolingLibrary />}
-          />
-          <Route
-            path="/product/modelon/fuelcell"
-            element={<FuelCellLibrary />}
-          />
-          <Route
-            path="/product/modelon/hydraulics"
-            element={<HydraulicsLibrary />}
-          />
-          <Route
-            path="/product/modelon/heatexchanger"
-            element={<HeatExchangerLibrary />}
-          />
-          <Route
-            path="/product/modelon/fuelsystem"
-            element={<FuelSystemLibrary />}
-          />
-          <Route
-            path="/product/modelon/environmentalcontrol"
-            element={<EnvironmentalControlLibrary />}
-          />
-          <Route
-            path="/product/modelon/electrification"
-            element={<ElectrificationLibrary />}
-          />
+            {/** modelon */}
+            <Route path="/product/modelon" element={<Modelon />} />
+            <Route
+              path="/product/modelon/vehicledynamicslibrary"
+              element={<VehicleDynamicsLibrary />}
+            />
+            <Route
+              path="/product/modelon/thermalpower"
+              element={<ThermalPowerLibrary />}
+            />
+            <Route
+              path="/product/modelon/vaporcycle"
+              element={<VaporCycleLibrary />}
+            />
+            <Route
+              path="/product/modelon/modelonbase"
+              element={<ModelonBaseLibrary />}
+            />
+            <Route
+              path="/product/modelon/liquidcooling"
+              element={<LiquidCoolingLibrary />}
+            />
+            <Route
+              path="/product/modelon/jetpropulsion"
+              element={<JetPropulsionLibrary />}
+            />
+            <Route
+              path="/product/modelon/aircraftdynamics"
+              element={<AircraftDynamicsLibrary />}
+            />
+            <Route
+              path="/product/modelon/aircooling"
+              element={<AirCoolingLibrary />}
+            />
+            <Route
+              path="/product/modelon/fuelcell"
+              element={<FuelCellLibrary />}
+            />
+            <Route
+              path="/product/modelon/hydraulics"
+              element={<HydraulicsLibrary />}
+            />
+            <Route
+              path="/product/modelon/heatexchanger"
+              element={<HeatExchangerLibrary />}
+            />
+            <Route
+              path="/product/modelon/fuelsystem"
+              element={<FuelSystemLibrary />}
+            />
+            <Route
+              path="/product/modelon/environmentalcontrol"
+              element={<EnvironmentalControlLibrary />}
+            />
+            <Route
+              path="/product/modelon/electrification"
+              element={<ElectrificationLibrary />}
+            />
 
-          {/** support */}
-          <Route path="/support/training" element={<Training />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
+            {/** support */}
+            <Route path="/support/training" element={<Training />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/support/privacyPolicy" element={<PrivacyPolicy />} />
 
-          {/** company */}
-          <Route path="/company/contact" element={<Contact />} />
-          <Route path="/company/ceo" element={<CEO />} />
-          <Route path="/company/history" element={<History />} />
-          <Route path="/company/partner" element={<Partner />} />
+            {/** company */}
+            <Route path="/company/contact" element={<Contact />} />
+            <Route path="/company/ceo" element={<CEO />} />
+            <Route path="/company/history" element={<History />} />
+            <Route path="/company/partner" element={<Partner />} />
 
-          {/** 404 */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            {/** 404 */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </ScrollToTop>
       {/** chatbot button */}
       <FloatingButton isHomePage={isHomePage} />
