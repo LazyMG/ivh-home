@@ -14,7 +14,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-1-Thin";
-  src: url("/fonts/Freesentation-1Thin.ttf") format("truetype");
+  src: url("/fonts/Freesentation-1Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -22,7 +22,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-2-ExtraLight";
-  src: url("/fonts/Freesentation-2ExtraLight.ttf") format("truetype");
+  src: url("/fonts/Freesentation-2ExtraLight.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -30,7 +30,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-3-Light";
-  src: url("/fonts/Freesentation-3Light.ttf") format("truetype");
+  src: url("/fonts/Freesentation-3Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -38,7 +38,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-4-Regular";
-  src: url("/fonts/Freesentation-4Regular.ttf") format("truetype");
+  src: url("/fonts/Freesentation-4Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -46,7 +46,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-5-Medium";
-  src: url("/fonts/Freesentation-5Medium.ttf") format("truetype");
+  src: url("/fonts/Freesentation-5Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -54,7 +54,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-6-SemiBold";
-  src: url("/fonts/Freesentation-6SemiBold.ttf") format("truetype");
+  src: url("/fonts/Freesentation-6SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -62,7 +62,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-7-Bold";
-  src: url("/fonts/Freesentation-7Bold.ttf") format("truetype");
+  src: url("/fonts/Freesentation-7Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -70,7 +70,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-8-ExtraBold";
-  src: url("/fonts/Freesentation-8ExtraBold.ttf") format("truetype");
+  src: url("/fonts/Freesentation-8ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -78,7 +78,7 @@ body {
 
 @font-face {
   font-family: "Freesentation-9-Black";
-  src: url("/fonts/Freesentation-9Black.ttf") format("truetype");
+  src: url("/fonts/Freesentation-9Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
