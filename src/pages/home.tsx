@@ -229,6 +229,7 @@ const Home = () => {
                         component="img"
                         src={product.mobile_image}
                         alt={product.mobile_image_alt}
+                        loading="lazy"
                         sx={{
                           width: "100%",
                           height: "100%",
@@ -240,6 +241,7 @@ const Home = () => {
                         component="img"
                         src={product.title_image}
                         alt={product.title_image_alt}
+                        loading="lazy"
                         sx={{
                           position: "absolute",
                           top: 0,
@@ -295,6 +297,7 @@ const Home = () => {
                       component="img"
                       src={product.pc_image}
                       alt={product.pc_image_alt}
+                      loading="lazy"
                       sx={{
                         width: "100%",
                         height: "100%",
@@ -308,6 +311,7 @@ const Home = () => {
                       component="img"
                       src={product.title_image}
                       alt={product.title_image_alt}
+                      loading="lazy"
                       sx={{
                         position: "absolute",
                         top: 0,
@@ -397,6 +401,7 @@ const Home = () => {
                     component="img"
                     src={partnerImg.src}
                     alt={partnerImg.alt}
+                    loading="lazy"
                     sx={(theme) => ({
                       minWidth: index < 6 ? "50%" : "34%",
                       maxWidth: index < 6 ? "70%" : "48%",

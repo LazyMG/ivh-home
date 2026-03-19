@@ -173,6 +173,7 @@ const Contact = () => {
                 component="img"
                 src={contact.contact_imgUrl}
                 alt={contact.contact_img_alt}
+                loading="lazy"
                 sx={(theme) => ({
                   width: "80%",
                   height: "auto",

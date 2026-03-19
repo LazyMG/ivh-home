@@ -308,6 +308,7 @@ const IMOVA = () => {
                             component="img"
                             src={system.control_system_image_url}
                             alt={system.control_system_image_alt}
+                            loading="lazy"
                             sx={(theme) => ({
                               height: "auto",
                               objectFit: "contain",

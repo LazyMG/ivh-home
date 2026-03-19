@@ -275,6 +275,7 @@ const ProductPageTemplate = ({
                 <Box
                   component="img"
                   src={library.imgUrl}
+                  loading="lazy"
                   sx={(theme) => ({
                     width: "40%",
                     maxWidth: "80%",

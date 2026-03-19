@@ -59,6 +59,7 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                   <Box
                     component="img"
                     src={img.imgUrl}
+                    loading="lazy"
                     sx={{
                       objectFit: "contain",
                       maxWidth: "100%",
