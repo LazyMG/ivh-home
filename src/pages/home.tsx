@@ -2,7 +2,7 @@ import { Box, CssBaseline, Typography } from "@mui/material";
 
 import NewsletterList from "../components/common/NewsletterList";
 import SEO from "../common/SEO";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import ContactTrainingInfoSection from "../components/home/ContactTrainingInfoSection";
 import MainGradientText from "../components/common/MainGradientText";
@@ -25,6 +25,30 @@ const Home = () => {
 
   const { iMOVA, products, video } = homeData;
   const { partner_partnerList } = home_partner;
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVideoSrc(video);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    if (videoRef.current) observer.observe(videoRef.current);
+    return () => observer.disconnect();
+  }, [video]);
+
+  useEffect(() => {
+    if (videoSrc && videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play();
+    }
+  }, [videoSrc]);
 
   const navigate = useNavigate();
 
@@ -340,10 +364,10 @@ const Home = () => {
             </Box>
             <Box
               component="video"
+              ref={videoRef}
               aria-label="iVH 자동화 공정 소개 영상"
-              src={video}
+              src={videoSrc}
               loop
-              autoPlay
               muted
               playsInline
               preload="none"
