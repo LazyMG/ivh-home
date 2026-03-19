@@ -130,6 +130,7 @@ const Home = () => {
               component="img"
               src={isMobile ? iMOVA.mobile_effect : iMOVA.pc_effect}
               alt={isMobile ? iMOVA.mobile_effect_alt : iMOVA.pc_effect_alt}
+              fetchPriority="high"
               sx={(theme) => ({
                 position: "absolute",
                 bottom: "-20%",
