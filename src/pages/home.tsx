@@ -346,7 +346,7 @@ const Home = () => {
               autoPlay
               muted
               playsInline
-              preload="metadata"
+              preload="none"
               sx={(theme) => ({
                 width: "100%",
                 height: "auto",
