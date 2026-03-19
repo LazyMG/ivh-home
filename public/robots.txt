@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /images/header/youtube_black.png
+Disallow: /images/header/youtube_white.png
+Disallow: /images/header/linkedin_black.png
+Disallow: /images/header/linkedin_white.png
+Disallow: /images/header/search_icon.png
+Disallow: /images/home/chatbot.png
+Disallow: /images/home/newsletter_linkedin_logo.png
 
 Sitemap: https://ivh.co.kr/sitemap.xml
