@@ -127,20 +127,6 @@ const responsiveFonts = {
     tablet: "22px",
     desktop: "31px",
   },
-  productImageBannerTitleFont: {
-    font: fontConfig["extraBold"],
-    mobilePortrait: "32px",
-    mobileLandscape: "36px",
-    tablet: "56px",
-    desktop: "80px",
-  },
-  productImageBannerSubtitleFont: {
-    font: fontConfig["semiBold"],
-    mobilePortrait: "14px",
-    mobileLandscape: "18px",
-    tablet: "28px",
-    desktop: "40px",
-  },
   contactTitleFont: {
     font: fontConfig["bold"],
     mobilePortrait: "24px",
@@ -255,12 +241,6 @@ const theme = createTheme({
     solutionBoxTitleFont: getResponsiveFontStyle(
       responsiveFonts["solutionBoxTitleFont"],
     ),
-    productImageBannerTitleFont: getResponsiveFontStyle(
-      responsiveFonts["productImageBannerTitleFont"],
-    ),
-    productImageBannerSubtitleFont: getResponsiveFontStyle(
-      responsiveFonts["productImageBannerSubtitleFont"],
-    ),
     contactTitleFont: getResponsiveFontStyle(
       responsiveFonts["contactTitleFont"],
     ),
@@ -338,111 +318,6 @@ const theme = createTheme({
     },
     // 솔루션 페이지 (/solution) 중앙 이미지 스타일
     solutionMainImage: solutionMainImageStyle,
-    // 솔루션 페이지 (/solution) 하단 네비게이션의 Box 컴포넌트 스타일
-    solutionMainRowNavContainer: {
-      position: "absolute",
-      width: "100%",
-      bottom: "2rem",
-
-      // 스마트폰 가로만: 오른쪽 배치
-      [`${baseTheme.breakpoints.between(
-        "mobileLandscape",
-        "tablet",
-      )} and (orientation: landscape) and (max-height: 500px)`]: {
-        position: "relative",
-        flex: "0 0 50%",
-        maxWidth: "50%",
-        width: "50%",
-        bottom: "auto",
-      },
-
-      // 태블릿 이상: 기존 하단 배치
-      [baseTheme.breakpoints.up("tablet")]: {
-        position: "absolute",
-        width: "100%",
-        bottom: "2rem",
-        flex: "none",
-        maxWidth: "none",
-      },
-
-      [baseTheme.breakpoints.up("desktop")]: {
-        bottom: "1rem",
-      },
-    },
-    // 솔루션 페이지 (/solution) 하단 네비게이션의 Toolbar 컴포넌트 스타일
-    solutionMainRowNav: {
-      boxSizing: "border-box",
-      display: "flex",
-      flexDirection: "column",
-      gap: "24px",
-      padding: "0 36px",
-      width: "100%",
-
-      // 스마트폰 가로만: 2×3 그리드
-      [`${baseTheme.breakpoints.between(
-        "mobileLandscape",
-        "tablet",
-      )} and (orientation: landscape) and (max-height: 500px)`]: {
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gridTemplateRows: "1fr 1fr 1fr",
-        rowGap: "56px",
-        columnGap: "16px",
-        padding: 0,
-      },
-
-      // 태블릿 이상: 기존 레이아웃 (2행 3열)
-      [baseTheme.breakpoints.up("tablet")]: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "24px",
-        padding: "0 36px",
-      },
-
-      [baseTheme.breakpoints.up("desktop")]: {
-        flexDirection: "row",
-        gap: "0",
-        padding: 0,
-        justifyContent: "space-around",
-      },
-    },
-    // 솔루션 페이지 (/solution) 하단 네비게이션의 Toolbar 자식 컴포넌트 Box
-    // 메뉴를 3개씩 묶어 가지는 컴포넌트
-    solutionMainRowNavItemContainer: {
-      width: "100%",
-      display: "flex",
-      justifyContent: "space-between",
-
-      // 스마트폰 가로만: grid 적용
-      [`${baseTheme.breakpoints.between(
-        "mobileLandscape",
-        "tablet",
-      )} and (orientation: landscape) and (max-height: 500px)`]: {
-        display: "contents",
-      },
-
-      // 태블릿 이상: 기존 flex 레이아웃
-      [baseTheme.breakpoints.up("tablet")]: {
-        display: "flex",
-        justifyContent: "space-between",
-      },
-
-      [baseTheme.breakpoints.up("desktop")]: {
-        justifyContent: "space-around",
-      },
-    },
-    // 메뉴 1개에 해당하는 컴포넌트
-    solutionMainRowNavItem: {
-      justifyContent: "center",
-
-      display: "flex",
-
-      [baseTheme.breakpoints.up("desktop")]: {
-        display: "block",
-
-        width: "fit-content",
-      },
-    },
     // 프로덕트 페이지 중 중간 페이지(/product/dymola, /product/vtd 등)의 Outline 영역 스타일
     productBranchPageOutline: {
       marginTop: "32px",
