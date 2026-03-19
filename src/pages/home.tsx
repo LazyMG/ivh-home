@@ -264,6 +264,7 @@ const Home = () => {
               >
                 {products.map((product) => (
                   <Box
+                    component="button"
                     key={product.name}
                     sx={{
                       borderRadius: "20px",
@@ -274,6 +275,10 @@ const Home = () => {
                       boxSizing: "border-box",
                       position: "relative",
                       overflow: "hidden",
+                      padding: 0,
+                      textAlign: "inherit",
+                      font: "inherit",
+                      color: "inherit",
                       "&:hover .product-bg-image": {
                         filter: "brightness(1)",
                       },
@@ -330,6 +335,7 @@ const Home = () => {
             </Box>
             <Box
               component="video"
+              aria-label="iVH 자동화 공정 소개 영상"
               src={video}
               loop
               autoPlay
@@ -376,6 +382,7 @@ const Home = () => {
               {partner_partnerList.map((partnerImg, index) => (
                 <Box
                   key={index}
+                  component="li"
                   sx={(theme) => ({
                     display: "flex",
                     alignItems: "center",
