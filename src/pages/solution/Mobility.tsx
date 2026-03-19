@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import "../../style/solution.css";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import BreadScrum from "../../common/BreadScrum";

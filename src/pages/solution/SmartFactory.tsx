@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import SolutionTitle from "../../components/solution/SolutionTitle";
-
+import "../../style/solution.css";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import header from "../../data/solution/header.json";
