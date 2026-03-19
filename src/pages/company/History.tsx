@@ -19,105 +19,107 @@ const History = () => {
         keywords="iVH, 연혁, History, 회사 역사"
         canonical="https://ivh.co.kr/company/history"
       />
-    <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
-      <Box
-        sx={(theme) => ({
-          px: "20px",
-          display: "none",
-          [theme.breakpoints.up("tablet")]: {
-            p: 0,
-            display: "block",
-          },
-        })}
-      >
-        <ImageHeader
-          imgUrl={history_image}
-          imgPosition={history_image_position}
-        />
-      </Box>
-
-      <Box
-        sx={(theme) => ({
-          display: "flex",
-          flexDirection: "column",
-          gap: 4,
-          my: 10,
-          px: "20px",
-          pt: 0,
-          [theme.breakpoints.up("tablet")]: {
-            px: 10,
-            gap: 6,
-            pt: "20px",
-          },
-          [theme.breakpoints.up("desktop")]: {
-            pt: "50px",
-            px: 40,
-          },
-        })}
-      >
-        <Typography
+      <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
+        <Box
           sx={(theme) => ({
-            textTransform: "uppercase",
-            whiteSpace: "pre-line",
-            fontFamily: "Freesentation-7-Bold",
-            color: history_color,
-            fontSize: "24px",
+            px: "20px",
+            display: "none",
             [theme.breakpoints.up("tablet")]: {
-              fontSize: "28px",
-            },
-            [theme.breakpoints.up("desktop")]: {
-              fontSize: "40px",
+              p: 0,
+              display: "block",
             },
           })}
         >
-          {history_title}
-        </Typography>
-        <Stack
-          sx={{
-            gap: 8,
-          }}
+          <ImageHeader
+            imgUrl={history_image}
+            imgPosition={history_image_position}
+          />
+        </Box>
+
+        <Box
+          component="main"
+          sx={(theme) => ({
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+            my: 10,
+            px: "20px",
+            pt: 0,
+            [theme.breakpoints.up("tablet")]: {
+              px: 10,
+              gap: 6,
+              pt: "20px",
+            },
+            [theme.breakpoints.up("desktop")]: {
+              pt: "50px",
+              px: 40,
+            },
+          })}
         >
-          {history_list.map((item, index) => (
-            <Box
-              key={index}
-              sx={(theme) => ({
-                display: "flex",
-                flexDirection: "column",
-                gap: 0,
-                [theme.breakpoints.up("desktop")]: {
-                  gap: 2,
-                },
-              })}
-            >
-              <Typography
-                sx={{
-                  fontSize: "30px",
-                  fontFamily: "Freesentation-7-Bold",
-                  color: history_color,
-                }}
+          <Typography
+            component="h1"
+            sx={(theme) => ({
+              textTransform: "uppercase",
+              whiteSpace: "pre-line",
+              fontFamily: "Freesentation-7-Bold",
+              color: history_color,
+              fontSize: "24px",
+              [theme.breakpoints.up("tablet")]: {
+                fontSize: "28px",
+              },
+              [theme.breakpoints.up("desktop")]: {
+                fontSize: "40px",
+              },
+            })}
+          >
+            {history_title}
+          </Typography>
+          <Stack
+            sx={{
+              gap: 8,
+            }}
+          >
+            {history_list.map((item, index) => (
+              <Box
+                key={index}
+                sx={(theme) => ({
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 0,
+                  [theme.breakpoints.up("desktop")]: {
+                    gap: 2,
+                  },
+                })}
               >
-                {item.year}
-              </Typography>
-              <Box>
-                {item.contents.map((content, index) => (
-                  <Typography
-                    key={index}
-                    sx={{
-                      color: "#2A2A2A",
-                      fontFamily: "Freesentation-4-Regular",
-                      whiteSpace: "pre-line",
-                      fontSize: "18px",
-                    }}
-                  >
-                    {content}
-                  </Typography>
-                ))}
+                <Typography
+                  sx={{
+                    fontSize: "30px",
+                    fontFamily: "Freesentation-7-Bold",
+                    color: history_color,
+                  }}
+                >
+                  {item.year}
+                </Typography>
+                <Box>
+                  {item.contents.map((content, index) => (
+                    <Typography
+                      key={index}
+                      sx={{
+                        color: "#2A2A2A",
+                        fontFamily: "Freesentation-4-Regular",
+                        whiteSpace: "pre-line",
+                        fontSize: "18px",
+                      }}
+                    >
+                      {content}
+                    </Typography>
+                  ))}
+                </Box>
               </Box>
-            </Box>
-          ))}
-        </Stack>
+            ))}
+          </Stack>
+        </Box>
       </Box>
-    </Box>
     </>
   );
 };

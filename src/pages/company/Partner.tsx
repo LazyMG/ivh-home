@@ -56,135 +56,139 @@ const Partner = () => {
         keywords="iVH, 파트너, 고객사, Partner, Customer"
         canonical="https://ivh.co.kr/company/partner"
       />
-    <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
-      <Box
-        sx={(theme) => ({
-          px: "20px",
-          display: "none",
-          [theme.breakpoints.up("tablet")]: {
-            p: 0,
-            display: "block",
-          },
-        })}
-      >
-        <ImageHeader
-          imgUrl={partner_image}
-          imgPosition={partner_image_position}
-        />
-      </Box>
+      <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
+        <Box
+          sx={(theme) => ({
+            px: "20px",
+            display: "none",
+            [theme.breakpoints.up("tablet")]: {
+              p: 0,
+              display: "block",
+            },
+          })}
+        >
+          <ImageHeader
+            imgUrl={partner_image}
+            imgPosition={partner_image_position}
+          />
+        </Box>
 
-      <Box
-        sx={(theme) => ({
-          display: "flex",
-          flexDirection: "column",
-          gap: 24,
-          my: 10,
-          px: "16px",
-          [theme.breakpoints.up("tablet")]: {
-            px: 10,
-            pt: "20px",
-          },
-          [theme.breakpoints.up("desktop")]: {
-            pt: "50px",
-            px: 30,
-          },
-        })}
-      >
-        <Stack gap={3}>
-          <Typography
-            sx={(theme) => ({
-              textTransform: "uppercase",
-              whiteSpace: "pre-line",
-              fontFamily: "Freesentation-7-Bold",
-              letterSpacing: "4px",
-              color: partner_color,
-              fontSize: "24px",
-              [theme.breakpoints.up("tablet")]: {
-                fontSize: "28px",
-              },
-              [theme.breakpoints.up("desktop")]: {
-                fontSize: "30px",
-              },
-            })}
-          >
-            {partner_partner}
-          </Typography>
-          <Box
-            component="ul"
-            sx={{
-              display: "flex",
-              justifyContent: "between",
-              alignItems: "center",
-              flexWrap: "wrap",
-              rowGap: 10,
-              pl: 0,
-            }}
-          >
-            {partner_partnerList.map((partnerImg, index) => (
-              <Box
-                key={index}
-                sx={(theme) => ({
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "50%",
-                  [theme.breakpoints.up("desktop")]: {
-                    width: "25%",
-                  },
-                })}
-              >
-                <img
-                  src={partnerImg.src}
-                  alt={partnerImg.alt}
-                  style={{ width: "70%", maxWidth: "128px" }}
-                />
-              </Box>
-            ))}
-          </Box>
-        </Stack>
-        <Stack gap={3}>
-          <Typography
-            sx={(theme) => ({
-              textTransform: "uppercase",
-              whiteSpace: "pre-line",
-              fontFamily: "Freesentation-7-Bold",
-              letterSpacing: "4px",
-              color: partner_color,
-              fontSize: "24px",
-              [theme.breakpoints.up("tablet")]: {
-                fontSize: "28px",
-              },
-              [theme.breakpoints.up("desktop")]: {
-                fontSize: "30px",
-              },
-            })}
-          >
-            {partner_customer}
-          </Typography>
-          <Box
-            // component="ul"
-            sx={{
-              display: "flex",
-              width: "100%",
-              flexDirection: "column",
-            }}
-          >
-            <CustomerContainer
-              chunkList={companyMobileChunks}
-              customerList={customer_company}
-            />
-            <CustomerContainer
-              chunkList={institutionMobileChunks}
-              customerList={customer_institution}
-            />
-            <CustomerContainer
-              chunkList={educationMobileChunks}
-              customerList={customer_education}
-            />
-          </Box>
-        </Stack>
+        <Box
+          component="main"
+          sx={(theme) => ({
+            display: "flex",
+            flexDirection: "column",
+            gap: 24,
+            my: 10,
+            px: "16px",
+            [theme.breakpoints.up("tablet")]: {
+              px: 10,
+              pt: "20px",
+            },
+            [theme.breakpoints.up("desktop")]: {
+              pt: "50px",
+              px: 30,
+            },
+          })}
+        >
+          <Stack gap={3}>
+            <Typography
+              component="h1"
+              sx={(theme) => ({
+                textTransform: "uppercase",
+                whiteSpace: "pre-line",
+                fontFamily: "Freesentation-7-Bold",
+                letterSpacing: "4px",
+                color: partner_color,
+                fontSize: "24px",
+                [theme.breakpoints.up("tablet")]: {
+                  fontSize: "28px",
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  fontSize: "30px",
+                },
+              })}
+            >
+              {partner_partner}
+            </Typography>
+            <Box
+              component="ul"
+              sx={{
+                display: "flex",
+                justifyContent: "between",
+                alignItems: "center",
+                flexWrap: "wrap",
+                rowGap: 10,
+                pl: 0,
+              }}
+            >
+              {partner_partnerList.map((partnerImg, index) => (
+                <Box
+                  key={index}
+                  component="li"
+                  sx={(theme) => ({
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "50%",
+                    [theme.breakpoints.up("desktop")]: {
+                      width: "25%",
+                    },
+                  })}
+                >
+                  <img
+                    src={partnerImg.src}
+                    alt={partnerImg.alt}
+                    style={{ width: "70%", maxWidth: "128px" }}
+                  />
+                </Box>
+              ))}
+            </Box>
+          </Stack>
+          <Stack gap={3}>
+            <Typography
+              component="h2"
+              sx={(theme) => ({
+                textTransform: "uppercase",
+                whiteSpace: "pre-line",
+                fontFamily: "Freesentation-7-Bold",
+                letterSpacing: "4px",
+                color: partner_color,
+                fontSize: "24px",
+                [theme.breakpoints.up("tablet")]: {
+                  fontSize: "28px",
+                },
+                [theme.breakpoints.up("desktop")]: {
+                  fontSize: "30px",
+                },
+              })}
+            >
+              {partner_customer}
+            </Typography>
+            <Box
+              // component="ul"
+              sx={{
+                display: "flex",
+                width: "100%",
+                flexDirection: "column",
+              }}
+            >
+              <CustomerContainer
+                chunkList={companyMobileChunks}
+                customerList={customer_company}
+              />
+              <CustomerContainer
+                chunkList={institutionMobileChunks}
+                customerList={customer_institution}
+              />
+              <CustomerContainer
+                chunkList={educationMobileChunks}
+                customerList={customer_education}
+              />
+            </Box>
+          </Stack>
+        </Box>
       </Box>
-    </Box>
     </>
   );
 };

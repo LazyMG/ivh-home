@@ -8,10 +8,6 @@ declare module "@mui/material/styles" {
       solutionMainContainer: React.CSSProperties;
       solutionMainImageContainer: React.CSSProperties;
       solutionMainImage: React.CSSProperties;
-      solutionMainRowNav: SxProps<MuiTheme>;
-      solutionMainRowNavContainer: SxProps<MuiTheme>;
-      solutionMainRowNavItemContainer: SxProps<MuiTheme>;
-      solutionMainRowNavItem: SxProps<MuiTheme>;
 
       productBranchPageOutline: React.CSSProperties;
       productStackComponent: React.CSSProperties;
@@ -57,10 +53,6 @@ declare module "@mui/material/styles" {
       solutionMainContainer?: React.CSSProperties;
       solutionMainImageContainer?: React.CSSProperties;
       solutionMainImage?: React.CSSProperties;
-      solutionMainRowNav?: SxProps<MuiTheme>;
-      solutionMainRowNavContainer?: SxProps<MuiTheme>;
-      solutionMainRowNavItemContainer?: SxProps<MuiTheme>;
-      solutionMainRowNavItem?: SxProps<MuiTheme>;
 
       productBranchPageOutline?: React.CSSProperties;
       productStackComponent?: React.CSSProperties;
@@ -112,8 +104,6 @@ declare module "@mui/material/styles" {
     solutionTextFont: React.CSSProperties;
     solutionTextTitleFont: React.CSSProperties;
     solutionBoxTitleFont: React.CSSProperties;
-    productImageBannerTitleFont: React.CSSProperties;
-    productImageBannerSubtitleFont: React.CSSProperties;
     contactTitleFont: React.CSSProperties;
     contactProductsLinkFont: React.CSSProperties;
     supportTitleFont: React.CSSProperties;
@@ -133,8 +123,6 @@ declare module "@mui/material/styles" {
     solutionTextFont?: React.CSSProperties;
     solutionTextTitleFont?: React.CSSProperties;
     solutionBoxTitleFont?: React.CSSProperties;
-    productImageBannerTitleFont?: React.CSSProperties;
-    productImageBannerSubtitleFont?: React.CSSProperties;
     contactTitleFont?: React.CSSProperties;
     contactProductsLinkFont?: React.CSSProperties;
     supportTitleFont?: React.CSSProperties;
@@ -167,8 +155,6 @@ declare module "@mui/material/Typography" {
     solutionTextFont: true;
     solutionTextTitleFont: true;
     solutionBoxTitleFont: true;
-    productImageBannerTitleFont: true;
-    productImageBannerSubtitleFont: true;
     contactTitleFont: true;
     contactProductsLinkFont: true;
     supportTitleFont: true;

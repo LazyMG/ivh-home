@@ -86,6 +86,7 @@ const ProductContent = ({
                         key={url}
                         component="img"
                         src={url}
+                        loading="lazy"
                         sx={{
                           objectFit: "contain",
                           // width: img.imgSize === "small" ? "auto" : "100%",
@@ -151,6 +152,7 @@ const ProductContent = ({
               <Box
                 component="img"
                 src={url}
+                loading="lazy"
                 sx={{
                   objectFit: "contain",
                   width: img.imgSize === "small" ? "auto" : "100%",

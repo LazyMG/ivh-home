@@ -229,6 +229,7 @@ const Home = () => {
                         component="img"
                         src={product.mobile_image}
                         alt={product.mobile_image_alt}
+                        loading="lazy"
                         sx={{
                           width: "100%",
                           height: "100%",
@@ -240,6 +241,7 @@ const Home = () => {
                         component="img"
                         src={product.title_image}
                         alt={product.title_image_alt}
+                        loading="lazy"
                         sx={{
                           position: "absolute",
                           top: 0,
@@ -264,6 +266,7 @@ const Home = () => {
               >
                 {products.map((product) => (
                   <Box
+                    component="button"
                     key={product.name}
                     sx={{
                       borderRadius: "20px",
@@ -274,6 +277,10 @@ const Home = () => {
                       boxSizing: "border-box",
                       position: "relative",
                       overflow: "hidden",
+                      padding: 0,
+                      textAlign: "inherit",
+                      font: "inherit",
+                      color: "inherit",
                       "&:hover .product-bg-image": {
                         filter: "brightness(1)",
                       },
@@ -290,6 +297,7 @@ const Home = () => {
                       component="img"
                       src={product.pc_image}
                       alt={product.pc_image_alt}
+                      loading="lazy"
                       sx={{
                         width: "100%",
                         height: "100%",
@@ -303,6 +311,7 @@ const Home = () => {
                       component="img"
                       src={product.title_image}
                       alt={product.title_image_alt}
+                      loading="lazy"
                       sx={{
                         position: "absolute",
                         top: 0,
@@ -330,6 +339,7 @@ const Home = () => {
             </Box>
             <Box
               component="video"
+              aria-label="iVH 자동화 공정 소개 영상"
               src={video}
               loop
               autoPlay
@@ -376,6 +386,7 @@ const Home = () => {
               {partner_partnerList.map((partnerImg, index) => (
                 <Box
                   key={index}
+                  component="li"
                   sx={(theme) => ({
                     display: "flex",
                     alignItems: "center",
@@ -390,6 +401,7 @@ const Home = () => {
                     component="img"
                     src={partnerImg.src}
                     alt={partnerImg.alt}
+                    loading="lazy"
                     sx={(theme) => ({
                       minWidth: index < 6 ? "50%" : "34%",
                       maxWidth: index < 6 ? "70%" : "48%",

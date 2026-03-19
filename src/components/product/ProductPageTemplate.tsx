@@ -141,6 +141,7 @@ const ProductPageTemplate = ({
               })}
             >
               <Typography
+                component="h1"
                 sx={(theme) => ({
                   fontFamily: "Freesentation-7-Bold",
                   fontSize: "28px",
@@ -153,6 +154,7 @@ const ProductPageTemplate = ({
               </Typography>
               {subTitle && (
                 <Typography
+                  component="h4"
                   sx={{
                     fontFamily: "Freesentation-5-Medium",
                     fontSize: "20px",
@@ -226,6 +228,7 @@ const ProductPageTemplate = ({
             return (
               <Box
                 key={library.text}
+                component="button"
                 sx={(theme) => ({
                   border: "1.5px solid #179EBD",
                   width: width,
@@ -241,6 +244,7 @@ const ProductPageTemplate = ({
                   cursor: "pointer",
                   minWidth: 0,
                   transition: "all 0.3s ease",
+                  background: "none",
                   [theme.breakpoints.up("tablet")]: {
                     gap: 3,
                     px: 2,
@@ -271,6 +275,7 @@ const ProductPageTemplate = ({
                 <Box
                   component="img"
                   src={library.imgUrl}
+                  loading="lazy"
                   sx={(theme) => ({
                     width: "40%",
                     maxWidth: "80%",

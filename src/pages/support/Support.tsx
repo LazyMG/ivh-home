@@ -48,6 +48,7 @@ const Support = () => {
               component="img"
               src={support.support_image}
               alt="iVH 기술지원 서비스"
+              loading="lazy"
               onError={(e) => {
                 // 이미지 로드 실패 시 (support_image.svg가 없는 경우)
                 const target = e.target as HTMLImageElement;

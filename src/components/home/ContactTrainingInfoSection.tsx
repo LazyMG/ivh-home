@@ -41,12 +41,14 @@ const InfoSection = ({
           {title}
         </MainGradientText>
         <Box
+          component="button"
           sx={(theme) => ({
             pl: 3,
             pr: 2,
             py: "6px",
             backgroundColor: "#1755C2",
             borderRadius: "4px",
+            border: "none",
             display: "none",
             ":hover": {
               cursor: "pointer",
@@ -87,11 +89,13 @@ const InfoSection = ({
         })}
       >
         <Box
+          component="button"
           sx={{
             px: 2,
             py: "6px",
             backgroundColor: "#1755C2",
             borderRadius: "4px",
+            border: "none",
             ":hover": {
               cursor: "pointer",
             },

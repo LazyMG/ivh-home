@@ -13,6 +13,7 @@ const ProductSectionTitle = ({ titleText }: { titleText: string }) => {
         })}
       />
       <Typography
+        component="h2"
         sx={(theme) => ({
           fontFamily: "Freesentation-5-Medium",
           fontSize: "24px",

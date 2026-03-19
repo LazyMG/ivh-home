@@ -85,6 +85,7 @@ const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
                   <Box
                     component="img"
                     src={url}
+                    loading="lazy"
                     sx={(theme) => ({
                       objectFit: "contain",
                       width: "100%",

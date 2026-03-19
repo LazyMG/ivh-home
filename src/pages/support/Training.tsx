@@ -64,6 +64,7 @@ const Training = () => {
 
       {/** 개요, Curriculum, Schedule, Application 섹션 전체 컨테이너 */}
       <Box
+        component="main"
         sx={(theme) => ({
           px: 4,
           [theme.breakpoints.up("tablet")]: {

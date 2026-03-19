@@ -70,6 +70,7 @@ const BoxContentRenderer = ({
               <img
                 src={img.src}
                 alt={img.alt || `image-${index}`}
+                loading="lazy"
                 style={{
                   objectFit: "contain",
                   width: img.width || "300px",
@@ -163,6 +164,7 @@ const BoxContentRenderer = ({
                     <img
                       src={img.src}
                       alt={img.alt || `section-${index}-image-${imgIndex}`}
+                      loading="lazy"
                       style={{
                         objectFit: "contain",
                         width: img.width || "300px",

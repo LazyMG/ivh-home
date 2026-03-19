@@ -70,7 +70,7 @@ const IMOVA = () => {
         keywords="iMOVA, AMR, 자율주행로봇, 자율주행, 스마트팩토리, 무인운반, iVH"
         canonical="https://ivh.co.kr/product/imova"
       />
-      <Box>
+      <Box component="main">
         <ScrollButton threshold={THRESHOLD} />
         <Box
           sx={{
@@ -142,6 +142,7 @@ const IMOVA = () => {
               </Typography>
             </Box>
             <Typography
+              component="h1"
               sx={(theme) => ({
                 color: "#2c2c2c",
                 maxWidth: "90%",
@@ -184,7 +185,7 @@ const IMOVA = () => {
               },
             })}
           >
-            {page_name}
+            {title}
           </Typography>
         </Box>
 
@@ -307,6 +308,7 @@ const IMOVA = () => {
                             component="img"
                             src={system.control_system_image_url}
                             alt={system.control_system_image_alt}
+                            loading="lazy"
                             sx={(theme) => ({
                               height: "auto",
                               objectFit: "contain",
