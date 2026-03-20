@@ -6,7 +6,6 @@
   "main_image_alt": "iMOVA - AMR 자율주행로봇",
   "title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
   "title_image_alt": "iMOVA Logo",
-
   "main_function": [
     {
       "function_title": "고정밀 자율주행 기술",
@@ -289,25 +288,5 @@
     ],
     "technology_spec_application": "스마트 팩토리: 공정 간 자재 자동 이송, MES/ERP 연계 물류 자동화 물류센터 / 배터리 산업: 공정 간 무인 이송 무인화 / 야간 자동 운송: 야간 근무 대체, 24시간 무정지 물류 실현",
     "technology_spec_sub": "Charging Station"
-  },
-  "wireless_charging": {
-    "transmitter": {
-      "charging_module": {
-        "power": "2500W",
-        "size": "463 × 106 × 223",
-        "weight": "6.8 kg",
-        "input_voltage": "AC 220V / 12A",
-        "current": "40A (10A~40A, 1A 단위로 세팅 가능)",
-        "voltage": "58V (54V ~ 58V, 0.5V 단위로 세팅 가능)"
-      },
-      "charging_coil_pad": {
-        "power": "-",
-        "size": "355 × 181 × 59",
-        "weight": "6.0 kg",
-        "input_voltage": "-",
-        "current": "-",
-        "voltage": "-"
-      }
-    }
   }
 }
