@@ -15,7 +15,7 @@ import MobileFooter from "./common/mobile/mobileFooter";
 // 정적 로드 (항상 필요하거나 가벼운 페이지)
 import Home from "./pages/home";
 import NewHeader from "./common/header/NewHeader";
-import FloatingButton from "./components/chatbot/FloatingButton";
+const FloatingButton = lazy(() => import("./components/chatbot/FloatingButton"));
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 
@@ -306,7 +306,9 @@ function AppContent() {
         </Suspense>
       </ScrollToTop>
       {/** chatbot button */}
-      <FloatingButton isHomePage={isHomePage} />
+      <Suspense fallback={null}>
+        <FloatingButton isHomePage={isHomePage} />
+      </Suspense>
       {/** footer */}
       {!hideLayout && (isMobile || isTablet ? <MobileFooter /> : <Footer />)}
     </>
