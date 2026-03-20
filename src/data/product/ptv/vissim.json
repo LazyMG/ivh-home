@@ -18,9 +18,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/vissim/vissim-feat-one.png"],
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vissim/vissim-feat-one.png",
+              "alt": "iVH, PTV Vissim, Microscopic Traffic Simulation Analysis, Traffic flow Analysis"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -32,9 +37,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/vissim/vissim-feat-two.png"],
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vissim/vissim-feat-two.png",
+              "alt": "iVH, PTV Vissim, Pedestrian Simuation, 보행자 시뮬레이션, Urban Infrastructure Simuation, 도시 인프라 설계"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -53,9 +63,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/vissim/vissim-feat-four.png"],
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vissim/vissim-feat-four.png",
+              "alt": "iVH, PTV Vissim, Traffic Simulation Visualization, 2D 3D Simulation Analysis, Traffic flow Analysis"
+            }
+          ]
         }
       ],
       "textObj": {

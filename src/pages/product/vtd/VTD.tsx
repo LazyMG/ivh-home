@@ -8,6 +8,7 @@ const VTD = () => {
   const seoData = useSEO("product/vtd", vtd);
   const {
     vtd_mainImg,
+    vtd_mainImg_alt,
     vtd_title,
     vtd_subTitle,
     vtd_text,
@@ -21,6 +22,7 @@ const VTD = () => {
       <SEO {...seoData} />
       <ProductPageTemplate
         image={vtd_mainImg}
+        image_alt={vtd_mainImg_alt}
         title={vtd_title}
         subTitle={vtd_subTitle}
         textList={vtd_text}

@@ -14,7 +14,8 @@
       "text": "VTD는 도로 및 철도 기반 시뮬레이션을 위한 가상 환경의 생성, 구성, 시각화 및 평가를 지원하는 전문 툴킷이며 ASAM OpenDRIVE 표준을 준수합니다. ADAS 및 자율주행 시스템 개발뿐 아니라 교육용 시뮬레이터의 핵심 구성 요소로 활용됩니다.\n6-layer 이상의 도로모델링이 가능하며 센서 시뮬레이션을 위한 PBR( Physics based rendering) 3D 가상주행환경 모델링이 가능합니다.",
       "imgObj": [
         {
-          "imgUrl": "/images/pages/product/vtd-create/vtd-create-head.png"
+          "url": "/images/pages/product/vtd-create/vtd-create-head.png",
+          "alt": "iVH, VTD, OpenDRIVE, OpenSCENARIO, HD Map, 고정밀 지도, Simulation Environment, Digital Twin Road Environment"
         }
       ]
     }
@@ -23,11 +24,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-create/vtd-create-feat-one.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-create/vtd-create-feat-one.png",
+              "alt": "iVH, VTD, ASAM OpenDRIVE, Road Network, Reference line, 표준"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -39,11 +43,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-create/vtd-create-feat-two.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-create/vtd-create-feat-two.png",
+              "alt": "iVH, VTD, ROD(RoadDesigner), OpenDRIVE, GUI Road Modeling Tool, Junction Modeling, 도로 네트워크 모델링, 교차로 모델링"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -55,11 +62,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-create/vtd-create-feat-three.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-create/vtd-create-feat-three.png",
+              "alt": "iVH, VTD, ROD(RoadDesigner), OpenDRIVE, Tile-based Map Generation, Tile Map, Road Network Generation, 도로 네트워크 모델링"
+            }
+          ]
         }
       ],
       "textObj": {

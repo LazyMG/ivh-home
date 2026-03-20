@@ -18,11 +18,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vissim-auto/vissim-auto-feat-one.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vissim-auto/vissim-auto-feat-one.png",
+              "alt": "iVH, PTV Vissim Automotive, Use Cases, 활용 사례, Traffic Simulation Application"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -34,11 +37,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vissim-auto/vissim-auto-feat-two.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vissim-auto/vissim-auto-feat-two.png",
+              "alt": "iVH, PTV Vissim Automotive, ASAM OpenDRIVE 1.8, Co-Simulation Environment"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -50,11 +56,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vissim-auto/vissim-auto-feat-three.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vissim-auto/vissim-auto-feat-three.png",
+              "alt": "iVH, PTV Vissim Automotive, ADAS Testing Simuation, Autonomous Driving Validation, 자율주행 검증 시뮬레이션"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -66,11 +75,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vissim-auto/vissim-auto-feat-four.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vissim-auto/vissim-auto-feat-four.png",
+              "alt": "iVH, PTV Vissim Automotive, HiL(Hardware in the Loop) / SiL(Software in the Loop) Simulation, 1kHz Real-Time Simuation, Co-Simulation DSI(Driving Simulation Interface)"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -82,11 +94,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vissim-auto/vissim-auto-feat-five.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vissim-auto/vissim-auto-feat-five.png",
+              "alt": "iVH, PTV Vissim Automotive, Traffic Scenario Auto Generation, Driving Behavior Simulation, 운전자 행동 모델, Weather Condition Simulation"
+            }
+          ]
         }
       ],
       "textObj": {

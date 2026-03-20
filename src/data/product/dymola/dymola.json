@@ -20,9 +20,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/dymola/dymola-feat-one.png"],
           "col": 4,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/dymola/dymola-feat-one.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, 모델리카, 다이몰라, 모델론, 모델링 언어, MBSE, 다중 물리"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -34,9 +39,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/dymola/dymola-feat-two.png"],
           "imgText": "<Building an FMI-based vehicle integration model>",
-          "col": 4
+          "col": 4,
+          "images": [
+            {
+              "url": "/images/pages/product/dymola/dymola-feat-two.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, FMI, FMU, 통합 모델"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -48,16 +58,22 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/dymola/dymola-feat-three-first.png"
-          ],
-          "col": 6
+          "col": 6,
+          "images": [
+            {
+              "url": "/images/pages/product/dymola/dymola-feat-three-first.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, eFMI, eFMU, eFMI 기반 임베디드 모델 툴체인"
+            }
+          ]
         },
         {
-          "imgUrl": [
-            "/images/pages/product/dymola/dymola-feat-three-second.png"
-          ],
-          "col": 6
+          "col": 6,
+          "images": [
+            {
+              "url": "/images/pages/product/dymola/dymola-feat-three-second.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, eFMI, eFMU, eFMI 기반 임베디드 모델 워크플로우"
+            }
+          ]
         },
         {
           "col": 12,
@@ -73,9 +89,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/dymola/dymola-feat-four.png"],
           "imgText": "<Integration of FMUs for SIL & HIL with SSP: Reuse of the System Structure>",
-          "col": 4
+          "col": 4,
+          "images": [
+            {
+              "url": "/images/pages/product/dymola/dymola-feat-four.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, SSP, FMI, FMU, SSP를 활용한 SIL 및 HIL 환경의 FMU 통합"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -87,9 +108,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/dymola/dymola-feat-five.png"],
           "imgText": "<Dymola Model – Robot Arm>",
-          "col": 4
+          "col": 4,
+          "images": [
+            {
+              "url": "/images/pages/product/dymola/dymola-feat-five.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, Robot, Robotics, Dymola 환경에서의 로봇 팔 모델링"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -101,9 +127,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/dymola/dymola-feat-six.png"],
           "imgText": "<Modelica Library>",
-          "col": 4
+          "col": 4,
+          "images": [
+            {
+              "url": "/images/pages/product/dymola/dymola-feat-six.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, 다양한 산업 분야의 Modelica 응용 라이브러리"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -115,9 +146,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/dymola/dymola-feat-seven.png"],
           "imgText": "<Architecture of Dymola>",
-          "col": 4
+          "col": 4,
+          "images": [
+            {
+              "url": "/images/pages/product/dymola/dymola-feat-seven.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, Dymola 구성"
+            }
+          ]
         }
       ],
       "textObj": {

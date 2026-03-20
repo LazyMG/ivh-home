@@ -18,9 +18,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-one.png"],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/viswalk/viswalk-feat-one.png",
+              "alt": "iVH, PTV Viswalk, Microscopic Pedestrian Simulation, 미시적 보행자 시뮬레이션, Pedestrian Flow Analysis, Escalator Pedestrian Flow Analysis"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -32,9 +37,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-two.png"],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/viswalk/viswalk-feat-two.png",
+              "alt": "iVH, PTV Viswalk, Pedestrian Flow Analysis, Crowd Density Analysis, Crowd Heatmap Visualization, Evacuation Simulation"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -46,9 +56,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-three.png"],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/viswalk/viswalk-feat-three.png",
+              "alt": "iVH, PTV Viswalk, Large Scale Crowd Simulation, Million Pedestrian Simulation, Stadium Crowd Flow Analysis, 군중 흐름 분석"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -60,9 +75,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-four.png"],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/viswalk/viswalk-feat-four.png",
+              "alt": "iVH, PTV Viswalk, PTV Vissim, Vissim Viswalk Integrated Simulation, Multimodal Traffic Simulation, Transit Hub Pedestrian Flow Analysis"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -74,9 +94,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/viswalk/viswalk-feat-five.png"],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/viswalk/viswalk-feat-five.png",
+              "alt": "iVH, PTV Viswalk, Airport Pedestrian Simulation, Multimodal Transport Simulation, Terminal Congestion Analysis, Transfer Flow Simulation"
+            }
+          ]
         }
       ],
       "textObj": {

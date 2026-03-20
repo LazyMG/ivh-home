@@ -8,6 +8,7 @@ const PTV = () => {
 
   const {
     ptv_mainImg,
+    ptv_mainImg_alt,
     ptv_title,
     ptv_text,
     ptv_name,
@@ -20,6 +21,7 @@ const PTV = () => {
 
       <ProductPageTemplate
         image={ptv_mainImg}
+        image_alt={ptv_mainImg_alt}
         title={ptv_title}
         textList={ptv_text}
         name={ptv_name}

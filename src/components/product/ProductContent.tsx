@@ -7,8 +7,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "../../style/product-slider.css";
 
+interface FeatureImageItem {
+  url: string;
+  alt: string;
+}
+
 interface FeatureImage {
-  imgUrl?: string[];
+  images?: FeatureImageItem[];
   imgText?: string;
   col: number;
   imgSize?: string;
@@ -47,13 +52,13 @@ const ProductContent = ({
   const renderSlideImages = () => {
     if (!imgObj || imgObj.length === 0) return null;
 
-    // imgUrl이 있는 항목만 슬라이더에 포함
+    // images가 있는 항목만 슬라이더에 포함
     const slideImages = imgObj.filter(
-      (img) => img.imgUrl && img.imgUrl.length > 0,
+      (img) => img.images && img.images.length > 0,
     );
-    // imgUrl 없고 텍스트만 있는 항목
+    // images 없고 텍스트만 있는 항목
     const textOnlyItems = imgObj.filter(
-      (img) => (!img.imgUrl || img.imgUrl.length === 0) && img.imgText,
+      (img) => (!img.images || img.images.length === 0) && img.imgText,
     );
 
     if (slideImages.length === 0) return null;
@@ -80,12 +85,13 @@ const ProductContent = ({
                     gap: 1,
                   }}
                 >
-                  {img.imgUrl &&
-                    img.imgUrl.map((url) => (
+                  {img.images &&
+                    img.images.map((image) => (
                       <Box
-                        key={url}
+                        key={image.url}
                         component="img"
-                        src={url}
+                        src={image.url}
+                        alt={image.alt}
                         loading="lazy"
                         sx={{
                           objectFit: "contain",
@@ -146,12 +152,13 @@ const ProductContent = ({
         size={isMobile ? 12 : img.col}
         sx={{ display: "flex", flexDirection: "column", gap: 1 }}
       >
-        {img.imgUrl &&
-          img.imgUrl.map((url) => (
-            <Box sx={{ display: "flex", justifyContent: "center" }} key={url}>
+        {img.images &&
+          img.images.map((image) => (
+            <Box sx={{ display: "flex", justifyContent: "center" }} key={image.url}>
               <Box
                 component="img"
-                src={url}
+                src={image.url}
+                alt={image.alt}
                 loading="lazy"
                 sx={{
                   objectFit: "contain",

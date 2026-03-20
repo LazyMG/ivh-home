@@ -27,6 +27,7 @@ interface FeatureItem {
 
 interface ProductPageTemplateProps {
   image: string;
+  image_alt: string;
   title: string;
   subTitle?: string;
   textList: string[];
@@ -43,6 +44,7 @@ interface ProductPageTemplateProps {
 
 const ProductPageTemplate = ({
   image,
+  image_alt,
   title,
   subTitle,
   textList,
@@ -107,6 +109,7 @@ const ProductPageTemplate = ({
             component="img"
             fetchPriority="high"
             src={image}
+            alt={image_alt}
             sx={(theme) => ({
               objectFit: "contain",
               width: "100%",
