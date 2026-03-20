@@ -1,8 +1,10 @@
 {
   "solution_main_image": "/images/pages/solution/solution_main2.png",
+  "solution_main_image_alt": "iVH Solution Island",
   "solution_box": [
     {
       "imgUrl": "/images/pages/solution/efficiency.png",
+      "img_alt": "원자력 - 재생에너지 하이브리드 에너지 시스템",
       "title": "Energy",
       "description": "원자력 - 재생에너지\n하이브리드 에너지 시스템",
       "color": "#279576",
@@ -20,6 +22,7 @@
     },
     {
       "imgUrl": "/images/pages/solution/ai.png",
+      "img_alt": "AI Innovation Hub",
       "title": "AI Innovation Hub",
       "description": "iVH의 모든 기술을 연결하고 강화하는 중추적인 기술 조직입니다.",
       "color": "#0095D7",
@@ -37,6 +40,7 @@
     },
     {
       "imgUrl": "/images/pages/solution/energy-saving.png",
+      "img_alt": "Home Appliance - PCB 열관리 성능 예측",
       "title": "Home Appliance",
       "description": "PCB 열관리 성능 예측",
       "color": "#82A932",
@@ -54,6 +58,7 @@
     },
     {
       "imgUrl": "/images/pages/solution/factory.png",
+      "img_alt": "Smart Factory - 배터리 제조라인용 스마트 팩토리 Kit 개발",
       "title": "Smart Factory",
       "description": "배터리 제조라인용 스마트 팩토리 Kit 개발",
       "color": "#0C307B",
@@ -71,6 +76,7 @@
     },
     {
       "imgUrl": "/images/pages/solution/smart-city.png",
+      "img_alt": "BEMS - 건물 에너지 관리 기술",
       "title": "BEMS",
       "description": "건물 에너지 관리 기술",
       "color": "#E98A0D",
@@ -88,6 +94,7 @@
     },
     {
       "imgUrl": "/images/pages/solution/charging-station.png",
+      "img_alt": "Mobility - ASAM 표준 가상주행환경 기반 자율주행 검증 솔루션",
       "title": "Mobility",
       "description": "ASAM 표준 가상주행환경 기반 자율주행 검증 솔루션",
       "color": "#CC5268",

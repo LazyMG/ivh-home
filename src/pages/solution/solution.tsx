@@ -8,7 +8,8 @@ import SEO from "../../common/SEO";
 const Solution = () => {
   // const { isMobile } = useBreakpoint();
 
-  const { solution_box, solution_main_image } = solution;
+  const { solution_box, solution_main_image, solution_main_image_alt } =
+    solution;
 
   return (
     <>
@@ -18,75 +19,76 @@ const Solution = () => {
         keywords="iVH, 솔루션, 시뮬레이션, 에너지, BEMS, 스마트팩토리, 모빌리티, AI"
         canonical="https://ivh.co.kr/solution"
       />
-    <Box
-      component="main"
-      sx={(theme) => ({
-        display: "flex",
-        gap: 8,
-        boxSizing: "border-box",
-        mx: 2,
-        my: 4,
-        [theme.breakpoints.up("tablet")]: {
-          mx: 8,
-          my: 10,
-          height: "100vh",
-        },
-        [theme.breakpoints.up("desktop")]: {
-          mx: 24,
-          my: 5,
-          height: "100%",
-        },
-      })}
-    >
       <Box
+        component="main"
         sx={(theme) => ({
-          display: "grid",
-          gridTemplateColumns: "repeat(3,1fr)",
-          gridTemplateRows: "repeat(4,1fr)",
-          columnGap: 2,
-          rowGap: 4,
-          width: "100%",
+          display: "flex",
+          gap: 8,
+          boxSizing: "border-box",
+          mx: 2,
+          my: 4,
           [theme.breakpoints.up("tablet")]: {
-            gridTemplateColumns: "repeat(3,1fr)",
-            gridTemplateRows: "repeat(5,1fr)",
-            columnGap: 3,
-            rowGap: 4,
+            mx: 8,
+            my: 10,
+            height: "100vh",
           },
           [theme.breakpoints.up("desktop")]: {
-            gridTemplateColumns: "repeat(5,1fr)",
-            gridTemplateRows: "repeat(3,1fr)",
+            mx: 24,
+            my: 5,
+            height: "100%",
           },
         })}
       >
-        {solution_box.map((box, index) => (
-          <SolutionMainBox key={index} {...box} />
-        ))}
-
-        {/* 이미지: 1~3행, 2~4열 */}
         <Box
-          component="img"
-          src={solution_main_image}
           sx={(theme) => ({
-            gridColumn: "1 / 4",
-            gridRow: "1 / 3",
+            display: "grid",
+            gridTemplateColumns: "repeat(3,1fr)",
+            gridTemplateRows: "repeat(4,1fr)",
+            columnGap: 2,
+            rowGap: 4,
             width: "100%",
-            height: "auto",
-            maxHeight: "100%",
-            objectFit: "contain",
-            alignSelf: "start",
-            justifySelf: "center",
             [theme.breakpoints.up("tablet")]: {
-              gridColumn: "1 / 4",
-              gridRow: "1 / 6",
+              gridTemplateColumns: "repeat(3,1fr)",
+              gridTemplateRows: "repeat(5,1fr)",
+              columnGap: 3,
+              rowGap: 4,
             },
             [theme.breakpoints.up("desktop")]: {
-              gridColumn: "2 / 5",
-              gridRow: "1 / 4",
+              gridTemplateColumns: "repeat(5,1fr)",
+              gridTemplateRows: "repeat(3,1fr)",
             },
           })}
-        />
+        >
+          {solution_box.map((box, index) => (
+            <SolutionMainBox key={index} {...box} />
+          ))}
+
+          {/* 이미지: 1~3행, 2~4열 */}
+          <Box
+            component="img"
+            src={solution_main_image}
+            alt={solution_main_image_alt}
+            sx={(theme) => ({
+              gridColumn: "1 / 4",
+              gridRow: "1 / 3",
+              width: "100%",
+              height: "auto",
+              maxHeight: "100%",
+              objectFit: "contain",
+              alignSelf: "start",
+              justifySelf: "center",
+              [theme.breakpoints.up("tablet")]: {
+                gridColumn: "1 / 4",
+                gridRow: "1 / 6",
+              },
+              [theme.breakpoints.up("desktop")]: {
+                gridColumn: "2 / 5",
+                gridRow: "1 / 4",
+              },
+            })}
+          />
+        </Box>
       </Box>
-    </Box>
     </>
   );
 };
