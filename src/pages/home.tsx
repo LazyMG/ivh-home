@@ -2,19 +2,18 @@ import { Box, CssBaseline, Typography } from "@mui/material";
 
 import NewsletterList from "../components/common/NewsletterList";
 import SEO from "../common/SEO";
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 
 import ContactTrainingInfoSection from "../components/home/ContactTrainingInfoSection";
 import MainGradientText from "../components/common/MainGradientText";
 import HomeSectionTitle from "../components/home/HomeSectionTitle";
 import { useBreakpoint } from "../hooks/useBreakpoint";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 
 import "../App.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "../style/home-slider.css";
+
+const MobileProductSwiper = lazy(
+  () => import("../components/home/MobileProductSwiper"),
+);
 
 import homeData from "../data/home/home.json";
 import home_partner from "../data/company/partner.json";
@@ -103,6 +102,7 @@ const Home = () => {
               component="img"
               src={isMobile ? iMOVA.mobile_imageUrl : iMOVA.imageUrl}
               alt={isMobile ? iMOVA.mobile_image_alt : iMOVA.image_alt}
+              fetchPriority="high"
               sx={(theme) => ({
                 width: "100%",
                 mt: -2,
@@ -208,78 +208,11 @@ const Home = () => {
           >
             <HomeSectionTitle text="Main Products" />
             {isMobile ? (
-              <Swiper
-                className="custom-swiper"
-                direction={"horizontal"}
-                slidesPerView={1}
-                spaceBetween={24}
-                centeredSlides={true}
-                navigation={true}
-                modules={[Navigation]}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  color: "white",
-                  display: "flex",
-                  alignItems: "center",
-                  padding: "0 2px",
-                }}
-                onClick={(swiper) => {
-                  const clickedIndex = swiper.clickedIndex;
-                  if (
-                    clickedIndex !== undefined &&
-                    products[clickedIndex]?.path
-                  ) {
-                    navigate(products[clickedIndex].path);
-                  }
-                }}
+              <Suspense
+                fallback={<Box sx={{ width: "100%", aspectRatio: "4/3" }} />}
               >
-                {products.map((product, index) => (
-                  <SwiperSlide key={index}>
-                    <Box
-                      sx={{
-                        borderRadius: "20px",
-                        width: "100%",
-                        aspectRatio: "4/3",
-                        background:
-                          "linear-gradient(white, white) padding-box, linear-gradient(to right, #339070, #1755C2) border-box",
-                        border: "2px solid transparent",
-                        boxSizing: "border-box",
-                        position: "relative",
-                        overflow: "hidden",
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={product.mobile_image}
-                        alt={product.mobile_image_alt}
-                        loading="lazy"
-                        sx={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          borderRadius: "18px",
-                        }}
-                      />
-                      <Box
-                        component="img"
-                        src={product.title_image}
-                        alt={product.title_image_alt}
-                        loading="lazy"
-                        sx={{
-                          position: "absolute",
-                          top: 0,
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          m: "auto",
-                        }}
-                      />
-                    </Box>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                <MobileProductSwiper products={products} />
+              </Suspense>
             ) : (
               <Box
                 sx={{
