@@ -104,6 +104,7 @@ const ProductPageTemplate = ({
         >
           <Box
             component="img"
+            fetchPriority="high"
             src={image}
             sx={(theme) => ({
               objectFit: "contain",
