@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 interface SolutionBoxProps {
   imgUrl: string;
+  img_alt: string;
   title: string;
   description: string;
   color: string;
@@ -21,6 +22,7 @@ interface SolutionBoxProps {
 
 const SolutionMainBox = ({
   imgUrl,
+  img_alt,
   title,
   description,
   color,
@@ -102,7 +104,12 @@ const SolutionMainBox = ({
             gap: 2,
           }}
         >
-          <Box component="img" src={imgUrl} sx={{ width: "35%" }} />
+          <Box
+            component="img"
+            src={imgUrl}
+            alt={img_alt}
+            sx={{ width: "35%" }}
+          />
           <Typography
             sx={(theme) => ({
               color,
