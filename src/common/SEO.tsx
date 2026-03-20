@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 interface SEOProps {
@@ -29,6 +30,15 @@ const SEO = ({
   const currentUrl =
     ogUrl || (typeof window !== "undefined" ? window.location.href : "");
 
+  // index.html의 canonical 태그를 직접 업데이트 (Helmet이 link 태그를 중복 추가하는 문제 방지)
+  useEffect(() => {
+    const canonicalUrl = canonical || currentUrl;
+    const link = document.querySelector('link[rel="canonical"]');
+    if (link) {
+      link.setAttribute("href", canonicalUrl);
+    }
+  }, [canonical, currentUrl]);
+
   return (
     <Helmet>
       {/* 기본 메타 태그 */}
@@ -37,9 +47,6 @@ const SEO = ({
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
       <meta name="robots" content={robots} />
-
-      {/* Canonical URL */}
-      <link rel="canonical" href={canonical || currentUrl} />
 
       {/* Open Graph (페이스북, 링크드인 등) */}
       <meta property="og:type" content="website" />
