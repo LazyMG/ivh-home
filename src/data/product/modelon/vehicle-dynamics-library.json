@@ -26,10 +26,15 @@
       },
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/vehicle/vehicle-feat-one.png"],
           "imgText": "< Suspension Model example >",
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vehicle/vehicle-feat-one.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Vehicle, Chassis, Suspension, Truck"
+            }
+          ]
         }
       ]
     },
@@ -41,10 +46,15 @@
       },
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/vehicle/vehicle-feat-two.png"],
           "imgText": "< Chassis and Suspensions >",
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vehicle/vehicle-feat-two.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Kinematics & Compliance, Multi-body, Suspensions, Chassis"
+            }
+          ]
         }
       ]
     },
@@ -56,10 +66,15 @@
       },
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/vehicle/vehicle-feat-three.png"],
           "imgText": "< CF-Tire Co-Simulation >",
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vehicle/vehicle-feat-three.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Chassis, F-Tire Co-Simulation"
+            }
+          ]
         }
       ]
     },
@@ -71,10 +86,15 @@
       },
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/product/vehicle/vehicle-feat-four.png"],
           "imgText": "< External Data Suspension modeling >",
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vehicle/vehicle-feat-four.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Json, XML"
+            }
+          ]
         }
       ]
     },
@@ -86,20 +106,26 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vehicle/vehicle-feat-five-first.png"
-          ],
           "imgText": "<  OpenCRG Road >",
           "col": 6,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vehicle/vehicle-feat-five-first.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Chassis, Road Model, OpenCRG Road"
+            }
+          ]
         },
         {
-          "imgUrl": [
-            "/images/pages/product/vehicle/vehicle-feat-five-second.png"
-          ],
           "imgText": "<  3D Road Builder >",
           "col": 6,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vehicle/vehicle-feat-five-second.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Road Model, 3D Road Builder"
+            }
+          ]
         }
       ]
     }

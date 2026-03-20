@@ -20,7 +20,8 @@
       "text": "또한, Unreal Engine 기반의 고품질 3D 시각화 기능과 물리 기반 센서 시뮬레이션 기능을 통해 실제 도로 환경에 가까운 테스트가 가능하며, Microsoft Azure 클라우드 환경에서도 안정적으로 운영되어 대규모 검증 작업에 최적화되어 있습니다.",
       "imgObj": [
         {
-          "imgUrl": "/images/pages/product/vtd-fullstack/vtd-fullstack-head.png"
+          "url": "/images/pages/product/vtd-fullstack/vtd-fullstack-head.png",
+          "alt": "iVH, VTD, Sensor Simulation, LiDAR Point Cloud Simulation, ADAS Sensor Validation Simulation"
         }
       ]
     }
@@ -48,11 +49,14 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-fullstack/vtd-fullstack-feat-three.png"
-          ],
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-fullstack/vtd-fullstack-feat-three.png",
+              "alt": "iVH, VTD, Real Time Sensor Simuation, LiDAR Camera Radar Simulation, Optix Ray Tracing Simulation, 고성능 센서 시뮬레이션"
+            }
+          ]
         }
       ]
     },
@@ -71,11 +75,14 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-fullstack/vtd-fullstack-feat-five.png"
-          ],
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-fullstack/vtd-fullstack-feat-five.png",
+              "alt": "iVH, VTD, XiL Autonomous Driving Testing, XiL(X in the loop) 자율주행 성능 평가 환경, 실차 기반 자율주행 테스트, Real Time Simulation Validation, SiL(software in the loop), DiL(driver in the loop), HiL(hardware in the loop), ViL(vehicle in the loop)"
+            }
+          ]
         }
       ]
     },
@@ -87,11 +94,14 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-fullstack/vtd-fullstack-feat-six.png"
-          ],
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-fullstack/vtd-fullstack-feat-six.png",
+              "alt": "iVH, VTD, SDK(Software Development Kit) Simulation, Simulation API, Plugin Simulation, Co-Simulation Integration"
+            }
+          ]
         }
       ]
     },
@@ -103,11 +113,14 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-fullstack/vtd-fullstack-feat-seven.png"
-          ],
           "col": 12,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-fullstack/vtd-fullstack-feat-seven.png",
+              "alt": "iVH, VTD, VTDx, Unreal Engine, 3D Rendering Simulation, Perception Visualization Simulation"
+            }
+          ]
         }
       ]
     },

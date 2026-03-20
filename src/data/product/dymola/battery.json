@@ -21,25 +21,34 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-one-second.png"
-          ],
           "imgText": "<Pack Model>",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-one-second.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, Battery Simulation Software, RC 모델, Battery Library"
+            }
+          ]
         },
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-one-first.png"
-          ],
           "imgText": "<Battery Library>",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-one-first.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, Battery Simulation Software, RC 모델, Battery Library, Battery Pack Model"
+            }
+          ]
         },
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-one-third.png"
-          ],
           "imgText": "<Cell Model>",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-one-third.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, Battery Simulation Software, RC 모델, Battery Library, Battery Cell 모델"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -55,20 +64,26 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-two-first.png"
-          ],
           "imgText": "<BMS Diagram>",
           "col": 6,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-two-first.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, Battery Simulation Software, Battery Library, Battery Management System"
+            }
+          ]
         },
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-two-second.png"
-          ],
           "imgText": "<Dymola BMS System model>",
           "col": 6,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-two-second.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Claytex, XRG, Battery Simulation Software, Battery Library, Battery Pack, BMS, Cell Balancing"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -80,17 +95,23 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-three-first.png"
-          ],
           "col": 6,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-three-first.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, Battery Simulation Software, Battery Library, Electrochemical Battery model"
+            }
+          ]
         },
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-three-second.png"
-          ],
-          "col": 6
+          "col": 6,
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-three-second.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, Battery Simulation Software, Battery Library, Electrochemical Battery model"
+            }
+          ]
         },
         {
           "imgText": "<Dymola Electrochemical Battery model>",
@@ -106,19 +127,25 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-four-first.png"
-          ],
           "col": 6,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-four-first.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, Battery Simulation Software, Battery Library, ECM Model based equivalent circuit model Generation"
+            }
+          ]
         },
         {
-          "imgUrl": [
-            "/images/pages/product/battery/battery-feat-four-second.png"
-          ],
           "imgText": "<ECM Model Based equivalent circuit model Generation>",
           "col": 6,
-          "imgSize": "small"
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/battery/battery-feat-four-second.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, Battery Simulation Software, Battery Library, ECM Model based equivalent circuit model Generation"
+            }
+          ]
         }
       ],
       "textObj": {

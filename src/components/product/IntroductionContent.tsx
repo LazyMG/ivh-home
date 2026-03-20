@@ -1,7 +1,8 @@
 import { Box, Typography } from "@mui/material";
 
 interface IntroductionImage {
-  imgUrl: string;
+  url: string;
+  alt: string;
   imgText?: string;
 }
 
@@ -58,7 +59,8 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                 >
                   <Box
                     component="img"
-                    src={img.imgUrl}
+                    src={img.url}
+                    alt={img.alt}
                     loading="lazy"
                     sx={{
                       objectFit: "contain",
