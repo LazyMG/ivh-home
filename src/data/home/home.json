@@ -2,7 +2,7 @@
   "iMOVA": {
     "imageUrl": "/images/pages/product/iMOVA/iMOVA2.png",
     "image_alt": "iMOVA 대표 이미지 PC",
-    "mobile_imageUrl": "/images/home/iMOVA_home_mobile.png",
+    "mobile_imageUrl": "/images/home/iMOVA_home_mobile.webp",
     "mobile_image_alt": "iMOVA 대표 이미지 모바일",
     "mainText": "Intelligent Manufacturing Begins",
     "subText": "스마트 제조의 미래, iMOVA가 이끕니다.",
@@ -18,7 +18,7 @@
       "title_image_alt": "iMOVA 로고 이미지",
       "pc_image": "/images/home/iMOVA_pc_image.png",
       "pc_image_alt": "Main Product - iMOVA PC 이미지",
-      "mobile_image": "/images/home/iMOVA_mobile_image.png",
+      "mobile_image": "/images/home/iMOVA_mobile_image.webp",
       "mobile_image_alt": "Main Product - iMOVA 모바일 이미지",
       "path": "/product/imova"
     },
