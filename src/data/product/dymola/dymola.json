@@ -6,6 +6,7 @@
     "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-feat-one.png"
   },
   "dymola_mainImg": "/images/pages/product/dymola/dymola-main.png",
+  "dymola_mainImg_alt": "Modelica 기반 멀티도메인 시스템 시뮬레이션 및 분석 도구 다이몰라(Dymola) 메인 이미지",
   "dymola_title": "Dymola",
   "dymola_subTitle": "복합 시스템 모델 기반 설계를 위한 물리 모델링 및 시뮬레이션 툴",
   "dymola_name": "Vehicle Dynamics Library",
@@ -137,157 +138,188 @@
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Aviation_Systems_Library.png",
       "text": "Aviation Systems Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Aviation Systems Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Battery_Library.png",
       "text": "Battery Library",
-      "url": "/product/dymola/battery"
+      "url": "/product/dymola/battery",
+      "img_alt": "Battery Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Binary_Model_Export.png",
       "text": "Binary Model Export",
-      "url": "/product/dymola/binarymodelexport"
+      "url": "/product/dymola/binarymodelexport",
+      "img_alt": "Binary Model Export Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Brushless_DC_Drives_Library.png",
       "text": "Brushless DC Drives Library",
-      "url": "/product/dymola/brushlessdcdrives"
+      "url": "/product/dymola/brushlessdcdrives",
+      "img_alt": "Brushless DC Drives Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/ClaRa_Plus_Library.png",
       "text": "ClaRa Plus Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "ClaRa Plus Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Cooling_Library.png",
       "text": "Cooling Library",
-      "url": "/product/dymola/cooling"
+      "url": "/product/dymola/cooling",
+      "img_alt": "Cooling Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Design_Optimization.png",
       "text": "Design Optimization",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Design Optimization icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Electric_Power_Systems_Library.png",
       "text": "Electric Power Systems Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Electric Power Systems Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Electrified_Powertrains_Library.png",
       "text": "Electrified Powertrains Library",
-      "url": "/product/dymola/electrifiedpowertrains"
+      "url": "/product/dymola/electrifiedpowertrains",
+      "img_alt": "Electrified Powertrains Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Flexible_Bodies_Library.png",
       "text": "Flexible Bodies Library",
-      "url": "/product/dymola/flexiblebodies"
+      "url": "/product/dymola/flexiblebodies",
+      "img_alt": "Flexible Bodies Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Flight_Dynamics_Library.png",
       "text": "Flight Dynamics Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Flight Dynamics Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Fluid_Dynamics_Library.png",
       "text": "Fluid Dynamics Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Fluid Dynamics Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Fluid_Power_Library.png",
       "text": "Fluid Power Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Fluid Power Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/HVAC_Library.png",
       "text": "HVAC Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "HVAC Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Human_Comfort_Library.png",
       "text": "Human Comfort Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Human Comfort Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Hydrogen_Library.png",
       "text": "Hydrogen Library",
-      "url": "/product/dymola/hydrogen"
+      "url": "/product/dymola/hydrogen",
+      "img_alt": "Hydrogen Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Process_Modeling_and_Engineering_Library.png",
       "text": "Process Modeling and Engineering Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Process Modeling and Engineering Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Real-Time_Simulation.png",
       "text": "Real-Time Simulation",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Real-Time Simulation icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Simulink_Interface.png",
       "text": "Simulink Interface",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Simulink Interface icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Source_Code_Generation.png",
       "text": "Source Code Generation",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Source Code Generation icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Sustainable_Supply_Systems_Library.png",
       "text": "Sustainable Supply Systems Library",
-      "url": "/product/dymola/sustainablesupplysystems"
+      "url": "/product/dymola/sustainablesupplysystems",
+      "img_alt": "Sustainable Supply Systems Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/TIL.png",
       "text": "TIL",
-      "url": "/product/dymola/til"
+      "url": "/product/dymola/til",
+      "img_alt": "TIL icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/TIL_Hydrogen_Library.png",
       "text": "TIL Hydrogen Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "TIL Hydrogen Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/TIL_Mobile_Air_Conditioning_Library.png",
       "text": "TIL Mobile Air Conditioning Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "TIL Mobile Air Conditioning Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/TIL_Thermal_Storages_Library.png",
       "text": "TIL Thermal Storages Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "TIL Thermal Storages Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Thermodynamics_Connector.png",
       "text": "Thermodynamics Connector",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Thermodynamics Connector icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/VeSyMA_Engines_Library.png",
       "text": "VeSyMA Engines Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "VeSyMA Engines Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/VeSyMA_Library.png",
       "text": "VeSyMA Library",
-      "url": "/product/dymola/veSyMa"
+      "url": "/product/dymola/veSyMa",
+      "img_alt": "VeSyMA Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/VeSyMA_Powertrain_Library.png",
       "text": "VeSyMA Powertrain Library",
-      "url": "/product/dymola/veSyMapowertrain"
+      "url": "/product/dymola/veSyMapowertrain",
+      "img_alt": "VeSyMA Powertrain Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/VeSyMA_Suspensions_Library.png",
       "text": "VeSyMA Suspensions Library",
-      "url": "/product/dymola/veSyMasuspension"
+      "url": "/product/dymola/veSyMasuspension",
+      "img_alt": "VeSyMA Suspensions Library icon"
     },
     {
       "imgUrl": "/images/pages/product/dymola/libraries/Wind_Power_Library.png",
       "text": "Wind Power Library",
-      "url": "#"
+      "url": "#",
+      "img_alt": "Wind Power Library icon"
     }
   ]
 }

@@ -6,6 +6,7 @@
     "ogImage": "https://ivh.co.kr/images/pages/product/ptv/ptv-main.png"
   },
   "ptv_mainImg": "/images/pages/product/ptv/ptv-main.png",
+  "ptv_mainImg_alt": "PTV(Planungsbüro für Verkehr) 메인 이미지",
   "ptv_title": "PTV",
   "ptv_name": "",
   "ptv_pageKey": "ptv",
@@ -16,17 +17,20 @@
     {
       "imgUrl": "/images/pages/product/ptv/libraries/Vissim.png",
       "text": "Vissim",
-      "url": "/product/ptv/vissim"
+      "url": "/product/ptv/vissim",
+      "img_alt": "Vissim icon"
     },
     {
       "imgUrl": "/images/pages/product/ptv/libraries/Vissim_Automotive.png",
       "text": "Vissim Automotive",
-      "url": "/product/ptv/vissimautomotive"
+      "url": "/product/ptv/vissimautomotive",
+      "img_alt": "Vissim Automotive icon"
     },
     {
       "imgUrl": "/images/pages/product/ptv/libraries/Viswalk.png",
       "text": "Viswalk",
-      "url": "/product/ptv/viswalk"
+      "url": "/product/ptv/viswalk",
+      "img_alt": "Viswalk icon"
     }
   ]
 }
