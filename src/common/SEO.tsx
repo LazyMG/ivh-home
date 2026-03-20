@@ -39,7 +39,7 @@ const SEO = ({
       <meta name="robots" content={robots} />
 
       {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={canonical} />}
+      <link rel="canonical" href={canonical || currentUrl} />
 
       {/* Open Graph (페이스북, 링크드인 등) */}
       <meta property="og:type" content="website" />

@@ -35,6 +35,7 @@ interface ProductPageTemplateProps {
     imgUrl: string;
     text: string;
     url: string;
+    img_alt: string;
   }[];
   name: string;
   pageKey: string;
@@ -276,6 +277,7 @@ const ProductPageTemplate = ({
                 <Box
                   component="img"
                   src={library.imgUrl}
+                  alt={library.img_alt}
                   loading="lazy"
                   sx={(theme) => ({
                     width: "40%",

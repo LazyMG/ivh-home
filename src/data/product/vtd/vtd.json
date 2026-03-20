@@ -6,6 +6,7 @@
     "ogImage": "https://ivh.co.kr/images/pages/product/vtd/vtd-card-create.png"
   },
   "vtd_mainImg": "/images/pages/product/vtd/vtd-main.png",
+  "vtd_mainImg_alt": "VTD(Virtual Test Drive) 자율주행 가상검증 솔루션 메인 이미지",
   "vtd_title": "Virtual Test Drive",
   "vtd_subTitle": "자율주행 가상검증 솔루션",
   "vtd_name": "Virtual Test Drive",
@@ -17,17 +18,20 @@
     {
       "imgUrl": "/images/pages/product/vtd/libraries/VTD(Virtual Test Drive)_CREATE.png",
       "text": "VTD(Virtual Test Drive) CREATE",
-      "url": "/product/vtd/vtdcreate"
+      "url": "/product/vtd/vtdcreate",
+      "img_alt": "VTD(Virtual Test Drive) CREATE icon"
     },
     {
       "imgUrl": "/images/pages/product/vtd/libraries/VTD(Virtual Test Drive)_SIMULATE.png",
       "text": "VTD(Virtual Test Drive) SIMULATE",
-      "url": "/product/vtd/vtdsimulate"
+      "url": "/product/vtd/vtdsimulate",
+      "img_alt": "VTD(Virtual Test Drive) SIMULATE icon"
     },
     {
       "imgUrl": "/images/pages/product/vtd/libraries/VTD(Virtual Test Drive)_FULLSTACK.png",
       "text": "VTD(Virtual Test Drive) FULLSTACK",
-      "url": "/product/vtd/vtdfullstack"
+      "url": "/product/vtd/vtdfullstack",
+      "img_alt": "VTD(Virtual Test Drive) FULLSTACK icon"
     }
   ]
 }
