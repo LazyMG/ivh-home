@@ -32,7 +32,7 @@ interface PageData {
 export const useSEO = (
   pageKey: string,
   jsonData?: PageData,
-  baseUrl: string = "https://ivh.co.kr"
+  baseUrl: string = "https://ivh.co.kr",
 ): SEOData => {
   return useMemo(() => {
     // JSON 데이터에 seo 필드가 있으면 우선 사용
@@ -41,7 +41,7 @@ export const useSEO = (
         title: jsonData.seo.title || "iVH Homepage",
         description: jsonData.seo.description || "",
         keywords: jsonData.seo.keywords || "",
-        ogImage: jsonData.seo.ogImage || `${baseUrl}/images/header/ivh_logo_black.png`,
+        ogImage: jsonData.seo.ogImage || `${baseUrl}/images/opengraph.png`,
         canonical: jsonData.seo.canonical || `${baseUrl}/${pageKey}`,
       };
     }
@@ -56,7 +56,7 @@ export const useSEO = (
         title,
         description: subtitle,
         keywords: `${title}, iVH, 시뮬레이션`,
-        ogImage: `${baseUrl}/images/header/ivh_logo_black.png`,
+        ogImage: `${baseUrl}/images/opengraph.png`,
         canonical: `${baseUrl}/product/${pageKey}`,
       };
     }
@@ -67,7 +67,7 @@ export const useSEO = (
         title: jsonData.headerTitle,
         description: jsonData.subtitle || "",
         keywords: `${jsonData.headerTitle}, iVH, 솔루션`,
-        ogImage: `${baseUrl}/images/header/ivh_logo_black.png`,
+        ogImage: `${baseUrl}/images/opengraph.png`,
         canonical: `${baseUrl}/solution/${pageKey}`,
       };
     }
@@ -77,7 +77,7 @@ export const useSEO = (
       title: "iVH Homepage",
       description: "iVH - 시뮬레이션 및 모빌리티 솔루션",
       keywords: "iVH, 시뮬레이션",
-      ogImage: `${baseUrl}/images/header/ivh_logo_black.png`,
+      ogImage: `${baseUrl}/images/opengraph.png`,
       canonical: `${baseUrl}`,
     };
   }, [pageKey, jsonData, baseUrl]);
