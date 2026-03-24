@@ -20,7 +20,7 @@ const SEO = ({
   keywords = "iVH, 시뮬레이션, Dymola, Modelica, AMR, VTD, Vissim, 모빌리티, 배터리, 자율주행, BEMS, 스마트팩토리",
   ogTitle,
   ogDescription,
-  ogImage = "https://ivh.co.kr/images/header/ivh_logo_black.png",
+  ogImage = "https://ivh.co.kr/images/opengraph.png",
   ogUrl,
   canonical,
   author = "iVH",
