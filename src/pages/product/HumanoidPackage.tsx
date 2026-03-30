@@ -60,7 +60,7 @@ const HumanoidPackage = () => {
   const headlineFontSize = isMobile ? "22px" : isTablet ? "28px" : "36px";
   const sectionTitleFontSize = isMobile ? "20px" : isTablet ? "24px" : "28px";
   const bodyFontSize = isMobile ? "14px" : isTablet ? "16px" : "18px";
-  const closingFontSize = isMobile ? "18px" : isTablet ? "24px" : "28px";
+
 
   return (
     <>
@@ -342,7 +342,7 @@ const HumanoidPackage = () => {
           {/* ===== D. Why iVH Total Package ===== */}
           <Box
             component="section"
-            sx={{ display: "flex", flexDirection: "column", gap: 4 }}
+            sx={{ display: "flex", flexDirection: "column", gap: 4, mb: isMobile ? -2 : -4 }}
           >
             <SectionTitle fontSize={sectionTitleFontSize}>
               Why iVH Total Package
@@ -448,18 +448,26 @@ const HumanoidPackage = () => {
             </Box>
 
             {/* Closing message */}
-            <Typography
+            <Box
               sx={{
-                fontFamily: "Freesentation-7-Bold",
-                fontSize: closingFontSize,
-                color: "#2c2c2c",
-                wordBreak: "keep-all",
+                backgroundColor: "#f5f5f5",
+                py: isMobile ? 3 : 4,
+                px: isMobile ? 2.5 : 4,
                 textAlign: "center",
-                mt: isMobile ? 2 : 4,
               }}
             >
-              {why_ivh.closing}
-            </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Freesentation-7-Bold",
+                  fontSize: isMobile ? "18px" : isTablet ? "22px" : "24px",
+                  color: "#2c2c2c",
+                  wordBreak: "keep-all",
+                  lineHeight: 1.6,
+                }}
+              >
+                {why_ivh.closing}
+              </Typography>
+            </Box>
           </Box>
 
           {/* ===== E. CTA ===== */}
