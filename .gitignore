@@ -24,3 +24,5 @@ ssl
 *.sln
 *.sw?
 .env
+
+.claude
