@@ -9,8 +9,18 @@
             {
               "name": "iMOVA",
               "path": "/product/imova",
-              "preview_img_path": "/images/pages/product/iMOVA/iMOVA_top.png",
-              "description": "스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼"
+              "subMenu": [
+                {
+                  "name": "AMR (200, 500, 1000)",
+                  "path": "/product/imova",
+                  "preview_img_path": "/images/pages/product/iMOVA/iMOVA_top.png",
+                  "description": "스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼"
+                },
+                {
+                  "name": "Humanoid Package",
+                  "path": "/product/imova/humanoid"
+                }
+              ]
             },
             { "name": "iSuite", "path": "/product/isuite" },
             {

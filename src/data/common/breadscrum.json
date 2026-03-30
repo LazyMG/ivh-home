@@ -9,7 +9,8 @@
     "dymola_base": [{ "title": "Dymola", "url": "/product/dymola" }],
     "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
     "modelon_base": [{ "title": "Modelon", "url": "/product/modelon" }],
-    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }]
+    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }],
+    "imova_base": [{ "title": "iMOVA", "url": "/product/imova" }]
   },
   "pages": {
     "dymola": {
@@ -284,6 +285,13 @@
     "mobility": {
       "extends": ["home_solution"],
       "current": { "title": "Mobility", "url": "/solution/mobility" }
+    },
+    "humanoidPackage": {
+      "extends": ["home_product", "imova_base"],
+      "current": {
+        "title": "Humanoid Package",
+        "url": "/product/imova/humanoid"
+      }
     }
   }
 }

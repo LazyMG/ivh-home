@@ -30,6 +30,9 @@ const AIInnovation = lazy(() => import("./pages/solution/AIInnovation"));
 
 // iMOVA (lazy 개별)
 const IMOVA = lazy(() => import("./pages/product/IMOVA"));
+const HumanoidPackage = lazy(
+  () => import("./pages/product/HumanoidPackage"),
+);
 
 // Dymola (lazy 그룹)
 const Dymola = lazy(() => import("./pages/product/dymola/Dymola"));
@@ -167,6 +170,10 @@ function AppContent() {
             />
 
             {/** Product */}
+            <Route
+              path="/product/imova/humanoid"
+              element={<HumanoidPackage />}
+            />
             <Route path="/product/imova" element={<IMOVA />} />
             <Route path="/product/isuite" element={<ComingSoon />} />
 
