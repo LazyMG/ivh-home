@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import "../../style/solution.css";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 import BreadScrum from "../../common/BreadScrum";
@@ -29,45 +30,47 @@ const Mobility = () => {
   return (
     <>
       <SEO {...seoData} />
-    <Box className="solution-body">
-      {/* breadcrumb section */}
-      {isMobile ? null : <BreadScrum pageKey="mobility" />}
+      <Box component="main" className="solution-body">
+        <Box component="article">
+          {/* breadcrumb section */}
+          {isMobile ? null : <BreadScrum pageKey="mobility" />}
 
-      {/** 스크롤 버튼 */}
-      <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
+          {/** 스크롤 버튼 */}
+          <ScrollButton color={color} threshold={THRESHOLD} show={!isMobile} />
 
-      {/* header section */}
-      {/* 제목만 있는 헤더 */}
-      {isMobile ? (
-        <SolutionTitle
-          contentProps={{
-            title: headerTitle,
-            subtitle: subtitle,
-            color: color,
-            subColor: subColor,
-          }}
-          isMobile={isMobile}
-          pageKey="mobility"
-        />
-      ) : (
-        <SolutionTitle
-          contentProps={{
-            title: headerTitle,
-            subtitle: subtitle,
-            color: color,
-            subColor: subColor,
-          }}
-        />
-      )}
+          {/* header section */}
+          {/* 제목만 있는 헤더 */}
+          {isMobile ? (
+            <SolutionTitle
+              contentProps={{
+                title: headerTitle,
+                subtitle: subtitle,
+                color: color,
+                subColor: subColor,
+              }}
+              isMobile={isMobile}
+              pageKey="mobility"
+            />
+          ) : (
+            <SolutionTitle
+              contentProps={{
+                title: headerTitle,
+                subtitle: subtitle,
+                color: color,
+                subColor: subColor,
+              }}
+            />
+          )}
 
-      {/* body section */}
+          {/* body section */}
 
-      <SolutionContentGrid
-        items={new_mobility}
-        isMobile={isMobile}
-        color={color}
-      />
-    </Box>
+          <SolutionContentGrid
+            items={new_mobility}
+            isMobile={isMobile}
+            color={color}
+          />
+        </Box>
+      </Box>
     </>
   );
 };

@@ -9,8 +9,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/smartFactory/solution_smartfactoryMain.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/smartFactory/solution_smartfactoryMain.png",
+              "alt": "iVH, Smart Factory Toolkit – 배터리 생산장비 스마트 팩토리 툴킷"
+            }
           ],
           "imgSize": "small"
         }
@@ -46,8 +49,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/smartFactory/solution_smartfactorySystem.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/smartFactory/solution_smartfactorySystem.png",
+              "alt": "iVH, 노칭장비 디지털모델, Modelica 모델 구성도"
+            }
           ],
           "imgSize": "small"
         }
@@ -63,8 +69,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/smartFactory/solution_smartfactoryBoxTech.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/smartFactory/solution_smartfactoryBoxTech.png",
+              "alt": "iVH, AI 기반 Digital Twin 스마트 클라우드 시스템 구성도"
+            }
           ],
           "imgSize": "small"
         }
@@ -80,8 +89,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/smartFactory/solution_smartfactoryBoxService.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/smartFactory/solution_smartfactoryBoxService.png",
+              "alt": "iVH, 스마트센서, 배터리생산라인, 노칭장비, 극판 품질 지수 계산 절차 및 극판 Burr 검사 적용 사례 다이어그램"
+            }
           ],
           "imgSize": "small"
         }
@@ -151,7 +163,12 @@
       },
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/solution/energy/solution_energy.jpg"],
+          "images": [
+            {
+              "url": "/images/pages/solution/energy/solution_energy.jpg",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, Model Based System Engineering, MBSE, Plant, Nuclear, BOP, Grid, Wind Power"
+            }
+          ],
           "imgSize": "small"
         }
       ],
@@ -323,7 +340,12 @@
       },
       "imgObj": [
         {
-          "imgUrl": ["/images/pages/solution/bems/solution_bems.jpg"],
+          "images": [
+            {
+              "url": "/images/pages/solution/bems/solution_bems.jpg",
+              "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, Model Based System Engineering, MBSE, Heat Pump, Renewable Energy, ESG"
+            }
+          ],
           "imgSize": "small"
         }
       ],
@@ -463,8 +485,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/mobility/solution_mobility_trend.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/mobility/solution_mobility_trend.png",
+              "alt": "iVH, V&V, 자율주행 검증 프로세스, 시스템 검증, MBSE"
+            }
           ],
           "imgSize": "small"
         }
@@ -486,8 +511,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/mobility/solution_mobility_box_first.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/mobility/solution_mobility_box_first.png",
+              "alt": "iVH, MMS(Mobile Mapping System), OpenDRIVE, HD Map, 고정밀 지도, Digital Twin, 디지털 트윈"
+            }
           ],
           "imgSize": "small"
         }
@@ -502,8 +530,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/mobility/solution_mobility_box_second.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/mobility/solution_mobility_box_second.png",
+              "alt": "iVH, 교통 시뮬레이션 비교, nanoscopic simulation, mircoscopic simulation, VTD, PTV VISSIM, SUMO, VTD-VISSIM interface"
+            }
           ],
           "imgSize": "small"
         }
@@ -518,8 +549,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/mobility/solution_mobility_box_third.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/mobility/solution_mobility_box_third.png",
+              "alt": "iVH, Modelica 기반 차량 동역학 모델, ADAS/Autonomous Driving Simulation Architectue"
+            }
           ],
           "imgSize": "small"
         }
@@ -534,8 +568,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/mobility/solution_mobility_box_fourth.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/mobility/solution_mobility_box_fourth.png",
+              "alt": "iVH, Autonomous Driving Sensor Simulation, LiDAR Simulation, Weather Simulation, PBR, BRDF, material, Ray tracing"
+            }
           ],
           "imgSize": "small"
         }
@@ -551,8 +588,11 @@
       },
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/solution/mobility/solution_mobility_box_case.png"
+          "images": [
+            {
+              "url": "/images/pages/solution/mobility/solution_mobility_box_case.png",
+              "alt": "iVH, OpenX 기반 3rd Party 연동 시뮬레이션, OpenDRIVE, OpenSCENARIO, Vehicle Dynamics, MMS(Mobile Mapping System), BRT, Modelica, Front Loading"
+            }
           ],
           "imgSize": "small"
         }

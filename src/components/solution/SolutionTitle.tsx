@@ -24,6 +24,7 @@ const SolutionTitle = ({
         }}
       >
         <Typography
+          component="h1"
           sx={{
             color,
             letterSpacing: "2px",

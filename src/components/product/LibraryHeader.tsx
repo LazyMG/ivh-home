@@ -12,6 +12,7 @@ const LibraryHeader = ({ text }: { text: string }) => {
       }}
     >
       <MainGradientText
+        component="h2"
         sx={(theme) => ({
           fontFamily: "Freesentation-6-SemiBold",
           fontSize: "16px",

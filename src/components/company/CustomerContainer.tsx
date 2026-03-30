@@ -84,6 +84,7 @@ const CustomerContainer = ({
                 component="img"
                 src={customerImg.src}
                 alt={customerImg.alt}
+                loading="lazy"
                 sx={(theme) => ({
                   width: "100%",
                   maxWidth: getMobileVerticalSizeFormatter(
@@ -125,6 +126,7 @@ const CustomerContainer = ({
               key={customerImg.src}
               src={customerImg.src}
               alt={customerImg.alt}
+              loading="lazy"
               sx={(theme) => ({
                 width: "20%",
                 maxWidth: getTabletSizeFormatter(

@@ -7,6 +7,7 @@ const Dymola = () => {
   const seoData = useSEO("product/dymola", dymola);
   const {
     dymola_mainImg,
+    dymola_mainImg_alt,
     dymola_title,
     dymola_subTitle,
     dymola_text,
@@ -21,6 +22,7 @@ const Dymola = () => {
       <SEO {...seoData} />
       <ProductPageTemplate
         image={dymola_mainImg}
+        image_alt={dymola_mainImg_alt}
         title={dymola_title}
         subTitle={dymola_subTitle}
         textList={dymola_text}

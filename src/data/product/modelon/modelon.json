@@ -6,6 +6,7 @@
     "ogImage": "https://ivh.co.kr/images/pages/product/modelon/modelon-main.png"
   },
   "modelon_mainImg": "/images/pages/product/modelon/modelon-main.png",
+  "modelon_mainImg_alt": "모델론(Modelon) 메인 이미지",
   "modelon_title": "Modelon",
   "modelon_name": "",
   "modelon_pageKey": "modelon",
@@ -16,72 +17,86 @@
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Air_Cooling_Library.png",
       "text": "Air Cooling Library",
-      "url": "/product/modelon/aircooling"
+      "url": "/product/modelon/aircooling",
+      "img_alt": "Air Cooling Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Aircraft_Dynamics_Library.png",
       "text": "Aircraft Dynamics Library",
-      "url": "/product/modelon/aircraftdynamics"
+      "url": "/product/modelon/aircraftdynamics",
+      "img_alt": "Aircraft Dynamics Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Electrification_Library.png",
       "text": "Electrification Library",
-      "url": "/product/modelon/electrification"
+      "url": "/product/modelon/electrification",
+      "img_alt": "Electrification Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Environmental_Control_Library.png",
       "text": "Environmental Control Library",
-      "url": "/product/modelon/environmentalcontrol"
+      "url": "/product/modelon/environmentalcontrol",
+      "img_alt": "Environmental Control Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Fuel_Cell_Library.png",
       "text": "Fuel Cell Library",
-      "url": "/product/modelon/fuelcell"
+      "url": "/product/modelon/fuelcell",
+      "img_alt": "Fuel Cell Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Fuel_System_Library.png",
       "text": "Fuel System Library",
-      "url": "/product/modelon/fuelsystem"
+      "url": "/product/modelon/fuelsystem",
+      "img_alt": "Fuel System Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Heat_Exchanger_Library.png",
       "text": "Heat Exchanger Library",
-      "url": "/product/modelon/heatexchanger"
+      "url": "/product/modelon/heatexchanger",
+      "img_alt": "Heat Exchanger Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Hydraulics_Library.png",
       "text": "Hydraulics Library",
-      "url": "/product/modelon/hydraulics"
+      "url": "/product/modelon/hydraulics",
+      "img_alt": "Hydraulics Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Jet_Propulsion_Library.png",
       "text": "Jet Propulsion Library",
-      "url": "/product/modelon/jetpropulsion"
+      "url": "/product/modelon/jetpropulsion",
+      "img_alt": "Jet Propulsion Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Liquid_Cooling_Library.png",
       "text": "Liquid Cooling Library",
-      "url": "/product/modelon/liquidcooling"
+      "url": "/product/modelon/liquidcooling",
+      "img_alt": "Liquid Cooling Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Modelon_Base_Library.png",
       "text": "Modelon Base Library",
-      "url": "/product/modelon/modelonbase"
+      "url": "/product/modelon/modelonbase",
+      "img_alt": "Modelon Base Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Thermal_Power_Library.png",
       "text": "Thermal Power Library",
-      "url": "/product/modelon/thermalpower"
+      "url": "/product/modelon/thermalpower",
+      "img_alt": "Thermal Power Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Vapor_Cycle_Library.png",
       "text": "Vapor Cycle Library",
-      "url": "/product/modelon/vaporcycle"
+      "url": "/product/modelon/vaporcycle",
+      "img_alt": "Vapor Cycle Library icon"
     },
     {
       "imgUrl": "/images/pages/product/modelon/libraries/Vehicle_Dynamics_Library.png",
       "text": "Vehicle Dynamics Library",
-      "url": "/product/modelon/vehicledynamicslibrary"
+      "url": "/product/modelon/vehicledynamicslibrary",
+      "img_alt": "Vehicle Dynamics Library icon"
     }
   ]
 }

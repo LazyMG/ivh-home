@@ -17,7 +17,8 @@
       "text": "이 툴은 SiL(Software-in-the-Loop), DiL(Driver-in-the-Loop), ViL(Vehicle-in-the-Loop), HiL(Hardware-in-the-Loop) 등 다양한 테스트 환경에 적용 가능하며, 타사 솔루션이나 커스텀 패키지와의 Co-Simulation도 유연하게 연동됩니다. 개방형 모듈 구조를 기반으로 설계되어, 다양한 개발 환경과의 통합이 용이하며, 실제 도로 조건에 가까운 시뮬레이션을 통해 개발 효율성과 검증 신뢰도를 동시에 확보할 수 있습니다.",
       "imgObj": [
         {
-          "imgUrl": "/images/pages/product/vtd-simulate/vtd-simulate-head.png"
+          "url": "/images/pages/product/vtd-simulate/vtd-simulate-head.png",
+          "alt": "iVH, VTD, ADAS Validation Simulation, Traffic Scenario Simulation, Co-Simulation Validation"
         }
       ]
     }
@@ -33,11 +34,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-simulate/vtd-simulate-feat-two.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-simulate/vtd-simulate-feat-two.png",
+              "alt": "iVH, VTD, OpenSCENARIO, OpenSCENARIO Simulation, Scenario Editor, Test Sceanrio Design, Scenario Simulation, 시나리오 모델링"
+            }
+          ]
         }
       ],
       "textObj": {
@@ -49,11 +53,14 @@
     {
       "imgObj": [
         {
-          "imgUrl": [
-            "/images/pages/product/vtd-simulate/vtd-simulate-feat-three.png"
-          ],
           "imgSize": "small",
-          "col": 12
+          "col": 12,
+          "images": [
+            {
+              "url": "/images/pages/product/vtd-simulate/vtd-simulate-feat-three.png",
+              "alt": "iVH, VTD, OpenCRG, OpenCRG Simulation, 도로 표면 모델, 노면 시뮬레이션, Road Surface Simulation"
+            }
+          ]
         }
       ],
       "textObj": {

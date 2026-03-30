@@ -48,6 +48,7 @@ const MainFunction = ({ function_list }: IMOVAMainFunction) => {
             component="img"
             src={func.function_image_url}
             alt={func.function_image_alt}
+            loading="lazy"
             sx={{
               mb: 3,
               objectFit: "contain",

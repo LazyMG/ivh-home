@@ -1,7 +1,12 @@
 import { Box, Typography } from "@mui/material";
 
+interface SolutionImageItem {
+  url: string;
+  alt: string;
+}
+
 interface SolutionImage {
-  imgUrl?: string[];
+  images?: SolutionImageItem[];
   imgText?: string;
   imgSize?: string;
 }
@@ -76,15 +81,17 @@ const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
             key={index}
             sx={{ display: "flex", flexDirection: "column", gap: 1 }}
           >
-            {img.imgUrl &&
-              img.imgUrl.map((url) => (
+            {img.images &&
+              img.images.map((image) => (
                 <Box
                   sx={{ display: "flex", justifyContent: "center" }}
-                  key={url}
+                  key={image.url}
                 >
                   <Box
                     component="img"
-                    src={url}
+                    src={image.url}
+                    alt={image.alt}
+                    loading="lazy"
                     sx={(theme) => ({
                       objectFit: "contain",
                       width: "100%",

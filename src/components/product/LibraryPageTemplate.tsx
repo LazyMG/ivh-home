@@ -112,6 +112,7 @@ const LibraryPageTemplate = ({
             })}
           >
             <Typography
+              component="h1"
               sx={(theme) => ({
                 fontFamily: "Freesentation-7-Bold",
                 fontSize: "20px",

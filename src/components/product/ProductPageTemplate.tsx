@@ -27,6 +27,7 @@ interface FeatureItem {
 
 interface ProductPageTemplateProps {
   image: string;
+  image_alt: string;
   title: string;
   subTitle?: string;
   textList: string[];
@@ -35,6 +36,7 @@ interface ProductPageTemplateProps {
     imgUrl: string;
     text: string;
     url: string;
+    img_alt: string;
   }[];
   name: string;
   pageKey: string;
@@ -42,6 +44,7 @@ interface ProductPageTemplateProps {
 
 const ProductPageTemplate = ({
   image,
+  image_alt,
   title,
   subTitle,
   textList,
@@ -104,7 +107,9 @@ const ProductPageTemplate = ({
         >
           <Box
             component="img"
+            fetchPriority="high"
             src={image}
+            alt={image_alt}
             sx={(theme) => ({
               objectFit: "contain",
               width: "100%",
@@ -141,6 +146,7 @@ const ProductPageTemplate = ({
               })}
             >
               <Typography
+                component="h1"
                 sx={(theme) => ({
                   fontFamily: "Freesentation-7-Bold",
                   fontSize: "28px",
@@ -153,6 +159,7 @@ const ProductPageTemplate = ({
               </Typography>
               {subTitle && (
                 <Typography
+                  component="h4"
                   sx={{
                     fontFamily: "Freesentation-5-Medium",
                     fontSize: "20px",
@@ -226,6 +233,7 @@ const ProductPageTemplate = ({
             return (
               <Box
                 key={library.text}
+                component="button"
                 sx={(theme) => ({
                   border: "1.5px solid #179EBD",
                   width: width,
@@ -241,6 +249,7 @@ const ProductPageTemplate = ({
                   cursor: "pointer",
                   minWidth: 0,
                   transition: "all 0.3s ease",
+                  background: "none",
                   [theme.breakpoints.up("tablet")]: {
                     gap: 3,
                     px: 2,
@@ -271,6 +280,8 @@ const ProductPageTemplate = ({
                 <Box
                   component="img"
                   src={library.imgUrl}
+                  alt={library.img_alt}
+                  loading="lazy"
                   sx={(theme) => ({
                     width: "40%",
                     maxWidth: "80%",

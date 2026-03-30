@@ -29,8 +29,7 @@ export const DrawerContent = ({
   const hoverItemRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (hoverMenu && hoverMenu.name === "iMOVA") {
-      // if (hoverMenu && hoverMenu.preview_img_path && hoverMenu.description) {
+    if (hoverMenu && hoverMenu.preview_img_path && hoverMenu.description) {
       setIsPreview(true);
     }
   }, [hoverMenu]);
@@ -181,102 +180,109 @@ export const DrawerContent = ({
                       >
                         {item.name}
                       </Typography>
-                      {isPreview && hoverMenu?.name === item.name && (
-                        <>
-                          <Box
-                            sx={{
-                              position: "absolute",
-                              left: "calc(100% + 10px)",
-                              top: 0,
-                              bottom: 0,
-                              my: "auto",
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                          >
+                      {isPreview &&
+                        (hoverMenu?.name === item.name ||
+                          item.subMenu?.some(
+                            (sub) => sub.name === hoverMenu?.name,
+                          )) && (
+                          <>
                             <Box
                               sx={{
-                                width: "6px",
-                                height: "6px",
-                                backgroundColor: "#179EBD",
-                                borderRadius: "50%",
-                              }}
-                            />
-                            <Box
-                              sx={{
-                                width: "40px",
-                                height: "2px",
-                                backgroundColor: "#179EBD",
-                              }}
-                            />
-                          </Box>
-
-                          <Box
-                            sx={{
-                              position: "fixed",
-                              backgroundColor: "#ffffff",
-                              left: previewPosition?.left ?? 0,
-                              top: previewPosition?.top ?? 0,
-                              width: "380px",
-                              minHeight: "184px",
-                              border: "2px solid #179EBD",
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              zIndex: 9999,
-                              py: 1,
-                              boxSizing: "border-box",
-                              boxShadow: "2px 4px 4px 0 rgba(0, 0, 0, 0.25)",
-                            }}
-                          >
-                            <Box
-                              component="img"
-                              src={hoverMenu.preview_img_path}
-                              sx={{ width: "auto", maxWidth: "50%" }}
-                            />
-                            <Box
-                              sx={{
+                                position: "fixed",
+                                left: previewPosition
+                                  ? `${previewPosition.left - 40}px`
+                                  : "calc(100% + 10px)",
+                                top: previewPosition
+                                  ? `${previewPosition.top + 10}px`
+                                  : 0,
                                 display: "flex",
-                                gap: 2,
-                                px: 4,
-                                py: 1,
                                 alignItems: "center",
+                                zIndex: 9999,
                               }}
                             >
-                              <Typography
+                              <Box
                                 sx={{
-                                  color: "#179EBD",
-                                  fontSize: "22px",
-                                  fontFamily: "Freesentation-6-SemiBold",
-                                  lineHeight: "20px",
-                                }}
-                              >
-                                {hoverMenu.name}
-                              </Typography>
-                              <Divider
-                                orientation="vertical"
-                                variant="middle"
-                                sx={{
-                                  bgcolor: "#179EBD",
-                                  width: 2,
-                                  height: "30px",
+                                  width: "6px",
+                                  height: "6px",
+                                  backgroundColor: "#179EBD",
+                                  borderRadius: "50%",
                                 }}
                               />
-                              <Typography
+                              <Box
                                 sx={{
-                                  fontFamily: "Freesentation-5-Medium",
-                                  fontSize: "16px",
-                                  wordBreak: "keep-all",
-                                  lineHeight: "18px",
+                                  width: "40px",
+                                  height: "2px",
+                                  backgroundColor: "#179EBD",
+                                }}
+                              />
+                            </Box>
+
+                            <Box
+                              sx={{
+                                position: "fixed",
+                                backgroundColor: "#ffffff",
+                                left: previewPosition?.left ?? 0,
+                                top: previewPosition?.top ?? 0,
+                                width: "380px",
+                                minHeight: "184px",
+                                border: "2px solid #179EBD",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                zIndex: 9999,
+                                py: 1,
+                                boxSizing: "border-box",
+                                boxShadow: "2px 4px 4px 0 rgba(0, 0, 0, 0.25)",
+                              }}
+                            >
+                              <Box
+                                component="img"
+                                src={hoverMenu?.preview_img_path}
+                                sx={{ width: "auto", maxWidth: "50%" }}
+                              />
+                              <Box
+                                sx={{
+                                  display: "flex",
+                                  gap: 2,
+                                  px: 4,
+                                  py: 1,
+                                  alignItems: "center",
                                 }}
                               >
-                                {hoverMenu.description}
-                              </Typography>
+                                <Typography
+                                  sx={{
+                                    color: "#179EBD",
+                                    fontSize: "22px",
+                                    fontFamily: "Freesentation-6-SemiBold",
+                                    lineHeight: "20px",
+                                  }}
+                                >
+                                  {item.name}
+                                </Typography>
+                                <Divider
+                                  orientation="vertical"
+                                  variant="middle"
+                                  sx={{
+                                    bgcolor: "#179EBD",
+                                    width: 2,
+                                    height: "30px",
+                                  }}
+                                />
+                                <Typography
+                                  sx={{
+                                    fontFamily: "Freesentation-5-Medium",
+                                    fontSize: "16px",
+                                    wordBreak: "keep-all",
+                                    lineHeight: "18px",
+                                  }}
+                                >
+                                  {hoverMenu?.description}
+                                </Typography>
+                              </Box>
                             </Box>
-                          </Box>
-                        </>
-                      )}
+                          </>
+                        )}
 
                       {/* 아코디언 하위 메뉴 - 상위 항목 바로 아래 */}
                       {hasSubMenu && isOpen && (
@@ -284,6 +290,18 @@ export const DrawerContent = ({
                           items={item.subMenu || []}
                           navigate={navigate}
                           onClose={onClose}
+                          onItemHover={(subItem, position) => {
+                            if (subItem) {
+                              setHoverMenu(subItem as MenuItem);
+                              if (position) {
+                                setPreviewPosition(position);
+                              }
+                            } else {
+                              setHoverMenu(null);
+                              setIsPreview(false);
+                              setPreviewPosition(null);
+                            }
+                          }}
                         />
                       )}
                     </Box>

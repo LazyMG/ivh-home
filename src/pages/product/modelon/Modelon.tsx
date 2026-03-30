@@ -9,6 +9,7 @@ const Modelon = () => {
 
   const {
     modelon_mainImg,
+    modelon_mainImg_alt,
     modelon_title,
     modelon_text,
     modelon_name,
@@ -21,6 +22,7 @@ const Modelon = () => {
 
       <ProductPageTemplate
         image={modelon_mainImg}
+        image_alt={modelon_mainImg_alt}
         title={modelon_title}
         textList={modelon_text}
         name={modelon_name}
