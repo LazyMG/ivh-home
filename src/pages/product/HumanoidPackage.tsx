@@ -293,7 +293,7 @@ const HumanoidPackage = () => {
               ml: isMobile ? 0 : "8%",
               mr: "auto",
               px: pagePx,
-              pt: isMobile ? 3 : 6,
+              pt: isMobile ? 3 : "2%",
               pb: isMobile ? 3 : 0,
               boxSizing: "border-box",
             }}
