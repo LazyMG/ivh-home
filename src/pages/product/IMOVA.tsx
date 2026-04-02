@@ -27,6 +27,7 @@ const IMOVA = () => {
     control_system,
     production_line,
     technology_spec,
+    top_video,
   } = iMOVA;
   const THRESHOLD = 100;
   const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);
@@ -75,7 +76,7 @@ const IMOVA = () => {
         <Box
           component="video"
           aria-label="iVH 자동화 공정 소개 영상"
-          src={"/video/iMOVA_3D.mp4"}
+          src={top_video}
           loop
           muted
           playsInline
