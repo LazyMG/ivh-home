@@ -87,6 +87,7 @@ const IMOVA = () => {
             objectFit: "cover",
             display: "block",
             backgroundColor: "#ffffff",
+            clipPath: "inset(0 1px 0 0)",
             [theme.breakpoints.down("tablet")]: {
               maxHeight: "50vh",
             },
