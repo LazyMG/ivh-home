@@ -73,6 +73,26 @@ const IMOVA = () => {
       <Box component="main">
         <ScrollButton threshold={THRESHOLD} />
         <Box
+          component="video"
+          aria-label="iVH 자동화 공정 소개 영상"
+          src={"/video/iMOVA_3D.mp4"}
+          loop
+          muted
+          playsInline
+          autoPlay
+          sx={(theme) => ({
+            width: "100%",
+            height: "auto",
+            maxHeight: "104vh",
+            objectFit: "cover",
+            display: "block",
+            backgroundColor: "#ffffff",
+            [theme.breakpoints.down("tablet")]: {
+              maxHeight: "50vh",
+            },
+          })}
+        />
+        <Box
           sx={{
             position: "relative",
             width: "100%",
