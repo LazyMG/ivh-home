@@ -7,5 +7,10 @@ Disallow: /images/header/linkedin_white.png
 Disallow: /images/header/search_icon.png
 Disallow: /images/home/chatbot.png
 Disallow: /images/home/newsletter_linkedin_logo.png
+Disallow: /images/pages/product/iMOVA/humanoid_blue_effect.png
+Disallow: /images/pages/product/iMOVA/humanoid_equation.png
+Disallow: /images/pages/product/iMOVA/humanoid_gra_effect.png
+Disallow: /images/pages/product/iMOVA/humanoid_white_effect.png
+Disallow: /images/pages/product/iMOVA/humanoid.png
 
 Sitemap: https://ivh.co.kr/sitemap.xml

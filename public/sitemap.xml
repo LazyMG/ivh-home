@@ -40,6 +40,10 @@
     <loc>https://ivh.co.kr/product/imova</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://ivh.co.kr/product/imova/humanoid</loc>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Product - Dymola -->
   <url>
