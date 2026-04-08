@@ -18,6 +18,7 @@ const CustomSnackbar = ({
       <Snackbar
         open={submitStatus === "loading"}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        sx={{ pointerEvents: "none", "& .MuiAlert-root": { pointerEvents: "auto" } }}
       >
         <Alert
           severity="info"
@@ -40,6 +41,7 @@ const CustomSnackbar = ({
         autoHideDuration={5000}
         onClose={handleCloseSnackbar}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        sx={{ pointerEvents: "none", "& .MuiAlert-root": { pointerEvents: "auto" } }}
       >
         <Alert
           onClose={handleCloseSnackbar}
@@ -56,6 +58,7 @@ const CustomSnackbar = ({
         autoHideDuration={6000}
         onClose={handleCloseSnackbar}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        sx={{ pointerEvents: "none", "& .MuiAlert-root": { pointerEvents: "auto" } }}
       >
         <Alert
           onClose={handleCloseSnackbar}
