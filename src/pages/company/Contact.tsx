@@ -21,6 +21,7 @@ import CustomSnackbar from "../../components/support/CustomSnackbar";
 import ApplicationInputErrorText from "../../components/support/ApplicationInputErrorText";
 import { customerService } from "../../service/customerService";
 import SEO from "../../common/SEO";
+import PrivacyPolicyIcon from "../../components/support/PrivacyPolicyIcon";
 
 interface ContactFormType {
   company: string;
@@ -351,7 +352,7 @@ const Contact = () => {
                     ),
                 }}
                 render={({ field }) => (
-                  <>
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
                     <FormControlLabel
                       sx={{ marginRight: 0 }}
                       control={
@@ -386,9 +387,10 @@ const Contact = () => {
                         />
                       </Box>
                     )}
-                  </>
+                  </Box>
                 )}
               />
+              <PrivacyPolicyIcon />
             </Box>
 
             {/* 문의하기 버튼 */}

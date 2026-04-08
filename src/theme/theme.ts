@@ -441,7 +441,9 @@ const theme = createTheme({
     // Contact 페이지 체크박스 컨테이너 스타일
     contactCheckboxContainer: {
       position: "relative",
+      display: "flex",
       justifySelf: "end",
+      alignItems: "center",
       [baseTheme.breakpoints.up("tablet")]: {
         gridColumn: "span 3",
       },
