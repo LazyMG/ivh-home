@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import support from "../../data/support/support.json";
 import SEO from "../../common/SEO";
 import { useSEO } from "../../hooks/useSEO";
+import ScrollButton from "../../common/ScrollButton";
 const Support = () => {
   // TODO: 실제 support_image.svg 파일이 준비되면 이 경로를 사용하세요
   // 현재는 임시로 빈 div를 사용합니다
@@ -33,6 +34,7 @@ const Support = () => {
           },
         }}
       >
+        <ScrollButton />
         <Box
           sx={(theme) => ({
             ...theme.customStyles.supportContainer,

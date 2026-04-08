@@ -22,6 +22,7 @@ import ApplicationInputErrorText from "../../components/support/ApplicationInput
 import { customerService } from "../../service/customerService";
 import SEO from "../../common/SEO";
 import PrivacyPolicyIcon from "../../components/support/PrivacyPolicyIcon";
+import ScrollButton from "../../common/ScrollButton";
 
 interface ContactFormType {
   company: string;
@@ -109,6 +110,8 @@ const Contact = () => {
           ...theme.customStyles.contactMainContainer,
         })}
       >
+        <ScrollButton />
+
         <Box
           sx={(theme) => ({
             ...theme.customStyles.contactTopContainer,

@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import history from "../../data/company/history.json";
 import ImageHeader from "../../components/company/ImageHeader";
 import SEO from "../../common/SEO";
+import ScrollButton from "../../common/ScrollButton";
 
 const History = () => {
   const {
@@ -20,6 +21,7 @@ const History = () => {
         canonical="https://ivh.co.kr/company/history"
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
+        <ScrollButton />
         <Box
           sx={(theme) => ({
             px: "20px",

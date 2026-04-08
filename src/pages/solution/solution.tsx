@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import solution from "../../data/solution/solution.json";
 import SolutionMainBox from "../../components/solution/SolutionMainBox";
 import SEO from "../../common/SEO";
+import ScrollButton from "../../common/ScrollButton";
 
 const Solution = () => {
   // const { isMobile } = useBreakpoint();
@@ -39,6 +40,7 @@ const Solution = () => {
           },
         })}
       >
+        <ScrollButton />
         <Box
           sx={(theme) => ({
             display: "grid",
