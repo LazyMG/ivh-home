@@ -223,7 +223,7 @@ export const DrawerContent = ({
                                 backgroundColor: "#ffffff",
                                 left: previewPosition?.left ?? 0,
                                 top: previewPosition?.top ?? 0,
-                                width: "380px",
+                                width: "420px",
                                 minHeight: "184px",
                                 border: "2px solid #179EBD",
                                 display: "flex",
@@ -231,23 +231,35 @@ export const DrawerContent = ({
                                 justifyContent: "center",
                                 alignItems: "center",
                                 zIndex: 9999,
-                                py: 1,
                                 boxSizing: "border-box",
                                 boxShadow: "2px 4px 4px 0 rgba(0, 0, 0, 0.25)",
                               }}
                             >
-                              <Box
-                                component="img"
-                                src={hoverMenu?.preview_img_path}
-                                sx={{ width: "auto", maxWidth: "50%" }}
-                              />
+                              {hoverMenu?.preview_type === "COVER" ? (
+                                <Box
+                                  component="img"
+                                  src={hoverMenu?.preview_img_path}
+                                  sx={{ width: "100%" }}
+                                />
+                              ) : (
+                                <Box
+                                  component="img"
+                                  src={hoverMenu?.preview_img_path}
+                                  sx={{ width: "auto", maxWidth: "50%" }}
+                                />
+                              )}
                               <Box
                                 sx={{
                                   display: "flex",
                                   gap: 2,
-                                  px: 4,
+                                  px: 2,
                                   py: 1,
                                   alignItems: "center",
+                                  position:
+                                    hoverMenu?.preview_type === "COVER"
+                                      ? "absolute"
+                                      : "relative",
+                                  bottom: 0,
                                 }}
                               >
                                 <Typography
@@ -258,14 +270,14 @@ export const DrawerContent = ({
                                     lineHeight: "20px",
                                   }}
                                 >
-                                  {item.name}
+                                  {hoverMenu?.preview_name}
                                 </Typography>
                                 <Divider
                                   orientation="vertical"
                                   variant="middle"
                                   sx={{
                                     bgcolor: "#179EBD",
-                                    width: 2,
+                                    width: 1.5,
                                     height: "30px",
                                   }}
                                 />
@@ -275,6 +287,12 @@ export const DrawerContent = ({
                                     fontSize: "16px",
                                     wordBreak: "keep-all",
                                     lineHeight: "18px",
+                                    whiteSpace: "pre-wrap",
+                                    color: "#424242",
+                                    ...(hoverMenu?.preview_type === "COVER" && {
+                                      textShadow:
+                                        "1px 1px 1px rgba(255,255,255,0.5), -1px -1px 1px rgba(255,255,255,0.5), 1px -1px 1px rgba(255,255,255,0.5), -1px 1px 1px rgba(255,255,255,0.5)",
+                                    }),
                                   }}
                                 >
                                   {hoverMenu?.description}
