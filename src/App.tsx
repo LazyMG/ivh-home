@@ -145,7 +145,6 @@ function AppContent() {
 
   // 헤더/푸터를 숨길 페이지 경로
   const hideLayout = location.pathname === "/support/privacyPolicy";
-  const isHomePage = location.pathname === "/";
 
   return (
     <>
@@ -314,7 +313,7 @@ function AppContent() {
       </ScrollToTop>
       {/** chatbot button */}
       <Suspense fallback={null}>
-        <FloatingButton isHomePage={isHomePage} />
+        <FloatingButton />
       </Suspense>
       {/** footer */}
       {!hideLayout && (isMobile || isTablet ? <MobileFooter /> : <Footer />)}

@@ -20,6 +20,10 @@
         ]
       }
     ],
+    "imova_title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
+    "imova_title_alt": "iMOVA",
+    "humanoid_equation_image": "/images/pages/product/iMOVA/humanoid_equation.png",
+    "humanoid_equation_alt": "Robot Hardware + AI + Operation =",
     "image": "/images/pages/product/iMOVA/humanoid.png",
     "image_alt": "Humanoid Robot Total Package 다이어그램",
     "sub_body": {
@@ -28,6 +32,16 @@
         { "text": "실제 운영 관점에서 구매", "bold": true },
         { "text": "하고자 하는 기업을 위한 솔루션입니다." }
       ]
+    },
+    "sub_headline": ": Humanoid Robots, Delivered as a Complete Solution",
+    "description": "iMOVA는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여\n즉시 도입 가능한 토탈 패키지로 제공합니다.",
+    "equation_text": "Robot Hardware + AI + Operation = iVH Total Package",
+    "effects": {
+      "ldquo": "/images/pages/product/iMOVA/ldquo.svg",
+      "rdquo": "/images/pages/product/iMOVA/rdquo.svg",
+      "white_effect": "/images/pages/product/iMOVA/humanoid_white_effect.png",
+      "gra_effect": "/images/pages/product/iMOVA/humanoid_gra_effect.png",
+      "blue_effect": "/images/pages/product/iMOVA/humanoid_blue_effect.png"
     }
   },
   "business_model": {
@@ -153,7 +167,7 @@
         { "text": "휴머노이드를 " },
         { "text": "연구 목적이 아닌 운영 목적으로 도입", "bold": true },
         {
-          "text": "하고자 하신다면, iVH가 하드웨어 선정부터 운영까지 책임집니다."
+          "text": "하고자 하신다면,\niVH가 하드웨어 선정부터 운영까지 책임집니다."
         }
       ]
     },

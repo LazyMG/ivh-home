@@ -10,6 +10,7 @@ import HomeSectionTitle from "../components/home/HomeSectionTitle";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 
 import "../App.css";
+import ScrollButton from "../common/ScrollButton";
 
 const MobileProductSwiper = lazy(
   () => import("../components/home/MobileProductSwiper"),
@@ -71,6 +72,7 @@ const Home = () => {
         canonical="https://ivh.co.kr"
       />
       <CssBaseline />
+      <ScrollButton threshold={100} />
       <Box
         component="main"
         sx={{

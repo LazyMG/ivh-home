@@ -135,8 +135,8 @@ const HumanoidPackage = () => {
           >
             <Box
               component="img"
-              src="/images/pages/product/iMOVA/iMOVA_title.png"
-              alt="iMOVA"
+              src={hero.imova_title_image}
+              alt={hero.imova_title_alt}
               sx={{
                 height: isMobile ? "28px" : "40px",
                 alignSelf: "flex-end",
@@ -183,27 +183,23 @@ const HumanoidPackage = () => {
             sx={{
               position: "relative",
               width: "100%",
-              maxWidth: "860px",
+              maxWidth: "920px",
               px: isMobile ? 4 : 6,
               py: isMobile ? 2 : 3,
               boxSizing: "border-box",
             }}
           >
-            <Typography
-              aria-hidden="true"
+            <Box
+              component="img"
+              src={hero.effects.ldquo}
+              alt=""
               sx={{
                 position: "absolute",
                 top: 0,
                 left: 0,
-                fontFamily: "Georgia, serif",
-                fontSize: isMobile ? "36px" : "64px",
-                color: "#90CAF9",
-                lineHeight: 1,
-                userSelect: "none",
+                width: isMobile ? "16px" : "32px",
               }}
-            >
-              &ldquo;
-            </Typography>
+            />
             <Typography
               sx={{
                 fontFamily: "Freesentation-5-Medium",
@@ -227,21 +223,17 @@ const HumanoidPackage = () => {
             >
               <RenderSegments segments={hero.body[1].segments!} />
             </Typography>
-            <Typography
-              aria-hidden="true"
+            <Box
+              component="img"
+              src={hero.effects.rdquo}
+              alt=""
               sx={{
                 position: "absolute",
                 bottom: 0,
                 right: 0,
-                fontFamily: "Georgia, serif",
-                fontSize: isMobile ? "36px" : "64px",
-                color: "#90CAF9",
-                lineHeight: 1,
-                userSelect: "none",
+                width: isMobile ? "16px" : "32px",
               }}
-            >
-              &rdquo;
-            </Typography>
+            />
           </Box>
 
           {/* 하단 텍스트 */}
@@ -272,12 +264,12 @@ const HumanoidPackage = () => {
           {/* 로봇 이미지 */}
           <Box
             component="img"
-            src="/images/pages/product/iMOVA/humanoid.png"
-            alt="Humanoid Robot"
+            src={hero.image}
+            alt={hero.image_alt}
             sx={{
               position: "absolute",
               top: isMobile ? "5%" : "3%",
-              right: isMobile ? "-3%" : "2%",
+              right: isMobile ? "-6%" : "2%",
               height: isMobile ? "55%" : "60%",
               width: "auto",
               zIndex: 1,
@@ -301,8 +293,8 @@ const HumanoidPackage = () => {
             {/* iMOVA 로고 */}
             <Box
               component="img"
-              src="/images/pages/product/iMOVA/iMOVA_title.png"
-              alt="iMOVA"
+              src={hero.imova_title_image}
+              alt={hero.imova_title_alt}
               sx={{
                 height: isMobile ? "28px" : isTablet ? "42px" : "52px",
                 mb: 1,
@@ -319,7 +311,7 @@ const HumanoidPackage = () => {
                 mb: isMobile ? 1.5 : 3,
               }}
             >
-              : Humanoid Robots, Delivered as a Complete Solution
+              {hero.sub_headline}
             </Typography>
 
             <Typography
@@ -333,7 +325,7 @@ const HumanoidPackage = () => {
                 mb: isMobile ? 0 : 4,
               }}
             >
-              {`iMOVA는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여\n즉시 도입 가능한 토탈 패키지로 제공합니다.`}
+              {hero.description}
             </Typography>
 
             {/* 수식 (PC만 여기에 표시) */}
@@ -349,8 +341,8 @@ const HumanoidPackage = () => {
                 >
                   <Box
                     component="img"
-                    src="/images/pages/product/iMOVA/humanoid_equation.png"
-                    alt="Robot Hardware + AI + Operation ="
+                    src={hero.humanoid_equation_image}
+                    alt={hero.humanoid_equation_alt}
                     sx={{
                       width: isTablet ? "380px" : "420px",
                       display: "block",
@@ -358,8 +350,8 @@ const HumanoidPackage = () => {
                   />
                   <Box
                     component="img"
-                    src="/images/pages/product/iMOVA/iMOVA_title.png"
-                    alt="iMOVA"
+                    src={hero.imova_title_image}
+                    alt={hero.imova_title_alt}
                     sx={{
                       height: isTablet ? "34px" : "42px",
                     }}
@@ -374,7 +366,7 @@ const HumanoidPackage = () => {
                     mb: 2,
                   }}
                 >
-                  Robot Hardware + AI + Operation = iVH Total Package
+                  {hero.equation_text}
                 </Typography>
               </>
             )}
@@ -401,8 +393,8 @@ const HumanoidPackage = () => {
               >
                 <Box
                   component="img"
-                  src="/images/pages/product/iMOVA/humanoid_equation.png"
-                  alt="Robot Hardware + AI + Operation ="
+                  src={hero.humanoid_equation_image}
+                  alt={hero.humanoid_equation_alt}
                   sx={{
                     width: "60%",
                     display: "block",
@@ -410,8 +402,8 @@ const HumanoidPackage = () => {
                 />
                 <Box
                   component="img"
-                  src="/images/pages/product/iMOVA/iMOVA_title.png"
-                  alt="iMOVA"
+                  src={hero.imova_title_image}
+                  alt={hero.imova_title_alt}
                   sx={{
                     height: "16px",
                   }}
@@ -433,7 +425,7 @@ const HumanoidPackage = () => {
           {/* 흰빛 효과 (가장 위) */}
           <Box
             component="img"
-            src="/images/pages/product/iMOVA/humanoid_white_effect.png"
+            src={hero.effects.white_effect}
             alt=""
             sx={{
               position: "absolute",
@@ -448,11 +440,11 @@ const HumanoidPackage = () => {
           {/* 녹색 곡선 (중간) */}
           <Box
             component="img"
-            src="/images/pages/product/iMOVA/humanoid_gra_effect.png"
+            src={hero.effects.gra_effect}
             alt=""
             sx={{
               position: "absolute",
-              bottom: "12%",
+              bottom: "9%",
               left: "20%",
               width: "95%",
               pointerEvents: "none",
@@ -463,11 +455,11 @@ const HumanoidPackage = () => {
           {/* 파란색 곡선 (가장 아래) */}
           <Box
             component="img"
-            src="/images/pages/product/iMOVA/humanoid_blue_effect.png"
+            src={hero.effects.blue_effect}
             alt=""
             sx={{
               position: "absolute",
-              bottom: "6%",
+              bottom: "3%",
               left: "-8%",
               width: "120%",
               pointerEvents: "none",
@@ -522,7 +514,7 @@ const HumanoidPackage = () => {
                     key={item.number}
                     sx={{
                       display: "flex",
-                      gap: isMobile ? 1 : 2,
+                      gap: 1,
                       alignItems: "baseline",
                     }}
                   >
@@ -606,6 +598,7 @@ const HumanoidPackage = () => {
                           fontSize: isMobile ? "15px" : "17px",
                           color: "#2c2c2c",
                           wordBreak: "keep-all",
+                          pl: 2.5,
                         }}
                       >
                         {(card as any).subtitle2}
@@ -622,13 +615,14 @@ const HumanoidPackage = () => {
                         wordBreak: "keep-all",
                         lineHeight: 1.8,
                         whiteSpace: "pre-wrap",
+                        pl: 2.5,
                       }}
                     >
                       <RenderSegments segments={(card as any).body.segments} />
                     </Typography>
                   )}
 
-                  <Box component="ul" sx={{ m: 0, pl: 0, listStyle: "none" }}>
+                  <Box component="ul" sx={{ m: 0, pl: 2, listStyle: "none" }}>
                     {card.bullets.map((bullet, i) => (
                       <Box
                         component="li"
@@ -658,6 +652,7 @@ const HumanoidPackage = () => {
                         fontSize: isMobile ? "12px" : "16px",
                         color: "#888",
                         textDecoration: "underline",
+                        pl: 2,
                       }}
                     >
                       {card.note}
@@ -671,7 +666,7 @@ const HumanoidPackage = () => {
           {/* ===== D. Why iVH ===== */}
           <SectionLayout title="Why iVH" isMobile={isMobile}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-              <Box component="ul" sx={{ m: 0, pl: 2.5 }}>
+              <Box component="ul" sx={{ m: 0, pl: 0, listStyle: "none" }}>
                 {why_ivh.items.map((item, i) => (
                   <Box
                     component="li"
@@ -682,6 +677,11 @@ const HumanoidPackage = () => {
                       color: "#2c2c2c",
                       lineHeight: 1.8,
                       wordBreak: "keep-all",
+                      "&::before": {
+                        content: "'·'",
+                        mr: 1,
+                        color: "#555",
+                      },
                     }}
                   >
                     {item}
@@ -729,6 +729,7 @@ const HumanoidPackage = () => {
                   color: "#555",
                   wordBreak: "keep-all",
                   lineHeight: 1.8,
+                  whiteSpace: "pre-wrap",
                 }}
               >
                 <RenderSegments segments={cta.body.segments} />

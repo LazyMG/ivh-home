@@ -21,6 +21,8 @@ import CustomSnackbar from "../../components/support/CustomSnackbar";
 import ApplicationInputErrorText from "../../components/support/ApplicationInputErrorText";
 import { customerService } from "../../service/customerService";
 import SEO from "../../common/SEO";
+import PrivacyPolicyIcon from "../../components/support/PrivacyPolicyIcon";
+import ScrollButton from "../../common/ScrollButton";
 
 interface ContactFormType {
   company: string;
@@ -108,6 +110,8 @@ const Contact = () => {
           ...theme.customStyles.contactMainContainer,
         })}
       >
+        <ScrollButton />
+
         <Box
           sx={(theme) => ({
             ...theme.customStyles.contactTopContainer,
@@ -351,7 +355,7 @@ const Contact = () => {
                     ),
                 }}
                 render={({ field }) => (
-                  <>
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
                     <FormControlLabel
                       sx={{ marginRight: 0 }}
                       control={
@@ -386,9 +390,10 @@ const Contact = () => {
                         />
                       </Box>
                     )}
-                  </>
+                  </Box>
                 )}
               />
+              <PrivacyPolicyIcon />
             </Box>
 
             {/* 문의하기 버튼 */}
