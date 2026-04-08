@@ -16,6 +16,7 @@ const ImageHeader = ({
         backgroundPosition: imgPosition,
         borderRadius: "16px",
         backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
         [theme.breakpoints.up("tablet")]: {
           m: 0,
           borderRadius: 0,

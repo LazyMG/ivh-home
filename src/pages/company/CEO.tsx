@@ -3,6 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import ceo from "../../data/company/ceo.json";
 import ImageHeader from "../../components/company/ImageHeader";
 import SEO from "../../common/SEO";
+import ScrollButton from "../../common/ScrollButton";
 
 const CEO = () => {
   const {
@@ -22,6 +23,7 @@ const CEO = () => {
         canonical="https://ivh.co.kr/company/ceo"
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
+        <ScrollButton />
         <Box
           sx={(theme) => ({
             px: "20px",

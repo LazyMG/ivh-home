@@ -2,6 +2,7 @@ import { Box, Typography, Button } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import SEO from "../common/SEO";
+import ScrollButton from "../common/ScrollButton";
 
 const ComingSoon = () => {
   const location = useLocation();
@@ -29,6 +30,7 @@ const ComingSoon = () => {
           },
         })}
       >
+        <ScrollButton />
         <Typography
           sx={(theme) => ({
             fontSize: "32px",

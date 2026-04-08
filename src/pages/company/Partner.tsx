@@ -3,6 +3,7 @@ import partner from "../../data/company/partner.json";
 import ImageHeader from "../../components/company/ImageHeader";
 import CustomerContainer from "../../components/company/CustomerContainer";
 import SEO from "../../common/SEO";
+import ScrollButton from "../../common/ScrollButton";
 
 interface CustomerListObj {
   src: string;
@@ -57,6 +58,7 @@ const Partner = () => {
         canonical="https://ivh.co.kr/company/partner"
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
+        <ScrollButton />
         <Box
           sx={(theme) => ({
             px: "20px",
