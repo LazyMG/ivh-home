@@ -62,6 +62,8 @@ const FloatingButton = () => {
             tablet: 28,
             desktop: 28,
           },
+          zIndex: 999,
+
           // 모바일 클릭시 파란 배경 제거
           WebkitTapHighlightColor: "transparent",
 
