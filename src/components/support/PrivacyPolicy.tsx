@@ -1,10 +1,33 @@
-import { Box, Container, Typography, IconButton } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { useEffect } from "react";
+
+const PDF_PATH = "/documents/private-policy.pdf";
 
 const PrivacyPolicy = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("tablet"));
+
   const handleClose = () => {
     window.close();
   };
+
+  // 모바일에서는 PDF를 직접 열고 이전 페이지로 돌아감
+  useEffect(() => {
+    if (isMobile) {
+      window.location.href = PDF_PATH;
+    }
+  }, [isMobile]);
+
+  // 모바일이면 리다이렉트 전까지 빈 화면
+  if (isMobile) return null;
 
   return (
     <Box sx={{ minHeight: "100vh", backgroundColor: "#f5f5f5" }}>
@@ -52,7 +75,7 @@ const PrivacyPolicy = () => {
           }}
         >
           <iframe
-            src="/documents/private-policy.pdf"
+            src={`${PDF_PATH}#view=FitH`}
             width="100%"
             height="100%"
             style={{ border: "none" }}
