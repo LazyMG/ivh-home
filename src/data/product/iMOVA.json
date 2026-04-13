@@ -1,128 +1,378 @@
 {
-  "page_name": "AMR 자율주행로봇",
-  "name": "iMOVA - AMR 자율주행로봇",
-  "title": "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다. 정밀한 자율주행 기술, 실시간 환경 인식, 외부 시스템과의 통합 연동 기능을 통해, 다양한 산업 분야에서 무인화된 작업 흐름과 지능형 공정 운영을 가능하게 합니다.",
+  "page_name": {
+    "ko": "AMR 자율주행로봇",
+    "en": "Autonomous Mobile Robot"
+  },
+  "name": {
+    "ko": "iMOVA - AMR 자율주행로봇",
+    "en": "iMOVA - Autonomous Mobile Robot"
+  },
+  "title": {
+    "ko": "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다. 정밀한 자율주행 기술, 실시간 환경 인식, 외부 시스템과의 통합 연동 기능을 통해, 다양한 산업 분야에서 무인화된 작업 흐름과 지능형 공정 운영을 가능하게 합니다.",
+    "en": "The iMOVA series is a high-payload AMR(Autonomous Mobile Robot) engineered to realize smart manufacturing environments. Through precision autonomous navigation, real-time environmental awareness, and seamless integration with external systems, iMOVA enables unmanned workflows and intelligent process operations across a wide range of industrial sectors."
+  },
   "main_image": "/images/pages/product/iMOVA/iMOVA.png",
-  "main_image_alt": "iMOVA - AMR 자율주행로봇",
+  "main_image_alt": {
+    "ko": "iMOVA - AMR 자율주행로봇",
+    "en": "iMOVA - Autonomous Mobile Robot"
+  },
   "title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
-  "title_image_alt": "iMOVA Logo",
+  "title_image_alt": {
+    "ko": "iMOVA Logo",
+    "en": "iMOVA Logo"
+  },
   "top_video": "/video/iMOVA_3D.mp4",
+  "section_titles": {
+    "main_function": {
+      "ko": "주요 기능",
+      "en": "Key Features"
+    },
+    "control_system": {
+      "ko": "지능형 관제 시스템",
+      "en": "Intelligent Fleet Management System"
+    },
+    "use_case": {
+      "ko": "활용 사례",
+      "en": "iMOVA Use Case"
+    }
+  },
   "main_function": [
     {
-      "function_title": "고정밀 자율주행 기술",
-      "function_description": "3D LiDAR와 IMU 센서를 기반으로 ±10mm 수준의 고정밀 자율주행을 구현합니다.",
+      "function_title": {
+        "ko": "고정밀 자율주행 기술",
+        "en": "High-Precision Autonomous Driving"
+      },
+      "function_description": {
+        "ko": "3D LiDAR와 IMU 센서를 기반으로 ±10mm 수준의 고정밀 자율주행을 구현합니다.",
+        "en": "Achieves ±10mm level of precision through the fusion of 3D LiDAR and IMU sensors."
+      },
       "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_one.png",
-      "function_image_alt": "고정밀 자율주행 기술 아이콘"
+      "function_image_alt": {
+        "ko": "고정밀 자율주행 기술 아이콘",
+        "en": "High-Precision Autonomous Driving Image"
+      }
     },
     {
-      "function_title": "고강성 섀시 및 내구성",
-      "function_description": "1톤 이상의 고하중 적재가 가능하며, 방진 설계를 통해 진동에 강하고 장거리 연속 운행에도 안정적인 성능을 유지합니다.",
+      "function_title": {
+        "ko": "고강성 섀시 및 내구성",
+        "en": "Heavy-duty Chassis & Durability"
+      },
+      "function_description": {
+        "ko": "1톤 이상의 고하중 적재가 가능하며, 방진 설계를 통해 진동에 강하고 장거리 연속 운행에도 안정적인 성능을 유지합니다.",
+        "en": "Supports high-load payloads up to 1 ton with a reinforced structure."
+      },
       "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_two.png",
-      "function_image_alt": "고강성 섀시 및 내구성 아이콘"
+      "function_image_alt": {
+        "ko": "고강성 섀시 및 내구성 아이콘",
+        "en": "Heavy-duty Chassis & Durability Image"
+      }
     },
     {
-      "function_title": "지능형 작업 분배 시스템",
-      "function_description": "Task Dispatcher 기반의 스케줄링 시스템을 통해 작업을 자동으로 분배하여, 관리자의 개입 없이도 유연한 작업 흐름을 유지할 수 있습니다.",
+      "function_title": {
+        "ko": "지능형 작업 분배 시스템",
+        "en": "Intelligent Task Distribution"
+      },
+      "function_description": {
+        "ko": "Task Dispatcher 기반의 스케줄링 시스템을 통해 작업을 자동으로 분배하여, 관리자의 개입 없이도 유연한 작업 흐름을 유지할 수 있습니다.",
+        "en": "Optimizes workflows via Task Dispatcher-based automated scheduling."
+      },
       "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_three.png",
-      "function_image_alt": "지능형 작업 분배 시스템 아이콘"
+      "function_image_alt": {
+        "ko": "지능형 작업 분배 시스템 아이콘",
+        "en": "Intelligent Task Distribution Image"
+      }
     },
     {
-      "function_title": "AI 기반 환경 모니터링",
-      "function_description": "온도, 습도, 먼지, 소음 등을 감지할 수 있는 센서를 탑재하고 있으며, AI 기반의 이상 감지 알고리즘을 통해 실시간으로 환경 상태를 분석합니다.",
+      "function_title": {
+        "ko": "AI 기반 환경 모니터링",
+        "en": "AI-Based Environmental Monitoring"
+      },
+      "function_description": {
+        "ko": "온도, 습도, 먼지, 소음 등을 감지할 수 있는 센서를 탑재하고 있으며, AI 기반의 이상 감지 알고리즘을 통해 실시간으로 환경 상태를 분석합니다.",
+        "en": "Monitors real-time conditions using integrated sensors for temperature, humidity, dust, and noise."
+      },
       "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_four.png",
-      "function_image_alt": "AI 기반 환경 모니터링 아이콘"
+      "function_image_alt": {
+        "ko": "AI 기반 환경 모니터링 아이콘",
+        "en": "AI-Based Environmental Monitoring Image"
+      }
     },
     {
-      "function_title": "무선 충전 및 에너지 최적화",
-      "function_description": "SOC 기반의 자율 충전 기능을 통해, 충전소의 혼잡도를 고려한 최적의 충전 전략을 선택함으로써 에너지 효율을 극대화합니다.",
+      "function_title": {
+        "ko": "무선 충전 및 에너지 최적화",
+        "en": "Wireless Charging & Energy Optimization"
+      },
+      "function_description": {
+        "ko": "SOC 기반의 자율 충전 기능을 통해, 충전소의 혼잡도를 고려한 최적의 충전 전략을 선택함으로써 에너지 효율을 극대화합니다.",
+        "en": "Maximizes energy efficiency through SOC-based autonomous wireless charging."
+      },
       "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_five.png",
-      "function_image_alt": "무선 충전 및 에너지 최적화 아이콘"
+      "function_image_alt": {
+        "ko": "무선 충전 및 에너지 최적화 아이콘",
+        "en": "Wireless Charging & Energy Optimization Image"
+      }
     }
   ],
   "control_system": [
     {
-      "control_system_topic": "AMR 운영 및 공정 환경 모니터링",
-      "control_system_description": "공장 내 자율주행 로봇(AMR)의 위치와 상태를 실시간으로 파악하고, 환경 센서를 통해 공정 상태를 모니터링함으로써 운영자는 물류 흐름과 생산 환경을 직관적으로 관리할 수 있습니다.",
+      "control_system_topic": {
+        "ko": "AMR 운영 및 공정 환경 모니터링",
+        "en": "AMR Operation & Process Monitoring"
+      },
+      "control_system_description": {
+        "ko": "공장 내 자율주행 로봇(AMR)의 위치와 상태를 실시간으로 파악하고, 환경 센서를 통해 공정 상태를 모니터링함으로써 운영자는 물류 흐름과 생산 환경을 직관적으로 관리할 수 있습니다.",
+        "en": "Monitors real-time location and status of AMRs while tracking environmental conditions via integrated sensors. This allows operators to intuitively manage logistics flow and the production environment at a glance."
+      },
       "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_zero.png",
-      "control_system_image_alt": "지능형 관제 시스템: AMR 운영 및 공정 환경 모니터링 이미지"
+      "control_system_image_alt": {
+        "ko": "지능형 관제 시스템: AMR 운영 및 공정 환경 모니터링 이미지",
+        "en": "Intelligent Fleet Management System : AMR Operation & Process Monitoring Image"
+      }
     },
     {
-      "control_system_topic": "작업 자동 할당 및 경로 최적화",
-      "control_system_description": "작업 요청을 자동으로 수신하고, 각 AMR의 상태와 위치를 고려해 최적의 작업을 배정합니다. 동시에 충돌을 회피하는 경로를 자동 생성해 안전하고 효율적인 작업을 유지합니다.",
+      "control_system_topic": {
+        "ko": "작업 자동 할당 및 경로 최적화",
+        "en": "Automated Task Allocation & Path Optimization"
+      },
+      "control_system_description": {
+        "ko": "작업 요청을 자동으로 수신하고, 각 AMR의 상태와 위치를 고려해 최적의 작업을 배정합니다. 동시에 충돌을 회피하는 경로를 자동 생성해 안전하고 효율적인 작업을 유지합니다.",
+        "en": "Automatically receives task requests and assigns the optimal AMR based on real-time status and location. It generates collision-avoidance routes to ensure safe, high-efficiency operations."
+      },
       "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_one.png",
-      "control_system_image_alt": "지능형 관제 시스템: 작업 자동 할당 및 경로 최적화 이미지"
+      "control_system_image_alt": {
+        "ko": "지능형 관제 시스템: 작업 자동 할당 및 경로 최적화 이미지",
+        "en": "Intelligent Fleet Management System : Automated Task Allocation & Path Optimization"
+      }
     },
     {
-      "control_system_topic": "충전 제어 및 에너지 최적화",
-      "control_system_description": "AMR의 배터리 상태와 작업 일정을 고려해 충전 시점을 자동 판단하고, 충전소 혼잡도를 분석해 충전 순서를 최적화합니다.",
+      "control_system_topic": {
+        "ko": "충전 제어 및 에너지 최적화",
+        "en": "Charging Control & Energy Optimization"
+      },
+      "control_system_description": {
+        "ko": "AMR의 배터리 상태와 작업 일정을 고려해 충전 시점을 자동 판단하고, 충전소 혼잡도를 분석해 충전 순서를 최적화합니다.",
+        "en": "Determines optimal charging schedules by analyzing battery status, work cycles, and charging station congestion. This maximizes energy efficiency and minimizes operational downtime."
+      },
       "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_two.png",
-      "control_system_image_alt": "지능형 관제 시스템: 충전 제어 및 에너지 최적화 이미지"
+      "control_system_image_alt": {
+        "ko": "지능형 관제 시스템: 충전 제어 및 에너지 최적화 이미지",
+        "en": "Intelligent Fleet Management System : Charging Control & Energy Optimization"
+      }
     },
     {
-      "control_system_topic": "장애 감지 및 예지 보전",
-      "control_system_description": "운행 중 발생할 수 있는 장애를 실시간으로 감지하고 경보를 발생시키며, 과거 장애 패턴을 분석하여 고장을 예측하고 사전 정비를 수행합니다.",
+      "control_system_topic": {
+        "ko": "장애 감지 및 예지 보전",
+        "en": "Fault Detection & Predictive Maintenance"
+      },
+      "control_system_description": {
+        "ko": "운행 중 발생할 수 있는 장애를 실시간으로 감지하고 경보를 발생시키며, 과거 장애 패턴을 분석하여 고장을 예측하고 사전 정비를 수행합니다.",
+        "en": "Detects and alerts operational faults in real-time while analyzing data patterns to predict potential failures. This enables proactive preventive maintenance to ensure continuous uptime."
+      },
       "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_three.png",
-      "control_system_image_alt": "지능형 관제 시스템: 장애 감지 및 예지 보전 이미지"
+      "control_system_image_alt": {
+        "ko": "지능형 관제 시스템: 장애 감지 및 예지 보전 이미지",
+        "en": "Intelligent Fleet Management System : Fault Detection & Predictive Maintenance"
+      }
     },
     {
-      "control_system_topic": "AI 기반 환경 및 보안 모니터링",
-      "control_system_description": "AMR에 장착된 다양한 센서를 통해 공장 내 환경 상태를 실시간으로 감시하고, AI 분석을 통해 이상 징후를 조기에 탐지하여 작업자 안전과 품질 관리를 동시에 실현합니다.",
+      "control_system_topic": {
+        "ko": "AI 기반 환경 및 보안 모니터링",
+        "en": "AI-Based Environmental & Security Monitoring"
+      },
+      "control_system_description": {
+        "ko": "AMR에 장착된 다양한 센서를 통해 공장 내 환경 상태를 실시간으로 감시하고, AI 분석을 통해 이상 징후를 조기에 탐지하여 작업자 안전과 품질 관리를 동시에 실현합니다.",
+        "en": "Utilizes AI to monitor factory conditions and security in real-time, predicting environmental risks for safer and smarter industrial operations."
+      },
       "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_four.png",
-      "control_system_image_alt": "지능형 관제 시스템: AI 기반 환경 및 보안 모니터링 이미지"
+      "control_system_image_alt": {
+        "ko": "지능형 관제 시스템: AI 기반 환경 및 보안 모니터링 이미지",
+        "en": "Intelligent Fleet Management System : AI-Based Environmental & Security Monitoring"
+      }
     },
     {
-      "control_system_topic": "MES, ERP 등 외부 시스템과의 통합 운영",
-      "control_system_description": "산업 표준 프로토콜을 통해 MES, ERP, WMS 등 외부 시스템과 유연하게 연동하며, 공장 운영 데이터를 통합 관리해 생산성과 대응력을 높입니다.",
+      "control_system_topic": {
+        "ko": "MES, ERP 등 외부 시스템과의 통합 운영",
+        "en": "Seamless Integration with External Systems (MES, ERP, etc.)"
+      },
+      "control_system_description": {
+        "ko": "산업 표준 프로토콜을 통해 MES, ERP, WMS 등 외부 시스템과 유연하게 연동하며, 공장 운영 데이터를 통합 관리해 생산성과 대응력을 높입니다.",
+        "en": "Provides flexible integration with MES, ERP, and WMS through standard industrial protocols. This enables unified data management, significantly improving productivity and system responsiveness."
+      },
       "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_five.png",
-      "control_system_image_alt": "지능형 관제 시스템: MES, ERP 등 외부 시스템과의 통합 운영이미지"
+      "control_system_image_alt": {
+        "ko": "지능형 관제 시스템: MES, ERP 등 외부 시스템과의 통합 운영이미지",
+        "en": "Intelligent Fleet Management System : Seamless Integration with External Systems (MES, ERP, etc.)"
+      }
     }
   ],
   "production_line": {
-    "production_line_title": "이차전지 생산라인",
+    "production_line_title": {
+      "ko": "이차전지 생산라인",
+      "en": "Secondary Battery Production Line"
+    },
     "production_line_image_url": "/images/pages/product/iMOVA/iMOVA_usecase.png",
     "production_line_image_url2": "/images/pages/product/iMOVA/iMOVA_usecase2.svg",
 
     "production_line_list": [
       {
-        "production_line_topic": "초고속·고안전 무선 충전",
-        "production_line_description": "iMOVA는 2500W급의 강력한 무선 충전 성능을 갖춘 초고속·고안전 충전 기술을 제공합니다. TMS(열 관리 시스템)로 발열을 제어하고, BMS(배터리 관리 시스템)로 충전 안정성을 강화하여 빠르고 안전한 무선 충전 환경을 구현합니다.",
+        "production_line_topic": {
+          "ko": "초고속·고안전 무선 충전",
+          "en": "High Speed and Safety Wireless Charging"
+        },
+        "production_line_description": {
+          "ko": "iMOVA는 2500W급의 강력한 무선 충전 성능을 갖춘 초고속·고안전 충전 기술을 제공합니다. TMS(열 관리 시스템)로 발열을 제어하고, BMS(배터리 관리 시스템)로 충전 안정성을 강화하여 빠르고 안전한 무선 충전 환경을 구현합니다.",
+          "en": "iMOVA provides ultra-fast and highly safe wireless charging technology with powerful 2500W-class performance. Heat is controlled through TMS (Thermal Management System), and charging stability is reinforced by BMS (Battery Management System), creating a fast and secure wireless charging environment."
+        },
         "production_line_color": "#CF750C",
         "position": { "top": "12%", "left": "4%" }
       },
       {
-        "production_line_topic": "고중량 적재가능 자율주행 이동로봇(AMR)",
-        "production_line_description": "고중량 이차전지 전극재의 안정적 이송을 통해 생산공정의 효율성과 품질을 동시에 확보합니다.",
+        "production_line_topic": {
+          "ko": "고중량 적재가능 자율주행 이동로봇(AMR)",
+          "en": "High-Load Capacity Autonomous Mobile Robot (AMR)"
+        },
+        "production_line_description": {
+          "ko": "고중량 이차전지 전극재의 안정적 이송을 통해 생산공정의 효율성과 품질을 동시에 확보합니다.",
+          "en": "Ensures both efficiency and quality in production processes by safely transporting heavy secondary battery electrode materials."
+        },
         "production_line_color": "#5B5B5B",
         "position": { "top": "22%", "left": "36%" }
       },
       {
-        "production_line_topic": "생산공정 환경 모니터링 시스템",
-        "production_line_description": "AMR에 탑재된 온도, 습도, 미세먼지, 카메라 등 다양한 센서의 데이터가 실시간으로 중앙 서버에 전송됩니다. 이상 수치 감지 시 즉시 알림을 제공하여 공정 중 발생 가능한 위험 요소를 효과적으로 관리합니다.",
+        "production_line_topic": {
+          "ko": "생산공정 환경 모니터링 시스템",
+          "en": "Production Process Environment Monitoring System"
+        },
+        "production_line_description": {
+          "ko": "AMR에 탑재된 온도, 습도, 미세먼지, 카메라 등 다양한 센서의 데이터가 실시간으로 중앙 서버에 전송됩니다. 이상 수치 감지 시 즉시 알림을 제공하여 공정 중 발생 가능한 위험 요소를 효과적으로 관리합니다.",
+          "en": "Data from various sensors mounted on AMRs—such as temperature, humidity, fine dust, and cameras—is transmitted to the central server in real time. When abnormal values are detected, instant alerts are provided to effectively manage potential risks during the process."
+        },
         "production_line_color": "#267B65",
         "position": { "top": "2%", "right": "2%" }
       },
       {
-        "production_line_topic": "이차전지 생산 라인 무인화",
-        "production_line_description": "전극재 이송 및 공급 공정을 AMR 기반 무인화로 전환하여 운영 효율성을 극대화했습니다. 센서와 AI 기반 경로 최적화 기술을 통해 장애물을 실시간 감지하고, 변화하는 환경에 유연하게 대응합니다. 중앙 관제 시스템과 연동되어 작업 지시와 데이터 수집이 자동화됩니다.",
+        "production_line_topic": {
+          "ko": "이차전지 생산 라인 무인화",
+          "en": "Unmanned Secondary Battery Production Line"
+        },
+        "production_line_description": {
+          "ko": "전극재 이송 및 공급 공정을 AMR 기반 무인화로 전환하여 운영 효율성을 극대화했습니다. 센서와 AI 기반 경로 최적화 기술을 통해 장애물을 실시간 감지하고, 변화하는 환경에 유연하게 대응합니다. 중앙 관제 시스템과 연동되어 작업 지시와 데이터 수집이 자동화됩니다.",
+          "en": "Transforms electrode material transfer and supply processes into AMR-based unmanned operations to maximize operational efficiency. Sensor and AI-based path optimization technology detects obstacles in real time and flexibly adapts to changing environments. Integrated with the central control system, work instructions and data collection are fully automated."
+        },
         "production_line_color": "#B8991D",
         "position": { "bottom": "34%", "right": "10%" }
       },
       {
-        "production_line_topic": "자율주행 협동로봇 통합 관제 시스템",
-        "production_line_description": "공장 내 다수의 AMR을 통합 제어 모니터링하는 관제시스템을 통해 생산 자동화와 현장 안전성을 강화했습니다. MES와 연동된 iSuite34는 작업 지시를 실시간으로 AMR에 전달하며, 공정 최적화와 품질 향상에 기여합니다.",
+        "production_line_topic": {
+          "ko": "자율주행 협동로봇 통합 관제 시스템",
+          "en": "Integrated Control System for Autonomous Collaborative Robots"
+        },
+        "production_line_description": {
+          "ko": "공장 내 다수의 AMR을 통합 제어 모니터링하는 관제시스템을 통해 생산 자동화와 현장 안전성을 강화했습니다. MES와 연동된 iSuite34는 작업 지시를 실시간으로 AMR에 전달하며, 공정 최적화와 품질 향상에 기여합니다.",
+          "en": "Enhances production automation and on-site safety through a control system that monitors and manages multiple AMRs within the factory. iSuite34, integrated with MES, delivers work instructions to AMRs in real time, contributing to process optimization and quality improvement."
+        },
         "production_line_color": "#514381",
         "position": { "bottom": "4%", "left": "10%" }
       },
       {
-        "production_line_topic": "고정밀 자율주행 및 도킹",
-        "production_line_description": "고정밀 자율주행과 자동 도킹 기능을 통해 작업자의 개입 없이 전극재를 정확히 공급합니다. 이 자동화 기술은 공정의 일관성을 높이고 전체 생산 자동화 수준을 향상시킵니다.",
+        "production_line_topic": {
+          "ko": "고정밀 자율주행 및 도킹",
+          "en": "High-Precision Autonomous Driving and Docking"
+        },
+        "production_line_description": {
+          "ko": "고정밀 자율주행과 자동 도킹 기능을 통해 작업자의 개입 없이 전극재를 정확히 공급합니다. 이 자동화 기술은 공정의 일관성을 높이고 전체 생산 자동화 수준을 향상시킵니다.",
+          "en": "Delivers electrode materials accurately without operator intervention through high-precision autonomous navigation and automatic docking. This automation technology improves process consistency and raises the overall level of production automation."
+        },
         "production_line_color": "#1A7795",
         "position": { "bottom": "4%", "right": "8%" }
       }
     ]
   },
   "technology_spec": {
-    "technology_spec_title": "iMOVA 품별 주요 기술 사양",
+    "technology_spec_title": {
+      "ko": "iMOVA 품별 주요 기술 사양",
+      "en": "iMOVA Series"
+    },
+    "labels": {
+      "tech_spec": { "ko": "기술 사양", "en": "Technical Specifications" },
+      "product_standard": { "ko": "제품 규격", "en": "Product Specifications" },
+      "color": { "ko": "색상", "en": "Color" },
+      "size": { "ko": "크기 (L × W × H)", "en": "Dimensions (L x W x H)" },
+      "weight": { "ko": "중량", "en": "Weight" },
+      "box_size": { "ko": "적재함 치수", "en": "Cargo Compartment Size" },
+      "performance": { "ko": "구동 성능", "en": "Driving Performance" },
+      "max_load": { "ko": "최대 적재량", "en": "Payload" },
+      "speed": { "ko": "주행 속도", "en": "Travel Speed" },
+      "motor_performance": {
+        "ko": "구동모터 성능",
+        "en": "Drive Motor Performance"
+      },
+      "motor_rated_output": {
+        "ko": "구동모터 정격출력",
+        "en": "Rated Output (Drive Motor)"
+      },
+      "permitted_step": {
+        "ko": "허용 바닥 단차",
+        "en": "Permissible Floor Step"
+      },
+      "permitted_gap_width": {
+        "ko": "허용 바닥 틈새 폭",
+        "en": "Permissible Floor Gap Width"
+      },
+      "max_inclination_angle": {
+        "ko": "최대 주행 가능 경사각",
+        "en": "Maximum Climbable Slope"
+      },
+      "noise": { "ko": "소음", "en": "Noise" },
+      "electrical": { "ko": "전기 사양", "en": "Electrical Specifications" },
+      "input_voltage": { "ko": "입력 전압", "en": "Input (Charger)" },
+      "output_voltage": { "ko": "출력 전압", "en": "Output (Charger)" },
+      "input_voltage_battery": {
+        "ko": "배터리 입력 전압",
+        "en": "Input (Robot)"
+      },
+      "capacity": { "ko": "용량", "en": "Rated Current" },
+      "permitted_voltage": { "ko": "허용 전압", "en": "Permissible Voltage" },
+      "environment": {
+        "ko": "환경 사양",
+        "en": "Environmental Specifications"
+      },
+      "ip_rating": { "ko": "IP 등급", "en": "IP Rating" },
+      "wifi_frequency": { "ko": "Wi-Fi 주파수", "en": "Wi-Fi Frequency" },
+      "wifi_current": { "ko": "Wi-Fi 전류", "en": "Wi-Fi Power" },
+      "battery": { "ko": "배터리", "en": "Battery Specifications" },
+      "lifespan": { "ko": "수명", "en": "Operating Time" },
+      "charging_time": { "ko": "충전 시간", "en": "Recharge Time" },
+      "environmental_monitoring": {
+        "ko": "환경 모니터링",
+        "en": "Environmental Monitoring Sensors"
+      },
+      "temperature_range": { "ko": "온도 범위", "en": "Temperature Range" },
+      "temperature_accuracy": {
+        "ko": "온도 정확도",
+        "en": "Temperature Accuracy"
+      },
+      "humidity_range": { "ko": "습도 범위", "en": "Humidity Range" },
+      "humidity_accuracy": { "ko": "습도 정확도", "en": "Humidity Accuracy" },
+      "dust_particle_size": {
+        "ko": "미세먼지 입자 크기",
+        "en": "Fine Dust Detectable Particle Size"
+      },
+      "dust_concentration_range": {
+        "ko": "미세먼지 측정 범위",
+        "en": "Fine Dust Measurement Range"
+      },
+      "dust_range": {
+        "ko": "미세먼지 범위",
+        "en": "Fine Dust Range"
+      },
+      "camera_sensor": { "ko": "카메라 센서", "en": "Camera Sensor" },
+      "camera_static_resolution": {
+        "ko": "카메라 고정 해상도",
+        "en": "Camera Static Resolution"
+      },
+      "application": { "ko": "적용 분야", "en": "Application Fields" }
+    },
     "technology_spec_products": [
       {
         "product": "iMOVA 200",
@@ -135,8 +385,8 @@
         "performance": {
           "max_load": "200.0 kg",
           "speed": "2.0m/s",
-          "motor_performance": "400W 11A 1.27 N·m",
-          "motor_rated_output": "400Wx 2ea",
+          "motor_performance": "150W 11A 1.27 N·m",
+          "motor_rated_output": "150Wx 2ea",
           "permitted_step": "30.0 mm",
           "permitted_gap_width": "50.0 mm",
           "max_inclination_angle": "5.0 deg",
@@ -146,7 +396,7 @@
           "input_voltage": "AC 100~240V, 5A, 50/60Hz",
           "output_voltage": "29.4V, 10A",
           "input_voltage_battery": "24V",
-          "capacity": "15Ah",
+          "capacity": "15A",
           "permitted_voltage": "21~29.4 V"
         },
         "environment": {
@@ -155,7 +405,10 @@
           "wifi_current": "40mA"
         },
         "battery": {
-          "lifespan": "약 1.8h",
+          "lifespan": {
+            "ko": "약 1.8h",
+            "en": "approx. 1.8h"
+          },
           "charging_time": "1.8~2.0h"
         },
         "environmental_monitoring": {
@@ -168,7 +421,10 @@
             "accuracy": "±2°C"
           },
           "dust": {
-            "particle_size": "1㎛ (최소)",
+            "particle_size": {
+              "ko": "1㎛ (최소)",
+              "en": "1㎛ (Minimum)"
+            },
             "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
             "accuracy": "≤ 95%"
           },
@@ -209,7 +465,10 @@
           "wifi_current": "40mA"
         },
         "battery": {
-          "lifespan": "약 2.9h",
+          "lifespan": {
+            "ko": "약 2.9h",
+            "en": "approx. 2.9h"
+          },
           "charging_time": "1.0~1.2h"
         },
         "environmental_monitoring": {
@@ -222,7 +481,10 @@
             "accuracy": "±2°C"
           },
           "dust": {
-            "particle_size": "1㎛ (최소)",
+            "particle_size": {
+              "ko": "1㎛ (최소)",
+              "en": "1㎛ (Minimum)"
+            },
             "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
             "accuracy": "≤ 95%"
           },
@@ -263,7 +525,10 @@
           "wifi_current": "40mA"
         },
         "battery": {
-          "lifespan": "약 2.9h",
+          "lifespan": {
+            "ko": "약 2.9h",
+            "en": "approx. 2.9h"
+          },
           "charging_time": "1.0~1.2h"
         },
         "environmental_monitoring": {
@@ -276,7 +541,10 @@
             "accuracy": "±2°C"
           },
           "dust": {
-            "particle_size": "1㎛ (최소)",
+            "particle_size": {
+              "ko": "1㎛ (최소)",
+              "en": "1㎛ (Minimum)"
+            },
             "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
             "accuracy": "≤ 95%"
           },
@@ -287,7 +555,10 @@
         }
       }
     ],
-    "technology_spec_application": "스마트 팩토리: 공정 간 자재 자동 이송, MES/ERP 연계 물류 자동화 물류센터 / 배터리 산업: 공정 간 무인 이송 무인화 / 야간 자동 운송: 야간 근무 대체, 24시간 무정지 물류 실현",
+    "technology_spec_application": {
+      "ko": "스마트 팩토리: 공정 간 자재 자동 이송, MES/ERP 연계 물류 자동화\n물류센터 / 창고: 피킹, 패킹, 분류 작업 자동화\n반도체 / 배터리 산업: 공정 간 무인 이송 무인화 / 야간 자동 운송: 야간 근무 대체, 24시간 무정지 물류 실현",
+      "en": "Smart factory: Automated material transport between processes, logistics automation linked with MES/ERP\nLogistics center / warehouse: Automated picking, packing, and sorting operations\nSemiconductor / battery industry: Unmanned transport between processes\nUnmanned / nighttime automatic transport: Night shift replacement, realization of 24/7 uninterrupted logistics"
+    },
     "technology_spec_sub": "Charging Station"
   }
 }

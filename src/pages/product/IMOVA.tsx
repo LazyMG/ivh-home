@@ -1,6 +1,15 @@
-import { Box, Divider, Paper, Typography } from "@mui/material";
-import iMOVA from "../../data/product/iMOVA.json";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Divider,
+  Paper,
+  Typography,
+} from "@mui/material";
+import iMOVAData from "../../data/product/iMOVA.json";
 import TechSpecTable from "../../components/product/iMOVA/TechSpecTable";
+import { useLang } from "../../i18n/useLang";
+import { pickLocale } from "../../i18n/pickLocale";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, Navigation } from "swiper/modules";
@@ -10,11 +19,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "../../style/imova-slider.css";
 import MainFunction from "../../components/product/iMOVA/MainFunction";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import ScrollButton from "../../common/ScrollButton";
 import SEO from "../../common/SEO";
+import type { LocalizedIMOVA } from "../../types/product";
 
 const IMOVA = () => {
+  const { lang, setLang } = useLang();
+  const localized = useMemo(
+    () => pickLocale<LocalizedIMOVA>(iMOVAData, lang),
+    [lang],
+  );
   const {
     title,
     name,
@@ -28,7 +43,8 @@ const IMOVA = () => {
     production_line,
     technology_spec,
     top_video,
-  } = iMOVA;
+    section_titles,
+  } = localized;
   const THRESHOLD = 100;
   const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);
   const boxRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -73,6 +89,30 @@ const IMOVA = () => {
       />
       <Box component="main">
         <ScrollButton threshold={THRESHOLD} />
+        <ButtonGroup
+          size="small"
+          variant="contained"
+          sx={{
+            position: "fixed",
+            top: 80,
+            right: 16,
+            zIndex: 1300,
+            boxShadow: 2,
+          }}
+        >
+          <Button
+            onClick={() => setLang("ko")}
+            color={lang === "ko" ? "primary" : "inherit"}
+          >
+            KO
+          </Button>
+          <Button
+            onClick={() => setLang("en")}
+            color={lang === "en" ? "primary" : "inherit"}
+          >
+            EN
+          </Button>
+        </ButtonGroup>
         <Box
           component="video"
           aria-label="iVH 자동화 공정 소개 영상"
@@ -242,7 +282,7 @@ const IMOVA = () => {
                 fontFamily: "Freesentation-7-Bold",
               }}
             >
-              주요 기능
+              {section_titles.main_function}
             </Typography>
             <Box
               sx={(theme) => ({
@@ -276,7 +316,7 @@ const IMOVA = () => {
               variant="h5"
               sx={{ fontWeight: "bold", fontFamily: "Freesentation-7-Bold" }}
             >
-              지능형 관제 시스템
+              {section_titles.control_system}
             </Typography>
             <Box
               sx={(theme) => ({
@@ -415,13 +455,13 @@ const IMOVA = () => {
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
               <Typography
-                sx={{ fontFamily: "Freesentation-5-Medium", fontSize: "18px" }}
-              >
-                활용 사례
-              </Typography>
-              <Typography
                 variant="h5"
                 sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
+              >
+                {section_titles.use_case}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "Freesentation-5-Medium", fontSize: "18px" }}
               >
                 {production_line.production_line_title}
               </Typography>
@@ -666,6 +706,7 @@ const IMOVA = () => {
               }
               technology_spec_sub={technology_spec.technology_spec_sub}
               technology_spec_title={technology_spec.technology_spec_title}
+              labels={technology_spec.labels}
             />
           </Box>
         </Box>
