@@ -8,69 +8,13 @@ import {
   useTheme,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { MobileSpecRow, DesktopSpecRow } from "./TechSpecRow";
+import type { IMOVATechnologySpec } from "../../../types/product";
 
-type IMOVATechnologySpec = {
-  technology_spec_title: string;
-  technology_spec_products: {
-    product: string;
-    product_standard: {
-      color: string;
-      size: string;
-      weight: string;
-      box_size: string;
-    };
-    performance: {
-      max_load: string;
-      speed: string;
-      motor_performance: string;
-      motor_rated_output: string;
-      permitted_step: string;
-      permitted_gap_width: string;
-      max_inclination_angle: string;
-      noise: string;
-    };
-    electrical: {
-      input_voltage: string;
-      output_voltage: string;
-      input_voltage_battery: string;
-      capacity: string;
-      permitted_voltage: string;
-    };
-    environment: {
-      ip_rating: string;
-      wifi_frequency: string;
-      wifi_current: string;
-    };
-    battery: {
-      lifespan: string;
-      charging_time: string;
-    };
-    environmental_monitoring: {
-      temperature: {
-        range: string;
-        accuracy: string;
-      };
-      humidity: {
-        range: string;
-        accuracy: string;
-      };
-      dust: {
-        particle_size: string;
-        concentration_range: string;
-        accuracy: string;
-      };
-      camera: {
-        sensor: string;
-        resolution: string;
-      };
-    };
-  }[];
-  technology_spec_application: string;
-  technology_spec_sub: string;
-};
 const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
   const theme = useTheme();
   const isTabletOrBelow = useMediaQuery(theme.breakpoints.down("desktop"));
+  const { labels } = technology_spec;
 
   return (
     <Box
@@ -83,13 +27,13 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
         <Typography
-          sx={{ fontFamily: "Freesentation-5-Medium", fontSize: "18px" }}
+          variant="h5"
+          sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
         >
-          기술 사양
+          {labels.tech_spec}
         </Typography>
         <Typography
-          variant="h5"
-          sx={{ mb: 4, fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
+          sx={{ fontFamily: "Freesentation-5-Medium", fontSize: "18px", mb: 4 }}
         >
           {technology_spec.technology_spec_title}
         </Typography>
@@ -98,7 +42,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
       {isTabletOrBelow ? (
         // 모바일/태블릿: 토글 리스트
         <Box sx={{ width: "100%" }}>
-          {/* 제품규격 Accordion */}
+          {/* {labels.product_standard} Accordion */}
           <Accordion defaultExpanded>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -109,7 +53,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               <Typography
                 sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
               >
-                제품규격
+                {labels.product_standard}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -134,112 +78,32 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           gap: 1,
                         }}
                       >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            색상
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.product_standard.color}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            크기(길이 × 폭 × 높이)
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.product_standard.size}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            중량
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.product_standard.weight}
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            적재함 크기(길이 × 폭)
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.product_standard.box_size}
-                          </Typography>
-                        </Box>
+                        <MobileSpecRow
+                          label={labels.color}
+                          value={product.product_standard.color}
+                        />
+                        <MobileSpecRow
+                          label={labels.size}
+                          value={product.product_standard.size}
+                        />
+                        <MobileSpecRow
+                          label={labels.weight}
+                          value={product.product_standard.weight}
+                        />
+                        <MobileSpecRow
+                          label={labels.box_size}
+                          value={product.product_standard.box_size}
+                          isLast
+                        />
                       </Box>
                     </Box>
-                  )
+                  ),
                 )}
               </Box>
             </AccordionDetails>
           </Accordion>
 
-          {/* 성능 Accordion */}
+          {/* {labels.performance} Accordion */}
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -251,7 +115,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               <Typography
                 sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
               >
-                성능
+                {labels.performance}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -276,216 +140,48 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           gap: 1,
                         }}
                       >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            최대 적재량
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.performance.max_load}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            주행 속도
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.performance.speed}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            구동모터 성능
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.performance.motor_performance}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            구동모터 정격출력
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.performance.motor_rated_output}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            허용 바닥 단차
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.performance.permitted_step}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            허용 바닥 틈새 폭
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.performance.permitted_gap_width}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            최대 주행 가능 경사각
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.performance.max_inclination_angle}
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            소음
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.performance.noise}
-                          </Typography>
-                        </Box>
+                        <MobileSpecRow
+                          label={labels.max_load}
+                          value={product.performance.max_load}
+                        />
+                        <MobileSpecRow
+                          label={labels.speed}
+                          value={product.performance.speed}
+                        />
+                        <MobileSpecRow
+                          label={labels.motor_performance}
+                          value={product.performance.motor_performance}
+                        />
+                        <MobileSpecRow
+                          label={labels.motor_rated_output}
+                          value={product.performance.motor_rated_output}
+                        />
+                        <MobileSpecRow
+                          label={labels.permitted_step}
+                          value={product.performance.permitted_step}
+                        />
+                        <MobileSpecRow
+                          label={labels.permitted_gap_width}
+                          value={product.performance.permitted_gap_width}
+                        />
+                        <MobileSpecRow
+                          label={labels.max_inclination_angle}
+                          value={product.performance.max_inclination_angle}
+                        />
+                        <MobileSpecRow
+                          label={labels.noise}
+                          value={product.performance.noise}
+                          isLast
+                        />
                       </Box>
                     </Box>
-                  )
+                  ),
                 )}
               </Box>
             </AccordionDetails>
           </Accordion>
 
-          {/* 전기사양 Accordion */}
+          {/* {labels.electrical} Accordion */}
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -496,7 +192,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               <Typography
                 sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
               >
-                전기사양
+                {labels.electrical}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -521,138 +217,36 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           gap: 1,
                         }}
                       >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            입력 전압
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.electrical.input_voltage}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            출력 전압
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.electrical.output_voltage}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            배터리 입력 전압
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.electrical.input_voltage_battery}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            용량
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.electrical.capacity}
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            허용 전압
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.electrical.permitted_voltage}
-                          </Typography>
-                        </Box>
+                        <MobileSpecRow
+                          label={labels.input_voltage}
+                          value={product.electrical.input_voltage}
+                        />
+                        <MobileSpecRow
+                          label={labels.output_voltage}
+                          value={product.electrical.output_voltage}
+                        />
+                        <MobileSpecRow
+                          label={labels.input_voltage_battery}
+                          value={product.electrical.input_voltage_battery}
+                        />
+                        <MobileSpecRow
+                          label={labels.capacity}
+                          value={product.electrical.capacity}
+                        />
+                        <MobileSpecRow
+                          label={labels.permitted_voltage}
+                          value={product.electrical.permitted_voltage}
+                          isLast
+                        />
                       </Box>
                     </Box>
-                  )
+                  ),
                 )}
               </Box>
             </AccordionDetails>
           </Accordion>
 
-          {/* 환경사양 Accordion */}
+          {/* {labels.environment} Accordion */}
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -663,7 +257,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               <Typography
                 sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
               >
-                환경사양
+                {labels.environment}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -688,86 +282,28 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           gap: 1,
                         }}
                       >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            IP 등급
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.environment.ip_rating}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            Wi-Fi 주파수
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.environment.wifi_frequency}
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            Wi-Fi 전류
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.environment.wifi_current}
-                          </Typography>
-                        </Box>
+                        <MobileSpecRow
+                          label={labels.ip_rating}
+                          value={product.environment.ip_rating}
+                        />
+                        <MobileSpecRow
+                          label={labels.wifi_frequency}
+                          value={product.environment.wifi_frequency}
+                        />
+                        <MobileSpecRow
+                          label={labels.wifi_current}
+                          value={product.environment.wifi_current}
+                          isLast
+                        />
                       </Box>
                     </Box>
-                  )
+                  ),
                 )}
               </Box>
             </AccordionDetails>
           </Accordion>
 
-          {/* 배터리 Accordion */}
+          {/* {labels.battery} Accordion */}
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -778,7 +314,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               <Typography
                 sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
               >
-                배터리
+                {labels.battery}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -803,60 +339,24 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           gap: 1,
                         }}
                       >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            수명
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.battery.lifespan}
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            충전 시간
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.battery.charging_time}
-                          </Typography>
-                        </Box>
+                        <MobileSpecRow
+                          label={labels.lifespan}
+                          value={product.battery.lifespan}
+                        />
+                        <MobileSpecRow
+                          label={labels.charging_time}
+                          value={product.battery.charging_time}
+                          isLast
+                        />
                       </Box>
                     </Box>
-                  )
+                  ),
                 )}
               </Box>
             </AccordionDetails>
           </Accordion>
 
-          {/* 환경 모니터링 Accordion */}
+          {/* {labels.environmental_monitoring} Accordion */}
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -867,7 +367,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               <Typography
                 sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
               >
-                환경 모니터링
+                {labels.environmental_monitoring}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -892,202 +392,69 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           gap: 1,
                         }}
                       >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            온도 범위
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.environmental_monitoring.temperature.range}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            온도 정확도
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {
-                              product.environmental_monitoring.temperature
-                                .accuracy
-                            }
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            습도 범위
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.environmental_monitoring.humidity.range}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            습도 정확도
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.environmental_monitoring.humidity.accuracy}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            미세먼지 입자 크기
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {
-                              product.environmental_monitoring.dust
-                                .particle_size
-                            }
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            py: 1,
-                            borderBottom: "1px solid #e0e0e0",
-                            gap: 2,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            미세먼지 농도 범위
-                          </Typography>
-                          <Typography
-                            sx={{
-                              fontSize: "12px",
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {
-                              product.environmental_monitoring.dust
-                                .concentration_range
-                            }
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", py: 1, gap: 2 }}>
-                          <Typography
-                            sx={{
-                              flex: "0 0 180px",
-                              color: "#666",
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            카메라
-                          </Typography>
-                          <Typography
-                            sx={{
-                              flex: 1,
-                              fontFamily: "Freesentation-5-Medium",
-                            }}
-                          >
-                            {product.environmental_monitoring.camera.sensor}
-                            <br />
-                            {product.environmental_monitoring.camera.resolution}
-                          </Typography>
-                        </Box>
+                        <MobileSpecRow
+                          label={labels.temperature_range}
+                          value={
+                            product.environmental_monitoring.temperature.range
+                          }
+                        />
+                        <MobileSpecRow
+                          label={labels.temperature_accuracy}
+                          value={
+                            product.environmental_monitoring.temperature
+                              .accuracy
+                          }
+                        />
+                        <MobileSpecRow
+                          label={labels.humidity_range}
+                          value={
+                            product.environmental_monitoring.humidity.range
+                          }
+                        />
+                        <MobileSpecRow
+                          label={labels.humidity_accuracy}
+                          value={
+                            product.environmental_monitoring.humidity.accuracy
+                          }
+                        />
+                        <MobileSpecRow
+                          label={labels.dust_particle_size}
+                          value={
+                            product.environmental_monitoring.dust.particle_size
+                          }
+                        />
+                        <MobileSpecRow
+                          label={labels.dust_concentration_range}
+                          value={
+                            product.environmental_monitoring.dust
+                              .concentration_range
+                          }
+                          valueFontSize="12px"
+                        />
+                        <MobileSpecRow
+                          label={labels.dust_range}
+                          value={product.environmental_monitoring.dust.accuracy}
+                        />
+                        <MobileSpecRow
+                          label={labels.camera_sensor}
+                          value={product.environmental_monitoring.camera.sensor}
+                        />
+                        <MobileSpecRow
+                          label={labels.camera_static_resolution}
+                          value={
+                            product.environmental_monitoring.camera.resolution
+                          }
+                          isLast
+                        />
                       </Box>
                     </Box>
-                  )
+                  ),
                 )}
               </Box>
             </AccordionDetails>
           </Accordion>
 
-          {/* 적용 분야 섹션 */}
+          {/* {labels.application} 섹션 */}
           <Box
             sx={{
               backgroundColor: "#000",
@@ -1103,7 +470,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                 fontSize: { mobile: "24px", tablet: "24px", desktop: "18px" },
               }}
             >
-              적용 분야
+              {labels.application}
             </Typography>
             <Typography
               sx={{
@@ -1170,1390 +537,219 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                       {product.product}
                     </Typography>
                   </Box>
-                )
+                ),
               )}
             </Box>
           </Box>
           <Box component="tbody">
-            {/* 제품 규격 섹션 */}
-            <Box component="tr">
-              <Box
-                component="th"
-                rowSpan={4}
-                sx={{
-                  width: "200px",
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  p: 2,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  border: "1px solid #e0e0e0",
-                  verticalAlign: "middle",
-                }}
-              >
-                <Typography
-                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
-                >
-                  제품 규격
-                </Typography>
-              </Box>
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  색상
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.product_standard.color}
-                    </Typography>
-                  </Box>
-                )
+            {/* {labels.product_standard} 섹션 */}
+            <DesktopSpecRow
+              label={labels.color}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.product_standard.color,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  크기 (L x W x H)
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.product_standard.size}
-                    </Typography>
-                  </Box>
-                )
+              sectionTitle={{ title: labels.product_standard, rowSpan: 4 }}
+            />
+            <DesktopSpecRow
+              label={labels.size}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.product_standard.size,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  중량
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.product_standard.weight}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.weight}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.product_standard.weight,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  적재함 치수
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.product_standard.box_size}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.box_size}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.product_standard.box_size,
               )}
-            </Box>
+            />
 
-            {/* 구동 성능 섹션 */}
-            <Box component="tr">
-              <Box
-                component="th"
-                rowSpan={8}
-                sx={{
-                  width: "200px",
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  p: 2,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  border: "1px solid #e0e0e0",
-                  verticalAlign: "middle",
-                }}
-              >
-                <Typography
-                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
-                >
-                  구동 성능
-                </Typography>
-              </Box>
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  최대 적재량
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.performance.max_load}
-                    </Typography>
-                  </Box>
-                )
+            {/* {labels.performance} 섹션 */}
+            <DesktopSpecRow
+              label={labels.max_load}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.performance.max_load,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  주행 속도
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.performance.speed}
-                    </Typography>
-                  </Box>
-                )
+              sectionTitle={{ title: labels.performance, rowSpan: 8 }}
+            />
+            <DesktopSpecRow
+              label={labels.speed}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.performance.speed,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  구동모터 성능
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.performance.motor_performance}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.motor_performance}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.performance.motor_performance,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  구동모터 정격출력
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.performance.motor_rated_output}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.motor_rated_output}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.performance.motor_rated_output,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  허용 바닥 단차
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.performance.permitted_step}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.permitted_step}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.performance.permitted_step,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  허용 바닥 틈새 폭
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.performance.permitted_gap_width}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.permitted_gap_width}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.performance.permitted_gap_width,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  최대 주행 가능 경사각
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.performance.max_inclination_angle}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.max_inclination_angle}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.performance.max_inclination_angle,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  소음
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.performance.noise}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.noise}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.performance.noise,
               )}
-            </Box>
+            />
 
-            {/* 전기 사양 섹션 */}
-            <Box component="tr">
-              <Box
-                component="th"
-                rowSpan={5}
-                sx={{
-                  width: "200px",
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  p: 2,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  border: "1px solid #e0e0e0",
-                  verticalAlign: "middle",
-                }}
-              >
-                <Typography
-                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
-                >
-                  전기 사양
-                </Typography>
-              </Box>
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  입력 전압
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.electrical.input_voltage}
-                    </Typography>
-                  </Box>
-                )
+            {/* {labels.electrical} 섹션 */}
+            <DesktopSpecRow
+              label={labels.input_voltage}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.electrical.input_voltage,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  출력 전압
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.electrical.output_voltage}
-                    </Typography>
-                  </Box>
-                )
+              sectionTitle={{ title: labels.electrical, rowSpan: 5 }}
+            />
+            <DesktopSpecRow
+              label={labels.output_voltage}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.electrical.output_voltage,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  배터리 입력 전압
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.electrical.input_voltage_battery}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.input_voltage_battery}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.electrical.input_voltage_battery,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  용량
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.electrical.capacity}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.capacity}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.electrical.capacity,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  허용 전압
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.electrical.permitted_voltage}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.permitted_voltage}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.electrical.permitted_voltage,
               )}
-            </Box>
+            />
 
             {/* 환경 섹션 */}
-            <Box component="tr">
-              <Box
-                component="th"
-                rowSpan={3}
-                sx={{
-                  width: "200px",
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  p: 2,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  border: "1px solid #e0e0e0",
-                  verticalAlign: "middle",
-                }}
-              >
-                <Typography
-                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
-                >
-                  환경
-                </Typography>
-              </Box>
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  IP 등급
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.environment.ip_rating}
-                    </Typography>
-                  </Box>
-                )
+            <DesktopSpecRow
+              label={labels.ip_rating}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environment.ip_rating,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  Wi-Fi 주파수
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.environment.wifi_frequency}
-                    </Typography>
-                  </Box>
-                )
+              sectionTitle={{ title: labels.environment, rowSpan: 3 }}
+            />
+            <DesktopSpecRow
+              label={labels.wifi_frequency}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environment.wifi_frequency,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  Wi-Fi 전류
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.environment.wifi_current}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.wifi_current}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environment.wifi_current,
               )}
-            </Box>
+            />
 
-            {/* 배터리 섹션 */}
-            <Box component="tr">
-              <Box
-                component="th"
-                rowSpan={2}
-                sx={{
-                  width: "200px",
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  p: 2,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  border: "1px solid #e0e0e0",
-                  verticalAlign: "middle",
-                }}
-              >
-                <Typography
-                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
-                >
-                  배터리
-                </Typography>
-              </Box>
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  수명
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.battery.lifespan}
-                    </Typography>
-                  </Box>
-                )
+            {/* {labels.battery} 섹션 */}
+            <DesktopSpecRow
+              label={labels.lifespan}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.battery.lifespan,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  충전 시간
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.battery.charging_time}
-                    </Typography>
-                  </Box>
-                )
+              sectionTitle={{ title: labels.battery, rowSpan: 2 }}
+            />
+            <DesktopSpecRow
+              label={labels.charging_time}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.battery.charging_time,
               )}
-            </Box>
+            />
 
-            {/* 환경 모니터링 - 온도 */}
-            <Box component="tr">
-              <Box
-                component="th"
-                rowSpan={7}
-                sx={{
-                  width: "200px",
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  p: 2,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  border: "1px solid #e0e0e0",
-                  verticalAlign: "middle",
-                }}
-              >
-                <Typography
-                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
-                >
-                  환경 모니터링
-                </Typography>
-              </Box>
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  온도 범위
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.environmental_monitoring.temperature.range}
-                    </Typography>
-                  </Box>
-                )
+            {/* {labels.environmental_monitoring} - 온도 */}
+            <DesktopSpecRow
+              label={labels.temperature_range}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.temperature.range,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  온도 정확도
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.environmental_monitoring.temperature.accuracy}
-                    </Typography>
-                  </Box>
-                )
+              sectionTitle={{
+                title: labels.environmental_monitoring,
+                rowSpan: 9,
+              }}
+            />
+            <DesktopSpecRow
+              label={labels.temperature_accuracy}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.temperature.accuracy,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  습도 범위
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.environmental_monitoring.humidity.range}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.humidity_range}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.humidity.range,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  습도 정확도
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography>
-                      {product.environmental_monitoring.humidity.accuracy}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.humidity_accuracy}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.humidity.accuracy,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  미세먼지 입자 크기
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.environmental_monitoring.dust.particle_size}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.dust_particle_size}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.dust.particle_size,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  미세먼지 농도 범위
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "14px",
-                      }}
-                    >
-                      {
-                        product.environmental_monitoring.dust
-                          .concentration_range
-                      }
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.dust_concentration_range}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.dust.concentration_range,
               )}
-            </Box>
-            <Box component="tr">
-              <Box
-                component="th"
-                sx={{
-                  width: "150px",
-                  p: 2,
-                  border: "1px solid #e0e0e0",
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                  }}
-                >
-                  카메라
-                </Typography>
-              </Box>
-              {technology_spec.technology_spec_products.map(
-                (product, index) => (
-                  <Box
-                    component="td"
-                    key={index}
-                    sx={{
-                      p: 2,
-                      border: "1px solid #e0e0e0",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#364B60",
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {product.environmental_monitoring.camera.sensor}
-                      <br />
-                      {product.environmental_monitoring.camera.resolution}
-                    </Typography>
-                  </Box>
-                )
+            />
+            <DesktopSpecRow
+              label={labels.dust_range}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.dust.accuracy,
               )}
-            </Box>
+            />
+            <DesktopSpecRow
+              label={labels.camera_sensor}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.camera.sensor,
+              )}
+            />
+            <DesktopSpecRow
+              label={labels.camera_static_resolution}
+              values={technology_spec.technology_spec_products.map(
+                (p) => p.environmental_monitoring.camera.resolution,
+              )}
+            />
 
-            {/* 적용 분야 섹션 */}
+            {/* {labels.application} 섹션 */}
             <Box component="tr">
               <Box
                 component="th"
@@ -2572,7 +768,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                 <Typography
                   sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
                 >
-                  적용 분야
+                  {labels.application}
                 </Typography>
               </Box>
               <Box
@@ -2586,7 +782,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               >
                 <Typography
                   sx={{
-                    lineHeight: 1.8,
+                    lineHeight: 1.4,
                     whiteSpace: "pre-line",
                     color: "#364B60",
                     fontFamily: "Freesentation-5-Medium",
