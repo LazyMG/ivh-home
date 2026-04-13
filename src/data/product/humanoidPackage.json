@@ -1,41 +1,64 @@
 {
   "seo": {
-    "title": "Humanoid Robot Total Package",
-    "description": "iVH는 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여 즉시 도입 가능한 토탈 패키지로 제공합니다.",
-    "keywords": "휴머노이드, Humanoid, 로봇, 토탈패키지, iVH, Physical AI, 디지털트윈, 운영시스템",
+    "title": {
+      "ko": "Humanoid Robot Total Package",
+      "en": "Humanoid Robot Total Package"
+    },
+    "description": {
+      "ko": "iVH는 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여 즉시 도입 가능한 토탈 패키지로 제공합니다.",
+      "en": "iVH provides a 'ready-to-deploy'\ntotal package by integrating proven global humanoid platforms with our advanced AI and operating systems."
+    },
+    "keywords": {
+      "ko": "휴머노이드, Humanoid, 로봇, 토탈패키지, iVH, Physical AI, 디지털트윈, 운영시스템",
+      "en": "Humanoid, Robot, Total Package, iVH, Physical AI, Digital Twin, Operating System"
+    },
     "canonical": "https://ivh.co.kr/product/imova/humanoid"
   },
   "hero": {
-    "headline": "Humanoid Robots, Delivered as a Complete Solution",
-    "body": [
-      { "text": "iVH는 휴머노이드 로봇을 직접 개발하지 않습니다." },
-      {
-        "text": "대신, ",
+    "headline": {
+      "ko": "Humanoid Robots, Delivered as a Complete Solution",
+      "en": "Humanoid Robots, Delivered as a Complete Solution"
+    },
+    "body": {
+      "ko": {
         "segments": [
-          { "text": "대신, " },
+          { "text": "iVH는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, " },
           {
             "text": "검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여 즉시 도입 가능한 토탈 패키지로 제공합니다.",
             "bold": true
           }
         ]
-      }
-    ],
+      },
+      "en": "iVH does not develop humanoid robots directly. Instead, we provide a 'ready-to-deploy'\ntotal package by integrating proven global humanoid platforms with our advanced AI and operating systems."
+    },
     "imova_title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
     "imova_title_alt": "iMOVA",
     "humanoid_equation_image": "/images/pages/product/iMOVA/humanoid_equation.png",
-    "humanoid_equation_alt": "Robot Hardware + AI + Operation =",
-    "image": "/images/pages/product/iMOVA/humanoid.png",
-    "image_alt": "Humanoid Robot Total Package 다이어그램",
-    "sub_body": {
-      "segments": [
-        { "text": "휴머노이드를 연구가 아닌 " },
-        { "text": "실제 운영 관점에서 구매", "bold": true },
-        { "text": "하고자 하는 기업을 위한 솔루션입니다." }
-      ]
+    "humanoid_equation_alt": {
+      "ko": "Robot Hardware + AI + Operation =",
+      "en": "Robot Hardware + AI + Operation ="
     },
-    "sub_headline": ": Humanoid Robots, Delivered as a Complete Solution",
-    "description": "iMOVA는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여\n즉시 도입 가능한 토탈 패키지로 제공합니다.",
-    "equation_text": "Robot Hardware + AI + Operation = iVH Total Package",
+    "image": "/images/pages/product/iMOVA/humanoid.png",
+    "image_alt": {
+      "ko": "Humanoid Robot Total Package 다이어그램",
+      "en": "Humanoid Robot Total Package Diagram"
+    },
+    "sub_body": {
+      "ko": "휴머노이드는 연구가 아닌 실제 운영 관점에서 구매하고자 하는 기업을 위한 솔루션입니다.",
+      "en": "This solution is designed for enterprises seeking to implement humanoid technology\nfor real-world operations, moving beyond simple research."
+    },
+    "sub_headline": {
+      "ko": ": Humanoid Robots, Delivered as a Complete Solution",
+      "en": ": Humanoid Robots, Delivered as a Complete Solution"
+    },
+    "description": {
+      "ko": "iMOVA는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여\n즉시 도입 가능한 토탈 패키지로 제공합니다.",
+      "en": "iVH does not develop humanoid robots directly. Instead, we provide a 'ready-to-deploy' total package by integrating proven global humanoid platforms with our advanced AI and operating systems."
+    },
+    "equation_text": {
+      "ko": "Robot Hardware + AI + Operation = iVH Total Package",
+      "en": "Robot Hardware + AI + Operation = iVH Total Package"
+    },
     "effects": {
       "ldquo": "/images/pages/product/iMOVA/ldquo.svg",
       "rdquo": "/images/pages/product/iMOVA/rdquo.svg",
@@ -45,13 +68,17 @@
     }
   },
   "business_model": {
-    "title": "iVH Humanoid Business Model",
+    "title": {
+      "ko": "iVH Humanoid Business Model",
+      "en": "iVH Humanoid Business Model"
+    },
     "body": {
       "segments": [
         { "text": "iVH의 휴머노이드 사업은 " },
         { "text": "로봇 제조 사업이 아닙니다.", "bold": true },
         { "text": "\niVH는 다음 역할에 집중합니다." }
-      ]
+      ],
+      "en": "iVH’s humanoid business is not about robot manufacturing.\nInstead, we focus on the following key roles:"
     },
     "items": [
       {
@@ -61,7 +88,8 @@
             "text": "글로벌 휴머노이드 로봇 제조사 (Hexagon, 중국 주요 휴머노이드 제조사 등)의 "
           },
           { "text": "검증된 하드웨어 소싱", "bold": true }
-        ]
+        ],
+        "en": "Sourcing Proven Hardware: Procurement of verified hardware from global humanoid manufacturers (e.g., Hexagon and leading Chinese humanoid developers)."
       },
       {
         "number": "02",
@@ -71,7 +99,8 @@
             "text": "Physical AI, 디지털 트윈, 운영·관제 시스템 적용",
             "bold": true
           }
-        ]
+        ],
+        "en": "Applying iVH’s Core Technologies: Implementation of iVH’s proprietary Physical AI, Digital Twins, and advanced Operation & Control Systems."
       },
       {
         "number": "03",
@@ -81,87 +110,185 @@
             "text": "완성형 휴머노이드 시스템으로 통합 공급",
             "bold": true
           }
-        ]
+        ],
+        "en": "Integrated Solution Supply: Supplying a complete, integrated humanoid system ready for immediate use."
       }
     ]
   },
   "package_composition": {
-    "title": "Package Composition",
+    "title": {
+      "ko": "Package Composition",
+      "en": "Package Composition"
+    },
     "cards": [
       {
         "icon": "SmartToy",
-        "title": "Humanoid Robot Hardware",
-        "subtitle": "Partner Platform",
+        "title": {
+          "ko": "Humanoid Robot Hardware",
+          "en": "Humanoid Robot Hardware"
+        },
+        "subtitle": {
+          "ko": "Partner Platform",
+          "en": "Partner Platform"
+        },
         "bullets": [
-          "글로벌 제조사 휴머노이드 로봇",
-          "산업 및 특수 환경 적용 가능 플랫폼",
-          "고객 요구에 따른 모델 선정"
+          {
+            "ko": "글로벌 제조사 휴머노이드 로봇",
+            "en": "Global Manufacturer Humanoid Robots"
+          },
+          {
+            "ko": "산업 및 특수 환경 적용 가능 플랫폼",
+            "en": "Platforms Applicable to Industrial and Specialized Environments"
+          },
+          {
+            "ko": "고객 요구에 따른 모델 선정",
+            "en": "Model Selection Based on Customer Requirements"
+          }
         ],
-        "note": "※ 휴머노이드 하드웨어는 파트너 제조사 제품을 사용합니다."
+        "note": {
+          "ko": "※ 휴머노이드 하드웨어는 파트너 제조사 제품을 사용합니다.",
+          "en": "※ Humanoid hardware utilizes products from partner manufacturers."
+        }
       },
       {
         "icon": "Psychology",
-        "title": "Physical AI & Control Software",
-        "subtitle": "iVH Core Value",
+        "title": {
+          "ko": "Physical AI & Control Software",
+          "en": "Physical AI & Control Software"
+        },
+        "subtitle": {
+          "ko": "iVH Core Value",
+          "en": "iVH Core Value"
+        },
         "bullets": [
-          "전신 동작 제어 AI",
-          "작업·순찰·조작 시나리오 기반 행동 제어",
-          "온디바이스 AI + 서버 연계 구조",
-          "휴머노이드 실제 운영을 위한 안정화 로직"
+          { "ko": "전신 동작 제어 AI", "en": "Whole-Body Motion Control AI" },
+          {
+            "ko": "작업·순찰·조작 시나리오 기반 행동 제어",
+            "en": "Behavior Control Based on Task, Patrol, and Manipulation Scenarios"
+          },
+          {
+            "ko": "온디바이스 AI + 서버 연계 구조",
+            "en": "On-Device AI + Server Integration Architecture"
+          },
+          {
+            "ko": "휴머노이드 실제 운영을 위한 안정화 로직",
+            "en": "Stabilization Logic for Real-World Humanoid Operations"
+          }
         ]
       },
       {
         "icon": "ViewInAr",
-        "title": "Digital Twin & Sim2Real",
+        "title": {
+          "ko": "Digital Twin & Sim2Real",
+          "en": "Digital Twin & Sim2Real"
+        },
         "bullets": [
-          "휴머노이드 디지털 트윈 모델",
-          "가상 환경 기반 사전 검증",
-          "현장 투입 전 동작·임무 검증",
-          "Sim2Real 기반 리스크 최소화"
+          {
+            "ko": "휴머노이드 디지털 트윈 모델",
+            "en": "Humanoid Digital Twin Models"
+          },
+          {
+            "ko": "가상 환경 기반 사전 검증",
+            "en": "Pre-Verification Based on Virtual Environments"
+          },
+          {
+            "ko": "현장 투입 전 동작·임무 검증",
+            "en": "Motion and Mission Verification Before Field Deployment"
+          },
+          {
+            "ko": "Sim2Real 기반 리스크 최소화",
+            "en": "Risk Minimization Based on Sim2Real"
+          }
         ]
       },
       {
         "icon": "Dashboard",
-        "title": "Operation & Fleet Management System",
+        "title": {
+          "ko": "Operation & Fleet Management System",
+          "en": "Operation & Fleet Management System"
+        },
         "bullets": [
-          "원격 모니터링 및 상태 관리",
-          "임무 스케줄링",
-          "다수 휴머노이드 통합 운영",
-          "기존 AMR, 설비, 보안 시스템 연동 가능"
+          {
+            "ko": "원격 모니터링 및 상태 관리",
+            "en": "Remote Monitoring and Status Management"
+          },
+          { "ko": "임무 스케줄링", "en": "Mission Scheduling" },
+          {
+            "ko": "다수 휴머노이드 통합 운영",
+            "en": "Integrated Operation of Multiple Humanoids"
+          },
+          {
+            "ko": "기존 AMR, 설비, 보안 시스템 연동 가능",
+            "en": "Integratable with Existing AMRs, Facilities, and Security Systems"
+          }
         ]
       },
       {
         "icon": "HelpOutline",
-        "title": "Why iVH Total Package",
-        "subtitle2": "Why Not Just Buy a Robot?",
+        "title": {
+          "ko": "Why iVH Total Package",
+          "en": "Why iVH Total Package"
+        },
+        "subtitle2": {
+          "ko": "Why Not Just Buy a Robot?",
+          "en": "Why Not Just Buy a Robot?"
+        },
         "body": {
           "segments": [
             { "text": "휴머노이드 로봇만 구매하는 것은 " },
             { "text": "시작에 불과합니다.", "bold": true },
             { "text": "\n실제 현장에서는 다음 문제가 발생합니다." }
-          ]
+          ],
+          "en": "Purchasing a humanoid robot is only the beginning. In real-world operations, the following problems occur:"
         },
         "bullets": [
-          "제어 안정성 부족",
-          "운영 인력 의존",
-          "시나리오 변경 어려움",
-          "다수 로봇 관리 불가"
+          { "ko": "제어 안정성 부족", "en": "Lack of Control Stability" },
+          { "ko": "운영 인력 의존", "en": "Dependence on Operating Personnel" },
+          {
+            "ko": "시나리오 변경 어려움",
+            "en": "Difficulty in Changing Scenarios"
+          },
+          {
+            "ko": "다수 로봇 관리 불가",
+            "en": "Inability to Manage Multiple Robots"
+          }
         ]
       }
     ]
   },
   "why_ivh": {
-    "title": "Why iVH",
+    "title": {
+      "ko": "Why iVH",
+      "en": "Why iVH"
+    },
     "items": [
-      "검증된 하드웨어 + 검증된 소프트웨어",
-      "제조 리스크 없는 구조",
-      "운영 가능한 상태로 납품",
-      "유지보수·확장·운영 단일 창구"
+      {
+        "ko": "검증된 하드웨어 + 검증된 소프트웨어",
+        "en": "Proven Hardware + Proven Software"
+      },
+      {
+        "ko": "제조 리스크 없는 구조",
+        "en": "Structure with Zero Manufacturing Risk"
+      },
+      {
+        "ko": "운영 가능한 상태로 납품",
+        "en": "Supplied in an Operational State"
+      },
+      {
+        "ko": "유지보수·확장·운영 단일 창구",
+        "en": "Single Point of Contact for Maintenance, Expansion, and Operation"
+      }
     ],
-    "closing": "iVH는 휴머노이드를 '제품'이 아니라 '시스템'으로 판매합니다."
+    "closing": {
+      "ko": "iVH는 휴머노이드를 '제품'이 아니라 '시스템'으로 판매합니다.",
+      "en": "iVH provides humanoids as a 'System', not just a 'Product'."
+    }
   },
   "cta": {
-    "headline": "Ready to Deploy Humanoids?",
+    "headline": {
+      "ko": "Ready to Deploy Humanoids?",
+      "en": "Ready to Deploy Humanoids?"
+    },
     "body": {
       "segments": [
         { "text": "휴머노이드를 " },
@@ -169,9 +296,13 @@
         {
           "text": "하고자 하신다면,\niVH가 하드웨어 선정부터 운영까지 책임집니다."
         }
-      ]
+      ],
+      "en": "For those seeking operational humanoids over research models, iVH takes charge of the entire process—from hardware sourcing to daily operation."
     },
-    "button_text": "문의하기",
+    "button_text": {
+      "ko": "문의하기",
+      "en": ""
+    },
     "button_url": "/company/contact"
   }
 }

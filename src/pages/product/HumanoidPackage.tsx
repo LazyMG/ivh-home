@@ -1,10 +1,73 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Button, ButtonGroup, Divider, Typography } from "@mui/material";
+import { useMemo } from "react";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-import data from "../../data/product/humanoidPackage.json";
+import rawData from "../../data/product/humanoidPackage.json";
+import { useLang } from "../../i18n/useLang";
+import { pickLocale } from "../../i18n/pickLocale";
 
 type Segment = { text: string; bold?: boolean };
+
+type SegmentBlock = { segments: Segment[]; en: string };
+
+type LocalizedHumanoid = {
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+    canonical: string;
+  };
+  hero: {
+    headline: string;
+    body: { segments: Segment[] } | string;
+    imova_title_image: string;
+    imova_title_alt: string;
+    humanoid_equation_image: string;
+    humanoid_equation_alt: string;
+    image: string;
+    image_alt: string;
+    sub_body: string;
+    sub_headline: string;
+    description: string;
+    equation_text: string;
+    effects: {
+      ldquo: string;
+      rdquo: string;
+      white_effect: string;
+      gra_effect: string;
+      blue_effect: string;
+    };
+  };
+  business_model: {
+    title: string;
+    body: SegmentBlock;
+    items: { number: string; segments: Segment[]; en: string }[];
+  };
+  package_composition: {
+    title: string;
+    cards: {
+      icon: string;
+      title: string;
+      subtitle?: string;
+      subtitle2?: string;
+      body?: SegmentBlock;
+      bullets: string[];
+      note?: string;
+    }[];
+  };
+  why_ivh: {
+    title: string;
+    items: string[];
+    closing: string;
+  };
+  cta: {
+    headline: string;
+    body: SegmentBlock;
+    button_text: string;
+    button_url: string;
+  };
+};
 
 const RenderSegments = ({ segments }: { segments: Segment[] }) => (
   <>
@@ -90,7 +153,13 @@ const SectionLayout = ({
 
 const HumanoidPackage = () => {
   const { isMobile, isTablet } = useBreakpoint();
-  const { seo, hero, business_model, package_composition, why_ivh, cta } = data;
+  const { lang, setLang } = useLang();
+  const localized = useMemo(
+    () => pickLocale<LocalizedHumanoid>(rawData, lang),
+    [lang],
+  );
+  const { seo, hero, business_model, package_composition, why_ivh, cta } =
+    localized;
 
   const pagePx = isMobile ? "20px" : isTablet ? "40px" : "120px";
   const sectionGap = isMobile ? 12 : isTablet ? 16 : 20;
@@ -106,6 +175,30 @@ const HumanoidPackage = () => {
       />
       <Box component="main">
         <ScrollButton threshold={100} />
+        <ButtonGroup
+          size="small"
+          variant="contained"
+          sx={{
+            position: "fixed",
+            top: 80,
+            right: 16,
+            zIndex: 1300,
+            boxShadow: 2,
+          }}
+        >
+          <Button
+            onClick={() => setLang("ko")}
+            color={lang === "ko" ? "primary" : "inherit"}
+          >
+            KO
+          </Button>
+          <Button
+            onClick={() => setLang("en")}
+            color={lang === "en" ? "primary" : "inherit"}
+          >
+            EN
+          </Button>
+        </ButtonGroup>
 
         {/* ===== A. Hero (Part 1) ===== */}
         <Box
@@ -183,7 +276,7 @@ const HumanoidPackage = () => {
             sx={{
               position: "relative",
               width: "100%",
-              maxWidth: "920px",
+              maxWidth: "1200px",
               px: isMobile ? 4 : 6,
               py: isMobile ? 2 : 3,
               boxSizing: "border-box",
@@ -207,21 +300,14 @@ const HumanoidPackage = () => {
                 color: "#2c2c2c",
                 wordBreak: "keep-all",
                 lineHeight: 1.8,
-              }}
-            >
-              {hero.body[0].text}
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Freesentation-5-Medium",
-                fontSize: bodyFontSize,
-                color: "#2c2c2c",
-                wordBreak: "keep-all",
-                lineHeight: 1.8,
                 whiteSpace: "pre-wrap",
               }}
             >
-              <RenderSegments segments={hero.body[1].segments!} />
+              {typeof hero.body === "string" ? (
+                hero.body
+              ) : (
+                <RenderSegments segments={hero.body.segments} />
+              )}
             </Typography>
             <Box
               component="img"
@@ -245,9 +331,10 @@ const HumanoidPackage = () => {
               wordBreak: "keep-all",
               textDecoration: "underline",
               mt: isMobile ? 4 : 6,
+              whiteSpace: "pre-wrap",
             }}
           >
-            <RenderSegments segments={hero.sub_body.segments} />
+            {hero.sub_body}
           </Typography>
         </Box>
 
@@ -505,7 +592,11 @@ const HumanoidPackage = () => {
                   whiteSpace: "pre-wrap",
                 }}
               >
-                <RenderSegments segments={business_model.body.segments} />
+                {lang === "en" && business_model.body.en ? (
+                  business_model.body.en
+                ) : (
+                  <RenderSegments segments={business_model.body.segments} />
+                )}
               </Typography>
 
               <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
@@ -538,7 +629,11 @@ const HumanoidPackage = () => {
                         lineHeight: 1.6,
                       }}
                     >
-                      <RenderSegments segments={item.segments} />
+                      {lang === "en" && item.en ? (
+                        item.en
+                      ) : (
+                        <RenderSegments segments={item.segments} />
+                      )}
                     </Typography>
                   </Box>
                 ))}
@@ -618,7 +713,13 @@ const HumanoidPackage = () => {
                         pl: 2.5,
                       }}
                     >
-                      <RenderSegments segments={(card as any).body.segments} />
+                      {lang === "en" && (card as any).body.en ? (
+                        (card as any).body.en
+                      ) : (
+                        <RenderSegments
+                          segments={(card as any).body.segments}
+                        />
+                      )}
                     </Typography>
                   )}
 
@@ -732,7 +833,11 @@ const HumanoidPackage = () => {
                   whiteSpace: "pre-wrap",
                 }}
               >
-                <RenderSegments segments={cta.body.segments} />
+                {lang === "en" && cta.body.en ? (
+                  cta.body.en
+                ) : (
+                  <RenderSegments segments={cta.body.segments} />
+                )}
               </Typography>
             </Box>
           </SectionLayout>
