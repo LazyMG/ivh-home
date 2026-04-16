@@ -8,6 +8,7 @@
   "subTitle": "High-precision suspension mechanism analysis and vehicle dynamics control validation solution",
   "name": "",
   "introduction": [
-    "VeSyMA - Suspensions Library is a comprehensive Modelica-based library for designing and analyzing vehicle suspension systems. Beyond simple mechanical suspension modeling, this library supports vehicle handling, ride comfort, and control system validation. It provides various suspension structure models, such as double wishbone, multi-link, and MacPherson strut, and can reproduce realistic driving conditions through Pacejka and FTire-based tire models and 3D road models.\nAdditionally, it features built-in experimental templates for static and dynamic tests, rig experiments, and open/closed-loop driver models, allowing the entire process from design to validation to be performed on a single platform."
+    "VeSyMA - Suspensions Library is a comprehensive Modelica-based library for designing and analyzing vehicle suspension systems. Beyond simple mechanical suspension modeling, this library supports vehicle handling, ride comfort, and control system validation. It provides various suspension structure models, such as double wishbone, multi-link, and MacPherson strut, and can reproduce realistic driving conditions through Pacejka and FTire-based tire models and 3D road models.",
+    "Additionally, it features built-in experimental templates for static and dynamic tests, rig experiments, and open/closed-loop driver models, allowing the entire process from design to validation to be performed on a single platform."
   ]
 }
