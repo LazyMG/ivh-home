@@ -1,0 +1,27 @@
+{
+  "seo": {
+    "title": "PTV - 교통 계획, 시뮬레이션 및 실시간 관리를 위한 소프트웨어",
+    "description": "Planungsbüro für Verkehr / 교통 계획, 시뮬레이션 및 실시간 관리를 위한 소프트웨어",
+    "keywords": "Planungsbüro für Verkehr, 교통 계획, 교통 시뮬레이션, 소프트웨어, PTV"
+  },
+  "ptv_title": "PTV",
+  "ptv_name": "",
+  "ptv_mainImg_alt": "PTV(Planungsbüro für Verkehr) 메인 이미지",
+  "ptv_text": [
+    "Planungsbüro für Verkehr / 교통 계획, 시뮬레이션 및 실시간 관리를 위한 소프트웨어"
+  ],
+  "ptv_libraries": {
+    "lib-0": {
+      "text": "Vissim",
+      "img_alt": "Vissim icon"
+    },
+    "lib-1": {
+      "text": "Vissim Automotive",
+      "img_alt": "Vissim Automotive icon"
+    },
+    "lib-2": {
+      "text": "Viswalk",
+      "img_alt": "Viswalk icon"
+    }
+  }
+}

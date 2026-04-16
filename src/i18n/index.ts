@@ -73,6 +73,20 @@ import thermalEn from "../locales/en/product/modelon/thermal-power-library.json"
 import vaporKo from "../locales/ko/product/modelon/vapor-cycle-library.json";
 import vaporEn from "../locales/en/product/modelon/vapor-cycle-library.json";
 
+// ptv
+import ptvKo from "../locales/ko/product/ptv/ptv.json";
+import ptvEn from "../locales/en/product/ptv/ptv.json";
+import vissimKo from "../locales/ko/product/ptv/vissim.json";
+import vissimEn from "../locales/en/product/ptv/vissim.json";
+import vissimAutomotiveKo from "../locales/ko/product/ptv/vissim-automotive.json";
+import vissimAutomotiveEn from "../locales/en/product/ptv/vissim-automotive.json";
+import viswalkKo from "../locales/ko/product/ptv/viswalk.json";
+import viswalkEn from "../locales/en/product/ptv/viswalk.json";
+
+// product common
+import productFormKo from "../locales/ko/product/product-form.json";
+import productFormEn from "../locales/en/product/product-form.json";
+
 i18n.use(initReactI18next).init({
   lng: "ko",
   fallbackLng: "ko",
@@ -111,6 +125,11 @@ i18n.use(initReactI18next).init({
     "product/modelon/base",
     "product/modelon/thermal",
     "product/modelon/vapor",
+    "product/ptv",
+    "product/ptv/vissim",
+    "product/ptv/vissim-automotive",
+    "product/ptv/viswalk",
+    "product/product-form",
   ],
   defaultNS: "product/iMOVA",
   resources: {
@@ -149,6 +168,11 @@ i18n.use(initReactI18next).init({
       "product/modelon/base": modelonBaseKo,
       "product/modelon/thermal": thermalKo,
       "product/modelon/vapor": vaporKo,
+      "product/ptv": ptvKo,
+      "product/ptv/vissim": vissimKo,
+      "product/ptv/vissim-automotive": vissimAutomotiveKo,
+      "product/ptv/viswalk": viswalkKo,
+      "product/product-form": productFormKo,
     },
     en: {
       "product/iMOVA": iMOVAEn,
@@ -185,6 +209,11 @@ i18n.use(initReactI18next).init({
       "product/modelon/base": modelonBaseEn,
       "product/modelon/thermal": thermalEn,
       "product/modelon/vapor": vaporEn,
+      "product/ptv": ptvEn,
+      "product/ptv/vissim": vissimEn,
+      "product/ptv/vissim-automotive": vissimAutomotiveEn,
+      "product/ptv/viswalk": viswalkEn,
+      "product/product-form": productFormEn,
     },
   },
   interpolation: { escapeValue: false },
