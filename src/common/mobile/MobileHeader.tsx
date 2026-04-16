@@ -6,7 +6,8 @@ import CloseIcon from "@mui/icons-material/Close";
 // import logoBlack from "/images/header/ivh_logo_black.png";
 import logoGradient from "/images/header/iVH_logo_gra.svg";
 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import { styled } from "@mui/material/styles";
 import menu from "../../data/header/menu.json";
 import youtubeWhite from "/images/header/youtube_white.png";
@@ -16,7 +17,7 @@ import linkedinBlack from "/images/header/linkedin_black.png";
 import { MobileMenuRecursive } from "./MobileMenuRecursive";
 
 const MobileHeader = () => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuDrawerRef = useRef<HTMLDivElement>(null);

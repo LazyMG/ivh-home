@@ -1,73 +1,12 @@
-import { Box, Button, ButtonGroup, Divider, Typography } from "@mui/material";
-import { useMemo } from "react";
+import { Box, Divider, Typography } from "@mui/material";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
+import LangToggle from "../../common/LangToggle";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-import rawData from "../../data/product/humanoidPackage.json";
-import { useLang } from "../../i18n/useLang";
-import { pickLocale } from "../../i18n/pickLocale";
+import resource from "../../data/product/humanoidPackage.json";
+import { useTranslation } from "react-i18next";
 
 type Segment = { text: string; bold?: boolean };
-
-type SegmentBlock = { segments: Segment[]; en: string };
-
-type LocalizedHumanoid = {
-  seo: {
-    title: string;
-    description: string;
-    keywords: string;
-    canonical: string;
-  };
-  hero: {
-    headline: string;
-    body: { segments: Segment[] } | string;
-    imova_title_image: string;
-    imova_title_alt: string;
-    humanoid_equation_image: string;
-    humanoid_equation_alt: string;
-    image: string;
-    image_alt: string;
-    sub_body: string;
-    sub_headline: string;
-    description: string;
-    equation_text: string;
-    effects: {
-      ldquo: string;
-      rdquo: string;
-      white_effect: string;
-      gra_effect: string;
-      blue_effect: string;
-    };
-  };
-  business_model: {
-    title: string;
-    body: SegmentBlock;
-    items: { number: string; segments: Segment[]; en: string }[];
-  };
-  package_composition: {
-    title: string;
-    cards: {
-      icon: string;
-      title: string;
-      subtitle?: string;
-      subtitle2?: string;
-      body?: SegmentBlock;
-      bullets: string[];
-      note?: string;
-    }[];
-  };
-  why_ivh: {
-    title: string;
-    items: string[];
-    closing: string;
-  };
-  cta: {
-    headline: string;
-    body: SegmentBlock;
-    button_text: string;
-    button_url: string;
-  };
-};
 
 const RenderSegments = ({ segments }: { segments: Segment[] }) => (
   <>
@@ -153,13 +92,24 @@ const SectionLayout = ({
 
 const HumanoidPackage = () => {
   const { isMobile, isTablet } = useBreakpoint();
-  const { lang, setLang } = useLang();
-  const localized = useMemo(
-    () => pickLocale<LocalizedHumanoid>(rawData, lang),
-    [lang],
-  );
-  const { seo, hero, business_model, package_composition, why_ivh, cta } =
-    localized;
+  const { t } = useTranslation("product/humanoidPackage");
+
+  const td = (key: string): string => t(key as never);
+  const tOpt = (key: string): string | undefined => {
+    const val = t(key as never, { defaultValue: "" });
+    return val || undefined;
+  };
+
+  /** segments(ko) 또는 plain string(en) 렌더링 */
+  const renderSegmentBlock = (key: string) => {
+    const val = t(key as never, { returnObjects: true, defaultValue: "" });
+    if (!val) return null;
+    if (typeof val === "string") return val;
+    if (typeof val === "object" && "segments" in (val as object)) {
+      return <RenderSegments segments={(val as { segments: Segment[] }).segments} />;
+    }
+    return null;
+  };
 
   const pagePx = isMobile ? "20px" : isTablet ? "40px" : "120px";
   const sectionGap = isMobile ? 12 : isTablet ? 16 : 20;
@@ -168,37 +118,14 @@ const HumanoidPackage = () => {
   return (
     <>
       <SEO
-        title={seo.title}
-        description={seo.description}
-        keywords={seo.keywords}
-        canonical={seo.canonical}
+        title={td("seo.title")}
+        description={td("seo.description")}
+        keywords={td("seo.keywords")}
+        canonical={resource.seo.canonical}
       />
       <Box component="main">
         <ScrollButton threshold={100} />
-        <ButtonGroup
-          size="small"
-          variant="contained"
-          sx={{
-            position: "fixed",
-            top: 80,
-            right: 16,
-            zIndex: 1300,
-            boxShadow: 2,
-          }}
-        >
-          <Button
-            onClick={() => setLang("ko")}
-            color={lang === "ko" ? "primary" : "inherit"}
-          >
-            KO
-          </Button>
-          <Button
-            onClick={() => setLang("en")}
-            color={lang === "en" ? "primary" : "inherit"}
-          >
-            EN
-          </Button>
-        </ButtonGroup>
+        <LangToggle />
 
         {/* ===== A. Hero (Part 1) ===== */}
         <Box
@@ -228,8 +155,8 @@ const HumanoidPackage = () => {
           >
             <Box
               component="img"
-              src={hero.imova_title_image}
-              alt={hero.imova_title_alt}
+              src={resource.hero.imova_title_image}
+              alt={resource.hero.imova_title_alt}
               sx={{
                 height: isMobile ? "28px" : "40px",
                 alignSelf: "flex-end",
@@ -242,7 +169,7 @@ const HumanoidPackage = () => {
                 color: "#555",
               }}
             >
-              {seo.title}
+              {td("seo.title")}
             </Typography>
           </Box>
 
@@ -257,7 +184,7 @@ const HumanoidPackage = () => {
               lineHeight: 1.2,
             }}
           >
-            {seo.title}
+            {td("seo.title")}
           </Typography>
           <Typography
             sx={{
@@ -268,7 +195,7 @@ const HumanoidPackage = () => {
               mb: isMobile ? 4 : 6,
             }}
           >
-            {hero.headline}
+            {td("hero.headline")}
           </Typography>
 
           {/* 인용구 */}
@@ -284,7 +211,7 @@ const HumanoidPackage = () => {
           >
             <Box
               component="img"
-              src={hero.effects.ldquo}
+              src={resource.hero.effects.ldquo}
               alt=""
               sx={{
                 position: "absolute",
@@ -303,15 +230,11 @@ const HumanoidPackage = () => {
                 whiteSpace: "pre-wrap",
               }}
             >
-              {typeof hero.body === "string" ? (
-                hero.body
-              ) : (
-                <RenderSegments segments={hero.body.segments} />
-              )}
+              {renderSegmentBlock("hero.body")}
             </Typography>
             <Box
               component="img"
-              src={hero.effects.rdquo}
+              src={resource.hero.effects.rdquo}
               alt=""
               sx={{
                 position: "absolute",
@@ -334,7 +257,7 @@ const HumanoidPackage = () => {
               whiteSpace: "pre-wrap",
             }}
           >
-            {hero.sub_body}
+            {td("hero.sub_body")}
           </Typography>
         </Box>
 
@@ -351,8 +274,8 @@ const HumanoidPackage = () => {
           {/* 로봇 이미지 */}
           <Box
             component="img"
-            src={hero.image}
-            alt={hero.image_alt}
+            src={resource.hero.image}
+            alt={td("hero.image_alt")}
             sx={{
               position: "absolute",
               top: isMobile ? "5%" : "3%",
@@ -380,8 +303,8 @@ const HumanoidPackage = () => {
             {/* iMOVA 로고 */}
             <Box
               component="img"
-              src={hero.imova_title_image}
-              alt={hero.imova_title_alt}
+              src={resource.hero.imova_title_image}
+              alt={resource.hero.imova_title_alt}
               sx={{
                 height: isMobile ? "28px" : isTablet ? "42px" : "52px",
                 mb: 1,
@@ -398,7 +321,7 @@ const HumanoidPackage = () => {
                 mb: isMobile ? 1.5 : 3,
               }}
             >
-              {hero.sub_headline}
+              {td("hero.sub_headline")}
             </Typography>
 
             <Typography
@@ -412,7 +335,7 @@ const HumanoidPackage = () => {
                 mb: isMobile ? 0 : 4,
               }}
             >
-              {hero.description}
+              {td("hero.description")}
             </Typography>
 
             {/* 수식 (PC만 여기에 표시) */}
@@ -428,8 +351,8 @@ const HumanoidPackage = () => {
                 >
                   <Box
                     component="img"
-                    src={hero.humanoid_equation_image}
-                    alt={hero.humanoid_equation_alt}
+                    src={resource.hero.humanoid_equation_image}
+                    alt={td("hero.humanoid_equation_alt")}
                     sx={{
                       width: isTablet ? "380px" : "420px",
                       display: "block",
@@ -437,8 +360,8 @@ const HumanoidPackage = () => {
                   />
                   <Box
                     component="img"
-                    src={hero.imova_title_image}
-                    alt={hero.imova_title_alt}
+                    src={resource.hero.imova_title_image}
+                    alt={resource.hero.imova_title_alt}
                     sx={{
                       height: isTablet ? "34px" : "42px",
                     }}
@@ -453,7 +376,7 @@ const HumanoidPackage = () => {
                     mb: 2,
                   }}
                 >
-                  {hero.equation_text}
+                  {td("hero.equation_text")}
                 </Typography>
               </>
             )}
@@ -480,8 +403,8 @@ const HumanoidPackage = () => {
               >
                 <Box
                   component="img"
-                  src={hero.humanoid_equation_image}
-                  alt={hero.humanoid_equation_alt}
+                  src={resource.hero.humanoid_equation_image}
+                  alt={td("hero.humanoid_equation_alt")}
                   sx={{
                     width: "60%",
                     display: "block",
@@ -489,8 +412,8 @@ const HumanoidPackage = () => {
                 />
                 <Box
                   component="img"
-                  src={hero.imova_title_image}
-                  alt={hero.imova_title_alt}
+                  src={resource.hero.imova_title_image}
+                  alt={resource.hero.imova_title_alt}
                   sx={{
                     height: "16px",
                   }}
@@ -512,7 +435,7 @@ const HumanoidPackage = () => {
           {/* 흰빛 효과 (가장 위) */}
           <Box
             component="img"
-            src={hero.effects.white_effect}
+            src={resource.hero.effects.white_effect}
             alt=""
             sx={{
               position: "absolute",
@@ -527,7 +450,7 @@ const HumanoidPackage = () => {
           {/* 녹색 곡선 (중간) */}
           <Box
             component="img"
-            src={hero.effects.gra_effect}
+            src={resource.hero.effects.gra_effect}
             alt=""
             sx={{
               position: "absolute",
@@ -542,7 +465,7 @@ const HumanoidPackage = () => {
           {/* 파란색 곡선 (가장 아래) */}
           <Box
             component="img"
-            src={hero.effects.blue_effect}
+            src={resource.hero.effects.blue_effect}
             alt=""
             sx={{
               position: "absolute",
@@ -579,7 +502,7 @@ const HumanoidPackage = () => {
                   color: "#2c2c2c",
                 }}
               >
-                {business_model.title}
+                {td("business_model.title")}
               </Typography>
 
               <Typography
@@ -592,17 +515,13 @@ const HumanoidPackage = () => {
                   whiteSpace: "pre-wrap",
                 }}
               >
-                {lang === "en" && business_model.body.en ? (
-                  business_model.body.en
-                ) : (
-                  <RenderSegments segments={business_model.body.segments} />
-                )}
+                {renderSegmentBlock("business_model.body")}
               </Typography>
 
               <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
-                {business_model.items.map((item) => (
+                {resource.business_model.items.map((item) => (
                   <Box
-                    key={item.number}
+                    key={item.id}
                     sx={{
                       display: "flex",
                       gap: 1,
@@ -629,11 +548,7 @@ const HumanoidPackage = () => {
                         lineHeight: 1.6,
                       }}
                     >
-                      {lang === "en" && item.en ? (
-                        item.en
-                      ) : (
-                        <RenderSegments segments={item.segments} />
-                      )}
+                      {renderSegmentBlock(`business_model.items.${item.id}`)}
                     </Typography>
                   </Box>
                 ))}
@@ -650,117 +565,119 @@ const HumanoidPackage = () => {
                 gap: isMobile ? 6 : 8,
               }}
             >
-              {package_composition.cards.map((card, idx) => (
-                <Box
-                  key={card.title}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 1.5,
-                  }}
-                >
+              {resource.package_composition.cards.map((card, idx) => {
+                const cardTitle = td(`package_composition.cards.${card.id}.title`);
+                const cardSubtitle = tOpt(`package_composition.cards.${card.id}.subtitle`);
+                const cardSubtitle2 = tOpt(`package_composition.cards.${card.id}.subtitle2`);
+                const cardNote = tOpt(`package_composition.cards.${card.id}.note`);
+                const hasBody = tOpt(`package_composition.cards.${card.id}.body`);
+
+                return (
                   <Box
-                    sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+                    key={card.id}
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 1.5,
+                    }}
                   >
-                    <Typography
-                      component="h3"
-                      sx={{
-                        fontFamily: "Freesentation-7-Bold",
-                        fontSize: isMobile ? "16px" : "18px",
-                        color: "#2c2c2c",
-                        wordBreak: "keep-all",
-                      }}
+                    <Box
+                      sx={{ display: "flex", flexDirection: "column", gap: 1 }}
                     >
-                      {`${idx + 1}. ${card.title}`}
-                      {card.subtitle && (
-                        <Typography
-                          component="span"
-                          sx={{
-                            fontFamily: "Freesentation-7-Bold",
-                            fontSize: isMobile ? "16px" : "18px",
-                            color: "#2c2c2c",
-                            ml: 1,
-                          }}
-                        >
-                          ({card.subtitle})
-                        </Typography>
-                      )}
-                    </Typography>
-                    {(card as any).subtitle2 && (
                       <Typography
+                        component="h3"
                         sx={{
                           fontFamily: "Freesentation-7-Bold",
-                          fontSize: isMobile ? "15px" : "17px",
+                          fontSize: isMobile ? "16px" : "18px",
                           color: "#2c2c2c",
                           wordBreak: "keep-all",
-                          pl: 2.5,
                         }}
                       >
-                        {(card as any).subtitle2}
+                        {`${idx + 1}. ${cardTitle}`}
+                        {cardSubtitle && (
+                          <Typography
+                            component="span"
+                            sx={{
+                              fontFamily: "Freesentation-7-Bold",
+                              fontSize: isMobile ? "16px" : "18px",
+                              color: "#2c2c2c",
+                              ml: 1,
+                            }}
+                          >
+                            ({cardSubtitle})
+                          </Typography>
+                        )}
                       </Typography>
-                    )}
-                  </Box>
-
-                  {(card as any).body && (
-                    <Typography
-                      sx={{
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: bodyFontSize,
-                        color: "#2c2c2c",
-                        wordBreak: "keep-all",
-                        lineHeight: 1.8,
-                        whiteSpace: "pre-wrap",
-                        pl: 2.5,
-                      }}
-                    >
-                      {lang === "en" && (card as any).body.en ? (
-                        (card as any).body.en
-                      ) : (
-                        <RenderSegments
-                          segments={(card as any).body.segments}
-                        />
+                      {cardSubtitle2 && (
+                        <Typography
+                          sx={{
+                            fontFamily: "Freesentation-7-Bold",
+                            fontSize: isMobile ? "15px" : "17px",
+                            color: "#2c2c2c",
+                            wordBreak: "keep-all",
+                            pl: 2.5,
+                          }}
+                        >
+                          {cardSubtitle2}
+                        </Typography>
                       )}
-                    </Typography>
-                  )}
+                    </Box>
 
-                  <Box component="ul" sx={{ m: 0, pl: 2, listStyle: "none" }}>
-                    {card.bullets.map((bullet, i) => (
-                      <Box
-                        component="li"
-                        key={i}
+                    {hasBody && (
+                      <Typography
                         sx={{
                           fontFamily: "Freesentation-5-Medium",
                           fontSize: bodyFontSize,
-                          color: "#555",
-                          lineHeight: 1.8,
+                          color: "#2c2c2c",
                           wordBreak: "keep-all",
-                          "&::before": {
-                            content: "'·'",
-                            mr: 1,
-                            color: "#555",
-                          },
+                          lineHeight: 1.8,
+                          whiteSpace: "pre-wrap",
+                          pl: 2.5,
                         }}
                       >
-                        {bullet}
-                      </Box>
-                    ))}
-                  </Box>
+                        {renderSegmentBlock(`package_composition.cards.${card.id}.body`)}
+                      </Typography>
+                    )}
 
-                  {card.note && (
-                    <Typography
-                      sx={{
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: isMobile ? "12px" : "16px",
-                        color: "#888",
-                        textDecoration: "underline",
-                        pl: 2,
-                      }}
-                    >
-                      {card.note}
-                    </Typography>
-                  )}
-                </Box>
-              ))}
+                    <Box component="ul" sx={{ m: 0, pl: 2, listStyle: "none" }}>
+                      {card.bullets.map((bullet) => (
+                        <Box
+                          component="li"
+                          key={bullet.id}
+                          sx={{
+                            fontFamily: "Freesentation-5-Medium",
+                            fontSize: bodyFontSize,
+                            color: "#555",
+                            lineHeight: 1.8,
+                            wordBreak: "keep-all",
+                            "&::before": {
+                              content: "'·'",
+                              mr: 1,
+                              color: "#555",
+                            },
+                          }}
+                        >
+                          {td(`package_composition.cards.${card.id}.bullets.${bullet.id}`)}
+                        </Box>
+                      ))}
+                    </Box>
+
+                    {cardNote && (
+                      <Typography
+                        sx={{
+                          fontFamily: "Freesentation-5-Medium",
+                          fontSize: isMobile ? "12px" : "16px",
+                          color: "#888",
+                          textDecoration: "underline",
+                          pl: 2,
+                        }}
+                      >
+                        {cardNote}
+                      </Typography>
+                    )}
+                  </Box>
+                );
+              })}
             </Box>
           </SectionLayout>
 
@@ -768,10 +685,10 @@ const HumanoidPackage = () => {
           <SectionLayout title="Why iVH" isMobile={isMobile}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
               <Box component="ul" sx={{ m: 0, pl: 0, listStyle: "none" }}>
-                {why_ivh.items.map((item, i) => (
+                {resource.why_ivh.items.map((item) => (
                   <Box
                     component="li"
-                    key={i}
+                    key={item.id}
                     sx={{
                       fontFamily: "Freesentation-5-Medium",
                       fontSize: bodyFontSize,
@@ -785,7 +702,7 @@ const HumanoidPackage = () => {
                       },
                     }}
                   >
-                    {item}
+                    {td(`why_ivh.items.${item.id}`)}
                   </Box>
                 ))}
               </Box>
@@ -798,7 +715,7 @@ const HumanoidPackage = () => {
                   lineHeight: 1.6,
                 }}
               >
-                {why_ivh.closing}
+                {td("why_ivh.closing")}
               </Typography>
             </Box>
           </SectionLayout>
@@ -821,7 +738,7 @@ const HumanoidPackage = () => {
                   color: "#2c2c2c",
                 }}
               >
-                {cta.headline}
+                {td("cta.headline")}
               </Typography>
               <Typography
                 sx={{
@@ -833,11 +750,7 @@ const HumanoidPackage = () => {
                   whiteSpace: "pre-wrap",
                 }}
               >
-                {lang === "en" && cta.body.en ? (
-                  cta.body.en
-                ) : (
-                  <RenderSegments segments={cta.body.segments} />
-                )}
+                {renderSegmentBlock("cta.body")}
               </Typography>
             </Box>
           </SectionLayout>

@@ -1,12 +1,13 @@
 import { Box, Typography, Button } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
 import { useSEO } from "../hooks/useSEO";
 import SEO from "../common/SEO";
 import ScrollButton from "../common/ScrollButton";
 
 const ComingSoon = () => {
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   const seoPath = location.pathname.replace(/^\//, "");
   const seoData = useSEO(seoPath);
 

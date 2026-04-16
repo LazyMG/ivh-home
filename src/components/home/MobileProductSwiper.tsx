@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,7 +17,7 @@ interface Product {
 }
 
 const MobileProductSwiper = ({ products }: { products: Product[] }) => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
 
   return (
     <Swiper
