@@ -10,7 +10,7 @@ const LangToggle = () => {
         position: "fixed",
         top: 128,
         right: 48,
-        zIndex: 1300,
+        zIndex: 997,
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
