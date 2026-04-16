@@ -19,12 +19,14 @@ const MobileProductSwiper = lazy(
 import homeData from "../data/home/home.json";
 import home_partner from "../data/company/partner.json";
 import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const { isMobile } = useBreakpoint();
 
   const { iMOVA, products, video } = homeData;
   const { partner_partnerList } = home_partner;
+  const { t: tPartner } = useTranslation("company/partner");
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
@@ -360,7 +362,7 @@ const Home = () => {
                   <Box
                     component="img"
                     src={partnerImg.src}
-                    alt={partnerImg.alt}
+                    alt={tPartner(`partner_partnerList.${partnerImg.id}` as never)}
                     loading="lazy"
                     sx={(theme) => ({
                       minWidth: index < 6 ? "50%" : "34%",
