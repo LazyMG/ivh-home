@@ -1,35 +1,37 @@
-import vehicle from "../../../data/product/modelon/vehicle-dynamics-library.json";
-
-import { useSEO } from "../../../hooks/useSEO";
+import resource from "../../../data/product/modelon/vehicle-dynamics-library.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
+import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const VehicleDynamicsLibrary = () => {
-  const seoData = useSEO("product/dymola/vehicleDynamicsLibrary", vehicle);
-
-  const {
-    vehicle_title,
-    vehicle_name,
-    vehicle_pageKey,
-    vehicle_subTitle,
-    vehicle_features,
-    vehicle_introduction,
-  } = vehicle;
+  const { t } = useTranslation("product/modelon/vehicle" as never);
+  const td = (key: string): string => t(key as never);
+  const introTexts = t("vehicle_introduction" as never, { returnObjects: true }) as string[];
+  const introduction = introTexts.map((text) => ({ text }));
+  const features = resource.vehicle_features.map((feat) => {
+    const imgTexts = t(`vehicle_features.${feat.id}.imgTexts` as never, { returnObjects: true }) as string[] | string;
+    const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
+    return {
+      ...(feat.imgObj ? { imgObj: feat.imgObj.map((img, i) => ({ ...img, ...(imgTextsArr[i] ? { imgText: imgTextsArr[i] } : {}) })) } : {}),
+      textObj: { col: feat.textObj.col, title: td(`vehicle_features.${feat.id}.title`), text: td(`vehicle_features.${feat.id}.text`) },
+    };
+  });
 
   return (
     <>
-      {/* SEO 메타 태그 */}
-      <SEO {...seoData} />
+      <SEO title={td("seo.title")} description={td("seo.description")} keywords={td("seo.keywords")} ogImage={resource.seo?.ogImage} />
+      <LangToggle />
       <LibraryPageTemplate
-        title={vehicle_title}
-        subTitle={vehicle_subTitle}
-        introduction={vehicle_introduction}
-        pageKey={vehicle_pageKey}
-        features={vehicle_features}
-        name={vehicle_name}
+        title={td("vehicle_title")}
+        subTitle={td("vehicle_subTitle")}
+        introduction={introduction}
+        pageKey={resource.vehicle_pageKey}
+        features={features}
+        name={td("vehicle_name")}
+        featuresSectionTitle={td("features_section_title")}
       />
     </>
   );
 };
-
 export default VehicleDynamicsLibrary;
