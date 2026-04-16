@@ -6,10 +6,10 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import iMOVAData from "../../data/product/iMOVA.json";
+import resource from "../../data/product/iMOVA.json";
 import TechSpecTable from "../../components/product/iMOVA/TechSpecTable";
 import { useLang } from "../../i18n/useLang";
-import { pickLocale } from "../../i18n/pickLocale";
+import { useTranslation } from "react-i18next";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, Navigation } from "swiper/modules";
@@ -19,32 +19,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "../../style/imova-slider.css";
 import MainFunction from "../../components/product/iMOVA/MainFunction";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ScrollButton from "../../common/ScrollButton";
 import SEO from "../../common/SEO";
-import type { LocalizedIMOVA } from "../../types/product";
+import type { IMOVATechnologySpec } from "../../types/product";
 
 const IMOVA = () => {
   const { lang, setLang } = useLang();
-  const localized = useMemo(
-    () => pickLocale<LocalizedIMOVA>(iMOVAData, lang),
-    [lang],
-  );
-  const {
-    title,
-    name,
-    page_name,
-    main_function,
-    main_image,
-    main_image_alt,
-    title_image,
-    title_image_alt,
-    control_system,
-    production_line,
-    technology_spec,
-    top_video,
-    section_titles,
-  } = localized;
+  const { t } = useTranslation("product/iMOVA");
   const THRESHOLD = 100;
   const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);
   const boxRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -79,11 +61,48 @@ const IMOVA = () => {
     };
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- 동적 키 접근용
+  const td = (key: string): string => t(key as any);
+
+  // 배열 데이터: resource(이미지) + t()(텍스트) 병합
+  const mainFunctionList = resource.main_function.map((item) => ({
+    function_title: td(`main_function.${item.id}.function_title`),
+    function_description: td(`main_function.${item.id}.function_description`),
+    function_image_url: item.function_image_url,
+    function_image_alt: td(`main_function.${item.id}.function_image_alt`),
+  }));
+
+  // TechSpecTable용 labels (locale에서 가져옴)
+  const techSpecLabels = t("technology_spec.labels", { returnObjects: true }) as IMOVATechnologySpec["labels"];
+
+  // TechSpecTable용 products (resource + locale 병합)
+  const technologySpecProducts = resource.technology_spec.technology_spec_products.map((p) => ({
+    product: p.product,
+    product_standard: p.product_standard,
+    performance: p.performance,
+    electrical: p.electrical,
+    environment: p.environment,
+    battery: {
+      lifespan: td(`technology_spec.technology_spec_products.${p.id}.battery.lifespan`),
+      charging_time: p.battery.charging_time,
+    },
+    environmental_monitoring: {
+      temperature: p.environmental_monitoring.temperature,
+      humidity: p.environmental_monitoring.humidity,
+      dust: {
+        particle_size: td(`technology_spec.technology_spec_products.${p.id}.environmental_monitoring.dust.particle_size`),
+        concentration_range: p.environmental_monitoring.dust.concentration_range,
+        accuracy: p.environmental_monitoring.dust.accuracy,
+      },
+      camera: p.environmental_monitoring.camera,
+    },
+  }));
+
   return (
     <>
       <SEO
-        title={name}
-        description={title}
+        title={t("name")}
+        description={t("title")}
         keywords="iMOVA, AMR, 자율주행로봇, 자율주행, 스마트팩토리, 무인운반, iVH"
         canonical="https://ivh.co.kr/product/imova"
       />
@@ -116,7 +135,7 @@ const IMOVA = () => {
         <Box
           component="video"
           aria-label="iVH 자동화 공정 소개 영상"
-          src={top_video}
+          src={resource.top_video}
           loop
           muted
           playsInline
@@ -143,8 +162,8 @@ const IMOVA = () => {
         >
           <Box
             component="img"
-            src={main_image}
-            alt={main_image_alt}
+            src={resource.main_image}
+            alt={t("main_image_alt")}
             sx={(theme) => ({
               width: "100%",
               height: "auto",
@@ -177,8 +196,8 @@ const IMOVA = () => {
             <Box sx={{ display: "flex", alignItems: "end", gap: 1 }}>
               <Box
                 component="img"
-                src={title_image}
-                alt={title_image_alt}
+                src={resource.title_image}
+                alt={t("title_image_alt")}
                 sx={(theme) => ({
                   width: "200px",
                   [theme.breakpoints.down("tablet")]: {
@@ -200,7 +219,7 @@ const IMOVA = () => {
                   },
                 })}
               >
-                {page_name}
+                {t("page_name")}
               </Typography>
             </Box>
             <Typography
@@ -222,7 +241,7 @@ const IMOVA = () => {
                 },
               })}
             >
-              {title}
+              {t("title")}
             </Typography>
           </Box>
         </Box>
@@ -247,7 +266,7 @@ const IMOVA = () => {
               },
             })}
           >
-            {title}
+            {t("title")}
           </Typography>
         </Box>
 
@@ -282,7 +301,7 @@ const IMOVA = () => {
                 fontFamily: "Freesentation-7-Bold",
               }}
             >
-              {section_titles.main_function}
+              {t("section_titles.main_function")}
             </Typography>
             <Box
               sx={(theme) => ({
@@ -299,8 +318,8 @@ const IMOVA = () => {
                 },
               })}
             >
-              <MainFunction function_list={main_function.slice(0, 3)} />
-              <MainFunction function_list={main_function.slice(3, 5)} />
+              <MainFunction function_list={mainFunctionList.slice(0, 3)} />
+              <MainFunction function_list={mainFunctionList.slice(3, 5)} />
             </Box>
           </Box>
           <Box
@@ -316,7 +335,7 @@ const IMOVA = () => {
               variant="h5"
               sx={{ fontWeight: "bold", fontFamily: "Freesentation-7-Bold" }}
             >
-              {section_titles.control_system}
+              {t("section_titles.control_system")}
             </Typography>
             <Box
               sx={(theme) => ({
@@ -330,11 +349,10 @@ const IMOVA = () => {
                 },
               })}
             >
-              {control_system.map((system, index) => {
+              {resource.control_system.map((system, index) => {
                 return (
-                  <React.Fragment key={index}>
+                  <React.Fragment key={system.id}>
                     <Box
-                      key={index}
                       ref={(el: HTMLDivElement | null) => {
                         controlSystemRefs.current[index] = el;
                       }}
@@ -369,7 +387,7 @@ const IMOVA = () => {
                           <Box
                             component="img"
                             src={system.control_system_image_url}
-                            alt={system.control_system_image_alt}
+                            alt={td(`control_system.${system.id}.control_system_image_alt`)}
                             loading="lazy"
                             sx={(theme) => ({
                               height: "auto",
@@ -410,7 +428,7 @@ const IMOVA = () => {
                             },
                           })}
                         >
-                          {system.control_system_topic}
+                          {td(`control_system.${system.id}.control_system_topic`)}
                         </Typography>
                         <Typography
                           sx={(theme) => ({
@@ -424,7 +442,7 @@ const IMOVA = () => {
                             },
                           })}
                         >
-                          {system.control_system_description}
+                          {td(`control_system.${system.id}.control_system_description`)}
                         </Typography>
                       </Box>
                     </Box>
@@ -458,12 +476,12 @@ const IMOVA = () => {
                 variant="h5"
                 sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
               >
-                {section_titles.use_case}
+                {t("section_titles.use_case")}
               </Typography>
               <Typography
                 sx={{ fontFamily: "Freesentation-5-Medium", fontSize: "18px" }}
               >
-                {production_line.production_line_title}
+                {td("production_line.production_line_title")}
               </Typography>
             </Box>
             <Box
@@ -489,7 +507,7 @@ const IMOVA = () => {
                 <Box
                   sx={(theme) => ({
                     width: "100%",
-                    backgroundImage: `url(${production_line.production_line_image_url})`,
+                    backgroundImage: `url(${resource.production_line.production_line_image_url})`,
                     backgroundSize: "100% 100%",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "right center",
@@ -501,9 +519,9 @@ const IMOVA = () => {
                 />
 
                 {/* 데스크톱: 텍스트 박스 */}
-                {production_line.production_line_list.map((item, index) => (
+                {resource.production_line.production_line_list.map((item, index) => (
                   <Box
-                    key={index}
+                    key={item.id}
                     ref={(el: HTMLDivElement | null) => {
                       boxRefs.current[index] = el;
                     }}
@@ -540,7 +558,7 @@ const IMOVA = () => {
                         wordBreak: "keep-all",
                       }}
                     >
-                      {item.production_line_topic}
+                      {td(`production_line.production_line_list.${item.id}.production_line_topic`)}
                     </Typography>
                     <Divider />
                     <Typography
@@ -549,7 +567,7 @@ const IMOVA = () => {
                         fontFamily: "Freesentation-5-Medium",
                       }}
                     >
-                      {item.production_line_description}
+                      {td(`production_line.production_line_list.${item.id}.production_line_description`)}
                     </Typography>
                   </Box>
                 ))}
@@ -647,8 +665,8 @@ const IMOVA = () => {
                       paddingBottom: "60px",
                     }}
                   >
-                    {production_line.production_line_list.map((item, index) => (
-                      <SwiperSlide key={index}>
+                    {resource.production_line.production_line_list.map((item) => (
+                      <SwiperSlide key={item.id}>
                         <Paper
                           elevation={3}
                           sx={{
@@ -671,7 +689,7 @@ const IMOVA = () => {
                               textAlign: "center",
                             }}
                           >
-                            {item.production_line_topic}
+                            {td(`production_line.production_line_list.${item.id}.production_line_topic`)}
                           </Typography>
                           <Typography
                             sx={{
@@ -682,7 +700,7 @@ const IMOVA = () => {
                               WebkitBoxOrient: "vertical",
                             }}
                           >
-                            {item.production_line_description}
+                            {td(`production_line.production_line_list.${item.id}.production_line_description`)}
                           </Typography>
                         </Paper>
                       </SwiperSlide>
@@ -698,15 +716,11 @@ const IMOVA = () => {
             }}
           >
             <TechSpecTable
-              technology_spec_application={
-                technology_spec.technology_spec_application
-              }
-              technology_spec_products={
-                technology_spec.technology_spec_products
-              }
-              technology_spec_sub={technology_spec.technology_spec_sub}
-              technology_spec_title={technology_spec.technology_spec_title}
-              labels={technology_spec.labels}
+              technology_spec_application={td("technology_spec.technology_spec_application")}
+              technology_spec_products={technologySpecProducts}
+              technology_spec_sub={resource.technology_spec.technology_spec_sub}
+              technology_spec_title={td("technology_spec.technology_spec_title")}
+              labels={techSpecLabels}
             />
           </Box>
         </Box>
