@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 
 interface SolutionBoxProps {
   imgUrl: string;
@@ -30,7 +30,7 @@ const SolutionMainBox = ({
   row,
   url,
 }: SolutionBoxProps) => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   return (
     <Box
       sx={(theme) => ({

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import MainGradientText from "../common/MainGradientText";
 import section from "../../data/home/section.json";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 
 const InfoSection = ({
   title,
@@ -12,7 +12,7 @@ const InfoSection = ({
   text: string;
   url: string;
 }) => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
 
   return (
     <Box

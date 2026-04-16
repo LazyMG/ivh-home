@@ -1,12 +1,13 @@
 import { Box, AppBar } from "@mui/material";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import { useState, useEffect } from "react";
 import menu from "../../data/header/menu.json";
 import { MainMenuBar } from "./MainMenuBar";
 import { SubMenuDrawer } from "./SubMenuDrawer";
 
 const Header = () => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 

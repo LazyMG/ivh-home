@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
 import product_form from "../../data/product/product-form.json";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 // import ProductForm from "./ProductForm";
 import GradientBox from "./GradientBox";
 
@@ -11,7 +11,7 @@ const ProductBottom = ({ productName }: { productName: string }) => {
     product_form_training,
     product_form_navigation,
   } = product_form;
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   return (
     <Box
       component="section"

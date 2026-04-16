@@ -1,6 +1,6 @@
 import { Box, Typography, Button } from "@mui/material";
 import breadcrumbs from "../data/common/breadscrum.json";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
 import { styled } from "@mui/material/styles";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -15,7 +15,7 @@ interface BreadScrumProps {
 }
 
 const BreadScrum = ({ pageKey }: BreadScrumProps) => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   const { isMobile } = useBreakpoint();
 
   const pageData = breadcrumbs.pages[pageKey as keyof typeof breadcrumbs.pages];

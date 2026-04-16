@@ -1,0 +1,95 @@
+{
+  "seo": {
+    "title": "Humanoid Robot Total Package",
+    "description": "iVH provides a 'ready-to-deploy'\ntotal package by integrating proven global humanoid platforms with our advanced AI and operating systems.",
+    "keywords": "Humanoid, Robot, Total Package, iVH, Physical AI, Digital Twin, Operating System"
+  },
+  "hero": {
+    "headline": "Humanoid Robots, Delivered as a Complete Solution",
+    "body": "iVH does not develop humanoid robots directly. Instead, we provide a 'ready-to-deploy'\ntotal package by integrating proven global humanoid platforms with our advanced AI and operating systems.",
+    "humanoid_equation_alt": "Robot Hardware + AI + Operation =",
+    "image_alt": "Humanoid Robot Total Package Diagram",
+    "sub_body": "This solution is designed for enterprises seeking to implement humanoid technology\nfor real-world operations, moving beyond simple research.",
+    "sub_headline": ": Humanoid Robots, Delivered as a Complete Solution",
+    "description": "iVH does not develop humanoid robots directly. Instead, we provide a 'ready-to-deploy' total package by integrating proven global humanoid platforms with our advanced AI and operating systems.",
+    "equation_text": "Robot Hardware + AI + Operation = iVH Total Package"
+  },
+  "business_model": {
+    "title": "iVH Humanoid Business Model",
+    "body": "iVH’s humanoid business is not about robot manufacturing.\nInstead, we focus on the following key roles:",
+    "items": {
+      "hardware-sourcing": "Sourcing Proven Hardware: Procurement of verified hardware from global humanoid manufacturers (e.g., Hexagon and leading Chinese humanoid developers).",
+      "core-tech": "Applying iVH’s Core Technologies: Implementation of iVH’s proprietary Physical AI, Digital Twins, and advanced Operation & Control Systems.",
+      "integrated-supply": "Integrated Solution Supply: Supplying a complete, integrated humanoid system ready for immediate use."
+    }
+  },
+  "package_composition": {
+    "title": "Package Composition",
+    "cards": {
+      "hardware": {
+        "title": "Humanoid Robot Hardware",
+        "subtitle": "Partner Platform",
+        "bullets": {
+          "global-robots": "Global Manufacturer Humanoid Robots",
+          "industrial-platform": "Platforms Applicable to Industrial and Specialized Environments",
+          "model-selection": "Model Selection Based on Customer Requirements"
+        },
+        "note": "※ Humanoid hardware utilizes products from partner manufacturers."
+      },
+      "ai-control": {
+        "title": "Physical AI & Control Software",
+        "subtitle": "iVH Core Value",
+        "bullets": {
+          "motion-control": "Whole-Body Motion Control AI",
+          "scenario-behavior": "Behavior Control Based on Task, Patrol, and Manipulation Scenarios",
+          "on-device-ai": "On-Device AI + Server Integration Architecture",
+          "stabilization": "Stabilization Logic for Real-World Humanoid Operations"
+        }
+      },
+      "digital-twin": {
+        "title": "Digital Twin & Sim2Real",
+        "bullets": {
+          "twin-model": "Humanoid Digital Twin Models",
+          "virtual-verification": "Pre-Verification Based on Virtual Environments",
+          "mission-verification": "Motion and Mission Verification Before Field Deployment",
+          "sim2real": "Risk Minimization Based on Sim2Real"
+        }
+      },
+      "fleet-management": {
+        "title": "Operation & Fleet Management System",
+        "bullets": {
+          "remote-monitoring": "Remote Monitoring and Status Management",
+          "mission-scheduling": "Mission Scheduling",
+          "multi-humanoid": "Integrated Operation of Multiple Humanoids",
+          "system-integration": "Integratable with Existing AMRs, Facilities, and Security Systems"
+        }
+      },
+      "why-total-package": {
+        "title": "Why iVH Total Package",
+        "subtitle2": "Why Not Just Buy a Robot?",
+        "body": "Purchasing a humanoid robot is only the beginning. In real-world operations, the following problems occur:",
+        "bullets": {
+          "control-stability": "Lack of Control Stability",
+          "personnel-dependency": "Dependence on Operating Personnel",
+          "scenario-difficulty": "Difficulty in Changing Scenarios",
+          "multi-robot-management": "Inability to Manage Multiple Robots"
+        }
+      }
+    }
+  },
+  "why_ivh": {
+    "title": "Why iVH",
+    "items": {
+      "proven-sw-hw": "Proven Hardware + Proven Software",
+      "zero-risk": "Structure with Zero Manufacturing Risk",
+      "operational-delivery": "Supplied in an Operational State",
+      "single-contact": "Single Point of Contact for Maintenance, Expansion, and Operation"
+    },
+    "closing": "iVH provides humanoids as a 'System', not just a 'Product'."
+  },
+  "cta": {
+    "headline": "Ready to Deploy Humanoids?",
+    "body": "For those seeking operational humanoids over research models, iVH takes charge of the entire process—from hardware sourcing to daily operation.",
+    "button_text": ""
+  }
+}
