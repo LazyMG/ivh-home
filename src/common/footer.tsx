@@ -1,7 +1,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 import logoBlack from "/images/header/ivh_logo_black.png";
 import footer from "../data/footer/footer.json";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
 
 const Footer = () => {
   const { companyInfo, menu } = footer;
@@ -9,7 +9,7 @@ const Footer = () => {
     companyInfo;
   const { youtubeUrl, linkedinUrl, youtubeLogoBlack, linkedinLogoBlack } =
     socialMedia;
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
 
   const handleFooterLevelClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

@@ -18,7 +18,7 @@ const MobileProductSwiper = lazy(
 
 import homeData from "../data/home/home.json";
 import home_partner from "../data/company/partner.json";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
 
 const Home = () => {
   const { isMobile } = useBreakpoint();
@@ -50,7 +50,7 @@ const Home = () => {
     }
   }, [videoSrc]);
 
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
 
   useEffect(() => {
     // 컴포넌트 마운트 시 body에 클래스 추가

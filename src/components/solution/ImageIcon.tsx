@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 
 interface ImageIconProps {
   src: string;
@@ -32,7 +32,7 @@ const ImageIcon = (icon: ImageIconProps) => {
     path,
   } = icon;
 
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
 

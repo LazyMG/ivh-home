@@ -4,12 +4,17 @@ import { useEffect } from "react";
 
 export type Lang = "ko" | "en";
 const SUPPORTED: string[] = ["ko", "en"];
+const LANG_PREFIX_RE = /^\/(en)(?=\/|$)/;
 
 export const useLang = () => {
-  const { lang: rawLang } = useParams<{ lang?: string }>();
+  const { lang: paramLang } = useParams<{ lang?: string }>();
   const navigate = useNavigate();
   const location = useLocation();
   const { i18n } = useTranslation();
+
+  // useParams는 <Routes> 안에서만 동작하므로, pathname에서도 추출
+  const pathMatch = location.pathname.match(LANG_PREFIX_RE);
+  const rawLang = paramLang ?? pathMatch?.[1];
 
   const lang: Lang = SUPPORTED.includes(rawLang ?? "")
     ? (rawLang as Lang)

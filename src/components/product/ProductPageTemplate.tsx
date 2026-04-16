@@ -3,7 +3,7 @@ import ProductSectionTitle from "./ProductSectionTitle";
 import ProductContent from "./ProductContent";
 import ScrollButton from "../../common/ScrollButton";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import BreadScrum from "../../common/BreadScrum";
 import ProductBottom from "./ProductBottom";
 
@@ -54,7 +54,7 @@ const ProductPageTemplate = ({
   pageKey,
 }: ProductPageTemplateProps) => {
   const { isMobile } = useBreakpoint();
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   return (
     <Box
       component="main"
