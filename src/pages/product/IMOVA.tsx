@@ -1,15 +1,13 @@
 import {
   Box,
-  Button,
-  ButtonGroup,
   Divider,
   Paper,
   Typography,
 } from "@mui/material";
 import resource from "../../data/product/iMOVA.json";
 import TechSpecTable from "../../components/product/iMOVA/TechSpecTable";
-import { useLang } from "../../i18n/useLang";
 import { useTranslation } from "react-i18next";
+import LangToggle from "../../common/LangToggle";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, Navigation } from "swiper/modules";
@@ -25,7 +23,6 @@ import SEO from "../../common/SEO";
 import type { IMOVATechnologySpec } from "../../types/product";
 
 const IMOVA = () => {
-  const { lang, setLang } = useLang();
   const { t } = useTranslation("product/iMOVA");
   const THRESHOLD = 100;
   const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);
@@ -108,30 +105,7 @@ const IMOVA = () => {
       />
       <Box component="main">
         <ScrollButton threshold={THRESHOLD} />
-        <ButtonGroup
-          size="small"
-          variant="contained"
-          sx={{
-            position: "fixed",
-            top: 80,
-            right: 16,
-            zIndex: 1300,
-            boxShadow: 2,
-          }}
-        >
-          <Button
-            onClick={() => setLang("ko")}
-            color={lang === "ko" ? "primary" : "inherit"}
-          >
-            KO
-          </Button>
-          <Button
-            onClick={() => setLang("en")}
-            color={lang === "en" ? "primary" : "inherit"}
-          >
-            EN
-          </Button>
-        </ButtonGroup>
+        <LangToggle />
         <Box
           component="video"
           aria-label="iVH 자동화 공정 소개 영상"

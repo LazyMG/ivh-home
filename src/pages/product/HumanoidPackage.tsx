@@ -1,9 +1,9 @@
-import { Box, Button, ButtonGroup, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
+import LangToggle from "../../common/LangToggle";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import resource from "../../data/product/humanoidPackage.json";
-import { useLang } from "../../i18n/useLang";
 import { useTranslation } from "react-i18next";
 
 type Segment = { text: string; bold?: boolean };
@@ -92,7 +92,6 @@ const SectionLayout = ({
 
 const HumanoidPackage = () => {
   const { isMobile, isTablet } = useBreakpoint();
-  const { lang, setLang } = useLang();
   const { t } = useTranslation("product/humanoidPackage");
 
   const td = (key: string): string => t(key as never);
@@ -126,30 +125,7 @@ const HumanoidPackage = () => {
       />
       <Box component="main">
         <ScrollButton threshold={100} />
-        <ButtonGroup
-          size="small"
-          variant="contained"
-          sx={{
-            position: "fixed",
-            top: 80,
-            right: 16,
-            zIndex: 1300,
-            boxShadow: 2,
-          }}
-        >
-          <Button
-            onClick={() => setLang("ko")}
-            color={lang === "ko" ? "primary" : "inherit"}
-          >
-            KO
-          </Button>
-          <Button
-            onClick={() => setLang("en")}
-            color={lang === "en" ? "primary" : "inherit"}
-          >
-            EN
-          </Button>
-        </ButtonGroup>
+        <LangToggle />
 
         {/* ===== A. Hero (Part 1) ===== */}
         <Box
