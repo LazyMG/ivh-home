@@ -1,0 +1,174 @@
+{
+  "seo": {
+    "title": "Humanoid Robot Total Package",
+    "description": "iVH는 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여 즉시 도입 가능한 토탈 패키지로 제공합니다.",
+    "keywords": "휴머노이드, Humanoid, 로봇, 토탈패키지, iVH, Physical AI, 디지털트윈, 운영시스템"
+  },
+  "hero": {
+    "headline": "Humanoid Robots, Delivered as a Complete Solution",
+    "body": {
+      "segments": [
+        {
+          "text": "iVH는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, "
+        },
+        {
+          "text": "검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여 즉시 도입 가능한 토탈 패키지로 제공합니다.",
+          "bold": true
+        }
+      ]
+    },
+    "humanoid_equation_alt": "Robot Hardware + AI + Operation =",
+    "image_alt": "Humanoid Robot Total Package 다이어그램",
+    "sub_body": "휴머노이드는 연구가 아닌 실제 운영 관점에서 구매하고자 하는 기업을 위한 솔루션입니다.",
+    "sub_headline": ": Humanoid Robots, Delivered as a Complete Solution",
+    "description": "iMOVA는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여\n즉시 도입 가능한 토탈 패키지로 제공합니다.",
+    "equation_text": "Robot Hardware + AI + Operation = iVH Total Package"
+  },
+  "business_model": {
+    "title": "iVH Humanoid Business Model",
+    "body": {
+      "segments": [
+        {
+          "text": "iVH의 휴머노이드 사업은 "
+        },
+        {
+          "text": "로봇 제조 사업이 아닙니다.",
+          "bold": true
+        },
+        {
+          "text": "\niVH는 다음 역할에 집중합니다."
+        }
+      ]
+    },
+    "items": {
+      "hardware-sourcing": {
+        "segments": [
+          {
+            "text": "글로벌 휴머노이드 로봇 제조사 (Hexagon, 중국 주요 휴머노이드 제조사 등)의 "
+          },
+          {
+            "text": "검증된 하드웨어 소싱",
+            "bold": true
+          }
+        ]
+      },
+      "core-tech": {
+        "segments": [
+          {
+            "text": "iVH 고유의 "
+          },
+          {
+            "text": "Physical AI, 디지털 트윈, 운영·관제 시스템 적용",
+            "bold": true
+          }
+        ]
+      },
+      "integrated-supply": {
+        "segments": [
+          {
+            "text": "고객이 바로 사용할 수 있는 "
+          },
+          {
+            "text": "완성형 휴머노이드 시스템으로 통합 공급",
+            "bold": true
+          }
+        ]
+      }
+    }
+  },
+  "package_composition": {
+    "title": "Package Composition",
+    "cards": {
+      "hardware": {
+        "title": "Humanoid Robot Hardware",
+        "subtitle": "Partner Platform",
+        "bullets": {
+          "global-robots": "글로벌 제조사 휴머노이드 로봇",
+          "industrial-platform": "산업 및 특수 환경 적용 가능 플랫폼",
+          "model-selection": "고객 요구에 따른 모델 선정"
+        },
+        "note": "※ 휴머노이드 하드웨어는 파트너 제조사 제품을 사용합니다."
+      },
+      "ai-control": {
+        "title": "Physical AI & Control Software",
+        "subtitle": "iVH Core Value",
+        "bullets": {
+          "motion-control": "전신 동작 제어 AI",
+          "scenario-behavior": "작업·순찰·조작 시나리오 기반 행동 제어",
+          "on-device-ai": "온디바이스 AI + 서버 연계 구조",
+          "stabilization": "휴머노이드 실제 운영을 위한 안정화 로직"
+        }
+      },
+      "digital-twin": {
+        "title": "Digital Twin & Sim2Real",
+        "bullets": {
+          "twin-model": "휴머노이드 디지털 트윈 모델",
+          "virtual-verification": "가상 환경 기반 사전 검증",
+          "mission-verification": "현장 투입 전 동작·임무 검증",
+          "sim2real": "Sim2Real 기반 리스크 최소화"
+        }
+      },
+      "fleet-management": {
+        "title": "Operation & Fleet Management System",
+        "bullets": {
+          "remote-monitoring": "원격 모니터링 및 상태 관리",
+          "mission-scheduling": "임무 스케줄링",
+          "multi-humanoid": "다수 휴머노이드 통합 운영",
+          "system-integration": "기존 AMR, 설비, 보안 시스템 연동 가능"
+        }
+      },
+      "why-total-package": {
+        "title": "Why iVH Total Package",
+        "subtitle2": "Why Not Just Buy a Robot?",
+        "body": {
+          "segments": [
+            {
+              "text": "휴머노이드 로봇만 구매하는 것은 "
+            },
+            {
+              "text": "시작에 불과합니다.",
+              "bold": true
+            },
+            {
+              "text": "\n실제 현장에서는 다음 문제가 발생합니다."
+            }
+          ]
+        },
+        "bullets": {
+          "control-stability": "제어 안정성 부족",
+          "personnel-dependency": "운영 인력 의존",
+          "scenario-difficulty": "시나리오 변경 어려움",
+          "multi-robot-management": "다수 로봇 관리 불가"
+        }
+      }
+    }
+  },
+  "why_ivh": {
+    "title": "Why iVH",
+    "items": {
+      "proven-sw-hw": "검증된 하드웨어 + 검증된 소프트웨어",
+      "zero-risk": "제조 리스크 없는 구조",
+      "operational-delivery": "운영 가능한 상태로 납품",
+      "single-contact": "유지보수·확장·운영 단일 창구"
+    },
+    "closing": "iVH는 휴머노이드를 '제품'이 아니라 '시스템'으로 판매합니다."
+  },
+  "cta": {
+    "headline": "Ready to Deploy Humanoids?",
+    "body": {
+      "segments": [
+        {
+          "text": "휴머노이드를 "
+        },
+        {
+          "text": "연구 목적이 아닌 운영 목적으로 도입",
+          "bold": true
+        },
+        {
+          "text": "하고자 하신다면,\niVH가 하드웨어 선정부터 운영까지 책임집니다."
+        }
+      ]
+    },
+    "button_text": "문의하기"
+  }
+}
