@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Modelon",
+    "description": "Modelon: 다양한 산업 분야에서 제품 혁신, 개발 및 운영을 가속화하는 시스템 모델링 및 시뮬레이션 소프트웨어를 제공",
+    "keywords": "Modelon, 모델론, 시스템 모델링, 시뮬레이션 소프트웨어, 소프트웨어"
+  },
+  "modelon_title": "Modelon",
+  "modelon_name": "",
+  "modelon_mainImg_alt": "모델론(Modelon) 메인 이미지",
+  "modelon_text": [
+    "Modelon은 다양한 산업 분야에서 제품 혁신, 개발 및 운영을 가속화하는 시스템 모델링 및 시뮬레이션 소프트웨어를 제공합니다."
+  ],
+  "modelon_libraries": {
+    "lib-0": {
+      "text": "Air Cooling Library",
+      "img_alt": "Air Cooling Library icon"
+    },
+    "lib-1": {
+      "text": "Aircraft Dynamics Library",
+      "img_alt": "Aircraft Dynamics Library icon"
+    },
+    "lib-2": {
+      "text": "Electrification Library",
+      "img_alt": "Electrification Library icon"
+    },
+    "lib-3": {
+      "text": "Environmental Control Library",
+      "img_alt": "Environmental Control Library icon"
+    },
+    "lib-4": {
+      "text": "Fuel Cell Library",
+      "img_alt": "Fuel Cell Library icon"
+    },
+    "lib-5": {
+      "text": "Fuel System Library",
+      "img_alt": "Fuel System Library icon"
+    },
+    "lib-6": {
+      "text": "Heat Exchanger Library",
+      "img_alt": "Heat Exchanger Library icon"
+    },
+    "lib-7": {
+      "text": "Hydraulics Library",
+      "img_alt": "Hydraulics Library icon"
+    },
+    "lib-8": {
+      "text": "Jet Propulsion Library",
+      "img_alt": "Jet Propulsion Library icon"
+    },
+    "lib-9": {
+      "text": "Liquid Cooling Library",
+      "img_alt": "Liquid Cooling Library icon"
+    },
+    "lib-10": {
+      "text": "Modelon Base Library",
+      "img_alt": "Modelon Base Library icon"
+    },
+    "lib-11": {
+      "text": "Thermal Power Library",
+      "img_alt": "Thermal Power Library icon"
+    },
+    "lib-12": {
+      "text": "Vapor Cycle Library",
+      "img_alt": "Vapor Cycle Library icon"
+    },
+    "lib-13": {
+      "text": "Vehicle Dynamics Library",
+      "img_alt": "Vehicle Dynamics Library icon"
+    }
+  }
+}

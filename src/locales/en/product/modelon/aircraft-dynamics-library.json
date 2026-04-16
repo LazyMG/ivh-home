@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Aircraft Dynamics Library - Precision modeling for aircraft flight performance and control stability",
+    "description": "Precision modeling for aircraft flight performance and control stability",
+    "keywords": "Aircraft Dynamics Library, 항공기 비행 성능, 항공기 제어 안정성, 고정익 항공기, 회전익, UAV, Modelon, Modelica"
+  },
+  "title": "Aircraft Dynamics Library",
+  "subTitle": "Precision modeling for aircraft flight performance and control stability",
+  "name": "",
+  "introduction": [
+    "The Aircraft Dynamics Library is a comprehensive solution for aircraft flight dynamics and control system design and optimization, moving beyond simple modeling tools. Based on Modelica, it precisely implements core elements such as aerodynamics, propulsion, mass characteristics, and flight control logic to replicate actual flight conditions. By providing stability analysis and control strategy verification, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various aircraft configurations and flight scenarios, enabling the easy configuration of complex systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as fixed-wing aircraft, rotorcraft, and UAVs, this library is the optimal choice for achieving both improved flight performance and system stability.",
+    "The Aircraft Dynamics Library supports high-reliability design decisions by accurately reproducing various flight conditions and aerodynamic models through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical aerodynamics-propulsion-control configurations to complex architectures, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates key indicators such as flight stability, control response, and fuel efficiency, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and various flight scenario testing."
+  ]
+}

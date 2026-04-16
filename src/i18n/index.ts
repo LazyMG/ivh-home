@@ -41,6 +41,38 @@ import vesymaSuspensionEn from "../locales/en/product/dymola/vesyma-suspension-l
 import binaryKo from "../locales/ko/product/dymola/binary-model-export.json";
 import binaryEn from "../locales/en/product/dymola/binary-model-export.json";
 
+// modelon
+import modelonKo from "../locales/ko/product/modelon/modelon.json";
+import modelonEn from "../locales/en/product/modelon/modelon.json";
+import vehicleKo from "../locales/ko/product/modelon/vehicle-dynamics-library.json";
+import vehicleEn from "../locales/en/product/modelon/vehicle-dynamics-library.json";
+import mAirCoolingKo from "../locales/ko/product/modelon/air-cooling-library.json";
+import mAirCoolingEn from "../locales/en/product/modelon/air-cooling-library.json";
+import aircraftKo from "../locales/ko/product/modelon/aircraft-dynamics-library.json";
+import aircraftEn from "../locales/en/product/modelon/aircraft-dynamics-library.json";
+import mElectrificationKo from "../locales/ko/product/modelon/electrification-library.json";
+import mElectrificationEn from "../locales/en/product/modelon/electrification-library.json";
+import environmentalKo from "../locales/ko/product/modelon/environmental-control-library.json";
+import environmentalEn from "../locales/en/product/modelon/environmental-control-library.json";
+import fuelCellKo from "../locales/ko/product/modelon/fuel-cell-library.json";
+import fuelCellEn from "../locales/en/product/modelon/fuel-cell-library.json";
+import fuelSystemKo from "../locales/ko/product/modelon/fuel-system-library.json";
+import fuelSystemEn from "../locales/en/product/modelon/fuel-system-library.json";
+import heatExchangerKo from "../locales/ko/product/modelon/heat-exchanger-library.json";
+import heatExchangerEn from "../locales/en/product/modelon/heat-exchanger-library.json";
+import hydraulicsKo from "../locales/ko/product/modelon/hydraulics-library.json";
+import hydraulicsEn from "../locales/en/product/modelon/hydraulics-library.json";
+import jetPropulsionKo from "../locales/ko/product/modelon/jet-propulsion-library.json";
+import jetPropulsionEn from "../locales/en/product/modelon/jet-propulsion-library.json";
+import liquidCoolingKo from "../locales/ko/product/modelon/liquid-cooling-library.json";
+import liquidCoolingEn from "../locales/en/product/modelon/liquid-cooling-library.json";
+import modelonBaseKo from "../locales/ko/product/modelon/modelon-base-library.json";
+import modelonBaseEn from "../locales/en/product/modelon/modelon-base-library.json";
+import thermalKo from "../locales/ko/product/modelon/thermal-power-library.json";
+import thermalEn from "../locales/en/product/modelon/thermal-power-library.json";
+import vaporKo from "../locales/ko/product/modelon/vapor-cycle-library.json";
+import vaporEn from "../locales/en/product/modelon/vapor-cycle-library.json";
+
 i18n.use(initReactI18next).init({
   lng: "ko",
   fallbackLng: "ko",
@@ -64,6 +96,21 @@ i18n.use(initReactI18next).init({
     "product/dymola/vesyma-powertrain",
     "product/dymola/vesyma-suspension",
     "product/dymola/binary",
+    "product/modelon",
+    "product/modelon/vehicle",
+    "product/modelon/air-cooling",
+    "product/modelon/aircraft",
+    "product/modelon/electrification",
+    "product/modelon/environmental",
+    "product/modelon/fuel-cell",
+    "product/modelon/fuel-system",
+    "product/modelon/heat-exchanger",
+    "product/modelon/hydraulics",
+    "product/modelon/jet-propulsion",
+    "product/modelon/liquid-cooling",
+    "product/modelon/base",
+    "product/modelon/thermal",
+    "product/modelon/vapor",
   ],
   defaultNS: "product/iMOVA",
   resources: {
@@ -87,6 +134,21 @@ i18n.use(initReactI18next).init({
       "product/dymola/vesyma-powertrain": vesymaPowertrainKo,
       "product/dymola/vesyma-suspension": vesymaSuspensionKo,
       "product/dymola/binary": binaryKo,
+      "product/modelon": modelonKo,
+      "product/modelon/vehicle": vehicleKo,
+      "product/modelon/air-cooling": mAirCoolingKo,
+      "product/modelon/aircraft": aircraftKo,
+      "product/modelon/electrification": mElectrificationKo,
+      "product/modelon/environmental": environmentalKo,
+      "product/modelon/fuel-cell": fuelCellKo,
+      "product/modelon/fuel-system": fuelSystemKo,
+      "product/modelon/heat-exchanger": heatExchangerKo,
+      "product/modelon/hydraulics": hydraulicsKo,
+      "product/modelon/jet-propulsion": jetPropulsionKo,
+      "product/modelon/liquid-cooling": liquidCoolingKo,
+      "product/modelon/base": modelonBaseKo,
+      "product/modelon/thermal": thermalKo,
+      "product/modelon/vapor": vaporKo,
     },
     en: {
       "product/iMOVA": iMOVAEn,
@@ -108,6 +170,21 @@ i18n.use(initReactI18next).init({
       "product/dymola/vesyma-powertrain": vesymaPowertrainEn,
       "product/dymola/vesyma-suspension": vesymaSuspensionEn,
       "product/dymola/binary": binaryEn,
+      "product/modelon": modelonEn,
+      "product/modelon/vehicle": vehicleEn,
+      "product/modelon/air-cooling": mAirCoolingEn,
+      "product/modelon/aircraft": aircraftEn,
+      "product/modelon/electrification": mElectrificationEn,
+      "product/modelon/environmental": environmentalEn,
+      "product/modelon/fuel-cell": fuelCellEn,
+      "product/modelon/fuel-system": fuelSystemEn,
+      "product/modelon/heat-exchanger": heatExchangerEn,
+      "product/modelon/hydraulics": hydraulicsEn,
+      "product/modelon/jet-propulsion": jetPropulsionEn,
+      "product/modelon/liquid-cooling": liquidCoolingEn,
+      "product/modelon/base": modelonBaseEn,
+      "product/modelon/thermal": thermalEn,
+      "product/modelon/vapor": vaporEn,
     },
   },
   interpolation: { escapeValue: false },

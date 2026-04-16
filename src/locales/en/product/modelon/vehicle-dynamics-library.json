@@ -1,0 +1,42 @@
+{
+  "seo": {
+    "title": "Vehicle Dynamics Library - Vehicle Dynamics Simulation Library",
+    "description": "Open Multi-body Simulation Library for Vehicle and Subsystem Analysis",
+    "keywords": "Vehicle Dynamics Library, 차량, 동역학, 시뮬레이션, 라이브러리, 차량 컴포넌트, 차량 모델링"
+  },
+  "vehicle_title": "Vehicle Dynamics Library",
+  "vehicle_subTitle": "Open Multi-body Simulation Library for Vehicle and Subsystem Analysis",
+  "vehicle_name": "Vehicle Dynamics Library",
+  "vehicle_introduction": [
+    "The Vehicle Dynamics Library provides an open and user-extensible simulation environment for the analysis of complete vehicles and their subsystems. Based on a hierarchical structure and an extensive library of pre-defined vehicle components, it is designed to easily configure various types of vehicles, including passenger cars, trucks, motorsports vehicles, and heavy equipment.",
+    "This library supports optimization and verification from the initial design stage of vehicle systems through to control design and implementation. In particular, it enables multi-body and multi-domain simulations with real-time performance and provides the ability to export models for sharing and utilization across various departments within an organization."
+  ],
+  "features_section_title": "Features",
+  "vehicle_features": {
+    "feat-0": {
+      "title": "Intuitive Model Configuration for Diverse Vehicle Architectures",
+      "text": "The Vehicle Dynamics Library enables intuitive and flexible model configuration for all types of wheeled vehicles, including various suspension structures such as independent and axle suspensions. Leveraging a hierarchical structure and pre-defined component libraries, users can easily perform modeling for a wide range of vehicles, from passenger cars to heavy-duty machinery.",
+      "imgTexts": ["< Suspension Model example >"]
+    },
+    "feat-1": {
+      "title": "High-Precision Multi-body Dynamics and Real-time Simulation",
+      "text": "Based on high-precision multi-body models, the library precisely reproduces the dynamic behavior of vehicles while also supporting lightweight model configurations for real-time processing. Additionally, it allows for table-based representation of Kinematics & Compliance (K&C) characteristics, making it ideal for analyzing the kinematic properties and flexibility of suspensions.",
+      "imgTexts": ["< Chassis and Suspensions >"]
+    },
+    "feat-2": {
+      "title": "Compatibility with Diverse Tire Models",
+      "text": "The library is compatible not only with TYDEX STI (Standard Tyre Interface)-based models but also with high-precision tire models from the FTire and Delft-Tyre families. This ensures realistic simulation of tire behavior under various road conditions and driving scenarios.",
+      "imgTexts": ["< CF-Tire Co-Simulation >"]
+    },
+    "feat-3": {
+      "title": "Support for Integration with Various Parameter File Formats",
+      "text": "Parameter settings can be configured using various data formats—including XML, JSON, MAT, Adams, and CarMaker (*.skc)—facilitating easy integration with existing design data or external simulation environments. This enhances model configuration flexibility and data reusability.",
+      "imgTexts": ["< External Data Suspension modeling >"]
+    },
+    "feat-4": {
+      "title": "Support for Custom 3D Road Models and OpenCRG Integration",
+      "text": "In addition to custom 3D road models, the library integrates with high-precision OpenCRG-based road surfaces, enabling driving simulations that closely mirror real-world environments. It is highly effective for constructing test scenarios that reflect complex road geometries and conditions.",
+      "imgTexts": ["<  OpenCRG Road >", "<  3D Road Builder >"]
+    }
+  }
+}
