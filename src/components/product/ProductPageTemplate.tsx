@@ -40,6 +40,7 @@ interface ProductPageTemplateProps {
   }[];
   name: string;
   pageKey: string;
+  featuresSectionTitle?: string;
 }
 
 const ProductPageTemplate = ({
@@ -52,6 +53,7 @@ const ProductPageTemplate = ({
   libraries,
   name,
   pageKey,
+  featuresSectionTitle = "특징",
 }: ProductPageTemplateProps) => {
   const { isMobile } = useBreakpoint();
   const navigate = useLocalizedNavigate();
@@ -195,7 +197,7 @@ const ProductPageTemplate = ({
             id="feature"
             sx={{ display: "flex", flexDirection: "column", gap: 4 }}
           >
-            <ProductSectionTitle titleText="특징" />
+            <ProductSectionTitle titleText={featuresSectionTitle} />
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               {features.map((item, index) => (
                 <ProductContent key={index} {...item} isColor={false} />

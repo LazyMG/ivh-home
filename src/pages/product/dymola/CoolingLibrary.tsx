@@ -1,27 +1,29 @@
-import { useSEO } from "../../../hooks/useSEO";
-
-import cooling from "../../../data/product/dymola/cooling-library.json";
+import resource from "../../../data/product/dymola/cooling-library.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
+import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const CoolingLibrary = () => {
-  const seoData = useSEO("product/dymola/cooling", cooling);
-  const {
-    cooling_introduction,
-    cooling_subTitle,
-    cooling_title,
-    cooling_name,
-    cooling_pageKey,
-  } = cooling;
+  const { t } = useTranslation("product/dymola/cooling" as never);
+  const introTexts = t("introduction" as never, { returnObjects: true }) as string[];
+  const introduction = introTexts.map((text) => ({ text }));
+
   return (
     <>
-      <SEO {...seoData} />
+      <SEO
+        title={t("seo.title" as never)}
+        description={t("seo.description" as never)}
+        keywords={t("seo.keywords" as never)}
+        ogImage={resource.seo?.ogImage}
+      />
+      <LangToggle />
       <LibraryPageTemplate
-        title={cooling_title}
-        subTitle={cooling_subTitle}
-        introduction={cooling_introduction}
-        pageKey={cooling_pageKey}
-        name={cooling_name}
+        title={t("title" as never)}
+        subTitle={t("subTitle" as never)}
+        introduction={introduction}
+        pageKey={resource.pageKey}
+        name={t("name" as never)}
       />
     </>
   );

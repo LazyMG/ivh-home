@@ -40,6 +40,7 @@ interface LibraryPageTemplate {
   features?: FeatureItem[];
   pageKey: string;
   name: string;
+  featuresSectionTitle?: string;
 }
 
 const LibraryPageTemplate = ({
@@ -49,6 +50,7 @@ const LibraryPageTemplate = ({
   features,
   pageKey,
   name,
+  featuresSectionTitle = "특징",
 }: LibraryPageTemplate) => {
   return (
     <Box
@@ -133,7 +135,7 @@ const LibraryPageTemplate = ({
             id="feature"
             sx={{ display: "flex", flexDirection: "column", gap: 4 }}
           >
-            <LibrarySectionTitle titleText="특징" />
+            <LibrarySectionTitle titleText={featuresSectionTitle} />
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               {features.map((item, index) => (
                 <ProductContent key={index} {...item} />
