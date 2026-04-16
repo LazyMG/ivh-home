@@ -1,27 +1,25 @@
 import { Box, Stack, Typography } from "@mui/material";
-import history from "../../data/company/history.json";
+import { useTranslation } from "react-i18next";
+import resource from "../../data/company/history.json";
 import ImageHeader from "../../components/company/ImageHeader";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
+import LangToggle from "../../common/LangToggle";
 
 const History = () => {
-  const {
-    history_list,
-    history_title,
-    history_image,
-    history_color,
-    history_image_position,
-  } = history;
+  const { t } = useTranslation("company/history");
+
   return (
     <>
       <SEO
-        title="History - iVH 연혁"
-        description="iVH의 설립부터 현재까지의 주요 연혁을 소개합니다."
-        keywords="iVH, 연혁, History, 회사 역사"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
         canonical="https://ivh.co.kr/company/history"
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
+        <LangToggle />
         <Box
           sx={(theme) => ({
             px: "20px",
@@ -33,8 +31,8 @@ const History = () => {
           })}
         >
           <ImageHeader
-            imgUrl={history_image}
-            imgPosition={history_image_position}
+            imgUrl={resource.history_image}
+            imgPosition={resource.history_image_position}
           />
         </Box>
 
@@ -64,7 +62,7 @@ const History = () => {
               textTransform: "uppercase",
               whiteSpace: "pre-line",
               fontFamily: "Freesentation-7-Bold",
-              color: history_color,
+              color: resource.history_color,
               fontSize: "24px",
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "28px",
@@ -74,51 +72,52 @@ const History = () => {
               },
             })}
           >
-            {history_title}
+            {t("history_title")}
           </Typography>
-          <Stack
-            sx={{
-              gap: 8,
-            }}
-          >
-            {history_list.map((item, index) => (
-              <Box
-                key={index}
-                sx={(theme) => ({
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 0,
-                  [theme.breakpoints.up("desktop")]: {
-                    gap: 2,
-                  },
-                })}
-              >
-                <Typography
-                  sx={{
-                    fontSize: "30px",
-                    fontFamily: "Freesentation-7-Bold",
-                    color: history_color,
-                  }}
+          <Stack sx={{ gap: 8 }}>
+            {resource.history_list.map((item) => {
+              const contents = t(`history_list.${item.id}` as never, {
+                returnObjects: true,
+              }) as unknown as string[];
+              return (
+                <Box
+                  key={item.id}
+                  sx={(theme) => ({
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 0,
+                    [theme.breakpoints.up("desktop")]: {
+                      gap: 2,
+                    },
+                  })}
                 >
-                  {item.year}
-                </Typography>
-                <Box>
-                  {item.contents.map((content, index) => (
-                    <Typography
-                      key={index}
-                      sx={{
-                        color: "#2A2A2A",
-                        fontFamily: "Freesentation-4-Regular",
-                        whiteSpace: "pre-line",
-                        fontSize: "18px",
-                      }}
-                    >
-                      {content}
-                    </Typography>
-                  ))}
+                  <Typography
+                    sx={{
+                      fontSize: "30px",
+                      fontFamily: "Freesentation-7-Bold",
+                      color: resource.history_color,
+                    }}
+                  >
+                    {item.year}
+                  </Typography>
+                  <Box>
+                    {contents.map((content, idx) => (
+                      <Typography
+                        key={idx}
+                        sx={{
+                          color: "#2A2A2A",
+                          fontFamily: "Freesentation-4-Regular",
+                          whiteSpace: "pre-line",
+                          fontSize: "18px",
+                        }}
+                      >
+                        {content}
+                      </Typography>
+                    ))}
+                  </Box>
                 </Box>
-              </Box>
-            ))}
+              );
+            })}
           </Stack>
         </Box>
       </Box>
