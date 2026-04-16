@@ -2,7 +2,7 @@
   "partner_image": "/images/pages/company/company_partner.png",
   "partner_color": "#179EBD",
   "partner_image_position": "20% 50%",
-  "partner_partner": "Partner",
+  "partner_partner": "Partners",
   "partner_partnerList": [
     {
       "src": "/images/pages/company/partner/partner_dassaultsystems.svg",
@@ -37,7 +37,7 @@
       "alt": "Partners - PTV Group CI"
     }
   ],
-  "partner_customer": "Customer",
+  "partner_customer": "Customers",
   "partner_customerList": {
     "customer_company": [
       {
