@@ -1,0 +1,19 @@
+{
+  "seo": {
+    "title": "Partner & Customer - iVH",
+    "description": "Introducing our partners and customers who work with iVH.",
+    "keywords": "iVH, Partner, Customer"
+  },
+  "partner_partner": "Partners",
+  "partner_customer": "Customers",
+  "partner_partnerList": {
+    "dassault": "Partners - Dassault Systems CI",
+    "tlk": "Partners - TLK CI",
+    "modelon": "Partners - Modelon CI",
+    "modelica": "Partners - Modelica CI",
+    "asam": "Partners - ASAM CI",
+    "edi": "Partners - EDI CI",
+    "hexagon": "Partners - Hexagon CI",
+    "ptv": "Partners - PTV Group CI"
+  }
+}
