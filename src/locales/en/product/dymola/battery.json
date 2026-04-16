@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": "Battery Library - Battery Simulation",
+    "description": "Modelica-based simulation library for battery integration and performance analysis within complex systems.",
+    "keywords": "Battery, 배터리, Modelica, 시뮬레이션, BMS, 전기화학, Dymola, 배터리 모델링, SOC, SOH"
+  },
+  "battery_title": "Battery Library",
+  "battery_subTitle": "Modelica-based simulation library for battery integration and performance analysis within complex systems.",
+  "battery_name": "Battery Library",
+  "battery_introduction": [
+    "The Battery Library is a Modelica-based simulation library developed to support the integration of battery cells and the design of electrical storage devices within complex systems. By applying a system simulation approach to battery modeling, the operational characteristics of battery systems can be precisely evaluated in various environments such as vehicles, power grids, and aircraft.",
+    "This library is designed to analyze various physical phenomena occurring within storage devices, enabling efficient simulation of temperature and voltage distribution between cells, variations in cell characteristics, and the effects of initial values and boundary conditions. Furthermore, it enables reliable design and validation by quantitatively calculating the actual performance of battery systems, including thermal characteristics and aging phenomena."
+  ],
+  "features_section_title": "Features",
+  "battery_features": {
+    "feat-0": {
+      "title": "Calculation of electrical performance and thermal behavior for single cells and packs",
+      "text": "The Battery Library is designed to precisely simulate electrical characteristics and thermal behavior at both the cell and pack levels. Cell models can be configured in various ways, such as equivalent circuit-based electrical models, electrochemistry-based models, geometry-based thermal models, and life prediction models. Ready-to-use practical examples, including RC models, material property-based examples, and component performance prediction, are also provided. Pack models support both Scaled Pack and Discretized Pack methods and can be flexibly configured according to user requirements. Additionally, it can be widely utilized for geometry-based thermal modeling, system-level performance prediction, and BMS-linked simulation, while also providing a function to automatically generate lookup tables based on measurement data.",
+      "imgTexts": [
+        "<Pack Model>",
+        "<Battery Library>",
+        "<Cell Model>"
+      ]
+    },
+    "feat-1": {
+      "title": "Support for Battery Management System example models",
+      "text": "The library provides BMS example models that can simulate situations requiring cooling or heating and judge overcurrent, overvoltage, undervoltage, and thermal control status based on the State of Charge (SOC) during charging and discharging. It can calculate available power, current, and energy based on the minimum and maximum SOC within the pack. For a required current input to the pack, it outputs the maximum allowable current considering the limits of cell current, voltage, temperature, SOC, and SOH. Furthermore, lookup tables for parameters can be automatically generated based on measurement data, enabling simulations close to actual operating environments.",
+      "imgTexts": [
+        "<BMS Diagram>",
+        "<Dymola BMS System model>"
+      ]
+    },
+    "feat-2": {
+      "title": "Support for Electrochemical models",
+      "text": "By supporting a Pseudo 2D electrochemical model based on the Newman-Doyle-Fuller model, the internal spatial distribution and reaction characteristics of the cell can be precisely reproduced. Performance changes due to volume discretization and diffusion can be predicted based on the Anode-Separator-Cathode structure. High-precision simulation is possible with the provision of material property-based examples along with performance prediction models at the cell and pack levels.",
+      "imgTexts": [
+        "",
+        "",
+        "<Dymola Electrochemical Battery model>"
+      ]
+    },
+    "feat-3": {
+      "title": "Support for Battery Parameter Fitting models",
+      "text": "The library provides a parameter fitting function that can automatically derive optimal model parameters based on measurement data. Through an algorithm-based optimization process, the error between the model and experimental data is minimized. The optimization tool, provided in the form of a Python library, can be linked with Dymola to easily perform parameter fitting.",
+      "imgTexts": [
+        "",
+        "<ECM Model Based equivalent circuit model Generation>"
+      ]
+    }
+  }
+}

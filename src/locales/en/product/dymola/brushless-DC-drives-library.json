@@ -1,0 +1,13 @@
+{
+  "seo": {
+    "title": "Brushless DC Drives Library - Integrated simulation library for brushless DC drive systems",
+    "description": "Integrated simulation library for brushless DC drive systems",
+    "keywords": "Brushless, DC Drives, DC 드라이브, 시뮬레이션, Dymola"
+  },
+  "title": "Brushless DC Drives Library ",
+  "subTitle": "Integrated simulation library for brushless DC drive systems",
+  "name": "",
+  "introduction": [
+    "The Brushless DC Drives Library is a Modelica-based library designed for the integrated modeling and simulation of various brushless DC motors and drive systems. It provides detailed implementations of key components, such as motors, inverters, and controllers, and offers broad support for analyzing dynamic behavior, control strategies, and efficiency in actual operating environments.\nThis library can be utilized for the design and performance evaluation of drive systems across various fields, including vehicles, industrial equipment, and home appliances. By interoperating with full system models, it can be applied throughout the entire development process—from real-time simulation and analyzing performance impacts based on parameter changes to controller development and validation."
+  ]
+}

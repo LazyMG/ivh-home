@@ -1,0 +1,13 @@
+{
+  "seo": {
+    "title": "VeSyMa Powertrain Library - Optimization solution for powertrain multi-body dynamics from initial concept to detailed analysis",
+    "description": "Optimization solution for powertrain multi-body dynamics from initial concept to detailed analysis",
+    "keywords": "VeSyMa, Powertrain, 파워트레인, 다물체 동역학, 차량, 시스템, 모델링, 시뮬레이션, Modelica, Dymola"
+  },
+  "title": "VeSyMa Powertrain Library",
+  "subTitle": "Optimization solution for powertrain multi-body dynamics from initial concept to detailed analysis",
+  "name": "",
+  "introduction": [
+    "VeSyMA - Powertrain Dynamics Library is a Modelica-based library for modeling and simulating rotating multi-body systems such as automotive powertrains. This library is designed to efficiently build complex powertrain systems and broadly supports the entire development cycle, from rapid concept reviews using 1D simple models to precise dynamic analysis utilizing detailed multi-body models. Animation features are built into all components, allowing for an intuitive understanding of the system's dynamic behavior, and it provides seamless compatibility with other automotive libraries by complying with Modelica standard connectors."
+  ]
+}

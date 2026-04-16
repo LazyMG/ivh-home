@@ -1,0 +1,13 @@
+{
+  "seo": {
+    "title": "Flexible Bodies - Modelica-based simulation library for modeling complex mechanical systems combining flexible and rigid bodies",
+    "description": "Modelica-based simulation library for modeling complex mechanical systems combining flexible and rigid bodies",
+    "keywords": "Flexible Bodies, 유연체, 강체, 시뮬레이션,  복합 기계 시스템 모델링, Modelica, Dymola"
+  },
+  "title": "Flexible Bodies",
+  "subTitle": "Modelica-based simulation library for modeling complex mechanical systems combining flexible and rigid bodies",
+  "name": "",
+  "introduction": [
+    "The Flexible Bodies Library is a specialized library designed to precisely model the dynamics of actual mechanical systems by combining rigid bodies with flexible structures based on Finite Element (FE) analysis. By utilizing standard output files generated from major FE analysis tools such as Nastran, Genesis, and Abaqus, complex FE models are reduced to a few boundary nodes and frequency modes, allowing them to be easily integrated as part of a Modelica system model within the Dymola environment.\nThis approach enables the dynamic behavior of structures to be directly linked to the simulation of the entire system, allowing for the efficient validation of scenarios that are difficult or costly to test in reality within a virtual environment. The Flexible Bodies Library is fully compatible with various Modelica libraries, such as the Vehicle Dynamics Library, using standard Modelica MultiBody connectors."
+  ]
+}

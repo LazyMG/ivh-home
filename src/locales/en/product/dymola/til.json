@@ -1,0 +1,62 @@
+{
+  "seo": {
+    "title": "TIL - Multi-domain system modeling library supporting flexible configuration and high-precision simulation",
+    "description": "Multi-domain system modeling library supporting flexible configuration and high-precision simulation",
+    "keywords": "TIL, Modelica, 시뮬레이션, 모델링, 라이브러리, 컴포넌트, 시스템"
+  },
+  "til_title": "TIL",
+  "til_subTitle": "Multi-domain system modeling library supporting flexible configuration and high-precision simulation",
+  "til_name": "TIL",
+  "til_introduction": [
+    "TIL is a Modelica-based simulation library that provides various component and system models. It consists of the base library TIL, the property data library TILMedia, and Add-on libraries. The experience accumulated through various services and research projects, such as simulation, testing, and software development, is reflected in TIL.",
+    "Through TIL, individual components can be modeled and calculated in detail, and the included models are suitable for the design and optimization of large-scale or multi-layered systems. Along with high accuracy and simulation speed, TIL is characterized by excellent component flexibility and scalability. Component models can be easily replaced or connected/configured at the system level through a graphical interface, and detailed settings can be freely adjusted. Most of the model code in the library is open and based on an object-oriented structure, making it possible to check, copy, modify, and extend the details of the models."
+  ],
+  "til_introduction_imgTexts": {
+    "intro-0": ["<TIL + Addon Library>"],
+    "intro-1": [
+      "<Support for various component models>",
+      "<Object-oriented modeling>"
+    ]
+  },
+  "features_section_title": "Features",
+  "til_features": {
+    "feat-0": {
+      "title": "Support for steady-state and transient simulation",
+      "text": "TIL can perform both steady-state and transient simulations within a single model, enabling a wide range of analysis from the early design stage to dynamic behavior according to changes in operating conditions. This allows for design and validation that simultaneously considers system stability and response characteristics.",
+      "imgTexts": [
+        "",
+        "",
+        "<Steady-state and transient analysis settings within a single model>"
+      ]
+    },
+    "feat-1": {
+      "title": "Fluid property integration based on TILMedia",
+      "text": "TILMedia can precisely calculate the thermophysical properties of phase equilibria and mixtures for liquids, gases, and real fluids, and it also supports integration with various external property databases such as REFPROP, NASA, and VDI. Simulations according to user-defined mixture configurations or changes in mass fraction are also possible, allowing for realistic predictions of the behavior of complex fluid systems.",
+      "imgTexts": ["<TILMedia interface>", "<Available VLEFluids(REFPROP)>"]
+    },
+    "feat-2": {
+      "title": "Built-in high-precision heat transfer and pressure drop models",
+      "text": "Detailed heat transfer and pressure drop correlations are implemented in key components such as heat exchangers, tubes, and valves, allowing for the precise reproduction of thermal and fluid behavior similar to actual systems. This enables accurate evaluation of component performance and optimization of system efficiency.",
+      "imgTexts": [
+        "<Heat transfer, pressure drop, and icing correlation models>"
+      ]
+    },
+    "feat-3": {
+      "title": "Visualization functions interlocking with DaVE",
+      "text": "Through integration with DaVE, TIL can visualize thermodynamic diagrams such as pressure-enthalpy (p-h) and temperature-entropy (T-s). In particular, since it provides phase diagrams for various working fluids, it can be effectively utilized to visualize the status of most thermal systems.",
+      "imgTexts": ["<Thermodynamic diagrams (Interoperation with DaVE)>"]
+    },
+    "feat-4": {
+      "title": "Provision of various components and example models",
+      "text": "Along with basic components such as tubes, pumps, valves, and fans that correspond to various fluid conditions including gas, liquid, and two-phase fluids, various element models such as heat exchangers, compressors, sensors, and controllers are included. Example models that can be utilized for various system configurations, such as HVAC, refrigeration cycles, heat pumps, and vehicle thermal management systems, are also provided, offering excellent practical applicability and scalability.",
+      "imgTexts": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "<Provision of thermal system examples in various fields>"
+      ]
+    }
+  }
+}
