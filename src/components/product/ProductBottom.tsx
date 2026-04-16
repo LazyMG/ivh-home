@@ -1,17 +1,14 @@
 import { Box, Typography } from "@mui/material";
 
-import product_form from "../../data/product/product-form.json";
+import { useTranslation } from "react-i18next";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
-// import ProductForm from "./ProductForm";
 import GradientBox from "./GradientBox";
 
 const ProductBottom = ({ productName }: { productName: string }) => {
-  const {
-    // product_form_guide,
-    product_form_training,
-    product_form_navigation,
-  } = product_form;
+  const { t } = useTranslation("product/product-form" as never);
+  const td = (key: string): string => t(key as never);
   const navigate = useLocalizedNavigate();
+
   return (
     <Box
       component="section"
@@ -23,39 +20,6 @@ const ProductBottom = ({ productName }: { productName: string }) => {
         mb: 20,
       }}
     >
-      {/* <GradientBox title="Application">
-        <Box
-          sx={(theme) => ({
-            display: "flex",
-            flexDirection: "column",
-            px: 3,
-            pt: 5,
-            pb: 4,
-            gap: 2,
-            width: "100%",
-            [theme.breakpoints.up("tablet")]: {
-              px: 6,
-              pt: 8,
-              pb: 6,
-              gap: 5,
-            },
-          })}
-        >
-          <Box>
-            <Typography
-              sx={{
-                fontSize: "18px",
-                fontFamily: "Freesentation-5-Medium",
-                whiteSpace: "pre-line",
-                wordBreak: "keep-all",
-              }}
-            >
-              {product_form_guide}
-            </Typography>
-          </Box>
-          <ProductForm productName={productName} />
-        </Box>
-      </GradientBox> */}
       {productName && (
         <GradientBox title="Training">
           <Box
@@ -84,7 +48,7 @@ const ProductBottom = ({ productName }: { productName: string }) => {
                   wordBreak: "keep-all",
                 }}
               >
-                {product_form_training}
+                {td("product_form_training")}
               </Typography>
             </Box>
             <Box
@@ -118,7 +82,7 @@ const ProductBottom = ({ productName }: { productName: string }) => {
                     },
                   })}
                 >
-                  {`${productName} ${product_form_navigation}`}
+                  {`${productName} ${td("product_form_navigation")}`}
                 </Typography>
               </Box>
             </Box>
