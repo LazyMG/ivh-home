@@ -1,20 +1,32 @@
-import { useSearchParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 export type Lang = "ko" | "en";
+const SUPPORTED: string[] = ["ko", "en"];
 
 export const useLang = () => {
-  const [params, setParams] = useSearchParams();
-  const raw = params.get("lang");
-  const lang: Lang = raw === "en" ? "en" : "ko";
+  const { lang: rawLang } = useParams<{ lang?: string }>();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { i18n } = useTranslation();
+
+  const lang: Lang = SUPPORTED.includes(rawLang ?? "")
+    ? (rawLang as Lang)
+    : "ko";
+
+  useEffect(() => {
+    if (i18n.language !== lang) i18n.changeLanguage(lang);
+    document.documentElement.lang = lang;
+  }, [lang, i18n]);
 
   const setLang = (next: Lang) => {
-    const newParams = new URLSearchParams(params);
-    if (next === "ko") {
-      newParams.delete("lang");
-    } else {
-      newParams.set("lang", next);
-    }
-    setParams(newParams);
+    const cleanPath =
+      location.pathname.replace(
+        new RegExp(`^/(${SUPPORTED.filter((l) => l !== "ko").join("|")})(?=/|$)`),
+        "",
+      ) || "/";
+    navigate(next === "ko" ? cleanPath : `/${next}${cleanPath}`);
   };
 
   return { lang, setLang };

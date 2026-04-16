@@ -1,5 +1,9 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { useLang } from "../i18n/useLang";
+
+const SUPPORTED_LANGS = ["ko", "en"];
 
 interface SEOProps {
   title?: string;
@@ -29,24 +33,57 @@ const SEO = ({
   const fullTitle = title === "iVH Homepage" ? title : `${title} | iVH`;
   const currentUrl =
     ogUrl || (typeof window !== "undefined" ? window.location.href : "");
+  const { lang } = useLang();
+  const location = useLocation();
 
-  // index.html의 canonical 태그를 직접 업데이트 (Helmet이 link 태그를 중복 추가하는 문제 방지)
+  // lang prefix를 제거한 순수 경로
+  const basePath =
+    location.pathname.replace(
+      new RegExp(`^/(${SUPPORTED_LANGS.filter((l) => l !== "ko").join("|")})(?=/|$)`),
+      "",
+    ) || "/";
+
+  // canonical URL
+  const canonicalUrl =
+    canonical ||
+    (lang === "ko"
+      ? `https://ivh.co.kr${basePath}`
+      : `https://ivh.co.kr/${lang}${basePath}`);
+
+  // hreflang 링크들
+  const hreflangs = [
+    { hrefLang: "ko", href: `https://ivh.co.kr${basePath}` },
+    { hrefLang: "en", href: `https://ivh.co.kr/en${basePath}` },
+    { hrefLang: "x-default", href: `https://ivh.co.kr${basePath}` },
+  ];
+
+  // index.html의 canonical 태그를 직접 업데이트
   useEffect(() => {
-    const canonicalUrl = canonical || currentUrl;
     const link = document.querySelector('link[rel="canonical"]');
     if (link) {
       link.setAttribute("href", canonicalUrl);
     }
-  }, [canonical, currentUrl]);
+  }, [canonicalUrl]);
 
   return (
     <Helmet>
       {/* 기본 메타 태그 */}
+      <html lang={lang} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
       <meta name="robots" content={robots} />
+
+      {/* hreflang */}
+      {hreflangs.map((hl) => (
+        <link
+          key={hl.hrefLang}
+          rel="alternate"
+          hrefLang={hl.hrefLang}
+          href={hl.href}
+        />
+      ))}
 
       {/* Open Graph (페이스북, 링크드인 등) */}
       <meta property="og:type" content="website" />
@@ -55,7 +92,10 @@ const SEO = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:site_name" content="iVH" />
-      <meta property="og:locale" content="ko_KR" />
+      <meta
+        property="og:locale"
+        content={lang === "ko" ? "ko_KR" : "en_US"}
+      />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
