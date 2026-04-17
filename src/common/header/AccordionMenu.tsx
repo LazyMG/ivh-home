@@ -16,6 +16,7 @@ interface AccordionMenuProps {
     item: AccordionMenuItem | null,
     position?: { top: number; left: number },
   ) => void;
+  itemMaxWidth?: string;
 }
 
 export const AccordionMenu = ({
@@ -23,6 +24,7 @@ export const AccordionMenu = ({
   navigate,
   onClose,
   onItemHover,
+  itemMaxWidth = "280px",
 }: AccordionMenuProps) => {
   const handleNavigate = (path?: string) => {
     if (path && path !== "#") {
@@ -96,7 +98,7 @@ export const AccordionMenu = ({
                 color: "#797979",
                 cursor: "pointer",
                 py: 0.5,
-                maxWidth: "280px",
+                maxWidth: itemMaxWidth,
                 wordBreak: "keep-all",
                 "&:hover": {
                   color: "#179EBD",

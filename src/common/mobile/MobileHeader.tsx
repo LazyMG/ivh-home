@@ -106,18 +106,20 @@ const MobileHeader = () => {
 
       {/* 햄버거 메뉴 드로어 */}
       <MobileMenuDrawer ref={menuDrawerRef} $isOpen={isMenuOpen}>
-        {menu.mainMenu.map((mainItem, index) => (
+        {menu.mainMenu.map((mainItem, index) => {
+          const mainPath = (mainItem as { path?: string }).path;
+          return (
           <Box key={index} sx={{ mb: 3 }}>
             {/* 메인 메뉴 타이틀 */}
             <MobileMainMenuTitle
               onClick={() => {
-                if (mainItem.path) {
-                  navigate(mainItem.path);
+                if (mainPath) {
+                  navigate(mainPath);
                   handleClose();
                 }
               }}
               $isActive={
-                mainItem.path && location.pathname.startsWith(mainItem.path)
+                mainPath && location.pathname.startsWith(mainPath)
                   ? true
                   : false
               }
@@ -148,7 +150,8 @@ const MobileHeader = () => {
               />
             )}
           </Box>
-        ))}
+          );
+        })}
 
         {/* 소셜 미디어 영역 */}
         <Box

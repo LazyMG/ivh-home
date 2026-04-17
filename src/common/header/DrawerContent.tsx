@@ -357,7 +357,7 @@ export const DrawerContent = ({
         >
           <Box
             sx={{
-              minWidth: "350px",
+              width: "500px",
             }}
           >
             <Typography
@@ -424,6 +424,7 @@ export const DrawerContent = ({
                     items={item.subMenu || []}
                     navigate={navigate}
                     onClose={onClose}
+                    itemMaxWidth="500px"
                   />
                 )}
               </Box>
