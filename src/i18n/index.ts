@@ -87,6 +87,20 @@ import viswalkEn from "../locales/en/product/ptv/viswalk.json";
 import productFormKo from "../locales/ko/product/product-form.json";
 import productFormEn from "../locales/en/product/product-form.json";
 
+// solution
+import philosophyKo from "../locales/ko/solution/philosophy.json";
+import philosophyEn from "../locales/en/solution/philosophy.json";
+import modelicaKo from "../locales/ko/solution/modelica.json";
+import modelicaEn from "../locales/en/solution/modelica.json";
+import asamKo from "../locales/ko/solution/asam.json";
+import asamEn from "../locales/en/solution/asam.json";
+import physicalAiKo from "../locales/ko/solution/physical-ai.json";
+import physicalAiEn from "../locales/en/solution/physical-ai.json";
+import engineeringToIndustryKo from "../locales/ko/solution/engineering-to-industry.json";
+import engineeringToIndustryEn from "../locales/en/solution/engineering-to-industry.json";
+import futureDirectionsKo from "../locales/ko/solution/future-directions.json";
+import futureDirectionsEn from "../locales/en/solution/future-directions.json";
+
 i18n.use(initReactI18next).init({
   lng: "ko",
   fallbackLng: "ko",
@@ -130,6 +144,12 @@ i18n.use(initReactI18next).init({
     "product/ptv/vissim-automotive",
     "product/ptv/viswalk",
     "product/product-form",
+    "solution/philosophy",
+    "solution/modelica",
+    "solution/asam",
+    "solution/physical-ai",
+    "solution/engineering-to-industry",
+    "solution/future-directions",
   ],
   defaultNS: "product/iMOVA",
   resources: {
@@ -173,6 +193,12 @@ i18n.use(initReactI18next).init({
       "product/ptv/vissim-automotive": vissimAutomotiveKo,
       "product/ptv/viswalk": viswalkKo,
       "product/product-form": productFormKo,
+      "solution/philosophy": philosophyKo,
+      "solution/modelica": modelicaKo,
+      "solution/asam": asamKo,
+      "solution/physical-ai": physicalAiKo,
+      "solution/engineering-to-industry": engineeringToIndustryKo,
+      "solution/future-directions": futureDirectionsKo,
     },
     en: {
       "product/iMOVA": iMOVAEn,
@@ -214,6 +240,12 @@ i18n.use(initReactI18next).init({
       "product/ptv/vissim-automotive": vissimAutomotiveEn,
       "product/ptv/viswalk": viswalkEn,
       "product/product-form": productFormEn,
+      "solution/philosophy": philosophyEn,
+      "solution/modelica": modelicaEn,
+      "solution/asam": asamEn,
+      "solution/physical-ai": physicalAiEn,
+      "solution/engineering-to-industry": engineeringToIndustryEn,
+      "solution/future-directions": futureDirectionsEn,
     },
   },
   interpolation: { escapeValue: false },
