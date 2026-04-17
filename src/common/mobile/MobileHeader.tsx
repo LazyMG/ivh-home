@@ -22,7 +22,7 @@ const MobileHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuDrawerRef = useRef<HTMLDivElement>(null);
 
-  const isHomePage = location.pathname === "/";
+  const isHomePage = /^\/(en|ko)?\/?$/.test(location.pathname);
 
   // 메뉴가 열렸을 때 바디 스크롤 방지
   useEffect(() => {
