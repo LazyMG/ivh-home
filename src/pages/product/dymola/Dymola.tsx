@@ -1,7 +1,6 @@
 import resource from "../../../data/product/dymola/dymola.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
 const Dymola = () => {
@@ -46,7 +45,6 @@ const Dymola = () => {
         keywords={td("seo.keywords")}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <ProductPageTemplate
         image={resource.dymola_mainImg}
         image_alt={td("dymola_mainImg_alt")}

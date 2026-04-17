@@ -1,7 +1,6 @@
 import resource from "../../../data/product/ptv/viswalk.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const Viswalk = () => {
@@ -39,7 +38,6 @@ const Viswalk = () => {
         keywords={td("seo.keywords")}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <LibraryPageTemplate
         title={td("viswalk_title")}
         subTitle={td("viswalk_subTitle")}

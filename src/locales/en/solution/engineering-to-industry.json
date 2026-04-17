@@ -1,0 +1,228 @@
+{
+  "pageTitle": "Engineering to Industry",
+  "color": "#6750B5",
+  "image": "/images/pages/solution/engineering_to_Industry.png",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Engineering Foundations, Proven Across Industries",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH’s engineering was not created with a single industry in mind."
+        },
+        {
+          "type": "p",
+          "text": "**We have accumulated a common engineering foundation over a long period,**"
+        },
+        {
+          "type": "p",
+          "text": "and as a result, it has been implemented as various types of systems across diverse industrial sectors."
+        },
+        {
+          "type": "p",
+          "text": "While the fields of Mobility, Manufacturing, Energy, and Building may appear to be entirely different industries on the surface,"
+        },
+        {
+          "type": "p",
+          "text": "to iVH, they are **all system-level challenges where physical systems, control, operation, and verification are integrated.**"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/images/pages/solution/iVHs_Engineering_Island.png"
+    },
+    {
+      "type": "section",
+      "title": "Future Mobility",
+      "subtitle": "Engineering Intelligent, Verifiable, and Expandable Mobility Systems",
+      "content": [
+        {
+          "type": "p",
+          "text": "Future mobility systems are no longer completed by mechanical performance or individual control technologies alone."
+        },
+        {
+          "type": "p",
+          "text": "Sensors, controllers, software, environments, and operational scenarios must be designed and verified as a single integrated system."
+        },
+        {
+          "type": "p",
+          "text": "iVH has pioneered the domestic application of **Modelica-based system engineering and ASAM-based verification frameworks,** focusing on the automotive industry."
+        },
+        {
+          "type": "labeledBullets",
+          "label": "Key Engineering Approaches",
+          "items": [
+            "Structural modeling of vehicle and mobility systems",
+            "Construction of scenario-based virtual test environments",
+            "System V&V integrating controllers, environments, and sensors",
+            "Verification processes reflecting real-world road and operational conditions"
+          ]
+        },
+        {
+          "type": "labeledBullets",
+          "label": "Representative Application Cases",
+          "items": [
+            "Development of verification platforms for autonomous driving and ADAS systems",
+            "Establishment of evaluation systems linking real-vehicle data with simulation environments",
+            "Standardization of V&V-centered development processes for domestic companies"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These experiences are extending beyond traditional vehicles to special-purpose vehicles, robot-based mobility, and in-factory transportation systems."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Smart Factory & Logistics",
+      "subtitle": "Engineering Operable Factories, Not Just Automated Equipment",
+      "content": [
+        {
+          "type": "p",
+          "text": "Many factories already possess automated equipment."
+        },
+        {
+          "type": "p",
+          "text": "However, factories where operations judge and adjust on their own are rare."
+        },
+        {
+          "type": "p",
+          "text": "iVH views a factory not as a collection of individual automated devices,"
+        },
+        { "type": "p", "text": "but **as a single System of Systems.**" },
+        {
+          "type": "labeledBullets",
+          "label": "Key Engineering Approaches",
+          "items": [
+            "System modeling of factory logistics flows",
+            "Structural design integrating AMRs, collaborative robots, equipment, and MES",
+            "Verification of process and logistics scenarios based on Digital Twins",
+            "Operational optimization including real-time judgment and re-planning through Physical AI"
+          ]
+        },
+        {
+          "type": "labeledBullets",
+          "label": "Representative Development and Application Cases",
+          "items": [
+            "Development of AMR and collaborative robot-integrated logistics systems for manufacturing processes",
+            "Control and scheduling systems for simultaneous operation of multiple robots",
+            "Advancement of Physical AI-integrated control functions based on process context awareness",
+            "Field verification and application at domestic automotive parts manufacturing sites"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "iVH goes beyond simple transportation automation to **implement intelligent logistics systems that perceive and coordinate the entire process** in actual field environments."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Energy Systems",
+      "subtitle": "Engineering Integrated and Hybrid Energy Systems",
+      "content": [
+        {
+          "type": "p",
+          "text": "The core issue in the energy sectoris not the efficiency of a single facility,"
+        },
+        {
+          "type": "p",
+          "text": "but **the interactions between systems and their operational strategies.**"
+        },
+        {
+          "type": "p",
+          "text": "iVH has long treated energy not as \"power generation equipment\" but as **an operable energy system.**"
+        },
+        {
+          "type": "labeledBullets",
+          "label": "Key Engineering Approaches",
+          "items": [
+            "Integrated system modeling of SMRs, renewable energy, power grids, and ESS",
+            "Construction of Modelica-based multi-physics Energy System Digital Twins",
+            "Verification of operational scenarios considering load, storage, and control",
+            "System optimization from the perspectives of economics, stability, and flexibility"
+          ]
+        },
+        {
+          "type": "labeledBullets",
+          "label": "Representative Development and Application Cases",
+          "items": [
+            "Modeling and verification of NR-HES (Nuclear-Renewable Hybrid Energy Systems)",
+            "Research on SMR load-following and ESS-connected operational scenarios",
+            "Analysis of power grid stability and energy storage strategies",
+            "Energy system controller verification and establishment of V&V environments"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These engineering experiences are **extending beyond simple power production to future energy operating systems.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Engineering Energy at the Operational Scale",
+      "content": [
+        {
+          "type": "p",
+          "text": "Building Energy Management is a representative field **where energy system engineering is implemented at the site level.**"
+        },
+        {
+          "type": "p",
+          "text": "iVH has modeled buildings as single energy systems and applied **Engineering Digital Twin + Physical AI** that can be used for actual decision-making during the operational phase."
+        },
+        {
+          "type": "labeledBullets",
+          "label": "Key Engineering Approaches",
+          "items": [
+            "Construction of BIM-based Building Digital Twins",
+            "Integrated modeling of HVAC, power, and ESS",
+            "Continuous updates of models reflecting operational data",
+            "Physical AI-based energy operation, control, and anomaly diagnosis"
+          ]
+        },
+        {
+          "type": "labeledBullets",
+          "label": "Representative Development and Application Cases",
+          "items": [
+            "Establishment of a BIM–Digital Twin–BEMS connection pipeline",
+            "Development of a building energy operation optimization simulator",
+            "Physical AI-based building O&M decision-making system",
+            "Verification of energy savings through application to demonstration buildings"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "BEMS is the interface where **iVH’s energy system engineering and Physical AI are integrated within a real-world operational environment.**"
+        },
+        { "type": "heading", "text": "One Engineering, Multiple Industries" },
+        {
+          "type": "p",
+          "text": "iVH is not a company that creates new technologies for each industry on the fly."
+        },
+        { "type": "p", "text": "We have expanded across industries based on:" },
+        {
+          "type": "bullets",
+          "items": [
+            "A single System Engineering philosophy",
+            "A common foundation of Modelica, ASAM, and Physical AI",
+            "Verified experiences accumulated through field applications"
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "Same Engineering,\nDifferent Industries,\nAnd continuously evolving domains of application.",
+          "barGradient": "linear-gradient(180deg, #6750B5 5%, #B32F17 83%)",
+          "textGradient": "linear-gradient(30deg, #6750B5 5%, #B32F17 83%)"
+        },
+        {
+          "type": "p",
+          "text": "This is iVH’s **Engineering to Industry** approach."
+        }
+      ]
+    }
+  ]
+}

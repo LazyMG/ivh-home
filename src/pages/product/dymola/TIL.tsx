@@ -1,7 +1,6 @@
 import resource from "../../../data/product/dymola/til.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const TIL = () => {
@@ -56,7 +55,6 @@ const TIL = () => {
         keywords={td("seo.keywords")}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <LibraryPageTemplate
         title={td("til_title")}
         subTitle={td("til_subTitle")}

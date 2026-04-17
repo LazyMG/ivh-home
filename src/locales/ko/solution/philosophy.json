@@ -1,0 +1,165 @@
+{
+  "pageTitle": "Our Engineering Philosophy",
+  "image": "/images/pages/solution/philosophy.png",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Driving Progress through Engineering",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 기술을 단순히 적용하거나 조합하는 회사가 아닙니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 **Engineering을 통해 산업과 사회가 진보할 수 있다고 믿는 회사**입니다."
+        },
+        { "type": "p", "text": "산업 시스템은 갈수록 복잡해지고 있습니다." },
+        {
+          "type": "p",
+          "text": "로봇, 소프트웨어, AI, 에너지, 사람, 그리고 운영 환경은"
+        },
+        {
+          "type": "p",
+          "text": "더 이상 분리된 요소가 아니라 **서로 영향을 주고받는 하나의 시스템**을 형성합니다."
+        },
+        { "type": "p", "text": "이러한 복잡성은 기술의 문제가 아니라" },
+        {
+          "type": "p",
+          "text": "**시스템을 어떻게 이해하고 설계하느냐의 문제**입니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "We Start from the System, Not from the Product",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 언제나 제품이 아닌 **시스템(System)**에서 출발합니다."
+        },
+        {
+          "type": "p",
+          "text": "요구사항 정의, 구조 설계, 거동 분석, 검증, 운영까지"
+        },
+        {
+          "type": "p",
+          "text": "전체 생애주기를 하나의 엔지니어링 흐름으로 바라봅니다."
+        },
+        { "type": "p", "text": "이 접근 덕분에 우리는:" },
+        {
+          "type": "bullets",
+          "items": [
+            "설계 단계에서 이미 실패를 예측하고",
+            "검증 가능한 시스템을 만들며",
+            "운영 단계에서도 계속 진화할 수 있는 구조를 설계합니다."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "iVH의 Engineering은"
+        },
+        {
+          "type": "p",
+          "text": "**“한 번 만들고 끝나는 기술”이 아니라**"
+        },
+        {
+          "type": "p",
+          "text": "**“계속 사용할 수 있는 기반”**을 만드는 과정입니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "AI Is Part of Engineering, Not a Shortcut",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 AI를 만능 해법이나 기능 추가 수단으로 보지 않습니다."
+        },
+        {
+          "type": "p",
+          "text": "AI는 시스템 엔지니어링 안에 **책임 있게 통합되어야 할 요소**입니다."
+        },
+        {
+          "type": "p",
+          "text": "우리가 추구하는 AI는:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "물리 법칙과 제약 조건을 이해하고",
+            "시스템 구조 안에서 역할이 정의되며",
+            "예측 가능하고 설명 가능한 방식으로 동작하는 Physical AI입니다."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "즉, iVH의 AI는"
+        },
+        {
+          "type": "p",
+          "text": "데이터 위에 얹힌 기능이 아니라"
+        },
+        {
+          "type": "p",
+          "text": "**Engineering된 시스템의 일부**입니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Technology as a Means, Progress as a Purpose",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH에게 기술은 목적이 아니라 **진보를 위한 수단**입니다."
+        },
+        {
+          "type": "p",
+          "text": "Modelica, 국제 표준, Digital Twin, AI는 모두"
+        },
+        {
+          "type": "p",
+          "text": "더 나은 시스템을 만들기 위한 도구일 뿐입니다."
+        },
+        { "type": "p", "text": "우리는 기술을 통해:" },
+        {
+          "type": "bullets",
+          "items": [
+            "더 안전한 시스템을 만들고",
+            "더 신뢰할 수 있는 운영을 가능하게 하며",
+            "산업이 지속적으로 발전할 수 있는 기반을 구축하고자 합니다."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**기술을 통한 진보**는 iVH의 슬로건이 아니라"
+        },
+        {
+          "type": "p",
+          "text": "모든 Engineering 의사결정의 기준입니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Our Belief",
+      "content": [
+        { "type": "p", "text": "iVH는 믿습니다." },
+        {
+          "type": "callout",
+          "text": "산업은 변화할 수 있지만,\n올바른 Engineering은 그 변화를 주도한다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 오늘의 기술로 내일의 제품을 만들고,"
+        },
+        {
+          "type": "p",
+          "text": "그 제품을 가능하게 하는 Engineering을 축적해 나갑니다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "pageTitle": "ASAM-based Verification & Validation Engineering",
+  "color": "#984E77",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Standard - driven Verification as Engineering",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH is not a company that simply utilizes ASAM standards."
+        },
+        {
+          "type": "p",
+          "text": "We are a company that **engineers Verification & Validation (V&V) processes** based on ASAM."
+        },
+        {
+          "type": "p",
+          "text": "**As the official ASAM partner in Korea,** iVH represents the domestic industry by disseminating ASAM standards and serving as the vital link between global standards and Korean industry."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Building the ASAM Ecosystem in Korea",
+      "content": [
+        {
+          "type": "p",
+          "text": "To establish ASAM standards within the domestic market,"
+        },
+        {
+          "type": "p",
+          "text": "iVH consistently hosts **ASAM Regional Meetings** and domestic conferences,"
+        },
+        {
+          "type": "p",
+          "text": "building an ecosystem that connects OEMs, Tier-1 suppliers, research institutes, and universities."
+        },
+        { "type": "p", "text": "Through these initiatives, iVH serves as:" },
+        {
+          "type": "bullets",
+          "items": [
+            "A catalyst for raising awareness of the ASAM OpenX family of standards.",
+            "A focal point for gathering and synthesizing domestic industrial requirements."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A strategic gateway for reflecting the voice of the Korean industry in global standards."
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "https://www.youtube.com/embed/-TB1Ut9xgX8?si=pxlIPGX859U1kf0G"
+    },
+    {
+      "type": "section",
+      "title": "From Understanding Standards to Applying Them",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH goes beyond merely interpreting standard documentation."
+        },
+        {
+          "type": "p",
+          "text": "**We apply testing, modeling, and scenario standards directly to industrial engineering practices.**"
+        },
+        { "type": "p", "text": "Our core areas of standardization include:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Scenario-based Verification Standards",
+            "Modeling and Data Exchange Standards",
+            "Testing and Evaluation Process Standards"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Rather than limiting these standards to a single domain,"
+        },
+        {
+          "type": "p",
+          "text": "iVH implements them as **practical, ready-to-use verification frameworks**"
+        },
+        {
+          "type": "p",
+          "text": "tailored to the domestic industrial environment, regulatory requirements, and development processes."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Verification Beyond Automotive",
+      "content": [
+        {
+          "type": "p",
+          "text": "While ASAM standards originated in the automotive industry,"
+        },
+        {
+          "type": "p",
+          "text": "**iVH is convinced that their application can extend to the robotics industry and future systems at large.**"
+        },
+        { "type": "p", "text": "iVH is:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Expanding simulation-based V&V Engineering",
+            "Based on ASAM-based verification experience accumulated in the automotive sector",
+            "To autonomous robots, AMR, smart factories, and complex system domains."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This is not a simple technology transition, but **an evolution of standard-based verification methodology.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Education and Continuous Research",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH does not consume ASAM standards as short-term project knowledge."
+        },
+        {
+          "type": "p",
+          "text": "To elevate the standards of the entire domestic industry,"
+        },
+        {
+          "type": "p",
+          "text": "we conduct **ASAM standard training programs and continuous research activities.**"
+        },
+        { "type": "p", "text": "**Key Activities:**" },
+        {
+          "type": "bullets",
+          "items": [
+            "ASAM training for domestic companies and research institutes",
+            "Operation of OpenX-based research and study groups",
+            "Standard utilization research reflecting domestic requirements"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Through these efforts, iVH ensures that verification is not subordinated to specific projects"
+        },
+        { "type": "p", "text": "but **established as an Engineering Asset**" },
+        {
+          "type": "p",
+          "text": "**that can be accumulated and reused across the entire industry.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Verification & Validation That Evolves",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH’s ASAM-based Verification & Validation Engineering is not a fixed methodology."
+        },
+        {
+          "type": "p",
+          "text": "As industries change, we interpret, expand, and evolve the standards."
+        },
+        {
+          "type": "callout",
+          "text": "Standards are not fixed rules,\nbut a common language that must grow with the industry.",
+          "barGradient": "linear-gradient(180deg, #B14680 10%, #266DEA 100%)",
+          "textGradient": "linear-gradient(90deg, #B14680 10%, #266DEA 100%)"
+        },
+        {
+          "type": "p",
+          "text": "By extending this common language beyond automotive to robotics and future systems,"
+        },
+        {
+          "type": "p",
+          "text": "iVH prepares for the next stage of a verifiable industry."
+        }
+      ]
+    }
+  ]
+}

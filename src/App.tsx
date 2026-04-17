@@ -1,11 +1,6 @@
 // common
 import "./App.css";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import theme from "./theme/theme";
@@ -17,10 +12,14 @@ import MobileHeader from "./common/mobile/MobileHeader";
 // Footer
 import Footer from "./common/footer";
 import MobileFooter from "./common/mobile/mobileFooter";
+// Global UI
+import LangToggle from "./common/LangToggle";
 // 정적 로드 (항상 필요하거나 가벼운 페이지)
 import Home from "./pages/home";
 import NewHeader from "./common/header/NewHeader";
-const FloatingButton = lazy(() => import("./components/chatbot/FloatingButton"));
+const FloatingButton = lazy(
+  () => import("./components/chatbot/FloatingButton"),
+);
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 
@@ -33,11 +32,21 @@ const SmartFactory = lazy(() => import("./pages/solution/SmartFactory"));
 const Mobility = lazy(() => import("./pages/solution/Mobility"));
 const AIInnovation = lazy(() => import("./pages/solution/AIInnovation"));
 
+// Solution - 신규 페이지 (lazy 그룹)
+const Philosophy = lazy(() => import("./pages/solution/Philosophy"));
+const Modelica = lazy(() => import("./pages/solution/Modelica"));
+const Asam = lazy(() => import("./pages/solution/Asam"));
+const PhysicalAi = lazy(() => import("./pages/solution/PhysicalAi"));
+const EngineeringToIndustry = lazy(
+  () => import("./pages/solution/EngineeringToIndustry"),
+);
+const FutureDirections = lazy(
+  () => import("./pages/solution/FutureDirections"),
+);
+
 // iMOVA (lazy 개별)
 const IMOVA = lazy(() => import("./pages/product/IMOVA"));
-const HumanoidPackage = lazy(
-  () => import("./pages/product/HumanoidPackage"),
-);
+const HumanoidPackage = lazy(() => import("./pages/product/HumanoidPackage"));
 
 // Dymola (lazy 그룹)
 const Dymola = lazy(() => import("./pages/product/dymola/Dymola"));
@@ -149,6 +158,15 @@ const routes: { path: string; element: React.ReactNode }[] = [
   { path: "/", element: <Home /> },
   // Solution
   { path: "solution", element: <Solution /> },
+  { path: "solution/philosophy", element: <Philosophy /> },
+  { path: "solution/modelica", element: <Modelica /> },
+  { path: "solution/asam", element: <Asam /> },
+  { path: "solution/physical-ai", element: <PhysicalAi /> },
+  {
+    path: "solution/engineering-to-industry",
+    element: <EngineeringToIndustry />,
+  },
+  { path: "solution/future-directions", element: <FutureDirections /> },
   { path: "solution/energy", element: <Energy /> },
   { path: "solution/homeappliance", element: <HomeAppliance /> },
   { path: "solution/smartfactory", element: <SmartFactory /> },
@@ -164,14 +182,29 @@ const routes: { path: string; element: React.ReactNode }[] = [
   { path: "product/dymola/battery", element: <Battery /> },
   { path: "product/dymola/til", element: <TIL /> },
   { path: "product/dymola/cooling", element: <CoolingLibrary /> },
-  { path: "product/dymola/brushlessdcdrives", element: <BrushlessDCDrivesLibrary /> },
-  { path: "product/dymola/electrifiedpowertrains", element: <ElectrifiedPowertrainsLibrary /> },
+  {
+    path: "product/dymola/brushlessdcdrives",
+    element: <BrushlessDCDrivesLibrary />,
+  },
+  {
+    path: "product/dymola/electrifiedpowertrains",
+    element: <ElectrifiedPowertrainsLibrary />,
+  },
   { path: "product/dymola/flexiblebodies", element: <FlexibleBodies /> },
   { path: "product/dymola/hydrogen", element: <HydrogenLibrary /> },
-  { path: "product/dymola/sustainablesupplysystems", element: <SustainableSupplySystemsLibrary /> },
+  {
+    path: "product/dymola/sustainablesupplysystems",
+    element: <SustainableSupplySystemsLibrary />,
+  },
   { path: "product/dymola/veSyMa", element: <VeSyMaLibrary /> },
-  { path: "product/dymola/veSyMasuspension", element: <VeSyMaSuspensionLibrary /> },
-  { path: "product/dymola/veSyMapowertrain", element: <VeSyMaPowertrainLibrary /> },
+  {
+    path: "product/dymola/veSyMasuspension",
+    element: <VeSyMaSuspensionLibrary />,
+  },
+  {
+    path: "product/dymola/veSyMapowertrain",
+    element: <VeSyMaPowertrainLibrary />,
+  },
   { path: "product/dymola/binarymodelexport", element: <BinaryModelExport /> },
   // Product - VTD
   { path: "product/vtd", element: <VTD /> },
@@ -185,20 +218,32 @@ const routes: { path: string; element: React.ReactNode }[] = [
   { path: "product/ptv/viswalk", element: <Viswalk /> },
   // Product - Modelon
   { path: "product/modelon", element: <Modelon /> },
-  { path: "product/modelon/vehicledynamicslibrary", element: <VehicleDynamicsLibrary /> },
+  {
+    path: "product/modelon/vehicledynamicslibrary",
+    element: <VehicleDynamicsLibrary />,
+  },
   { path: "product/modelon/thermalpower", element: <ThermalPowerLibrary /> },
   { path: "product/modelon/vaporcycle", element: <VaporCycleLibrary /> },
   { path: "product/modelon/modelonbase", element: <ModelonBaseLibrary /> },
   { path: "product/modelon/liquidcooling", element: <LiquidCoolingLibrary /> },
   { path: "product/modelon/jetpropulsion", element: <JetPropulsionLibrary /> },
-  { path: "product/modelon/aircraftdynamics", element: <AircraftDynamicsLibrary /> },
+  {
+    path: "product/modelon/aircraftdynamics",
+    element: <AircraftDynamicsLibrary />,
+  },
   { path: "product/modelon/aircooling", element: <AirCoolingLibrary /> },
   { path: "product/modelon/fuelcell", element: <FuelCellLibrary /> },
   { path: "product/modelon/hydraulics", element: <HydraulicsLibrary /> },
   { path: "product/modelon/heatexchanger", element: <HeatExchangerLibrary /> },
   { path: "product/modelon/fuelsystem", element: <FuelSystemLibrary /> },
-  { path: "product/modelon/environmentalcontrol", element: <EnvironmentalControlLibrary /> },
-  { path: "product/modelon/electrification", element: <ElectrificationLibrary /> },
+  {
+    path: "product/modelon/environmentalcontrol",
+    element: <EnvironmentalControlLibrary />,
+  },
+  {
+    path: "product/modelon/electrification",
+    element: <ElectrificationLibrary />,
+  },
   // Support
   { path: "support/training", element: <Training /> },
   { path: "support", element: <Support /> },
@@ -246,6 +291,8 @@ function AppContent() {
           </Routes>
         </Suspense>
       </ScrollToTop>
+      {/** language toggle */}
+      {!hideLayout && <LangToggle />}
       {/** chatbot button */}
       <Suspense fallback={null}>
         <FloatingButton />

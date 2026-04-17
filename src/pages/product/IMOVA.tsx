@@ -7,7 +7,6 @@ import {
 import resource from "../../data/product/iMOVA.json";
 import TechSpecTable from "../../components/product/iMOVA/TechSpecTable";
 import { useTranslation } from "react-i18next";
-import LangToggle from "../../common/LangToggle";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, Navigation } from "swiper/modules";
@@ -105,7 +104,6 @@ const IMOVA = () => {
       />
       <Box component="main">
         <ScrollButton threshold={THRESHOLD} />
-        <LangToggle />
         <Box
           component="video"
           aria-label="iVH 자동화 공정 소개 영상"

@@ -1,7 +1,6 @@
 import resource from "../../../data/product/modelon/modelon-base-library.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const ModelonBaseLibrary = () => {
@@ -17,7 +16,6 @@ const ModelonBaseLibrary = () => {
         keywords={t("seo.keywords" as never)}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <LibraryPageTemplate
         title={t("title" as never)}
         subTitle={t("subTitle" as never)}

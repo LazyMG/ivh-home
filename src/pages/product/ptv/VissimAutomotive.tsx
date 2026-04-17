@@ -1,7 +1,6 @@
 import resource from "../../../data/product/ptv/vissim-automotive.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const VissimAutomotive = () => {
@@ -39,7 +38,6 @@ const VissimAutomotive = () => {
         keywords={td("seo.keywords")}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <LibraryPageTemplate
         title={td("vissim_automotive_title")}
         subTitle={td("vissim_automotive_subTitle")}

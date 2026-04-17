@@ -1,7 +1,6 @@
 import resource from "../../../data/product/dymola/brushless-DC-drives-library.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const BrushlessDCDrivesLibrary = () => {
@@ -17,7 +16,6 @@ const BrushlessDCDrivesLibrary = () => {
         keywords={t("seo.keywords" as never)}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <LibraryPageTemplate
         title={t("title" as never)}
         subTitle={t("subTitle" as never)}

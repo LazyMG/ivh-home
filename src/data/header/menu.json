@@ -309,36 +309,36 @@
     },
     {
       "title": "SOLUTIONS",
-      "path": "/solution",
       "subMenu": [
         {
-          "name": "Smart Factory",
-          "path": "/solution/smartFactory",
-          "description": "배터리 제조라인용 스마트 팩토리 Kit 개발"
+          "name": "Our Engineering Philosophy",
+          "path": "/solution/philosophy"
         },
         {
-          "name": "Mobility",
-          "path": "/solution/mobility"
+          "name": "Core Engineering Capabilities",
+          "path": "",
+          "subMenu": [
+            {
+              "name": "Modelica-based System Engineering",
+              "path": "/solution/modelica"
+            },
+            {
+              "name": "ASAM-based Verification & Validation Engineering",
+              "path": "/solution/asam"
+            },
+            {
+              "name": "Physical AI Engineering",
+              "path": "/solution/physical-ai"
+            }
+          ]
         },
         {
-          "name": "Home Appliances",
-          "path": "/solution/homeappliance",
-          "description": "PCB 열관리 성능 예측"
+          "name": "Engineering to Industry",
+          "path": "/solution/engineering-to-industry"
         },
         {
-          "name": "Energy",
-          "path": "/solution/energy",
-          "description": "원자력 - 재생에너지 하이브리드 에너지 시스템"
-        },
-        {
-          "name": "BEMS",
-          "path": "/solution/bems",
-          "description": "건물 에너지 관리 기술"
-        },
-        {
-          "name": "AI Innovation Hub",
-          "path": "/solution/aIinnovationhub",
-          "description": "iVH의 모든 기술을 연결하고 강화하는 중추적인 기술 조직입니다."
+          "name": "Future Engineering Directions",
+          "path": "/solution/future-directions"
         }
       ]
     },

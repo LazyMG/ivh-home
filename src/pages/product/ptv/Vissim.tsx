@@ -1,7 +1,6 @@
 import resource from "../../../data/product/ptv/vissim.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const Vissim = () => {
@@ -39,7 +38,6 @@ const Vissim = () => {
         keywords={td("seo.keywords")}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <LibraryPageTemplate
         title={td("vissim_title")}
         subTitle={td("vissim_subTitle")}

@@ -1,0 +1,257 @@
+{
+  "pageTitle": "Future Engineering Directions",
+  "color": "#4766FF",
+  "image": "/images/pages/solution/future_engineering_directions.png",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Engineering That Continues to Evolve",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH의 Engineering은 특정 제품이나 산업을 목표로 발전해 온 것이 아닙니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 **시스템을 이해하고, 설계하고, 검증하고, 운영하는 방법**을 발전시켜 왔습니다."
+        },
+        {
+          "type": "p",
+          "text": "그리고 이 Engineering은 아직 진화의 과정에 있습니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Beyond Products, Toward Enduring Engineering",
+      "content": [
+        { "type": "p", "text": "산업과 기술은 빠르게 변합니다." },
+        { "type": "p", "text": "오늘의 제품은 언젠가 사라지지만," },
+        {
+          "type": "p",
+          "text": "**올바른 Engineering은 그 변화 속에서도 살아남습니다.**"
+        },
+        { "type": "p", "text": "iVH는 지금까지:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Modelica 기반 System Engineering",
+            "ASAM 기반 Verification & Validation",
+            "Physical AI Engineering"
+          ]
+        },
+        { "type": "p", "text": "을 축적해 왔으며," },
+        {
+          "type": "p",
+          "text": "이를 바탕으로 Mobility, Manufacturing, Energy, Building 산업으로 확장해 왔습니다."
+        },
+        { "type": "p", "text": "앞으로도 iVH는" },
+        {
+          "type": "p",
+          "text": "**제품 중심이 아니라 Engineering 중심으로 진화**합니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "From Simulation to Operation, From Insight to Action",
+      "content": [
+        {
+          "type": "p",
+          "text": "미래의 시스템은"
+        },
+        {
+          "type": "p",
+          "text": "잘 설계되는 것만으로는 충분하지 않습니다."
+        },
+        {
+          "type": "p",
+          "text": "**운영 단계에서 스스로 진단하고, 판단하고, 개선할 수 있어야 합니다.**"
+        },
+        { "type": "p", "text": "iVH는 Engineering의 중심을" },
+        {
+          "type": "bullets",
+          "items": [
+            "설계 중심에서",
+            "**운영과 의사결정 중심의 Engineering**으로 확장하고 있습니다."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Digital Twin은 더 이상 분석 도구가 아니라"
+        },
+        {
+          "type": "p",
+          "text": "**운영 시스템의 일부**가 되고,"
+        },
+        {
+          "type": "p",
+          "text": "Physical AI는 판단을 “보조”하는 수준을 넘어"
+        },
+        {
+          "type": "p",
+          "text": "**운영을 함께 책임지는 기술**로 발전하고 있습니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Scaling Engineering Across Complexity and Criticality",
+      "content": [
+        {
+          "type": "p",
+          "text": "앞으로 iVH가 집중하는 방향은"
+        },
+        {
+          "type": "p",
+          "text": "**더 복잡하고, 더 중요하며, 더 안전이 요구되는 시스템**입니다."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "대규모 다중 로봇 시스템",
+            "에너지·전력·저장·수요가 결합된 복합 시스템",
+            "사람과 기계가 공존하는 Safety critical 환경",
+            "장시간 반복 운용이 필수인 산업 현장"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이러한 시스템에서는"
+        },
+        {
+          "type": "p",
+          "text": "경험과 직관만으로는 더 이상 운영이 불가능합니다."
+        },
+        {
+          "type": "p",
+          "text": "**Engineering이 시스템을 지탱하는 핵심 인프라**가 됩니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Continuous Standard, Continuous Intelligence",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 Engineering의 진화가"
+        },
+        {
+          "type": "p",
+          "text": "**표준과 분리될 수 없다고 믿습니다.**"
+        },
+        { "type": "p", "text": "Modelica, FMI, ASAM은" },
+        {
+          "type": "p",
+          "text": "완성된 규칙이 아니라"
+        },
+        {
+          "type": "p",
+          "text": "산업과 함께 진화해야 할 **공통 언어**입니다."
+        },
+        { "type": "p", "text": "iVH는 앞으로도:" },
+        {
+          "type": "bullets",
+          "items": [
+            "국제 표준 활동에 적극적으로 참여하고",
+            "국내 산업 요구사항을 표준에 반영하며",
+            "표준을 실제 Engineering으로 구현해 나갈 것입니다."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Toward Trustworthy Physical AI Systems",
+      "content": [
+        {
+          "type": "p",
+          "text": "AI 기술은 앞으로도 빠르게 발전할 것입니다."
+        },
+        {
+          "type": "p",
+          "text": "그러나 iVH의 관심은"
+        },
+        {
+          "type": "p",
+          "text": "“더 똑똑한 AI”가 아니라"
+        },
+        {
+          "type": "p",
+          "text": "**현장에서 신뢰할 수 있는 AI**입니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "데이터가 충분하지 않은 환경",
+            "물리 제약과 안전 요구가 강한 환경",
+            "실패가 허용되지 않는 산업 시스템"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "에서 작동할 수 있는"
+        },
+        {
+          "type": "p",
+          "text": "**Physical AI Engineering**을 계속 발전시킵니다."
+        },
+        {
+          "type": "p",
+          "text": "AI는 더 이상 실험실의 기술이 아니라"
+        },
+        {
+          "type": "p",
+          "text": "**산업을 운영하는 핵심 기술**이 되어야 하기 때문입니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "An Open Future, Built on Engineering",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH의 미래 Engineering 방향은"
+        },
+        {
+          "type": "p",
+          "text": "미리 정해진 산업 리스트로 한정되지 않습니다."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "새로운 이동 시스템",
+            "새로운 에너지 운영 구조",
+            "새로운 형태의 자동화와 인간 기계 협업",
+            "아직 이름 붙여지지 않은 산업 영역"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이 모든 것은"
+        },
+        {
+          "type": "p",
+          "text": "지금까지 축적해 온 Engineering 위에서 자연스럽게 확장됩니다."
+        },
+        {
+          "type": "callout",
+          "text": "산업은 바뀌어도,\n시스템을 다루는 우리의 Engineering은 계속됩니다.",
+          "barGradient": "linear-gradient(180deg, #179EBD 0%, #4766FF 96%)",
+          "textGradient": "linear-gradient(30deg, #179EBD 0%, #4766FF 96%)"
+        }
+      ]
+    }
+  ],
+  "closing": {
+    "heading": "Our Direction, in One Sentence",
+    "line1": "iVH는 기술을 따라가지 않습니다.",
+    "line2": "We MOVE Innovation."
+  }
+}

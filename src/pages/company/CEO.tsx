@@ -5,7 +5,6 @@ import resource from "../../data/company/ceo.json";
 import ImageHeader from "../../components/company/ImageHeader";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
-import LangToggle from "../../common/LangToggle";
 
 const CEO = () => {
   const { t } = useTranslation("company/ceo");
@@ -21,7 +20,6 @@ const CEO = () => {
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
-        <LangToggle />
         <Box
           sx={(theme) => ({
             px: "20px",
