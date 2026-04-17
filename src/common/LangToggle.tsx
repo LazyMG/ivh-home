@@ -98,68 +98,69 @@ const LangToggle = () => {
       </Box>
 
       {/* 드롭다운 */}
-      {open && (() => {
-        const others = OPTIONS.filter((o) => o.value !== lang);
-        return (
-          <Box
-            sx={(theme) => ({
-              position: "absolute",
-              top: "calc(100% - 4px)",
-              left: 0,
-              width: "72px",
-              backgroundColor: "#FFFFFF",
-              borderRadius: "0 0 8px 8px",
-              boxShadow: "1px 3px 5px 0 rgba(0,0,0,0.25)",
-              pt: "4px",
-              zIndex: 1,
-              overflow: "hidden",
-              [theme.breakpoints.down("tablet")]: {
-                width: "56px",
-              },
-            })}
-          >
-            {others.map((option, idx) => (
-              <Box key={option.value}>
-                {idx > 0 && (
+      {open &&
+        (() => {
+          const others = OPTIONS.filter((o) => o.value !== lang);
+          return (
+            <Box
+              sx={(theme) => ({
+                position: "absolute",
+                top: "calc(100% - 8px)",
+                left: 0,
+                width: "72px",
+                backgroundColor: "#FFFFFF",
+                borderRadius: "0 0 8px 8px",
+                boxShadow: "1px 3px 5px 0 rgba(0,0,0,0.25)",
+                pt: "4px",
+                zIndex: 1,
+                overflow: "hidden",
+                [theme.breakpoints.down("tablet")]: {
+                  width: "56px",
+                },
+              })}
+            >
+              {others.map((option, idx) => (
+                <Box key={option.value}>
+                  {idx > 0 && (
+                    <Box
+                      sx={{
+                        height: "1px",
+                        backgroundColor: "#E0E0E0",
+                        mx: 1,
+                      }}
+                    />
+                  )}
                   <Box
-                    sx={{
-                      height: "1px",
-                      backgroundColor: "#E0E0E0",
-                      mx: 1,
+                    onClick={() => {
+                      setLang(option.value);
+                      setOpen(false);
                     }}
-                  />
-                )}
-                <Box
-                  onClick={() => {
-                    setLang(option.value);
-                    setOpen(false);
-                  }}
-                  sx={(theme) => ({
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: "40px",
-                    cursor: "pointer",
-                    fontFamily: "Freesentation-5-Medium",
-                    fontSize: "18px",
-                    color: "#A7A7A7",
-                    fontWeight: 400,
-                    "&:hover": {
-                      backgroundColor: "#F5F5F5",
-                    },
-                    [theme.breakpoints.down("tablet")]: {
-                      height: "32px",
-                      fontSize: "13px",
-                    },
-                  })}
-                >
-                  {option.label}
+                    sx={(theme) => ({
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: "40px",
+                      cursor: "pointer",
+                      fontFamily: "Freesentation-5-Medium",
+                      fontSize: "18px",
+                      color: "#A7A7A7",
+                      fontWeight: 400,
+                      "&:hover": {
+                        backgroundColor: "#F5F5F5",
+                      },
+                      [theme.breakpoints.down("tablet")]: {
+                        height: "32px",
+                        fontSize: "13px",
+                      },
+                    })}
+                  >
+                    {option.label}
+                  </Box>
                 </Box>
-              </Box>
-            ))}
-          </Box>
-        );
-      })()}
+              ))}
+            </Box>
+          );
+        })()}
     </Box>
   );
 };
