@@ -1,21 +1,29 @@
-import { useSEO } from "../../../hooks/useSEO";
-
-import brushless from "../../../data/product/dymola/brushless-DC-drives-library.json";
+import resource from "../../../data/product/dymola/brushless-DC-drives-library.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
+import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const BrushlessDCDrivesLibrary = () => {
-  const seoData = useSEO("/product/dymola/brushlessdcdrives", brushless);
-  const { introduction, subTitle, title, name, pageKey } = brushless;
+  const { t } = useTranslation("product/dymola/brushless" as never);
+  const introTexts = t("introduction" as never, { returnObjects: true }) as string[];
+  const introduction = introTexts.map((text) => ({ text }));
+
   return (
     <>
-      <SEO {...seoData} />
+      <SEO
+        title={t("seo.title" as never)}
+        description={t("seo.description" as never)}
+        keywords={t("seo.keywords" as never)}
+        ogImage={resource.seo?.ogImage}
+      />
+      <LangToggle />
       <LibraryPageTemplate
-        title={title}
-        subTitle={subTitle}
+        title={t("title" as never)}
+        subTitle={t("subTitle" as never)}
         introduction={introduction}
-        pageKey={pageKey}
-        name={name}
+        pageKey={resource.pageKey}
+        name={t("name" as never)}
       />
     </>
   );

@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Modelon Base Library - A Powerful Foundation for Modeling Standards and Scalability",
+    "description": "A Powerful Foundation for Modeling Standards and Scalability",
+    "keywords": "Modelon Base Library, Modelon, 모델링의 표준, 확장성, Modelica"
+  },
+  "title": "Modelon Base Library",
+  "subTitle": "A Powerful Foundation for Modeling Standards and Scalability",
+  "name": "",
+  "introduction": [
+    "The Modelon Base Library is the core library that serves as the starting point for all Modelica-based system modeling. It provides the fundamental components and common elements required to represent physical systems, ensuring a standardized structure and high reusability when building various domain models. This library contains essential blocks for modeling across multiple fields—including electrical, mechanical, and thermal-fluid—supporting the efficient design and simulation of complex systems.",
+    "The Modelon Base Library is not merely a collection of utilities, but a foundation that provides a stable and scalable modeling environment. Through standardized interfaces and a modular structure, it maximizes compatibility with other specialized libraries and provides the flexibility for developing custom models. Furthermore, it enables a consistent workflow from the initial design stage to detailed analysis through advanced numerical computation functions and simulation support.",
+    "This library is utilized across various industries, providing a reliable foundation for complex system modeling that enhances development efficiency and improves quality."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "seo": {
+    "title": "Sustainable Supply Systems Library",
+    "description": "Optimal sustainable supply chain establishment via multi-physics analysis",
+    "keywords": "Sustainable Supply Systems, 다중 물리 도메인, 지속 가능한 공급망, Modelica, Dymola"
+  },
+  "title": "Sustainable Supply Systems Library",
+  "subTitle": "Optimal sustainable supply chain establishment via multi-physics analysis",
+  "name": "",
+  "introduction": [
+    "The Sustainable Supply Systems Library is a Modelica-based library that supports the design, analysis, and optimization of sustainable energy and supply chain systems. Modern industry faces the challenges of energy efficiency, carbon emission reduction, and resource optimization. To achieve these goals, dynamic simulation that considers the interactions between various physical domains (electrical, thermal, fluid, manufacturing) is essential, moving beyond simple static calculations.",
+    "This library provides a powerful platform that supports reliable decision-making, from the initial design stage to complex system operation strategies."
+  ]
+}

@@ -9,7 +9,8 @@ import {
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
 
-import contact from "../../data/company/contact.json";
+import resource from "../../data/company/contact.json";
+import { useTranslation } from "react-i18next";
 import {
   validateEmail,
   validatePhone,
@@ -23,6 +24,7 @@ import { customerService } from "../../service/customerService";
 import SEO from "../../common/SEO";
 import PrivacyPolicyIcon from "../../components/support/PrivacyPolicyIcon";
 import ScrollButton from "../../common/ScrollButton";
+import LangToggle from "../../common/LangToggle";
 
 interface ContactFormType {
   company: string;
@@ -36,6 +38,8 @@ interface ContactFormType {
 }
 
 const Contact = () => {
+  const { t } = useTranslation("company/contact");
+  const contactTexts = t("contact_texts", { returnObjects: true }) as string[];
   const [submitStatus, setSubmitStatus] = useState<
     "loading" | "success" | "error" | null
   >(null);
@@ -99,9 +103,9 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Contact - iVH 문의하기"
-        description="iVH에 제품 및 솔루션 관련 문의를 남겨주세요. 빠르게 답변 드리겠습니다."
-        keywords="iVH, 문의, Contact, 상담, 제품 문의"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
         canonical="https://ivh.co.kr/company/contact"
       />
       <Box
@@ -111,6 +115,7 @@ const Contact = () => {
         })}
       >
         <ScrollButton />
+        <LangToggle />
 
         <Box
           sx={(theme) => ({
@@ -140,10 +145,10 @@ const Contact = () => {
                 component="h1"
                 sx={{ wordBreak: "keep-all" }}
               >
-                {contact.contact_title}
+                {t("contact_title")}
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                {contact.contact_texts.map((text, index) => (
+                {contactTexts.map((text, index) => (
                   <Typography
                     key={index}
                     sx={{
@@ -175,8 +180,8 @@ const Contact = () => {
             >
               <Box
                 component="img"
-                src={contact.contact_imgUrl}
-                alt={contact.contact_img_alt}
+                src={resource.contact_imgUrl}
+                alt={t("contact_img_alt")}
                 loading="lazy"
                 sx={(theme) => ({
                   width: "80%",
@@ -379,7 +384,7 @@ const Contact = () => {
                             cursor: "pointer",
                           }}
                         >
-                          {contact.products_link.checkbox_text}
+                          {t("checkbox_text")}
                         </Typography>
                       }
                     />

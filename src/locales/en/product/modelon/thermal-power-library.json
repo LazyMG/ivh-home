@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Thermal Power Library - An Integrated Platform for Effortless Design of Complex Thermal Power Systems",
+    "description": "An Integrated Platform for Effortless Design of Complex Thermal Power Systems",
+    "keywords": "Thermal Power Library, 열발전, 시뮬레이션, 최적화, 통합 프레임워크, 태양열, 가스, 석탄, 원자력, 신재생 에너지, Modelon, Modelica"
+  },
+  "title": "Thermal Power Library",
+  "subTitle": "An Integrated Platform for Effortless Design of Complex Thermal Power Systems",
+  "name": "",
+  "introduction": [
+    "The Thermal Power Library is a comprehensive solution for the design and optimization of thermal power systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements various components—such as boilers, turbines, condensers, heat exchangers, and fuel supply systems—to replicate actual operating conditions. By providing efficiency analysis and control strategy verification, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various power generation systems, enabling the easy configuration of complex plants. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as thermal power plant design, industrial thermal processes, and energy recovery systems, this library is the optimal choice for achieving both improved energy efficiency and system stability.",
+    "The Thermal Power Library supports high-reliability design decisions by accurately reproducing various thermal power cycles through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical boiler-turbine-condenser configurations to complex architectures, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates energy balance and efficiency indicators, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "seo": {
+    "title": "Viswalk - Realistic Multi-Environment Pedestrian Simulation Software",
+    "description": "Realistic Multi-Environment Pedestrian Simulation Software",
+    "keywords": "Viswalk, 보행자 시뮬레이션, 소프트웨어, PTV, 미시적 시뮬레이션, 보행자 흐름, 관련 복잡한 문제, 통행 폭, 대기 공간의 크기, 이동 및 대기 시간, 안전성, 편의성"
+  },
+  "viswalk_title": "Viswalk",
+  "viswalk_subTitle": "Realistic Multi-Environment Pedestrian Simulation Software",
+  "viswalk_name": "Viswalk",
+  "viswalk_introduction": [
+    "PTV Viswalk is a pedestrian simulation software that precisely reproduces the movements of pedestrians and their interactions at a microscopic level. Experts in various fields—including urban and transportation planners, fire safety officials, and operators of railway stations, airports, and large event venues—utilize Viswalk to effectively model and resolve complex issues related to pedestrian flow. By analyzing walkway widths, waiting area capacities, and travel/waiting times, it ensures both safety and convenience."
+  ],
+  "features_section_title": "Features",
+  "viswalk_features": {
+    "feat-0": {
+      "title": "Microscopic Pedestrian Simulation Capabilities",
+      "text": "PTV Viswalk precisely replicates the movements and interactions of individual pedestrians at a microscopic level. Based on the Social Force Model algorithm, which incorporates the psychological behavior of pedestrians, it enables realistic flow simulations across diverse urban environments."
+    },
+    "feat-1": {
+      "title": "Crowd Density and Flow Analysis",
+      "text": "The software provides visual analysis of crowd density, travel paths, and waiting times, making it highly effective for identifying congestion points and evaluating safety. Heatmaps allow for intuitive verification of Level of Service (LOS), supporting evacuation scenarios and event operational planning."
+    },
+    "feat-2": {
+      "title": "Simulation Capacity for Over 1 Million Pedestrians",
+      "text": "The capability for large-scale crowd simulation allows for the realistic modeling of pedestrian flows in complex transportation hubs and massive event venues. High-speed computation ensures efficient simulation performance even for large-scale data."
+    },
+    "feat-3": {
+      "title": "Integrated Multi-modal Simulation with PTV Vissim",
+      "text": "Integration with PTV Vissim enables the simultaneous simulation of interactions between pedestrians and other modes of transport, such as vehicles, bicycles, and public transit. This allows for the precise analysis of integrated traffic flows at intersections, stops, and transfer zones."
+    },
+    "feat-4": {
+      "title": "Support for Interaction Simulation Across Diverse Transport Models",
+      "text": "Viswalk can simulate interactions between pedestrians and various transportation modes—including vehicles, rail, buses, bicycles, and aircraft—effectively facilitating the review of operational scenarios in multi-modal environments. This is particularly useful for analyzing transfer points and emergency evacuation scenarios."
+    }
+  }
+}

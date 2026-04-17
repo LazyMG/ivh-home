@@ -1,29 +1,27 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
-import ceo from "../../data/company/ceo.json";
+import resource from "../../data/company/ceo.json";
 import ImageHeader from "../../components/company/ImageHeader";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
+import LangToggle from "../../common/LangToggle";
 
 const CEO = () => {
-  const {
-    ceo_image,
-    ceo_title,
-    ceo_contents,
-    ceo_footer,
-    ceo_color,
-    ceo_image_position,
-  } = ceo;
+  const { t } = useTranslation("company/ceo");
+  const ceoContents = t("ceo_contents", { returnObjects: true }) as string[];
+
   return (
     <>
       <SEO
-        title="CEO 인사말 - iVH"
-        description="iVH 대표이사 인사말. 시뮬레이션 및 모빌리티 솔루션 전문 기업 iVH의 비전과 가치를 소개합니다."
-        keywords="iVH, CEO, 대표이사, 인사말, 회사 소개"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
         canonical="https://ivh.co.kr/company/ceo"
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
+        <LangToggle />
         <Box
           sx={(theme) => ({
             px: "20px",
@@ -35,7 +33,10 @@ const CEO = () => {
             },
           })}
         >
-          <ImageHeader imgUrl={ceo_image} imgPosition={ceo_image_position} />
+          <ImageHeader
+            imgUrl={resource.ceo_image}
+            imgPosition={resource.ceo_image_position}
+          />
         </Box>
         <Box
           component="main"
@@ -62,7 +63,7 @@ const CEO = () => {
               whiteSpace: "pre-line",
               fontFamily: "Freesentation-6-SemiBold",
               wordBreak: "keep-all",
-              color: ceo_color,
+              color: resource.ceo_color,
               fontSize: "24px",
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "28px",
@@ -72,10 +73,10 @@ const CEO = () => {
               },
             })}
           >
-            {ceo_title}
+            {t("ceo_title")}
           </Typography>
           <Stack gap={3}>
-            {ceo_contents.map((content, index) => (
+            {ceoContents.map((content, index) => (
               <Typography
                 key={index}
                 sx={{
@@ -95,9 +96,10 @@ const CEO = () => {
               fontSize: "18px",
               fontFamily: "Freesentation-6-SemiBold",
               color: "#2A2A2A",
+              whiteSpace: "pre-line",
             }}
           >
-            {ceo_footer}
+            {t("ceo_footer")}
           </Typography>
         </Box>
       </Box>

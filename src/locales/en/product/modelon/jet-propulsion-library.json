@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Jet Propulsion Library - Solutions for Jet Engine Performance Analysis and Propulsion System Innovation",
+    "description": "Solutions for Jet Engine Performance Analysis and Propulsion System Innovation",
+    "keywords": "Jet Propulsion Library, 제트 엔진, 추진 시스템, 항공기 엔진 설계, 가스터빈 기반 발전, 고성능 추진 시스템, Modelon, Modelica"
+  },
+  "title": "Jet Propulsion Library",
+  "subTitle": "Solutions for Jet Engine Performance Analysis and Propulsion System Innovation",
+  "name": "",
+  "introduction": [
+    "The Jet Propulsion Library is a comprehensive solution for the design and optimization of jet engines and propulsion systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements core components—including compressors, combustors, turbines, and nozzles—to replicate actual operating conditions. By providing performance analysis and control strategy verification, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various engine architectures, enabling the easy configuration of complex propulsion systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as aircraft engine design, gas turbine-based power generation, and high-performance propulsion systems, this library is the optimal choice for achieving both improved efficiency and system stability.",
+    "The Jet Propulsion Library supports high-reliability design decisions by accurately reproducing various engine cycles through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical compressor-combustor-turbine-nozzle configurations to complex architectures, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates key indicators such as thrust, fuel consumption rate, and thermal efficiency, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}

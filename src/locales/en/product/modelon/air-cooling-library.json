@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Air Cooling Library - A specialized library for efficient air-cooled cooling design and performance analysis",
+    "description": "A specialized library for efficient air-cooled cooling design and performance analysis",
+    "keywords": "Air Cooling Library, 공랭식 냉각 설계, 냉각, 데이터센터 공랭식 냉각, 전력전자 냉각, 산업용 공정, Modelon, Modelica"
+  },
+  "title": "Air Cooling Library",
+  "subTitle": "A specialized library for efficient air-cooled cooling design and performance analysis",
+  "name": "",
+  "introduction": [
+    "The Air Cooling Library is a comprehensive solution for the design and optimization of air-cooled systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements core components such as fans, ducts, heat exchangers, and air flow networks to replicate actual operating conditions. By evaluating heat transfer performance and flow characteristics, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various cooling circuits, enabling the easy configuration of complex systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as data center cooling, power electronics cooling, and industrial processes, this library is the optimal choice for achieving both improved thermal efficiency and system stability.",
+    "The Air Cooling Library supports high-reliability design decisions by accurately reproducing various air-cooled architectures through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical fan-duct-heat exchanger configurations to complex networks, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates heat transfer efficiency, pressure loss, and energy balance indicators, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}

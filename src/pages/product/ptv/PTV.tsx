@@ -1,32 +1,39 @@
+import resource from "../../../data/product/ptv/ptv.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
+import LangToggle from "../../../common/LangToggle";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
-import ptv from "../../../data/product/ptv/ptv.json";
-import { useSEO } from "../../../hooks/useSEO";
 
 const PTV = () => {
-  const seoData = useSEO("product/ptv", ptv);
+  const { t } = useTranslation("product/ptv" as never);
+  const td = (key: string): string => t(key as never);
 
-  const {
-    ptv_mainImg,
-    ptv_mainImg_alt,
-    ptv_title,
-    ptv_text,
-    ptv_name,
-    ptv_pageKey,
-    ptv_libraries,
-  } = ptv;
+  const textList = t("ptv_text" as never, { returnObjects: true }) as string[];
+
+  const libraries = resource.ptv_libraries.map((lib) => ({
+    imgUrl: lib.imgUrl,
+    url: lib.url,
+    text: td(`ptv_libraries.${lib.id}.text`),
+    img_alt: td(`ptv_libraries.${lib.id}.img_alt`),
+  }));
+
   return (
     <>
-      <SEO {...seoData} />
-
+      <SEO
+        title={td("seo.title")}
+        description={td("seo.description")}
+        keywords={td("seo.keywords")}
+        ogImage={resource.seo?.ogImage}
+      />
+      <LangToggle />
       <ProductPageTemplate
-        image={ptv_mainImg}
-        image_alt={ptv_mainImg_alt}
-        title={ptv_title}
-        textList={ptv_text}
-        name={ptv_name}
-        libraries={ptv_libraries}
-        pageKey={ptv_pageKey}
+        image={resource.ptv_mainImg}
+        image_alt={td("ptv_mainImg_alt")}
+        title={td("ptv_title")}
+        textList={textList}
+        name={td("ptv_name")}
+        libraries={libraries}
+        pageKey={resource.ptv_pageKey}
       />
     </>
   );

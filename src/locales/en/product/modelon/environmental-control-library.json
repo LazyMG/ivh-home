@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Environmental Control Library - Designing environmental control systems to ensure comfort and safety",
+    "description": "Designing environmental control systems to ensure comfort and safety",
+    "keywords": "Environmental Control Library, 환경 제어, 공기 조화, 압력 제어, 온도 조절, 습도 관리, 항공기, 특수 환경 시스템, Modelon, Modelica"
+  },
+  "title": "Environmental Control Library",
+  "subTitle": "Designing environmental control systems to ensure comfort and safety",
+  "name": "",
+  "introduction": [
+    "The Environmental Control Library is a comprehensive solution for the design and optimization of aircraft and specialized environment systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements core functions—including air conditioning, pressure control, temperature regulation, and humidity management—to replicate actual operating conditions. By analyzing thermal-fluid behavior and verifying control strategies, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various environmental control circuits, enabling the easy configuration of complex systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as aircraft cabin environmental control, spacecraft life support systems, and specialized industrial environment management, this library is the optimal choice for achieving both comfort and safety.",
+    "The Environmental Control Library supports high-reliability design decisions by accurately reproducing various environmental control architectures through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical air conditioning-pressure control-heat exchange configurations to complex networks, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates thermal-fluid balance, energy efficiency, and control stability indicators, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}

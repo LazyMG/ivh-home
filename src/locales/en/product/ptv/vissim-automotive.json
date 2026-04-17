@@ -1,0 +1,37 @@
+{
+  "seo": {
+    "title": "Vissim Automotive - Specialized Solution for Automotive Testing and Traffic Simulation",
+    "description": "Specialized Solution for Automotive Testing and Traffic Simulation",
+    "keywords": "Vissim Automotive, 자동차 테스트, 교통 시뮬레이션, 소프트웨어, PTV, 미시적 시뮬레이션, 행동 기반 모델, 가상 주행 테스트, 폐루프 방식 검증"
+  },
+  "vissim_automotive_title": "Vissim Automotive",
+  "vissim_automotive_subTitle": "Specialized Solution for Automotive Testing and Traffic Simulation",
+  "vissim_automotive_name": "Vissim Automotive",
+  "vissim_automotive_introduction": [
+    "PTV Vissim is an automotive development tool based on microscopic traffic simulation, supporting the construction of responsive digital test environments for various vehicles. By precisely reproducing realistic surrounding traffic conditions through behavior-based models, the software enables closed-loop verification across a wide range of virtual driving tests.",
+    "Traffic scenarios evolve dynamically based on interactions between road users and their relationship with the traffic network, allowing for exploratory testing without the need to pre-define specific scenarios. Through microscopic simulation, specific test runs can be fully reproduced, or an infinite variety of automatically generated scenarios can be utilized, providing a flexible and repeatable testing environment."
+  ],
+  "features_section_title": "Features",
+  "vissim_automotive_features": {
+    "feat-0": {
+      "title": "Integration of Vissim Core Functionalities",
+      "text": "Vissim Automotive includes all core features of PTV Vissim, providing a precision testing environment based on microscopic traffic simulation. It realistically reproduces the movements of diverse traffic entities—including vehicles, pedestrians, and cyclists—enabling simulations that closely mirror actual road conditions."
+    },
+    "feat-1": {
+      "title": "Official Support for ASAM OpenDRIVE 1.8 and Road Standard Compatibility",
+      "text": "By supporting the industry-standard ASAM OpenDRIVE format up to the latest version 1.8, the tool enables the reuse of existing test networks and the establishment of Co-Simulation environments across various simulation platforms. It allows for the seamless import of not only road geometries but also speed limits, priority rules, traffic light controllers, and pedestrian infrastructure to easily configure complete test environments."
+    },
+    "feat-2": {
+      "title": "Support for ADAS and Autonomous Driving Performance Evaluation",
+      "text": "Dedicated behavior models reflecting the characteristics of automated vehicles are provided, enabling precise simulation of ACC-based car-following and ALC-based lane-changing scenarios. Realistic testing is possible even in environments where human drivers and autonomous vehicles coexist, offering optimized simulation for ADAS function verification."
+    },
+    "feat-3": {
+      "title": "1kHz High-Speed Computation for HiL Testing",
+      "text": "Supporting high-frequency computation and output of up to 1kHz, the tool enables precision testing of models, software, components, and vehicle units within HiL (Hardware-in-the-Loop) and SiL (Software-in-the-Loop) environments. It also supports parallel computing and multi-Co-Simulation via the Driving Simulator Interface (DSI), "
+    },
+    "feat-4": {
+      "title": "Automated Traffic Environment Generation",
+      "text": "Test environments can be rapidly configured by automatically generating basic traffic flows, including OpenDRIVE-based intersection nodes, vehicle inputs, and routing. Future updates will include right-of-way and signal control functionalities, while various driver behavior styles and weather conditions can already be configured to effectively reproduce hazardous situations."
+    }
+  }
+}

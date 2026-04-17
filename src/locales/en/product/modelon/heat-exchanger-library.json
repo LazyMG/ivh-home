@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Heat Exchanger Library - Smart modeling for improved heat exchange efficiency and network optimization",
+    "description": "Smart modeling for improved heat exchange efficiency and network optimization",
+    "keywords": "Heat Exchanger Library, 열교환, 네트워크 최적화, 쉘 튜브, 플레이트, 공랭식, 액랭식, HVAC, 산업용 열공정, 에너지 회수 시스템, Modelon, Modelica"
+  },
+  "title": "Heat Exchanger Library",
+  "subTitle": "Smart modeling for improved heat exchange efficiency and network optimization",
+  "name": "",
+  "introduction": [
+    "The Heat Exchanger Library is a comprehensive solution for the design and optimization of various heat exchange systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements various heat exchanger types—including shell-and-tube, plate, air-cooled, and liquid-cooled—to replicate actual operating conditions. By evaluating heat transfer performance and pressure loss, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various heat exchange networks, enabling the easy configuration of complex systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as HVAC, industrial thermal processes, and energy recovery systems, this library is the optimal choice for achieving both improved thermal efficiency and system stability.",
+    "The Heat Exchanger Library supports high-reliability design decisions by accurately reproducing various heat exchange methods and structures through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical individual heat exchangers to complex networks, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates heat transfer efficiency, pressure loss, and energy balance indicators, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}
