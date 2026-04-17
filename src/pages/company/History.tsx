@@ -4,7 +4,6 @@ import resource from "../../data/company/history.json";
 import ImageHeader from "../../components/company/ImageHeader";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
-import LangToggle from "../../common/LangToggle";
 
 const History = () => {
   const { t } = useTranslation("company/history");
@@ -19,7 +18,6 @@ const History = () => {
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
-        <LangToggle />
         <Box
           sx={(theme) => ({
             px: "20px",

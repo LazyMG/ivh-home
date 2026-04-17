@@ -1,7 +1,6 @@
 import resource from "../../../data/product/dymola/battery.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const Battery = () => {
@@ -40,7 +39,6 @@ const Battery = () => {
         keywords={td("seo.keywords")}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <LibraryPageTemplate
         title={td("battery_title")}
         subTitle={td("battery_subTitle")}

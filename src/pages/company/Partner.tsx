@@ -5,7 +5,6 @@ import ImageHeader from "../../components/company/ImageHeader";
 import CustomerContainer from "../../components/company/CustomerContainer";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
-import LangToggle from "../../common/LangToggle";
 
 interface CustomerListObj {
   src: string;
@@ -54,7 +53,6 @@ const Partner = () => {
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
-        <LangToggle />
         <Box
           sx={(theme) => ({
             px: "20px",

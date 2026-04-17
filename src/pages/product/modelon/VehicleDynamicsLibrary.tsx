@@ -1,7 +1,6 @@
 import resource from "../../../data/product/modelon/vehicle-dynamics-library.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const VehicleDynamicsLibrary = () => {
@@ -21,7 +20,6 @@ const VehicleDynamicsLibrary = () => {
   return (
     <>
       <SEO title={td("seo.title")} description={td("seo.description")} keywords={td("seo.keywords")} ogImage={resource.seo?.ogImage} />
-      <LangToggle />
       <LibraryPageTemplate
         title={td("vehicle_title")}
         subTitle={td("vehicle_subTitle")}

@@ -24,7 +24,6 @@ import { customerService } from "../../service/customerService";
 import SEO from "../../common/SEO";
 import PrivacyPolicyIcon from "../../components/support/PrivacyPolicyIcon";
 import ScrollButton from "../../common/ScrollButton";
-import LangToggle from "../../common/LangToggle";
 
 interface ContactFormType {
   company: string;
@@ -115,7 +114,6 @@ const Contact = () => {
         })}
       >
         <ScrollButton />
-        <LangToggle />
 
         <Box
           sx={(theme) => ({

@@ -1,7 +1,6 @@
 import resource from "../../../data/product/ptv/ptv.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
 const PTV = () => {
@@ -25,7 +24,6 @@ const PTV = () => {
         keywords={td("seo.keywords")}
         ogImage={resource.seo?.ogImage}
       />
-      <LangToggle />
       <ProductPageTemplate
         image={resource.ptv_mainImg}
         image_alt={td("ptv_mainImg_alt")}

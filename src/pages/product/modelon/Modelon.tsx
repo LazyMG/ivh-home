@@ -1,7 +1,6 @@
 import resource from "../../../data/product/modelon/modelon.json";
 import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
-import LangToggle from "../../../common/LangToggle";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
 const Modelon = () => {
@@ -18,7 +17,6 @@ const Modelon = () => {
   return (
     <>
       <SEO title={td("seo.title")} description={td("seo.description")} keywords={td("seo.keywords")} ogImage={resource.seo?.ogImage} />
-      <LangToggle />
       <ProductPageTemplate
         image={resource.modelon_mainImg}
         image_alt={td("modelon_mainImg_alt")}

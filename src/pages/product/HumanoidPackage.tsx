@@ -1,7 +1,6 @@
 import { Box, Divider, Typography } from "@mui/material";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
-import LangToggle from "../../common/LangToggle";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import resource from "../../data/product/humanoidPackage.json";
 import { useTranslation } from "react-i18next";
@@ -125,7 +124,6 @@ const HumanoidPackage = () => {
       />
       <Box component="main">
         <ScrollButton threshold={100} />
-        <LangToggle />
 
         {/* ===== A. Hero (Part 1) ===== */}
         <Box
