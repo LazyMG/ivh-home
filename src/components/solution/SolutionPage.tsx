@@ -35,7 +35,7 @@ export const SolutionPage = ({ namespace }: SolutionPageProps) => {
         <Box
           sx={{
             mt: 4,
-            mb: 20,
+            mb: 10,
             display: "flex",
             gap: 1,
             flexDirection: "column",

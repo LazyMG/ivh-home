@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { createContext, useContext, type ReactNode } from "react";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 const DEFAULT_COLOR = "#00758F";
 
@@ -29,22 +30,25 @@ export const PageGroup = ({
   color = DEFAULT_COLOR,
   image,
   children,
-}: PageGroupProps) => (
-  <SectionColorContext.Provider value={color}>
-    <PageTitle title={title} color={color} image={image} />
-    <Box
-      sx={{
-        px: "10%",
-        my: 8,
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-      }}
-    >
-      {children}
-    </Box>
-  </SectionColorContext.Provider>
-);
+}: PageGroupProps) => {
+  const { isMobile } = useBreakpoint();
+  return (
+    <SectionColorContext.Provider value={color}>
+      <PageTitle title={title} color={color} image={image} />
+      <Box
+        sx={{
+          px: isMobile ? "5%" : "10%",
+          my: 8,
+          display: "flex",
+          flexDirection: "column",
+          gap: 8,
+        }}
+      >
+        {children}
+      </Box>
+    </SectionColorContext.Provider>
+  );
+};
 
 interface PageTitleProps {
   title: string;
@@ -56,55 +60,64 @@ export const PageTitle = ({
   title,
   color = DEFAULT_COLOR,
   image,
-}: PageTitleProps) => (
-  <Box
-    sx={{
-      px: "8%",
-      mt: 12,
-      mb: 6,
-      display: "flex",
-      alignItems: "center",
-      gap: 2,
-      position: "relative",
-    }}
-  >
-    {image && (
-      <Box
-        component="img"
-        src={image}
-        sx={{
-          position: "absolute",
-          left: "100px",
-          top: "0",
-          transform: "translateY(-50%)",
-          width: 90,
-          height: "auto",
-          objectFit: "contain",
-          opacity: 0.6,
-          maskImage: "linear-gradient(135deg, #000 5%, transparent 70%)",
-          WebkitMaskImage: "linear-gradient(135deg, #000 5%, transparent 70%)",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
-      />
-    )}
+}: PageTitleProps) => {
+  const { isMobile } = useBreakpoint();
+  return (
     <Box
-      width={12}
-      height={28}
-      sx={{ backgroundColor: color, position: "relative", zIndex: 1 }}
-    />
-    <Typography
       sx={{
-        fontSize: "40px",
-        fontFamily: "Freesentation-2-ExtraLight",
+        px: isMobile ? "4%" : "8%",
+        mt: 12,
+        mb: 6,
+        display: "flex",
+        alignItems: "stretch",
+        gap: 2,
         position: "relative",
-        zIndex: 1,
       }}
     >
-      {title}
-    </Typography>
-  </Box>
-);
+      {image && (
+        <Box
+          component="img"
+          src={image}
+          sx={{
+            position: "absolute",
+            left: "100px",
+            top: "0",
+            transform: "translateY(-50%)",
+            width: 90,
+            height: "auto",
+            objectFit: "contain",
+            opacity: 0.6,
+            maskImage: "linear-gradient(135deg, #000 5%, transparent 70%)",
+            WebkitMaskImage:
+              "linear-gradient(135deg, #000 5%, transparent 70%)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+      )}
+      <Box
+        sx={{
+          width: 12,
+          flexShrink: 0,
+          backgroundColor: color,
+          position: "relative",
+          zIndex: 1,
+        }}
+      />
+      <Typography
+        sx={{
+          fontSize: isMobile ? "28px" : "40px",
+          lineHeight: 1.2,
+          fontFamily: "Freesentation-2-ExtraLight",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {title}
+      </Typography>
+    </Box>
+  );
+};
 
 interface SectionProps {
   title: string;
@@ -116,6 +129,8 @@ interface SectionProps {
 export const Section = ({ title, children, color, subtitle }: SectionProps) => {
   const contextColor = useContext(SectionColorContext);
   const resolvedColor = color ?? contextColor;
+  const { isMobile } = useBreakpoint();
+
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
       <Typography
@@ -123,6 +138,7 @@ export const Section = ({ title, children, color, subtitle }: SectionProps) => {
           fontSize: "24px",
           fontFamily: "Freesentation-7-Bold",
           color: resolvedColor,
+          lineHeight: isMobile ? 1.1 : 1.2,
         }}
       >
         {title}
@@ -160,34 +176,37 @@ interface BulletListProps {
   items: ReactNode[];
 }
 
-export const BulletList = ({ items }: BulletListProps) => (
-  <Box
-    component="ul"
-    sx={{
-      mt: 2,
-      pl: 2,
-      listStyle: "none",
-      "& li::before": {
-        content: "'·'",
-        mr: 1,
-        color: "#424242",
-      },
-      display: "flex",
-      flexDirection: "column",
-      gap: 1,
-    }}
-  >
-    {items.map((item, i) => (
-      <Typography
-        key={i}
-        component="li"
-        sx={{ color: "#424242", fontFamily: "Freesentation-5-Medium" }}
-      >
-        {item}
-      </Typography>
-    ))}
-  </Box>
-);
+export const BulletList = ({ items }: BulletListProps) => {
+  const { isMobile } = useBreakpoint();
+  return (
+    <Box
+      component="ul"
+      sx={{
+        mt: 2,
+        pl: isMobile ? 0.5 : 2,
+        listStyle: "none",
+        "& li::before": {
+          content: "'·'",
+          mr: 1,
+          color: "#424242",
+        },
+        display: "flex",
+        flexDirection: "column",
+        gap: 1,
+      }}
+    >
+      {items.map((item, i) => (
+        <Typography
+          key={i}
+          component="li"
+          sx={{ color: "#424242", fontFamily: "Freesentation-5-Medium" }}
+        >
+          {item}
+        </Typography>
+      ))}
+    </Box>
+  );
+};
 
 interface LabeledBulletListProps {
   label: ReactNode;
@@ -217,27 +236,32 @@ interface VideoEmbedProps {
 export const VideoEmbed = ({
   src,
   title = "YouTube video player",
-  aspectRatio = "3 / 1",
-}: VideoEmbedProps) => (
-  <Box
-    sx={{
-      width: "100%",
-      aspectRatio,
-      "& iframe": {
+  aspectRatio,
+}: VideoEmbedProps) => {
+  const { isMobile } = useBreakpoint();
+  const resolvedRatio = aspectRatio ?? (isMobile ? "16 / 9" : "3 / 1");
+  return (
+    <Box
+      sx={{
         width: "100%",
-        height: "100%",
-        border: 0,
-        display: "block",
-      },
-    }}
-  >
-    <iframe
-      src={src}
-      title={title}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    />
-  </Box>
-);
+        aspectRatio: resolvedRatio,
+        "& iframe": {
+          width: "100%",
+          height: "100%",
+          border: 0,
+          display: "block",
+        },
+      }}
+    >
+      <iframe
+        src={src}
+        title={title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+        allowFullScreen
+      />
+    </Box>
+  );
+};
 
 interface CalloutProps {
   children: ReactNode;
