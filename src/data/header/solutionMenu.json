@@ -1,0 +1,30 @@
+{
+  "title": "SOLUTIONS",
+  "path": "/solution",
+  "subMenu": [
+    {
+      "name": "Our Engineering Philosophy",
+      "path": ""
+    },
+    {
+      "name": "Core Engineering Capabilities",
+      "path": "",
+      "subMenu": [
+        { "name": "Modelica-based System Engineering", "path": "" },
+        {
+          "name": "ASAM-based Verification & Validation Engineering",
+          "path": ""
+        },
+        { "name": "Physical AI Engineering", "path": "" }
+      ]
+    },
+    {
+      "name": "Engineering to Industry",
+      "path": ""
+    },
+    {
+      "name": "Future Engineering Directions",
+      "path": ""
+    }
+  ]
+}

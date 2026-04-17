@@ -2,7 +2,8 @@ import { Box, Divider, Typography } from "@mui/material";
 import type { MainMenuItem, MenuItem } from "../../types/header";
 import { AccordionMenu } from "./AccordionMenu";
 import { useEffect, useState, useRef } from "react";
-import HeaderSolution from "./HeaderSolution";
+import solutionMenu from "../../data/header/solutionMenu.json";
+// import HeaderSolution from "./HeaderSolution";
 
 interface DrawerContentProps {
   menu: MainMenuItem | undefined;
@@ -334,7 +335,103 @@ export const DrawerContent = ({
   }
 
   if (openMainMenu === "SOLUTIONS") {
-    return <HeaderSolution />;
+    const isAccordionOpen = openAccordion !== null;
+
+    return (
+      <Box
+        sx={{
+          flex: 1,
+          px: 3,
+          py: 4,
+          ml: "24%",
+          display: "flex",
+          flexDirection: "column",
+          boxSizing: "border-box",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
+          <Box
+            sx={{
+              minWidth: "350px",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "16px",
+                fontFamily: "Freesentation-6-SemiBold",
+                color: "#000000",
+                mb: 2,
+                pb: 1,
+                borderBottom: `1px solid #828282`,
+              }}
+            >
+              Solutions
+            </Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+            width: isAccordionOpen ? "100%" : "auto",
+          }}
+        >
+          {(solutionMenu.subMenu as MenuItem[])?.map((item, itemIndex) => {
+            if (item.state === "hide") return null;
+
+            const hasSubMenu = item.subMenu && item.subMenu.length > 0;
+            const isOpen = openAccordion === item.name;
+
+            return (
+              <Box
+                key={itemIndex}
+                sx={{
+                  position: "relative",
+                  width: isOpen ? "100%" : "fit-content",
+                }}
+              >
+                <Typography
+                  onClick={() => {
+                    if (hasSubMenu) {
+                      handleAccordionClick(item.name);
+                    } else {
+                      handleNavigate(item.path);
+                    }
+                  }}
+                  sx={{
+                    fontSize: "16px",
+                    fontFamily: "Freesentation-6-SemiBold",
+                    color: "#424242",
+                    cursor: "pointer",
+                    py: 0.5,
+                    width: "fit-content",
+                    "&:hover": {
+                      color: "#179EBD",
+                    },
+                  }}
+                >
+                  {item.name}
+                </Typography>
+
+                {hasSubMenu && isOpen && (
+                  <AccordionMenu
+                    items={item.subMenu || []}
+                    navigate={navigate}
+                    onClose={onClose}
+                  />
+                )}
+              </Box>
+            );
+          })}
+        </Box>
+      </Box>
+    );
   }
 
   if (openMainMenu === "SUPPORT") {
