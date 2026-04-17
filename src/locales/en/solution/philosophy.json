@@ -1,0 +1,127 @@
+{
+  "pageTitle": "Our Engineering Philosophy",
+  "image": "/images/pages/solution/philosophy.png",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Driving Progress through Engineering",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH does not simply apply or combine technologies."
+        },
+        {
+          "type": "p",
+          "text": "We are a company driven by the conviction **that engineering is the catalyst for industrial and social progress.**"
+        },
+        {
+          "type": "p",
+          "text": "As industrial systems grow increasingly complex, elements such as robotics, software, AI, energy, human factors, and operational environments are no longer isolated."
+        },
+        {
+          "type": "p",
+          "text": "Navigating this complexity is not merely a matter of technology; it is a matter of **how we understand and design the system.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "We Start from the System, Not from the Product",
+      "content": [
+        {
+          "type": "p",
+          "text": "At iVH, every project begins with the System, rather than the product."
+        },
+        {
+          "type": "p",
+          "text": "We view the entire lifecycle—from requirements definition and structural design to behavior analysis, verification, and operation—as a single, seamless engineering thread."
+        },
+        { "type": "p", "text": "Through this approach, we:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Predict failures during the initial design phase.",
+            "Build systems that are fully verifiable.",
+            "Design architectures that evolve continuously during operation."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Engineering at iVH is not about delivering \"one-off technology.\" It is the process of building a **sustainable and enduring foundation.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "AI Is Part of Engineering, Not a Shortcut",
+      "content": [
+        {
+          "type": "p",
+          "text": "At iVH, we do not view AI as a magic solution or a simple add-on feature."
+        },
+        {
+          "type": "p",
+          "text": "AI must be a responsibly integrated element within system engineering."
+        },
+        {
+          "type": "p",
+          "text": "The AI we pursue is Physical AI, which:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Understands physical laws and constraints.",
+            "Operates within a clearly defined role in the system architecture.",
+            "Functions in a predictable and explainable manner."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For iVH, AI is not a feature layered on top of data; it is an **integral part of an engineered system.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Technology as a Means, Progress as a Purpose",
+      "content": [
+        {
+          "type": "p",
+          "text": "For iVH, technology is never the end goal; it is a means to achieve progress."
+        },
+        {
+          "type": "p",
+          "text": "Modelica, international standards, Digital Twins, and AI are all merely tools to build better systems."
+        },
+        { "type": "p", "text": "Through technology, we aim to:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Create safer systems.",
+            "Enable more reliable operations.",
+            "Build a foundation for continuous industrial advancement."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Progress through technology is not just a slogan at iVH; it is the **fundamental criterion for every engineering decision we make.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Our Belief",
+      "content": [
+        { "type": "p", "text": "iVH believes:" },
+        {
+          "type": "callout",
+          "text": "Industries may change,\nbut right engineering leads that change."
+        },
+        {
+          "type": "p",
+          "text": "We create the products of tomorrow with the technologies of today, continuously accumulating the **engineering excellence** that makes those products possible."
+        }
+      ]
+    }
+  ]
+}

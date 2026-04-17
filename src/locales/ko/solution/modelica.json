@@ -1,0 +1,196 @@
+{
+  "pageTitle": "Modelica-based System Engineering",
+  "color": "#339070",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Modelica as the Language of System Engineering",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH의 시스템 엔지니어링은 **Modelica를 중심으로 설계**됩니다."
+        },
+        { "type": "p", "text": "Modelica는 단순한 모델링 도구가 아니라," },
+        {
+          "type": "p",
+          "text": "복잡한 산업 시스템을 하나의 언어로 표현할 수 있는"
+        },
+        {
+          "type": "p",
+          "text": "iVH는 한국을 대표하여 **Modelica Association 활동에 참여**하고 있으며,"
+        },
+        {
+          "type": "p",
+          "text": "Modelica International / Asian Modelica Conference를 개최하고"
+        },
+        {
+          "type": "p",
+          "text": "국제 커뮤니티와 함께 기술의 진화를 이끌고 있습니다."
+        },
+        {
+          "type": "p",
+          "text": "또한 iVH는 Modelica 협회의 임원진(Board-level contributor)으로 활동하며,"
+        },
+        { "type": "p", "text": "표준과 기술 방향성에 직접 관여하고 있습니다." }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "https://www.youtube.com/embed/SzdFK4601Fs?si=hiNDpz0ahuNmPv6j"
+    },
+    {
+      "type": "section",
+      "title": "From Standard to Engineering Practice",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 표준을 “따르는 입장”에 머무르지 않습니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 Modelica를 실제 산업 현장에서 Engineering으로 구현합니다."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "eFMI(eFMI®) **Duty Project Leader**",
+            "FMI **Steering Committee Member**"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이러한 역할을 통해 iVH는"
+        },
+        {
+          "type": "p",
+          "text": "모델 기반 설계(Model-based Design)가"
+        },
+        {
+          "type": "p",
+          "text": "제어기 개발, 코드 생성, 실시간 운용까지 이어질 수 있도록"
+        },
+        {
+          "type": "p",
+          "text": "표준과 실제 Engineering 사이의 간극을 메우고 있습니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Digital Twin Built on Modelica",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 다양한 산업 현장에서 사용되는 **Digital Twin을 Modelica 기반으로 설계**합니다."
+        },
+        {
+          "type": "p",
+          "text": "이는 시각화 중심의 디지털 트윈이 아니라,"
+        },
+        {
+          "type": "p",
+          "text": "설계·검증·운영에 실제로 사용되는 **Engineering Digital Twin**입니다."
+        },
+        {
+          "type": "p",
+          "text": "적용 분야는 다음과 같습니다."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "자동차 및 전동화 시스템",
+            "항공기 및 항공 시스템",
+            "발전소 및 에너지 시스템",
+            "전기 시스템 및 전력망",
+            "HVAC, 공조 시스템",
+            "배터리 및 열관리 시스템"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "서로 다른 산업처럼 보이지만,"
+        },
+        {
+          "type": "p",
+          "text": "이 모든 영역의 핵심은 **물리 기반 시스템 설계와 통합**이며,"
+        },
+        {
+          "type": "p",
+          "text": "Modelica는 이를 가능하게 하는 공통 언어입니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Education, Ecosystem, and Evolution",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 기술을 내부 역량으로만 축적하지 않습니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 **Modelica 생태계를 확장하는 역할**을 수행합니다."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "한국 내 Modelica 교육 프로그램 운영",
+            "산업체·연구기관 대상 체계적인 커리큘럼 제공",
+            "실무 중심의 모델링 및 디지털 트윈 교육"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이를 통해 iVH는"
+        },
+        {
+          "type": "p",
+          "text": "단기 프로젝트를 넘어서"
+        },
+        {
+          "type": "p",
+          "text": "**산업 전반의 모델 기반 시스템 엔지니어링 수준을 끌어올리는 것**을 목표로 합니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Engineering That Evolves Across Domains",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 특정 산업의 Modelica 전문가가 아니라,"
+        },
+        {
+          "type": "p",
+          "text": "**모든 산업에서 통하는 System Engineering 역량**을 보유하고 있습니다."
+        },
+        {
+          "type": "p",
+          "text": "자동차, 항공, 에너지, 건물, 로봇 등"
+        },
+        {
+          "type": "p",
+          "text": "적용 분야는 계속 확장되지만,"
+        },
+        {
+          "type": "p",
+          "text": "우리가 사용하는 Engineering의 근간은 동일합니다."
+        },
+        {
+          "type": "callout",
+          "text": "모델은 진화하고,\n표준은 축적되며,\nEngineering은 더 강해집니다."
+        },
+        {
+          "type": "p",
+          "text": "이것이 iVH가 Modelica-based System Engineering을"
+        },
+        {
+          "type": "p",
+          "text": "가장 중요한 Core Capability로 정의하는 이유입니다."
+        }
+      ]
+    }
+  ]
+}

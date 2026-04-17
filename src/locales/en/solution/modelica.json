@@ -1,0 +1,150 @@
+{
+  "pageTitle": "Modelica-based System Engineering",
+  "color": "#339070",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Modelica as the Language of System Engineering",
+      "content": [
+        {
+          "type": "p",
+          "text": "At iVH, system engineering is built around **Modelica.**"
+        },
+        {
+          "type": "p",
+          "text": "More than just a modeling tool, Modelica is a specialized system engineering language capable of representing complex industrial systems through a single, unified framework."
+        },
+        {
+          "type": "p",
+          "text": "Representing Korea, iVH actively participates in the **Modelica Association.** We lead the evolution of this technology alongside the global community by hosting the **Modelica International and Asian Modelica Conferences.**"
+        },
+        {
+          "type": "p",
+          "text": "Furthermore, iVH serves as a **Board-level contributor** to the Modelica Association, directly influencing international standards and the future strategic direction of the technology."
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "https://www.youtube.com/embed/SzdFK4601Fs?si=hiNDpz0ahuNmPv6j"
+    },
+    {
+      "type": "section",
+      "title": "From Standard to Engineering Practice",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH does not stop at simply \"following\" standards."
+        },
+        {
+          "type": "p",
+          "text": "We implement Modelica as a tangible engineering practice within real-world industrial environments."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "**eFMI(eFMI®) Duty Project Leader**",
+            "**FMI Steering Committee Member**"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Through these pivotal roles, iVH bridges the gap between theoretical standards and practical engineering."
+        },
+        {
+          "type": "p",
+          "text": "We ensure that **Model-based Design (MBD)** seamlessly extends across the entire workflow—from controller development and code generation to real-time operations."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Digital Twin Built on Modelica",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH designs Digital Twins for various industrial applications based on **Modelica.**"
+        },
+        {
+          "type": "p",
+          "text": "Unlike visualization-focused digital twins, ours is an **Engineering Digital Twin** specifically designed for design, verification, and operation."
+        },
+        {
+          "type": "p",
+          "text": "Our expertise spans across diverse sectors, including:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Automotive and Electrification Systems",
+            "Aerospace and Avionics Systems",
+            "Power Plants and Energy Systems",
+            "Electrical Systems and Power Grids",
+            "HVAC and Air Conditioning Systems",
+            "Battery and Thermal Management Systems"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "While these may appear to be distinct industries,"
+        },
+        {
+          "type": "p",
+          "text": "they all share a common core: **physics-based system design and integration.**"
+        },
+        {
+          "type": "p",
+          "text": "Modelica serves as the universal language that makes this possible."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Education, Ecosystem, and Evolution",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH does not keep technology as a strictly internal resource."
+        },
+        {
+          "type": "p",
+          "text": "We take an active role in **expanding the Modelica ecosystem** through:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Operating Modelica training programs in Korea.",
+            "Providing structured curricula for industrial companies and research institutes.",
+            "Delivering practice-oriented modeling and Digital Twin education."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "By doing so, iVH aims to look beyond short-term projects and **elevate the overall standard of Model-based System Engineering across the entire industry.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Engineering That Evolves Across Domains",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH is not merely a Modelica expert in a specific sector; we possess **system engineering capabilities** that transcend industrial boundaries."
+        },
+        {
+          "type": "p",
+          "text": "While our applications continue to expand—from automotive and aerospace to energy, buildings, and robotics—the engineering foundation we rely on remains the same."
+        },
+        {
+          "type": "callout",
+          "text": "Models evolve,\nstandards accumulate,\nand engineering grows stronger."
+        },
+        {
+          "type": "p",
+          "text": "This is why iVH defines Modelica-based System Engineering as our most vital core capability."
+        }
+      ]
+    }
+  ]
+}
