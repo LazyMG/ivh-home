@@ -114,6 +114,9 @@ const MobileFooter = () => {
           }}
           component="p"
         >
+          <Box component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+            T.
+          </Box>{" "}
           {phone}
         </Typography>
         <Typography
@@ -124,6 +127,9 @@ const MobileFooter = () => {
           }}
           component="p"
         >
+          <Box component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+            E.
+          </Box>{" "}
           {email}
         </Typography>
       </Box>
