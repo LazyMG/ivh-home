@@ -16,9 +16,7 @@ const Footer = () => {
         justifyContent: "center",
         gap: "10px",
         background: "linear-gradient(to bottom, #ffffff 80%, #03193f49 100%)",
-        py: 8,
         px: "6%",
-        boxShadow: "0 -6px 15px 0 rgba(0,0,0,0.25)",
         position: "relative",
         zIndex: 10,
         minHeight: "400px",
@@ -28,6 +26,8 @@ const Footer = () => {
       {/** 왼쪽(회사정보) · 오른쪽(메뉴) 정렬 컨테이너 */}
       <Box
         sx={{
+          py: 8,
+          borderTop: "1px solid #737373",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
