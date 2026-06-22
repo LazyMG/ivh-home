@@ -1,12 +1,13 @@
 import { Box, CssBaseline, Typography } from "@mui/material";
 
-import NewsletterList from "../components/common/NewsletterList";
 import SEO from "../common/SEO";
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { Fragment, lazy, Suspense, useEffect } from "react";
 
 import ContactTrainingInfoSection from "../components/home/ContactTrainingInfoSection";
-import MainGradientText from "../components/common/MainGradientText";
 import HomeSectionTitle from "../components/home/HomeSectionTitle";
+import MainProductCard from "../components/home/MainProductCard";
+import ProvisionCard from "../components/home/ProvisionCard";
+import NewsCard from "../components/home/NewsCard";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 
 import "../App.css";
@@ -17,42 +18,67 @@ const MobileProductSwiper = lazy(
 );
 
 import homeData from "../data/home/home.json";
-import home_partner from "../data/company/partner.json";
 import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
-import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const { isMobile } = useBreakpoint();
 
-  const { iMOVA, products, video } = homeData;
-  const { partner_partnerList } = home_partner;
-  const { t: tPartner } = useTranslation("company/partner");
-
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVideoSrc(video);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.25 },
-    );
-    if (videoRef.current) observer.observe(videoRef.current);
-    return () => observer.disconnect();
-  }, [video]);
-
-  useEffect(() => {
-    if (videoSrc && videoRef.current) {
-      videoRef.current.load();
-      videoRef.current.play();
-    }
-  }, [videoSrc]);
+  const { iMOVA, products } = homeData;
 
   const navigate = useLocalizedNavigate();
+
+  // Latest News 카드 (임시 데이터 — 이미지/제목/날짜/링크는 추후 교체)
+  const newsItems = [
+    {
+      image: "/images/home/temp_news.png",
+      title: "Post-Hannover Messe 2026: iMOVA's Journey to the Global Stage",
+      date: "2026. 04. 30",
+      path: "/news/1",
+    },
+    {
+      image: "/images/home/temp_news.png",
+      title: "Post-Hannover Messe 2026: iMOVA's Journey to the Global Stage",
+      date: "2026. 04. 30",
+      path: "/news/2",
+    },
+    {
+      image: "/images/home/temp_news.png",
+      title: "Post-Hannover Messe 2026: iMOVA's Journey to the Global Stage",
+      date: "2026. 04. 30",
+      path: "/news/3",
+    },
+    {
+      image: "/images/home/temp_news.png",
+      title: "Post-Hannover Messe 2026: iMOVA's Journey to the Global Stage",
+      date: "2026. 04. 30",
+      path: "/news/4",
+    },
+  ];
+
+  // Provision 섹션 카드 (임시 데이터 — 아이콘/문구/링크는 추후 교체)
+  const provisionItems = [
+    {
+      icon: "/images/home/solution_icon.png",
+      title: "Solution",
+      description:
+        "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다.",
+      path: "/solution",
+    },
+    {
+      icon: "/images/home/support_icon.png",
+      title: "Support",
+      description:
+        "iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.",
+      path: "/support",
+    },
+    {
+      icon: "/images/home/training_icon.png",
+      title: "Training",
+      description:
+        "iVH는 개별 고객의 요구를 충족시키기 위해 표준화된 과정과 맞춤형 교육을 모두 제공합니다.",
+      path: "/support/training",
+    },
+  ];
 
   useEffect(() => {
     // 컴포넌트 마운트 시 body에 클래스 추가
@@ -87,7 +113,7 @@ const Home = () => {
       >
         <Box
           sx={(theme) => ({
-            mt: 10,
+            mt: 9,
             position: "relative",
             width: "100%",
             height: "100%",
@@ -104,14 +130,27 @@ const Home = () => {
           <Box sx={{ width: "100%", position: "relative" }}>
             <Box
               component="img"
-              src={isMobile ? iMOVA.mobile_imageUrl : iMOVA.imageUrl}
+              src={
+                isMobile
+                  ? iMOVA.mobile_imageUrl
+                  : "public/images/home/iMOVA_pc_main_image.png"
+              }
               alt={isMobile ? iMOVA.mobile_image_alt : iMOVA.image_alt}
               fetchPriority="high"
-              sx={(theme) => ({
+              sx={{
                 width: "100%",
-                mt: -2,
-                [theme.breakpoints.up("desktop")]: { mt: -20 },
-              })}
+                display: "block",
+              }}
+            />
+            {/* 이미지 위 그라데이션 마스크 (위 어둡게 → 아래 투명) */}
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(75deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 100%)",
+                pointerEvents: "none",
+              }}
             />
             <Box
               sx={(theme) => ({
@@ -123,29 +162,37 @@ const Home = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 [theme.breakpoints.up("tablet")]: {
-                  alignItems: "flex-end",
-                  top: "8%",
-                  right: "8%",
+                  alignItems: "flex-start",
+                  top: "18%",
+                  left: "8%",
+                  right: "auto",
+                  gap: 10,
                 },
               })}
             >
-              <MainGradientText
+              <Typography
                 component="h1"
                 sx={(theme) => ({
                   fontFamily: "Freesentation-7-Bold",
                   fontSize: "20px",
+                  color: "#FFFFFF",
+                  textTransform: "uppercase",
+                  textShadow: "3px 5px 6px rgba(0,0,0,0.6)",
+                  whiteSpace: "pre-line", // 공백 기준 줄바꿈 반영
                   [theme.breakpoints.up("tablet")]: {
-                    fontSize: "40px",
+                    fontSize: "60px",
                   },
                 })}
               >
-                {iMOVA.mainText}
-              </MainGradientText>
+                {/* 띄어쓰기마다 줄바꿈 (원문은 JSON에 한 줄로 유지) */}
+                {iMOVA.mainText.replaceAll(" ", "\n")}
+              </Typography>
               <Typography
                 sx={(theme) => ({
-                  color: "#5E5E5E",
+                  color: "#FFFFFF",
                   fontFamily: "Freesentation-5-Medium",
                   fontSize: "16px",
+                  textShadow: "3px 2px 5px rgba(0,0,0,0.6)",
                   [theme.breakpoints.up("tablet")]: {
                     fontSize: "24px",
                   },
@@ -154,227 +201,136 @@ const Home = () => {
                 {iMOVA.subText}
               </Typography>
             </Box>
-            <Box
-              component="img"
-              src={isMobile ? iMOVA.mobile_effect : iMOVA.pc_effect}
-              alt={isMobile ? iMOVA.mobile_effect_alt : iMOVA.pc_effect_alt}
-              fetchPriority="high"
-              sx={(theme) => ({
-                position: "absolute",
-                bottom: "-20%",
-                left: 0,
-                right: 0,
-                clipPath: "inset(0 0 25% 0)",
-                width: "100%",
-                [theme.breakpoints.up("tablet")]: {
-                  bottom: "-25%",
-                  left: 0,
-                  right: 0,
-                  clipPath: "inset(0 0 40% 0)",
-                  width: "100%",
-                },
-              })}
-            />
           </Box>
-          {/* Newsletter 섹션 */}
-          <Box
-            component="section"
-            sx={(theme) => ({
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 999,
-              px: 2,
-              [theme.breakpoints.up("desktop")]: {
-                position: "absolute",
-                top: "4%",
-                left: "8%",
-                maxWidth: "380px",
-                border: "1px solid rgba(0, 0, 0, 0.35) ",
-                borderRadius: "16px",
-                boxShadow: "3px 3px 1px rgba(0,0,0,0.15)",
-                px: 0,
-              },
-            })}
-          >
-            <NewsletterList />
-          </Box>
-          <Box
-            sx={(theme) => ({
-              px: 2,
-              display: "flex",
-              flexDirection: "column",
-              gap: 3,
-              [theme.breakpoints.up("tablet")]: {
-                px: "8%",
-              },
-            })}
-          >
-            <HomeSectionTitle text="Main Products" />
-            {isMobile ? (
-              <Suspense
-                fallback={<Box sx={{ width: "100%", aspectRatio: "4/3" }} />}
-              >
-                <MobileProductSwiper products={products} />
-              </Suspense>
-            ) : (
-              <Box
-                sx={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(4,1fr)",
-                  gap: 3,
-                  boxSizing: "border-box",
-                }}
-              >
-                {products.map((product) => (
-                  <Box
-                    component="button"
-                    key={product.name}
-                    sx={{
-                      borderRadius: "20px",
-                      width: "100%",
-                      background:
-                        "linear-gradient(white, white) padding-box, linear-gradient(to right, #339070, #1755C2) border-box",
-                      border: "2px solid transparent",
-                      boxSizing: "border-box",
-                      position: "relative",
-                      overflow: "hidden",
-                      padding: 0,
-                      textAlign: "inherit",
-                      font: "inherit",
-                      color: "inherit",
-                      "&:hover .product-bg-image": {
-                        filter: "brightness(1)",
-                      },
-                      cursor: product.path ? "pointer" : "default",
-                    }}
-                    onClick={() => {
-                      if (product.path) {
-                        navigate(product.path);
-                      }
-                    }}
-                  >
-                    <Box
-                      className="product-bg-image"
-                      component="img"
-                      src={product.pc_image}
-                      alt={product.pc_image_alt}
-                      loading="lazy"
-                      sx={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        borderRadius: "18px",
-                        filter: "brightness(0.7)",
-                        transition: "filter 0.3s ease",
-                      }}
-                    />
-                    <Box
-                      component="img"
-                      src={product.title_image}
-                      alt={product.title_image_alt}
-                      loading="lazy"
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        m: "auto",
-                      }}
-                    />
-                  </Box>
-                ))}
-              </Box>
-            )}
-          </Box>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <Box
               sx={(theme) => ({
                 px: 2,
+                display: "flex",
+                flexDirection: "column",
+                gap: 3,
                 [theme.breakpoints.up("tablet")]: {
                   px: "8%",
                 },
               })}
             >
-              <HomeSectionTitle text="Automatic Process" />
+              <HomeSectionTitle text="Main Product" />
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 8,
+                  px: 6,
+                  justifyContent: "space-between",
+                  mt: 10,
+                }}
+              >
+                <MainProductCard
+                  image="/images/home/iMOVA_home_product.png"
+                  onClick={() => navigate("/product/imova")}
+                />
+                <MainProductCard
+                  image="/images/home/iMOVA_home_product.png"
+                  onClick={() => navigate("/product/imova")}
+                  category="software"
+                  title="iSuite"
+                  description="iSuite 시리즈는 다수의 AMR을 통합 제어하여 안전하고 효율적인 공장 물류 흐름을 실현하는 스마트 관제 플랫폼입니다."
+                />
+              </Box>
+              {isMobile ? (
+                <Suspense
+                  fallback={<Box sx={{ width: "100%", aspectRatio: "4/3" }} />}
+                >
+                  <MobileProductSwiper products={products} />
+                </Suspense>
+              ) : null}
             </Box>
             <Box
-              component="video"
-              ref={videoRef}
-              aria-label="iVH 자동화 공정 소개 영상"
-              src={videoSrc}
-              loop
-              muted
-              playsInline
-              preload="none"
               sx={(theme) => ({
-                width: "100%",
-                height: "auto",
-                maxHeight: "72vh",
-                objectFit: "cover",
-                [theme.breakpoints.down("tablet")]: {
-                  maxHeight: "50vh",
-                },
-              })}
-            />
-          </Box>
-          <Box
-            sx={(theme) => ({
-              px: 2,
-              display: "flex",
-              flexDirection: "column",
-              gap: 3,
-              [theme.breakpoints.up("tablet")]: {
-                px: "8%",
-              },
-            })}
-          >
-            <HomeSectionTitle text="Partners" />
-            <Box
-              component="ul"
-              sx={(theme) => ({
+                px: 2,
                 display: "flex",
-                justifyContent: "between",
-                alignItems: "center",
-                flexWrap: "wrap",
-                pl: 0,
-                rowGap: 6,
+                flexDirection: "column",
+                gap: 8,
                 [theme.breakpoints.up("tablet")]: {
-                  rowGap: 10,
+                  px: "8%",
                 },
               })}
             >
-              {partner_partnerList.map((partnerImg, index) => (
+              <HomeSectionTitle text="Provision" />
+              <Box sx={{ display: "flex", alignItems: "stretch" }}>
+                {provisionItems.map((item, i) => (
+                  <Fragment key={item.title}>
+                    {/* 카드 사이 점선 세로 구분선 */}
+                    {i > 0 && (
+                      <Box
+                        sx={{
+                          alignSelf: "stretch",
+                          borderLeft: "1px dashed #C9C9C9",
+                        }}
+                      />
+                    )}
+                    <ProvisionCard
+                      icon={item.icon}
+                      title={item.title}
+                      description={item.description}
+                      onMore={() => navigate(item.path)}
+                    />
+                  </Fragment>
+                ))}
+              </Box>
+            </Box>
+            <Box
+              sx={(theme) => ({
+                px: 2,
+                display: "flex",
+                flexDirection: "column",
+                gap: 8,
+                [theme.breakpoints.up("tablet")]: {
+                  px: "8%",
+                },
+              })}
+            >
+              <HomeSectionTitle text="Latest News" />
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 <Box
-                  key={index}
-                  component="li"
-                  sx={(theme) => ({
+                  sx={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(4,1fr)",
+                    gap: 3,
+                  }}
+                >
+                  {newsItems.map((item, i) => (
+                    <NewsCard
+                      key={i}
+                      image={item.image}
+                      title={item.title}
+                      date={item.date}
+                      onClick={() => navigate(item.path)}
+                    />
+                  ))}
+                </Box>
+                <Box
+                  sx={{
                     display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: index < 6 ? "33.33%" : "50%",
-                    [theme.breakpoints.up("tablet")]: {
-                      width: "25%",
-                    },
-                  })}
+                    width: "100%",
+                    justifyContent: "flex-end",
+                  }}
                 >
                   <Box
-                    component="img"
-                    src={partnerImg.src}
-                    alt={tPartner(`partner_partnerList.${partnerImg.id}` as never)}
-                    loading="lazy"
-                    sx={(theme) => ({
-                      minWidth: index < 6 ? "50%" : "34%",
-                      maxWidth: index < 6 ? "70%" : "48%",
-                      [theme.breakpoints.up("tablet")]: {
-                        minWidth: "40%",
-                        maxWidth: "40%",
-                      },
-                    })}
-                  />
+                    component="button"
+                    sx={{
+                      background: "none",
+                      border: "none",
+                      p: 0,
+                      cursor: "pointer",
+                      color: "#424242",
+                      fontFamily: "Freesentation-5-Medium",
+                      fontSize: "16px",
+                    }}
+                  >
+                    뉴스 모두 보기
+                  </Box>
                 </Box>
-              ))}
+              </Box>
             </Box>
           </Box>
           <ContactTrainingInfoSection />

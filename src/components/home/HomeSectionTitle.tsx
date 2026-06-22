@@ -1,31 +1,33 @@
-import { Box } from "@mui/material";
-import MainGradientText from "../common/MainGradientText";
+import { Box, Typography } from "@mui/material";
 
 const HomeSectionTitle = ({ text }: { text: string }) => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+    <Box sx={{ display: "flex", alignItems: "center", gap: 4 }}>
       <Box
         sx={(theme) => ({
           width: "8px",
           height: "14px",
-          backgroundColor: "#339070",
+          backgroundColor: "#03193F",
+          borderRadius: "20px",
           [theme.breakpoints.up("tablet")]: {
-            width: "12px",
-            height: "20px",
+            width: "88px",
+            height: "24px",
           },
         })}
       />
-      <MainGradientText
+      <Typography
         sx={(theme) => ({
-          fontSize: "18px",
+          fontSize: "20px",
           fontFamily: "Freesentation-6-SemiBold",
+          color: "#03193F",
           [theme.breakpoints.up("tablet")]: {
             fontSize: "28px",
           },
+          textTransform: "uppercase",
         })}
       >
         {text}
-      </MainGradientText>
+      </Typography>
     </Box>
   );
 };
