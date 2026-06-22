@@ -4,59 +4,35 @@ import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import { useState, useEffect } from "react";
 import menu from "../../data/header/menu.json";
 import { MainMenuBar } from "./MainMenuBar";
-import { SubMenuDrawer } from "./SubMenuDrawer";
+import { Drawer } from "./Drawer";
 
 const Header = () => {
   const navigate = useLocalizedNavigate();
   const location = useLocation();
   const isHomePage = /^\/(en|ko)?\/?$/.test(location.pathname);
 
-  // 어떤 메인 메뉴가 클릭되어 열려있는지
+  // 어떤 메인 메뉴가 hover되어 열려있는지
   const [openMainMenu, setOpenMainMenu] = useState<string | null>(null);
-
-  // 1단계 서브메뉴 중 어떤 것이 클릭되었는지
-  const [openLevel1Menu, setOpenLevel1Menu] = useState<string | null>(null);
+  // 드로어 콘텐츠를 정렬할 x좌표 (상위 메뉴 위치 기준)
+  const [anchorLeft, setAnchorLeft] = useState(0);
 
   // 페이지 이동 시 메뉴 닫기
   useEffect(() => {
     setOpenMainMenu(null);
-    setOpenLevel1Menu(null);
   }, [location.pathname]);
 
-  const handleMainMenuClick = (title: string) => {
-    if (openMainMenu === title) {
-      // 같은 메뉴 클릭 시 닫기
-      setOpenMainMenu(null);
-      setOpenLevel1Menu(null);
-    } else {
-      // 다른 메뉴 클릭 시 열기
-      setOpenMainMenu(title);
-      setOpenLevel1Menu(null); // 1단계 메뉴 초기화
-    }
-  };
-
-  const handleLevel1Click = (name: string) => {
-    if (openLevel1Menu === name) {
-      // 같은 1단계 메뉴 클릭 시 닫기
-      setOpenLevel1Menu(null);
-    } else {
-      // 다른 1단계 메뉴 클릭 시 열기
-      setOpenLevel1Menu(name);
-    }
+  const handleMainMenuClick = (title: string, left: number) => {
+    setOpenMainMenu(title);
+    setAnchorLeft(left);
   };
 
   const handleClose = () => {
     setOpenMainMenu(null);
-    setOpenLevel1Menu(null);
   };
 
   return (
     <Box
       component="header"
-      onMouseLeave={() => {
-        setOpenMainMenu(null);
-        setOpenLevel1Menu(null);
-      }}
       sx={{
         position: isHomePage ? "fixed" : "relative",
         width: "100%",
@@ -66,12 +42,9 @@ const Header = () => {
       <AppBar
         position="sticky"
         sx={{
-          backgroundColor: "#ffffff",
-          // boxShadow: "0 1px 1px rgba(0,0,0,0.05), 0 1px 1px rgba(0,0,0,0.1)",
+          background: "linear-gradient(90deg, #00235F 0%, #03193F 100%)",
           boxShadow: "0 10px 7px 0 rgba(0,0,0,0.25)",
-
           p: 0,
-          width: "100%",
           maxWidth: "100vw",
           overflowX: "hidden",
           top: 0,
@@ -86,22 +59,34 @@ const Header = () => {
           navigate={navigate}
           onMenuClick={handleMainMenuClick}
           openMainMenu={openMainMenu}
+          onClose={handleClose}
         />
       </AppBar>
 
-      {/* 서브메뉴 영역 */}
+      {/* drawer 영역 */}
       {openMainMenu && (
-        <SubMenuDrawer
-          allMenuItems={menu.mainMenu}
-          openedMenuIndex={menu.mainMenu.findIndex(
-            (item) => item.title === openMainMenu,
-          )}
-          isHomePage={isHomePage}
-          navigate={navigate}
-          openLevel1Menu={openLevel1Menu}
-          onLevel1Click={handleLevel1Click}
-          onClose={handleClose}
-        />
+        <>
+          {/* 어두운 배경 오버레이 */}
+          <Box
+            onClick={handleClose}
+            sx={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              zIndex: 998,
+            }}
+          />
+          <Drawer
+            menuItems={menu.mainMenu}
+            openMainMenu={openMainMenu}
+            anchorLeft={anchorLeft}
+            navigate={navigate}
+            onClose={handleClose}
+          />
+        </>
       )}
     </Box>
   );

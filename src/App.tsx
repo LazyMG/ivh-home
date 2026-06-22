@@ -12,11 +12,9 @@ import MobileHeader from "./common/mobile/MobileHeader";
 // Footer
 import Footer from "./common/footer";
 import MobileFooter from "./common/mobile/mobileFooter";
-// Global UI
-import LangToggle from "./common/LangToggle";
 // 정적 로드 (항상 필요하거나 가벼운 페이지)
 import Home from "./pages/home";
-import NewHeader from "./common/header/NewHeader";
+import NewHeader from "./common/header/Header";
 const FloatingButton = lazy(
   () => import("./components/chatbot/FloatingButton"),
 );
@@ -291,8 +289,6 @@ function AppContent() {
           </Routes>
         </Suspense>
       </ScrollToTop>
-      {/** language toggle */}
-      {!hideLayout && <LangToggle />}
       {/** chatbot button */}
       <Suspense fallback={null}>
         <FloatingButton />

@@ -247,7 +247,7 @@
               ]
             },
             {
-              "name": "Virtual Test Driving",
+              "name": "Vtd",
               "path": "/product/vtd",
               "description": "Virtual Test Drive : 자율주행 가상검증 솔루션",
               "subMenu": [
