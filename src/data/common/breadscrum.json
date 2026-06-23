@@ -6,6 +6,10 @@
       { "title": "Solution", "url": "/solution" }
     ],
     "home_company": [{ "title": "Home", "url": "/" }, { "title": "Company" }],
+    "home_support": [
+      { "title": "Home", "url": "/" },
+      { "title": "Support", "url": "/support" }
+    ],
     "modelica_dymola": [{ "title": "Dymola", "url": "/product/dymola" }],
     "dymola_base": [{ "title": "Dymola", "url": "/product/dymola" }],
     "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
@@ -309,6 +313,10 @@
     "contact": {
       "extends": ["home_company"],
       "current": { "title": "Contact", "url": "/company/contact" }
+    },
+    "training": {
+      "extends": ["home_support"],
+      "current": { "title": "Training", "url": "/support/training" }
     }
   }
 }

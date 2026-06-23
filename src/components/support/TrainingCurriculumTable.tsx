@@ -115,17 +115,20 @@ const TraingCurriculumTable = ({
         // maxWidth: "1500px",
         mx: "auto",
         width: "100%",
+        boxSizing: "border-box",
         [theme.breakpoints.up("desktop")]: {
           // mx: 24,
           mx: 0,
+          px: 14,
         },
       })}
     >
       <Typography
         sx={{
           fontSize: "18px",
-          color: "#1755C2",
+          color: "##03193F",
           fontFamily: "Freesentation-7-Bold",
+          textAlign: "right",
         }}
       >
         {tableTitle}
@@ -135,8 +138,9 @@ const TraingCurriculumTable = ({
         sx={{
           width: "100%",
           borderCollapse: "collapse",
+          mt: 4,
           "& td, & th": {
-            borderBottom: 1,
+            borderBottom: "1px dashed #B2B2B2",
             borderRight: 1,
             borderColor: "divider",
             p: 2,
@@ -145,17 +149,18 @@ const TraingCurriculumTable = ({
               borderRight: 0,
             },
             "&:nth-of-type(2)": {
-              borderRight: "1px solid #00000062",
+              borderRight: "1px solid #000000",
             },
           },
           "& th": {
             fontFamily: "Freesentation-7-Bold",
-            color: "text.secondary",
+            color: "#424242",
             fontSize: "16px",
           },
           "& td": {
             fontSize: "14px",
             fontFamily: "Freesentation-6-SemiBold",
+            color: "#424242",
           },
         }}
       >
@@ -188,14 +193,14 @@ const TraingCurriculumTable = ({
 
               if (data.isClosed) {
                 return (
-                  <Typography fontSize="14px" color="error" fontWeight="bold">
+                  <Typography fontSize="14px" color="#D00909" fontWeight="bold">
                     마감
                   </Typography>
                 );
               }
 
               return (
-                <Typography fontSize="14px">
+                <Typography fontSize="14px" color="#656565">
                   {data.date?.split("T")[0].replace(".", "/")}
                 </Typography>
               );
@@ -213,12 +218,13 @@ const TraingCurriculumTable = ({
           })}
         </tbody>
       </Box>
-      <Box sx={{ mt: 3 }}>
+      <Box sx={{ mt: 3, px: 4 }}>
         <Typography
           sx={{
             whiteSpace: "pre-wrap",
             fontFamily: "Freesentation-5-Medium",
-            fontSize: "18px",
+            fontSize: "16px",
+            color: "#424242",
           }}
         >
           {`※ 보다 양질의 교육 서비스 제공을 위해 2026년 4월부터 교육 프로그램이 유료화됩니다.\n단, iVH 제품 구매 고객사께는 기존과 동일하게 무료 교육 혜택이 제공됩니다.`}

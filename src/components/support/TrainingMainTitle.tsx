@@ -6,6 +6,8 @@ interface TrainingMainTitleProps {
     font: string;
     color: string;
     size: string;
+    backColor: string;
+    padding?: string;
   }[];
 }
 
@@ -38,10 +40,14 @@ const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
           sx={(theme) => ({
             fontSize: title.size,
             [theme.breakpoints.up("tablet")]: {
-              fontSize: "36px",
+              fontSize: "50px",
             },
             color: title.color,
             fontFamily: title.font,
+            backgroundColor: title.backColor,
+            px: title.padding,
+            boxDecorationBreak: "clone",
+            WebkitBoxDecorationBreak: "clone",
           })}
         >
           {title.text}
