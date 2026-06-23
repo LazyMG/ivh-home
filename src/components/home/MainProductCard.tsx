@@ -13,13 +13,13 @@ interface MainProductCardProps {
 const MainProductCard = ({
   category = "HARDWARE",
   image,
-  title = "iMOVA",
+  title,
   subtitle = "SERIES",
   description = "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다.",
   onClick,
 }: MainProductCardProps) => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
       {/* 카드 프레임 (버튼이 모서리 밖으로 걸칠 수 있도록 overflow visible) */}
       <Box sx={{ position: "relative" }}>
         {/* 라운드/클리핑되는 콘텐츠 (헤더 + 이미지) */}
@@ -48,7 +48,7 @@ const MainProductCard = ({
           <Box
             component="img"
             src={image}
-            alt={title}
+            alt={description}
             sx={{ width: "100%", display: "block" }}
           />
         </Box>
@@ -85,15 +85,7 @@ const MainProductCard = ({
       {/* 하단 타이틀 + 설명 (구분선은 풀 폭, 텍스트만 들여쓰기) */}
       <Box>
         <Box sx={{ display: "flex", alignItems: "baseline", gap: 1, pl: 3 }}>
-          <Typography
-            sx={{
-              fontFamily: "Freesentation-7-Bold",
-              fontSize: "32px",
-              color: "#03193F",
-            }}
-          >
-            {title}
-          </Typography>
+          <Box component="img" src={title} sx={{ width: "128px" }} />
           <Typography
             sx={{
               fontFamily: "Freesentation-7-Bold",

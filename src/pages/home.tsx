@@ -133,7 +133,7 @@ const Home = () => {
               src={
                 isMobile
                   ? iMOVA.mobile_imageUrl
-                  : "public/images/home/iMOVA_pc_main_image.png"
+                  : "/images/home/iMOVA_pc_main_image.png"
               }
               alt={isMobile ? iMOVA.mobile_image_alt : iMOVA.image_alt}
               fetchPriority="high"
@@ -227,12 +227,13 @@ const Home = () => {
                 <MainProductCard
                   image="/images/home/iMOVA_home_product.png"
                   onClick={() => navigate("/product/imova")}
+                  title="/images/home/logo_imova.png"
                 />
                 <MainProductCard
-                  image="/images/home/iMOVA_home_product.png"
+                  image="/images/home/home_porduct_software.png"
                   onClick={() => navigate("/product/imova")}
                   category="software"
-                  title="iSuite"
+                  title="/images/home/logo_isuite.png"
                   description="iSuite 시리즈는 다수의 AMR을 통합 제어하여 안전하고 효율적인 공장 물류 흐름을 실현하는 스마트 관제 플랫폼입니다."
                 />
               </Box>
