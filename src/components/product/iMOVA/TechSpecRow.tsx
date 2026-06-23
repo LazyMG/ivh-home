@@ -67,7 +67,7 @@ export const DesktopSpecRow = ({
         rowSpan={sectionTitle.rowSpan}
         sx={{
           width: "200px",
-          backgroundColor: "#000",
+          backgroundColor: "#03193F",
           color: "#fff",
           p: 2,
           fontWeight: "bold",
