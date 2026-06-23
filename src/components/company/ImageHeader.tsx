@@ -12,7 +12,8 @@ const ImageHeader = ({
       sx={(theme) => ({
         backgroundImage: `url(${imgUrl})`,
         width: "100%",
-        height: "457px",
+        height: "288px",
+        maxHeight: "288px",
         backgroundPosition: imgPosition,
         borderRadius: "16px",
         backgroundRepeat: "no-repeat",

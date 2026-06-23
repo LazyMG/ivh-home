@@ -5,7 +5,9 @@
     "keywords": "iVH, 파트너, 고객사, Partner, Customer"
   },
   "partner_partner": "Partners",
+  "partner_partner_subtitle": "파트너사",
   "partner_customer": "Customers",
+  "partner_customer_subtitle": "고객사",
   "partner_partnerList": {
     "dassault": "Partners - Dassault Systems CI",
     "tlk": "Partners - TLK CI",

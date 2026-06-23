@@ -5,7 +5,9 @@
     "keywords": "iVH, Partner, Customer"
   },
   "partner_partner": "Partners",
+  "partner_partner_subtitle": "",
   "partner_customer": "Customers",
+  "partner_customer_subtitle": "",
   "partner_partnerList": {
     "dassault": "Partners - Dassault Systems CI",
     "tlk": "Partners - TLK CI",

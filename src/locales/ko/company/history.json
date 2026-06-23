@@ -5,6 +5,7 @@
     "keywords": "iVH, 연혁, History, 회사 역사"
   },
   "history_title": "History",
+  "history_subtitle": "회사 연혁",
   "history_list": {
     "y2024": [
       "Inno-Biz 인증 획득",
@@ -12,7 +13,7 @@
       "기업부설연구소 설립"
     ],
     "y2021": [
-      "본사 및 연구전담부서 이전 (서울시 서초구 양재동)",
+      "본사 및 연구전담부서 이전\n(서울시 서초구 양재동)",
       "ASAM Member 가입"
     ],
     "y2018": ["Modelica Association 가입"],

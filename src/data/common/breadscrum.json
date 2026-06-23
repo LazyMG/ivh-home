@@ -5,6 +5,7 @@
       { "title": "Home", "url": "/" },
       { "title": "Solution", "url": "/solution" }
     ],
+    "home_company": [{ "title": "Home", "url": "/" }, { "title": "Company" }],
     "modelica_dymola": [{ "title": "Dymola", "url": "/product/dymola" }],
     "dymola_base": [{ "title": "Dymola", "url": "/product/dymola" }],
     "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
@@ -292,6 +293,22 @@
         "title": "Humanoid Package",
         "url": "/product/imova/humanoid"
       }
+    },
+    "ceo": {
+      "extends": ["home_company"],
+      "current": { "title": "CEO", "url": "/company/ceo" }
+    },
+    "history": {
+      "extends": ["home_company"],
+      "current": { "title": "History", "url": "/company/history" }
+    },
+    "partner": {
+      "extends": ["home_company"],
+      "current": { "title": "Partners & Customers", "url": "/company/partner" }
+    },
+    "contact": {
+      "extends": ["home_company"],
+      "current": { "title": "Contact", "url": "/company/contact" }
     }
   }
 }

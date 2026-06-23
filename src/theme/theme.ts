@@ -350,9 +350,6 @@ const theme = createTheme({
       },
       marginTop: {
         mobilePortrait: "32px",
-        mobileLandscape: "48px",
-        tablet: "64px",
-        desktop: "80px",
       },
       marginBottom: {
         mobilePortrait: "32px",
@@ -372,7 +369,7 @@ const theme = createTheme({
         mobilePortrait: "64px",
         mobileLandscape: "64px",
         tablet: "64px",
-        desktop: "128px",
+        desktop: "64px",
       },
     },
     // Contact 페이지 지도 영역 컨테이너 스타일
@@ -393,10 +390,6 @@ const theme = createTheme({
       display: "flex",
       flexDirection: "column",
       gap: "36px",
-      flex: 1,
-      [baseTheme.breakpoints.up("tablet")]: {
-        paddingRight: "100px",
-      },
     },
     // Contact 페이지 제품 둘러보기 링크 스타일
     contactProductsLink: {
@@ -457,9 +450,10 @@ const theme = createTheme({
       fontSize: "16px",
       fontFamily: fontConfig["semiBold"],
       color: "#fff",
-      backgroundColor: "#267B65", // blue-700
+      backgroundColor: "#03193F",
+      boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
       "&:hover": {
-        backgroundColor: "#2b8d73ff", // blue-600
+        backgroundColor: "#03193F",
       },
       "&.Mui-disabled": {
         backgroundColor: "#cccccc",
