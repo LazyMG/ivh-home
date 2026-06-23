@@ -13,59 +13,59 @@
     "autonomy": {
       "function_title": "High-Precision Autonomous Driving",
       "function_description": "Achieves ±10mm level of precision through the fusion of 3D LiDAR and IMU sensors.",
-      "function_image_alt": "High-Precision Autonomous Driving Image"
+      "function_image_alt": "High-Precision Autonomous Driving"
     },
     "chassis": {
       "function_title": "Heavy-duty Chassis & Durability",
       "function_description": "Supports high-load payloads up to 1 ton with a reinforced structure.",
-      "function_image_alt": "Heavy-duty Chassis & Durability Image"
+      "function_image_alt": "Heavy-duty Chassis & Durability"
     },
     "task-dispatch": {
       "function_title": "Intelligent Task Distribution",
       "function_description": "Optimizes workflows via Task Dispatcher-based automated scheduling.",
-      "function_image_alt": "Intelligent Task Distribution Image"
+      "function_image_alt": "Intelligent Task Distribution"
     },
     "ai-monitoring": {
       "function_title": "AI-Based Environmental Monitoring",
       "function_description": "Monitors real-time conditions using integrated sensors for temperature, humidity, dust, and noise.",
-      "function_image_alt": "AI-Based Environmental Monitoring Image"
+      "function_image_alt": "AI-Based Environmental Monitoring"
     },
     "wireless-charging": {
       "function_title": "Wireless Charging & Energy Optimization",
       "function_description": "Maximizes energy efficiency through SOC-based autonomous wireless charging.",
-      "function_image_alt": "Wireless Charging & Energy Optimization Image"
+      "function_image_alt": "Wireless Charging & Energy Optimization"
     }
   },
   "control_system": {
     "operation-monitoring": {
       "control_system_topic": "AMR Operation & Process Monitoring",
       "control_system_description": "Monitors real-time location and status of AMRs while tracking environmental conditions via integrated sensors. This allows operators to intuitively manage logistics flow and the production environment at a glance.",
-      "control_system_image_alt": "Intelligent Fleet Management System : AMR Operation & Process Monitoring Image"
+      "control_system_image_alt": "AMR Operation & Process Monitoring"
     },
     "task-allocation": {
       "control_system_topic": "Automated Task Allocation & Path Optimization",
       "control_system_description": "Automatically receives task requests and assigns the optimal AMR based on real-time status and location. It generates collision-avoidance routes to ensure safe, high-efficiency operations.",
-      "control_system_image_alt": "Intelligent Fleet Management System : Automated Task Allocation & Path Optimization"
+      "control_system_image_alt": "Automated Task Allocation & Path Optimization"
     },
     "charging-control": {
       "control_system_topic": "Charging Control & Energy Optimization",
       "control_system_description": "Determines optimal charging schedules by analyzing battery status, work cycles, and charging station congestion. This maximizes energy efficiency and minimizes operational downtime.",
-      "control_system_image_alt": "Intelligent Fleet Management System : Charging Control & Energy Optimization"
+      "control_system_image_alt": "Charging Control & Energy Optimization"
     },
     "fault-detection": {
       "control_system_topic": "Fault Detection & Predictive Maintenance",
       "control_system_description": "Detects and alerts operational faults in real-time while analyzing data patterns to predict potential failures. This enables proactive preventive maintenance to ensure continuous uptime.",
-      "control_system_image_alt": "Intelligent Fleet Management System : Fault Detection & Predictive Maintenance"
+      "control_system_image_alt": "Fault Detection & Predictive Maintenance"
     },
     "ai-security": {
       "control_system_topic": "AI-Based Environmental & Security Monitoring",
       "control_system_description": "Utilizes AI to monitor factory conditions and security in real-time, predicting environmental risks for safer and smarter industrial operations.",
-      "control_system_image_alt": "Intelligent Fleet Management System : AI-Based Environmental & Security Monitoring"
+      "control_system_image_alt": "AI-Based Environmental & Security Monitoring"
     },
     "external-integration": {
       "control_system_topic": "Seamless Integration with External Systems (MES, ERP, etc.)",
       "control_system_description": "Provides flexible integration with MES, ERP, and WMS through standard industrial protocols. This enables unified data management, significantly improving productivity and system responsiveness.",
-      "control_system_image_alt": "Intelligent Fleet Management System : Seamless Integration with External Systems (MES, ERP, etc.)"
+      "control_system_image_alt": "Seamless Integration with External Systems (MES, ERP, etc.)"
     }
   },
   "production_line": {
