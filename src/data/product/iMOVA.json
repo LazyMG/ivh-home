@@ -1,105 +1,104 @@
 {
-  "main_image": "/images/pages/product/iMOVA/iMOVA.png",
-  "title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
+  "main_image": "/images/pages/product/iMOVA/iMOVA_main_image.png",
+  "title_image": "/images/pages/product/iMOVA/iMOVA_logo_image.png",
   "top_video": "/video/iMOVA_3D.mp4",
   "main_function": [
     {
       "id": "autonomy",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_one.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_key_1.png"
     },
     {
       "id": "chassis",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_two.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_key_2.png"
     },
     {
       "id": "task-dispatch",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_three.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_key_3.png"
     },
     {
       "id": "ai-monitoring",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_four.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_key_4.png"
     },
     {
       "id": "wireless-charging",
-      "function_image_url": "/images/pages/product/iMOVA/iMOVA_function_five.png"
+      "function_image_url": "/images/pages/product/iMOVA/iMOVA_key_5.png"
     }
   ],
   "control_system": [
     {
       "id": "operation-monitoring",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_zero.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_system_1.png"
     },
     {
       "id": "task-allocation",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_one.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_system_2.png"
     },
     {
       "id": "charging-control",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_two.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_system_3.png"
     },
     {
       "id": "fault-detection",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_three.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_system_4.png"
     },
     {
       "id": "ai-security",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_four.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_system_5.png"
     },
     {
       "id": "external-integration",
-      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_control_five.png"
+      "control_system_image_url": "/images/pages/product/iMOVA/iMOVA_system_6.png"
     }
   ],
   "production_line": {
     "production_line_image_url": "/images/pages/product/iMOVA/iMOVA_usecase.png",
-    "production_line_image_url2": "/images/pages/product/iMOVA/iMOVA_usecase2.svg",
     "production_line_list": [
       {
         "id": "wireless-charging",
-        "production_line_color": "#CF750C",
+        "production_line_color": "#B36E1D",
         "position": {
-          "top": "12%",
-          "left": "4%"
-        }
-      },
-      {
-        "id": "high-load-amr",
-        "production_line_color": "#5B5B5B",
-        "position": {
-          "top": "22%",
-          "left": "36%"
-        }
-      },
-      {
-        "id": "env-monitoring",
-        "production_line_color": "#267B65",
-        "position": {
-          "top": "2%",
-          "right": "2%"
-        }
-      },
-      {
-        "id": "unmanned-line",
-        "production_line_color": "#B8991D",
-        "position": {
-          "bottom": "34%",
-          "right": "10%"
+          "top": "4%",
+          "left": "-24%"
         }
       },
       {
         "id": "integrated-control",
-        "production_line_color": "#514381",
+        "production_line_color": "#534585",
         "position": {
-          "bottom": "4%",
-          "left": "10%"
+          "top": "48%",
+          "left": "-24%"
+        }
+      },
+      {
+        "id": "env-monitoring",
+        "production_line_color": "#157960",
+        "position": {
+          "top": "4%",
+          "right": "-24%"
+        }
+      },
+      {
+        "id": "unmanned-line",
+        "production_line_color": "#B09A42",
+        "position": {
+          "top": "48%",
+          "right": "-24%"
+        }
+      },
+      {
+        "id": "high-load-amr",
+        "production_line_color": "#424242",
+        "position": {
+          "top": "96%",
+          "left": "12%"
         }
       },
       {
         "id": "precision-docking",
         "production_line_color": "#1A7795",
         "position": {
-          "bottom": "4%",
-          "right": "8%"
+          "top": "96%",
+          "right": "12%"
         }
       }
     ]
@@ -142,12 +141,12 @@
         },
         "environmental_monitoring": {
           "temperature": {
-            "range": "20~90%",
-            "accuracy": "±5%"
-          },
-          "humidity": {
             "range": "0~50°C",
             "accuracy": "±2°C"
+          },
+          "humidity": {
+            "range": "20~90%",
+            "accuracy": "±5%"
           },
           "dust": {
             "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
@@ -195,12 +194,12 @@
         },
         "environmental_monitoring": {
           "temperature": {
-            "range": "20~90%",
-            "accuracy": "±5%"
-          },
-          "humidity": {
             "range": "0~50°C",
             "accuracy": "±2°C"
+          },
+          "humidity": {
+            "range": "20~90%",
+            "accuracy": "±5%"
           },
           "dust": {
             "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
@@ -248,12 +247,12 @@
         },
         "environmental_monitoring": {
           "temperature": {
-            "range": "20~90%",
-            "accuracy": "±5%"
-          },
-          "humidity": {
             "range": "0~50°C",
             "accuracy": "±2°C"
+          },
+          "humidity": {
+            "range": "20~90%",
+            "accuracy": "±5%"
           },
           "dust": {
             "concentration_range": "0~28,000pcs/liter (0~8,000pcs/0.01 CF=283㎥)",
