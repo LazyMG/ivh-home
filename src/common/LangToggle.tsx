@@ -33,16 +33,17 @@ const LangToggle = () => {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // 열려있는 동안 스크롤/리사이즈 시 위치 갱신 (초기 위치는 toggle에서 측정)
+  // 열려있는 동안 스크롤/리사이즈 시 드롭다운 닫기 (위치를 따라오지 않도록)
   useEffect(() => {
     if (!open) return;
-    window.addEventListener("scroll", updatePos, true);
-    window.addEventListener("resize", updatePos);
+    const close = () => setOpen(false);
+    window.addEventListener("scroll", close, true);
+    window.addEventListener("resize", close);
     return () => {
-      window.removeEventListener("scroll", updatePos, true);
-      window.removeEventListener("resize", updatePos);
+      window.removeEventListener("scroll", close, true);
+      window.removeEventListener("resize", close);
     };
-  }, [open, updatePos]);
+  }, [open]);
 
   const currentLabel = OPTIONS.find((o) => o.value === lang)?.label ?? "KR";
   const others = OPTIONS.filter((o) => o.value !== lang);
