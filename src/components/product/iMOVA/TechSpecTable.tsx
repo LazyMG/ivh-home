@@ -10,6 +10,7 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { MobileSpecRow, DesktopSpecRow } from "./TechSpecRow";
 import type { IMOVATechnologySpec } from "../../../types/product";
+import SectionTitle from "../../common/SectionTitle";
 
 const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
   const theme = useTheme();
@@ -23,17 +24,19 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
         flexDirection: "column",
         justifyContent: "center",
         width: "100%",
+        mt: 24,
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
+      <Box sx={{ display: "flex", gap: 2, alignItems: "center", mb: 6 }}>
+        <SectionTitle text={labels.tech_spec} />
         <Typography
-          variant="h5"
-          sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "24px" }}
-        >
-          {labels.tech_spec}
-        </Typography>
-        <Typography
-          sx={{ fontFamily: "Freesentation-5-Medium", fontSize: "18px", mb: 4 }}
+          sx={{
+            fontFamily: "Freesentation-5-Medium",
+            fontSize: "18px",
+            color: "#737373",
+            textTransform: "uppercase",
+            textAlign: "end",
+          }}
         >
           {technology_spec.technology_spec_title}
         </Typography>
@@ -66,7 +69,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
-                          borderBottom: "2px solid #000",
+                          borderBottom: "2px solid #03193F",
                         }}
                       >
                         {product.product}
@@ -127,7 +130,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                         sx={{
                           mb: 1,
                           pb: 1,
-                          borderBottom: "2px solid #000",
+                          borderBottom: "2px solid #03193F",
                           fontFamily: "Freesentation-7-Bold",
                         }}
                       >
@@ -205,7 +208,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
-                          borderBottom: "2px solid #000",
+                          borderBottom: "2px solid #03193F",
                         }}
                       >
                         {product.product}
@@ -270,7 +273,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
-                          borderBottom: "2px solid #000",
+                          borderBottom: "2px solid #03193F",
                         }}
                       >
                         {product.product}
@@ -327,7 +330,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
-                          borderBottom: "2px solid #000",
+                          borderBottom: "2px solid #03193F",
                         }}
                       >
                         {product.product}
@@ -380,7 +383,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           fontFamily: "Freesentation-7-Bold",
                           mb: 1,
                           pb: 1,
-                          borderBottom: "2px solid #000",
+                          borderBottom: "2px solid #03193F",
                         }}
                       >
                         {product.product}
@@ -457,7 +460,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
           {/* {labels.application} 섹션 */}
           <Box
             sx={{
-              backgroundColor: "#000",
+              backgroundColor: "#03193F",
               color: "#fff",
               p: 3,
               mt: 2,
@@ -520,7 +523,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     component="th"
                     key={index}
                     sx={{
-                      backgroundColor: "#000",
+                      backgroundColor: "#03193F",
                       color: "#fff",
                       p: 2,
                       textAlign: "center",
@@ -756,7 +759,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                 colSpan={2}
                 sx={{
                   width: "350px",
-                  backgroundColor: "#000",
+                  backgroundColor: "#03193F",
                   color: "#fff",
                   p: 2,
                   fontWeight: "bold",
