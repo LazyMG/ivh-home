@@ -109,9 +109,10 @@ const Contact = () => {
       />
       <Box
         component="main"
-        sx={(theme) => ({
-          ...theme.customStyles.contactMainContainer,
-        })}
+        sx={[
+          (theme) => ({ ...theme.customStyles.contactMainContainer }),
+          { position: "relative" },
+        ]}
       >
         <ScrollButton />
 
@@ -122,7 +123,7 @@ const Contact = () => {
         >
           <BreadScrum
             pageKey="contact"
-            sx={{ position: "absolute", right: "8%" }}
+            sx={{ position: "absolute", top: "8px", right: "8%" }}
           />
           {/* 상단 영역: 제목 + 이미지 */}
           <Box
