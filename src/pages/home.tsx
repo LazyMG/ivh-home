@@ -4,7 +4,7 @@ import SEO from "../common/SEO";
 import { Fragment, lazy, Suspense, useEffect } from "react";
 
 import ContactTrainingInfoSection from "../components/home/ContactTrainingInfoSection";
-import HomeSectionTitle from "../components/home/HomeSectionTitle";
+import SectionTitle from "../components/common/SectionTitle";
 import MainProductCard from "../components/home/MainProductCard";
 import ProvisionCard from "../components/home/ProvisionCard";
 import NewsCard from "../components/home/NewsCard";
@@ -214,7 +214,7 @@ const Home = () => {
                 },
               })}
             >
-              <HomeSectionTitle text="Main Product" />
+              <SectionTitle text="Main Product" />
               <Box
                 sx={{
                   display: "flex",
@@ -256,7 +256,7 @@ const Home = () => {
                 },
               })}
             >
-              <HomeSectionTitle text="Provision" />
+              <SectionTitle text="Provision" />
               <Box sx={{ display: "flex", alignItems: "stretch" }}>
                 {provisionItems.map((item, i) => (
                   <Fragment key={item.title}>
@@ -290,7 +290,7 @@ const Home = () => {
                 },
               })}
             >
-              <HomeSectionTitle text="Latest News" />
+              <SectionTitle text="Latest News" />
               <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 <Box
                   sx={{

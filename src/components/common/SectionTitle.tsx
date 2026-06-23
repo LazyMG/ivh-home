@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-const HomeSectionTitle = ({ text }: { text: string }) => {
+const SectionTitle = ({ text }: { text: string }) => {
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: 4 }}>
       <Box
@@ -32,4 +32,4 @@ const HomeSectionTitle = ({ text }: { text: string }) => {
   );
 };
 
-export default HomeSectionTitle;
+export default SectionTitle;
