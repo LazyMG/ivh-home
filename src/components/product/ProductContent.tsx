@@ -38,7 +38,6 @@ const ProductContent = ({
   textObj,
   imgObj,
   imageLayoutStyle,
-  isColor = true,
 }: ProductContentProps) => {
   const isImgTextExist = imgObj && imgObj.some((img) => img.imgText);
   const { isMobile } = useBreakpoint();
@@ -129,6 +128,7 @@ const ProductContent = ({
                 fontFamily: "Freesentation-5-Medium",
                 textAlign: "center",
                 color: "#979797",
+                textTransform: "uppercase",
                 [theme.breakpoints.up("tablet")]: {
                   color: "#000",
                 },
@@ -146,6 +146,12 @@ const ProductContent = ({
   const renderContainerImages = () => {
     if (!imgObj) return null;
 
+    // 이미지가 든 그룹 수 → 2개 이상이면 캡션 중앙, 1개면 왼쪽
+    const imageCount = imgObj.filter(
+      (img) => img.images && img.images.length > 0,
+    ).length;
+    const captionJustify = imageCount >= 2 ? "center" : "flex-start";
+
     return imgObj.map((img, index) => (
       <Grid
         key={index}
@@ -154,7 +160,10 @@ const ProductContent = ({
       >
         {img.images &&
           img.images.map((image) => (
-            <Box sx={{ display: "flex", justifyContent: "center" }} key={image.url}>
+            <Box
+              sx={{ display: "flex", justifyContent: "center" }}
+              key={image.url}
+            >
               <Box
                 component="img"
                 src={image.url}
@@ -169,15 +178,15 @@ const ProductContent = ({
             </Box>
           ))}
         {img.imgText && (
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ display: "flex", justifyContent: captionJustify }}>
             <Typography
               sx={(theme) => ({
-                fontSize: "14px",
+                fontSize: "12px",
                 fontFamily: "Freesentation-5-Medium",
-                textAlign: "center",
                 color: "#979797",
+                textTransform: "uppercase",
                 [theme.breakpoints.up("tablet")]: {
-                  color: "#000",
+                  color: "#737373",
                 },
               })}
             >
@@ -196,10 +205,11 @@ const ProductContent = ({
         spacing={4}
         sx={(theme) => ({
           display: "flex",
-          alignItems: "end",
+          // 캡션이 있으면 본문을 이미지 기준 중앙에 맞춤(하단 정렬 시 캡션 높이만큼 어긋나는 문제 방지)
+          alignItems: isImgTextExist ? "center" : "end",
           my: 3,
           [theme.breakpoints.up("tablet")]: {
-            my: 0,
+            my: 3,
           },
         })}
       >
@@ -212,32 +222,28 @@ const ProductContent = ({
             display: "flex",
             flexDirection: "column",
             gap: 2,
-            pb: isImgTextExist ? 1 : 0,
           }}
         >
           <Typography
             sx={(theme) => ({
               fontSize: "18px",
               fontFamily: "Freesentation-6-SemiBold",
-              color: "#00758F",
+              textTransform: "uppercase",
               [theme.breakpoints.up("tablet")]: {
-                color: isColor ? "#00758F" : "#000000",
-                fontSize: "24px",
+                color: "#03193F",
+                fontSize: "20px",
               },
             })}
           >
             {textObj.title}
           </Typography>
           <Typography
-            sx={(theme) => ({
-              fontSize: "18px",
+            sx={{
+              fontSize: "16px",
               fontFamily: "Freesentation-5-Medium",
               whiteSpace: "pre-wrap",
               color: "#737373",
-              [theme.breakpoints.up("tablet")]: {
-                color: "#424242",
-              },
-            })}
+            }}
           >
             {textObj.text}
           </Typography>
@@ -247,6 +253,8 @@ const ProductContent = ({
         sx={(theme) => ({
           my: 12,
           display: "none",
+          borderStyle: "dashed",
+          borderWidth: "2px",
           [theme.breakpoints.up("tablet")]: { display: "block" },
         })}
       />
