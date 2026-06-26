@@ -29,7 +29,7 @@ const ContactTrainingInfoSection = () => {
       >
         <Box
           component="img"
-          src="public\images\home\contact_image.png"
+          src="/images/home/contact_image.png"
           sx={{
             width: "40%", // 부모 폭에 맞춤
             height: "auto", // 비율 유지
@@ -101,7 +101,7 @@ const ContactTrainingInfoSection = () => {
         >
           <Box
             component="img"
-            src="public\images\utils\play-button.png"
+            src="/images/utils/play-button.png"
             sx={{ width: "24px", height: "auto", ml: "4px" }}
           />
         </Box>
