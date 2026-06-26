@@ -1,5 +1,5 @@
 {
-  "dymola_mainImg": "/images/pages/product/dymola/dymola-main.png",
+  "dymola_mainImg": "/images/pages/product/dymola/dymola_main_image.png",
   "dymola_pageKey": "dymola",
   "seo": {
     "ogImage": "https://ivh.co.kr/images/pages/product/dymola/dymola-feat-one.png"
@@ -9,25 +9,25 @@
       "id": "feat-0",
       "imgObj": [
         {
-          "col": 4,
+          "col": 5,
           "imgSize": "small",
           "images": [
             {
-              "url": "/images/pages/product/dymola/dymola-feat-one.png",
+              "url": "/images/pages/product/dymola/dymola_feat_1.png",
               "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, XRG, 모델리카, 다이몰라, 모델론, 모델링 언어, MBSE, 다중 물리"
             }
           ]
         }
       ],
       "textObj": {
-        "col": 8
+        "col": 7
       }
     },
     {
       "id": "feat-1",
       "imgObj": [
         {
-          "col": 4,
+          "col": 5,
           "images": [
             {
               "url": "/images/pages/product/dymola/dymola-feat-two.png",
@@ -37,7 +37,7 @@
         }
       ],
       "textObj": {
-        "col": 8
+        "col": 7
       }
     },
     {
@@ -73,7 +73,7 @@
       "id": "feat-3",
       "imgObj": [
         {
-          "col": 4,
+          "col": 5,
           "images": [
             {
               "url": "/images/pages/product/dymola/dymola-feat-four.png",
@@ -83,14 +83,14 @@
         }
       ],
       "textObj": {
-        "col": 8
+        "col": 7
       }
     },
     {
       "id": "feat-4",
       "imgObj": [
         {
-          "col": 4,
+          "col": 5,
           "images": [
             {
               "url": "/images/pages/product/dymola/dymola-feat-five.png",
@@ -100,14 +100,14 @@
         }
       ],
       "textObj": {
-        "col": 8
+        "col": 7
       }
     },
     {
       "id": "feat-5",
       "imgObj": [
         {
-          "col": 4,
+          "col": 5,
           "images": [
             {
               "url": "/images/pages/product/dymola/dymola-feat-six.png",
@@ -117,14 +117,14 @@
         }
       ],
       "textObj": {
-        "col": 8
+        "col": 7
       }
     },
     {
       "id": "feat-6",
       "imgObj": [
         {
-          "col": 4,
+          "col": 5,
           "images": [
             {
               "url": "/images/pages/product/dymola/dymola-feat-seven.png",
@@ -134,7 +134,7 @@
         }
       ],
       "textObj": {
-        "col": 8
+        "col": 7
       }
     },
     {
@@ -147,7 +147,7 @@
   "dymola_libraries": [
     {
       "id": "lib-0",
-      "imgUrl": "/images/pages/product/dymola/libraries/Aviation_Systems_Library.png",
+      "imgUrl": "/images/pages/product/dymola/libraries/airplane.svg",
       "url": "#"
     },
     {
