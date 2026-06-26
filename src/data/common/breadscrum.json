@@ -1,6 +1,6 @@
 {
   "templates": {
-    "home_product": [{ "title": "Home", "url": "/" }, { "title": "Product" }],
+    "home_product": [{ "title": "Home", "url": "/" }, { "title": "Products" }],
     "home_solution": [
       { "title": "Home", "url": "/" },
       { "title": "Solution", "url": "/solution" }
@@ -14,8 +14,7 @@
     "dymola_base": [{ "title": "Dymola", "url": "/product/dymola" }],
     "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
     "modelon_base": [{ "title": "Modelon", "url": "/product/modelon" }],
-    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }],
-    "imova_base": [{ "title": "iMOVA", "url": "/product/imova" }]
+    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }]
   },
   "pages": {
     "dymola": {
@@ -291,10 +290,17 @@
       "extends": ["home_solution"],
       "current": { "title": "Mobility", "url": "/solution/mobility" }
     },
-    "humanoidPackage": {
-      "extends": ["home_product", "imova_base"],
+    "imova": {
+      "extends": ["home_product"],
       "current": {
-        "title": "Humanoid Package",
+        "title": "iMOVA",
+        "url": "/product/imova"
+      }
+    },
+    "humanoidPackage": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "Humanoid",
         "url": "/product/imova/humanoid"
       }
     },

@@ -5,13 +5,10 @@
     "keywords": "Humanoid, Robot, Total Package, iVH, Physical AI, Digital Twin, Operating System"
   },
   "hero": {
-    "headline": "Humanoid Robots, Delivered as a Complete Solution",
-    "body": "iVH does not develop humanoid robots directly. Instead, we provide a 'ready-to-deploy'\ntotal package by integrating proven global humanoid platforms with our advanced AI and operating systems.",
+    "headline": "Humanoid Robots Total Package : Delivered as a Complete Solution",
     "humanoid_equation_alt": "Robot Hardware + AI + Operation =",
     "image_alt": "Humanoid Robot Total Package Diagram",
-    "sub_body": "This solution is designed for enterprises seeking to implement humanoid technology\nfor real-world operations, moving beyond simple research.",
-    "sub_headline": ": Humanoid Robots, Delivered as a Complete Solution",
-    "description": "iVH does not develop humanoid robots directly. Instead, we provide a 'ready-to-deploy' total package by integrating proven global humanoid platforms with our advanced AI and operating systems.",
+    "description": "iVH does not develop humanoid robots directly. Instead, we provide a 'ready-to-deploy'\ntotal package by integrating proven global humanoid platforms with our advanced AI and operating systems.\n\nThis solution is designed for enterprises seeking to implement humanoid technology\nfor real-world operations, moving beyond simple research.",
     "equation_text": "Robot Hardware + AI + Operation = iVH Total Package"
   },
   "business_model": {
@@ -24,7 +21,6 @@
     }
   },
   "package_composition": {
-    "title": "Package Composition",
     "cards": {
       "hardware": {
         "title": "Humanoid Robot Hardware",
@@ -78,7 +74,6 @@
     }
   },
   "why_ivh": {
-    "title": "Why iVH",
     "items": {
       "proven-sw-hw": "Proven Hardware + Proven Software",
       "zero-risk": "Structure with Zero Manufacturing Risk",
@@ -89,7 +84,6 @@
   },
   "cta": {
     "headline": "Ready to Deploy Humanoids?",
-    "body": "For those seeking operational humanoids over research models, iVH takes charge of the entire process—from hardware sourcing to daily operation.",
-    "button_text": ""
+    "body": "For those seeking operational humanoids over research models, iVH takes charge of the entire process—from hardware sourcing to daily operation."
   }
 }

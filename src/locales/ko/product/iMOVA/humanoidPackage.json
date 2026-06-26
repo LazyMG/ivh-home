@@ -5,23 +5,10 @@
     "keywords": "휴머노이드, Humanoid, 로봇, 토탈패키지, iVH, Physical AI, 디지털트윈, 운영시스템"
   },
   "hero": {
-    "headline": "Humanoid Robots, Delivered as a Complete Solution",
-    "body": {
-      "segments": [
-        {
-          "text": "iVH는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, "
-        },
-        {
-          "text": "검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여 즉시 도입 가능한 토탈 패키지로 제공합니다.",
-          "bold": true
-        }
-      ]
-    },
+    "headline": "Humanoid Robots Total Package : Delivered as a Complete Solution",
     "humanoid_equation_alt": "Robot Hardware + AI + Operation =",
     "image_alt": "Humanoid Robot Total Package 다이어그램",
-    "sub_body": "휴머노이드는 연구가 아닌 실제 운영 관점에서 구매하고자 하는 기업을 위한 솔루션입니다.",
-    "sub_headline": ": Humanoid Robots, Delivered as a Complete Solution",
-    "description": "iMOVA는 휴머노이드 로봇을 직접 개발하지 않습니다.\n대신, 검증된 글로벌 휴머노이드 로봇에 AI와 운영 시스템을 결합하여\n즉시 도입 가능한 토탈 패키지로 제공합니다.",
+    "description": "iVH does not develop humanoid robots directly. Instead, we provide a 'ready-to-deploy'\ntotal package by integrating proven global humanoid platforms with our advanced AI and operating systems.\n\nThis solution is designed for enterprises seeking to implement humanoid technology\nfor real-world operations, moving beyond simple research.",
     "equation_text": "Robot Hardware + AI + Operation = iVH Total Package"
   },
   "business_model": {
@@ -32,8 +19,7 @@
           "text": "iVH의 휴머노이드 사업은 "
         },
         {
-          "text": "로봇 제조 사업이 아닙니다.",
-          "bold": true
+          "text": "로봇 제조 사업이 아닙니다."
         },
         {
           "text": "\niVH는 다음 역할에 집중합니다."
@@ -47,8 +33,7 @@
             "text": "글로벌 휴머노이드 로봇 제조사 (Hexagon, 중국 주요 휴머노이드 제조사 등)의 "
           },
           {
-            "text": "검증된 하드웨어 소싱",
-            "bold": true
+            "text": "검증된 하드웨어 소싱"
           }
         ]
       },
@@ -58,8 +43,7 @@
             "text": "iVH 고유의 "
           },
           {
-            "text": "Physical AI, 디지털 트윈, 운영·관제 시스템 적용",
-            "bold": true
+            "text": "Physical AI, 디지털 트윈, 운영·관제 시스템 적용"
           }
         ]
       },
@@ -69,15 +53,13 @@
             "text": "고객이 바로 사용할 수 있는 "
           },
           {
-            "text": "완성형 휴머노이드 시스템으로 통합 공급",
-            "bold": true
+            "text": "완성형 휴머노이드 시스템으로 통합 공급"
           }
         ]
       }
     }
   },
   "package_composition": {
-    "title": "Package Composition",
     "cards": {
       "hardware": {
         "title": "Humanoid Robot Hardware",
@@ -126,8 +108,7 @@
               "text": "휴머노이드 로봇만 구매하는 것은 "
             },
             {
-              "text": "시작에 불과합니다.",
-              "bold": true
+              "text": "시작에 불과합니다."
             },
             {
               "text": "\n실제 현장에서는 다음 문제가 발생합니다."
@@ -144,14 +125,19 @@
     }
   },
   "why_ivh": {
-    "title": "Why iVH",
     "items": {
       "proven-sw-hw": "검증된 하드웨어 + 검증된 소프트웨어",
       "zero-risk": "제조 리스크 없는 구조",
       "operational-delivery": "운영 가능한 상태로 납품",
       "single-contact": "유지보수·확장·운영 단일 창구"
     },
-    "closing": "iVH는 휴머노이드를 '제품'이 아니라 '시스템'으로 판매합니다."
+    "closing": {
+      "segments": [
+        { "text": "iVH는 휴머노이드를 '제품'이 아니라 '" },
+        { "text": "시스템", "bold": true },
+        { "text": "'으로 판매합니다." }
+      ]
+    }
   },
   "cta": {
     "headline": "Ready to Deploy Humanoids?",
@@ -161,14 +147,12 @@
           "text": "휴머노이드를 "
         },
         {
-          "text": "연구 목적이 아닌 운영 목적으로 도입",
-          "bold": true
+          "text": "연구 목적이 아닌 운영 목적으로 도입"
         },
         {
           "text": "하고자 하신다면,\niVH가 하드웨어 선정부터 운영까지 책임집니다."
         }
       ]
-    },
-    "button_text": "문의하기"
+    }
   }
 }

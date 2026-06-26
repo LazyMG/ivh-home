@@ -1,4 +1,5 @@
 import { Box, Paper, Typography } from "@mui/material";
+import type { Theme } from "@mui/material/styles";
 import resource from "../../data/product/iMOVA.json";
 import TechSpecTable from "../../components/product/iMOVA/TechSpecTable";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,7 @@ import ScrollButton from "../../common/ScrollButton";
 import SEO from "../../common/SEO";
 import type { IMOVATechnologySpec } from "../../types/product";
 import SectionTitle from "../../components/common/SectionTitle";
+import ProductHero from "../../components/product/ProductHero";
 
 const IMOVA = () => {
   const { t } = useTranslation("product/iMOVA");
@@ -75,133 +77,25 @@ const IMOVA = () => {
       <Box component="main">
         <ScrollButton threshold={THRESHOLD} />
 
-        <Box
-          sx={{
-            position: "relative",
-            width: "100%",
-            overflow: "hidden",
-          }}
-        >
-          <Box
-            component="img"
-            src={resource.main_image}
-            alt={t("main_image_alt")}
-            sx={{
-              width: "100%",
-              height: "auto",
-              objectFit: "contain",
-              display: "block",
-            }}
-          />
-          <Box
-            sx={(theme) => ({
-              position: "absolute",
-              bottom: "2%",
-              left: "5%",
-              display: "flex",
-              flexDirection: "column",
-              [theme.breakpoints.up("tablet")]: {
-                bottom: "20%",
-                left: "2%",
-              },
-              [theme.breakpoints.up("desktop")]: {
-                left: "5%",
-              },
-            })}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                gap: 3,
-                flexDirection: "column",
-              }}
-            >
-              <Box
-                sx={{ width: "fit-content", backgroundColor: "#03193F", px: 2 }}
-              >
-                <Typography
-                  sx={{
-                    color: "#ffffff",
-                    fontSize: "18px",
-                    fontFamily: "Freesentation-6-SemiBold",
-                  }}
-                >
-                  AMR
-                </Typography>
-              </Box>
-              <Box
-                component="img"
-                src={resource.title_image}
-                alt={t("title_image_alt")}
-                sx={(theme) => ({
-                  width: "256px",
-                  [theme.breakpoints.down("tablet")]: {
-                    width: "100px",
-                  },
-                  [theme.breakpoints.down("mobilePortrait")]: {
-                    width: "100px",
-                  },
-                })}
-              />
-              <Typography
-                sx={(theme) => ({
-                  color: "#003B8D",
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                  fontFamily: "Freesentation-6-SemiBold",
-                  [theme.breakpoints.up("tablet")]: {
-                    fontSize: "20px",
-                  },
-                })}
-              >
-                {t("page_name")}
-              </Typography>
-              <Box
-                sx={{
-                  position: "relative",
-                  width: "56%",
-                  borderBottom: "1px solid #003B8D",
-                }}
-              >
-                {/* 선 끝의 작은 원 (중심이 선 끝과 일치) */}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    right: 0,
-                    bottom: 0,
-                    transform: "translate(50%, 50%)",
-                    width: "4px",
-                    height: "4px",
-                    borderRadius: "50%",
-                    backgroundColor: "#003B8D",
-                  }}
-                />
-              </Box>
-            </Box>
-            <Typography
-              component="h1"
-              sx={(theme) => ({
-                color: "#2c2c2c",
-                maxWidth: "90%",
-                fontSize: "12px",
-                wordBreak: "keep-all",
-                fontFamily: "Freesentation-5-Medium",
-                display: "none",
-                [theme.breakpoints.up("tablet")]: {
-                  fontSize: "18px",
-                  maxWidth: "80%",
-                },
-                [theme.breakpoints.up("desktop")]: {
-                  display: "block",
-                  mt: 2,
-                  whiteSpace: "pre-line",
-                },
-              })}
-            >
-              {t("title")}
-            </Typography>
-          </Box>
-        </Box>
+        <ProductHero
+          image={resource.main_image}
+          imageAlt={t("main_image_alt")}
+          badge="AMR"
+          titleImage={resource.title_image}
+          titleImageAlt={t("title_image_alt")}
+          caption={t("page_name")}
+          description={t("title")}
+          underlineWidth="56%"
+          breadcrumbKey="imova"
+          descriptionSx={(theme: Theme) => ({
+            color: "#2c2c2c",
+            fontFamily: "Freesentation-5-Medium",
+            maxWidth: "90%",
+            [theme.breakpoints.up("tablet")]: {
+              maxWidth: "80%",
+            },
+          })}
+        />
         <Box
           sx={{
             width: "100%",
@@ -335,10 +229,9 @@ const IMOVA = () => {
                     })}
                   >
                     {isLogoCell ? (
-                      // TODO: 여기에 iMOVA 로고 이미지를 넣으세요.
                       <Box
                         component="img"
-                        src="/images/pages/product/iMOVA/iMOVA_logo_image.png"
+                        src={resource.logo_image}
                         alt="iMOVA"
                         sx={{ maxWidth: "180px", objectFit: "contain" }}
                       />

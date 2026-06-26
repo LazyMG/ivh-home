@@ -3,31 +3,27 @@
     "canonical": "https://ivh.co.kr/product/imova/humanoid"
   },
   "hero": {
-    "imova_title_image": "/images/pages/product/iMOVA/iMOVA_title.png",
-    "imova_title_alt": "iMOVA",
-    "humanoid_equation_image": "/images/pages/product/iMOVA/humanoid_equation.png",
-    "image": "/images/pages/product/iMOVA/humanoid.png",
-    "effects": {
-      "ldquo": "/images/pages/product/iMOVA/ldquo.svg",
-      "rdquo": "/images/pages/product/iMOVA/rdquo.svg",
-      "white_effect": "/images/pages/product/iMOVA/humanoid_white_effect.png",
-      "gra_effect": "/images/pages/product/iMOVA/humanoid_gra_effect.png",
-      "blue_effect": "/images/pages/product/iMOVA/humanoid_blue_effect.png"
+    "imova_title_image": "/images/pages/product/iMOVA/iMOVA_logo_image.png",
+    "image": "/images/pages/product/iMOVA/humanoid_main_image.png",
+    "equation": {
+      "robot": "/images/pages/product/iMOVA/humanoid_robot_image.png",
+      "plus": "/images/pages/product/iMOVA/+.png",
+      "brain": "/images/pages/product/iMOVA/humanoid_brain_image.png",
+      "ai": "/images/pages/product/iMOVA/humanoid_ai_image.png",
+      "equals": "/images/pages/product/iMOVA/=.png",
+      "result": "/images/home/iMOVA_title_image.png"
     }
   },
   "business_model": {
     "items": [
       {
-        "id": "hardware-sourcing",
-        "number": "01"
+        "id": "hardware-sourcing"
       },
       {
-        "id": "core-tech",
-        "number": "02"
+        "id": "core-tech"
       },
       {
-        "id": "integrated-supply",
-        "number": "03"
+        "id": "integrated-supply"
       }
     ]
   },
@@ -35,7 +31,6 @@
     "cards": [
       {
         "id": "hardware",
-        "icon": "SmartToy",
         "bullets": [
           {
             "id": "global-robots"
@@ -50,7 +45,6 @@
       },
       {
         "id": "ai-control",
-        "icon": "Psychology",
         "bullets": [
           {
             "id": "motion-control"
@@ -68,7 +62,6 @@
       },
       {
         "id": "digital-twin",
-        "icon": "ViewInAr",
         "bullets": [
           {
             "id": "twin-model"
@@ -86,7 +79,6 @@
       },
       {
         "id": "fleet-management",
-        "icon": "Dashboard",
         "bullets": [
           {
             "id": "remote-monitoring"
@@ -104,7 +96,6 @@
       },
       {
         "id": "why-total-package",
-        "icon": "HelpOutline",
         "bullets": [
           {
             "id": "control-stability"
@@ -137,8 +128,5 @@
         "id": "single-contact"
       }
     ]
-  },
-  "cta": {
-    "button_url": "/company/contact"
   }
 }
