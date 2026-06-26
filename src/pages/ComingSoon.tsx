@@ -61,9 +61,9 @@ const ComingSoon = () => {
             fontSize: "16px",
             fontFamily: "Freesentation-6-SemiBold",
             color: "#fff",
-            backgroundColor: "#1755C2",
+            backgroundColor: "#03193F",
             "&:hover": {
-              backgroundColor: "#124a9e",
+              backgroundColor: "#1755C2",
             },
           }}
         >
