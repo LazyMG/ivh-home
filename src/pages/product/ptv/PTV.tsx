@@ -32,6 +32,9 @@ const PTV = () => {
         name={td("ptv_name")}
         libraries={libraries}
         pageKey={resource.ptv_pageKey}
+        libraryLayout="center"
+        contentTop="85%"
+        introBottomSpace={20}
       />
     </>
   );

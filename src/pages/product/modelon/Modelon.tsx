@@ -6,7 +6,9 @@ import ProductPageTemplate from "../../../components/product/ProductPageTemplate
 const Modelon = () => {
   const { t } = useTranslation("product/modelon" as never);
   const td = (key: string): string => t(key as never);
-  const textList = t("modelon_text" as never, { returnObjects: true }) as string[];
+  const textList = t("modelon_text" as never, {
+    returnObjects: true,
+  }) as string[];
   const libraries = resource.modelon_libraries.map((lib) => ({
     imgUrl: lib.imgUrl,
     url: lib.url,
@@ -16,7 +18,12 @@ const Modelon = () => {
 
   return (
     <>
-      <SEO title={td("seo.title")} description={td("seo.description")} keywords={td("seo.keywords")} ogImage={resource.seo?.ogImage} />
+      <SEO
+        title={td("seo.title")}
+        description={td("seo.description")}
+        keywords={td("seo.keywords")}
+        ogImage={resource.seo?.ogImage}
+      />
       <ProductPageTemplate
         image={resource.modelon_mainImg}
         image_alt={td("modelon_mainImg_alt")}
@@ -25,6 +32,9 @@ const Modelon = () => {
         name={td("modelon_name")}
         libraries={libraries}
         pageKey={resource.modelon_pageKey}
+        contentTop="85%"
+        introBottomSpace={20}
+        breadcrumbColor="#000000"
       />
     </>
   );

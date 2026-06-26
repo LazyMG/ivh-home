@@ -14,9 +14,11 @@ interface BreadScrumProps {
   pageKey: string;
   /** 페이지마다 위치/여백이 다를 수 있어 외부에서 스타일을 덮어쓸 수 있도록 함 */
   sx?: SxProps<Theme>;
+  /** 텍스트·화살표 색상 (기본 #737373). 어두운 배경 위에선 #ffffff 등으로 지정 */
+  color?: string;
 }
 
-const BreadScrum = ({ pageKey, sx }: BreadScrumProps) => {
+const BreadScrum = ({ pageKey, sx, color = "#737373" }: BreadScrumProps) => {
   const navigate = useLocalizedNavigate();
   const { isMobile } = useBreakpoint();
 
@@ -62,6 +64,7 @@ const BreadScrum = ({ pageKey, sx }: BreadScrumProps) => {
               aria-current={isLast ? "page" : undefined}
               $clickable={!!item.url}
               $isLast={isLast}
+              $color={color}
             >
               <Typography
                 variant="breadScrumFont"
@@ -74,7 +77,7 @@ const BreadScrum = ({ pageKey, sx }: BreadScrumProps) => {
                 {item.title}
               </Typography>
             </StyledButton>
-            {!isLast && <ArrowIcon isMobile={isMobile} />}
+            {!isLast && <ArrowIcon isMobile={isMobile} color={color} />}
           </Box>
         );
       })}
@@ -85,11 +88,12 @@ const BreadScrum = ({ pageKey, sx }: BreadScrumProps) => {
 export default BreadScrum;
 
 const StyledButton = styled(Button, {
-  shouldForwardProp: (prop) => prop !== "$isLast" && prop !== "$clickable",
-})<{ $isLast?: boolean; $clickable?: boolean }>(
-  ({ $isLast = false, $clickable = true }) => ({
+  shouldForwardProp: (prop) =>
+    prop !== "$isLast" && prop !== "$clickable" && prop !== "$color",
+})<{ $isLast?: boolean; $clickable?: boolean; $color?: string }>(
+  ({ $isLast = false, $clickable = true, $color = "#737373" }) => ({
     textTransform: "none",
-    color: "#737373",
+    color: $color,
     padding: 0,
     minWidth: 0,
     cursor: $clickable ? "pointer" : "default",
@@ -100,7 +104,13 @@ const StyledButton = styled(Button, {
   }),
 );
 
-const ArrowIcon = ({ isMobile }: { isMobile: boolean }) => {
+const ArrowIcon = ({
+  isMobile,
+  color = "#737373",
+}: {
+  isMobile: boolean;
+  color?: string;
+}) => {
   return (
     <Box
       component="span"
@@ -108,7 +118,7 @@ const ArrowIcon = ({ isMobile }: { isMobile: boolean }) => {
         display: "inline-flex",
         width: isMobile ? 8 : 16,
         height: isMobile ? 8 : 16,
-        color: "#737373",
+        color,
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "Freesentation-5-Medium",

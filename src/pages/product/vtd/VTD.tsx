@@ -29,6 +29,7 @@ const VTD = () => {
         name={vtd_name}
         libraries={vtd_libraries}
         pageKey={vtd_pageKey}
+        libraryLayout="center"
       />
     </>
   );
