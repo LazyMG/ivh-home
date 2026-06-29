@@ -72,7 +72,7 @@ export const AccordionMenu = ({
               onClick={() => handleNavigate(item.path)}
               sx={{
                 fontSize: "14px",
-                fontFamily: "Freesentation-4-Regular",
+                fontFamily: "Galderglynn-Titling-Book",
                 color: "#B2B2B2",
                 cursor: "pointer",
                 pl: 1.5,

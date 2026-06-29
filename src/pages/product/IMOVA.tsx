@@ -273,7 +273,7 @@ const IMOVA = () => {
                         >
                           <Typography
                             sx={{
-                              fontFamily: "Freesentation-7-Bold",
+                              fontFamily: "Galderglynn-Titling-Book",
                               color: "#03193F",
                               fontSize: "20px",
                               lineHeight: 1.2,
@@ -405,7 +405,7 @@ const IMOVA = () => {
                       >
                         <Typography
                           sx={(theme) => ({
-                            fontFamily: "Freesentation-7-Bold",
+                            fontFamily: "Galderglynn-Titling-Regular",
                             mb: 2,
                             textAlign: "left",
                             [theme.breakpoints.up("desktop")]: {
@@ -459,7 +459,7 @@ const IMOVA = () => {
               <SectionTitle text={t("section_titles.use_case")} />
               <Typography
                 sx={{
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: "Galderglynn-Titling-Book",
                   fontSize: "18px",
                   color: "#737373",
                   textTransform: "uppercase",
@@ -538,7 +538,7 @@ const IMOVA = () => {
                         sx={{
                           textAlign: "center",
                           color: item.production_line_color,
-                          fontFamily: "Freesentation-7-Bold",
+                          fontFamily: "Galderglynn-Titling-Regular",
                           fontSize: "clamp(13px, 1.9cqw, 16px)",
                           wordBreak: "keep-all",
                           textTransform: "uppercase",

@@ -394,7 +394,7 @@ const ProductPageTemplate = ({
               <Typography
                 component="h1"
                 sx={(theme) => ({
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: "Galderglynn-Titling-Bold",
                   fontSize: "28px",
                   textTransform: "uppercase",
                   color: "#ffffff",

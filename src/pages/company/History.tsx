@@ -84,7 +84,7 @@ const History = () => {
         <Typography
           sx={{
             fontSize: "30px",
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: "Galderglynn-Titling-Regular",
             color: ACCENT,
             whiteSpace: "nowrap",
           }}

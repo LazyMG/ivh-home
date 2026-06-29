@@ -34,7 +34,7 @@ const MainProductCard = ({
             <Typography
               sx={{
                 color: "#FFFFFF",
-                fontFamily: "Freesentation-6-SemiBold",
+                fontFamily: "Galderglynn-Titling-Book",
                 fontSize: "24px",
                 letterSpacing: "0.25em",
                 textTransform: "uppercase",
@@ -88,7 +88,7 @@ const MainProductCard = ({
           <Box component="img" src={title} sx={{ width: "128px" }} />
           <Typography
             sx={{
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: "Galderglynn-Titling-Bold",
               fontSize: "24px",
               color: "#737373",
             }}

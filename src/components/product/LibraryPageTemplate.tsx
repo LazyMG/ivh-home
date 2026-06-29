@@ -116,7 +116,7 @@ const LibraryPageTemplate = ({
                 <Typography
                   component="h1"
                   sx={(theme) => ({
-                    fontFamily: "Freesentation-7-Bold",
+                    fontFamily: "Galderglynn-Titling-Regular",
                     fontSize: "20px",
                     textTransform: "uppercase",
                     color: "#03193F",

@@ -117,7 +117,7 @@ const ProductContent = ({
                     <Typography
                       sx={(theme) => ({
                         fontSize: "14px",
-                        fontFamily: "Freesentation-5-Medium",
+                        fontFamily: "Galderglynn-Titling-Regular",
                         textAlign: "center",
                         color: "#979797",
                         [theme.breakpoints.up("tablet")]: {
@@ -138,7 +138,7 @@ const ProductContent = ({
             <Typography
               sx={(theme) => ({
                 fontSize: "14px",
-                fontFamily: "Freesentation-5-Medium",
+                fontFamily: "Galderglynn-Titling-Regular",
                 textAlign: "center",
                 color: "#979797",
                 textTransform: "uppercase",
@@ -205,7 +205,7 @@ const ProductContent = ({
             <Typography
               sx={(theme) => ({
                 fontSize: "14px",
-                fontFamily: "Freesentation-5-Medium",
+                fontFamily: "Galderglynn-Titling-Regular",
                 color: "#979797",
                 textTransform: "uppercase",
                 [theme.breakpoints.up("tablet")]: {
@@ -285,7 +285,7 @@ const ProductContent = ({
                   <Typography
                     sx={{
                       fontSize: "14px",
-                      fontFamily: "Freesentation-5-Medium",
+                      fontFamily: "Galderglynn-Titling-Regular",
                       textAlign: "center",
                       color: "#737373",
                     }}
@@ -304,7 +304,7 @@ const ProductContent = ({
               mt: 3,
               textAlign: "center",
               fontSize: "14px",
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: "Galderglynn-Titling-Regular",
               color: "#737373",
             }}
           >
@@ -350,7 +350,7 @@ const ProductContent = ({
           <Typography
             sx={(theme) => ({
               fontSize: "18px",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: "Galderglynn-Titling-Regular",
               textTransform: "uppercase",
               [theme.breakpoints.up("tablet")]: {
                 color: "#03193F",

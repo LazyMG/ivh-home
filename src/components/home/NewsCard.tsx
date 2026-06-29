@@ -97,7 +97,7 @@ const NewsCard = ({ image, title, date, onClick }: NewsCardProps) => {
         {/* 날짜 */}
         <Typography
           sx={{
-            fontFamily: "Freesentation-6-SemiBold",
+            fontFamily: "Galderglynn-Titling-Regular",
             fontSize: "14px",
             color: "#003B8D",
           }}

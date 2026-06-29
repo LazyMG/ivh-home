@@ -31,7 +31,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
         <SectionTitle text={labels.tech_spec} />
         <Typography
           sx={{
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: "Galderglynn-Titling-Book",
             fontSize: "18px",
             color: "#737373",
             textTransform: "uppercase",

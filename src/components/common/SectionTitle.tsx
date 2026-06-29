@@ -18,7 +18,7 @@ const SectionTitle = ({ text }: { text: string }) => {
       <Typography
         sx={(theme) => ({
           fontSize: "20px",
-          fontFamily: "Freesentation-6-SemiBold",
+          fontFamily: "Galderglynn-Titling-Regular",
           color: "#03193F",
           [theme.breakpoints.up("tablet")]: {
             fontSize: "28px",

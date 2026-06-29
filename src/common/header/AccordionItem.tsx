@@ -36,7 +36,7 @@ export const AccordionItem = ({
         onClick={() => (hasSubMenu ? onToggle() : onNavigate(item.path))}
         sx={{
           fontSize: "16px",
-          fontFamily: "Freesentation-6-SemiBold",
+          fontFamily: "Galderglynn-Titling-Regular",
           // 클릭(아코디언 열림) 시 hover 색상 유지
           color: isOpen ? "#005AD5" : "#8D8D8D",
           cursor: "pointer",

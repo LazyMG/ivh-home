@@ -29,7 +29,7 @@ const FooterMenu = ({ navigate }: FooterMenuProps) => {
           key={`title-${index}`}
           sx={{
             fontSize: "18px",
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: "Galderglynn-Titling-Regular",
             color: "#00235F",
             px: 3,
           }}
@@ -63,7 +63,7 @@ const FooterMenu = ({ navigate }: FooterMenuProps) => {
               key={subIndex}
               sx={{
                 fontSize: "16px",
-                fontFamily: "Freesentation-6-SemiBold",
+                fontFamily: "Galderglynn-Titling-Book",
                 color: "#313131",
                 cursor: "pointer",
                 width: "fit-content",

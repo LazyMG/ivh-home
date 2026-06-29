@@ -44,7 +44,7 @@ export const SolutionsPanel = ({ navigate, onClose }: SolutionsPanelProps) => {
           <Typography
             sx={{
               fontSize: "14px",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: "Galderglynn-Titling-Regular",
               color: "#000000",
               textTransform: "uppercase",
             }}

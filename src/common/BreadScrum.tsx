@@ -67,11 +67,11 @@ const BreadScrum = ({ pageKey, sx, color = "#737373" }: BreadScrumProps) => {
               $color={color}
             >
               <Typography
-                variant="breadScrumFont"
                 sx={{
                   mr: isLast ? 0 : "10px",
                   fontSize: "16px",
                   textTransform: "uppercase",
+                  fontFamily: "Galderglynn-Titling-Book",
                 }}
               >
                 {item.title}

@@ -170,6 +170,7 @@ const HumanoidPackage = () => {
                 color: "#ffffff",
                 fontSize: "20px",
                 letterSpacing: "5%",
+                fontFamily: "Galderglynn-Titling-Book",
               }}
             >
               {t("hero.equation_text")}
@@ -198,7 +199,7 @@ const HumanoidPackage = () => {
               <Typography
                 component="h3"
                 sx={{
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: "Galderglynn-Titling-Regular",
                   fontSize: isMobile ? "18px" : "20px",
                   color: "#03193F",
                   textTransform: "uppercase",
@@ -286,7 +287,7 @@ const HumanoidPackage = () => {
                       <Typography
                         component="h3"
                         sx={{
-                          fontFamily: "Freesentation-7-Bold",
+                          fontFamily: "Galderglynn-Titling-Regular",
                           fontSize: isMobile ? "16px" : "18px",
                           color: "#03193F",
                           wordBreak: "keep-all",
@@ -298,7 +299,7 @@ const HumanoidPackage = () => {
                           <Typography
                             component="span"
                             sx={{
-                              fontFamily: "Freesentation-7-Bold",
+                              fontFamily: "Galderglynn-Titling-Regular",
                               fontSize: isMobile ? "16px" : "18px",
                               color: "#2c2c2c",
                               ml: 1,
@@ -311,7 +312,7 @@ const HumanoidPackage = () => {
                       {cardSubtitle2 && (
                         <Typography
                           sx={{
-                            fontFamily: "Freesentation-7-Bold",
+                            fontFamily: "Galderglynn-Titling-Regular",
                             fontSize: isMobile ? "15px" : "17px",
                             color: "#03193F",
                             wordBreak: "keep-all",

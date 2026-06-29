@@ -101,7 +101,7 @@ export const MainMenuBar = ({
                 }}
                 sx={{
                   fontSize: "16px",
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: "Galderglynn-Titling-Regular",
                   color: openMainMenu === item.title ? "#66BAFF" : "#ffffff",
                   whiteSpace: "nowrap",
                   ":hover": {

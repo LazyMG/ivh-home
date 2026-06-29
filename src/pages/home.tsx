@@ -108,6 +108,7 @@ const Home = () => {
       const response = await newsService.getNews();
       // 임시 데이터를 DB 데이터 앞에 끼운 뒤, 앞에서 4개만 잘라서 표시
       setNewsItems([...TEMP_NEWS_ITEMS, ...response].slice(0, 4));
+      // setNewsItems([...response].slice(0, 4));
       setNewsStatus("success");
     } catch {
       setNewsItems([]);
@@ -237,7 +238,7 @@ const Home = () => {
               <Typography
                 component="h1"
                 sx={(theme) => ({
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: "Galderglynn-Titling-Bold",
                   fontSize: "20px",
                   color: "#FFFFFF",
                   textTransform: "uppercase",

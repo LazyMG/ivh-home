@@ -49,6 +49,7 @@ const ContactTrainingInfoSection = () => {
               fontSize: "20px",
               color: "#ffffff",
               textTransform: "uppercase",
+              fontFamily: "Galderglynn-Titling-Regular",
               [theme.breakpoints.up("tablet")]: { fontSize: "36px" },
             })}
           >

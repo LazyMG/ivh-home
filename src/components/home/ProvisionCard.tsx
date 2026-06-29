@@ -46,7 +46,7 @@ const ProvisionCard = ({
         {/* 제목 */}
         <Typography
           sx={{
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: "Galderglynn-Titling-Regular",
             fontSize: "22px",
             color: "#03193F",
             textTransform: "uppercase",
@@ -105,7 +105,7 @@ const ProvisionCard = ({
               alignItems: "center",
               gap: 1,
               color: "#FFFFFF",
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: "Galderglynn-Titling-Book",
               fontSize: "17px",
               letterSpacing: "0.1em",
               whiteSpace: "nowrap",
@@ -113,7 +113,10 @@ const ProvisionCard = ({
           >
             MORE
             {/* 화살표는 기본 폰트로 렌더 (Freesentation 상속 시 글리프가 짧게 보임) */}
-            <Box component="span" sx={{ fontFamily: (theme) => theme.typography.fontFamily }}>
+            <Box
+              component="span"
+              sx={{ fontFamily: (theme) => theme.typography.fontFamily }}
+            >
               →
             </Box>
           </Box>

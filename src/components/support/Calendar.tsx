@@ -224,7 +224,7 @@ const Calendar = ({
                     height: 36,
                     px: 3,
                     borderRadius: "999px",
-                    fontFamily: "Freesentation-7-Bold",
+                    fontFamily: "Galderglynn-Titling-Regular",
                     fontSize: "16px",
                     border: "1px solid",
                     borderColor: TOOLBAR_ACCENT,
