@@ -119,11 +119,11 @@
         "url": "/product/dymola/binarymodelexport"
       }
     },
-    "vehicleDynamics": {
+    "vehicledynamicslibrary": {
       "extends": ["home_product", "modelon_base"],
       "current": {
-        "title": "Vehicle Dynamics",
-        "url": "/product/modelon/vehicledynamics"
+        "title": "Vehicle Dynamics Library",
+        "url": "/product/modelon/vehicledynamicslibrary"
       }
     },
     "vaporCycle": {
