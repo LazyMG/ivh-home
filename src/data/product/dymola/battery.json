@@ -75,7 +75,7 @@
       "id": "feat-2",
       "imgObj": [
         {
-          "col": 6,
+          "col": 4,
           "imgSize": "small",
           "images": [
             {
@@ -85,7 +85,7 @@
           ]
         },
         {
-          "col": 6,
+          "col": 8,
           "images": [
             {
               "url": "/images/pages/product/battery/battery-feat-three-second.png",
