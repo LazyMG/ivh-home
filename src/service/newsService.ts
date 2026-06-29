@@ -2,9 +2,9 @@ import { isAxiosError } from "axios";
 import { API_ENDPOINTS } from "../utils/constants";
 import api from "./api";
 
-type NewsStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
+export type NewsStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
 
-interface NewsResponse {
+export interface NewsResponse {
   title: string;
   content: string;
   contentsUrl: string;
@@ -16,6 +16,8 @@ interface NewsResponse {
   status: NewsStatus;
   tags: string[];
   viewCount: number;
+  // 임시 필드 — 추후 응답에 이미지가 포함되면 사용 (없으면 NewsCard에서 플레이스홀더 처리)
+  image?: string;
 }
 
 export const newsService = {

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
 interface NewsCardProps {
-  image: string;
+  image?: string;
   title: string;
   date: string;
   onClick?: () => void;
@@ -24,19 +24,45 @@ const NewsCard = ({ image, title, date, onClick }: NewsCardProps) => {
         p: 2,
       }}
     >
-      {/* 이미지 (카드 높이의 약 1/2, 자체 라운드) */}
-      <Box
-        component="img"
-        src={image}
-        alt={title}
-        sx={{
-          width: "100%",
-          aspectRatio: "18 / 11",
-          objectFit: "cover",
-          borderRadius: "12px",
-          display: "block",
-        }}
-      />
+      {/* 이미지 (카드 높이의 약 1/2, 자체 라운드) — 이미지가 없으면 플레이스홀더 표시 */}
+      {image ? (
+        <Box
+          component="img"
+          src={image}
+          alt={title}
+          sx={{
+            width: "100%",
+            aspectRatio: "18 / 11",
+            objectFit: "cover",
+            borderRadius: "12px",
+            display: "block",
+          }}
+        />
+      ) : (
+        <Box
+          sx={{
+            width: "100%",
+            aspectRatio: "18 / 11",
+            borderRadius: "12px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "linear-gradient(135deg, #E8EEF7 0%, #D2DEF0 100%)",
+            color: "#9DB1D0",
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: "Freesentation-7-Bold",
+              fontStyle: "italic",
+              fontSize: "32px",
+              userSelect: "none",
+            }}
+          >
+            iVH
+          </Typography>
+        </Box>
+      )}
 
       {/* 가로 점선 구분선 (이미지와 동일 너비) */}
       <Box
