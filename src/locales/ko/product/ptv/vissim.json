@@ -10,7 +10,7 @@
   "vissim_introduction": [
     "PTV Vissim은 전 세계적으로 가장 널리 사용되는 교통 시뮬레이션 소프트웨어로, 모든 도로 이용자의 움직임을 미시적 수준에서 정밀하게 재현합니다. 과학적 근거에 기반한 시뮬레이션과 시나리오 관리 기능을 통해 교통 인프라의 성능을 평가하고 최적화할 수 있으며, 데이터 기반의 계획 수립과 의사결정을 지원합니다. 또한, 교통 혼잡과 배출가스 문제를 해결하고, 다양한 교통수단이 조화롭게 도로 공간을 활용할 수 있도록 설계하는 데 기여합니다."
   ],
-  "features_section_title": "특징",
+  "features_section_title": "Feature",
   "vissim_features": {
     "feat-0": {
       "title": "미시적 교통 시뮬레이션(Micro Traffic Simulation) 기능 지원",

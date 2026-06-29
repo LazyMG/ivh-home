@@ -7,11 +7,15 @@ const Viswalk = () => {
   const { t } = useTranslation("product/ptv/viswalk" as never);
   const td = (key: string): string => t(key as never);
 
-  const introTexts = t("viswalk_introduction" as never, { returnObjects: true }) as string[];
+  const introTexts = t("viswalk_introduction" as never, {
+    returnObjects: true,
+  }) as string[];
   const introduction = introTexts.map((text) => ({ text }));
 
-  const features = resource.viswalk_features.map((feat) => {
-    const imgTexts = t(`viswalk_features.${feat.id}.imgTexts` as never, { returnObjects: true }) as string[] | string;
+  const features = resource.viswalk_features.map((feat, index, arr) => {
+    const imgTexts = t(`viswalk_features.${feat.id}.imgTexts` as never, {
+      returnObjects: true,
+    }) as string[] | string;
     const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
     return {
       ...(feat.imgObj
@@ -27,6 +31,7 @@ const Viswalk = () => {
         title: td(`viswalk_features.${feat.id}.title`),
         text: td(`viswalk_features.${feat.id}.text`),
       },
+      showDivider: index !== arr.length - 1,
     };
   });
 
