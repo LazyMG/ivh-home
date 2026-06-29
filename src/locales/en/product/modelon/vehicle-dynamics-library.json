@@ -26,7 +26,7 @@
     "feat-2": {
       "title": "Compatibility with Diverse Tire Models",
       "text": "The library is compatible not only with TYDEX STI (Standard Tyre Interface)-based models but also with high-precision tire models from the FTire and Delft-Tyre families. This ensures realistic simulation of tire behavior under various road conditions and driving scenarios.",
-      "imgTexts": ["| CF-Tire Co-Simulation |"]
+      "imgTexts": ["", "", "| F-Tire Co-Simulation |"]
     },
     "feat-3": {
       "title": "Support for Integration with Various Parameter File Formats",
