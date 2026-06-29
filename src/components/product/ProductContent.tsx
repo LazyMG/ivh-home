@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,6 +18,8 @@ interface FeatureImage {
   imgText?: string;
   col: number;
   imgSize?: string;
+  /** 캡션 정렬 override ("center" | "start"). 미지정 시 이미지 수 기준 기본값 */
+  imgTextAlign?: "center" | "start";
 }
 interface FeatureText {
   title?: string;
@@ -32,12 +35,15 @@ export interface ProductContentProps {
     small: string;
   };
   isColor?: boolean;
+  /** 하단 구분선 표시 여부 (기본 true) */
+  showDivider?: boolean;
 }
 
 const ProductContent = ({
   textObj,
   imgObj,
   imageLayoutStyle,
+  showDivider = true,
 }: ProductContentProps) => {
   const isImgTextExist = imgObj && imgObj.some((img) => img.imgText);
   const { isMobile } = useBreakpoint();
@@ -94,7 +100,6 @@ const ProductContent = ({
                         loading="lazy"
                         sx={{
                           objectFit: "contain",
-                          // width: img.imgSize === "small" ? "auto" : "100%",
                           width: "100%",
                           maxWidth: "100%",
                         }}
@@ -178,10 +183,20 @@ const ProductContent = ({
             </Box>
           ))}
         {img.imgText && (
-          <Box sx={{ display: "flex", justifyContent: captionJustify }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent:
+                img.imgTextAlign === "center"
+                  ? "center"
+                  : img.imgTextAlign === "start"
+                    ? "flex-start"
+                    : captionJustify,
+            }}
+          >
             <Typography
               sx={(theme) => ({
-                fontSize: "12px",
+                fontSize: "14px",
                 fontFamily: "Freesentation-5-Medium",
                 color: "#979797",
                 textTransform: "uppercase",
@@ -196,6 +211,95 @@ const ProductContent = ({
         )}
       </Grid>
     ));
+  };
+
+  // 스트립 렌더링: 등높이 이미지 가로 배치 + 사이 점선 구분선
+  const renderStripImages = () => {
+    if (!imgObj) return null;
+    const strip = imgObj.filter((img) => img.images && img.images.length > 0);
+    const captions = imgObj.filter(
+      (img) => (!img.images || img.images.length === 0) && img.imgText,
+    );
+    if (strip.length === 0) return null;
+
+    return (
+      <Grid size={12}>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "nowrap",
+            alignItems: "stretch",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          {strip.map((img, index) => (
+            <Fragment key={index}>
+              {index > 0 && (
+                <Box
+                  sx={{
+                    alignSelf: "stretch",
+                    borderLeft: "2px dashed #c9c9c9",
+                    mx: 4,
+                  }}
+                />
+              )}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 1,
+                }}
+              >
+                {img.images!.map((image) => (
+                  <Box
+                    key={image.url}
+                    component="img"
+                    src={image.url}
+                    alt={image.alt}
+                    loading="lazy"
+                    sx={{
+                      // 등높이: 높이 고정 + 너비 비율 유지
+                      height: "250px",
+                      width: "auto",
+                      objectFit: "contain",
+                    }}
+                  />
+                ))}
+                {img.imgText && (
+                  <Typography
+                    sx={{
+                      fontSize: "14px",
+                      fontFamily: "Freesentation-5-Medium",
+                      textAlign: "center",
+                      color: "#737373",
+                    }}
+                  >
+                    {img.imgText}
+                  </Typography>
+                )}
+              </Box>
+            </Fragment>
+          ))}
+        </Box>
+        {captions.map((c, i) => (
+          <Typography
+            key={`strip-cap-${i}`}
+            sx={{
+              mt: 3,
+              textAlign: "center",
+              fontSize: "14px",
+              fontFamily: "Freesentation-5-Medium",
+              color: "#737373",
+            }}
+          >
+            {c.imgText}
+          </Typography>
+        ))}
+      </Grid>
+    );
   };
 
   return (
@@ -215,7 +319,9 @@ const ProductContent = ({
       >
         {currentLayout === "slide"
           ? renderSlideImages()
-          : renderContainerImages()}
+          : currentLayout === "strip"
+            ? renderStripImages()
+            : renderContainerImages()}
         <Grid
           size={isMobile ? 12 : textObj.col}
           sx={{
@@ -249,15 +355,17 @@ const ProductContent = ({
           </Typography>
         </Grid>
       </Grid>
-      <Divider
-        sx={(theme) => ({
-          my: 12,
-          display: "none",
-          borderStyle: "dashed",
-          borderWidth: "2px",
-          [theme.breakpoints.up("tablet")]: { display: "block" },
-        })}
-      />
+      {showDivider && (
+        <Divider
+          sx={(theme) => ({
+            my: 12,
+            display: "none",
+            borderStyle: "dashed",
+            borderWidth: "2px",
+            [theme.breakpoints.up("tablet")]: { display: "block" },
+          })}
+        />
+      )}
     </>
   );
 };
