@@ -31,7 +31,6 @@ const TraingCurriculumTable = ({
     year,
     quarterMonths,
     quarterYears,
-    tableTitle,
   } = getQuarterInfo();
   const currentMonth = month.toString().padStart(2, "0");
 
@@ -123,16 +122,6 @@ const TraingCurriculumTable = ({
         },
       })}
     >
-      <Typography
-        sx={{
-          fontSize: "18px",
-          color: "##03193F",
-          fontFamily: "Freesentation-7-Bold",
-          textAlign: "right",
-        }}
-      >
-        {tableTitle}
-      </Typography>
       <Box
         component="table"
         sx={{
