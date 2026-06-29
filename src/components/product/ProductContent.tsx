@@ -53,6 +53,14 @@ const ProductContent = ({
     ? (imageLayoutStyle?.small ?? "container")
     : (imageLayoutStyle?.large ?? "container");
 
+  // 컨테이너 레이아웃에서 이미지 2장 이상이면 셀 높이를 통일해 캡션을 정렬
+  const containerImageCount =
+    imgObj?.filter((img) => img.images && img.images.length > 0).length ?? 0;
+  const equalizeRow =
+    currentLayout !== "slide" &&
+    currentLayout !== "strip" &&
+    containerImageCount >= 2;
+
   // 슬라이드 렌더링
   const renderSlideImages = () => {
     if (!imgObj || imgObj.length === 0) return null;
@@ -309,8 +317,12 @@ const ProductContent = ({
         spacing={4}
         sx={(theme) => ({
           display: "flex",
-          // 캡션이 있으면 본문을 이미지 기준 중앙에 맞춤(하단 정렬 시 캡션 높이만큼 어긋나는 문제 방지)
-          alignItems: isImgTextExist ? "center" : "end",
+          // 이미지 2장 이상이면 셀을 하단 정렬해 캡션을 한 줄로 맞춤(이미지는 자연 크기 유지)
+          alignItems: equalizeRow
+            ? "flex-end"
+            : isImgTextExist
+              ? "center"
+              : "end",
           my: 3,
           [theme.breakpoints.up("tablet")]: {
             my: 3,

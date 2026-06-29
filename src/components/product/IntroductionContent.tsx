@@ -173,7 +173,7 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                   fontSize: "18px",
                   color: "#737373",
                   whiteSpace: "pre-line",
-                  [theme.breakpoints.up("tablet")]: { color: "#424242" },
+                  [theme.breakpoints.up("tablet")]: { color: "#656565" },
                 })}
               >
                 {item.text}
