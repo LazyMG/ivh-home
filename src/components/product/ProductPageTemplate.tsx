@@ -68,19 +68,32 @@ const LibraryButton = ({
         [theme.breakpoints.up("tablet")]: { width: "44%" },
       })}
     />
-    <Typography
+    {/* 제목 영역: 3줄까지 들어갈 최소 높이 확보 → 셀마다 묶음 높이를 동일하게 만들어
+        중앙 정렬을 유지하면서 아이콘 위치를 일치시키고, 3줄 제목도 잘리지 않게 함 */}
+    <Box
       sx={(theme) => ({
-        fontSize: "14px",
-        fontFamily: "Freesentation-6-SemiBold",
-        textAlign: "center",
-        color: "inherit",
-        wordBreak: "keep-all",
-        maxWidth: "75%",
-        [theme.breakpoints.up("tablet")]: { fontSize: "16px" },
+        minHeight: "54px",
+        display: "flex",
+        alignItems: "flex-start",
+        justifyContent: "center",
+        [theme.breakpoints.up("tablet")]: { minHeight: "63px" },
       })}
     >
-      {library.text}
-    </Typography>
+      <Typography
+        sx={(theme) => ({
+          fontSize: "14px",
+          lineHeight: 1.3,
+          fontFamily: "Freesentation-6-SemiBold",
+          textAlign: "center",
+          color: "inherit",
+          wordBreak: "keep-all",
+          maxWidth: "75%",
+          [theme.breakpoints.up("tablet")]: { fontSize: "16px" },
+        })}
+      >
+        {library.text}
+      </Typography>
+    </Box>
   </Box>
 );
 

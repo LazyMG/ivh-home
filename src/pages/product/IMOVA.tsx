@@ -212,7 +212,8 @@ const IMOVA = () => {
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
-                      justifyContent: "center",
+                      // 로고 셀만 세로 중앙, 기능 셀은 위에서부터 정렬해 위치 통일
+                      justifyContent: isLogoCell ? "center" : "flex-start",
                       textAlign: "center",
                       gap: 2,
                       px: 6,
@@ -237,19 +238,45 @@ const IMOVA = () => {
                       />
                     ) : (
                       <>
+                        {/* 이미지: 고정 높이 박스 안에서 중앙 정렬 → 제목 시작 위치 통일 */}
                         <Box
-                          component="img"
-                          src={func.function_image_url}
-                          alt={func.function_image_alt}
-                          loading="lazy"
-                          sx={{ mb: 2, objectFit: "contain" }}
-                        />
-                        <Box sx={{ width: "88%", mx: "auto" }}>
+                          sx={{
+                            height: 100,
+                            mb: 2,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Box
+                            component="img"
+                            src={func.function_image_url}
+                            alt={func.function_image_alt}
+                            loading="lazy"
+                            sx={{
+                              maxHeight: "100%",
+                              maxWidth: "100%",
+                              objectFit: "contain",
+                            }}
+                          />
+                        </Box>
+                        {/* 제목: 2줄 기준 최소 높이 확보 → 설명 시작 위치 통일 */}
+                        <Box
+                          sx={{
+                            width: "88%",
+                            mx: "auto",
+                            minHeight: "2.4em",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
                           <Typography
                             sx={{
                               fontFamily: "Freesentation-7-Bold",
                               color: "#03193F",
                               fontSize: "20px",
+                              lineHeight: 1.2,
                               textTransform: "uppercase",
                             }}
                           >

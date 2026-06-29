@@ -248,12 +248,15 @@ const ProductContent = ({
                   sx={{
                     alignSelf: "stretch",
                     borderLeft: "2px dashed #c9c9c9",
-                    mx: 4,
+                    // 구분선 여백을 줄여 이미지에 더 많은 가로 폭 할애
+                    mx: 2,
                   }}
                 />
               )}
               <Box
                 sx={{
+                  flex: 1,
+                  minWidth: 0,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
@@ -269,9 +272,11 @@ const ProductContent = ({
                     alt={image.alt}
                     loading="lazy"
                     sx={{
-                      // 등높이: 높이 고정 + 너비 비율 유지
-                      height: "250px",
+                      // 큰 화면: 최대 높이 / 좁은 화면: 컬럼 폭에 맞춰 축소
+                      maxHeight: "300px",
+                      maxWidth: "100%",
                       width: "auto",
+                      height: "auto",
                       objectFit: "contain",
                     }}
                   />

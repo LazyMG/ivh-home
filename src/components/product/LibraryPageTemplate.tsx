@@ -129,7 +129,7 @@ const LibraryPageTemplate = ({
                   {title}
                 </Typography>
                 <Divider
-                  sx={{ width: "100%", borderColor: "#00235F", my: 2 }}
+                  sx={{ width: "120%", borderColor: "#00235F", my: 2 }}
                 />
                 <Typography
                   sx={{
