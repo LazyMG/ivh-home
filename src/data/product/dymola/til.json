@@ -89,8 +89,9 @@
       "id": "feat-2",
       "imgObj": [
         {
-          "col": 12,
+          "col": 5,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til-feat-three.png",
@@ -100,7 +101,7 @@
         }
       ],
       "textObj": {
-        "col": 12
+        "col": 7
       }
     },
     {
@@ -109,6 +110,7 @@
         {
           "col": 12,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til-feat-four.png",
@@ -126,50 +128,45 @@
       "imgObj": [
         {
           "col": 2.4,
-          "imgSize": "small",
           "images": [
             {
-              "url": "/images/pages/product/til/til-feat-five-first.png",
+              "url": "/images/pages/product/til/til_simpel_acc.png",
               "alt": "iVH, Modelica, Dymola, TIL, Simple ACC"
             }
           ]
         },
         {
           "col": 2.4,
-          "imgSize": "small",
           "images": [
             {
-              "url": "/images/pages/product/til/til-feat-five-second.png",
+              "url": "/images/pages/product/til/til_automotive_secondary_loop.png",
               "alt": "iVH, Modelica, Dymola, TIL, Automotive Secondary loop"
             }
           ]
         },
         {
           "col": 2.4,
-          "imgSize": "small",
           "images": [
             {
-              "url": "/images/pages/product/til/til-feat-five-third.png",
+              "url": "/images/pages/product/til/til_industrial_refrigerator.png",
               "alt": "iVH, Modelica, Dymola, TIL, Automotive Secondary loop"
             }
           ]
         },
         {
           "col": 2.4,
-          "imgSize": "small",
           "images": [
             {
-              "url": "/images/pages/product/til/til-feat-five-fourth.png",
+              "url": "/images/pages/product/til/til_automotive_secondary_loop_2.png",
               "alt": "iVH, Modelica, Dymola, TIL, Automotive HVAC"
             }
           ]
         },
         {
           "col": 2.4,
-          "imgSize": "small",
           "images": [
             {
-              "url": "/images/pages/product/til/til-feat-five-fifth.png",
+              "url": "/images/pages/product/til/til_automotive_HVAC.png",
               "alt": "iVH, Modelica, Dymola, TIL, Industrial Refrigerator"
             }
           ]
@@ -182,7 +179,7 @@
         "col": 12
       },
       "imageLayoutStyle": {
-        "large": "container",
+        "large": "strip",
         "small": "slide"
       }
     }

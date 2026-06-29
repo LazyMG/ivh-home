@@ -3,6 +3,16 @@
   "seo": {
     "ogImage": "https://ivh.co.kr/images/pages/product/vehicle/vehicle-feat-one.png"
   },
+  "vehicle_introduction": [
+    {
+      "imgObj": [
+        {
+          "url": "/images/pages/product/vehicle/vehicle_main_image.png",
+          "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Vehicle"
+        }
+      ]
+    }
+  ],
   "vehicle_features": [
     {
       "id": "feat-0",
@@ -10,6 +20,7 @@
         {
           "col": 12,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/vehicle/vehicle-feat-one.png",
@@ -28,6 +39,7 @@
         {
           "col": 12,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/vehicle/vehicle-feat-two.png",
@@ -46,6 +58,7 @@
         {
           "col": 12,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/vehicle/vehicle-feat-three.png",
@@ -64,6 +77,7 @@
         {
           "col": 12,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/vehicle/vehicle-feat-four.png",

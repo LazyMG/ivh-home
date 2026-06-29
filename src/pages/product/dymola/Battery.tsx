@@ -7,11 +7,15 @@ const Battery = () => {
   const { t } = useTranslation("product/dymola/battery" as never);
   const td = (key: string): string => t(key as never);
 
-  const introTexts = t("battery_introduction" as never, { returnObjects: true }) as string[];
+  const introTexts = t("battery_introduction" as never, {
+    returnObjects: true,
+  }) as string[];
   const introduction = introTexts.map((text) => ({ text }));
 
-  const features = resource.battery_features.map((feat) => {
-    const imgTexts = t(`battery_features.${feat.id}.imgTexts` as never, { returnObjects: true }) as string[] | string;
+  const features = resource.battery_features.map((feat, index, arr) => {
+    const imgTexts = t(`battery_features.${feat.id}.imgTexts` as never, {
+      returnObjects: true,
+    }) as string[] | string;
     const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
     return {
       ...(feat.imgObj
@@ -27,7 +31,11 @@ const Battery = () => {
         title: td(`battery_features.${feat.id}.title`),
         text: td(`battery_features.${feat.id}.text`),
       },
-      ...(feat.imageLayoutStyle ? { imageLayoutStyle: feat.imageLayoutStyle } : {}),
+      ...(feat.imageLayoutStyle
+        ? { imageLayoutStyle: feat.imageLayoutStyle }
+        : {}),
+      // 마지막 feature는 하단 구분선 숨김
+      showDivider: index !== arr.length - 1,
     };
   });
 

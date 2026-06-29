@@ -123,6 +123,9 @@
               "alt": "iVH, Dymola, Modelica, Modelon, TLK, Claytex, Battery Simulation Software, Battery Library, ECM Model based equivalent circuit model Generation"
             }
           ]
+        },
+        {
+          "col": 12
         }
       ],
       "textObj": {

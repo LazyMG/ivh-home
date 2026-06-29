@@ -7,9 +7,14 @@ const TIL = () => {
   const { t } = useTranslation("product/dymola/til" as never);
   const td = (key: string): string => t(key as never);
 
-  const introTexts = t("til_introduction" as never, { returnObjects: true }) as string[];
-  const introImgTexts = t("til_introduction_imgTexts" as never, { returnObjects: true }) as Record<string, string[]> | string;
-  const introImgTextsMap = typeof introImgTexts === "object" ? introImgTexts : {};
+  const introTexts = t("til_introduction" as never, {
+    returnObjects: true,
+  }) as string[];
+  const introImgTexts = t("til_introduction_imgTexts" as never, {
+    returnObjects: true,
+  }) as Record<string, string[]> | string;
+  const introImgTextsMap =
+    typeof introImgTexts === "object" ? introImgTexts : {};
   const introduction = introTexts.map((text, i) => {
     const resIntro = resource.til_introduction?.[i];
     const imgTextsArr = introImgTextsMap[`intro-${i}`] ?? [];
@@ -26,8 +31,10 @@ const TIL = () => {
     };
   });
 
-  const features = resource.til_features.map((feat) => {
-    const imgTexts = t(`til_features.${feat.id}.imgTexts` as never, { returnObjects: true }) as string[] | string;
+  const features = resource.til_features.map((feat, index, arr) => {
+    const imgTexts = t(`til_features.${feat.id}.imgTexts` as never, {
+      returnObjects: true,
+    }) as string[] | string;
     const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
     return {
       ...(feat.imgObj
@@ -43,7 +50,10 @@ const TIL = () => {
         title: td(`til_features.${feat.id}.title`),
         text: td(`til_features.${feat.id}.text`),
       },
-      ...(feat.imageLayoutStyle ? { imageLayoutStyle: feat.imageLayoutStyle } : {}),
+      ...(feat.imageLayoutStyle
+        ? { imageLayoutStyle: feat.imageLayoutStyle }
+        : {}),
+      showDivider: index !== arr.length - 1,
     };
   });
 
