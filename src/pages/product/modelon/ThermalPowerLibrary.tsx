@@ -5,8 +5,39 @@ import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate
 
 const ThermalPowerLibrary = () => {
   const { t } = useTranslation("product/modelon/thermal" as never);
-  const introTexts = t("introduction" as never, { returnObjects: true }) as string[];
-  const introduction = introTexts.map((text) => ({ text }));
+  const td = (key: string): string => t(key as never);
+  const introTexts = t("introduction" as never, {
+    returnObjects: true,
+  }) as string[];
+  const introduction = introTexts.map((text, i) => {
+    const resIntro = resource.introduction?.[i];
+    return {
+      text,
+      ...(resIntro?.imgObj ? { imgObj: resIntro.imgObj } : {}),
+    };
+  });
+  const features = resource.features.map((feat, index, arr) => {
+    const imgTexts = t(`features.${feat.id}.imgTexts` as never, {
+      returnObjects: true,
+    }) as string[] | string;
+    const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
+    return {
+      ...(feat.imgObj
+        ? {
+            imgObj: feat.imgObj.map((img, i) => ({
+              ...img,
+              ...(imgTextsArr[i] ? { imgText: imgTextsArr[i] } : {}),
+            })),
+          }
+        : {}),
+      textObj: {
+        col: feat.textObj.col,
+        title: td(`features.${feat.id}.title`),
+        text: td(`features.${feat.id}.text`),
+      },
+      showDivider: index !== arr.length - 1,
+    };
+  });
 
   return (
     <>
@@ -22,6 +53,8 @@ const ThermalPowerLibrary = () => {
         introduction={introduction}
         pageKey={resource.pageKey}
         name={t("name" as never)}
+        features={features}
+        featuresSectionTitle={td("features_section_title")}
       />
     </>
   );

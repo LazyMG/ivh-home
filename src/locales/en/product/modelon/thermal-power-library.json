@@ -11,5 +11,26 @@
     "The Thermal Power Library is a comprehensive solution for the design and optimization of thermal power systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements various components—such as boilers, turbines, condensers, heat exchangers, and fuel supply systems—to replicate actual operating conditions. By providing efficiency analysis and control strategy verification, it delivers reliable results from the initial design stage through to operation.",
     "The modular structure allows for the free combination of various power generation systems, enabling the easy configuration of complex plants. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as thermal power plant design, industrial thermal processes, and energy recovery systems, this library is the optimal choice for achieving both improved energy efficiency and system stability.",
     "The Thermal Power Library supports high-reliability design decisions by accurately reproducing various thermal power cycles through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical boiler-turbine-condenser configurations to complex architectures, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates energy balance and efficiency indicators, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
-  ]
+  ],
+  "features_section_title": "Feature",
+  "features": {
+    "feat-0": {
+      "title": "다양한 차량 구성에 대한 직관적인 모델 설정 지원",
+      "text": "Vehicle Dynamics Library는 독립 현가(Independent Suspension), 액슬 현가(Axle Suspension) 등 다양한 서스펜션 구조를 포함한 모든 종류의 바퀴 달린 차량에 대해 직관적이고 유연한 모델 구성이 가능합니다. 계층적 구조와 사전 정의된 컴포넌트 라이브러리를 기반으로, 승용차부터 중장비 차량까지 폭넓은 차량 모델링을 손쉽게 수행할 수 있습니다.",
+      "imgTexts": ["", "", "| 다양한 에너지원에 대한 발전소 모델 지원 |"]
+    },
+    "feat-1": {
+      "title": "고정밀 다물체 동역학 모델 및 실시간 시뮬레이션 지원",
+      "text": "고정밀 다물체(Multi-body) 모델을 기반으로 차량의 동적 거동을 정밀하게 재현할 수 있으며, 실시간 처리가 가능한 경량화된 모델 구성도 지원됩니다. 또한 K&C(Kinematics & Compliance) 특성을 테이블 기반으로 표현할 수 있어, 서스펜션의 기구학적 특성과 유연성 분석에도 활용할 수 있습니다.",
+      "imgTexts": ["| 모듈 기반 발전소 모델 지원 |"]
+    },
+    "feat-2": {
+      "title": "다양한 타이어 모델과의 호환성 제공",
+      "text": "TYDEX의 STI(Standard Tyre Interface) 기반 타이어 모델뿐만 아니라, FTire 및 Delft-Tyre 계열의 고정밀 타이어 모델과도 호환됩니다. 이를 통해 다양한 노면 조건과 주행 상황에서의 타이어 거동을 현실적으로 시뮬레이션할 수 있습니다.",
+      "imgTexts": [
+        "| 시스템과 경계조건 부하 제어 컨트롤러 |",
+        "| 원자력 발전소의 각종 컴포넌트 제어 컨트롤러 |"
+      ]
+    }
+  }
 }

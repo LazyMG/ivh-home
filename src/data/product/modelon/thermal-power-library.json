@@ -2,5 +2,97 @@
   "pageKey": "thermalPower",
   "seo": {
     "ogImage": "https://ivh.co.kr/images/pages/product/modelon/modelon-main.png"
-  }
+  },
+  "introduction": [
+    {
+      "imgObj": [
+        {
+          "url": "/images/pages/product/thermal/thermal_main_image.png",
+          "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Vehicle"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "feat-0",
+      "imgObj": [
+        {
+          "col": 6,
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/thermal/thermal_feat_1_1.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Vehicle, Chassis, Suspension, Truck"
+            }
+          ]
+        },
+        {
+          "col": 6,
+          "imgSize": "small",
+          "images": [
+            {
+              "url": "/images/pages/product/thermal/thermal_feat_1_2.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Vehicle, Chassis, Suspension, Truck"
+            }
+          ]
+        },
+        {
+          "col": 12
+        }
+      ],
+      "textObj": {
+        "col": 12
+      }
+    },
+    {
+      "id": "feat-1",
+      "imgObj": [
+        {
+          "col": 12,
+          "imgSize": "small",
+          "imgTextAlign": "center",
+          "images": [
+            {
+              "url": "/images/pages/product/thermal/thermal_feat_2.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Kinematics & Compliance, Multi-body, Suspensions, Chassis"
+            }
+          ]
+        }
+      ],
+      "textObj": {
+        "col": 12
+      }
+    },
+    {
+      "id": "feat-2",
+      "imgObj": [
+        {
+          "col": 6,
+          "imgSize": "small",
+          "imgTextAlign": "center",
+          "images": [
+            {
+              "url": "/images/pages/product/thermal/thermal_feat_3-1.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Chassis, F-Tire Co-Simulation"
+            }
+          ]
+        },
+        {
+          "col": 6,
+          "imgSize": "small",
+          "imgTextAlign": "center",
+          "images": [
+            {
+              "url": "/images/pages/product/thermal/thermal_feat_3-2.png",
+              "alt": "iVH, Dymola, Modelica, Modelon, Vehicle Dynamics Library, Chassis, F-Tire Co-Simulation"
+            }
+          ]
+        }
+      ],
+      "textObj": {
+        "col": 12
+      }
+    }
+  ]
 }
