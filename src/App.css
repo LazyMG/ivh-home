@@ -83,3 +83,60 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
+/* Galderglynn Titling (영문 타이틀용) */
+@font-face {
+  font-family: "Galderglynn-Titling-UltraLight";
+  src: url("/fonts/Galderglynn-Titling-UltraLight.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Galderglynn-Titling-ExtraLight";
+  src: url("/fonts/Galderglynn-Titling-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Galderglynn-Titling-Light";
+  src: url("/fonts/Galderglynn-Titling-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Galderglynn-Titling-Book";
+  src: url("/fonts/Galderglynn-Titling-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Galderglynn-Titling-Regular";
+  src: url("/fonts/Galderglynn-Titling-Regular.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Galderglynn-Titling-Bold";
+  src: url("/fonts/Galderglynn-Titling-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Galderglynn-Titling-Black";
+  src: url("/fonts/Galderglynn-Titling-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
