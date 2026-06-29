@@ -112,7 +112,10 @@ const ProvisionCard = ({
             }}
           >
             MORE
-            <Box component="span">→</Box>
+            {/* 화살표는 기본 폰트로 렌더 (Freesentation 상속 시 글리프가 짧게 보임) */}
+            <Box component="span" sx={{ fontFamily: (theme) => theme.typography.fontFamily }}>
+              →
+            </Box>
           </Box>
         </Box>
       </Box>

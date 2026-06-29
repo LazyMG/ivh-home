@@ -158,7 +158,7 @@ const TraingCurriculumTable = ({
             fontSize: "16px",
           },
           "& td": {
-            fontSize: "14px",
+            fontSize: "16px",
             fontFamily: "Freesentation-6-SemiBold",
             color: "#424242",
           },

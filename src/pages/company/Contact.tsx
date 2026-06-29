@@ -137,6 +137,7 @@ const Contact = () => {
                 justifyContent: "space-between",
                 width: "100%",
                 mt: 4,
+                gap: 4,
               },
             })}
           >
@@ -174,7 +175,7 @@ const Contact = () => {
                 component="h1"
                 sx={{
                   wordBreak: "keep-all",
-                  width: "80%",
+                  width: "90%",
                   background:
                     "linear-gradient(90deg, #003B8D 0%, #66BAFF 100%)",
                   backgroundClip: "text",

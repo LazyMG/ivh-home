@@ -155,23 +155,31 @@ const Training = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-between",
+              gap: 3,
               width: "100%",
               mt: 6,
             }}
           >
-            <Box
-              component="img"
-              src="/images/pages/support/training/training_session_1.png"
-            />
-            <Box
-              component="img"
-              src="/images/pages/support/training/training_session_2.png"
-            />
-            <Box
-              component="img"
-              src="/images/pages/support/training/training_session_3.png"
-            />
+            {[
+              "/images/pages/support/training/training_session_1.png",
+              "/images/pages/support/training/training_session_2.png",
+              "/images/pages/support/training/training_session_3.png",
+            ].map((src) => (
+              <Box
+                key={src}
+                component="img"
+                src={src}
+                // 3등분하여 컨테이너 폭 안에서 축소 (가로 스크롤 방지)
+                sx={{
+                  flex: 1,
+                  minWidth: 0,
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            ))}
           </Box>
         </Box>
 

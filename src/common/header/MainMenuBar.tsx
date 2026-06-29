@@ -70,11 +70,20 @@ export const MainMenuBar = ({
             <Box
               key={index}
               ref={index === 0 ? firstItemRef : undefined}
-              sx={{
+              sx={(theme) => ({
                 position: "relative",
                 py: 3,
-                pr: 24,
-              }}
+                // 작은 화면(~1279px): 가장 좁은 간격
+                pr: 2,
+                // 노트북대(1280~1535px): 중간 간격
+                [theme.breakpoints.up("desktop")]: {
+                  pr: 14,
+                },
+                // 큰 화면(1536px~): 기존 간격 유지
+                "@media (min-width:1600px)": {
+                  pr: 24,
+                },
+              })}
             >
               <Typography
                 onClick={(e) => {
