@@ -83,6 +83,16 @@ import vissimAutomotiveEn from "../locales/en/product/ptv/vissim-automotive.json
 import viswalkKo from "../locales/ko/product/ptv/viswalk.json";
 import viswalkEn from "../locales/en/product/ptv/viswalk.json";
 
+// vtd
+import vtdKo from "../locales/ko/product/vtd/vtd.json";
+import vtdEn from "../locales/en/product/vtd/vtd.json";
+import vtdCreateKo from "../locales/ko/product/vtd/vtd-create.json";
+import vtdCreateEn from "../locales/en/product/vtd/vtd-create.json";
+import vtdSimulateKo from "../locales/ko/product/vtd/vtd-simulate.json";
+import vtdSimulateEn from "../locales/en/product/vtd/vtd-simulate.json";
+import vtdFullstackKo from "../locales/ko/product/vtd/vtd-fullstack.json";
+import vtdFullstackEn from "../locales/en/product/vtd/vtd-fullstack.json";
+
 // product common
 import productFormKo from "../locales/ko/product/product-form.json";
 import productFormEn from "../locales/en/product/product-form.json";
@@ -143,6 +153,10 @@ i18n.use(initReactI18next).init({
     "product/ptv/vissim",
     "product/ptv/vissim-automotive",
     "product/ptv/viswalk",
+    "product/vtd",
+    "product/vtd/vtdcreate",
+    "product/vtd/vtdsimulate",
+    "product/vtd/vtdfullstack",
     "product/product-form",
     "solution/philosophy",
     "solution/modelica",
@@ -192,6 +206,10 @@ i18n.use(initReactI18next).init({
       "product/ptv/vissim": vissimKo,
       "product/ptv/vissim-automotive": vissimAutomotiveKo,
       "product/ptv/viswalk": viswalkKo,
+      "product/vtd": vtdKo,
+      "product/vtd/vtdcreate": vtdCreateKo,
+      "product/vtd/vtdsimulate": vtdSimulateKo,
+      "product/vtd/vtdfullstack": vtdFullstackKo,
       "product/product-form": productFormKo,
       "solution/philosophy": philosophyKo,
       "solution/modelica": modelicaKo,
@@ -239,6 +257,10 @@ i18n.use(initReactI18next).init({
       "product/ptv/vissim": vissimEn,
       "product/ptv/vissim-automotive": vissimAutomotiveEn,
       "product/ptv/viswalk": viswalkEn,
+      "product/vtd": vtdEn,
+      "product/vtd/vtdcreate": vtdCreateEn,
+      "product/vtd/vtdsimulate": vtdSimulateEn,
+      "product/vtd/vtdfullstack": vtdFullstackEn,
       "product/product-form": productFormEn,
       "solution/philosophy": philosophyEn,
       "solution/modelica": modelicaEn,
