@@ -16,6 +16,7 @@ import SEO from "../../common/SEO";
 import type { IMOVATechnologySpec } from "../../types/product";
 import SectionTitle from "../../components/common/SectionTitle";
 import ProductHero from "../../components/product/ProductHero";
+import { FONTS } from "../../theme/theme";
 
 const IMOVA = () => {
   const { t } = useTranslation("product/iMOVA");
@@ -71,8 +72,8 @@ const IMOVA = () => {
       <SEO
         title={t("name")}
         description={t("title")}
-        keywords="iMOVA, AMR, 자율주행로봇, 자율주행, 스마트팩토리, 무인운반, iVH"
-        canonical="https://ivh.co.kr/product/imova"
+        keywords={t("keywords")}
+        canonical={resource.seo.canonical}
       />
       <Box component="main">
         <ScrollButton threshold={THRESHOLD} />
@@ -89,7 +90,7 @@ const IMOVA = () => {
           breadcrumbKey="imova"
           descriptionSx={(theme: Theme) => ({
             color: "#2c2c2c",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             maxWidth: "90%",
             [theme.breakpoints.up("tablet")]: {
               maxWidth: "80%",
@@ -106,7 +107,7 @@ const IMOVA = () => {
         >
           <Box
             component="video"
-            aria-label="iVH 자동화 공정 소개 영상"
+            aria-label={t("top_video_alt")}
             src={resource.top_video}
             loop
             muted
@@ -142,7 +143,7 @@ const IMOVA = () => {
               color: "#2c2c2c",
               fontSize: "12px",
               wordBreak: "keep-all",
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: FONTS.freesentation.medium,
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "18px",
               },
@@ -273,7 +274,7 @@ const IMOVA = () => {
                         >
                           <Typography
                             sx={{
-                              fontFamily: "Galderglynn-Titling-Book",
+                              fontFamily: FONTS.galderglynn.book,
                               color: "#03193F",
                               fontSize: "20px",
                               lineHeight: 1.2,
@@ -288,7 +289,7 @@ const IMOVA = () => {
                             sx={{
                               color: "#737373",
                               lineHeight: 1.6,
-                              fontFamily: "Freesentation-5-Medium",
+                              fontFamily: FONTS.freesentation.medium,
                               fontSize: "16px",
                             }}
                           >
@@ -405,7 +406,7 @@ const IMOVA = () => {
                       >
                         <Typography
                           sx={(theme) => ({
-                            fontFamily: "Galderglynn-Titling-Regular",
+                            fontFamily: FONTS.galderglynn.regular,
                             mb: 2,
                             textAlign: "left",
                             [theme.breakpoints.up("desktop")]: {
@@ -426,7 +427,7 @@ const IMOVA = () => {
                             textAlign: "left",
                             lineHeight: 1.6,
                             fontSize: "16px",
-                            fontFamily: "Freesentation-5-Medium",
+                            fontFamily: FONTS.freesentation.medium,
                             color: "#737373",
                             [theme.breakpoints.up("desktop")]: {
                               textAlign: "left",
@@ -459,7 +460,7 @@ const IMOVA = () => {
               <SectionTitle text={t("section_titles.use_case")} />
               <Typography
                 sx={{
-                  fontFamily: "Galderglynn-Titling-Book",
+                  fontFamily: FONTS.galderglynn.book,
                   fontSize: "18px",
                   color: "#737373",
                   textTransform: "uppercase",
@@ -538,7 +539,7 @@ const IMOVA = () => {
                         sx={{
                           textAlign: "center",
                           color: item.production_line_color,
-                          fontFamily: "Galderglynn-Titling-Regular",
+                          fontFamily: FONTS.galderglynn.regular,
                           fontSize: "clamp(13px, 1.9cqw, 16px)",
                           wordBreak: "keep-all",
                           textTransform: "uppercase",
@@ -553,7 +554,7 @@ const IMOVA = () => {
                       <Typography
                         sx={{
                           fontSize: "clamp(11px, 1.6cqw, 14px)",
-                          fontFamily: "Freesentation-5-Medium",
+                          fontFamily: FONTS.freesentation.medium,
                           color: "#737373",
                         }}
                       >
@@ -676,7 +677,7 @@ const IMOVA = () => {
                             <Typography
                               sx={{
                                 color: item.production_line_color,
-                                fontFamily: "Freesentation-7-Bold",
+                                fontFamily: FONTS.freesentation.bold,
                                 fontSize: "18px",
                                 wordBreak: "keep-all",
                                 textAlign: "center",
@@ -688,7 +689,7 @@ const IMOVA = () => {
                             </Typography>
                             <Typography
                               sx={{
-                                fontFamily: "Freesentation-5-Medium",
+                                fontFamily: FONTS.freesentation.medium,
                                 fontSize: "16px",
                                 lineHeight: 1.3,
                                 display: "-webkit-box",

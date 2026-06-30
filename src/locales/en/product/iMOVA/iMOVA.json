@@ -4,6 +4,8 @@
   "title": "The iMOVA series is a high-payload AMR(Autonomous Mobile Robot) engineered to realize smart manufacturing environments. Through precision autonomous navigation, real-time environmental awareness, and seamless integration with external systems, iMOVA enables unmanned workflows and intelligent process operations across a wide range of industrial sectors.",
   "main_image_alt": "iMOVA - Autonomous Mobile Robot",
   "title_image_alt": "iMOVA Logo",
+  "keywords": "iMOVA, AMR, autonomous mobile robot, autonomous driving, smart factory, automated transport, iVH",
+  "top_video_alt": "iVH automation process introduction video",
   "section_titles": {
     "main_function": "Key Features",
     "control_system": "Intelligent Fleet Management System",

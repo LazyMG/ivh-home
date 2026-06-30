@@ -1,4 +1,7 @@
 {
+  "seo": {
+    "canonical": "https://ivh.co.kr/product/imova"
+  },
   "main_image": "/images/pages/product/iMOVA/iMOVA_main_image.png",
   "title_image": "/images/pages/product/iMOVA/iMOVA_logo_image.png",
   "logo_image": "/images/pages/product/iMOVA/iMOVA_logo_image.png",
@@ -59,7 +62,7 @@
         "production_line_color": "#B36E1D",
         "position": {
           "top": "4%",
-          "left": "-24%"
+          "left": "-25%"
         }
       },
       {
@@ -67,7 +70,7 @@
         "production_line_color": "#534585",
         "position": {
           "top": "48%",
-          "left": "-24%"
+          "left": "-25%"
         }
       },
       {
@@ -75,7 +78,7 @@
         "production_line_color": "#157960",
         "position": {
           "top": "4%",
-          "right": "-24%"
+          "right": "-25%"
         }
       },
       {
@@ -83,7 +86,7 @@
         "production_line_color": "#B09A42",
         "position": {
           "top": "48%",
-          "right": "-24%"
+          "right": "-25%"
         }
       },
       {
@@ -91,7 +94,7 @@
         "production_line_color": "#424242",
         "position": {
           "top": "96%",
-          "left": "12%"
+          "left": "13%"
         }
       },
       {
@@ -99,7 +102,7 @@
         "production_line_color": "#1A7795",
         "position": {
           "top": "96%",
-          "right": "12%"
+          "right": "13%"
         }
       }
     ]
