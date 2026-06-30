@@ -25,6 +25,7 @@ import PrivacyPolicyIcon from "../../components/support/PrivacyPolicyIcon";
 import ScrollButton from "../../common/ScrollButton";
 import BreadScrum from "../../common/BreadScrum";
 import resource from "../../data/company/contact.json";
+import { FONTS } from "../../theme/theme";
 
 interface ContactFormType {
   company: string;
@@ -68,7 +69,7 @@ const Contact = () => {
 
   const onSubmit = async () => {
     setSubmitStatus("loading");
-    setSnackbarMessage("문의사항을 전송 중입니다...");
+    setSnackbarMessage(t("form.snackbar.loading"));
 
     try {
       await customerService.postContact({
@@ -82,7 +83,7 @@ const Contact = () => {
       });
 
       setSubmitStatus("success");
-      setSnackbarMessage("문의사항이 성공적으로 전송되었습니다.");
+      setSnackbarMessage(t("form.snackbar.success"));
       reset();
     } catch (error: unknown) {
       console.error(error);
@@ -91,7 +92,7 @@ const Contact = () => {
       const errorMessage =
         error instanceof Error
           ? error.message
-          : "문의사항 전송에 실패했습니다. 다시 시도해주세요.";
+          : t("form.snackbar.error");
       setSnackbarMessage(errorMessage);
     }
   };
@@ -192,7 +193,7 @@ const Contact = () => {
                   <Typography
                     key={index}
                     sx={{
-                      fontFamily: "Freesentation-4-Regular",
+                      fontFamily: FONTS.freesentation.regular,
                       fontSize: "18px",
                       color: "#656565",
                     }}
@@ -224,8 +225,8 @@ const Contact = () => {
             <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
               <TextField
                 size="small"
-                label="회사명"
-                placeholder="담당자 회사명을 입력해주십시오"
+                label={t("form.company.label")}
+                placeholder={t("form.company.placeholder")}
                 required
                 fullWidth
                 {...register("company", {
@@ -244,8 +245,8 @@ const Contact = () => {
             <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
               <TextField
                 size="small"
-                label="부서명"
-                placeholder="담당자 부서명을 입력해주십시오"
+                label={t("form.division.label")}
+                placeholder={t("form.division.placeholder")}
                 required
                 fullWidth
                 {...register("division", {
@@ -264,8 +265,8 @@ const Contact = () => {
             <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
               <TextField
                 size="small"
-                label="성함"
-                placeholder="담당자 성함을 입력해주십시오"
+                label={t("form.name.label")}
+                placeholder={t("form.name.placeholder")}
                 required
                 fullWidth
                 {...register("name", {
@@ -282,8 +283,8 @@ const Contact = () => {
             <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
               <TextField
                 size="small"
-                label="직급"
-                placeholder="담당자 직급을 입력해주십시오"
+                label={t("form.position.label")}
+                placeholder={t("form.position.placeholder")}
                 required
                 fullWidth
                 {...register("position", {
@@ -301,8 +302,8 @@ const Contact = () => {
             <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
               <TextField
                 size="small"
-                label="이메일"
-                placeholder="담당자 이메일을 입력해주십시오"
+                label={t("form.email.label")}
+                placeholder={t("form.email.placeholder")}
                 required
                 fullWidth
                 {...register("email", {
@@ -318,8 +319,8 @@ const Contact = () => {
             <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
               <TextField
                 size="small"
-                label="연락처"
-                placeholder="담당자 연락처를 입력해주십시오 (-) 포함"
+                label={t("form.phone.label")}
+                placeholder={t("form.phone.placeholder")}
                 required
                 fullWidth
                 {...register("phone", {
@@ -338,15 +339,15 @@ const Contact = () => {
               })}
             >
               <TextField
-                label="문의내용"
-                placeholder="문의내용을 입력해주십시오"
+                label={t("form.inquiry.label")}
+                placeholder={t("form.inquiry.placeholder")}
                 required
                 multiline
                 rows={6}
                 fullWidth
                 {...register("inquiry", {
                   validate: (value) =>
-                    validateNotEmpty(value, "문의내용을 입력해주십시오."),
+                    validateNotEmpty(value, t("form.inquiry_required")),
                 })}
               />
               {errors.inquiry && (
@@ -366,12 +367,9 @@ const Contact = () => {
                 name="isPrivacyAgreed"
                 control={control}
                 rules={{
-                  required: "개인정보처리방침에 동의해주세요.",
+                  required: t("form.agree_required"),
                   validate: (value) =>
-                    validateCheckbox(
-                      value,
-                      "개인정보처리방침에 동의해주십시오.",
-                    ),
+                    validateCheckbox(value, t("form.agree_checkbox")),
                 }}
                 render={({ field }) => (
                   <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -393,7 +391,7 @@ const Contact = () => {
                         <Typography
                           sx={{
                             fontSize: "16px",
-                            fontFamily: "Freesentation-5-Medium",
+                            fontFamily: FONTS.freesentation.medium,
                             color: "#8D8D8D", // gray-900
                             cursor: "pointer",
                           }}
@@ -433,7 +431,7 @@ const Contact = () => {
                   ...theme.customStyles.contactButton,
                 })}
               >
-                신청하기
+                {t("form.submit")}
               </Button>
             </Box>
           </Box>

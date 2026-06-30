@@ -10,5 +10,44 @@
     "원활한 처리를 위해 사용 환경 및 문의 목적을 함께 기재해 주시면 도움이 됩니다."
   ],
   "img_alt": "iVH PRODUCTS 관련 및 기타 문의 사항 답변 이미지",
-  "checkbox_text": "개인정보처리방침에 동의합니다."
+  "checkbox_text": "개인정보처리방침에 동의합니다.",
+  "form": {
+    "company": {
+      "label": "회사명",
+      "placeholder": "담당자 회사명을 입력해주십시오"
+    },
+    "division": {
+      "label": "부서명",
+      "placeholder": "담당자 부서명을 입력해주십시오"
+    },
+    "name": {
+      "label": "성함",
+      "placeholder": "담당자 성함을 입력해주십시오"
+    },
+    "position": {
+      "label": "직급",
+      "placeholder": "담당자 직급을 입력해주십시오"
+    },
+    "email": {
+      "label": "이메일",
+      "placeholder": "담당자 이메일을 입력해주십시오"
+    },
+    "phone": {
+      "label": "연락처",
+      "placeholder": "담당자 연락처를 입력해주십시오 (-) 포함"
+    },
+    "inquiry": {
+      "label": "문의내용",
+      "placeholder": "문의내용을 입력해주십시오"
+    },
+    "submit": "신청하기",
+    "agree_required": "개인정보처리방침에 동의해주세요.",
+    "agree_checkbox": "개인정보처리방침에 동의해주십시오.",
+    "inquiry_required": "문의내용을 입력해주십시오.",
+    "snackbar": {
+      "loading": "문의사항을 전송 중입니다...",
+      "success": "문의사항이 성공적으로 전송되었습니다.",
+      "error": "문의사항 전송에 실패했습니다. 다시 시도해주세요."
+    }
+  }
 }
