@@ -6,7 +6,8 @@ import CloseIcon from "@mui/icons-material/Close";
 // import logoBlack from "/images/header/ivh_logo_black.png";
 import logoGradient from "/images/header/iVH_logo_gra.svg";
 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import { styled } from "@mui/material/styles";
 import menu from "../../data/header/menu.json";
 import youtubeWhite from "/images/header/youtube_white.png";
@@ -16,12 +17,12 @@ import linkedinBlack from "/images/header/linkedin_black.png";
 import { MobileMenuRecursive } from "./MobileMenuRecursive";
 
 const MobileHeader = () => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuDrawerRef = useRef<HTMLDivElement>(null);
 
-  const isHomePage = location.pathname === "/";
+  const isHomePage = /^\/(en|ko)?\/?$/.test(location.pathname);
 
   // 메뉴가 열렸을 때 바디 스크롤 방지
   useEffect(() => {
@@ -105,18 +106,20 @@ const MobileHeader = () => {
 
       {/* 햄버거 메뉴 드로어 */}
       <MobileMenuDrawer ref={menuDrawerRef} $isOpen={isMenuOpen}>
-        {menu.mainMenu.map((mainItem, index) => (
+        {menu.mainMenu.map((mainItem, index) => {
+          const mainPath = (mainItem as { path?: string }).path;
+          return (
           <Box key={index} sx={{ mb: 3 }}>
             {/* 메인 메뉴 타이틀 */}
             <MobileMainMenuTitle
               onClick={() => {
-                if (mainItem.path) {
-                  navigate(mainItem.path);
+                if (mainPath) {
+                  navigate(mainPath);
                   handleClose();
                 }
               }}
               $isActive={
-                mainItem.path && location.pathname.startsWith(mainItem.path)
+                mainPath && location.pathname.startsWith(mainPath)
                   ? true
                   : false
               }
@@ -147,7 +150,8 @@ const MobileHeader = () => {
               />
             )}
           </Box>
-        ))}
+          );
+        })}
 
         {/* 소셜 미디어 영역 */}
         <Box

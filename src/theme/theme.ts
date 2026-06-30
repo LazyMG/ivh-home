@@ -350,9 +350,6 @@ const theme = createTheme({
       },
       marginTop: {
         mobilePortrait: "32px",
-        mobileLandscape: "48px",
-        tablet: "64px",
-        desktop: "80px",
       },
       marginBottom: {
         mobilePortrait: "32px",
@@ -372,7 +369,7 @@ const theme = createTheme({
         mobilePortrait: "64px",
         mobileLandscape: "64px",
         tablet: "64px",
-        desktop: "128px",
+        desktop: "64px",
       },
     },
     // Contact 페이지 지도 영역 컨테이너 스타일
@@ -393,10 +390,6 @@ const theme = createTheme({
       display: "flex",
       flexDirection: "column",
       gap: "36px",
-      flex: 1,
-      [baseTheme.breakpoints.up("tablet")]: {
-        paddingRight: "100px",
-      },
     },
     // Contact 페이지 제품 둘러보기 링크 스타일
     contactProductsLink: {
@@ -457,9 +450,10 @@ const theme = createTheme({
       fontSize: "16px",
       fontFamily: fontConfig["semiBold"],
       color: "#fff",
-      backgroundColor: "#267B65", // blue-700
+      backgroundColor: "#03193F",
+      boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
       "&:hover": {
-        backgroundColor: "#2b8d73ff", // blue-600
+        backgroundColor: "#03193F",
       },
       "&.Mui-disabled": {
         backgroundColor: "#cccccc",
@@ -477,55 +471,18 @@ const theme = createTheme({
         px: "120px",
       },
     },
-    // Support 페이지 (/support) 메인 컨테이너 스타일
-    supportContainer: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "80px",
-      [baseTheme.breakpoints.up("tablet")]: {
-        flexDirection: "row",
-      },
-    },
-    // Support 페이지 텍스트 영역 컨테이너 스타일
-    supportTextContainer: {
-      [baseTheme.breakpoints.up("tablet")]: {
-        width: "50%",
-        alignSelf: "flex-start",
-        paddingTop: "48px",
-      },
-    },
-    // Support 페이지 이미지 영역 컨테이너 스타일
-    supportImageContainer: {
-      display: "flex",
-      justifyContent: "center",
-      marginLeft: "auto",
-      marginRight: "auto",
-      width: "100%",
-      [baseTheme.breakpoints.up("tablet")]: {
-        justifyContent: "flex-end",
-        width: "50%",
-        alignSelf: "center",
-      },
-    },
     // Support 페이지 링크 스타일 (기술지원 서비스로 연결)
     supportLink: {
       display: "flex",
       alignItems: "center",
       gap: "4px",
-      // marginTop: "20px",
       paddingBottom: "4px",
       fontSize: "16px",
       fontFamily: fontConfig["semiBold"],
-      // lineHeight: 1,
       color: "#fff", // blue-700
-      // borderBottom: "1px solid #1d4ed8", // border-b-blue-700
       width: "fit-content",
       cursor: "pointer",
-      // transition: "all 0.3s",
       textDecoration: "none", // a 태그 기본 밑줄 제거
-      // "&:hover": {
-      //   gap: "8px",
-      // },
     },
     homeNewsletterContainer: {
       display: "flex",

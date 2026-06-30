@@ -1,8 +1,8 @@
 import { ListItem } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 
 const MenuListItem = ({ menu, path }: { menu: string; path: string }) => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
 
   return (
     <ListItem

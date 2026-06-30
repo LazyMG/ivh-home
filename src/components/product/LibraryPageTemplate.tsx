@@ -1,13 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import ScrollButton from "../../common/ScrollButton";
 import BreadScrum from "../../common/BreadScrum";
-import LibraryHeader from "./LibraryHeader";
 import IntroductionContent, {
   type IntroductionItem,
 } from "./IntroductionContent";
-import LibrarySectionTitle from "./LibrarySectionTitle";
 import ProductContent from "./ProductContent";
-import ProductBottom from "./ProductBottom";
+import SectionTitle from "../common/SectionTitle";
 
 interface ImageObject {
   imgUrl?: string[];
@@ -31,6 +29,8 @@ export interface FeatureItem {
   imgObj?: ImageObject[];
   textObj: TextObject;
   imageLayoutStyle?: ImageLayoutStyle;
+  /** 하단 구분선 표시 여부 (기본 true) */
+  showDivider?: boolean;
 }
 
 interface LibraryPageTemplate {
@@ -40,6 +40,7 @@ interface LibraryPageTemplate {
   features?: FeatureItem[];
   pageKey: string;
   name: string;
+  featuresSectionTitle?: string;
 }
 
 const LibraryPageTemplate = ({
@@ -48,101 +49,116 @@ const LibraryPageTemplate = ({
   introduction,
   features,
   pageKey,
-  name,
+  featuresSectionTitle = "특징",
 }: LibraryPageTemplate) => {
   return (
-    <Box
-      component="main"
-      sx={(theme) => ({
-        display: "flex",
-        boxSizing: "border-box",
-        mt: 3,
-        px: 4,
-        position: "relative",
-        flexDirection: "column",
-        overflowX: "hidden",
-        [theme.breakpoints.up("tablet")]: {
-          px: "8%",
-          mt: 8,
-        },
-      })}
-    >
-      <ScrollButton />
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "flex-end",
-          mt: 1,
-        }}
-      >
-        <BreadScrum pageKey={pageKey} />
-      </Box>
+    <Box component="main" sx={{ position: "relative", display: "flow-root" }}>
+      <BreadScrum
+        pageKey={pageKey}
+        sx={{ position: "absolute", top: "40px", right: "8%", zIndex: 1 }}
+      />
       <Box
         sx={(theme) => ({
-          flex: 1,
           display: "flex",
-          flexDirection: "column",
           boxSizing: "border-box",
-          minWidth: 0,
-          gap: 10,
+          mt: 3,
+          px: 4,
+          flexDirection: "column",
+          overflowX: "hidden",
           [theme.breakpoints.up("tablet")]: {
-            gap: 20,
+            px: "8%",
+            mt: 10,
+            mb: 24,
           },
         })}
       >
+        <ScrollButton />
         <Box
-          id="introduction"
-          sx={{
+          sx={(theme) => ({
+            flex: 1,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            gap: 9,
-          }}
+            boxSizing: "border-box",
+            minWidth: 0,
+            gap: 10,
+            [theme.breakpoints.up("tablet")]: {
+              gap: 20,
+            },
+          })}
         >
           <Box
-            sx={(theme) => ({
+            id="introduction"
+            sx={{
               display: "flex",
               flexDirection: "column",
-              gap: 2,
-              mt: 2,
-              [theme.breakpoints.up("tablet")]: {
-                mt: 0,
-              },
-            })}
+              justifyContent: "center",
+              gap: 9,
+            }}
           >
-            <Typography
-              component="h1"
-              sx={(theme) => ({
-                fontFamily: "Freesentation-7-Bold",
-                fontSize: "20px",
-                [theme.breakpoints.up("tablet")]: {
-                  fontSize: "32px",
-                },
-              })}
-            >
-              {title}
-            </Typography>
-            <LibraryHeader text={subTitle} />
+            <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
+              <Box
+                sx={{
+                  alignSelf: "stretch",
+                  width: "8px",
+                  borderRadius: "20px",
+                  backgroundColor: "#03193F",
+                }}
+              />
+              <Box
+                sx={(theme) => ({
+                  display: "flex",
+                  flexDirection: "column",
+                  [theme.breakpoints.up("tablet")]: {
+                    mt: 0,
+                  },
+                })}
+              >
+                <Typography
+                  component="h1"
+                  sx={(theme) => ({
+                    fontFamily: "Galderglynn-Titling-Regular",
+                    fontSize: "20px",
+                    textTransform: "uppercase",
+                    color: "#03193F",
+                    lineHeight: "1",
+                    [theme.breakpoints.up("tablet")]: {
+                      fontSize: "32px",
+                    },
+                  })}
+                >
+                  {title}
+                </Typography>
+                <Divider
+                  sx={{ width: "120%", borderColor: "#00235F", my: 2 }}
+                />
+                <Typography
+                  sx={{
+                    color: "#03193F",
+                    fontSize: "18px",
+                    fontFamily: "Freesentation-6-SemiBold",
+                  }}
+                >
+                  {subTitle}
+                </Typography>
+              </Box>
+            </Box>
 
             <IntroductionContent items={introduction} />
           </Box>
-        </Box>
-        {features && (
-          <Box
-            id="feature"
-            sx={{ display: "flex", flexDirection: "column", gap: 4 }}
-          >
-            <LibrarySectionTitle titleText="특징" />
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              {features.map((item, index) => (
-                <ProductContent key={index} {...item} />
-              ))}
+          {features && (
+            <Box
+              id="feature"
+              sx={{ display: "flex", flexDirection: "column", gap: 4 }}
+            >
+              <SectionTitle text={featuresSectionTitle} />
+              <Box sx={{ display: "flex", flexDirection: "column", px: 10 }}>
+                {features.map((item, index) => (
+                  <ProductContent key={index} {...item} />
+                ))}
+              </Box>
             </Box>
-          </Box>
-        )}
-
-        <ProductBottom productName={name} />
+          )}
+        </Box>
       </Box>
     </Box>
   );

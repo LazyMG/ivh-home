@@ -1,36 +1,42 @@
+import resource from "../../../data/product/modelon/modelon.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
-import modelon from "../../../data/product/modelon/modelon.json";
-import { useSEO } from "../../../hooks/useSEO";
-
 const Modelon = () => {
-  const seoData = useSEO("product/modelon", modelon);
+  const { t } = useTranslation("product/modelon" as never);
+  const td = (key: string): string => t(key as never);
+  const textList = t("modelon_text" as never, {
+    returnObjects: true,
+  }) as string[];
+  const libraries = resource.modelon_libraries.map((lib) => ({
+    imgUrl: lib.imgUrl,
+    url: lib.url,
+    text: td(`modelon_libraries.${lib.id}.text`),
+    img_alt: td(`modelon_libraries.${lib.id}.img_alt`),
+  }));
 
-  const {
-    modelon_mainImg,
-    modelon_mainImg_alt,
-    modelon_title,
-    modelon_text,
-    modelon_name,
-    modelon_pageKey,
-    modelon_libraries,
-  } = modelon;
   return (
     <>
-      <SEO {...seoData} />
-
+      <SEO
+        title={td("seo.title")}
+        description={td("seo.description")}
+        keywords={td("seo.keywords")}
+        ogImage={resource.seo?.ogImage}
+      />
       <ProductPageTemplate
-        image={modelon_mainImg}
-        image_alt={modelon_mainImg_alt}
-        title={modelon_title}
-        textList={modelon_text}
-        name={modelon_name}
-        libraries={modelon_libraries}
-        pageKey={modelon_pageKey}
+        image={resource.modelon_mainImg}
+        image_alt={td("modelon_mainImg_alt")}
+        title={td("modelon_title")}
+        textList={textList}
+        name={td("modelon_name")}
+        libraries={libraries}
+        pageKey={resource.modelon_pageKey}
+        contentTop="85%"
+        introBottomSpace={20}
+        breadcrumbColor="#000000"
       />
     </>
   );
 };
-
 export default Modelon;

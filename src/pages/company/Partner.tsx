@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
-import partner from "../../data/company/partner.json";
-import ImageHeader from "../../components/company/ImageHeader";
+import { useTranslation } from "react-i18next";
+import resource from "../../data/company/partner.json";
+import CompanyPageHeader from "../../components/company/CompanyPageHeader";
 import CustomerContainer from "../../components/company/CustomerContainer";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
@@ -12,18 +13,11 @@ interface CustomerListObj {
 }
 
 const Partner = () => {
-  const {
-    partner_image,
-    partner_partner,
-    partner_partnerList,
-    partner_customer,
-    partner_customerList,
-    partner_image_position,
-    partner_color,
-  } = partner;
+  const { t } = useTranslation("company/partner");
+  const td = (key: string): string => t(key as never);
 
   const { customer_company, customer_institution, customer_education } =
-    partner_customerList;
+    resource.customerList;
 
   // 작은 화면용: 3개씩 chunk로 나누기
   const chunkArray = (arr: CustomerListObj[], size: number) => {
@@ -52,28 +46,18 @@ const Partner = () => {
   return (
     <>
       <SEO
-        title="Partner & Customer - iVH 파트너 및 고객사"
-        description="iVH와 함께하는 파트너사 및 고객사를 소개합니다."
-        keywords="iVH, 파트너, 고객사, Partner, Customer"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
         canonical="https://ivh.co.kr/company/partner"
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
-        <Box
-          sx={(theme) => ({
-            px: "20px",
-            display: "none",
-            [theme.breakpoints.up("tablet")]: {
-              p: 0,
-              display: "block",
-            },
-          })}
-        >
-          <ImageHeader
-            imgUrl={partner_image}
-            imgPosition={partner_image_position}
-          />
-        </Box>
+        <CompanyPageHeader
+          imgUrl="/images/pages/company/company_temp_partner.png"
+          imgPosition={resource.image_position}
+          pageKey="partner"
+        />
 
         <Box
           component="main"
@@ -88,31 +72,45 @@ const Partner = () => {
               pt: "20px",
             },
             [theme.breakpoints.up("desktop")]: {
-              pt: "50px",
+              pt: 2,
               px: 30,
             },
           })}
         >
           <Stack gap={3}>
-            <Typography
-              component="h1"
-              sx={(theme) => ({
-                textTransform: "uppercase",
-                whiteSpace: "pre-line",
-                fontFamily: "Freesentation-7-Bold",
-                letterSpacing: "4px",
-                color: partner_color,
-                fontSize: "24px",
-                [theme.breakpoints.up("tablet")]: {
-                  fontSize: "28px",
-                },
-                [theme.breakpoints.up("desktop")]: {
-                  fontSize: "30px",
-                },
-              })}
-            >
-              {partner_partner}
-            </Typography>
+            <Box sx={{ display: "flex", alignItems: "baseline", gap: 2 }}>
+              <Typography
+                component="h1"
+                sx={(theme) => ({
+                  whiteSpace: "pre-line",
+                  fontFamily: "Freesentation-7-Bold",
+                  color: "#000000",
+                  fontSize: "24px",
+                  [theme.breakpoints.up("tablet")]: {
+                    fontSize: "28px",
+                  },
+                  [theme.breakpoints.up("desktop")]: {
+                    fontSize: "30px",
+                  },
+                })}
+              >
+                {t("partner")}
+              </Typography>
+              {t("partner_subtitle") && (
+                <Typography
+                  sx={(theme) => ({
+                    fontFamily: "Freesentation-6-SemiBold",
+                    color: "#2A2A2A",
+                    fontSize: "14px",
+                    [theme.breakpoints.up("desktop")]: {
+                      fontSize: "18px",
+                    },
+                  })}
+                >
+                  {t("partner_subtitle")}
+                </Typography>
+              )}
+            </Box>
             <Box
               component="ul"
               sx={{
@@ -124,9 +122,9 @@ const Partner = () => {
                 pl: 0,
               }}
             >
-              {partner_partnerList.map((partnerImg, index) => (
+              {resource.partnerList.map((partnerImg) => (
                 <Box
-                  key={index}
+                  key={partnerImg.id}
                   component="li"
                   sx={(theme) => ({
                     display: "flex",
@@ -140,7 +138,7 @@ const Partner = () => {
                 >
                   <img
                     src={partnerImg.src}
-                    alt={partnerImg.alt}
+                    alt={td(`partner_partnerList.${partnerImg.id}`)}
                     style={{ width: "70%", maxWidth: "128px" }}
                   />
                 </Box>
@@ -148,27 +146,40 @@ const Partner = () => {
             </Box>
           </Stack>
           <Stack gap={3}>
-            <Typography
-              component="h2"
-              sx={(theme) => ({
-                textTransform: "uppercase",
-                whiteSpace: "pre-line",
-                fontFamily: "Freesentation-7-Bold",
-                letterSpacing: "4px",
-                color: partner_color,
-                fontSize: "24px",
-                [theme.breakpoints.up("tablet")]: {
-                  fontSize: "28px",
-                },
-                [theme.breakpoints.up("desktop")]: {
-                  fontSize: "30px",
-                },
-              })}
-            >
-              {partner_customer}
-            </Typography>
+            <Box sx={{ display: "flex", alignItems: "baseline", gap: 2 }}>
+              <Typography
+                component="h2"
+                sx={(theme) => ({
+                  whiteSpace: "pre-line",
+                  fontFamily: "Freesentation-7-Bold",
+                  color: "#000000",
+                  fontSize: "24px",
+                  [theme.breakpoints.up("tablet")]: {
+                    fontSize: "28px",
+                  },
+                  [theme.breakpoints.up("desktop")]: {
+                    fontSize: "30px",
+                  },
+                })}
+              >
+                {t("customer")}
+              </Typography>
+              {t("customer_subtitle") && (
+                <Typography
+                  sx={(theme) => ({
+                    fontFamily: "Freesentation-6-SemiBold",
+                    color: "#2A2A2A",
+                    fontSize: "14px",
+                    [theme.breakpoints.up("desktop")]: {
+                      fontSize: "18px",
+                    },
+                  })}
+                >
+                  {t("customer_subtitle")}
+                </Typography>
+              )}
+            </Box>
             <Box
-              // component="ul"
               sx={{
                 display: "flex",
                 width: "100%",

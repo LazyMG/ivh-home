@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Liquid Cooling Library - Specialized Tools for High-Performance Liquid Cooling Design and Optimization",
+    "description": "Specialized Tools for High-Performance Liquid Cooling Design and Optimization",
+    "keywords": "Liquid Cooling Library, 액체 냉각, 열관리, 데이터센터 냉각, 배터리 열관리, 전력전자 냉각, Modelon, Modelica"
+  },
+  "title": "Liquid Cooling Library",
+  "subTitle": "Specialized Tools for High-Performance Liquid Cooling Design and Optimization",
+  "name": "",
+  "introduction": [
+    "The Liquid Cooling Library is a comprehensive solution for the design and optimization of liquid cooling systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements various components—such as pumps, valves, heat exchangers, and pipe networks—to replicate actual operating conditions. By providing heat transfer performance analysis and control strategy verification, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various cooling circuits, enabling the easy configuration of complex systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as data center cooling, battery thermal management, and power electronics cooling, this library is the optimal choice for achieving both improved thermal efficiency and system stability.",
+    "The Liquid Cooling Library supports high-reliability design decisions by accurately reproducing various cooling circuits through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical pump-valve-heat exchanger configurations to complex networks, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates heat transfer efficiency and pressure loss indicators, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}

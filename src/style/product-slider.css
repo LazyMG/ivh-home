@@ -17,17 +17,31 @@
   gap: 8px;
 }
 
-/* Navigation 버튼 - 세로 중앙 배치 */
+/* Navigation 버튼 - 세로 중앙 배치 + 커스텀 이미지 화살표 */
 .product-swiper .swiper-button-prev,
 .product-swiper .swiper-button-next {
   top: 50%;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  color: #000;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
+  /* Swiper 기본 테마색(파랑) 제거 */
+  --swiper-navigation-color: transparent;
+  color: transparent;
+  outline: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 0;
   transition: all 0.3s ease;
+}
+
+.product-swiper .swiper-button-prev {
+  background-image: url("/images/utils/letf_arrow.png");
+}
+
+.product-swiper .swiper-button-next {
+  background-image: url("/images/utils/right_arrow.png");
 }
 
 .product-swiper .swiper-button-prev:hover,
@@ -36,18 +50,10 @@
   transform: translateY(-50%) scale(1.1);
 }
 
+/* 기본 화살표(원 안의 <,>) 제거 */
 .product-swiper .swiper-button-prev:after,
 .product-swiper .swiper-button-next:after {
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* SVG 아이콘 크기 조절 */
-.product-swiper .swiper-button-prev svg,
-.product-swiper .swiper-button-next svg {
-  width: 50%;
-  height: 50%;
-  color: #fff;
+  display: none;
 }
 
 /* 비활성 슬라이드 투명도 */
@@ -88,10 +94,5 @@
 
   .product-swiper .swiper-button-next {
     right: calc(7.5% - 16px);
-  }
-
-  .product-swiper .swiper-button-prev:after,
-  .product-swiper .swiper-button-next:after {
-    font-size: 10px;
   }
 }

@@ -1,42 +1,30 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { Trans, useTranslation } from "react-i18next";
 
-import ceo from "../../data/company/ceo.json";
-import ImageHeader from "../../components/company/ImageHeader";
+import resource from "../../data/company/ceo.json";
+import CompanyPageHeader from "../../components/company/CompanyPageHeader";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
 
 const CEO = () => {
-  const {
-    ceo_image,
-    ceo_title,
-    ceo_contents,
-    ceo_footer,
-    ceo_color,
-    ceo_image_position,
-  } = ceo;
+  const { t } = useTranslation("company/ceo");
+  const ceoContents = t("contents", { returnObjects: true }) as string[];
+
   return (
     <>
       <SEO
-        title="CEO 인사말 - iVH"
-        description="iVH 대표이사 인사말. 시뮬레이션 및 모빌리티 솔루션 전문 기업 iVH의 비전과 가치를 소개합니다."
-        keywords="iVH, CEO, 대표이사, 인사말, 회사 소개"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
         canonical="https://ivh.co.kr/company/ceo"
       />
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
-        <Box
-          sx={(theme) => ({
-            px: "20px",
-            pt: "20px",
-            display: "none",
-            [theme.breakpoints.up("tablet")]: {
-              p: 0,
-              display: "block",
-            },
-          })}
-        >
-          <ImageHeader imgUrl={ceo_image} imgPosition={ceo_image_position} />
-        </Box>
+        <CompanyPageHeader
+          imgUrl="/images/pages/company/company_temp_ceo.png"
+          imgPosition={resource.image_position}
+          pageKey="ceo"
+        />
         <Box
           component="main"
           sx={(theme) => ({
@@ -51,8 +39,8 @@ const CEO = () => {
               pt: "20px",
             },
             [theme.breakpoints.up("desktop")]: {
-              pt: "50px",
-              px: 40,
+              pt: 3,
+              px: 28,
             },
           })}
         >
@@ -62,20 +50,38 @@ const CEO = () => {
               whiteSpace: "pre-line",
               fontFamily: "Freesentation-6-SemiBold",
               wordBreak: "keep-all",
-              color: ceo_color,
+              color: "#000000",
               fontSize: "24px",
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "28px",
               },
               [theme.breakpoints.up("desktop")]: {
-                fontSize: "40px",
+                fontSize: "44px",
               },
             })}
           >
-            {ceo_title}
+            <Trans
+              t={t}
+              i18nKey="title"
+              components={{
+                grad: (
+                  <Box
+                    component="span"
+                    sx={{
+                      background:
+                        "linear-gradient(90deg, #003B8D 0%, #66BAFF 100%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      color: "transparent",
+                    }}
+                  />
+                ),
+              }}
+            />
           </Typography>
           <Stack gap={3}>
-            {ceo_contents.map((content, index) => (
+            {ceoContents.map((content, index) => (
               <Typography
                 key={index}
                 sx={{
@@ -92,12 +98,13 @@ const CEO = () => {
           </Stack>
           <Typography
             sx={{
-              fontSize: "18px",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontSize: "20px",
+              fontFamily: "Freesentation-7-Bold",
               color: "#2A2A2A",
+              whiteSpace: "pre-line",
             }}
           >
-            {ceo_footer}
+            {t("footer")}
           </Typography>
         </Box>
       </Box>

@@ -1,0 +1,197 @@
+{
+  "seo": {
+    "title": "Dymola - Vehicle Dynamics Library",
+    "description": "Physical modeling and simulation tool for model-based design of complex systems",
+    "keywords": "Dymola, Modelica, 시뮬레이션, 멀티도메인, 시스템 모델링, FMI, 자동차, 항공우주"
+  },
+  "dymola_title": "Dymola",
+  "dymola_subTitle": "Physical modeling and simulation tool for model-based design of complex systems",
+  "dymola_name": "Vehicle Dynamics Library",
+  "dymola_mainImg_alt": "",
+  "dymola_text": [
+    "Dymola is a physical modeling and simulation tool that supports model-based design for complex systems. Models are defined based on the Modelica modeling language, providing users with full access to the language. This allows users to freely create their own model libraries or extend existing Modelica libraries to shorten development time, reduce maintenance burdens, and increase model reusability across projects.",
+    "An integrated system model can be constructed by combining multi-domain libraries covering various fields such as mechanics, electricity, control, thermal, pneumatics, hydraulics, powertrains, thermodynamics, vehicle dynamics, and air conditioning. Dymola is utilized by companies in various sectors, including automotive, aerospace, architecture, motorsports, energy, and high-tech industries.",
+    "Furthermore, Dymola supports the FMI (Functional Mock-up Interface) standard for importing and exporting models, supporting both Model Exchange and Co-Simulation for FMI versions 1.0, 2.0, and 3.0. Real-time simulation is also possible on various HiL (Hardware-in-the-Loop) platforms, enabling testing in environments close to reality."
+  ],
+  "features_section_title": "Features",
+  "dymola_features": {
+    "feat-0": {
+      "title": "Provision of a simulation environment based on the Modelica modeling language",
+      "text": "Dymola is a physical modeling and simulation tool designed based on Modelica, an open standard modeling language. Modelica is an object-oriented, equation-centered language designed to efficiently model complex systems by integrating various physical domains such as mechanics, electricity, hydraulics, thermal, and control. Users can enhance development efficiency and model reusability by directly utilizing the Modelica language or extending existing libraries."
+    },
+    "feat-1": {
+      "title": "Support for model exchange and co-simulation based on FMI standards",
+      "text": "Dymola supports both Model Exchange and Co-Simulation based on the FMI (Functional Mock-up Interface) standard. It complies with FMI versions 1.0, 2.0, and 3.0, and allows models to be imported or exported in the FMU (Functional Mock-up Unit) format. Additionally, a Simulink Coder target is provided to compile Simulink models into FMUs, enabling flexible interoperation between various platforms.",
+      "imgTexts": [
+        "<Building an FMI-based vehicle integration model>"
+      ]
+    },
+    "feat-2": {
+      "title": "Support for eFMI-based embedded model workflows",
+      "text": "Dymola supports the eFMI (Embedded Functional Mock-up Interface) standard, providing a model-based workflow for embedded system development. eFMI is a standard designed to generate lightweight models and automatically convert them into code optimized for embedded targets. Dymola provides functions to generate models according to the eFMI workflow and export them as C code, which can be effectively utilized for controller design and SIL (Software-in-the-Loop) simulation.",
+      "imgTexts": [
+        "",
+        "",
+        "<eFMI Workflow and toolchain>"
+      ]
+    },
+    "feat-3": {
+      "title": "Support for SSP-based system structure definition and simulation configuration",
+      "text": "Dymola supports the SSP (System Structure and Parameterization) standard, allowing the structure of complex systems to be defined and configured based on XML. SSP provides the ability to hierarchically organize systems containing various FMUs and clearly describe parameter settings and simulation scenarios. Through the function of creating and importing SSP files, Dymola facilitates system-level simulation configuration and collaboration while strengthening interoperability with other tools.",
+      "imgTexts": [
+        "<Integration of FMUs for SIL & HIL with SSP: Reuse of the System Structure>"
+      ]
+    },
+    "feat-4": {
+      "title": "Adoption of a component-oriented physical modeling approach",
+      "text": "Dymola adopts a component-oriented modeling approach based on the Modelica language, where actual physical parts are represented as objects and combined in a graphical environment using a drag-and-drop method to construct system models. This approach increases model reusability and scalability and supports the intuitive design of complex systems. Furthermore, it improves development productivity by allowing models to be utilized for various analyses without manually reconstructing equations.",
+      "imgTexts": [
+        "<Dymola Model – Robot Arm>"
+      ]
+    },
+    "feat-5": {
+      "title": "Provision of Modelica application libraries covering various industrial sectors",
+      "text": "Dymola provides Modelica application libraries covering various engineering domains such as hydraulics, mechanics, vehicle dynamics, engines, and architecture. Users can construct system schematics and easily design complex models by utilizing objects representing physical components like valves, resistors, and gears.",
+      "imgTexts": [
+        "<Modelica Library>"
+      ]
+    },
+    "feat-6": {
+      "title": "Support for real-time simulation for various HiL platforms",
+      "text": "Dymola supports real-time simulation on various HiL (Hardware-in-the-Loop) platforms such as dSPACE, Concurrent, and xPC. It is compatible with external systems that support Simulink or FMI, and even complex systems like multi-body vehicle dynamics models can be executed in real-time, enabling testing close to the actual environment.",
+      "imgTexts": [
+        "<Architecture of Dymola>"
+      ]
+    },
+    "feat-7": {
+      "title": "Provision of a high-performance simulation engine based on symbolic manipulation",
+      "text": "Dymola utilizes symbolic manipulation techniques to solve Differential-Algebraic Equations (DAEs). This method effectively handles problems such as reduced degrees of freedom caused by algebraic loops or constraints, and supports real-time HiL (Hardware-in-the-Loop) simulation through a high-performance numerical solver. This ensures that even complex system models can be executed stably."
+    }
+  },
+  "dymola_libraries": {
+    "lib-0": {
+      "text": "Aviation Systems Library",
+      "img_alt": "Aviation Systems Library icon"
+    },
+    "lib-1": {
+      "text": "Battery Library",
+      "img_alt": "Battery Library icon"
+    },
+    "lib-2": {
+      "text": "Binary Model Export",
+      "img_alt": "Binary Model Export Library icon"
+    },
+    "lib-3": {
+      "text": "Brushless DC Drives Library",
+      "img_alt": "Brushless DC Drives Library icon"
+    },
+    "lib-4": {
+      "text": "ClaRa Plus Library",
+      "img_alt": "ClaRa Plus Library icon"
+    },
+    "lib-5": {
+      "text": "Cooling Library",
+      "img_alt": "Cooling Library icon"
+    },
+    "lib-6": {
+      "text": "Design Optimization",
+      "img_alt": "Design Optimization icon"
+    },
+    "lib-7": {
+      "text": "Electric Power Systems Library",
+      "img_alt": "Electric Power Systems Library icon"
+    },
+    "lib-8": {
+      "text": "Electrified Powertrains Library",
+      "img_alt": "Electrified Powertrains Library icon"
+    },
+    "lib-9": {
+      "text": "Flexible Bodies Library",
+      "img_alt": "Flexible Bodies Library icon"
+    },
+    "lib-10": {
+      "text": "Flight Dynamics Library",
+      "img_alt": "Flight Dynamics Library icon"
+    },
+    "lib-11": {
+      "text": "Fluid Dynamics Library",
+      "img_alt": "Fluid Dynamics Library icon"
+    },
+    "lib-12": {
+      "text": "Fluid Power Library",
+      "img_alt": "Fluid Power Library icon"
+    },
+    "lib-13": {
+      "text": "HVAC Library",
+      "img_alt": "HVAC Library icon"
+    },
+    "lib-14": {
+      "text": "Human Comfort Library",
+      "img_alt": "Human Comfort Library icon"
+    },
+    "lib-15": {
+      "text": "Hydrogen Library",
+      "img_alt": "Hydrogen Library icon"
+    },
+    "lib-16": {
+      "text": "Process Modeling and Engineering Library",
+      "img_alt": "Process Modeling and Engineering Library icon"
+    },
+    "lib-17": {
+      "text": "Real-Time Simulation",
+      "img_alt": "Real-Time Simulation icon"
+    },
+    "lib-18": {
+      "text": "Simulink Interface",
+      "img_alt": "Simulink Interface icon"
+    },
+    "lib-19": {
+      "text": "Source Code Generation",
+      "img_alt": "Source Code Generation icon"
+    },
+    "lib-20": {
+      "text": "Sustainable Supply Systems Library",
+      "img_alt": "Sustainable Supply Systems Library icon"
+    },
+    "lib-21": {
+      "text": "TIL",
+      "img_alt": "TIL icon"
+    },
+    "lib-22": {
+      "text": "TIL Hydrogen Library",
+      "img_alt": "TIL Hydrogen Library icon"
+    },
+    "lib-23": {
+      "text": "TIL Mobile Air Conditioning Library",
+      "img_alt": "TIL Mobile Air Conditioning Library icon"
+    },
+    "lib-24": {
+      "text": "TIL Thermal Storages Library",
+      "img_alt": "TIL Thermal Storages Library icon"
+    },
+    "lib-25": {
+      "text": "Thermodynamics Connector",
+      "img_alt": "Thermodynamics Connector icon"
+    },
+    "lib-26": {
+      "text": "VeSyMA Engines Library",
+      "img_alt": "VeSyMA Engines Library icon"
+    },
+    "lib-27": {
+      "text": "VeSyMA Library",
+      "img_alt": "VeSyMA Library icon"
+    },
+    "lib-28": {
+      "text": "VeSyMA Powertrain Library",
+      "img_alt": "VeSyMA Powertrain Library icon"
+    },
+    "lib-29": {
+      "text": "VeSyMA Suspensions Library",
+      "img_alt": "VeSyMA Suspensions Library icon"
+    },
+    "lib-30": {
+      "text": "Wind Power Library",
+      "img_alt": "Wind Power Library icon"
+    }
+  }
+}

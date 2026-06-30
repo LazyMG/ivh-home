@@ -1,0 +1,13 @@
+{
+  "seo": {
+    "title": "Fuel Cell Library - An integrated simulation library for fuel cell systems",
+    "description": "An integrated simulation library for fuel cell systems",
+    "keywords": "Fuel Cell Library, 연료전지, PEMFC, SOFC, Modelon, Modelica"
+  },
+  "title": "Fuel Cell Library",
+  "subTitle": "An integrated simulation library for fuel cell systems",
+  "name": "",
+  "introduction": [
+    "The Fuel Cell Library is a Modelica-based library designed for the precision modeling and simulation of fuel cell systems. Supporting various fuel cell technologies, including PEMFC and SOFC, it enables the evaluation of dynamic behavior, efficiency analysis, and energy flow for the entire system—including the stack, balance of plant (BoP), and control strategies. This library can be utilized throughout the entire development process of fuel cell-based systems—such as performance optimization, controller development and verification, and hardware-in-the-loop (HiL) simulation—across automotive, power generation, and industrial applications."
+  ]
+}

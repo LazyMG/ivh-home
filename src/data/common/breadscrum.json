@@ -1,16 +1,20 @@
 {
   "templates": {
-    "home_product": [{ "title": "Home", "url": "/" }, { "title": "Product" }],
+    "home_product": [{ "title": "Home", "url": "/" }, { "title": "Products" }],
     "home_solution": [
       { "title": "Home", "url": "/" },
       { "title": "Solution", "url": "/solution" }
+    ],
+    "home_company": [{ "title": "Home", "url": "/" }, { "title": "Company" }],
+    "home_support": [
+      { "title": "Home", "url": "/" },
+      { "title": "Support", "url": "/support" }
     ],
     "modelica_dymola": [{ "title": "Dymola", "url": "/product/dymola" }],
     "dymola_base": [{ "title": "Dymola", "url": "/product/dymola" }],
     "vtd_base": [{ "title": "VTD", "url": "/product/vtd" }],
     "modelon_base": [{ "title": "Modelon", "url": "/product/modelon" }],
-    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }],
-    "imova_base": [{ "title": "iMOVA", "url": "/product/imova" }]
+    "ptv_base": [{ "title": "PTV", "url": "/product/ptv" }]
   },
   "pages": {
     "dymola": {
@@ -115,11 +119,11 @@
         "url": "/product/dymola/binarymodelexport"
       }
     },
-    "vehicleDynamics": {
+    "vehicledynamicslibrary": {
       "extends": ["home_product", "modelon_base"],
       "current": {
-        "title": "Vehicle Dynamics",
-        "url": "/product/modelon/vehicledynamics"
+        "title": "Vehicle Dynamics Library",
+        "url": "/product/modelon/vehicledynamicslibrary"
       }
     },
     "vaporCycle": {
@@ -286,12 +290,39 @@
       "extends": ["home_solution"],
       "current": { "title": "Mobility", "url": "/solution/mobility" }
     },
-    "humanoidPackage": {
-      "extends": ["home_product", "imova_base"],
+    "imova": {
+      "extends": ["home_product"],
       "current": {
-        "title": "Humanoid Package",
+        "title": "iMOVA",
+        "url": "/product/imova"
+      }
+    },
+    "humanoidPackage": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "Humanoid",
         "url": "/product/imova/humanoid"
       }
+    },
+    "ceo": {
+      "extends": ["home_company"],
+      "current": { "title": "CEO", "url": "/company/ceo" }
+    },
+    "history": {
+      "extends": ["home_company"],
+      "current": { "title": "History", "url": "/company/history" }
+    },
+    "partner": {
+      "extends": ["home_company"],
+      "current": { "title": "Partners & Customers", "url": "/company/partner" }
+    },
+    "contact": {
+      "extends": ["home_company"],
+      "current": { "title": "Contact", "url": "/company/contact" }
+    },
+    "training": {
+      "extends": ["home_support"],
+      "current": { "title": "Training", "url": "/support/training" }
     }
   }
 }

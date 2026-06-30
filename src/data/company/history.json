@@ -1,39 +1,13 @@
 {
-  "history_title": "History",
-  "history_image": "/images/pages/company/company_history.png",
-  "history_list": [
-    {
-      "year": "2024",
-      "contents": [
-        "Inno-Biz 인증 획득",
-        "'주식회사 아이브이에이치' 법인명 변경",
-        "기업부설연구소 설립"
-      ]
-    },
-    {
-      "year": "2021",
-      "contents": [
-        "본사 및 연구전담부서 이전 (서울시 서초구 양재동)",
-        "ASAM Member 가입"
-      ]
-    },
-    {
-      "year": "2018",
-      "contents": ["Modelica Association 가입"]
-    },
-    {
-      "year": "2015",
-      "contents": ["벤처기업등록"]
-    },
-    {
-      "year": "2014",
-      "contents": ["연구개발전담부서 설립"]
-    },
-    {
-      "year": "2013",
-      "contents": ["주식회사 자동차공학연구소 설립"]
-    }
-  ],
-  "history_color": "#179EBD",
-  "history_image_position": "50% 50%"
+  "image": "/images/pages/company/company_history.png",
+  "color": "#1F57A6",
+  "image_position": "50% 50%",
+  "list": [
+    { "id": "y2024", "year": "2024" },
+    { "id": "y2021", "year": "2021" },
+    { "id": "y2018", "year": "2018" },
+    { "id": "y2015", "year": "2015" },
+    { "id": "y2014", "year": "2014" },
+    { "id": "y2013", "year": "2013" }
+  ]
 }

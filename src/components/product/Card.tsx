@@ -7,7 +7,7 @@ import {
   Box,
 } from "@mui/material";
 
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 
 interface ProductCardProps {
   cards: {
@@ -24,7 +24,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ cards }: ProductCardProps) => {
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
 
   // const products = {
   //   vtdCreate: {

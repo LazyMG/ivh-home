@@ -65,7 +65,7 @@ const ApplicationForm = ({
     control,
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
     getValues,
     watch,
@@ -270,6 +270,8 @@ const ApplicationForm = ({
         display: "flex",
         flexDirection: "column",
         gap: 2,
+        px: 15,
+        mt: 2,
       }}
     >
       <Typography
@@ -277,7 +279,7 @@ const ApplicationForm = ({
         sx={{
           fontSize: "20px",
           fontFamily: "Freesentation-6-SemiBold",
-          color: "#1755C2",
+          color: "#03193F",
         }}
       >
         수강신청
@@ -287,12 +289,19 @@ const ApplicationForm = ({
         errors={errors}
         reservationList={reservationList}
       />
+      <Box
+        sx={{
+          my: 3,
+          borderTop: "1px dashed #C9C9C9",
+          width: "100%",
+        }}
+      />
       <Stack gap={2}>
         <Typography
           sx={{
             fontSize: "20px",
             fontFamily: "Freesentation-6-SemiBold",
-            color: "#1755C2",
+            color: "#03193F",
           }}
         >
           신청자
@@ -454,13 +463,20 @@ const ApplicationForm = ({
           </Box>
         </Box>
       </Stack>
+      <Box
+        sx={{
+          my: 3,
+          borderTop: "1px dashed #C9C9C9",
+          width: "100%",
+        }}
+      />
       <Box sx={{ position: "relative" }}>
         <Box display="flex" alignContent="center">
           <Typography
             sx={{
               fontSize: "20px",
               fontFamily: "Freesentation-6-SemiBold",
-              color: "#1755C2",
+              color: "#03193F",
               mr: 2,
               alignSelf: "center",
             }}
@@ -470,7 +486,17 @@ const ApplicationForm = ({
 
           <Box sx={{ position: "relative" }}>
             <FormControlLabel
-              label="신청자 정보와 같음"
+              label={
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    fontFamily: "Freesentation-5-Medium",
+                    color: "#8D8D8D",
+                  }}
+                >
+                  신청자 정보와 같음
+                </Typography>
+              }
               control={
                 <Checkbox
                   checked={isFillCustomerChecked}
@@ -736,6 +762,8 @@ const ApplicationForm = ({
             sx={{
               fontFamily: "Freesentation-6-SemiBold",
               mr: 1,
+              color: "#8D8D8D",
+              fontSize: "18px",
             }}
             label={"개인정보처리방침에 동의합니다."}
           />
@@ -759,12 +787,22 @@ const ApplicationForm = ({
           variant="contained"
           type="submit"
           sx={{
-            backgroundColor: "black",
             width: "fit-content",
+            padding: "8px 32px",
+            fontSize: "18px",
             fontFamily: "Freesentation-6-SemiBold",
-            fontSize: "16px",
+            color: "#fff",
+            backgroundColor: "#03193F",
+            boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
+            "&:hover": {
+              backgroundColor: "#03193F",
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#cccccc",
+              color: "#888888",
+            },
           }}
-          disabled={!isValid || submitStatus === "loading"}
+          disabled={submitStatus === "loading"}
         >
           신청하기
         </Button>

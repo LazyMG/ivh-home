@@ -1,31 +1,56 @@
+import resource from "../../../data/product/ptv/vissim.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
-import vissim from "../../../data/product/ptv/vissim.json";
-import { useSEO } from "../../../hooks/useSEO";
 
 const Vissim = () => {
-  const seoData = useSEO("product/ptv/vissim", vissim);
+  const { t } = useTranslation("product/ptv/vissim" as never);
+  const td = (key: string): string => t(key as never);
 
-  const {
-    vissim_title,
-    vissim_subTitle,
-    vissim_features,
-    vissim_introduction,
-    vissim_name,
-    vissim_pageKey,
-  } = vissim;
+  const introTexts = t("vissim_introduction" as never, {
+    returnObjects: true,
+  }) as string[];
+  const introduction = introTexts.map((text) => ({ text }));
+
+  const features = resource.vissim_features.map((feat, index, arr) => {
+    const imgTexts = t(`vissim_features.${feat.id}.imgTexts` as never, {
+      returnObjects: true,
+    }) as string[] | string;
+    const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
+    return {
+      ...(feat.imgObj
+        ? {
+            imgObj: feat.imgObj.map((img, i) => ({
+              ...img,
+              ...(imgTextsArr[i] ? { imgText: imgTextsArr[i] } : {}),
+            })),
+          }
+        : {}),
+      textObj: {
+        col: feat.textObj.col,
+        title: td(`vissim_features.${feat.id}.title`),
+        text: td(`vissim_features.${feat.id}.text`),
+      },
+      showDivider: index !== arr.length - 1,
+    };
+  });
 
   return (
     <>
-      <SEO {...seoData} />
-
+      <SEO
+        title={td("seo.title")}
+        description={td("seo.description")}
+        keywords={td("seo.keywords")}
+        ogImage={resource.seo?.ogImage}
+      />
       <LibraryPageTemplate
-        title={vissim_title}
-        subTitle={vissim_subTitle}
-        introduction={vissim_introduction}
-        pageKey={vissim_pageKey}
-        features={vissim_features}
-        name={vissim_name}
+        title={td("vissim_title")}
+        subTitle={td("vissim_subTitle")}
+        introduction={introduction}
+        pageKey={resource.vissim_pageKey}
+        features={features}
+        name={td("vissim_name")}
+        featuresSectionTitle={td("features_section_title")}
       />
     </>
   );

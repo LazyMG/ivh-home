@@ -1,14 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import footer from "../../data/footer/footer.json";
 import logoGradient from "/images/header/iVH_logo_gra.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 
 const MobileFooter = () => {
   const { companyInfo } = footer;
   const { companyName, address, phone, email, socialMedia } = companyInfo;
   const { youtubeLogoBlack, linkedinLogoBlack, youtubeUrl, linkedinUrl } =
     socialMedia;
-  const navigate = useNavigate();
+  const navigate = useLocalizedNavigate();
   return (
     <Box
       component="footer"
@@ -114,6 +114,9 @@ const MobileFooter = () => {
           }}
           component="p"
         >
+          <Box component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+            T.
+          </Box>{" "}
           {phone}
         </Typography>
         <Typography
@@ -124,6 +127,9 @@ const MobileFooter = () => {
           }}
           component="p"
         >
+          <Box component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+            E.
+          </Box>{" "}
           {email}
         </Typography>
       </Box>

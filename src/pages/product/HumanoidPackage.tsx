@@ -1,73 +1,14 @@
-import { Box, Button, ButtonGroup, Divider, Typography } from "@mui/material";
-import { useMemo } from "react";
+import { Box, Divider, Typography } from "@mui/material";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-import rawData from "../../data/product/humanoidPackage.json";
-import { useLang } from "../../i18n/useLang";
-import { pickLocale } from "../../i18n/pickLocale";
+import resource from "../../data/product/humanoidPackage.json";
+import { useTranslation } from "react-i18next";
+import SectionTitle from "../../components/common/SectionTitle";
+import ContactTrainingInfoSection from "../../components/home/ContactTrainingInfoSection";
+import ProductHero from "../../components/product/ProductHero";
 
 type Segment = { text: string; bold?: boolean };
-
-type SegmentBlock = { segments: Segment[]; en: string };
-
-type LocalizedHumanoid = {
-  seo: {
-    title: string;
-    description: string;
-    keywords: string;
-    canonical: string;
-  };
-  hero: {
-    headline: string;
-    body: { segments: Segment[] } | string;
-    imova_title_image: string;
-    imova_title_alt: string;
-    humanoid_equation_image: string;
-    humanoid_equation_alt: string;
-    image: string;
-    image_alt: string;
-    sub_body: string;
-    sub_headline: string;
-    description: string;
-    equation_text: string;
-    effects: {
-      ldquo: string;
-      rdquo: string;
-      white_effect: string;
-      gra_effect: string;
-      blue_effect: string;
-    };
-  };
-  business_model: {
-    title: string;
-    body: SegmentBlock;
-    items: { number: string; segments: Segment[]; en: string }[];
-  };
-  package_composition: {
-    title: string;
-    cards: {
-      icon: string;
-      title: string;
-      subtitle?: string;
-      subtitle2?: string;
-      body?: SegmentBlock;
-      bullets: string[];
-      note?: string;
-    }[];
-  };
-  why_ivh: {
-    title: string;
-    items: string[];
-    closing: string;
-  };
-  cta: {
-    headline: string;
-    body: SegmentBlock;
-    button_text: string;
-    button_url: string;
-  };
-};
 
 const RenderSegments = ({ segments }: { segments: Segment[] }) => (
   <>
@@ -83,41 +24,6 @@ const RenderSegments = ({ segments }: { segments: Segment[] }) => (
   </>
 );
 
-/** Decorative section title with drop-cap first letter */
-const DecorativeTitle = ({
-  text,
-  isMobile,
-}: {
-  text: string;
-  isMobile: boolean;
-}) => {
-  const firstChar = text[0];
-  const rest = text.slice(1);
-  return (
-    <Typography
-      component="h2"
-      sx={{
-        fontFamily: "Freesentation-7-Bold",
-        fontSize: isMobile ? "28px" : "40px",
-        color: "#1755C2",
-        lineHeight: 1.2,
-        wordBreak: "keep-all",
-      }}
-    >
-      <Box
-        component="span"
-        sx={{
-          fontFamily: "Freesentation-7-Bold",
-          fontSize: isMobile ? "42px" : "60px",
-        }}
-      >
-        {firstChar}
-      </Box>
-      {rest}
-    </Typography>
-  );
-};
-
 /** Two-column section layout: decorative title left, content right */
 const SectionLayout = ({
   title,
@@ -131,20 +37,38 @@ const SectionLayout = ({
   showDivider?: boolean;
 }) => (
   <Box component="section">
-    {showDivider && <Divider sx={{ borderColor: "#ccc", mb: 5 }} />}
+    {showDivider && (
+      <Divider
+        sx={{
+          borderColor: "#424242",
+          mb: 10,
+          borderStyle: "dashed",
+          width: "90%",
+          mx: "auto",
+        }}
+      />
+    )}
     <Box
       sx={{
         display: "flex",
-        flexDirection: isMobile ? "column" : "row",
+        flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "flex-start",
         gap: isMobile ? 4 : 0,
       }}
     >
-      <Box sx={{ flexShrink: 0, width: isMobile ? "100%" : "auto" }}>
-        <DecorativeTitle text={title} isMobile={isMobile} />
-      </Box>
-      <Box sx={{ width: isMobile ? "100%" : "55%", pt: isMobile ? 0 : 5 }}>
+      <SectionTitle text={title} />
+      <Box
+        sx={(theme) => ({
+          // 제목 텍스트 시작 위치(구분 디자인 너비 + gap)와 동일하게 정렬
+          pl: `calc(8px + ${theme.spacing(4)})`,
+          pr: "8%",
+          pt: 8,
+          [theme.breakpoints.up("tablet")]: {
+            pl: `calc(88px + ${theme.spacing(4)})`,
+          },
+        })}
+      >
         {children}
       </Box>
     </Box>
@@ -153,13 +77,26 @@ const SectionLayout = ({
 
 const HumanoidPackage = () => {
   const { isMobile, isTablet } = useBreakpoint();
-  const { lang, setLang } = useLang();
-  const localized = useMemo(
-    () => pickLocale<LocalizedHumanoid>(rawData, lang),
-    [lang],
-  );
-  const { seo, hero, business_model, package_composition, why_ivh, cta } =
-    localized;
+  const { t } = useTranslation("product/humanoidPackage");
+
+  const td = (key: string): string => t(key as never);
+  const tOpt = (key: string): string | undefined => {
+    const val = t(key as never, { defaultValue: "" });
+    return val || undefined;
+  };
+
+  /** segments(ko) 또는 plain string(en) 렌더링 */
+  const renderSegmentBlock = (key: string) => {
+    const val = t(key as never, { returnObjects: true, defaultValue: "" });
+    if (!val) return null;
+    if (typeof val === "string") return val;
+    if (typeof val === "object" && "segments" in (val as object)) {
+      return (
+        <RenderSegments segments={(val as { segments: Segment[] }).segments} />
+      );
+    }
+    return null;
+  };
 
   const pagePx = isMobile ? "20px" : isTablet ? "40px" : "120px";
   const sectionGap = isMobile ? 12 : isTablet ? 16 : 20;
@@ -168,392 +105,77 @@ const HumanoidPackage = () => {
   return (
     <>
       <SEO
-        title={seo.title}
-        description={seo.description}
-        keywords={seo.keywords}
-        canonical={seo.canonical}
+        title={td("seo.title")}
+        description={td("seo.description")}
+        keywords={td("seo.keywords")}
+        canonical={resource.seo.canonical}
       />
       <Box component="main">
         <ScrollButton threshold={100} />
-        <ButtonGroup
-          size="small"
-          variant="contained"
-          sx={{
-            position: "fixed",
-            top: 80,
-            right: 16,
-            zIndex: 1300,
-            boxShadow: 2,
+        <ProductHero
+          image={resource.hero.image}
+          imageAlt={t("hero.image_alt")}
+          badge="Package"
+          titleImage={resource.hero.imova_title_image}
+          caption={t("hero.headline")}
+          description={t("hero.description")}
+          underlineWidth="80%"
+          breadcrumbKey="humanoidPackage"
+          descriptionSx={{
+            color: "#424242",
+            fontFamily: "Freesentation-4-Regular",
           }}
-        >
-          <Button
-            onClick={() => setLang("ko")}
-            color={lang === "ko" ? "primary" : "inherit"}
-          >
-            KO
-          </Button>
-          <Button
-            onClick={() => setLang("en")}
-            color={lang === "en" ? "primary" : "inherit"}
-          >
-            EN
-          </Button>
-        </ButtonGroup>
+        />
 
-        {/* ===== A. Hero (Part 1) ===== */}
         <Box
-          component="section"
           sx={{
             width: "100%",
-            background: "linear-gradient(180deg, #DEEFFF 0%, #FFFFFF 100%)",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            px: pagePx,
-            pt: isMobile ? 6 : 10,
-            pb: isMobile ? 8 : 14,
+            gap: 4,
+            justifyContent: "center",
+            backgroundColor: "#073272",
             boxSizing: "border-box",
+            px: "24%",
+            py: 10,
           }}
         >
-          {/* iMOVA 로고 + 서브텍스트 */}
           <Box
+            role="img"
+            aria-label={t("hero.humanoid_equation_alt")}
             sx={{
               display: "flex",
-              alignItems: "flex-end",
-              gap: isMobile ? 1.5 : 3,
-              alignSelf: "flex-start",
-              mb: isMobile ? 6 : 10,
+              justifyContent: "space-between",
+              alignItems: "center",
+              px: 5,
             }}
           >
+            <Box component="img" alt="" src={resource.hero.equation.robot} />
+            <Box component="img" alt="" src={resource.hero.equation.plus} />
+            <Box component="img" alt="" src={resource.hero.equation.brain} />
+            <Box component="img" alt="" src={resource.hero.equation.plus} />
+            <Box component="img" alt="" src={resource.hero.equation.ai} />
+            <Box component="img" alt="" src={resource.hero.equation.equals} />
             <Box
               component="img"
-              src={hero.imova_title_image}
-              alt={hero.imova_title_alt}
-              sx={{
-                height: isMobile ? "28px" : "40px",
-                alignSelf: "flex-end",
-              }}
-            />
-            <Typography
-              sx={{
-                fontFamily: "Freesentation-7-Bold",
-                fontSize: isMobile ? "13px" : "16px",
-                color: "#555",
-              }}
-            >
-              {seo.title}
-            </Typography>
-          </Box>
-
-          {/* 제목 */}
-          <Typography
-            component="h1"
-            sx={{
-              fontFamily: "Freesentation-7-Bold",
-              fontSize: isMobile ? "18px" : isTablet ? "28px" : "32px",
-              color: "#1755C2",
-              mb: 0,
-              lineHeight: 1.2,
-            }}
-          >
-            {seo.title}
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "Freesentation-7-Bold",
-              fontSize: isMobile ? "18px" : isTablet ? "28px" : "32px",
-              color: "#1755C2",
-              lineHeight: 1.2,
-              mb: isMobile ? 4 : 6,
-            }}
-          >
-            {hero.headline}
-          </Typography>
-
-          {/* 인용구 */}
-          <Box
-            sx={{
-              position: "relative",
-              width: "100%",
-              maxWidth: "1200px",
-              px: isMobile ? 4 : 6,
-              py: isMobile ? 2 : 3,
-              boxSizing: "border-box",
-            }}
-          >
-            <Box
-              component="img"
-              src={hero.effects.ldquo}
               alt=""
-              sx={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: isMobile ? "16px" : "32px",
-              }}
-            />
-            <Typography
-              sx={{
-                fontFamily: "Freesentation-5-Medium",
-                fontSize: bodyFontSize,
-                color: "#2c2c2c",
-                wordBreak: "keep-all",
-                lineHeight: 1.8,
-                whiteSpace: "pre-wrap",
-              }}
-            >
-              {typeof hero.body === "string" ? (
-                hero.body
-              ) : (
-                <RenderSegments segments={hero.body.segments} />
-              )}
-            </Typography>
-            <Box
-              component="img"
-              src={hero.effects.rdquo}
-              alt=""
-              sx={{
-                position: "absolute",
-                bottom: 0,
-                right: 0,
-                width: isMobile ? "16px" : "32px",
-              }}
+              src={resource.hero.equation.result}
+              sx={{ width: "16%" }}
             />
           </Box>
-
-          {/* 하단 텍스트 */}
-          <Typography
-            sx={{
-              fontFamily: "Freesentation-5-Medium",
-              fontSize: isMobile ? "13px" : "18px",
-              color: "#555",
-              wordBreak: "keep-all",
-              textDecoration: "underline",
-              mt: isMobile ? 4 : 6,
-              whiteSpace: "pre-wrap",
-            }}
-          >
-            {hero.sub_body}
-          </Typography>
-        </Box>
-
-        {/* ===== B. Hero (Part 2) ===== */}
-        <Box
-          component="section"
-          sx={{
-            position: "relative",
-            width: "100%",
-            aspectRatio: isMobile ? "auto" : "16 / 11",
-            overflow: "hidden",
-          }}
-        >
-          {/* 로봇 이미지 */}
-          <Box
-            component="img"
-            src={hero.image}
-            alt={hero.image_alt}
-            sx={{
-              position: "absolute",
-              top: isMobile ? "5%" : "3%",
-              right: isMobile ? "-6%" : "2%",
-              height: isMobile ? "55%" : "60%",
-              width: "auto",
-              zIndex: 1,
-            }}
-          />
-
-          {/* 텍스트 콘텐츠 */}
-          <Box
-            sx={{
-              position: "relative",
-              zIndex: 10,
-              width: isMobile ? "65%" : "65%",
-              ml: isMobile ? 0 : "8%",
-              mr: "auto",
-              px: pagePx,
-              pt: isMobile ? 3 : "2%",
-              pb: isMobile ? 3 : 0,
-              boxSizing: "border-box",
-            }}
-          >
-            {/* iMOVA 로고 */}
-            <Box
-              component="img"
-              src={hero.imova_title_image}
-              alt={hero.imova_title_alt}
-              sx={{
-                height: isMobile ? "28px" : isTablet ? "42px" : "52px",
-                mb: 1,
-                display: "block",
-              }}
-            />
+          <Box>
             <Typography
               sx={{
-                fontFamily: "Freesentation-7-Bold",
-                fontSize: isMobile ? "14px" : isTablet ? "22px" : "28px",
-                color: "#2c2c2c",
-                wordBreak: "keep-all",
-                lineHeight: 1.4,
-                mb: isMobile ? 1.5 : 3,
+                textTransform: "uppercase",
+                color: "#ffffff",
+                fontSize: "20px",
+                letterSpacing: "5%",
+                fontFamily: "Galderglynn-Titling-Book",
               }}
             >
-              {hero.sub_headline}
+              {t("hero.equation_text")}
             </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: "Freesentation-5-Medium",
-                fontSize: isMobile ? "12px" : isTablet ? "18px" : "24px",
-                color: "#2c2c2c",
-                wordBreak: "keep-all",
-                lineHeight: 1.8,
-                whiteSpace: "pre-wrap",
-                mb: isMobile ? 0 : 4,
-              }}
-            >
-              {hero.description}
-            </Typography>
-
-            {/* 수식 (PC만 여기에 표시) */}
-            {!isMobile && (
-              <>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
-                    mb: 1,
-                  }}
-                >
-                  <Box
-                    component="img"
-                    src={hero.humanoid_equation_image}
-                    alt={hero.humanoid_equation_alt}
-                    sx={{
-                      width: isTablet ? "380px" : "420px",
-                      display: "block",
-                    }}
-                  />
-                  <Box
-                    component="img"
-                    src={hero.imova_title_image}
-                    alt={hero.imova_title_alt}
-                    sx={{
-                      height: isTablet ? "34px" : "42px",
-                    }}
-                  />
-                </Box>
-                <Typography
-                  sx={{
-                    fontFamily: "Freesentation-7-Bold",
-                    fontSize: isTablet ? "22px" : "28px",
-                    color: "#2c2c2c",
-                    lineHeight: 1.4,
-                    mb: 2,
-                  }}
-                >
-                  {hero.equation_text}
-                </Typography>
-              </>
-            )}
           </Box>
-
-          {/* 수식 (모바일만 여기에 표시 — 텍스트+로봇 하단) */}
-          {isMobile && (
-            <Box
-              sx={{
-                position: "relative",
-                zIndex: 10,
-                px: pagePx,
-                pt: 2,
-                pb: 3,
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 0.5,
-                  mb: 1,
-                }}
-              >
-                <Box
-                  component="img"
-                  src={hero.humanoid_equation_image}
-                  alt={hero.humanoid_equation_alt}
-                  sx={{
-                    width: "60%",
-                    display: "block",
-                  }}
-                />
-                <Box
-                  component="img"
-                  src={hero.imova_title_image}
-                  alt={hero.imova_title_alt}
-                  sx={{
-                    height: "16px",
-                  }}
-                />
-              </Box>
-              <Typography
-                sx={{
-                  fontFamily: "Freesentation-7-Bold",
-                  fontSize: "12px",
-                  color: "#2c2c2c",
-                  lineHeight: 1.4,
-                }}
-              >
-                Robot Hardware + AI + Operation = iVH Total Package
-              </Typography>
-            </Box>
-          )}
-
-          {/* 흰빛 효과 (가장 위) */}
-          <Box
-            component="img"
-            src={hero.effects.white_effect}
-            alt=""
-            sx={{
-              position: "absolute",
-              bottom: "10%",
-              left: "-5%",
-              width: "70%",
-              pointerEvents: "none",
-              zIndex: 5,
-              display: isMobile ? "none" : "block",
-            }}
-          />
-          {/* 녹색 곡선 (중간) */}
-          <Box
-            component="img"
-            src={hero.effects.gra_effect}
-            alt=""
-            sx={{
-              position: "absolute",
-              bottom: "9%",
-              left: "20%",
-              width: "95%",
-              pointerEvents: "none",
-              zIndex: 3,
-              display: isMobile ? "none" : "block",
-            }}
-          />
-          {/* 파란색 곡선 (가장 아래) */}
-          <Box
-            component="img"
-            src={hero.effects.blue_effect}
-            alt=""
-            sx={{
-              position: "absolute",
-              bottom: "3%",
-              left: "-8%",
-              width: "120%",
-              pointerEvents: "none",
-              zIndex: 4,
-              display: isMobile ? "none" : "block",
-            }}
-          />
         </Box>
 
         <Box
@@ -564,77 +186,60 @@ const HumanoidPackage = () => {
             flexDirection: "column",
             gap: sectionGap,
             px: pagePx,
-            pt: isMobile ? 8 : 14,
-            pb: 10,
+            pt: 8,
           }}
         >
           {/* ===== B. Business Model ===== */}
-          <SectionLayout title="Business Model" isMobile={isMobile}>
+          <SectionLayout
+            title="Business Model"
+            isMobile={isMobile}
+            showDivider={false}
+          >
             <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
               <Typography
                 component="h3"
                 sx={{
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: "Galderglynn-Titling-Regular",
                   fontSize: isMobile ? "18px" : "20px",
-                  color: "#2c2c2c",
+                  color: "#03193F",
+                  textTransform: "uppercase",
                 }}
               >
-                {business_model.title}
+                {td("business_model.title")}
               </Typography>
 
               <Typography
                 sx={{
                   fontFamily: "Freesentation-5-Medium",
                   fontSize: bodyFontSize,
-                  color: "#2c2c2c",
+                  color: "#03193F",
                   wordBreak: "keep-all",
                   lineHeight: 1.8,
                   whiteSpace: "pre-wrap",
                 }}
               >
-                {lang === "en" && business_model.body.en ? (
-                  business_model.body.en
-                ) : (
-                  <RenderSegments segments={business_model.body.segments} />
-                )}
+                {renderSegmentBlock("business_model.body")}
               </Typography>
 
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
-                {business_model.items.map((item) => (
+              <Box component="ul" sx={{ m: 0, pl: 0, listStyle: "none" }}>
+                {resource.business_model.items.map((item) => (
                   <Box
-                    key={item.number}
+                    component="li"
+                    key={item.id}
                     sx={{
-                      display: "flex",
-                      gap: 1,
-                      alignItems: "baseline",
+                      fontFamily: "Freesentation-5-Medium",
+                      fontSize: bodyFontSize,
+                      color: "#656565",
+                      lineHeight: 1.8,
+                      wordBreak: "keep-all",
+                      "&::before": {
+                        content: "'·'",
+                        mr: 1,
+                        color: "#555",
+                      },
                     }}
                   >
-                    <Typography
-                      aria-hidden="true"
-                      sx={{
-                        fontFamily: "Freesentation-7-Bold",
-                        fontSize: bodyFontSize,
-                        color: "#888",
-                        flexShrink: 0,
-                      }}
-                    >
-                      ·
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: bodyFontSize,
-                        color: "#2c2c2c",
-                        wordBreak: "keep-all",
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {lang === "en" && item.en ? (
-                        item.en
-                      ) : (
-                        <RenderSegments segments={item.segments} />
-                      )}
-                    </Typography>
+                    {renderSegmentBlock(`business_model.items.${item.id}`)}
                   </Box>
                 ))}
               </Box>
@@ -650,117 +255,134 @@ const HumanoidPackage = () => {
                 gap: isMobile ? 6 : 8,
               }}
             >
-              {package_composition.cards.map((card, idx) => (
-                <Box
-                  key={card.title}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 1.5,
-                  }}
-                >
+              {resource.package_composition.cards.map((card, idx) => {
+                const cardTitle = td(
+                  `package_composition.cards.${card.id}.title`,
+                );
+                const cardSubtitle = tOpt(
+                  `package_composition.cards.${card.id}.subtitle`,
+                );
+                const cardSubtitle2 = tOpt(
+                  `package_composition.cards.${card.id}.subtitle2`,
+                );
+                const cardNote = tOpt(
+                  `package_composition.cards.${card.id}.note`,
+                );
+                const hasBody = tOpt(
+                  `package_composition.cards.${card.id}.body`,
+                );
+
+                return (
                   <Box
-                    sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+                    key={card.id}
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 1.5,
+                    }}
                   >
-                    <Typography
-                      component="h3"
-                      sx={{
-                        fontFamily: "Freesentation-7-Bold",
-                        fontSize: isMobile ? "16px" : "18px",
-                        color: "#2c2c2c",
-                        wordBreak: "keep-all",
-                      }}
+                    <Box
+                      sx={{ display: "flex", flexDirection: "column", gap: 1 }}
                     >
-                      {`${idx + 1}. ${card.title}`}
-                      {card.subtitle && (
-                        <Typography
-                          component="span"
-                          sx={{
-                            fontFamily: "Freesentation-7-Bold",
-                            fontSize: isMobile ? "16px" : "18px",
-                            color: "#2c2c2c",
-                            ml: 1,
-                          }}
-                        >
-                          ({card.subtitle})
-                        </Typography>
-                      )}
-                    </Typography>
-                    {(card as any).subtitle2 && (
                       <Typography
+                        component="h3"
                         sx={{
-                          fontFamily: "Freesentation-7-Bold",
-                          fontSize: isMobile ? "15px" : "17px",
-                          color: "#2c2c2c",
+                          fontFamily: "Galderglynn-Titling-Regular",
+                          fontSize: isMobile ? "16px" : "18px",
+                          color: "#03193F",
                           wordBreak: "keep-all",
-                          pl: 2.5,
+                          textTransform: "uppercase",
                         }}
                       >
-                        {(card as any).subtitle2}
+                        {`${idx + 1}. ${cardTitle}`}
+                        {cardSubtitle && (
+                          <Typography
+                            component="span"
+                            sx={{
+                              fontFamily: "Galderglynn-Titling-Regular",
+                              fontSize: isMobile ? "16px" : "18px",
+                              color: "#2c2c2c",
+                              ml: 1,
+                            }}
+                          >
+                            ({cardSubtitle})
+                          </Typography>
+                        )}
                       </Typography>
-                    )}
-                  </Box>
-
-                  {(card as any).body && (
-                    <Typography
-                      sx={{
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: bodyFontSize,
-                        color: "#2c2c2c",
-                        wordBreak: "keep-all",
-                        lineHeight: 1.8,
-                        whiteSpace: "pre-wrap",
-                        pl: 2.5,
-                      }}
-                    >
-                      {lang === "en" && (card as any).body.en ? (
-                        (card as any).body.en
-                      ) : (
-                        <RenderSegments
-                          segments={(card as any).body.segments}
-                        />
+                      {cardSubtitle2 && (
+                        <Typography
+                          sx={{
+                            fontFamily: "Galderglynn-Titling-Regular",
+                            fontSize: isMobile ? "15px" : "17px",
+                            color: "#03193F",
+                            wordBreak: "keep-all",
+                            pl: 2.5,
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          {cardSubtitle2}
+                        </Typography>
                       )}
-                    </Typography>
-                  )}
+                    </Box>
 
-                  <Box component="ul" sx={{ m: 0, pl: 2, listStyle: "none" }}>
-                    {card.bullets.map((bullet, i) => (
-                      <Box
-                        component="li"
-                        key={i}
+                    {hasBody && (
+                      <Typography
                         sx={{
                           fontFamily: "Freesentation-5-Medium",
                           fontSize: bodyFontSize,
-                          color: "#555",
-                          lineHeight: 1.8,
+                          color: "#2c2c2c",
                           wordBreak: "keep-all",
-                          "&::before": {
-                            content: "'·'",
-                            mr: 1,
-                            color: "#555",
-                          },
+                          lineHeight: 1.8,
+                          whiteSpace: "pre-wrap",
                         }}
                       >
-                        {bullet}
-                      </Box>
-                    ))}
-                  </Box>
+                        {renderSegmentBlock(
+                          `package_composition.cards.${card.id}.body`,
+                        )}
+                      </Typography>
+                    )}
 
-                  {card.note && (
-                    <Typography
-                      sx={{
-                        fontFamily: "Freesentation-5-Medium",
-                        fontSize: isMobile ? "12px" : "16px",
-                        color: "#888",
-                        textDecoration: "underline",
-                        pl: 2,
-                      }}
-                    >
-                      {card.note}
-                    </Typography>
-                  )}
-                </Box>
-              ))}
+                    <Box component="ul" sx={{ m: 0, pl: 2, listStyle: "none" }}>
+                      {card.bullets.map((bullet) => (
+                        <Box
+                          component="li"
+                          key={bullet.id}
+                          sx={{
+                            fontFamily: "Freesentation-5-Medium",
+                            fontSize: bodyFontSize,
+                            color: "#555",
+                            lineHeight: 1.8,
+                            wordBreak: "keep-all",
+                            "&::before": {
+                              content: "'·'",
+                              mr: 1,
+                              color: "#555",
+                            },
+                          }}
+                        >
+                          {td(
+                            `package_composition.cards.${card.id}.bullets.${bullet.id}`,
+                          )}
+                        </Box>
+                      ))}
+                    </Box>
+
+                    {cardNote && (
+                      <Typography
+                        sx={{
+                          fontFamily: "Freesentation-5-Medium",
+                          fontSize: isMobile ? "12px" : "16px",
+                          color: "#888",
+                          textDecoration: "underline",
+                          pl: 2,
+                        }}
+                      >
+                        {cardNote}
+                      </Typography>
+                    )}
+                  </Box>
+                );
+              })}
             </Box>
           </SectionLayout>
 
@@ -768,14 +390,14 @@ const HumanoidPackage = () => {
           <SectionLayout title="Why iVH" isMobile={isMobile}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
               <Box component="ul" sx={{ m: 0, pl: 0, listStyle: "none" }}>
-                {why_ivh.items.map((item, i) => (
+                {resource.why_ivh.items.map((item) => (
                   <Box
                     component="li"
-                    key={i}
+                    key={item.id}
                     sx={{
                       fontFamily: "Freesentation-5-Medium",
                       fontSize: bodyFontSize,
-                      color: "#2c2c2c",
+                      color: "#656565",
                       lineHeight: 1.8,
                       wordBreak: "keep-all",
                       "&::before": {
@@ -785,20 +407,20 @@ const HumanoidPackage = () => {
                       },
                     }}
                   >
-                    {item}
+                    {td(`why_ivh.items.${item.id}`)}
                   </Box>
                 ))}
               </Box>
               <Typography
                 sx={{
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: "Freesentation-5-Medium",
                   fontSize: isMobile ? "16px" : "18px",
-                  color: "#2c2c2c",
+                  color: "#03193F",
                   wordBreak: "keep-all",
                   lineHeight: 1.6,
                 }}
               >
-                {why_ivh.closing}
+                {renderSegmentBlock("why_ivh.closing")}
               </Typography>
             </Box>
           </SectionLayout>
@@ -818,10 +440,11 @@ const HumanoidPackage = () => {
                 sx={{
                   fontFamily: "Freesentation-7-Bold",
                   fontSize: isMobile ? "18px" : "20px",
-                  color: "#2c2c2c",
+                  color: "#03193F",
+                  textTransform: "uppercase",
                 }}
               >
-                {cta.headline}
+                {td("cta.headline")}
               </Typography>
               <Typography
                 sx={{
@@ -833,15 +456,12 @@ const HumanoidPackage = () => {
                   whiteSpace: "pre-wrap",
                 }}
               >
-                {lang === "en" && cta.body.en ? (
-                  cta.body.en
-                ) : (
-                  <RenderSegments segments={cta.body.segments} />
-                )}
+                {renderSegmentBlock("cta.body")}
               </Typography>
             </Box>
           </SectionLayout>
         </Box>
+        <ContactTrainingInfoSection />
       </Box>
     </>
   );

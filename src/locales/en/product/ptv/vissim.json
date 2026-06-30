@@ -1,0 +1,36 @@
+{
+  "seo": {
+    "title": "Vissim - Multi-modal Traffic Simulation Software",
+    "description": "Multi-modal Traffic Simulation Software",
+    "keywords": "Vissim, 교통 시뮬레이션, 소프트웨어, PTV, 미시적 시뮬레이션, 시나리오 관리, 교통 인프라, 성능 평가, 최적화, 데이터 기반 계획 수립, 의사결정"
+  },
+  "vissim_title": "Vissim",
+  "vissim_subTitle": "Multi-modal Traffic Simulation Software",
+  "vissim_name": "Vissim",
+  "vissim_introduction": [
+    "PTV Vissim is the world’s most widely used traffic simulation software, precisely reproducing the movements of all road users at a microscopic level. Through scientifically-grounded simulation and scenario management, it enables the evaluation and optimization of traffic infrastructure performance while supporting data-driven planning and decision-making. Furthermore, it contributes to resolving traffic congestion and emission issues and designing road spaces where diverse modes of transport can coexist harmoniously."
+  ],
+  "features_section_title": "Features",
+  "vissim_features": {
+    "feat-0": {
+      "title": "Micro Traffic Simulation Capabilities",
+      "text": "PTV Vissim provides microscopic simulation features that precisely replicate the movements of various traffic entities—including vehicles, pedestrians, and cyclists—on an individual scale. This allows for the realistic modeling of complex interactions occurring in actual road environments, ensuring high reliability in traffic flow analysis and policy establishment."
+    },
+    "feat-1": {
+      "title": "Urban Space and Infrastructure Design via Pedestrian Simulation",
+      "text": "By incorporating sophisticated pedestrian behavior modeling, the software predicts pedestrian flows within urban spaces to inform infrastructure design. It is particularly effective for various urban planning and safety analyses—such as congestion studies, evacuation scenarios, and accessibility evaluations—contributing to the creation of human-centric urban environments."
+    },
+    "feat-2": {
+      "title": "GUI-Based Traffic Volume Modeling and Analysis",
+      "text": "The intuitive Graphical User Interface (GUI) enables the efficient execution of the entire process, from traffic volume configuration and scenario modeling to results analysis. The ability to visually manipulate complex networks enhances both user convenience and productivity."
+    },
+    "feat-3": {
+      "title": "2D/3D-Based Simulation Rendering and Analysis Tools",
+      "text": "By visualizing simulation results in 2D and 3D environments, users can intuitively grasp traffic flows and infrastructure utilization. Supporting analysis from diverse perspectives, these tools are highly effective for stakeholder communication and report generation."
+    },
+    "feat-4": {
+      "title": "Diverse Driver Models for Realistic Road Environment Replication",
+      "text": "A variety of driver behavior models—incorporating driver tendencies, reaction times, and car-following distances—are provided to realistically reproduce various situations occurring on actual roads. This ensures high accuracy in practical applications such as policy simulation, signal system review, and road design verification."
+    }
+  }
+}

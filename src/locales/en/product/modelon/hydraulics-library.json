@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Hydraulics Library - Securing System Reliability through Accurate Hydraulic Behavior Analysis",
+    "description": "Securing System Reliability through Accurate Hydraulic Behavior Analysis",
+    "keywords": "Hydraulics Library, 유압 시스템, 유압 거동 분석, 건설기계, 산업용 장비, 항공, 자동차, 유압 회로, Modelon, Modelica"
+  },
+  "title": "Hydraulics Library",
+  "subTitle": "Securing System Reliability through Accurate Hydraulic Behavior Analysis",
+  "name": "",
+  "introduction": [
+    "The Hydraulics Library is a comprehensive solution for the design and optimization of hydraulic systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements core components—such as pumps, valves, cylinders, and pipe networks—to replicate actual operating conditions. By analyzing pressure and flow characteristics and verifying control strategies, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various hydraulic circuits, enabling the easy configuration of complex systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as construction machinery, industrial equipment, and aerospace/automotive hydraulic systems, this library is the optimal choice for achieving both improved efficiency and system stability.",
+    "The Hydraulics Library supports high-reliability design decisions by accurately reproducing various hydraulic circuits through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical pump-valve-cylinder configurations to complex networks, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates pressure loss, flow characteristics, and energy efficiency indicators, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}

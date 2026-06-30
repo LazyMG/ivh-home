@@ -1,0 +1,14 @@
+{
+  "seo": {
+    "title": "Hydrogen Library - Integrated simulation library for hydrogen energy systems",
+    "description": "Integrated simulation library for hydrogen energy systems",
+    "keywords": "Hydrogen, 수소, 수소 에너지, 연료전지, 시뮬레이션, Modelica, Dymola"
+  },
+  "title": "Hydrogen Library",
+  "subTitle": "Integrated simulation library for hydrogen energy systems",
+  "name": "",
+  "introduction": [
+    "The Hydrogen Library is a Modelica-based library designed for the integrated modeling and simulation of various hydrogen energy systems, including hydrogen production, storage, supply, and fuel cells. It provides detailed implementations of key components such as hydrogen production (electrolysis, reforming), storage and transportation, fuel cell stacks, and supply infrastructure, and offers broad support for analyzing dynamic behavior, energy flow, efficiency, and control strategy validation under actual operating conditions.",
+    "By interoperating with the entire energy system, this library can be utilized throughout the entire hydrogen system development process—including performance evaluation and optimization in various application fields such as hydrogen-based power generation, mobility, and industrial supply chains, as well as real-time simulation (HiL) and controller development and validation."
+  ]
+}

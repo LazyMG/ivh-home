@@ -1,32 +1,56 @@
-import viswalk from "../../../data/product/ptv/viswalk.json";
-
-import { useSEO } from "../../../hooks/useSEO";
+import resource from "../../../data/product/ptv/viswalk.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const Viswalk = () => {
-  const seoData = useSEO("product/ptv/viswalk", viswalk);
+  const { t } = useTranslation("product/ptv/viswalk" as never);
+  const td = (key: string): string => t(key as never);
 
-  const {
-    viswalk_title,
-    viswalk_subTitle,
-    viswalk_features,
-    viswalk_introduction,
-    viswalk_name,
-    viswalk_pageKey,
-  } = viswalk;
+  const introTexts = t("viswalk_introduction" as never, {
+    returnObjects: true,
+  }) as string[];
+  const introduction = introTexts.map((text) => ({ text }));
+
+  const features = resource.viswalk_features.map((feat, index, arr) => {
+    const imgTexts = t(`viswalk_features.${feat.id}.imgTexts` as never, {
+      returnObjects: true,
+    }) as string[] | string;
+    const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
+    return {
+      ...(feat.imgObj
+        ? {
+            imgObj: feat.imgObj.map((img, i) => ({
+              ...img,
+              ...(imgTextsArr[i] ? { imgText: imgTextsArr[i] } : {}),
+            })),
+          }
+        : {}),
+      textObj: {
+        col: feat.textObj.col,
+        title: td(`viswalk_features.${feat.id}.title`),
+        text: td(`viswalk_features.${feat.id}.text`),
+      },
+      showDivider: index !== arr.length - 1,
+    };
+  });
 
   return (
     <>
-      {/* SEO 메타 태그 */}
-      <SEO {...seoData} />
+      <SEO
+        title={td("seo.title")}
+        description={td("seo.description")}
+        keywords={td("seo.keywords")}
+        ogImage={resource.seo?.ogImage}
+      />
       <LibraryPageTemplate
-        title={viswalk_title}
-        subTitle={viswalk_subTitle}
-        introduction={viswalk_introduction}
-        pageKey={viswalk_pageKey}
-        features={viswalk_features}
-        name={viswalk_name}
+        title={td("viswalk_title")}
+        subTitle={td("viswalk_subTitle")}
+        introduction={introduction}
+        pageKey={resource.viswalk_pageKey}
+        features={features}
+        name={td("viswalk_name")}
+        featuresSectionTitle={td("features_section_title")}
       />
     </>
   );

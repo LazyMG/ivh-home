@@ -31,46 +31,6 @@ interface ProductTextImageBoxProps {
   };
 }
 
-type LocalizedIMOVA = {
-  page_name: string;
-  name: string;
-  title: string;
-  main_image: string;
-  main_image_alt: string;
-  title_image: string;
-  title_image_alt: string;
-  top_video: string;
-  section_titles: {
-    main_function: string;
-    control_system: string;
-    use_case: string;
-  };
-  main_function: {
-    function_title: string;
-    function_description: string;
-    function_image_url: string;
-    function_image_alt: string;
-  }[];
-  control_system: {
-    control_system_topic: string;
-    control_system_description: string;
-    control_system_image_url: string;
-    control_system_image_alt: string;
-  }[];
-  production_line: {
-    production_line_title: string;
-    production_line_image_url: string;
-    production_line_image_url2: string;
-    production_line_list: {
-      production_line_topic: string;
-      production_line_description: string;
-      production_line_color: string;
-      position: Record<string, string>;
-    }[];
-  };
-  technology_spec: IMOVATechnologySpec;
-};
-
 type IMOVATechnologySpec = {
   technology_spec_title: string;
   technology_spec_products: {
@@ -176,6 +136,5 @@ export type {
   ImageBannerProps,
   OutlineProps,
   ProductTextImageBoxProps,
-  LocalizedIMOVA,
   IMOVATechnologySpec,
 };

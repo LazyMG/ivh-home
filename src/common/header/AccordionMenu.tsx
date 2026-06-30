@@ -4,25 +4,20 @@ interface AccordionMenuItem {
   name: string;
   path?: string;
   state?: string;
-  preview_img_path?: string;
-  description?: string;
 }
 
 interface AccordionMenuProps {
   items: AccordionMenuItem[];
   navigate: (path: string) => void;
   onClose: () => void;
-  onItemHover?: (
-    item: AccordionMenuItem | null,
-    position?: { top: number; left: number },
-  ) => void;
+  itemMaxWidth?: string;
 }
 
 export const AccordionMenu = ({
   items,
   navigate,
   onClose,
-  onItemHover,
+  itemMaxWidth = "280px",
 }: AccordionMenuProps) => {
   const handleNavigate = (path?: string) => {
     if (path && path !== "#") {
@@ -75,32 +70,19 @@ export const AccordionMenu = ({
             <Typography
               key={itemIndex}
               onClick={() => handleNavigate(item.path)}
-              onMouseOver={(e) => {
-                e.stopPropagation();
-                if (item.preview_img_path && onItemHover) {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  onItemHover(item, {
-                    top: rect.top,
-                    left: rect.right + 56,
-                  });
-                }
-              }}
-              onMouseLeave={() => {
-                if (item.preview_img_path && onItemHover) {
-                  onItemHover(null);
-                }
-              }}
               sx={{
                 fontSize: "14px",
-                fontFamily: "Freesentation-4-Regular",
-                color: "#797979",
+                fontFamily: "Galderglynn-Titling-Book",
+                color: "#B2B2B2",
                 cursor: "pointer",
+                pl: 1.5,
                 py: 0.5,
-                maxWidth: "280px",
+                maxWidth: itemMaxWidth,
                 wordBreak: "keep-all",
                 "&:hover": {
-                  color: "#179EBD",
+                  color: "#005AD5",
                 },
+                textTransform: "uppercase",
               }}
             >
               {item.name}

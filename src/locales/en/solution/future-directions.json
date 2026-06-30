@@ -1,0 +1,210 @@
+{
+  "pageTitle": "Future Engineering Directions",
+  "color": "#4766FF",
+  "image": "/images/pages/solution/future_engineering_directions.png",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Engineering That Continues to Evolve",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH’s engineering has not been developed with a specific product or industry as its goal."
+        },
+        {
+          "type": "p",
+          "text": "We have evolved **the methods of understanding, designing, verifying, and operating systems.**"
+        },
+        {
+          "type": "p",
+          "text": "And this engineering is still in the process of evolution."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Beyond Products, Toward Enduring Engineering",
+      "content": [
+        { "type": "p", "text": "Industries and technologies change rapidly." },
+        { "type": "p", "text": "Today's products will eventually disappear," },
+        {
+          "type": "p",
+          "text": "but the **right engineering survives even amidst such changes.**"
+        },
+        { "type": "p", "text": "To date, iVH has accumulated:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Modelica-based System Engineering",
+            "ASAM-based Verification & Validation",
+            "Physical AI Engineering"
+          ]
+        },
+        { "type": "p", "text": "Based on these foundations," },
+        {
+          "type": "p",
+          "text": "we have expanded into the Mobility, Manufacturing, Energy, and Building industries."
+        },
+        { "type": "p", "text": "Moving forward," },
+        {
+          "type": "p",
+          "text": "iVH will continue to **evolve with a focus not on products, but on Engineering.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "From Simulation to Operation, From Insight to Action",
+      "content": [
+        {
+          "type": "p",
+          "text": "For future systems, being well-designed is no longer enough."
+        },
+        {
+          "type": "p",
+          "text": "They must be **able to diagnose, judge, and improve themselves during the operational phase.**"
+        },
+        { "type": "p", "text": "iVH is expanding the core of engineering:" },
+        {
+          "type": "bullets",
+          "items": [
+            "From design-centered engineering",
+            "**To operation and decision-making-centered engineering.**"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Digital Twins are no longer just analytical tools"
+        },
+        {
+          "type": "p",
+          "text": "but are becoming **an integral part of operational systems,**"
+        },
+        {
+          "type": "p",
+          "text": "and Physical AI is evolving beyond \"assisting\" judgment to **a technology that shares responsibility for operations.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Scaling Engineering Across Complexity and Criticality",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH’s future focus is on systems that are **more complex, more critical, and require higher levels of safety.**"
+        },
+        { "type": "p", "text": "These include:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Large-scale multi-robot systems",
+            "Complex systems integrating energy, power, storage, and demand",
+            "Safety-critical environments where humans and machines coexist",
+            "Industrial sites where long-term repetitive operation is essential"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In such systems, operations can no longer be sustained by experience and intuition alone."
+        },
+        {
+          "type": "p",
+          "text": "Engineering becomes **the core infrastructure that supports the entire system.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Continuous Standard, Continuous Intelligence",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH believes that the evolution of **engineering cannot be separated from standards.**"
+        },
+        { "type": "p", "text": "Modelica, FMI, and ASAM are not fixed rules," },
+        {
+          "type": "p",
+          "text": "but **common languages** that must evolve alongside industry."
+        },
+        { "type": "p", "text": "Moving forward, iVH will:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Actively participate in international standardization activities",
+            "Reflect domestic industrial requirements in standards",
+            "Implement standards into practical engineering"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Toward Trustworthy Physical AI Systems",
+      "content": [
+        {
+          "type": "p",
+          "text": "AI technology will continue to evolve rapidly."
+        },
+        {
+          "type": "p",
+          "text": "However, iVH’s focus is not on \"smarter AI,\""
+        },
+        {
+          "type": "p",
+          "text": "but on **AI that is trustworthy in the field.**"
+        },
+        {
+          "type": "p",
+          "text": "We continue to advance Physical AI Engineering that can operate in:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Environments where data is insufficient",
+            "Environments with strong physical constraints and safety requirements",
+            "Industrial systems where failure is not an option"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This is because AI must no longer remain a laboratory technology but **become a core technology that operates industries.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "An Open Future, Built on Engineering",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH’s future engineering direction is not limited to a predefined list of industries."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "New mobility systems",
+            "New energy operating structures",
+            "New forms of automation and human-machine collaboration",
+            "Industrial sectors that have not yet been named"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All of these will naturally expand upon the engineering foundations we have accumulated to date."
+        },
+        {
+          "type": "callout",
+          "text": "Industries change,\nbut our engineering that handles systems continues.",
+          "barGradient": "linear-gradient(180deg, #179EBD 0%, #4766FF 96%)",
+          "textGradient": "linear-gradient(30deg, #179EBD 0%, #4766FF 96%)"
+        }
+      ]
+    }
+  ],
+  "closing": {
+    "heading": "Our Direction, in One Sentence",
+    "line1": "iVH does not follow technology.",
+    "line2": "We MOVE Innovation."
+  }
+}

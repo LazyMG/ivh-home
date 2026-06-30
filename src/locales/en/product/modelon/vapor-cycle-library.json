@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Vapor Cycle Library - Maximizing Efficiency through Precision Vapor Cycle Modeling",
+    "description": "Maximizing Efficiency through Precision Vapor Cycle Modeling",
+    "keywords": "Vapor Cycle Library, 증기 사이클, Rankine Cycle, Organic Rankine Cycle, Modelon, Modelica"
+  },
+  "title": "Vapor Cycle Library",
+  "subTitle": "Maximizing Efficiency through Precision Vapor Cycle Modeling",
+  "name": "",
+  "introduction": [
+    "The Vapor Cycle Library is a comprehensive solution for the design and optimization of vapor cycles, moving beyond simple modeling tools. Based on Modelica, it precisely implements various cycles—including the Rankine Cycle and Organic Rankine Cycle (ORC)—to replicate actual operating conditions. By providing efficiency analysis and control strategy verification, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of key components—such as boilers, turbines, condensers, and pumps—enabling the easy configuration of complex systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as power plant design, industrial thermal processes, and renewable energy recovery systems, this library is the optimal choice for achieving both improved energy efficiency and system stability.",
+    "The Vapor Cycle Library supports high-reliability design decisions by accurately reproducing various cycles through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical boiler-turbine-condenser-pump configurations to complex architectures, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates energy balance and efficiency indicators, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "seo": {
+    "title": "Cooling Library - Cooling Circuit Simulation Library",
+    "description": "Modelica-based cooling circuit simulation library for thermal management system design of batteries, electrified powertrains, and electronic devices",
+    "keywords": "Cooling, 쿨링, Modelica, 시뮬레이션, 냉각, 배터리, 전도 파워트레인, 전자장치, 열관리, Dymola"
+  },
+  "title": "Cooling Library",
+  "subTitle": "Modelica-based cooling circuit simulation library for thermal management system design of batteries, electrified powertrains, and electronic devices",
+  "name": "",
+  "introduction": [
+    "The Cooling Library is a specialized library designed to rapidly configure and analyze cooling circuits for thermal management targets—such as battery cells, electric drive systems, and powertrains—covering everything from component sizing to controller development. It allows for the quick construction of circuit models using standard connectors and simple parameter settings, providing seamless compatibility with the Modelica Standard Library. By combining with related libraries such as Battery, Electrified Powertrain, and Brushless DC Drives, users can optimize thermal design from a total system perspective. The library provides high-performance dynamic simulation focused on incompressible single-phase fluids (such as coolants)."
+  ]
+}

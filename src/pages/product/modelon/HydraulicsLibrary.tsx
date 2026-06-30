@@ -1,21 +1,27 @@
-import { useSEO } from "../../../hooks/useSEO";
-
-import hydraulics from "../../../data/product/modelon/hydraulics-library.json";
+import resource from "../../../data/product/modelon/hydraulics-library.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
 import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate";
 
 const HydraulicsLibrary = () => {
-  const seoData = useSEO("product/modelon/hydraulics", hydraulics);
-  const { introduction, subTitle, title, name, pageKey } = hydraulics;
+  const { t } = useTranslation("product/modelon/hydraulics" as never);
+  const introTexts = t("introduction" as never, { returnObjects: true }) as string[];
+  const introduction = introTexts.map((text) => ({ text }));
+
   return (
     <>
-      <SEO {...seoData} />
+      <SEO
+        title={t("seo.title" as never)}
+        description={t("seo.description" as never)}
+        keywords={t("seo.keywords" as never)}
+        ogImage={resource.seo?.ogImage}
+      />
       <LibraryPageTemplate
-        title={title}
-        subTitle={subTitle}
+        title={t("title" as never)}
+        subTitle={t("subTitle" as never)}
         introduction={introduction}
-        pageKey={pageKey}
-        name={name}
+        pageKey={resource.pageKey}
+        name={t("name" as never)}
       />
     </>
   );

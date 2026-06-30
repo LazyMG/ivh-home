@@ -1,0 +1,177 @@
+{
+  "page_name": "Autonomous Mobile Robot",
+  "name": "iMOVA - Autonomous Mobile Robot",
+  "title": "The iMOVA series is a high-payload AMR(Autonomous Mobile Robot) engineered to realize smart manufacturing environments. Through precision autonomous navigation, real-time environmental awareness, and seamless integration with external systems, iMOVA enables unmanned workflows and intelligent process operations across a wide range of industrial sectors.",
+  "main_image_alt": "iMOVA - Autonomous Mobile Robot",
+  "title_image_alt": "iMOVA Logo",
+  "section_titles": {
+    "main_function": "Key Features",
+    "control_system": "Intelligent Fleet Management System",
+    "use_case": "iMOVA Use Case"
+  },
+  "main_function": {
+    "autonomy": {
+      "function_title": "High-Precision Autonomous Driving",
+      "function_description": "Achieves ±10mm level of precision through the fusion of 3D LiDAR and IMU sensors.",
+      "function_image_alt": "High-Precision Autonomous Driving"
+    },
+    "chassis": {
+      "function_title": "Heavy-duty Chassis & Durability",
+      "function_description": "Supports high-load payloads up to 1 ton with a reinforced structure.",
+      "function_image_alt": "Heavy-duty Chassis & Durability"
+    },
+    "task-dispatch": {
+      "function_title": "Intelligent Task Distribution",
+      "function_description": "Optimizes workflows via Task Dispatcher-based automated scheduling.",
+      "function_image_alt": "Intelligent Task Distribution"
+    },
+    "ai-monitoring": {
+      "function_title": "AI-Based Environmental Monitoring",
+      "function_description": "Monitors real-time conditions using integrated sensors for temperature, humidity, dust, and noise.",
+      "function_image_alt": "AI-Based Environmental Monitoring"
+    },
+    "wireless-charging": {
+      "function_title": "Wireless Charging & Energy Optimization",
+      "function_description": "Maximizes energy efficiency through SOC-based autonomous wireless charging.",
+      "function_image_alt": "Wireless Charging & Energy Optimization"
+    }
+  },
+  "control_system": {
+    "operation-monitoring": {
+      "control_system_topic": "AMR Operation & Process Monitoring",
+      "control_system_description": "Monitors real-time location and status of AMRs while tracking environmental conditions via integrated sensors. This allows operators to intuitively manage logistics flow and the production environment at a glance.",
+      "control_system_image_alt": "AMR Operation & Process Monitoring"
+    },
+    "task-allocation": {
+      "control_system_topic": "Automated Task Allocation & Path Optimization",
+      "control_system_description": "Automatically receives task requests and assigns the optimal AMR based on real-time status and location. It generates collision-avoidance routes to ensure safe, high-efficiency operations.",
+      "control_system_image_alt": "Automated Task Allocation & Path Optimization"
+    },
+    "charging-control": {
+      "control_system_topic": "Charging Control & Energy Optimization",
+      "control_system_description": "Determines optimal charging schedules by analyzing battery status, work cycles, and charging station congestion. This maximizes energy efficiency and minimizes operational downtime.",
+      "control_system_image_alt": "Charging Control & Energy Optimization"
+    },
+    "fault-detection": {
+      "control_system_topic": "Fault Detection & Predictive Maintenance",
+      "control_system_description": "Detects and alerts operational faults in real-time while analyzing data patterns to predict potential failures. This enables proactive preventive maintenance to ensure continuous uptime.",
+      "control_system_image_alt": "Fault Detection & Predictive Maintenance"
+    },
+    "ai-security": {
+      "control_system_topic": "AI-Based Environmental & Security Monitoring",
+      "control_system_description": "Utilizes AI to monitor factory conditions and security in real-time, predicting environmental risks for safer and smarter industrial operations.",
+      "control_system_image_alt": "AI-Based Environmental & Security Monitoring"
+    },
+    "external-integration": {
+      "control_system_topic": "Seamless Integration with External Systems (MES, ERP, etc.)",
+      "control_system_description": "Provides flexible integration with MES, ERP, and WMS through standard industrial protocols. This enables unified data management, significantly improving productivity and system responsiveness.",
+      "control_system_image_alt": "Seamless Integration with External Systems (MES, ERP, etc.)"
+    }
+  },
+  "production_line": {
+    "production_line_title": "Secondary Battery Production Line",
+    "production_line_list": {
+      "wireless-charging": {
+        "production_line_topic": "High Speed and Safety Wireless Charging",
+        "production_line_description": "iMOVA provides ultra-fast and highly safe wireless charging technology with powerful 2500W-class performance. Heat is controlled through TMS (Thermal Management System), and charging stability is reinforced by BMS (Battery Management System), creating a fast and secure wireless charging environment."
+      },
+      "high-load-amr": {
+        "production_line_topic": "High-Load Capacity Autonomous Mobile Robot (AMR)",
+        "production_line_description": "Ensures both efficiency and quality in production processes by safely transporting heavy secondary battery electrode materials."
+      },
+      "env-monitoring": {
+        "production_line_topic": "Production Process Environment Monitoring System",
+        "production_line_description": "Data from various sensors mounted on AMRs—such as temperature, humidity, fine dust, and cameras—is transmitted to the central server in real time. When abnormal values are detected, instant alerts are provided to effectively manage potential risks during the process."
+      },
+      "unmanned-line": {
+        "production_line_topic": "Unmanned Secondary Battery Production Line",
+        "production_line_description": "Transforms electrode material transfer and supply processes into AMR-based unmanned operations to maximize operational efficiency. Sensor and AI-based path optimization technology detects obstacles in real time and flexibly adapts to changing environments. Integrated with the central control system, work instructions and data collection are fully automated."
+      },
+      "integrated-control": {
+        "production_line_topic": "Integrated Control System for Autonomous Collaborative Robots",
+        "production_line_description": "Enhances production automation and on-site safety through a control system that monitors and manages multiple AMRs within the factory. iSuite34, integrated with MES, delivers work instructions to AMRs in real time, contributing to process optimization and quality improvement."
+      },
+      "precision-docking": {
+        "production_line_topic": "High-Precision Autonomous Driving and Docking",
+        "production_line_description": "Delivers electrode materials accurately without operator intervention through high-precision autonomous navigation and automatic docking. This automation technology improves process consistency and raises the overall level of production automation."
+      }
+    }
+  },
+  "technology_spec": {
+    "technology_spec_title": "iMOVA Series",
+    "labels": {
+      "tech_spec": "Technical Specifications",
+      "product_standard": "Product Specifications",
+      "color": "Color",
+      "size": "Dimensions (L x W x H)",
+      "weight": "Weight",
+      "box_size": "Cargo Compartment Size",
+      "performance": "Driving Performance",
+      "max_load": "Payload",
+      "speed": "Travel Speed",
+      "motor_performance": "Drive Motor Performance",
+      "motor_rated_output": "Rated Output (Drive Motor)",
+      "permitted_step": "Permissible Floor Step",
+      "permitted_gap_width": "Permissible Floor Gap Width",
+      "max_inclination_angle": "Maximum Climbable Slope",
+      "noise": "Noise",
+      "electrical": "Electrical Specifications",
+      "input_voltage": "Input (Charger)",
+      "output_voltage": "Output (Charger)",
+      "input_voltage_battery": "Input (Robot)",
+      "capacity": "Rated Current",
+      "permitted_voltage": "Permissible Voltage",
+      "environment": "Environmental Specifications",
+      "ip_rating": "IP Rating",
+      "wifi_frequency": "Wi-Fi Frequency",
+      "wifi_current": "Wi-Fi Power",
+      "battery": "Battery Specifications",
+      "lifespan": "Operating Time",
+      "charging_time": "Recharge Time",
+      "environmental_monitoring": "Environmental Monitoring Sensors",
+      "temperature_range": "Temperature Range",
+      "temperature_accuracy": "Temperature Accuracy",
+      "humidity_range": "Humidity Range",
+      "humidity_accuracy": "Humidity Accuracy",
+      "dust_particle_size": "Fine Dust Detectable Particle Size",
+      "dust_concentration_range": "Fine Dust Measurement Range",
+      "dust_range": "Fine Dust Range",
+      "camera_sensor": "Camera Sensor",
+      "camera_static_resolution": "Camera Static Resolution",
+      "application": "Application Fields"
+    },
+    "technology_spec_products": {
+      "imova-200": {
+        "battery": {
+          "lifespan": "approx. 1.8h"
+        },
+        "environmental_monitoring": {
+          "dust": {
+            "particle_size": "1㎛ (Minimum)"
+          }
+        }
+      },
+      "imova-500": {
+        "battery": {
+          "lifespan": "approx. 2.9h"
+        },
+        "environmental_monitoring": {
+          "dust": {
+            "particle_size": "1㎛ (Minimum)"
+          }
+        }
+      },
+      "imova-1000": {
+        "battery": {
+          "lifespan": "approx. 2.9h"
+        },
+        "environmental_monitoring": {
+          "dust": {
+            "particle_size": "1㎛ (Minimum)"
+          }
+        }
+      }
+    },
+    "technology_spec_application": "Smart factory: Automated material transport between processes, logistics automation linked with MES/ERP\nLogistics center / warehouse: Automated picking, packing, and sorting operations\nSemiconductor / battery industry: Unmanned transport between processes\nUnmanned / nighttime automatic transport: Night shift replacement, realization of 24/7 uninterrupted logistics"
+  }
+}

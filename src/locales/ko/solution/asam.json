@@ -1,0 +1,202 @@
+{
+  "pageTitle": "ASAM-based Verification & Validation Engineering",
+  "color": "#984E77",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Standard - driven Verification as Engineering",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 ASAM 표준을 단순히 사용하는 회사가 아닙니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 **ASAM을 기반으로 검증과 검증(Verification & Validation)을 엔지니어링하는 회사**입니다."
+        },
+        {
+          "type": "p",
+          "text": "iVH는 **ASAM의 한국 공식 파트너**로서"
+        },
+        {
+          "type": "p",
+          "text": "국내 산업을 대표하여 ASAM 표준을 전파하고,"
+        },
+        {
+          "type": "p",
+          "text": "글로벌 표준과 한국 산업 사이를 연결하는 역할을 수행하고 있습니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Building the ASAM Ecosystem in Korea",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 ASAM 표준의 국내 정착을 위해"
+        },
+        {
+          "type": "p",
+          "text": "지속적으로 **ASAM Regional Meeting** 및 국내 컨퍼런스를 주최하고,"
+        },
+        {
+          "type": "p",
+          "text": "OEM, Tier 1, 연구기관, 대학을 연결하는 생태계를 구축해 왔습니다."
+        },
+        { "type": "p", "text": "이러한 활동을 통해 iVH는:" },
+        {
+          "type": "bullets",
+          "items": [
+            "ASAM OpenX 계열 표준 인지도 확산",
+            "국내 산업 요구사항의 수렴"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "한국 산업의 목소리를 글로벌 표준에 반영하는 창구 역할을 수행합니다."
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "https://www.youtube.com/embed/-TB1Ut9xgX8?si=pxlIPGX859U1kf0G"
+    },
+    {
+      "type": "section",
+      "title": "From Understanding Standards to Applying Them",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 표준 문서를 해석하는 수준에 머무르지 않습니다."
+        },
+        {
+          "type": "p",
+          "text": "**시험 표준, 모델링 표준, 시나리오 표준을 실제 산업 엔지니어링에 적용**합니다."
+        },
+        {
+          "type": "p",
+          "text": "우리가 다루는 주요 표준 영역은 다음과 같습니다."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "시나리오 기반 검증 표준",
+            "모델링 및 데이터 교환 표준",
+            "시험 및 평가 프로세스 표준"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이 표준들을 단일 도메인에 국한하지 않고,"
+        },
+        {
+          "type": "p",
+          "text": "국내 산업 환경과 규제, 개발 프로세스에 맞게"
+        },
+        {
+          "type": "p",
+          "text": "**실제 사용 가능한 검증 체계로 구현**합니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Verification Beyond Automotive",
+      "content": [
+        {
+          "type": "p",
+          "text": "ASAM은 자동차 산업에서 시작된 표준이지만,"
+        },
+        {
+          "type": "p",
+          "text": "iVH는 그 적용 범위가 **로봇 산업과 미래 시스템 전반으로 확장될 수 있다고 믿습니다.**"
+        },
+        { "type": "p", "text": "iVH는:" },
+        {
+          "type": "bullets",
+          "items": [
+            "자동차 분야에서 축적한 ASAM 기반 검증 경험을 토대로",
+            "자율 로봇, AMR, 스마트 팩토리, 복합 시스템 영역까지",
+            "시뮬레이션 기반 V&V Engineering을 확장하고 있습니다."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이는 단순한 기술 전환이 아니라,"
+        },
+        {
+          "type": "p",
+          "text": "**표준 기반 검증 방법론의 진화**입니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Education and Continuous Research",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 ASAM 표준을 단기 프로젝트 지식으로 소비하지 않습니다."
+        },
+        {
+          "type": "p",
+          "text": "국내 산업 전반의 수준을 끌어올리기 위해"
+        },
+        {
+          "type": "p",
+          "text": "ASAM 표준 교육 프로그램과 지속적인 연구 활동을 수행하고 있습니다."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "국내 기업·연구기관 대상 ASAM 교육",
+            "OpenX 기반 연구 및 스터디 그룹 운영",
+            "국내 요구사항을 반영한 표준 활용 연구"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이를 통해 iVH는"
+        },
+        { "type": "p", "text": "검증이 특정 프로젝트에 종속되지 않고," },
+        {
+          "type": "p",
+          "text": "**산업 전반에 축적·재사용될 수 있는 Engineering 자산**으로 자리 잡도록 합니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Verification & Validation That Evolves",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH의 ASAM based Verification & Validation Engineering은 고정된 방법론이 아닙니다."
+        },
+        {
+          "type": "p",
+          "text": "산업이 변화함에 따라 표준을 해석하고, 확장하고, 진화시킵니다."
+        },
+        {
+          "type": "callout",
+          "text": "표준은 고정된 규칙이 아니라,\n산업과 함께 성장해야 할 공통 언어입니다.",
+          "barGradient": "linear-gradient(180deg, #B14680 10%, #266DEA 100%)",
+          "textGradient": "linear-gradient(90deg, #B14680 10%, #266DEA 100%)"
+        },
+        {
+          "type": "p",
+          "text": "iVH는 이 공통 언어를"
+        },
+        {
+          "type": "p",
+          "text": "자동차를 넘어 로봇과 미래 시스템으로 확장하며"
+        },
+        {
+          "type": "p",
+          "text": "검증 가능한 산업의 다음 단계를 준비합니다."
+        }
+      ]
+    }
+  ]
+}

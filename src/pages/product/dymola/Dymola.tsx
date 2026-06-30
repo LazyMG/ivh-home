@@ -1,35 +1,61 @@
-import dymola from "../../../data/product/dymola/dymola.json";
-import { useSEO } from "../../../hooks/useSEO";
+import resource from "../../../data/product/dymola/dymola.json";
+import { useTranslation } from "react-i18next";
 import SEO from "../../../common/SEO";
 import ProductPageTemplate from "../../../components/product/ProductPageTemplate";
 
 const Dymola = () => {
-  const seoData = useSEO("product/dymola", dymola);
-  const {
-    dymola_mainImg,
-    dymola_mainImg_alt,
-    dymola_title,
-    dymola_subTitle,
-    dymola_text,
-    dymola_features,
-    dymola_libraries,
-    dymola_name,
-    dymola_pageKey,
-  } = dymola;
+  const { t } = useTranslation("product/dymola" as never);
+  const td = (key: string): string => t(key as never);
+
+  const textList = t("dymola_text" as never, { returnObjects: true }) as string[];
+
+  const features = resource.dymola_features.map((feat) => {
+    const imgTexts = t(`dymola_features.${feat.id}.imgTexts` as never, { returnObjects: true }) as string[] | string;
+    const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
+    return {
+      ...(feat.imgObj
+        ? {
+            imgObj: feat.imgObj.map((img, i) => ({
+              ...img,
+              ...(imgTextsArr[i] ? { imgText: imgTextsArr[i] } : {}),
+            })),
+          }
+        : {}),
+      textObj: {
+        col: feat.textObj.col,
+        title: td(`dymola_features.${feat.id}.title`),
+        text: td(`dymola_features.${feat.id}.text`),
+      },
+      ...(("imageLayoutStyle" in feat && feat.imageLayoutStyle) ? { imageLayoutStyle: feat.imageLayoutStyle } : {}),
+    };
+  });
+
+  const libraries = resource.dymola_libraries.map((lib) => ({
+    imgUrl: lib.imgUrl,
+    url: lib.url,
+    text: td(`dymola_libraries.${lib.id}.text`),
+    img_alt: td(`dymola_libraries.${lib.id}.img_alt`),
+  }));
 
   return (
     <>
-      <SEO {...seoData} />
+      <SEO
+        title={td("seo.title")}
+        description={td("seo.description")}
+        keywords={td("seo.keywords")}
+        ogImage={resource.seo?.ogImage}
+      />
       <ProductPageTemplate
-        image={dymola_mainImg}
-        image_alt={dymola_mainImg_alt}
-        title={dymola_title}
-        subTitle={dymola_subTitle}
-        textList={dymola_text}
-        features={dymola_features}
-        name={dymola_name}
-        libraries={dymola_libraries}
-        pageKey={dymola_pageKey}
+        image={resource.dymola_mainImg}
+        image_alt={td("dymola_mainImg_alt")}
+        title={td("dymola_title")}
+        subTitle={td("dymola_subTitle")}
+        textList={textList}
+        features={features}
+        name={td("dymola_name")}
+        libraries={libraries}
+        pageKey={resource.dymola_pageKey}
+        featuresSectionTitle={td("features_section_title")}
       />
     </>
   );

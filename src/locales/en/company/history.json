@@ -1,0 +1,24 @@
+{
+  "seo": {
+    "title": "History - iVH",
+    "description": "Introducing the key milestones of iVH from founding to present.",
+    "keywords": "iVH, History, Company History"
+  },
+  "title": "History",
+  "subtitle": "",
+  "list": {
+    "y2024": [
+      "Acquired Inno-Biz Certification (Innovation Business Certification)",
+      "Renamed to iVH Co., Ltd.",
+      "Established Corporate R&D Center"
+    ],
+    "y2021": [
+      "Headquarters Relocation (Seocho-gu, Seoul)",
+      "Joined ASAM as an Official Member"
+    ],
+    "y2018": ["Joined the Modelica Association as an Official Member"],
+    "y2015": ["Certified as a Venture Business"],
+    "y2014": ["Established Established R&D Department"],
+    "y2013": ["Founded Institute of Vehicle Engineering Co., Ltd."]
+  }
+}

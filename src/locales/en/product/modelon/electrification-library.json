@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Electrification Library - A core solution for electrification architecture design and integrated simulation",
+    "description": "A core solution for electrification architecture design and integrated simulation",
+    "keywords": "Electrification Library, 전동화, 배터리, 다상 모터, 인버터, 부하, 라우팅, Modelon, Modelica"
+  },
+  "title": "Electrification Library",
+  "subTitle": "A core solution for electrification architecture design and integrated simulation",
+  "name": "",
+  "introduction": [
+    "The Electrification Library is a comprehensive solution for the design and optimization of electrification systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements core electrical components—including batteries, inverters/converters, multi-phase motors, loads, and routing—to replicate actual operating conditions. It enables the analysis of dynamic behavior on sub-second time scales from a system integration perspective. Supporting advanced features such as multi-phase modeling and capture of real vs. apparent power phenomena, it provides reliable results during the architecture design and control strategy verification stages.",
+    "The modular structure allows the entire high-voltage circuit to be configured within a single model architecture. It flexibly combines hierarchical modeling at the battery pack, module, and cell levels with component test and verification workflows for electric powertrains. Based on proven scalability, reusability, and multi-domain connectivity (thermal management, vehicle dynamics, etc.) in real-world projects, it integrates seamlessly with simulation environments supporting HIL and real-time computation.",
+    "The Electrification Library is optimized for architecture-level design and integrated simulation of electric drive systems. By providing templates and example models for representative use cases—such as battery characterization, pack thermal management, and motor drive control—it enables the consistent use of the same model assets from initial concept to detailed design and verification. This approach accelerates development speed, reduces iterative tuning costs, and ensures both performance and stability of electrification systems across various industries, including automotive, aerospace, and energy."
+  ]
+}

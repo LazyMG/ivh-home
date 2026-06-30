@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Fuel System Library -",
+    "description": "A powerful tool for reliable fuel supply and control strategy verification",
+    "keywords": "Fuel System Library, 연료 공급, 연료 탱크, 펌프, 밸브, 탱크, 필터, 파이프 네트워크, 항공기 연료 시스템, 자동차 연료 공급, 산업용 엔진, Modelon, Modelica"
+  },
+  "title": "Fuel System Library",
+  "subTitle": "A powerful tool for reliable fuel supply and control strategy verification",
+  "name": "",
+  "introduction": [
+    "The Fuel System Library is a comprehensive solution for the design and optimization of aircraft and vehicle fuel systems, moving beyond simple modeling tools. Based on Modelica, it precisely implements core components—such as pumps, valves, tanks, filters, and pipe networks—to replicate actual operating conditions. By providing fuel supply stability analysis and control strategy verification, it delivers reliable results from the initial design stage through to operation.",
+    "The modular structure allows for the free combination of various fuel circuits, enabling the easy configuration of complex systems. Furthermore, it supports real-time simulation, allowing users to rapidly iterate through performance impacts based on parameter changes and controller tuning, thereby accelerating development speed and reducing costs. Proven in diverse applications such as aircraft fuel systems, automotive fuel supply, and industrial engines, this library is the optimal choice for achieving both improved efficiency and system stability.",
+    "The Fuel System Library supports high-reliability design decisions by accurately reproducing various fuel supply architectures through physics-based modeling. Thanks to the modular component structure, users can flexibly combine everything from typical pump-valve-tank configurations to complex networks, while continuously comparing the effects of configuration changes on performance and stability within the same model. It also systematically calculates key indicators such as fuel flow rate, pressure loss, and system response characteristics, providing the evidence needed for design optimization by quantifying the sensitivity and stability of controller parameters. Real-time simulation maximizes development efficiency by allowing rapid repetition of control logic tuning and operating condition sweeping."
+  ]
+}

@@ -9,7 +9,7 @@ import {
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
 
-import contact from "../../data/company/contact.json";
+import { useTranslation } from "react-i18next";
 import {
   validateEmail,
   validatePhone,
@@ -23,6 +23,8 @@ import { customerService } from "../../service/customerService";
 import SEO from "../../common/SEO";
 import PrivacyPolicyIcon from "../../components/support/PrivacyPolicyIcon";
 import ScrollButton from "../../common/ScrollButton";
+import BreadScrum from "../../common/BreadScrum";
+import resource from "../../data/company/contact.json";
 
 interface ContactFormType {
   company: string;
@@ -36,6 +38,8 @@ interface ContactFormType {
 }
 
 const Contact = () => {
+  const { t } = useTranslation("company/contact");
+  const contactTexts = t("texts", { returnObjects: true }) as string[];
   const [submitStatus, setSubmitStatus] = useState<
     "loading" | "success" | "error" | null
   >(null);
@@ -46,7 +50,7 @@ const Contact = () => {
     register,
     getValues,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
   } = useForm<ContactFormType>({
     mode: "onChange",
@@ -99,16 +103,17 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Contact - iVH 문의하기"
-        description="iVH에 제품 및 솔루션 관련 문의를 남겨주세요. 빠르게 답변 드리겠습니다."
-        keywords="iVH, 문의, Contact, 상담, 제품 문의"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
         canonical="https://ivh.co.kr/company/contact"
       />
       <Box
         component="main"
-        sx={(theme) => ({
-          ...theme.customStyles.contactMainContainer,
-        })}
+        sx={[
+          (theme) => ({ ...theme.customStyles.contactMainContainer }),
+          { position: "relative" },
+        ]}
       >
         <ScrollButton />
 
@@ -117,6 +122,10 @@ const Contact = () => {
             ...theme.customStyles.contactTopContainer,
           })}
         >
+          <BreadScrum
+            pageKey="contact"
+            sx={{ position: "absolute", top: "8px", right: "8%" }}
+          />
           {/* 상단 영역: 제목 + 이미지 */}
           <Box
             sx={(theme) => ({
@@ -125,58 +134,24 @@ const Contact = () => {
               alignItems: "center",
               [theme.breakpoints.up("tablet")]: {
                 flexDirection: "row",
-                alignItems: "flex-start",
+                alignItems: "center",
+                justifyContent: "space-between",
+                width: "100%",
+                mt: 4,
+                gap: 4,
               },
             })}
           >
-            {/* 왼쪽 영역: 제목과 제품 둘러보기 링크 */}
             <Box
-              sx={(theme) => ({
-                ...theme.customStyles.contactTitleContainer,
-              })}
-            >
-              <Typography
-                variant="contactTitleFont"
-                component="h1"
-                sx={{ wordBreak: "keep-all" }}
-              >
-                {contact.contact_title}
-              </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                {contact.contact_texts.map((text, index) => (
-                  <Typography
-                    key={index}
-                    sx={{
-                      fontFamily: "Freesentation-4-Regular",
-                      fontSize: "16px",
-                      color: "#2A2A2A",
-                    }}
-                  >
-                    {text}
-                  </Typography>
-                ))}
-              </Box>
-            </Box>
-            <Box
-              sx={(theme) => ({
-                width: "100%",
+              sx={{
                 display: "flex",
-                justifyContent: "flex-end",
                 mb: 3,
-                [theme.breakpoints.up("tablet")]: {
-                  width: "auto",
-                  marginLeft: "-20%",
-                  marginBottom: 0,
-                },
-                [theme.breakpoints.up("desktop")]: {
-                  marginLeft: "-15%",
-                },
-              })}
+              }}
             >
               <Box
                 component="img"
-                src={contact.contact_imgUrl}
-                alt={contact.contact_img_alt}
+                src={resource.imgUrl}
+                alt={t("img_alt")}
                 loading="lazy"
                 sx={(theme) => ({
                   width: "80%",
@@ -191,7 +166,51 @@ const Contact = () => {
                 })}
               />
             </Box>
+            <Box
+              sx={(theme) => ({
+                ...theme.customStyles.contactTitleContainer,
+              })}
+            >
+              <Typography
+                variant="contactTitleFont"
+                component="h1"
+                sx={{
+                  wordBreak: "keep-all",
+                  width: "90%",
+                  background:
+                    "linear-gradient(90deg, #003B8D 0%, #66BAFF 100%)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  color: "transparent",
+                }}
+              >
+                {t("title")}
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                {contactTexts.map((text, index) => (
+                  <Typography
+                    key={index}
+                    sx={{
+                      fontFamily: "Freesentation-4-Regular",
+                      fontSize: "18px",
+                      color: "#656565",
+                    }}
+                  >
+                    {text}
+                  </Typography>
+                ))}
+              </Box>
+            </Box>
           </Box>
+
+          {/* 점선 구분선 */}
+          <Box
+            sx={{
+              width: "100%",
+              borderTop: "1px dashed #C4C4C4",
+            }}
+          />
 
           {/* 하단 영역: 문의 폼 */}
           <Box
@@ -365,7 +384,7 @@ const Contact = () => {
                           sx={(theme) => ({
                             ...theme.customStyles.contactformControlLabel,
                             "&.Mui-checked": {
-                              color: "#267B65",
+                              color: "#03193F",
                             },
                           })}
                         />
@@ -373,13 +392,13 @@ const Contact = () => {
                       label={
                         <Typography
                           sx={{
-                            fontSize: "14px",
+                            fontSize: "16px",
                             fontFamily: "Freesentation-5-Medium",
-                            color: "#111827", // gray-900
+                            color: "#8D8D8D", // gray-900
                             cursor: "pointer",
                           }}
                         >
-                          {contact.products_link.checkbox_text}
+                          {t("checkbox_text")}
                         </Typography>
                       }
                     />
@@ -396,7 +415,7 @@ const Contact = () => {
               <PrivacyPolicyIcon />
             </Box>
 
-            {/* 문의하기 버튼 */}
+            {/* 신청하기 버튼 */}
             <Box
               sx={(theme) => ({
                 ...theme.customStyles.contactFormFullWidthField,
@@ -410,12 +429,11 @@ const Contact = () => {
             >
               <Button
                 type="submit"
-                disabled={!isValid}
                 sx={(theme) => ({
                   ...theme.customStyles.contactButton,
                 })}
               >
-                문의하기
+                신청하기
               </Button>
             </Box>
           </Box>

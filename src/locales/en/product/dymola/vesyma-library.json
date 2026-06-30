@@ -1,0 +1,13 @@
+{
+  "seo": {
+    "title": "VeSyMa Library - Integrated architecture for vehicle system simulation",
+    "description": "Integrated architecture for vehicle system simulation",
+    "keywords": "VeSyMa, 차량, 도로 주행 차량 시스템, 시스템, 모델링, Modelica, Dymola"
+  },
+  "title": "VeSyMa Library",
+  "subTitle": "Integrated architecture for vehicle system simulation",
+  "name": "",
+  "introduction": [
+    "The VeSyMA Library is a core Modelica library for the modeling and performance analysis of road vehicle systems. Based on system-level definitions including vehicle thermal, hybrid, and electric propulsion systems, transmissions, and drivetrains, this library is designed to predict fuel consumption, emissions, and dynamic behavior according to standard or user-defined driving cycles. Rather than being a single library, VeSyMA serves as the foundation for specialized Modelica libraries such as suspension, powertrain, and engine, supporting vehicle system development from early stages to detailed analysis. Through this, engineers can utilize multi-domain simulation to quickly and accurately evaluate vehicle performance, compare various design alternatives, and efficiently perform electrified powertrain development and vehicle dynamics analysis."
+  ]
+}

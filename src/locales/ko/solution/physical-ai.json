@@ -1,0 +1,221 @@
+{
+  "pageTitle": "Physical AI Engineering",
+  "color": "#D58A48",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "AI as an Engineering Discipline",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 AI를 단기간의 기술 트렌드로 바라보지 않습니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 **오래전부터 AI를 시스템 엔지니어링의 한 요소로 연구해 왔으며,**"
+        },
+        {
+          "type": "p",
+          "text": "각 산업의 특성과 제약 조건에 맞는 **최적의 AI 기반 해결책**을 설계해 왔습니다."
+        },
+        {
+          "type": "p",
+          "text": "iVH의 Physical AI Engineering은"
+        },
+        {
+          "type": "p",
+          "text": "알고리즘 구현을 넘어,"
+        },
+        {
+          "type": "p",
+          "text": "**실제 물리 시스템 안에서 안전하고 신뢰성 있게 동작하는 AI를 설계하는 것**을 의미합니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Flexible AI Across Industrial Domains",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 단일 산업에 특화된 AI 회사가 아닙니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 **여러 산업에 공통적으로 적용 가능한 Physical AI 핵심 기술**을 보유하고 있으며,"
+        },
+        {
+          "type": "p",
+          "text": "이를 각 산업 환경에 맞게 확장합니다."
+        },
+        { "type": "p", "text": "주요 적용 분야는 다음과 같습니다." },
+        {
+          "type": "bullets",
+          "items": [
+            "Mobility 제어 및 자율 시스템",
+            "공장 물류 및 통합 관제(AMR, 협동로봇, MES 연계)",
+            "NDT(비파괴 검사) 판독 및 품질 평가",
+            "에너지·설비 운영 및 최적 제어"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "서로 다른 산업처럼 보이지만,"
+        },
+        {
+          "type": "p",
+          "text": "이 모든 영역은 **물리 시스템·센서·제어·운영 판단**이 결합된 문제이며,"
+        },
+        {
+          "type": "p",
+          "text": "iVH는 이 구조를 공통의 Engineering 관점으로 다룹니다."
+        },
+        {
+          "type": "subBlock",
+          "content": [
+            {
+              "type": "p",
+              "text": "iVH는 Modelica 기반 Digital Twin과 AI를 결합하는 접근을 지속적으로 시도하고 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "이는 데이터 기반 AI의 한계를 극복하기 위한 핵심 전략입니다."
+            },
+            {
+              "type": "p",
+              "text": "현장 데이터가 충분하지 않거나,"
+            },
+            {
+              "type": "p",
+              "text": "위험·비용·시간 문제로 실험이 제한되는 경우에도"
+            },
+            { "type": "p", "text": "Digital Twin을 통해:" },
+            {
+              "type": "bullets",
+              "items": [
+                "물리 거동을 재현하고",
+                "다양한 시나리오 데이터를 생성하며",
+                "AI 학습 및 검증을 사전에 수행할 수 있습니다."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "이러한 **Sim to Real 기반 Physical AI** 접근은"
+            },
+            {
+              "type": "p",
+              "text": "iVH가 데이터 부족 환경에서도 안정적인 AI 시스템을 설계할 수 있게 합니다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Safety - Critical Physical AI",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH의 Physical AI Engineering은 산업 안전 전제 위에서 설계됩니다."
+        },
+        {
+          "type": "p",
+          "text": "우리는 AI가 단독으로 판단하는 구조가 아니라,"
+        },
+        {
+          "type": "p",
+          "text": "시스템 수준에서 제어·검증·감시가 포함된 AI를 설계합니다."
+        },
+        { "type": "p", "text": "특히:" },
+        {
+          "type": "bullets",
+          "items": [
+            "사람과 로봇이 공존하는 제조 현장",
+            "중량물·고위험 설비가 포함된 공정",
+            "장시간 연속 운용이 필요한 시스템"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "과 같은 환경에서 Physical AI는"
+        },
+        {
+          "type": "p",
+          "text": "**정확성뿐 아니라 신뢰성과 안전성**을 반드시 확보해야 합니다."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Understanding the Core of AI — and Evolving It",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH는 AI의 본질을 이해하는 회사입니다."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "데이터가 충분할 때의 최적 전략",
+            "데이터가 부족할 때의 대응 방법",
+            "물리 모델과 데이터를 결합하는 방법",
+            "현장 적용 과정에서 발생하는 불확실성 관리"
+          ]
+        },
+        { "type": "p", "text": "이 모든 요소를 고려하여" },
+        {
+          "type": "p",
+          "text": "**AI를 Engineering 체계 안에서 설계·검증·운영**합니다."
+        },
+        {
+          "type": "p",
+          "text": "Physical AI는 완성된 기술이 아니라,"
+        },
+        {
+          "type": "p",
+          "text": "iVH가 **지속적으로 발전시키는 Engineering 역량**입니다."
+        },
+        {
+          "type": "callout",
+          "text": "AI는 진화하고,\nPhysical AI는 현장에서 살아남아야 합니다.",
+          "barGradient": "linear-gradient(180deg, #D58A48 34%, #179EBD 78%)",
+          "textGradient": "linear-gradient(30deg, #D58A48 34%, #179EBD 78%)"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "We Continue to Evolve",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH의 Physical AI Engineering은"
+        },
+        {
+          "type": "p",
+          "text": "지금의 제품이나 산업에 머무르지 않습니다."
+        },
+        {
+          "type": "p",
+          "text": "Mobility, Smart Factory, Energy, Safety critical Systems로"
+        },
+        {
+          "type": "p",
+          "text": "적용 영역은 계속 확장되고 있으며,"
+        },
+        {
+          "type": "p",
+          "text": "기술은 실제 현장을 통해 끊임없이 검증되고 진화합니다."
+        },
+        {
+          "type": "p",
+          "text": "이것이 iVH가 Physical AI를"
+        },
+        {
+          "type": "p",
+          "text": "Core Engineering Capability로 정의하는 이유입니다."
+        }
+      ]
+    }
+  ]
+}

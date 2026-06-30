@@ -1,91 +1,69 @@
 {
-  "partner_image": "/images/pages/company/company_partner.png",
-  "partner_color": "#179EBD",
-  "partner_image_position": "20% 50%",
-  "partner_partner": "Partner",
-  "partner_partnerList": [
+  "image": "/images/pages/company/company_partner.png",
+  "color": "#179EBD",
+  "image_position": "20% 50%",
+  "partnerList": [
     {
-      "src": "/images/pages/company/partner/partner_dassaultsystems.svg",
-      "alt": "Partners - Dassault Systems CI"
+      "id": "dassault",
+      "src": "/images/pages/company/partner/partner_dassaultsystems.svg"
     },
     {
-      "src": "/images/pages/company/partner/partner_tlk.svg",
-      "alt": "Partners - TLK CI"
+      "id": "tlk",
+      "src": "/images/pages/company/partner/partner_tlk.svg"
     },
     {
-      "src": "/images/pages/company/partner/partner_modelon.svg",
-      "alt": "Partners - Modelon CI"
+      "id": "modelon",
+      "src": "/images/pages/company/partner/partner_modelon.svg"
     },
     {
-      "src": "/images/pages/company/partner/partner_modelica.svg",
-      "alt": "Partners - Modelica CI"
+      "id": "modelica",
+      "src": "/images/pages/company/partner/partner_modelica.svg"
     },
     {
-      "src": "/images/pages/company/partner/partner_asammember.svg",
-      "alt": "Partners - ASAM CI"
+      "id": "asam",
+      "src": "/images/pages/company/partner/partner_asammember.svg"
     },
     {
-      "src": "/images/pages/company/partner/partner_edi.svg",
-      "alt": "Partners - EDI CI"
+      "id": "edi",
+      "src": "/images/pages/company/partner/partner_edi.svg"
     },
     {
-      "src": "/images/pages/company/partner/partner_hexagon.svg",
-      "alt": "Partners - Hexagon CI"
+      "id": "cadence",
+      "src": "/images/pages/company/partner/partner_hexagon.svg"
     },
     {
-      "src": "/images/pages/company/partner/partner_ptvgroup.svg",
-      "alt": "Partners - PTV Group CI"
+      "id": "ptv",
+      "src": "/images/pages/company/partner/partner_ptvgroup.svg"
     }
   ],
-  "partner_customer": "Customer",
-  "partner_customerList": {
+  "customerList": {
     "customer_company": [
       {
         "layout": "space-between",
         "list": [
           {
             "src": "/images/pages/company/customer/1.svg",
-            "maxWidth": "12%",
+            "maxWidth": "10%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/2.png",
-            "maxWidth": "18%",
+            "maxWidth": "14%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/3.png",
-            "maxWidth": "18%",
+            "maxWidth": "14%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/4.webp",
-            "maxWidth": "16%",
+            "maxWidth": "12%",
             "alt": ""
-          }
-        ]
-      },
-      {
-        "layout": "space-between",
-        "list": [
+          },
           {
             "src": "/images/pages/company/customer/5.svg",
-            "maxWidth": "20%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/6.png",
-            "maxWidth": "8%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/7.png",
             "maxWidth": "16%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/8.svg",
-            "maxWidth": "14%",
             "alt": ""
           }
         ]
@@ -94,23 +72,33 @@
         "layout": "space-between",
         "list": [
           {
-            "src": "/images/pages/company/customer/9.svg",
-            "maxWidth": "14%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/10.png",
+            "src": "/images/pages/company/customer/6.png",
             "maxWidth": "6%",
             "alt": ""
           },
           {
-            "src": "/images/pages/company/customer/11.png",
-            "maxWidth": "14%",
+            "src": "/images/pages/company/customer/7.png",
+            "maxWidth": "12%",
             "alt": ""
           },
           {
-            "src": "/images/pages/company/customer/12.svg",
-            "maxWidth": "18%",
+            "src": "/images/pages/company/customer/8.svg",
+            "maxWidth": "12%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/9.svg",
+            "maxWidth": "12%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/10.png",
+            "maxWidth": "4%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/11.png",
+            "maxWidth": "12%",
             "alt": ""
           }
         ]
@@ -120,22 +108,32 @@
         "list": [
           {
             "src": "/images/pages/company/customer/13.svg",
+            "maxWidth": "14%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/12.svg",
             "maxWidth": "16%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/14.png",
-            "maxWidth": "12%",
+            "maxWidth": "8%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/15.svg",
-            "maxWidth": "16%",
+            "maxWidth": "12%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/16.png",
-            "maxWidth": "18%",
+            "maxWidth": "14%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/17.png",
+            "maxWidth": "10%",
             "alt": ""
           }
         ]
@@ -144,43 +142,93 @@
         "layout": "space-between",
         "list": [
           {
-            "src": "/images/pages/company/customer/17.png",
-            "maxWidth": "14%",
-            "alt": ""
-          },
-          {
             "src": "/images/pages/company/customer/18.jpg",
-            "maxWidth": "16%",
+            "maxWidth": "10%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/19.jpg",
-            "maxWidth": "16%",
+            "maxWidth": "12%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/20.png",
-            "maxWidth": "16%",
+            "maxWidth": "12%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/21.png",
+            "maxWidth": "12%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/22.jpg",
+            "maxWidth": "24%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/23.png",
+            "maxWidth": "14%",
             "alt": ""
           }
         ]
       },
       {
-        "layout": "start",
+        "layout": "space-between",
         "list": [
           {
-            "src": "/images/pages/company/customer/21.png",
+            "src": "/images/pages/company/customer/24.png",
+            "maxWidth": "14%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/25.png",
+            "maxWidth": "18%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/26.png",
             "maxWidth": "16%",
             "alt": ""
           },
           {
-            "src": "/images/pages/company/customer/22.jpg",
-            "maxWidth": "30%",
+            "src": "/images/pages/company/customer/27.svg",
+            "maxWidth": "14%",
             "alt": ""
           },
           {
-            "src": "/images/pages/company/customer/23.png",
+            "src": "/images/pages/company/customer/28.svg",
+            "maxWidth": "20%",
+            "alt": ""
+          }
+        ]
+      },
+      {
+        "layout": "space-between",
+        "list": [
+          {
+            "src": "/images/pages/company/customer/29.svg",
+            "maxWidth": "20%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/30.png",
+            "maxWidth": "16%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/31.svg",
             "maxWidth": "18%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/32.svg",
+            "maxWidth": "18%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/33.svg",
+            "maxWidth": "16%",
             "alt": ""
           }
         ]
@@ -191,97 +239,25 @@
         "layout": "space-between",
         "list": [
           {
-            "src": "/images/pages/company/customer/24.png",
-            "maxWidth": "18%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/25.png",
-            "maxWidth": "22%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/26.png",
-            "maxWidth": "20%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/27.svg",
-            "maxWidth": "18%",
-            "alt": ""
-          }
-        ]
-      },
-      {
-        "layout": "space-between",
-        "list": [
-          {
-            "src": "/images/pages/company/customer/28.svg",
-            "maxWidth": "28%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/29.svg",
-            "maxWidth": "28%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/30.png",
-            "maxWidth": "22%",
-            "alt": ""
-          }
-        ]
-      },
-      {
-        "layout": "space-between",
-        "list": [
-          {
-            "src": "/images/pages/company/customer/31.svg",
-            "maxWidth": "28%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/32.svg",
-            "maxWidth": "28%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/33.svg",
-            "maxWidth": "24%",
-            "alt": ""
-          }
-        ]
-      },
-      {
-        "layout": "space-between",
-        "list": [
-          {
             "src": "/images/pages/company/customer/34.png",
-            "maxWidth": "30%",
+            "maxWidth": "18%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/35.png",
-            "maxWidth": "16%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/36.png",
             "maxWidth": "14%",
             "alt": ""
           },
           {
-            "src": "/images/pages/company/customer/37.jpg",
-            "maxWidth": "20%",
+            "src": "/images/pages/company/customer/36.png",
+            "maxWidth": "10%",
             "alt": ""
-          }
-        ]
-      }
-    ],
-    "customer_education": [
-      {
-        "layout": "space-between",
-        "list": [
+          },
+          {
+            "src": "/images/pages/company/customer/37.jpg",
+            "maxWidth": "12%",
+            "alt": ""
+          },
           {
             "src": "/images/pages/company/customer/38.png",
             "maxWidth": "6%",
@@ -289,17 +265,12 @@
           },
           {
             "src": "/images/pages/company/customer/39.jpg",
-            "maxWidth": "16%",
+            "maxWidth": "12%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/40.png",
-            "maxWidth": "16%",
-            "alt": ""
-          },
-          {
-            "src": "/images/pages/company/customer/41.png",
-            "maxWidth": "18%",
+            "maxWidth": "12%",
             "alt": ""
           }
         ]
@@ -308,38 +279,45 @@
         "layout": "space-between",
         "list": [
           {
+            "src": "/images/pages/company/customer/41.png",
+            "maxWidth": "14%",
+            "alt": ""
+          },
+          {
             "src": "/images/pages/company/customer/42.jpg",
-            "maxWidth": "18%",
+            "maxWidth": "14%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/43.png",
-            "maxWidth": "18%",
+            "maxWidth": "14%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/44.jpg",
-            "maxWidth": "18%",
+            "maxWidth": "14%",
             "alt": ""
           },
           {
             "src": "/images/pages/company/customer/45.jpg",
-            "maxWidth": "22%",
+            "maxWidth": "16%",
+            "alt": ""
+          },
+          {
+            "src": "/images/pages/company/customer/46.png",
+            "maxWidth": "16%",
             "alt": ""
           }
         ]
-      },
+      }
+    ],
+    "customer_education": [
       {
         "layout": "start",
         "list": [
           {
-            "src": "/images/pages/company/customer/46.png",
-            "maxWidth": "22%",
-            "alt": ""
-          },
-          {
             "src": "/images/pages/company/customer/47.svg",
-            "maxWidth": "22%",
+            "maxWidth": "18%",
             "alt": ""
           }
         ]

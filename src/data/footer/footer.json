@@ -2,8 +2,8 @@
   "companyInfo": {
     "companyName": "주식회사 아이브이에이치",
     "address": "서울특별시 서초구 양재천로 17길 19, 2층,3층 (양재동, 태암빌딩)",
-    "phone": "T. 02-577-5010",
-    "email": "E. ivh@ivh.co.kr",
+    "phone": "02-577-5010",
+    "email": "ivh@ivh.co.kr",
     "copyright": "© iVH All rights reserved.",
     "socialMedia": {
       "youtubeLogoBlack": "/images/header/youtube_black.png",
@@ -20,12 +20,12 @@
         { "name": "iSuite", "path": "/product/isuite" },
         { "name": "Dymola", "path": "/product/dymola" },
         { "name": "Modelon", "path": "/product/modelon" },
-        { "name": "Virtual Test Driving", "path": "/product/vtd" },
+        { "name": "VTD", "path": "/product/vtd" },
         { "name": "PTV", "path": "/product/ptv" }
       ]
     },
     {
-      "title": "SOLUTIONS",
+      "title": "SOLUTION",
       "items": [
         { "name": "AI Innovation Hub", "path": "/solution/aIinnovationhub" },
         { "name": "BEMS", "path": "/solution/bems" },

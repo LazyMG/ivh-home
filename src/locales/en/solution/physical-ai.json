@@ -1,0 +1,177 @@
+{
+  "pageTitle": "Physical AI Engineering",
+  "color": "#D58A48",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "AI as an Engineering Discipline",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH does not view AI as a short-term technology trend."
+        },
+        {
+          "type": "p",
+          "text": "**We have long researched AI as an integral element of system engineering,** designing optimal AI-based solutions tailored to the specific characteristics and constraints of each industry."
+        },
+        {
+          "type": "p",
+          "text": "For iVH, **Physical AI Engineering** goes beyond algorithm implementation; it means **designing AI that operates safely and reliably within actual physical systems.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Flexible AI Across Industrial Domains",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH is not an AI company specialized in a single industry."
+        },
+        {
+          "type": "p",
+          "text": "We possess **core Physical AI technologies that are commonly applicable across various sectors,**"
+        },
+        {
+          "type": "p",
+          "text": "and we expand them to fit each industrial environment."
+        },
+        { "type": "p", "text": "Our key application areas include:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Mobility Control and Autonomous Systems",
+            "Factory Logistics and Integrated Control (AMR, Collaborative Robots, MES Integration)",
+            "NDT (Non-Destructive Testing) Interpretation and Quality Evaluation",
+            "Energy and Facility Operations and Optimal Control"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "While these may appear to be distinct industries,"
+        },
+        {
+          "type": "p",
+          "text": "they all involve problems where physical systems, sensors, control, and operational decision-making are integrated."
+        },
+        {
+          "type": "p",
+          "text": "iVH addresses this structure from a common Engineering perspective."
+        },
+        {
+          "type": "subBlock",
+          "content": [
+            {
+              "type": "p",
+              "text": "iVH continuously **strives to combine Modelica-based Digital Twins with AI.**"
+            },
+            {
+              "type": "p",
+              "text": "This is a core strategy to overcome the limitations of data-driven AI."
+            },
+            {
+              "type": "p",
+              "text": "Even in cases where field data is insufficient or experiments are limited due to risks, costs, or time constraints,"
+            },
+            { "type": "p", "text": "we can utilize Digital Twins to:" },
+            {
+              "type": "bullets",
+              "items": [
+                "Reproduce physical behaviors",
+                "Generate data for various scenarios",
+                "Perform AI training and verification in advance."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "This **Sim-to-Real based Physical AI** approach enables iVH to design stable AI systems even in data-scarce environments."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Safety - Critical Physical AI",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH’s Physical AI Engineering is designed with industrial safety as its core premise."
+        },
+        {
+          "type": "p",
+          "text": "We do not design structures where AI makes isolated decisions; instead, we engineer AI that includes control, verification, and monitoring at the system level."
+        },
+        { "type": "p", "text": "Especially in environments such as:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Manufacturing sites where humans and robots coexist",
+            "Processes involving heavy loads or high-risk equipment",
+            "Systems requiring long-term continuous operation"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Physical AI must ensure **not only accuracy but also absolute reliability and safety.**"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Understanding the Core of AI — and Evolving It",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH is a company that understands the essence of AI."
+        },
+        {
+          "type": "p",
+          "text": "**We design, verify, and operate AI within an engineering framework,** considering all of the following factors:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Optimal strategies when data is sufficient",
+            "Countermeasures when data is insufficient",
+            "Methods for combining physical models with data",
+            "Uncertainty management during on-site application"
+          ]
+        },
+        { "type": "p", "text": "Physical AI is not a finished technology," },
+        {
+          "type": "p",
+          "text": "but **an engineering capability that iVH continuously evolves.**"
+        },
+        {
+          "type": "callout",
+          "text": "AI evolves,\nand Physical AI must survive in the field.",
+          "barGradient": "linear-gradient(180deg, #D58A48 34%, #179EBD 78%)",
+          "textGradient": "linear-gradient(30deg, #D58A48 34%, #179EBD 78%)"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "We Continue to Evolve",
+      "content": [
+        {
+          "type": "p",
+          "text": "iVH’s Physical AI Engineering does not stop at current products or industries."
+        },
+        {
+          "type": "p",
+          "text": "Its scope of application continues to expand across Mobility, Smart Factory, Energy, and Safety-critical Systems,"
+        },
+        {
+          "type": "p",
+          "text": "while the technology is constantly verified and evolved through real-world fields."
+        },
+        {
+          "type": "p",
+          "text": "This is why iVH defines Physical AI as its **Core Engineering Capability.**"
+        }
+      ]
+    }
+  ]
+}

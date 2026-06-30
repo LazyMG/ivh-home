@@ -1,0 +1,14 @@
+{
+  "seo": {
+    "title": "Electrified Powertrains Library - Integrated simulation library for electrified powertrain systems",
+    "description": "Integrated simulation library for electrified powertrain systems",
+    "keywords": "Electrified Powertrains, 전동 파워트레인, 시뮬레이션, Dymola"
+  },
+  "title": "Electrified Powertrains Library",
+  "subTitle": "Integrated simulation library for electrified powertrain systems",
+  "name": "",
+  "introduction": [
+    "The Electrified Powertrains Library is a Modelica-based library designed for the integrated modeling and simulation of various electrified powertrain systems, including electric vehicles (EV) and hybrids. It provides detailed implementations of key components such as motors, inverters, batteries, and reducers, and offers broad support for analyzing dynamic behavior, energy flow, efficiency, and control strategy validation under actual driving conditions.",
+    "By interoperating with the full vehicle system, this library enables the evaluation of various performance indicators—including driving performance, energy consumption, regenerative braking, and thermal management—within a virtual environment. It can be utilized throughout the entire electrified powertrain development process, from the early design stages to virtual testing, performance impact analysis based on parameter changes, real-time simulation (HiL), and controller development and validation."
+  ]
+}

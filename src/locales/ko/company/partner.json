@@ -1,0 +1,21 @@
+{
+  "seo": {
+    "title": "Partner & Customer - iVH 파트너 및 고객사",
+    "description": "iVH와 함께하는 파트너사 및 고객사를 소개합니다.",
+    "keywords": "iVH, 파트너, 고객사, Partner, Customer"
+  },
+  "partner": "Partners",
+  "partner_subtitle": "파트너사",
+  "customer": "Customers",
+  "customer_subtitle": "고객사",
+  "partnerList": {
+    "dassault": "Partners - Dassault Systems CI",
+    "tlk": "Partners - TLK CI",
+    "modelon": "Partners - Modelon CI",
+    "modelica": "Partners - Modelica CI",
+    "asam": "Partners - ASAM CI",
+    "edi": "Partners - EDI CI",
+    "hexagon": "Partners - Hexagon CI",
+    "ptv": "Partners - PTV Group CI"
+  }
+}

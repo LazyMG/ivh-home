@@ -3,7 +3,6 @@ import type { ReservationResponse } from "../../types/reservation";
 import { Box, Typography } from "@mui/material";
 
 import TrainingMainTitle from "../../components/support/TrainingMainTitle";
-import GradientSectionLabel from "../../components/support/GradientSectionLabel";
 import Calendar from "../../components/support/Calendar";
 import ApplicationForm from "../../components/support/ApplicationForm";
 
@@ -18,6 +17,8 @@ import TraingCurriculumTable from "../../components/support/TrainingCurriculumTa
 import curriculums from "../../data/support/curriculum.json";
 import ScrollButton from "../../common/ScrollButton";
 import MobileScheduleContainer from "../../components/support/MobileScheduleContainer";
+import SectionTitle from "../../components/common/SectionTitle";
+import BreadScrum from "../../common/BreadScrum";
 
 const DUMMY_DATA = [
   {
@@ -461,6 +462,7 @@ const Training = () => {
       <Box
         component="main"
         sx={(theme) => ({
+          position: "relative",
           px: 4,
           [theme.breakpoints.up("tablet")]: {
             px: 10,
@@ -471,34 +473,21 @@ const Training = () => {
           },
         })}
       >
-        <Box
-          sx={(theme) => ({
-            mt: 10,
-            mb: 8,
-            display: "none",
-            [theme.breakpoints.up("desktop")]: {
-              display: "block",
-            },
-          })}
-        >
-          <TrainingMainTitle titleList={training_title} />
-        </Box>
+        <BreadScrum
+          pageKey="training"
+          sx={{ position: "absolute", top: "-24px", right: "8%" }}
+        />
         {/** 개요 영역 */}
         <Box
           display="grid"
-          sx={(theme) => ({
-            gridTemplateColumns: "repeat(1,1fr)",
-            gap: 4,
+          sx={{
+            display: "flex",
+            flexDirection: "column",
             alignItems: "center",
-            my: 12,
-            [theme.breakpoints.up("desktop")]: {
-              px: 5,
-              gridTemplateColumns: "repeat(2,1fr)",
-              mt: 8,
-              mb: 16,
-              gap: 8,
-            },
-          })}
+            mt: 8,
+            px: 8,
+            mb: 16,
+          }}
         >
           <Box
             sx={{
@@ -514,6 +503,17 @@ const Training = () => {
           </Box>
           <Box
             sx={(theme) => ({
+              mt: 6,
+              display: "none",
+              [theme.breakpoints.up("desktop")]: {
+                display: "block",
+              },
+            })}
+          >
+            <TrainingMainTitle titleList={training_title} />
+          </Box>
+          <Box
+            sx={(theme) => ({
               display: "flex",
               justifyContent: "center",
               [theme.breakpoints.up("desktop")]: {
@@ -523,7 +523,14 @@ const Training = () => {
           >
             <TrainingMainTitle titleList={training_title} />
           </Box>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+          <Box
+            sx={{
+              my: 6,
+              borderTop: "1px dashed #C9C9C9",
+              width: "100%",
+            }}
+          />
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
             {training_outline.contents.map((content, index) => (
               <Typography
                 key={index}
@@ -532,10 +539,41 @@ const Training = () => {
                   fontFamily: "Freesentation-5-Medium",
                   fontSize: "20px",
                   whiteSpace: "pre-line",
+                  color: "#424242",
                 }}
               >
                 {content}
               </Typography>
+            ))}
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 3,
+              width: "100%",
+              mt: 6,
+            }}
+          >
+            {[
+              "/images/pages/support/training/training_session_1.png",
+              "/images/pages/support/training/training_session_2.png",
+              "/images/pages/support/training/training_session_3.png",
+            ].map((src) => (
+              <Box
+                key={src}
+                component="img"
+                src={src}
+                // 3등분하여 컨테이너 폭 안에서 축소 (가로 스크롤 방지)
+                sx={{
+                  flex: 1,
+                  minWidth: 0,
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
             ))}
           </Box>
         </Box>
@@ -553,7 +591,7 @@ const Training = () => {
             },
           })}
         >
-          <GradientSectionLabel labelText="Curriculum" />
+          <SectionTitle text="Curriculum" />
           <TraingCurriculumTable
             reservationList={apiReservationList}
             curriculums={training_curriculums}
@@ -570,7 +608,7 @@ const Training = () => {
             mb: 16,
           }}
         >
-          <GradientSectionLabel labelText="Schedule" />
+          <SectionTitle text="Schedule" />
           <Calendar reservationList={apiReservationList} />
           <MobileScheduleContainer reservationList={apiReservationList} />
         </Box>
@@ -585,7 +623,7 @@ const Training = () => {
             display: "flex",
           }}
         >
-          <GradientSectionLabel labelText="Application" />
+          <SectionTitle text="Application" />
           <ApplicationForm reservationList={apiReservationList} />
         </Box>
 
