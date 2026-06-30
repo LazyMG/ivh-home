@@ -22,11 +22,12 @@ const MobileProductSwiper = lazy(
 
 import homeData from "../data/home/home.json";
 import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
+import { FONTS } from "../theme/theme";
 
 const Home = () => {
   const { isMobile } = useBreakpoint();
 
-  const { iMOVA, products } = homeData;
+  const { iMOVA, products, main_products, provisions } = homeData;
 
   const navigate = useLocalizedNavigate();
 
@@ -121,31 +122,6 @@ const Home = () => {
     fetchNews();
   }, []);
 
-  // Provision 섹션 카드 (임시 데이터 — 아이콘/문구/링크는 추후 교체)
-  const provisionItems = [
-    {
-      icon: "/images/home/solution_icon.png",
-      title: "Solution",
-      description:
-        "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다.",
-      path: "/solution",
-    },
-    {
-      icon: "/images/home/support_icon.png",
-      title: "Support",
-      description:
-        "iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.",
-      path: "/support",
-    },
-    {
-      icon: "/images/home/training_icon.png",
-      title: "Training",
-      description:
-        "iVH는 개별 고객의 요구를 충족시키기 위해 표준화된 과정과 맞춤형 교육을 모두 제공합니다.",
-      path: "/support/training",
-    },
-  ];
-
   useEffect(() => {
     // 컴포넌트 마운트 시 body에 클래스 추가
     document.body.classList.add("hide-scrollbar");
@@ -196,11 +172,7 @@ const Home = () => {
           <Box sx={{ width: "100%", position: "relative" }}>
             <Box
               component="img"
-              src={
-                isMobile
-                  ? iMOVA.mobile_imageUrl
-                  : "/images/home/iMOVA_pc_main_image.png"
-              }
+              src={isMobile ? iMOVA.mobile_imageUrl : iMOVA.imageUrl}
               alt={isMobile ? iMOVA.mobile_image_alt : iMOVA.image_alt}
               fetchPriority="high"
               sx={{
@@ -239,7 +211,7 @@ const Home = () => {
               <Typography
                 component="h1"
                 sx={(theme) => ({
-                  fontFamily: "Galderglynn-Titling-Bold",
+                  fontFamily: FONTS.galderglynn.bold,
                   fontSize: "20px",
                   color: "#FFFFFF",
                   textTransform: "uppercase",
@@ -256,7 +228,7 @@ const Home = () => {
               <Typography
                 sx={(theme) => ({
                   color: "#FFFFFF",
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   fontSize: "16px",
                   textShadow: "3px 2px 5px rgba(0,0,0,0.6)",
                   [theme.breakpoints.up("tablet")]: {
@@ -290,18 +262,16 @@ const Home = () => {
                   mt: 10,
                 }}
               >
-                <MainProductCard
-                  image="/images/home/iMOVA_home_product.png"
-                  onClick={() => navigate("/product/imova")}
-                  title="/images/home/logo_imova.png"
-                />
-                <MainProductCard
-                  image="/images/home/home_porduct_software.png"
-                  onClick={() => navigate("/product/imova")}
-                  category="software"
-                  title="/images/home/logo_isuite.png"
-                  description="iSuite 시리즈는 다수의 AMR을 통합 제어하여 안전하고 효율적인 공장 물류 흐름을 실현하는 스마트 관제 플랫폼입니다."
-                />
+                {main_products.map((item) => (
+                  <MainProductCard
+                    key={item.title_image}
+                    image={item.image}
+                    onClick={() => navigate(item.path)}
+                    category={item.category}
+                    title={item.title_image}
+                    description={item.description}
+                  />
+                ))}
               </Box>
               {isMobile ? (
                 <Suspense
@@ -324,7 +294,7 @@ const Home = () => {
             >
               <SectionTitle text="Provision" />
               <Box sx={{ display: "flex", alignItems: "stretch" }}>
-                {provisionItems.map((item, i) => (
+                {provisions.map((item, i) => (
                   <Fragment key={item.title}>
                     {/* 카드 사이 점선 세로 구분선 */}
                     {i > 0 && (
@@ -373,7 +343,7 @@ const Home = () => {
                   >
                     <Typography
                       sx={{
-                        fontFamily: "Freesentation-5-Medium",
+                        fontFamily: FONTS.freesentation.medium,
                         fontSize: "16px",
                       }}
                     >
@@ -390,7 +360,7 @@ const Home = () => {
                         py: 2,
                         cursor: "pointer",
                         color: "#424242",
-                        fontFamily: "Freesentation-5-Medium",
+                        fontFamily: FONTS.freesentation.medium,
                         fontSize: "14px",
                       }}
                     >
@@ -406,7 +376,7 @@ const Home = () => {
                       justifyContent: "center",
                       py: 12,
                       color: "#737373",
-                      fontFamily: "Freesentation-5-Medium",
+                      fontFamily: FONTS.freesentation.medium,
                       fontSize: "16px",
                     }}
                   >
@@ -521,7 +491,7 @@ const Home = () => {
                       p: 0,
                       cursor: "pointer",
                       color: "#424242",
-                      fontFamily: "Freesentation-5-Medium",
+                      fontFamily: FONTS.freesentation.medium,
                       fontSize: "16px",
                     }}
                     onClick={() =>

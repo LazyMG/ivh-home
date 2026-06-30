@@ -5,6 +5,7 @@ import resource from "../../data/company/ceo.json";
 import CompanyPageHeader from "../../components/company/CompanyPageHeader";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
+import { FONTS } from "../../theme/theme";
 
 const CEO = () => {
   const { t } = useTranslation("company/ceo");
@@ -21,7 +22,7 @@ const CEO = () => {
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
         <CompanyPageHeader
-          imgUrl="/images/pages/company/company_temp_ceo.png"
+          imgUrl={resource.image}
           imgPosition={resource.image_position}
           pageKey="ceo"
         />
@@ -48,7 +49,7 @@ const CEO = () => {
             component="h1"
             sx={(theme) => ({
               whiteSpace: "pre-line",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: FONTS.freesentation.semiBold,
               wordBreak: "keep-all",
               color: "#000000",
               fontSize: "24px",
@@ -88,7 +89,7 @@ const CEO = () => {
                   whiteSpace: "pre-line",
                   fontSize: "18px",
                   color: "#2A2A2A",
-                  fontFamily: "Freesentation-4-Regular",
+                  fontFamily: FONTS.freesentation.regular,
                   wordBreak: "keep-all",
                 }}
               >
@@ -99,7 +100,7 @@ const CEO = () => {
           <Typography
             sx={{
               fontSize: "20px",
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: FONTS.freesentation.bold,
               color: "#2A2A2A",
               whiteSpace: "pre-line",
             }}

@@ -19,6 +19,7 @@ import ScrollButton from "../../common/ScrollButton";
 import MobileScheduleContainer from "../../components/support/MobileScheduleContainer";
 import SectionTitle from "../../components/common/SectionTitle";
 import BreadScrum from "../../common/BreadScrum";
+import { FONTS } from "../../theme/theme";
 
 const Training = () => {
   const seoData = useSEO("support/training", training);
@@ -141,7 +142,7 @@ const Training = () => {
                 key={index}
                 sx={{
                   wordBreak: "keep-all",
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   fontSize: "20px",
                   whiteSpace: "pre-line",
                   color: "#424242",
@@ -160,11 +161,7 @@ const Training = () => {
               mt: 6,
             }}
           >
-            {[
-              "/images/pages/support/training/training_session_1.png",
-              "/images/pages/support/training/training_session_2.png",
-              "/images/pages/support/training/training_session_3.png",
-            ].map((src) => (
+            {training_outline.session_images.map((src) => (
               <Box
                 key={src}
                 component="img"
