@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import SectionTitle from "../../components/common/SectionTitle";
 import ContactTrainingInfoSection from "../../components/home/ContactTrainingInfoSection";
 import ProductHero from "../../components/product/ProductHero";
+import { FONTS } from "../../theme/theme";
 
 type Segment = { text: string; bold?: boolean };
 
@@ -14,7 +15,7 @@ const RenderSegments = ({ segments }: { segments: Segment[] }) => (
   <>
     {segments.map((seg, i) =>
       seg.bold ? (
-        <strong key={i} style={{ fontFamily: "Freesentation-7-Bold" }}>
+        <strong key={i} style={{ fontFamily: FONTS.freesentation.bold }}>
           {seg.text}
         </strong>
       ) : (
@@ -123,7 +124,7 @@ const HumanoidPackage = () => {
           breadcrumbKey="humanoidPackage"
           descriptionSx={{
             color: "#424242",
-            fontFamily: "Freesentation-4-Regular",
+            fontFamily: FONTS.freesentation.regular,
           }}
         />
 
@@ -170,7 +171,7 @@ const HumanoidPackage = () => {
                 color: "#ffffff",
                 fontSize: "20px",
                 letterSpacing: "5%",
-                fontFamily: "Galderglynn-Titling-Book",
+                fontFamily: FONTS.galderglynn.book,
               }}
             >
               {t("hero.equation_text")}
@@ -199,7 +200,7 @@ const HumanoidPackage = () => {
               <Typography
                 component="h3"
                 sx={{
-                  fontFamily: "Galderglynn-Titling-Regular",
+                  fontFamily: FONTS.galderglynn.regular,
                   fontSize: isMobile ? "18px" : "20px",
                   color: "#03193F",
                   textTransform: "uppercase",
@@ -210,7 +211,7 @@ const HumanoidPackage = () => {
 
               <Typography
                 sx={{
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   fontSize: bodyFontSize,
                   color: "#03193F",
                   wordBreak: "keep-all",
@@ -227,7 +228,7 @@ const HumanoidPackage = () => {
                     component="li"
                     key={item.id}
                     sx={{
-                      fontFamily: "Freesentation-5-Medium",
+                      fontFamily: FONTS.freesentation.medium,
                       fontSize: bodyFontSize,
                       color: "#656565",
                       lineHeight: 1.8,
@@ -287,7 +288,7 @@ const HumanoidPackage = () => {
                       <Typography
                         component="h3"
                         sx={{
-                          fontFamily: "Galderglynn-Titling-Regular",
+                          fontFamily: FONTS.galderglynn.regular,
                           fontSize: isMobile ? "16px" : "18px",
                           color: "#03193F",
                           wordBreak: "keep-all",
@@ -299,7 +300,7 @@ const HumanoidPackage = () => {
                           <Typography
                             component="span"
                             sx={{
-                              fontFamily: "Galderglynn-Titling-Regular",
+                              fontFamily: FONTS.galderglynn.regular,
                               fontSize: isMobile ? "16px" : "18px",
                               color: "#2c2c2c",
                               ml: 1,
@@ -312,7 +313,7 @@ const HumanoidPackage = () => {
                       {cardSubtitle2 && (
                         <Typography
                           sx={{
-                            fontFamily: "Galderglynn-Titling-Regular",
+                            fontFamily: FONTS.galderglynn.regular,
                             fontSize: isMobile ? "15px" : "17px",
                             color: "#03193F",
                             wordBreak: "keep-all",
@@ -328,7 +329,7 @@ const HumanoidPackage = () => {
                     {hasBody && (
                       <Typography
                         sx={{
-                          fontFamily: "Freesentation-5-Medium",
+                          fontFamily: FONTS.freesentation.medium,
                           fontSize: bodyFontSize,
                           color: "#2c2c2c",
                           wordBreak: "keep-all",
@@ -348,7 +349,7 @@ const HumanoidPackage = () => {
                           component="li"
                           key={bullet.id}
                           sx={{
-                            fontFamily: "Freesentation-5-Medium",
+                            fontFamily: FONTS.freesentation.medium,
                             fontSize: bodyFontSize,
                             color: "#555",
                             lineHeight: 1.8,
@@ -370,7 +371,7 @@ const HumanoidPackage = () => {
                     {cardNote && (
                       <Typography
                         sx={{
-                          fontFamily: "Freesentation-5-Medium",
+                          fontFamily: FONTS.freesentation.medium,
                           fontSize: isMobile ? "12px" : "16px",
                           color: "#888",
                           textDecoration: "underline",
@@ -395,7 +396,7 @@ const HumanoidPackage = () => {
                     component="li"
                     key={item.id}
                     sx={{
-                      fontFamily: "Freesentation-5-Medium",
+                      fontFamily: FONTS.freesentation.medium,
                       fontSize: bodyFontSize,
                       color: "#656565",
                       lineHeight: 1.8,
@@ -413,7 +414,7 @@ const HumanoidPackage = () => {
               </Box>
               <Typography
                 sx={{
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   fontSize: isMobile ? "16px" : "18px",
                   color: "#03193F",
                   wordBreak: "keep-all",
@@ -438,7 +439,7 @@ const HumanoidPackage = () => {
               <Typography
                 component="h3"
                 sx={{
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: FONTS.freesentation.bold,
                   fontSize: isMobile ? "18px" : "20px",
                   color: "#03193F",
                   textTransform: "uppercase",
@@ -448,7 +449,7 @@ const HumanoidPackage = () => {
               </Typography>
               <Typography
                 sx={{
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   fontSize: bodyFontSize,
                   color: "#555",
                   wordBreak: "keep-all",

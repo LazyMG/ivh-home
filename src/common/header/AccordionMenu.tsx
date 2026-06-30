@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface AccordionMenuItem {
   name: string;
@@ -72,7 +73,7 @@ export const AccordionMenu = ({
               onClick={() => handleNavigate(item.path)}
               sx={{
                 fontSize: "14px",
-                fontFamily: "Galderglynn-Titling-Book",
+                fontFamily: FONTS.galderglynn.book,
                 color: "#B2B2B2",
                 cursor: "pointer",
                 pl: 1.5,

@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { PageGroup } from "./NewSolutionSection";
 import { renderTopBlock, type TopBlock } from "./renderBlocks";
+import { FONTS } from "../../theme/theme";
 
 type Closing = { heading: string; line1: string; line2: string };
 
@@ -42,17 +43,17 @@ export const SolutionPage = ({ namespace }: SolutionPageProps) => {
           }}
         >
           <Typography
-            sx={{ fontSize: "20px", fontFamily: "Freesentation-7-Bold" }}
+            sx={{ fontSize: "20px", fontFamily: FONTS.freesentation.bold }}
           >
             {closing.heading}
           </Typography>
           <Typography
-            sx={{ fontSize: "20px", fontFamily: "Freesentation-5-Medium" }}
+            sx={{ fontSize: "20px", fontFamily: FONTS.freesentation.medium }}
           >
             {closing.line1}
           </Typography>
           <Typography
-            sx={{ fontSize: "20px", fontFamily: "Freesentation-7-Bold" }}
+            sx={{ fontSize: "20px", fontFamily: FONTS.freesentation.bold }}
           >
             {closing.line2}
           </Typography>

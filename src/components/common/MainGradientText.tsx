@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import type { TypographyProps } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface MainGradientTextProps extends Omit<TypographyProps, "sx"> {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ const MainGradientText = ({ children, sx, ...props }: MainGradientTextProps) => 
       {...props}
       sx={[
         {
-          fontFamily: "Freesentation-6-SemiBold",
+          fontFamily: FONTS.freesentation.semiBold,
           background: "linear-gradient(90deg, #339070 0%, #1755C2 100%)",
           color: "transparent",
           backgroundClip: "text",

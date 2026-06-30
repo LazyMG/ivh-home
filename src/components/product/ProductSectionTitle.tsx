@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 const ProductSectionTitle = ({ titleText }: { titleText: string }) => {
   return (
@@ -15,11 +16,11 @@ const ProductSectionTitle = ({ titleText }: { titleText: string }) => {
       <Typography
         component="h2"
         sx={(theme) => ({
-          fontFamily: "Freesentation-5-Medium",
+          fontFamily: FONTS.freesentation.medium,
           fontSize: "24px",
           letterSpacing: "2px",
           [theme.breakpoints.up("tablet")]: {
-            fontFamily: "Freesentation-6-SemiBold",
+            fontFamily: FONTS.freesentation.semiBold,
             fontSize: "32px",
             letterSpacing: "4px",
           },

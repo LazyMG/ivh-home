@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import type { MainMenuItem } from "../../types/header";
 import { ColumnHeaderLine } from "./ColumnHeaderLine";
 import { AccordionItem } from "./AccordionItem";
+import { FONTS } from "../../theme/theme";
 
 interface ProductPanelProps {
   menu: MainMenuItem;
@@ -61,7 +62,7 @@ export const ProductPanel = ({
             <Typography
               sx={{
                 fontSize: "14px",
-                fontFamily: "Freesentation-6-SemiBold",
+                fontFamily: FONTS.freesentation.semiBold,
                 color: "#000000",
                 textTransform: "uppercase",
               }}

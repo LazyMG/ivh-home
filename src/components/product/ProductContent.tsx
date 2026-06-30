@@ -7,6 +7,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../../style/product-slider.css";
+import { FONTS } from "../../theme/theme";
 
 interface FeatureImageItem {
   url: string;
@@ -117,7 +118,7 @@ const ProductContent = ({
                     <Typography
                       sx={(theme) => ({
                         fontSize: "14px",
-                        fontFamily: "Galderglynn-Titling-Regular",
+                        fontFamily: FONTS.galderglynn.regular,
                         textAlign: "center",
                         color: "#979797",
                         [theme.breakpoints.up("tablet")]: {
@@ -138,7 +139,7 @@ const ProductContent = ({
             <Typography
               sx={(theme) => ({
                 fontSize: "14px",
-                fontFamily: "Galderglynn-Titling-Regular",
+                fontFamily: FONTS.galderglynn.regular,
                 textAlign: "center",
                 color: "#979797",
                 textTransform: "uppercase",
@@ -205,7 +206,7 @@ const ProductContent = ({
             <Typography
               sx={(theme) => ({
                 fontSize: "14px",
-                fontFamily: "Galderglynn-Titling-Regular",
+                fontFamily: FONTS.galderglynn.regular,
                 color: "#979797",
                 textTransform: "uppercase",
                 [theme.breakpoints.up("tablet")]: {
@@ -285,7 +286,7 @@ const ProductContent = ({
                   <Typography
                     sx={{
                       fontSize: "14px",
-                      fontFamily: "Galderglynn-Titling-Regular",
+                      fontFamily: FONTS.galderglynn.regular,
                       textAlign: "center",
                       color: "#737373",
                     }}
@@ -304,7 +305,7 @@ const ProductContent = ({
               mt: 3,
               textAlign: "center",
               fontSize: "14px",
-              fontFamily: "Galderglynn-Titling-Regular",
+              fontFamily: FONTS.galderglynn.regular,
               color: "#737373",
             }}
           >
@@ -350,7 +351,7 @@ const ProductContent = ({
           <Typography
             sx={(theme) => ({
               fontSize: "18px",
-              fontFamily: "Galderglynn-Titling-Regular",
+              fontFamily: FONTS.galderglynn.regular,
               textTransform: "uppercase",
               [theme.breakpoints.up("tablet")]: {
                 color: "#03193F",
@@ -363,7 +364,7 @@ const ProductContent = ({
           <Typography
             sx={{
               fontSize: "16px",
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: FONTS.freesentation.medium,
               whiteSpace: "pre-wrap",
               color: "#737373",
             }}

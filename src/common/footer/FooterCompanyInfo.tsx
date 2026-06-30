@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import logoBlack from "/images/header/ivh_logo_black.png";
 import footer from "../../data/footer/footer.json";
+import { FONTS } from "../../theme/theme";
 
 interface FooterCompanyInfoProps {
   navigate: (path: string) => void;
@@ -51,7 +52,7 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
         <Typography
           sx={{
             fontSize: "16px",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             color: "black",
             height: "24px",
             lineHeight: "34px",
@@ -70,7 +71,7 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
           <Typography
             sx={{
               fontSize: "16px",
-              fontFamily: "Freesentation-4-Regular",
+              fontFamily: FONTS.freesentation.regular,
               color: "black",
             }}
             component="p"
@@ -87,12 +88,12 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
             <Typography
               sx={{
                 fontSize: "16px",
-                fontFamily: "Freesentation-4-Regular",
+                fontFamily: FONTS.freesentation.regular,
                 color: "black",
               }}
               component="p"
             >
-              <Box component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+              <Box component="span" sx={{ fontFamily: FONTS.freesentation.bold }}>
                 T.
               </Box>{" "}
               {phone}
@@ -100,12 +101,12 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
             <Typography
               sx={{
                 fontSize: "16px",
-                fontFamily: "Freesentation-4-Regular",
+                fontFamily: FONTS.freesentation.regular,
                 color: "black",
               }}
               component="p"
             >
-              <Box component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+              <Box component="span" sx={{ fontFamily: FONTS.freesentation.bold }}>
                 E.
               </Box>{" "}
               {email}
@@ -145,7 +146,7 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
           <Typography
             sx={{
               fontSize: "16px",
-              fontFamily: "Freesentation-4-Regular",
+              fontFamily: FONTS.freesentation.regular,
               color: "black",
             }}
             component="p"

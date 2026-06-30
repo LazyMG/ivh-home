@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
+import { FONTS } from "../../theme/theme";
 
 interface SolutionBoxProps {
   imgUrl: string;
@@ -113,7 +114,7 @@ const SolutionMainBox = ({
           <Typography
             sx={(theme) => ({
               color,
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: FONTS.freesentation.bold,
               fontSize: "14px",
               textAlign: "center",
               [theme.breakpoints.up("tablet")]: {
@@ -130,7 +131,7 @@ const SolutionMainBox = ({
           sx={(theme) => ({
             display: "none",
             color: "white",
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: FONTS.freesentation.bold,
             fontSize: "14px",
             textAlign: "center",
             [theme.breakpoints.up("tablet")]: {
@@ -155,7 +156,7 @@ const SolutionMainBox = ({
           sx={(theme) => ({
             display: "none",
             color: "white",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             textAlign: "center",
             fontSize: "10px",
             whiteSpace: "pre-line",

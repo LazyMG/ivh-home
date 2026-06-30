@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import section from "../../data/home/section.json";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
+import { FONTS } from "../../theme/theme";
 
 const ContactTrainingInfoSection = () => {
   const navigate = useLocalizedNavigate();
@@ -49,7 +50,7 @@ const ContactTrainingInfoSection = () => {
               fontSize: "20px",
               color: "#ffffff",
               textTransform: "uppercase",
-              fontFamily: "Galderglynn-Titling-Regular",
+              fontFamily: FONTS.galderglynn.regular,
               [theme.breakpoints.up("tablet")]: { fontSize: "36px" },
             })}
           >
@@ -58,7 +59,7 @@ const ContactTrainingInfoSection = () => {
           <Typography
             sx={(theme) => ({
               fontSize: "18px",
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: FONTS.freesentation.medium,
               color: "#ffffff",
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "16px",

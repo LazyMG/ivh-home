@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface TrainingMainTitleProps {
   titleList: {
@@ -25,7 +26,7 @@ const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
         wordBreak: "keep-all",
         zIndex: 1,
         width: "fit-content",
-        fontFamily: "Freesentation-7-Bold",
+        fontFamily: FONTS.freesentation.bold,
         textAlign: "center",
         maxWidth: "80%",
         [theme.breakpoints.up("desktop")]: {

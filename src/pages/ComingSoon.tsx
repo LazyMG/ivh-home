@@ -4,6 +4,7 @@ import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
 import { useSEO } from "../hooks/useSEO";
 import SEO from "../common/SEO";
 import ScrollButton from "../common/ScrollButton";
+import { FONTS } from "../theme/theme";
 
 const ComingSoon = () => {
   const location = useLocation();
@@ -35,7 +36,7 @@ const ComingSoon = () => {
         <Typography
           sx={(theme) => ({
             fontSize: "32px",
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: FONTS.freesentation.bold,
             color: "#374151",
             [theme.breakpoints.down("tablet")]: {
               fontSize: "24px",
@@ -47,7 +48,7 @@ const ComingSoon = () => {
         <Typography
           sx={{
             fontSize: "24px",
-            fontFamily: "Freesentation-4-Regular",
+            fontFamily: FONTS.freesentation.regular,
             color: "#6B7280",
           }}
         >
@@ -59,9 +60,9 @@ const ComingSoon = () => {
             mt: 3,
             padding: "10px 32px",
             fontSize: "16px",
-            fontFamily: "Freesentation-6-SemiBold",
+            fontFamily: FONTS.freesentation.semiBold,
             color: "#fff",
-            backgroundColor: "#03193F",
+            backgroundColor: "#073272",
             "&:hover": {
               backgroundColor: "#1755C2",
             },

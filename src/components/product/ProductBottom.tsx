@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import GradientBox from "./GradientBox";
+import { FONTS } from "../../theme/theme";
 
 const ProductBottom = ({ productName }: { productName: string }) => {
   const { t } = useTranslation("product/product-form" as never);
@@ -43,7 +44,7 @@ const ProductBottom = ({ productName }: { productName: string }) => {
               <Typography
                 sx={{
                   fontSize: "18px",
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   whiteSpace: "pre-line",
                   wordBreak: "keep-all",
                 }}
@@ -71,7 +72,7 @@ const ProductBottom = ({ productName }: { productName: string }) => {
                 <Typography
                   sx={(theme) => ({
                     fontSize: "16px",
-                    fontFamily: "Freesentation-6-SemiBold",
+                    fontFamily: FONTS.freesentation.semiBold,
                     color: "#fff",
                     backgroundColor: "#1755C2",
                     px: 1,

@@ -1,4 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface MainProductCardProps {
   category?: string; // 상단 헤더 (예: HARDWARE)
@@ -34,7 +35,7 @@ const MainProductCard = ({
             <Typography
               sx={{
                 color: "#FFFFFF",
-                fontFamily: "Galderglynn-Titling-Book",
+                fontFamily: FONTS.galderglynn.book,
                 fontSize: "24px",
                 letterSpacing: "0.25em",
                 textTransform: "uppercase",
@@ -88,7 +89,7 @@ const MainProductCard = ({
           <Box component="img" src={title} sx={{ width: "128px" }} />
           <Typography
             sx={{
-              fontFamily: "Galderglynn-Titling-Bold",
+              fontFamily: FONTS.galderglynn.bold,
               fontSize: "24px",
               color: "#737373",
             }}
@@ -100,7 +101,7 @@ const MainProductCard = ({
         <Typography
           sx={{
             pl: 3,
-            fontFamily: "Freesentation-4-Regular",
+            fontFamily: FONTS.freesentation.regular,
             fontSize: "16px",
             color: "#424242",
           }}

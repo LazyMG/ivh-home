@@ -4,6 +4,7 @@ import type { MenuItem } from "../../types/header";
 import solutionMenu from "../../data/header/solutionMenu.json";
 import { ColumnHeaderLine } from "./ColumnHeaderLine";
 import { AccordionItem } from "./AccordionItem";
+import { FONTS } from "../../theme/theme";
 
 interface SolutionsPanelProps {
   navigate: (path: string) => void;
@@ -44,7 +45,7 @@ export const SolutionsPanel = ({ navigate, onClose }: SolutionsPanelProps) => {
           <Typography
             sx={{
               fontSize: "14px",
-              fontFamily: "Galderglynn-Titling-Regular",
+              fontFamily: FONTS.galderglynn.regular,
               color: "#000000",
               textTransform: "uppercase",
             }}

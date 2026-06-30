@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface SolutionImageItem {
   url: string;
@@ -50,7 +51,7 @@ const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
               sx={{ height: "18px", width: "10px", backgroundColor: color }}
             />
             <Typography
-              sx={{ fontSize: "24px", fontFamily: "Freesentation-6-SemiBold" }}
+              sx={{ fontSize: "24px", fontFamily: FONTS.freesentation.semiBold }}
             >
               {textObj.title}
             </Typography>
@@ -64,7 +65,7 @@ const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
                 key={index}
                 sx={{
                   fontSize: "18px",
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   whiteSpace: "pre-wrap",
                   wordBreak: "keep-all",
                 }}
@@ -109,7 +110,7 @@ const SolutionContent = ({ textObj, imgObj, color }: SolutionContentProps) => {
                 <Typography
                   sx={{
                     fontSize: "14px",
-                    fontFamily: "Freesentation-5-Medium",
+                    fontFamily: FONTS.freesentation.medium,
                     textAlign: "center",
                   }}
                 >

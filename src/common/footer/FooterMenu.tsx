@@ -1,5 +1,6 @@
 import { Box, Divider, Typography } from "@mui/material";
 import footer from "../../data/footer/footer.json";
+import { FONTS } from "../../theme/theme";
 
 interface FooterMenuProps {
   navigate: (path: string) => void;
@@ -29,7 +30,7 @@ const FooterMenu = ({ navigate }: FooterMenuProps) => {
           key={`title-${index}`}
           sx={{
             fontSize: "18px",
-            fontFamily: "Galderglynn-Titling-Regular",
+            fontFamily: FONTS.galderglynn.regular,
             color: "#00235F",
             px: 3,
           }}
@@ -63,7 +64,7 @@ const FooterMenu = ({ navigate }: FooterMenuProps) => {
               key={subIndex}
               sx={{
                 fontSize: "16px",
-                fontFamily: "Galderglynn-Titling-Book",
+                fontFamily: FONTS.galderglynn.book,
                 color: "#313131",
                 cursor: "pointer",
                 width: "fit-content",

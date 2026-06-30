@@ -6,6 +6,7 @@ import CalendarModalContent from "./CalendarModalContent";
 import MobileScheduleCard from "./MobileScheduleCard";
 import CalendarLegend from "./CalendarLegend";
 import { getQuarterInfo } from "../../utils/quarter";
+import { FONTS } from "../../theme/theme";
 
 // 날짜 포맷 함수 (YYYY-MM-DD -> MM/DD)
 const formatDate = (dateString: string): string => {
@@ -74,7 +75,7 @@ const MobileScheduleContainer = ({
         <Typography
           sx={{
             fontSize: "16px",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             mt: 4,
           }}
         >
@@ -99,7 +100,7 @@ const MobileScheduleContainer = ({
               textAlign: "center",
               color: "#666",
               py: 4,
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: FONTS.freesentation.medium,
             }}
           >
             등록된 교육 일정이 없습니다.
@@ -125,7 +126,7 @@ const MobileScheduleContainer = ({
           <Typography
             sx={{
               whiteSpace: "pre-wrap",
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: FONTS.freesentation.medium,
               fontSize: "16px",
               wordBreak: "keep-all",
             }}

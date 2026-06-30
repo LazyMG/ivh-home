@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Box, Divider, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface IntroductionImage {
   url: string;
@@ -74,7 +75,7 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                 </Box>
                 <Typography
                   sx={(theme) => ({
-                    fontFamily: "Freesentation-5-Medium",
+                    fontFamily: FONTS.freesentation.medium,
                     fontSize: "18px",
                     color: "#656565",
                     whiteSpace: "pre-line",
@@ -129,7 +130,7 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                         <Typography
                           sx={(theme) => ({
                             fontSize: "14px",
-                            fontFamily: "Freesentation-5-Medium",
+                            fontFamily: FONTS.freesentation.medium,
                             textAlign: "center",
                             color: "#656565",
                             [theme.breakpoints.up("tablet")]: {
@@ -154,7 +155,7 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                 >
                   <Typography
                     sx={(theme) => ({
-                      fontFamily: "Freesentation-5-Medium",
+                      fontFamily: FONTS.freesentation.medium,
                       fontSize: "18px",
                       color: "#656565",
                       whiteSpace: "pre-line",
@@ -169,7 +170,7 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
               // 텍스트만 (풀폭)
               <Typography
                 sx={(theme) => ({
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   fontSize: "18px",
                   color: "#737373",
                   whiteSpace: "pre-line",

@@ -4,6 +4,7 @@ import breadcrumbs from "../data/common/breadscrum.json";
 import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { FONTS } from "../theme/theme";
 
 interface BreadcrumbItem {
   title: string;
@@ -71,7 +72,7 @@ const BreadScrum = ({ pageKey, sx, color = "#737373" }: BreadScrumProps) => {
                   mr: isLast ? 0 : "10px",
                   fontSize: "16px",
                   textTransform: "uppercase",
-                  fontFamily: "Galderglynn-Titling-Book",
+                  fontFamily: FONTS.galderglynn.book,
                 }}
               >
                 {item.title}
@@ -121,7 +122,7 @@ const ArrowIcon = ({
         color,
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "Freesentation-5-Medium",
+        fontFamily: FONTS.freesentation.medium,
         verticalAlign: "middle",
         mr: isMobile ? "5px" : "10px",
         fontSize: isMobile ? 14 : 16,

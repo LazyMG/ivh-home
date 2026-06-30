@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import type { MenuItem } from "../../types/header";
 import { AccordionMenu } from "./AccordionMenu";
+import { FONTS } from "../../theme/theme";
 
 interface AccordionItemProps {
   item: MenuItem;
@@ -36,7 +37,7 @@ export const AccordionItem = ({
         onClick={() => (hasSubMenu ? onToggle() : onNavigate(item.path))}
         sx={{
           fontSize: "16px",
-          fontFamily: "Galderglynn-Titling-Regular",
+          fontFamily: FONTS.galderglynn.regular,
           // 클릭(아코디언 열림) 시 hover 색상 유지
           color: isOpen ? "#005AD5" : "#8D8D8D",
           cursor: "pointer",

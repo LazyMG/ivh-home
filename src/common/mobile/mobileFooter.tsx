@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import footer from "../../data/footer/footer.json";
 import logoGradient from "/images/header/iVH_logo_gra.svg";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
+import { FONTS } from "../../theme/theme";
 
 const MobileFooter = () => {
   const { companyInfo } = footer;
@@ -64,7 +65,7 @@ const MobileFooter = () => {
           <Typography
             sx={{
               fontSize: "12px",
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: FONTS.freesentation.medium,
               color: "#424242",
               height: "24px",
               lineHeight: "34px",
@@ -109,12 +110,12 @@ const MobileFooter = () => {
         <Typography
           sx={{
             fontSize: "12px",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             color: "#424242",
           }}
           component="p"
         >
-          <Box component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+          <Box component="span" sx={{ fontFamily: FONTS.freesentation.bold }}>
             T.
           </Box>{" "}
           {phone}
@@ -122,12 +123,12 @@ const MobileFooter = () => {
         <Typography
           sx={{
             fontSize: "12px",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             color: "#424242",
           }}
           component="p"
         >
-          <Box component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+          <Box component="span" sx={{ fontFamily: FONTS.freesentation.bold }}>
             E.
           </Box>{" "}
           {email}
@@ -136,7 +137,7 @@ const MobileFooter = () => {
       <Typography
         sx={{
           fontSize: "12px",
-          fontFamily: "Freesentation-5-Medium",
+          fontFamily: FONTS.freesentation.medium,
           color: "#424242",
         }}
         component="p"

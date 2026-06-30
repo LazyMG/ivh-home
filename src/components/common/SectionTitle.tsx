@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 const SectionTitle = ({ text }: { text: string }) => {
   return (
@@ -18,7 +19,7 @@ const SectionTitle = ({ text }: { text: string }) => {
       <Typography
         sx={(theme) => ({
           fontSize: "20px",
-          fontFamily: "Galderglynn-Titling-Regular",
+          fontFamily: FONTS.galderglynn.regular,
           color: "#03193F",
           [theme.breakpoints.up("tablet")]: {
             fontSize: "28px",

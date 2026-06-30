@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface NewsCardProps {
   image?: string;
@@ -53,7 +54,7 @@ const NewsCard = ({ image, title, date, onClick }: NewsCardProps) => {
         >
           <Typography
             sx={{
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: FONTS.freesentation.bold,
               fontStyle: "italic",
               fontSize: "32px",
               userSelect: "none",
@@ -84,7 +85,7 @@ const NewsCard = ({ image, title, date, onClick }: NewsCardProps) => {
         {/* 제목 */}
         <Typography
           sx={{
-            fontFamily: "Freesentation-6-SemiBold",
+            fontFamily: FONTS.freesentation.semiBold,
             fontSize: "18px",
             color: "#03193F",
             lineHeight: 1.4,
@@ -97,7 +98,7 @@ const NewsCard = ({ image, title, date, onClick }: NewsCardProps) => {
         {/* 날짜 */}
         <Typography
           sx={{
-            fontFamily: "Galderglynn-Titling-Regular",
+            fontFamily: FONTS.galderglynn.regular,
             fontSize: "14px",
             color: "#003B8D",
           }}

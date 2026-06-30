@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import type { SxProps, Theme } from "@mui/material/styles";
 import type { ReactNode } from "react";
 import BreadScrum from "../../common/BreadScrum";
+import { FONTS } from "../../theme/theme";
 
 interface ProductHeroProps {
   /** 메인 배경 이미지 */
@@ -94,7 +95,7 @@ const ProductHero = ({
               sx={{
                 color: "#ffffff",
                 fontSize: "18px",
-                fontFamily: "Freesentation-6-SemiBold",
+                fontFamily: FONTS.freesentation.semiBold,
               }}
             >
               {badge}
@@ -119,7 +120,7 @@ const ProductHero = ({
               color: "#003B8D",
               fontSize: "14px",
               fontWeight: "bold",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: FONTS.freesentation.semiBold,
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "20px",
               },

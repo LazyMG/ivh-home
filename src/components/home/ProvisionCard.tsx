@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface ProvisionCardProps {
   icon: string;
@@ -46,7 +47,7 @@ const ProvisionCard = ({
         {/* 제목 */}
         <Typography
           sx={{
-            fontFamily: "Galderglynn-Titling-Regular",
+            fontFamily: FONTS.galderglynn.regular,
             fontSize: "22px",
             color: "#03193F",
             textTransform: "uppercase",
@@ -59,7 +60,7 @@ const ProvisionCard = ({
         <Typography
           sx={{
             width: "100%",
-            fontFamily: "Freesentation-4-Regular",
+            fontFamily: FONTS.freesentation.regular,
             fontSize: "16px",
             color: "#424242",
             wordBreak: "keep-all",
@@ -105,7 +106,7 @@ const ProvisionCard = ({
               alignItems: "center",
               gap: 1,
               color: "#FFFFFF",
-              fontFamily: "Galderglynn-Titling-Book",
+              fontFamily: FONTS.galderglynn.book,
               fontSize: "17px",
               letterSpacing: "0.1em",
               whiteSpace: "nowrap",
