@@ -4,11 +4,11 @@
     "description": "iVH에 제품 및 솔루션 관련 문의를 남겨주세요. 빠르게 답변 드리겠습니다.",
     "keywords": "iVH, 문의, Contact, 상담, 제품 문의"
   },
-  "contact_title": "iVH PRODUCTS 관련 및 기타 궁금하신 점을 문의해보세요.",
-  "contact_texts": [
+  "title": "iVH PRODUCTS 관련 및 기타 궁금하신 점을 문의해보세요.",
+  "texts": [
     "서비스, 기술, 제휴 관련 문의는 아래 문의란을 이용해 주세요. 접수된 문의는 담당 부서에서 검토 후 빠르게 회신드리겠습니다.",
     "원활한 처리를 위해 사용 환경 및 문의 목적을 함께 기재해 주시면 도움이 됩니다."
   ],
-  "contact_img_alt": "iVH PRODUCTS 관련 및 기타 문의 사항 답변 이미지",
+  "img_alt": "iVH PRODUCTS 관련 및 기타 문의 사항 답변 이미지",
   "checkbox_text": "개인정보처리방침에 동의합니다."
 }

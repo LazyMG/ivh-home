@@ -5,7 +5,7 @@ import CompanyPageHeader from "../../components/company/CompanyPageHeader";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
 
-const ACCENT = resource.history_color;
+const ACCENT = resource.color;
 
 // 점선 화살표의 화살촉 (CSS border 삼각형)
 const ArrowHead = ({ dir }: { dir: "left" | "right" | "up" }) => {
@@ -59,9 +59,9 @@ const VArrow = () => (
 const History = () => {
   const { t } = useTranslation("company/history");
 
-  const list = resource.history_list;
+  const list = resource.list;
   const getContents = (id: string) =>
-    t(`history_list.${id}` as never, {
+    t(`list.${id}` as never, {
       returnObjects: true,
     }) as unknown as string[];
 
@@ -133,7 +133,7 @@ const History = () => {
         <ScrollButton />
         <CompanyPageHeader
           imgUrl="/images/pages/company/company_temp_history.png"
-          imgPosition={resource.history_image_position}
+          imgPosition={resource.image_position}
           pageKey="history"
         />
 
@@ -173,9 +173,9 @@ const History = () => {
                 },
               })}
             >
-              {t("history_title")}
+              {t("title")}
             </Typography>
-            {t("history_subtitle") && (
+            {t("subtitle") && (
               <Typography
                 sx={(theme) => ({
                   fontFamily: "Freesentation-6-SemiBold",
@@ -186,7 +186,7 @@ const History = () => {
                   },
                 })}
               >
-                {t("history_subtitle")}
+                {t("subtitle")}
               </Typography>
             )}
           </Box>

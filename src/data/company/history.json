@@ -1,8 +1,8 @@
 {
-  "history_image": "/images/pages/company/company_history.png",
-  "history_color": "#1F57A6",
-  "history_image_position": "50% 50%",
-  "history_list": [
+  "image": "/images/pages/company/company_history.png",
+  "color": "#1F57A6",
+  "image_position": "50% 50%",
+  "list": [
     { "id": "y2024", "year": "2024" },
     { "id": "y2021", "year": "2021" },
     { "id": "y2018", "year": "2018" },

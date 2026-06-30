@@ -24,6 +24,7 @@ import SEO from "../../common/SEO";
 import PrivacyPolicyIcon from "../../components/support/PrivacyPolicyIcon";
 import ScrollButton from "../../common/ScrollButton";
 import BreadScrum from "../../common/BreadScrum";
+import resource from "../../data/company/contact.json";
 
 interface ContactFormType {
   company: string;
@@ -38,7 +39,7 @@ interface ContactFormType {
 
 const Contact = () => {
   const { t } = useTranslation("company/contact");
-  const contactTexts = t("contact_texts", { returnObjects: true }) as string[];
+  const contactTexts = t("texts", { returnObjects: true }) as string[];
   const [submitStatus, setSubmitStatus] = useState<
     "loading" | "success" | "error" | null
   >(null);
@@ -149,8 +150,8 @@ const Contact = () => {
             >
               <Box
                 component="img"
-                src="/images/pages/company/company_temp_contact.png"
-                alt={t("contact_img_alt")}
+                src={resource.imgUrl}
+                alt={t("img_alt")}
                 loading="lazy"
                 sx={(theme) => ({
                   width: "80%",
@@ -184,7 +185,7 @@ const Contact = () => {
                   color: "transparent",
                 }}
               >
-                {t("contact_title")}
+                {t("title")}
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 {contactTexts.map((text, index) => (

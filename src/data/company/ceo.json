@@ -1,5 +1,5 @@
 {
-  "ceo_image": "/images/pages/company/company_ceo.png",
-  "ceo_color": "#179EBD",
-  "ceo_image_position": "70% 50%"
+  "image": "/images/pages/company/company_ceo.png",
+  "color": "#179EBD",
+  "image_position": "70% 50%"
 }

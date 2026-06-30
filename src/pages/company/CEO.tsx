@@ -8,7 +8,7 @@ import ScrollButton from "../../common/ScrollButton";
 
 const CEO = () => {
   const { t } = useTranslation("company/ceo");
-  const ceoContents = t("ceo_contents", { returnObjects: true }) as string[];
+  const ceoContents = t("contents", { returnObjects: true }) as string[];
 
   return (
     <>
@@ -22,7 +22,7 @@ const CEO = () => {
         <ScrollButton />
         <CompanyPageHeader
           imgUrl="/images/pages/company/company_temp_ceo.png"
-          imgPosition={resource.ceo_image_position}
+          imgPosition={resource.image_position}
           pageKey="ceo"
         />
         <Box
@@ -62,7 +62,7 @@ const CEO = () => {
           >
             <Trans
               t={t}
-              i18nKey="ceo_title"
+              i18nKey="title"
               components={{
                 grad: (
                   <Box
@@ -104,7 +104,7 @@ const CEO = () => {
               whiteSpace: "pre-line",
             }}
           >
-            {t("ceo_footer")}
+            {t("footer")}
           </Typography>
         </Box>
       </Box>

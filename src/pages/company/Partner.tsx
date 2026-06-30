@@ -17,7 +17,7 @@ const Partner = () => {
   const td = (key: string): string => t(key as never);
 
   const { customer_company, customer_institution, customer_education } =
-    resource.partner_customerList;
+    resource.customerList;
 
   // 작은 화면용: 3개씩 chunk로 나누기
   const chunkArray = (arr: CustomerListObj[], size: number) => {
@@ -55,7 +55,7 @@ const Partner = () => {
         <ScrollButton />
         <CompanyPageHeader
           imgUrl="/images/pages/company/company_temp_partner.png"
-          imgPosition={resource.partner_image_position}
+          imgPosition={resource.image_position}
           pageKey="partner"
         />
 
@@ -94,9 +94,9 @@ const Partner = () => {
                   },
                 })}
               >
-                {t("partner_partner")}
+                {t("partner")}
               </Typography>
-              {t("partner_partner_subtitle") && (
+              {t("partner_subtitle") && (
                 <Typography
                   sx={(theme) => ({
                     fontFamily: "Freesentation-6-SemiBold",
@@ -107,7 +107,7 @@ const Partner = () => {
                     },
                   })}
                 >
-                  {t("partner_partner_subtitle")}
+                  {t("partner_subtitle")}
                 </Typography>
               )}
             </Box>
@@ -122,7 +122,7 @@ const Partner = () => {
                 pl: 0,
               }}
             >
-              {resource.partner_partnerList.map((partnerImg) => (
+              {resource.partnerList.map((partnerImg) => (
                 <Box
                   key={partnerImg.id}
                   component="li"
@@ -162,9 +162,9 @@ const Partner = () => {
                   },
                 })}
               >
-                {t("partner_customer")}
+                {t("customer")}
               </Typography>
-              {t("partner_customer_subtitle") && (
+              {t("customer_subtitle") && (
                 <Typography
                   sx={(theme) => ({
                     fontFamily: "Freesentation-6-SemiBold",
@@ -175,7 +175,7 @@ const Partner = () => {
                     },
                   })}
                 >
-                  {t("partner_customer_subtitle")}
+                  {t("customer_subtitle")}
                 </Typography>
               )}
             </Box>

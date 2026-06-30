@@ -1,8 +1,8 @@
 {
-  "partner_image": "/images/pages/company/company_partner.png",
-  "partner_color": "#179EBD",
-  "partner_image_position": "20% 50%",
-  "partner_partnerList": [
+  "image": "/images/pages/company/company_partner.png",
+  "color": "#179EBD",
+  "image_position": "20% 50%",
+  "partnerList": [
     {
       "id": "dassault",
       "src": "/images/pages/company/partner/partner_dassaultsystems.svg"
@@ -36,7 +36,7 @@
       "src": "/images/pages/company/partner/partner_ptvgroup.svg"
     }
   ],
-  "partner_customerList": {
+  "customerList": {
     "customer_company": [
       {
         "layout": "space-between",
