@@ -15,6 +15,11 @@ const baseTheme = createTheme({
 });
 
 export const mediaQueries = {
+  // === 경계 up 쿼리 (useBreakpoint 내부 파생용 — 실제 matchMedia 구독은 이 3개 + portrait) ===
+  upMobileLandscape: baseTheme.breakpoints.up("mobileLandscape"), // >=481px
+  upTablet: baseTheme.breakpoints.up("tablet"), // >=846px
+  upDesktop: baseTheme.breakpoints.up("desktop"), // >=1280px
+
   // === 기본 범위 (화면 크기만) ===
   mobilePortrait: baseTheme.breakpoints.between(
     "mobilePortrait",
