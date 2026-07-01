@@ -20,6 +20,7 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        gap: 4,
       }}
     >
       <Box
@@ -27,40 +28,53 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
-          gap: "10px",
+          gap: 2,
         }}
       >
-        <a
-          href="/"
-          onClick={(e) => {
-            e.preventDefault();
-            navigate("/");
-          }}
-          aria-label="iVH 홈으로 이동"
-          style={{ display: "inline-flex" }}
-        >
-          <img
-            src={logoBlack}
-            alt="iVH 로고"
-            style={{
-              width: "88px",
-              marginRight: "10px",
-              cursor: "pointer",
-            }}
-          />
-        </a>
-        <Typography
+        <Box
           sx={{
-            fontSize: "16px",
-            fontFamily: FONTS.freesentation.medium,
-            color: "black",
-            height: "24px",
-            lineHeight: "34px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            gap: 1,
           }}
-          component="p"
         >
-          {companyName}
-        </Typography>
+          <Box
+            component="a"
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/");
+            }}
+            aria-label="iVH 홈으로 이동"
+            sx={{ display: "inline-flex" }}
+          >
+            <Box
+              component="img"
+              src={logoBlack}
+              alt="iVH 로고"
+              // 모바일 푸터(<1280)에선 68px, 데스크탑(≥1280)에선 88px
+              sx={(theme) => ({
+                width: "68px",
+                [theme.breakpoints.up("desktop")]: { width: "88px" },
+                cursor: "pointer",
+              })}
+            />
+          </Box>
+          <Typography
+            sx={{
+              fontSize: "16px",
+              fontFamily: FONTS.freesentation.medium,
+              color: "black",
+              height: "24px",
+              lineHeight: "34px",
+            }}
+            component="p"
+          >
+            {companyName}
+          </Typography>
+        </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -70,7 +84,7 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
         >
           <Typography
             sx={{
-              fontSize: "16px",
+              fontSize: "14px",
               fontFamily: FONTS.freesentation.regular,
               color: "black",
             }}
@@ -87,26 +101,32 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
           >
             <Typography
               sx={{
-                fontSize: "16px",
+                fontSize: "14px",
                 fontFamily: FONTS.freesentation.regular,
                 color: "black",
               }}
               component="p"
             >
-              <Box component="span" sx={{ fontFamily: FONTS.freesentation.bold }}>
+              <Box
+                component="span"
+                sx={{ fontFamily: FONTS.freesentation.bold }}
+              >
                 T.
               </Box>{" "}
               {phone}
             </Typography>
             <Typography
               sx={{
-                fontSize: "16px",
+                fontSize: "14px",
                 fontFamily: FONTS.freesentation.regular,
                 color: "black",
               }}
               component="p"
             >
-              <Box component="span" sx={{ fontFamily: FONTS.freesentation.bold }}>
+              <Box
+                component="span"
+                sx={{ fontFamily: FONTS.freesentation.bold }}
+              >
                 E.
               </Box>{" "}
               {email}
@@ -129,23 +149,25 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
               alignItems: "center",
             }}
           >
-            <img
+            <Box
+              component="img"
               onClick={() => window.open(linkedinUrl)}
               src={linkedinLogoBlack}
               alt="linkedin"
-              style={{ width: "40px", height: "40px", cursor: "pointer" }}
+              sx={{ width: "40px", height: "40px", cursor: "pointer" }}
             />
-            <img
+            <Box
+              component="img"
               onClick={() => window.open(youtubeUrl)}
               src={youtubeLogoBlack}
               alt="youtube"
-              style={{ width: "40px", height: "40px", cursor: "pointer" }}
+              sx={{ width: "40px", height: "40px", cursor: "pointer" }}
             />
           </Box>
 
           <Typography
             sx={{
-              fontSize: "16px",
+              fontSize: "14px",
               fontFamily: FONTS.freesentation.regular,
               color: "black",
             }}
