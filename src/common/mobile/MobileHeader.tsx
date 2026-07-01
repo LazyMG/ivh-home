@@ -1,41 +1,28 @@
-import { useState, useEffect, useRef } from "react";
-import { AppBar, IconButton, Box, Typography, Divider } from "@mui/material";
+import { useState, useEffect } from "react";
+import { AppBar, IconButton, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-// import logoWhite from "/images/header/ivh_logo_white.png";
-// import logoBlack from "/images/header/ivh_logo_black.png";
-import logoGradient from "/images/header/iVH_logo_gra.svg";
-
+import logoWhite from "/images/header/ivh_logo_white.png";
 import { useLocation } from "react-router-dom";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
-import { styled } from "@mui/material/styles";
-import menu from "../../data/header/menu.json";
-import youtubeWhite from "/images/header/youtube_white.png";
-import linkedinWhite from "/images/header/linkedin_white.png";
-import youtubeBlack from "/images/header/youtube_black.png";
-import linkedinBlack from "/images/header/linkedin_black.png";
-import { MobileMenuRecursive } from "./MobileMenuRecursive";
+import MobileLangToggle from "./MobileLangToggle";
+import MobileDrawer from "./MobileDrawer";
+
+// 상단 고정 헤더의 대략적 높이(px).
+// 드로어 콘텐츠가 헤더에 가려지지 않도록 MobileDrawer에 상단 패딩으로 넘긴다.
+// 헤더의 py / 아이콘·로고 크기를 바꾸면 이 값도 함께 맞춰줄 것.
+const HEADER_HEIGHT = 104;
 
 const MobileHeader = () => {
   const navigate = useLocalizedNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuDrawerRef = useRef<HTMLDivElement>(null);
 
   const isHomePage = /^\/(en|ko)?\/?$/.test(location.pathname);
 
   // 메뉴가 열렸을 때 바디 스크롤 방지
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-      // 메뉴 드로어 초기 위치로 이동
-      if (menuDrawerRef.current) {
-        menuDrawerRef.current.scrollTop = 0;
-      }
-    } else {
-      document.body.style.overflow = "";
-    }
-
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -46,46 +33,45 @@ const MobileHeader = () => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  const handleClose = () => {
-    setIsMenuOpen(false);
-  };
-
   return (
     <>
       {/* 모바일 상단 바 */}
       <AppBar
         position={isHomePage ? "fixed" : "sticky"}
         sx={{
-          backgroundColor: "#ffffff",
-          boxShadow: "0 3px 10px rgba(0, 0, 0, 0.2)",
-          p: 2,
+          background: "linear-gradient(90deg, #00235F 0%, #03193F 100%)",
+          boxShadow: "0 3px 6px 3px rgba(0, 0, 0, 0.5)",
+          // 세로 여백은 py, 좌우 패딩은 px 하나로 제어 (값 키우면 양 끝이 안쪽으로 당겨짐)
+          py: 2,
+          px: 4,
           zIndex: 1100,
-          borderBottom: "2px solid #e0e0e0",
+          borderBottom: "6px solid transparent",
+          borderImage: "linear-gradient(90deg, #296EE5 0%, #8BB0F1 100%) 1",
         }}
       >
-        {/* 햄버거 아이콘 */}
-        <IconButton
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          sx={{
-            color: "#000000",
-            position: "absolute",
-            left: 8,
-            top: 0,
-            bottom: 0,
-          }}
-        >
-          {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
-        </IconButton>
-
-        {/* 로고 */}
+        {/* 3열 그리드: [햄버거 | 로고(가운데) | 언어] — 양옆 1fr로 로고는 항상 정중앙 */}
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
+            display: "grid",
+            gridTemplateColumns: "1fr auto 1fr",
             alignItems: "center",
           }}
         >
-          <a
+          {/* 햄버거 아이콘 (크기: MenuIcon fontSize / 터치영역: IconButton p) */}
+          <IconButton
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            sx={{ color: "#ffffff", justifySelf: "start", p: 0.5 }}
+          >
+            {isMenuOpen ? (
+              <CloseIcon sx={{ fontSize: 30 }} />
+            ) : (
+              <MenuIcon sx={{ fontSize: 30 }} />
+            )}
+          </IconButton>
+
+          {/* 로고 (가운데 열) */}
+          <Box
+            component="a"
             href="/"
             onClick={(e) => {
               e.preventDefault();
@@ -93,177 +79,38 @@ const MobileHeader = () => {
               setIsMenuOpen(false);
             }}
             aria-label="iVH 홈으로 이동"
-            style={{ display: "inline-flex", alignItems: "center", cursor: "pointer" }}
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              cursor: "pointer",
+            }}
           >
-            <img
-              src={logoGradient}
+            <Box
+              component="img"
+              src={logoWhite}
               alt="iVH 로고"
-              style={{ width: "64px", height: "27.4px" }}
+              sx={{ width: "64px", height: "27.4px" }}
             />
-          </a>
+          </Box>
+
+          {/* 언어 선택 (우측 열, 오른쪽 정렬) */}
+          <Box
+            sx={{ justifySelf: "end", display: "flex", alignItems: "center" }}
+          >
+            <MobileLangToggle />
+          </Box>
         </Box>
       </AppBar>
 
       {/* 햄버거 메뉴 드로어 */}
-      <MobileMenuDrawer ref={menuDrawerRef} $isOpen={isMenuOpen}>
-        {menu.mainMenu.map((mainItem, index) => {
-          const mainPath = (mainItem as { path?: string }).path;
-          return (
-          <Box key={index} sx={{ mb: 3 }}>
-            {/* 메인 메뉴 타이틀 */}
-            <MobileMainMenuTitle
-              onClick={() => {
-                if (mainPath) {
-                  navigate(mainPath);
-                  handleClose();
-                }
-              }}
-              $isActive={
-                mainPath && location.pathname.startsWith(mainPath)
-                  ? true
-                  : false
-              }
-            >
-              {mainItem.title}
-            </MobileMainMenuTitle>
-
-            {/* 서브메뉴 (재귀적) */}
-            {mainItem.subMenu && mainItem.subMenu.length > 0 && (
-              <Box sx={{ mt: 1 }}>
-                <MobileMenuRecursive
-                  items={mainItem.subMenu}
-                  isHomePage={isHomePage}
-                  navigate={navigate}
-                  onClose={handleClose}
-                />
-              </Box>
-            )}
-
-            {index < menu.mainMenu.length - 1 && (
-              <Divider
-                sx={{
-                  mt: 2,
-                  borderColor: isHomePage
-                    ? "rgba(255, 255, 255, 0.1)"
-                    : "rgba(0, 0, 0, 0.1)",
-                }}
-              />
-            )}
-          </Box>
-          );
-        })}
-
-        {/* 소셜 미디어 영역 */}
-        <Box
-          sx={{
-            display: "flex",
-            gap: 2,
-            mt: 4,
-            pt: 3,
-            borderTop: `1px solid ${
-              isHomePage ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)"
-            }`,
-          }}
-        >
-          <img
-            src={isHomePage ? youtubeWhite : youtubeBlack}
-            alt="youtube"
-            style={{ width: "40px", height: "40px", cursor: "pointer" }}
-            onClick={() =>
-              window.open("https://www.youtube.com/@koreaelec", "_blank")
-            }
-          />
-          <img
-            src={isHomePage ? linkedinWhite : linkedinBlack}
-            alt="linkedin"
-            style={{ width: "40px", height: "40px", cursor: "pointer" }}
-            onClick={() =>
-              window.open(
-                "https://kr.linkedin.com/company/ivhkr?trk=public_post_feed-actor-image",
-                "_blank",
-              )
-            }
-          />
-        </Box>
-      </MobileMenuDrawer>
-
-      {/* 오버레이 (메뉴 열렸을 때 배경 어둡게) */}
-      {isMenuOpen && (
-        <Box
-          onClick={() => setIsMenuOpen(false)}
-          sx={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            zIndex: 1000,
-          }}
-        />
-      )}
+      <MobileDrawer
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        navigate={navigate}
+        topOffset={HEADER_HEIGHT}
+      />
     </>
   );
 };
-
-// 모바일 전용 스타일들
-const MobileMenuDrawer = styled(Box, {
-  shouldForwardProp: (prop) => prop !== "$isOpen" && prop !== "$isHomePage",
-})<{
-  $isOpen: boolean;
-}>(({ $isOpen }) => {
-  return {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "80%",
-    maxWidth: "400px",
-    height: "100vh",
-    boxSizing: "border-box",
-    backgroundColor: "#ffffff",
-    transform: $isOpen ? "translateX(0)" : "translateX(-100%)",
-    transition: "transform 0.3s ease",
-    zIndex: 1050,
-    padding: "80px 24px 24px 24px",
-    overflowY: "auto",
-    overflowX: "hidden",
-
-    // 스크롤바 스타일
-    "&::-webkit-scrollbar": {
-      width: "8px",
-    },
-    "&::-webkit-scrollbar-track": {
-      backgroundColor: "#f0f0f0",
-    },
-    "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "#d0d0d0",
-      borderRadius: "4px",
-      "&:hover": {
-        backgroundColor: "#b0b0b0",
-      },
-    },
-  };
-});
-
-const MobileMainMenuTitle = styled(Typography, {
-  shouldForwardProp: (prop) => prop !== "$isActive" && prop !== "$isHomePage",
-})<{
-  $isActive?: boolean;
-}>(({ $isActive }) => {
-  return {
-    color: "#424242",
-    fontSize: "18px",
-    fontWeight: "bold",
-    cursor: "pointer",
-    marginBottom: "8px",
-    paddingBottom: "8px",
-    borderBottom: $isActive ? `2px solid #424242` : `2px solid #e0e0e0`,
-    transition: "all 0.2s ease",
-
-    "&:hover": {
-      opacity: 0.8,
-    },
-  };
-});
 
 export default MobileHeader;

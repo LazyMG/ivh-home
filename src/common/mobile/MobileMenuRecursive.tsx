@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Box, Typography, Collapse } from "@mui/material";
-import { styled } from "@mui/material/styles";
 import type { MenuItem } from "../../types/header";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import { FONTS } from "../../theme/theme";
 
 interface MobileMenuRecursiveProps {
   items: MenuItem[];
-  isHomePage: boolean;
   navigate: (path: string) => void;
   onClose: () => void;
   level?: number;
@@ -15,7 +14,6 @@ interface MobileMenuRecursiveProps {
 
 export const MobileMenuRecursive = ({
   items,
-  isHomePage,
   navigate,
   onClose,
   level = 1,
@@ -66,15 +64,26 @@ export const MobileMenuRecursive = ({
 
         return (
           <Box key={item.name}>
-            <MobileItemButton
+            <Box
               onClick={() => handleItemClick(item)}
-              $level={level}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                px: 1,
+                py: level === 1 ? 1.5 : 1, // level 1만 위아래 여백 크게
+                cursor: "pointer",
+                color: "#424242",
+                mb: 0.5,
+              }}
             >
               <Typography
                 sx={{
-                  fontSize:
-                    level === 1 ? "15px" : level === 2 ? "14px" : "13px",
-                  fontWeight: level === 1 ? "600" : "400",
+                  fontSize: level === 1 ? "16px" : "14px",
+                  fontFamily:
+                    level === 1
+                      ? FONTS.freesentation.semiBold
+                      : FONTS.freesentation.medium,
                   flex: 1,
                 }}
               >
@@ -86,7 +95,7 @@ export const MobileMenuRecursive = ({
                 ) : (
                   <ExpandMoreIcon fontSize="small" />
                 ))}
-            </MobileItemButton>
+            </Box>
 
             {/* 재귀적으로 자식 렌더링 */}
             {hasChildren && (
@@ -94,7 +103,6 @@ export const MobileMenuRecursive = ({
                 <Box sx={{ pl: 2 }}>
                   <MobileMenuRecursive
                     items={childItems}
-                    isHomePage={isHomePage}
                     navigate={navigate}
                     onClose={onClose}
                     level={level + 1}
@@ -108,27 +116,3 @@ export const MobileMenuRecursive = ({
     </Box>
   );
 };
-
-const MobileItemButton = styled(Box, {
-  shouldForwardProp: (prop) => prop !== "$isHomePage" && prop !== "$level",
-})<{
-  $level: number;
-}>(({ $level }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  padding: $level === 1 ? "12px 8px" : "8px 8px",
-  cursor: "pointer",
-  borderRadius: "4px",
-  color: "#424242",
-  transition: "all 0.2s ease",
-  marginBottom: "4px",
-
-  "&:hover": {
-    backgroundColor: "rgba(0, 0, 0, 0.05)",
-  },
-
-  "&:active": {
-    transform: "scale(0.98)",
-  },
-}));
