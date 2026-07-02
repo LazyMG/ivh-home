@@ -14,7 +14,7 @@ const ApplicationButton = ({ children }: ApplicationButtonProps) => {
         borderRadius: "50%",
         width: "30px",
         height: "30px",
-        border: "2px solid #626262",
+        border: "2px solid #737373",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

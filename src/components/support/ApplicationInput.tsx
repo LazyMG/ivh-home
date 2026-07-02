@@ -29,7 +29,15 @@ const ApplicationInput = ({
         type={type}
         placeholder={placeholder}
         required
-        sx={{ width: "100%" }}
+        sx={{
+          width: "100%",
+          "& .MuiOutlinedInput-root": {
+            borderRadius: 0,
+            "& fieldset": { borderColor: "#7C7C7C" },
+            "&:hover fieldset": { borderColor: "#7C7C7C" },
+            "&.Mui-focused fieldset": { borderColor: "#7C7C7C" },
+          },
+        }}
         slotProps={{
           inputLabel: {
             shrink: shrink ? true : undefined,

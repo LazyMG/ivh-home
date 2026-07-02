@@ -23,7 +23,7 @@ import { useState } from "react";
 import { EAMIL_REGEX, PHONE_REGEX } from "../../utils/constants";
 import ApplicationInput from "./ApplicationInput";
 import CustomSnackbar from "./CustomSnackbar";
-import PrivacyPolicyIcon from "./PrivacyPolicyIcon";
+// import PrivacyPolicyIcon from "./PrivacyPolicyIcon";
 import ApplicationSelect from "./ApplicationSelect";
 import { FONTS } from "../../theme/theme";
 
@@ -267,21 +267,27 @@ const ApplicationForm = ({
     <Box
       onSubmit={handleSubmit(onSubmit)}
       component={"form"}
-      sx={{
+      sx={(theme) => ({
         display: "flex",
         flexDirection: "column",
-        gap: 2,
-        px: 15,
-        mt: 2,
-      }}
+        [theme.breakpoints.up("desktop")]: {
+          px: 15,
+          mt: 2,
+          gap: 2,
+        },
+      })}
     >
       <Typography
         component="h4"
-        sx={{
+        sx={(theme) => ({
           fontSize: "20px",
-          fontFamily: FONTS.freesentation.semiBold,
-          color: "#03193F",
-        }}
+          fontFamily: FONTS.freesentation.bold,
+          color: "#003B8D",
+          mb: 1,
+          [theme.breakpoints.up("desktop")]: {
+            mb: 0,
+          },
+        })}
       >
         수강신청
       </Typography>
@@ -291,18 +297,31 @@ const ApplicationForm = ({
         reservationList={reservationList}
       />
       <Box
-        sx={{
-          my: 3,
-          borderTop: "1px dashed #C9C9C9",
+        sx={(theme) => ({
+          my: 1,
+          borderTop: "none",
           width: "100%",
-        }}
+          [theme.breakpoints.up("desktop")]: {
+            borderTop: "1px dashed #C9C9C9",
+            my: 3,
+          },
+        })}
       />
-      <Stack gap={2}>
+      <Stack
+        sx={(theme) => ({
+          gap: 1,
+          mt: 2,
+          [theme.breakpoints.up("desktop")]: {
+            gap: 2,
+            mt: 0,
+          },
+        })}
+      >
         <Typography
           sx={{
             fontSize: "20px",
-            fontFamily: FONTS.freesentation.semiBold,
-            color: "#03193F",
+            fontFamily: FONTS.freesentation.bold,
+            color: "#003B8D",
           }}
         >
           신청자
@@ -313,7 +332,7 @@ const ApplicationForm = ({
               flex: 1,
               display: "grid",
               gridTemplateColumns: "repeat(1,1fr)",
-              gap: 4,
+              gap: 2,
               [theme.breakpoints.up("mobileLandscape")]: {
                 gridTemplateColumns: "repeat(3,1fr)",
                 gap: 4,
@@ -465,19 +484,29 @@ const ApplicationForm = ({
         </Box>
       </Stack>
       <Box
-        sx={{
-          my: 3,
-          borderTop: "1px dashed #C9C9C9",
+        sx={(theme) => ({
+          my: 1,
+          borderTop: "none",
           width: "100%",
-        }}
+          [theme.breakpoints.up("desktop")]: {
+            borderTop: "1px dashed #C9C9C9",
+            my: 3,
+          },
+        })}
       />
-      <Box sx={{ position: "relative" }}>
+      <Box
+        sx={(theme) => ({
+          position: "relative",
+          mt: 2,
+          [theme.breakpoints.up("desktop")]: { mt: 0 },
+        })}
+      >
         <Box display="flex" alignContent="center">
           <Typography
             sx={{
               fontSize: "20px",
               fontFamily: FONTS.freesentation.semiBold,
-              color: "#03193F",
+              color: "#003B8D",
               mr: 2,
               alignSelf: "center",
             }}
@@ -492,7 +521,7 @@ const ApplicationForm = ({
                   sx={{
                     fontSize: "16px",
                     fontFamily: FONTS.freesentation.medium,
-                    color: "#8D8D8D",
+                    color: "#626262",
                   }}
                 >
                   신청자 정보와 같음
@@ -521,12 +550,15 @@ const ApplicationForm = ({
           </Box>
         </Box>
         <Stack
-          gap={4}
-          sx={{
-            // maxHeight: "500px",
+          sx={(theme) => ({
             overflowY: "auto",
-            my: 2,
-          }}
+            gap: 3,
+            mb: 3,
+            [theme.breakpoints.up("desktop")]: {
+              gap: 4,
+              mb: 0,
+            },
+          })}
         >
           {customerFields.map((_, index) => (
             <Box
@@ -547,7 +579,7 @@ const ApplicationForm = ({
                   flex: 1,
                   display: "grid",
                   gridTemplateColumns: "repeat(1,1fr)",
-                  gap: 4,
+                  gap: 2,
                   [theme.breakpoints.up("mobileLandscape")]: {
                     gridTemplateColumns: "repeat(3,1fr)",
                     gap: 4,
@@ -684,34 +716,6 @@ const ApplicationForm = ({
                     )}
                 </ApplicationInput>
               </Box>
-              <Box
-                gap={1}
-                sx={(theme) => ({
-                  display: "flex",
-                  flexDirection: "row",
-                  position: "relative",
-                  width: "100%",
-                  mx: 0,
-                  mt: 1,
-                  justifyContent: "flex-end",
-                  [theme.breakpoints.up("tablet")]: {
-                    flexDirection: "column",
-                    position: "absolute",
-                    width: "auto",
-                    mx: 1,
-                    mt: 0,
-                    justifyContent: "auto",
-                    right: "-48px",
-                  },
-                })}
-              >
-                <ApplicationButton>
-                  <RemoveIcon onClick={() => removeCustomerList(index)} />
-                </ApplicationButton>
-                <ApplicationButton>
-                  <AddIcon onClick={addCustomerList} />
-                </ApplicationButton>
-              </Box>
             </Box>
           ))}
         </Stack>
@@ -728,17 +732,53 @@ const ApplicationForm = ({
           minRows={5}
           multiline
           placeholder="요청 사항을 입력해주십시오."
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              borderRadius: 0,
+              "& fieldset": { borderColor: "#7C7C7C" },
+              "&:hover fieldset": { borderColor: "#7C7C7C" },
+              "&.Mui-focused fieldset": { borderColor: "#7C7C7C" },
+            },
+            "& .MuiOutlinedInput-input::placeholder": {
+              color: "#7C7C7C",
+              opacity: 1,
+            },
+          }}
           {...register("memo")}
         />
+        <Box
+          gap={1}
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            mt: 1,
+          }}
+        >
+          <ApplicationButton>
+            <RemoveIcon
+              onClick={() => removeCustomerList(customerFields.length - 1)}
+            />
+          </ApplicationButton>
+          <ApplicationButton>
+            <AddIcon onClick={addCustomerList} />
+          </ApplicationButton>
+        </Box>
       </Box>
       <Box
-        sx={{
+        sx={(theme) => ({
           width: "100%",
           display: "flex",
           alignItems: "flex-end",
           flexDirection: "column",
           position: "relative",
-        }}
+          mt: 4,
+          mb: 2,
+          [theme.breakpoints.up("desktop")]: {
+            mt: 0,
+            mb: 0,
+          },
+        })}
       >
         <Box
           sx={{
@@ -756,19 +796,29 @@ const ApplicationForm = ({
                   <Checkbox
                     checked={field.value || false}
                     onChange={field.onChange}
+                    sx={(theme) => ({
+                      py: 0,
+                      [theme.breakpoints.up("desktop")]: {
+                        py: "9px",
+                      },
+                    })}
                   />
                 )}
               />
             }
-            sx={{
+            sx={(theme) => ({
               fontFamily: FONTS.freesentation.semiBold,
               mr: 1,
-              color: "#8D8D8D",
-              fontSize: "18px",
-            }}
+              my: 0,
+              [theme.breakpoints.up("desktop")]: {
+                my: "auto",
+              },
+              color: "#626262",
+              fontSize: "16px",
+            })}
             label={"개인정보처리방침에 동의합니다."}
           />
-          <PrivacyPolicyIcon />
+          {/* <PrivacyPolicyIcon /> */}
         </Box>
 
         {errors.isChecked && (
@@ -783,26 +833,42 @@ const ApplicationForm = ({
           />
         )}
       </Box>
-      <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+      <Box
+        sx={(theme) => ({
+          display: "flex",
+          justifyContent: "flex-end",
+          mb: 12,
+          [theme.breakpoints.up("desktop")]: { mb: 0 },
+        })}
+      >
         <Button
           variant="contained"
           type="submit"
-          sx={{
+          sx={(theme) => ({
             width: "fit-content",
-            padding: "8px 32px",
+            px: 4,
             fontSize: "18px",
             fontFamily: FONTS.freesentation.semiBold,
             color: "#fff",
-            backgroundColor: "#03193F",
-            boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
+            backgroundColor: "#003B8D",
+            borderRadius: "4px",
             "&:hover": {
-              backgroundColor: "#03193F",
+              backgroundColor: "#003B8D",
             },
             "&.Mui-disabled": {
               backgroundColor: "#cccccc",
               color: "#888888",
             },
-          }}
+            [theme.breakpoints.up("desktop")]: {
+              px: 4,
+              py: 1,
+              boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
+              backgroundColor: "#03193F",
+              "&:hover": {
+                backgroundColor: "#03193F",
+              },
+            },
+          })}
           disabled={submitStatus === "loading"}
         >
           신청하기

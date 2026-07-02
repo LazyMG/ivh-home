@@ -49,8 +49,19 @@ const ApplicationSelect = ({
     reservationList && reservationList.length > 0;
   return (
     <FormControl fullWidth sx={{ position: "relative" }}>
-      <InputLabel id="reservation-select-label">
-        {isReservationListAvailable ? "수강할 교육*" : "교육 일정이 없습니다."}
+      <InputLabel
+        id="reservation-select-label"
+        sx={(theme) => ({
+          // resting(비활성) 라벨을 Select 높이에 맞춰 세로 중앙 정렬
+          "&.MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
+            transform: "translate(14px, 9px)", // 모바일(py:1) 기준
+            [theme.breakpoints.up("desktop")]: {
+              transform: "translate(14px, 16px)", // 데스크탑(py:2) 기준
+            },
+          },
+        })}
+      >
+        {isReservationListAvailable ? "강의명*" : "교육 일정이 없습니다."}
       </InputLabel>
       <Controller
         name="reservationId"
@@ -64,14 +75,28 @@ const ApplicationSelect = ({
           <Select
             labelId="reservation-select-label"
             label={
-              isReservationListAvailable
-                ? "수강할 교육"
-                : "교육 일정이 없습니다."
+              isReservationListAvailable ? "강의명" : "교육 일정이 없습니다."
             }
             {...field}
             required
             value={field.value ?? ""}
             disabled={!isReservationListAvailable}
+            sx={(theme) => ({
+              borderRadius: 0,
+              "& .MuiOutlinedInput-notchedOutline": { borderColor: "#7C7C7C" },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#7C7C7C",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#7C7C7C",
+              },
+              "& .MuiSelect-select": {
+                py: 1, // 모바일: 낮게
+                [theme.breakpoints.up("desktop")]: {
+                  py: 2, // 데스크탑: 높게
+                },
+              },
+            })}
           >
             {isReservationListAvailable &&
               filterPrevReservations(reservationList).map((reservation) => (
@@ -80,6 +105,8 @@ const ApplicationSelect = ({
                   value={reservation.id}
                   sx={{
                     backgroundColor: reservation.bgColor,
+                    whiteSpace: "normal",
+                    wordBreak: "keep-all",
                     ":active": { backgroundColor: reservation.bgColor },
                     ":focus": { backgroundColor: reservation.bgColor },
                     ":hover": {
@@ -94,7 +121,7 @@ const ApplicationSelect = ({
                       year: "numeric",
                       month: "2-digit",
                       day: "2-digit",
-                    }
+                    },
                   )} ${reservation.reservationName}`}
                 </MenuItem>
               ))}
