@@ -1,25 +1,22 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import type { Theme } from "@mui/material/styles";
 import resource from "../../data/product/iMOVA.json";
 import TechSpecTable from "../../components/product/iMOVA/TechSpecTable";
 import { useTranslation } from "react-i18next";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Mousewheel, Navigation } from "swiper/modules";
-
-// Swiper CSS import
-import "swiper/css";
-import "swiper/css/pagination";
-import "../../style/imova-slider.css";
 import ScrollButton from "../../common/ScrollButton";
 import SEO from "../../common/SEO";
 import type { IMOVATechnologySpec } from "../../types/product";
 import SectionTitle from "../../components/common/SectionTitle";
 import ProductHero from "../../components/product/ProductHero";
+import IMOVAHeroMobile from "../../components/product/IMOVAHeroMobile";
+import IMOVAProductionLine from "../../components/product/IMOVAProductionLine";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { FONTS } from "../../theme/theme";
 
 const IMOVA = () => {
   const { t } = useTranslation("product/iMOVA");
+  const { isMobile } = useBreakpoint();
   const THRESHOLD = 100;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- 동적 키 접근용
@@ -78,80 +75,67 @@ const IMOVA = () => {
       <Box component="main">
         <ScrollButton threshold={THRESHOLD} />
 
-        <ProductHero
-          image={resource.main_image}
-          imageAlt={t("main_image_alt")}
-          badge="AMR"
-          titleImage={resource.title_image}
-          titleImageAlt={t("title_image_alt")}
-          caption={t("page_name")}
-          description={t("title")}
-          underlineWidth="56%"
-          breadcrumbKey="imova"
-          descriptionSx={(theme: Theme) => ({
-            color: "#2c2c2c",
-            fontFamily: FONTS.freesentation.medium,
-            maxWidth: "90%",
-            [theme.breakpoints.up("tablet")]: {
-              maxWidth: "80%",
-            },
-          })}
-        />
-        <Box
-          sx={{
-            width: "100%",
-            backgroundColor: "#03193F",
-            p: 10,
-            boxSizing: "border-box",
-          }}
-        >
-          <Box
-            component="video"
-            aria-label={t("top_video_alt")}
-            src={resource.top_video}
-            loop
-            muted
-            playsInline
-            autoPlay
-            sx={(theme) => ({
-              width: "100%",
-              height: "auto",
-              maxHeight: "104vh",
-              objectFit: "cover",
-              display: "block",
-              backgroundColor: "#ffffff",
-              clipPath: "inset(0 1px 0 0)",
-              [theme.breakpoints.down("tablet")]: {
-                maxHeight: "50vh",
+        {isMobile ? (
+          <IMOVAHeroMobile
+            image={resource.mobile_main_image}
+            imageAlt={t("main_image_alt")}
+            titleImage={resource.title_image}
+            titleImageAlt={t("title_image_alt")}
+            badge="AMR"
+            caption={t("page_name")}
+            description={t("title")}
+          />
+        ) : (
+          <ProductHero
+            image={resource.main_image}
+            imageAlt={t("main_image_alt")}
+            badge="AMR"
+            titleImage={resource.title_image}
+            titleImageAlt={t("title_image_alt")}
+            caption={t("page_name")}
+            description={t("title")}
+            underlineWidth="56%"
+            breadcrumbKey="imova"
+            descriptionSx={(theme: Theme) => ({
+              color: "#2c2c2c",
+              fontFamily: FONTS.freesentation.medium,
+              maxWidth: "90%",
+              [theme.breakpoints.up("tablet")]: {
+                maxWidth: "88%",
               },
             })}
           />
-        </Box>
-
-        <Box
-          sx={(theme) => ({
-            mt: 1,
-            display: "block",
-            px: "20px",
-            [theme.breakpoints.up("desktop")]: {
-              display: "none",
-            },
-          })}
-        >
-          <Typography
-            sx={(theme) => ({
-              color: "#2c2c2c",
-              fontSize: "12px",
-              wordBreak: "keep-all",
-              fontFamily: FONTS.freesentation.medium,
-              [theme.breakpoints.up("tablet")]: {
-                fontSize: "18px",
-              },
-            })}
+        )}
+        {/* 상단 동영상: 모바일(<846)에선 미표시 — 무거운 에셋 미로드 */}
+        {!isMobile && (
+          <Box
+            sx={{
+              width: "100%",
+              backgroundColor: "#03193F",
+              p: 10,
+              boxSizing: "border-box",
+            }}
           >
-            {t("title")}
-          </Typography>
-        </Box>
+            <Box
+              component="video"
+              aria-label={t("top_video_alt")}
+              src={resource.top_video}
+              loop
+              muted
+              playsInline
+              autoPlay
+              sx={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "104vh",
+                objectFit: "cover",
+                display: "block",
+                backgroundColor: "#ffffff",
+                clipPath: "inset(0 1px 0 0)",
+              }}
+            />
+          </Box>
+        )}
 
         <Box
           sx={(theme) => ({
@@ -161,10 +145,10 @@ const IMOVA = () => {
             flexDirection: "column",
             justifyContent: "center",
             gap: 14,
-            px: "20px",
+            px: 4,
             mt: 6,
             [theme.breakpoints.up("desktop")]: {
-              px: "120px",
+              px: 15,
             },
           })}
         >
@@ -210,20 +194,39 @@ const IMOVA = () => {
                   <Box
                     key={index}
                     sx={(theme) => ({
-                      display: "flex",
+                      // 모바일(1열): 로고(빈) 셀은 숨김 → 기능 5개만 나열
+                      display: isLogoCell ? "none" : "flex",
                       flexDirection: "column",
                       alignItems: "center",
                       // 로고 셀만 세로 중앙, 기능 셀은 위에서부터 정렬해 위치 통일
                       justifyContent: isLogoCell ? "center" : "flex-start",
                       textAlign: "center",
                       gap: 2,
-                      px: 6,
-                      py: 6,
+                      px: 4,
+                      py: 4,
                       boxSizing: "border-box",
-                      // 모바일(1열): 마지막 셀 빼고 아래 점선
-                      borderBottom: index < 5 ? "1px dashed #424242" : "none",
+                      position: "relative",
+                      // 모바일(1열, <846): 마지막 셀 빼고 아래 점선. 셀은 full width,
+                      // 구분선만 좌우 인셋(::after)이라 내용 폭은 안 줄어듦.
+                      // ::after를 down(tablet)에만 정의 → 태블릿↑에선 pseudo 자체가 없어 누수 없음
+                      [theme.breakpoints.down("tablet")]: {
+                        "&::after":
+                          index < 5
+                            ? {
+                                content: '""',
+                                position: "absolute",
+                                left: "24px",
+                                right: "24px",
+                                bottom: 0,
+                                borderBottom: "1px dashed #424242",
+                              }
+                            : undefined,
+                      },
                       [theme.breakpoints.up("tablet")]: {
-                        // 3열 그리드: 1·2번째 열은 오른쪽 점선, 윗줄은 아래 점선
+                        px: 6,
+                        py: 6,
+                        // 태블릿↑: 로고 셀 복원 + 3열 그리드 점선(1·2열 오른쪽, 윗줄 아래)
+                        display: "flex",
                         borderRight:
                           index % 3 < 2 ? "1px dashed #424242" : "none",
                         borderBottom: index < 3 ? "1px dashed #424242" : "none",
@@ -264,7 +267,7 @@ const IMOVA = () => {
                         {/* 제목: 2줄 기준 최소 높이 확보 → 설명 시작 위치 통일 */}
                         <Box
                           sx={{
-                            width: "88%",
+                            width: "100%",
                             mx: "auto",
                             minHeight: "2.4em",
                             display: "flex",
@@ -273,18 +276,31 @@ const IMOVA = () => {
                           }}
                         >
                           <Typography
-                            sx={{
-                              fontFamily: FONTS.galderglynn.book,
+                            sx={(theme) => ({
+                              // 모바일: regular / 18px, 태블릿↑: book / 20px (색상 동일)
+                              fontFamily: FONTS.galderglynn.regular,
                               color: "#03193F",
-                              fontSize: "20px",
+                              fontSize: "18px",
                               lineHeight: 1.2,
                               textTransform: "uppercase",
-                            }}
+                              [theme.breakpoints.up("tablet")]: {
+                                fontFamily: FONTS.galderglynn.book,
+                                fontSize: "20px",
+                              },
+                            })}
                           >
                             {func.function_title}
                           </Typography>
                         </Box>
-                        <Box sx={{ textAlign: "start" }}>
+                        <Box
+                          sx={(theme) => ({
+                            // 모바일: 중앙 정렬 / 태블릿↑: 좌측 정렬
+                            textAlign: "center",
+                            [theme.breakpoints.up("tablet")]: {
+                              textAlign: "start",
+                            },
+                          })}
+                        >
                           <Typography
                             sx={{
                               color: "#737373",
@@ -313,7 +329,10 @@ const IMOVA = () => {
               gap: 5,
             }}
           >
-            <SectionTitle text={t("section_titles.control_system")} />
+            <SectionTitle
+              text={t("section_titles.control_system")}
+              align="top"
+            />
             <Box
               sx={(theme) => ({
                 display: "flex",
@@ -321,6 +340,7 @@ const IMOVA = () => {
                 gap: 4,
                 width: "100%",
                 alignItems: "center",
+                px: 0,
                 [theme.breakpoints.up("desktop")]: {
                   gap: 6,
                   mt: 5,
@@ -333,15 +353,18 @@ const IMOVA = () => {
                 return (
                   <Box
                     key={system.id}
-                    sx={{
+                    sx={(theme) => ({
                       width: "100%",
                       border: "1px solid #03193F",
                       boxShadow: "4px 4px 5px 3px rgba(0,0,0,0.25)",
                       borderRadius: "24px",
-                      px: 8,
+                      px: 2,
                       py: 4,
                       boxSizing: "border-box",
-                    }}
+                      [theme.breakpoints.up("desktop")]: {
+                        px: 8,
+                      },
+                    })}
                   >
                     <Box
                       sx={(theme) => ({
@@ -408,7 +431,8 @@ const IMOVA = () => {
                           sx={(theme) => ({
                             fontFamily: FONTS.galderglynn.regular,
                             mb: 2,
-                            textAlign: "left",
+                            textAlign: "center",
+                            fontSize: "18px",
                             [theme.breakpoints.up("desktop")]: {
                               textAlign: "left",
                               textTransform: "uppercase",
@@ -424,7 +448,7 @@ const IMOVA = () => {
                         <Typography
                           sx={(theme) => ({
                             wordBreak: "keep-all",
-                            textAlign: "left",
+                            textAlign: "center",
                             lineHeight: 1.6,
                             fontSize: "16px",
                             fontFamily: FONTS.freesentation.medium,
@@ -445,274 +469,15 @@ const IMOVA = () => {
               })}
             </Box>
           </Box>
+          <IMOVAProductionLine />
 
           <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              width: "100%",
-              gap: 5,
-              mb: 2,
-            }}
-          >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-              <SectionTitle text={t("section_titles.use_case")} />
-              <Typography
-                sx={{
-                  fontFamily: FONTS.galderglynn.book,
-                  fontSize: "18px",
-                  color: "#737373",
-                  textTransform: "uppercase",
-                }}
-              >
-                {td("production_line.production_line_title")}
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-                width: "100%",
-              }}
-            >
-              <Box
-                sx={{
-                  width: "100%",
-                  position: "relative",
-                }}
-              >
-                {/* 배경 이미지 = 박스들의 위치(%)·크기(cqw) 기준 컨테이너 */}
-                <Box
-                  sx={(theme) => ({
-                    position: "relative",
-                    // 박스 위치·크기를 모두 이미지 기준으로 묶어, 이미지와 한 덩어리로 스케일
-                    containerType: "inline-size",
-                    // 작은 화면일수록 이미지를 키워 박스가 올라갈 캔버스 확보 (노트북 넓게 → 큰 모니터 60%)
-                    width: "82%",
-                    backgroundImage: `url(${resource.production_line.production_line_image_url})`,
-                    backgroundSize: "100% 100%",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right center",
-                    aspectRatio: "1398/991",
-                    mx: "auto",
-                    borderRadius: "24px",
-                    border: "1px solid #03193f4b",
-                    boxShadow: "4px 4px 5px 3px rgba(0,0,0,0.25)",
-                    [theme.breakpoints.up(1536)]: {
-                      width: "72%",
-                    },
-
-                    [theme.breakpoints.down("desktop")]: {
-                      aspectRatio: "4/3",
-                      width: "100%",
-                    },
-                  })}
-                >
-                  {/* 데스크톱: 텍스트 박스 (위치=이미지 % / 크기=이미지 폭 cqw) */}
-                  {resource.production_line.production_line_list.map((item) => (
-                    <Box
-                      key={item.id}
-                      sx={(theme) => ({
-                        position: "absolute",
-                        // 이미지 폭 기준(cqw) → 이미지가 줄면 박스도 같이 축소
-                        width: "clamp(220px, 36cqw, 360px)",
-                        border: `2px solid ${item.production_line_color}`,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "clamp(6px, 1.2cqw, 14px)",
-                        px: "clamp(14px, 3.2cqw, 32px)",
-                        py: "clamp(10px, 2cqw, 22px)",
-                        boxSizing: "border-box",
-                        ...item.position,
-                        // 반투명 + blur 글래스 효과 (이미지와 겹친 부분이 흐려짐)
-                        backgroundColor: "rgba(255, 255, 255, 0.4)",
-                        backdropFilter: "blur(8px)",
-                        WebkitBackdropFilter: "blur(8px)",
-                        [theme.breakpoints.down("desktop")]: {
-                          display: "none",
-                        },
-                      })}
-                    >
-                      <Typography
-                        sx={{
-                          textAlign: "center",
-                          color: item.production_line_color,
-                          fontFamily: FONTS.galderglynn.regular,
-                          fontSize: "clamp(13px, 1.9cqw, 16px)",
-                          wordBreak: "keep-all",
-                          textTransform: "uppercase",
-                          width: "80%",
-                          mx: "auto",
-                        }}
-                      >
-                        {td(
-                          `production_line.production_line_list.${item.id}.production_line_topic`,
-                        )}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize: "clamp(11px, 1.6cqw, 14px)",
-                          fontFamily: FONTS.freesentation.medium,
-                          color: "#737373",
-                        }}
-                      >
-                        {td(
-                          `production_line.production_line_list.${item.id}.production_line_description`,
-                        )}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
-                {/** 컨테이너 크기 변경, 슬라이더 하나만 보이도록 */}
-                <Box
-                  sx={(theme) => ({
-                    display: "none",
-                    [theme.breakpoints.down("desktop")]: {
-                      display: "block",
-                      mt: 3,
-                      position: "relative",
-                      width: "100%",
-                      px: "20px",
-                      pt: 4,
-                      boxSizing: "border-box",
-                    },
-                  })}
-                >
-                  {/* Prev 버튼 */}
-                  <Box
-                    className="imova-prev-btn"
-                    sx={{
-                      position: "absolute",
-                      left: "4px",
-                      top: "calc(50% - 14px)",
-                      zIndex: 10,
-                      width: "28px",
-                      height: "28px",
-                      borderRadius: "50%",
-                      backgroundColor: "#b0b0b0",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      cursor: "pointer",
-                      "&:hover": { backgroundColor: "#888" },
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width: "8px",
-                        height: "8px",
-                        borderTop: "2px solid #fff",
-                        borderRight: "2px solid #fff",
-                        transform: "rotate(-135deg)",
-                        ml: "2px",
-                      }}
-                    />
-                  </Box>
-                  {/* Next 버튼 */}
-                  <Box
-                    className="imova-next-btn"
-                    sx={{
-                      position: "absolute",
-                      right: "4px",
-                      top: "calc(50% - 14px)",
-                      zIndex: 10,
-                      width: "28px",
-                      height: "28px",
-                      borderRadius: "50%",
-                      backgroundColor: "#b0b0b0",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      cursor: "pointer",
-                      "&:hover": { backgroundColor: "#888" },
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width: "8px",
-                        height: "8px",
-                        borderTop: "2px solid #fff",
-                        borderRight: "2px solid #fff",
-                        transform: "rotate(45deg)",
-                        mr: "2px",
-                      }}
-                    />
-                  </Box>
-                  <Swiper
-                    direction={"horizontal"}
-                    slidesPerView={1}
-                    spaceBetween={8}
-                    mousewheel={false}
-                    navigation={{
-                      prevEl: ".imova-prev-btn",
-                      nextEl: ".imova-next-btn",
-                    }}
-                    loop={true}
-                    centeredSlides={true}
-                    modules={[Mousewheel, Pagination, Navigation]}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      paddingBottom: "60px",
-                    }}
-                  >
-                    {resource.production_line.production_line_list.map(
-                      (item) => (
-                        <SwiperSlide key={item.id}>
-                          <Paper
-                            elevation={3}
-                            sx={{
-                              p: 2,
-                              mx: 2,
-                              borderTop: `3px solid ${item.production_line_color}`,
-                              backgroundColor: "rgba(255, 255, 255, 0.95)",
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: 3,
-                              minHeight: "80%",
-                            }}
-                          >
-                            <Typography
-                              sx={{
-                                color: item.production_line_color,
-                                fontFamily: FONTS.freesentation.bold,
-                                fontSize: "18px",
-                                wordBreak: "keep-all",
-                                textAlign: "center",
-                              }}
-                            >
-                              {td(
-                                `production_line.production_line_list.${item.id}.production_line_topic`,
-                              )}
-                            </Typography>
-                            <Typography
-                              sx={{
-                                fontFamily: FONTS.freesentation.medium,
-                                fontSize: "16px",
-                                lineHeight: 1.3,
-                                display: "-webkit-box",
-                                WebkitBoxOrient: "vertical",
-                              }}
-                            >
-                              {td(
-                                `production_line.production_line_list.${item.id}.production_line_description`,
-                              )}
-                            </Typography>
-                          </Paper>
-                        </SwiperSlide>
-                      ),
-                    )}
-                  </Swiper>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              mb: 36,
-            }}
+            sx={(theme) => ({
+              mb: 12,
+              [theme.breakpoints.up("desktop")]: {
+                mb: 24,
+              },
+            })}
           >
             <TechSpecTable
               technology_spec_application={td(
