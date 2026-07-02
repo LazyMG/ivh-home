@@ -1,5 +1,6 @@
 {
   "image": "/images/pages/company/partner_main_image.png",
+  "mobile_image": "/images/pages/company/partners_mobile_main_image.png",
   "color": "#179EBD",
   "image_position": "20% 50%",
   "partnerList": [

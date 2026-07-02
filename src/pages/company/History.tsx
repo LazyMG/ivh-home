@@ -9,10 +9,16 @@ import { FONTS } from "../../theme/theme";
 const ACCENT = resource.color;
 
 // 점선 화살표의 화살촉 (CSS border 삼각형)
-const ArrowHead = ({ dir }: { dir: "left" | "right" | "up" }) => {
+const ArrowHead = ({
+  dir,
+  color = ACCENT,
+}: {
+  dir: "left" | "right" | "up";
+  color?: string;
+}) => {
   const s = 6;
   const transparent = `${s}px solid transparent`;
-  const filled = `${s + 2}px solid ${ACCENT}`;
+  const filled = `${s + 2}px solid ${color}`;
   const map = {
     left: {
       borderTop: transparent,
@@ -130,12 +136,21 @@ const History = () => {
         keywords={t("seo.keywords")}
         canonical="https://ivh.co.kr/company/history"
       />
-      <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
+      <Box
+        sx={(theme) => ({
+          display: "flex",
+          flexDirection: "column",
+          mb: 6,
+          [theme.breakpoints.up("desktop")]: { mb: 12 },
+        })}
+      >
         <ScrollButton />
         <CompanyPageHeader
           imgUrl={resource.image}
+          mobileImgUrl={resource.mobile_image}
           imgPosition={resource.image_position}
           pageKey="history"
+          overlayGradient="linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0) 100%)"
         />
 
         <Box
@@ -144,10 +159,11 @@ const History = () => {
             display: "flex",
             flexDirection: "column",
             gap: 4,
-            my: 10,
-            px: "20px",
+            my: 5,
+            px: "6%",
             pt: 0,
             [theme.breakpoints.up("tablet")]: {
+              my: 10,
               px: 10,
               gap: 6,
               pt: "20px",
@@ -164,13 +180,16 @@ const History = () => {
               sx={(theme) => ({
                 whiteSpace: "pre-line",
                 fontFamily: FONTS.freesentation.bold,
-                color: "#000000",
+                color: "#003B8D",
                 fontSize: "24px",
+                textTransform: "uppercase",
                 [theme.breakpoints.up("tablet")]: {
                   fontSize: "28px",
+                  color: "#000000",
                 },
                 [theme.breakpoints.up("desktop")]: {
                   fontSize: "40px",
+                  textTransform: "none",
                 },
               })}
             >
@@ -179,11 +198,12 @@ const History = () => {
             {t("subtitle") && (
               <Typography
                 sx={(theme) => ({
-                  fontFamily: FONTS.freesentation.semiBold,
-                  color: "#2A2A2A",
+                  fontFamily: FONTS.freesentation.regular,
+                  color: "#000000",
                   fontSize: "14px",
                   [theme.breakpoints.up("desktop")]: {
-                    fontSize: "18px",
+                    fontFamily: FONTS.freesentation.medium,
+                    fontSize: "20px",
                   },
                 })}
               >
@@ -192,42 +212,85 @@ const History = () => {
             )}
           </Box>
 
-          {/* 모바일·태블릿: 세로 리스트 */}
+          {/* 모바일·태블릿: 세로 리스트 (연도 사이마다 아래 → 위 화살표) */}
           <Stack
             sx={(theme) => ({
-              gap: 8,
+              gap: 2,
+              mt: 2,
               [theme.breakpoints.up("desktop")]: { display: "none" },
             })}
           >
-            {list.map((item) => (
+            {list.map((item, i) => (
               <Box
                 key={item.id}
-                sx={{ display: "flex", flexDirection: "column", gap: 0 }}
+                sx={{ display: "flex", flexDirection: "column", gap: 2 }}
               >
-                <Typography
-                  sx={{
-                    fontSize: "30px",
-                    fontFamily: FONTS.freesentation.bold,
-                    color: ACCENT,
-                  }}
-                >
-                  {item.year}
-                </Typography>
-                <Box>
-                  {getContents(item.id).map((content, idx) => (
-                    <Typography
-                      key={idx}
-                      sx={{
-                        color: "#2A2A2A",
-                        fontFamily: FONTS.freesentation.regular,
-                        whiteSpace: "pre-line",
-                        fontSize: "18px",
-                      }}
-                    >
-                      {content}
-                    </Typography>
-                  ))}
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                  <Typography
+                    sx={{
+                      pl: 3,
+                      fontSize: "20px",
+                      fontFamily: FONTS.galderglynn.regular,
+                      color: "#00235F",
+                    }}
+                  >
+                    {item.year}
+                  </Typography>
+                  <Box
+                    sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+                  >
+                    {getContents(item.id).map((content, idx) => (
+                      <Box key={idx} sx={{ display: "flex", gap: 1.5 }}>
+                        <Box
+                          component="span"
+                          sx={{
+                            color: "#000000",
+                            fontSize: "18px",
+                            lineHeight: "26px",
+                          }}
+                        >
+                          ·
+                        </Box>
+                        <Typography
+                          sx={{
+                            flex: 1,
+                            color: "#000000",
+                            fontFamily: FONTS.freesentation.regular,
+                            whiteSpace: "pre-line",
+                            wordBreak: "keep-all",
+                            fontSize: "18px",
+                            lineHeight: "26px",
+                          }}
+                        >
+                          {content}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
                 </Box>
+
+                {/* 다음(위) 연도로 잇는 화살표 — 마지막 항목 뒤엔 없음 (총 5개) */}
+                {i < list.length - 1 && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      width: "fit-content",
+                      pl: 8,
+                      my: 2,
+                    }}
+                  >
+                    <ArrowHead dir="up" color="#00235F" />
+                    <Box
+                      sx={{
+                        width: 0,
+                        height: "48px",
+                        borderLeft: "2px dotted #00235F",
+                      }}
+                    />
+                  </Box>
+                )}
               </Box>
             ))}
           </Stack>
