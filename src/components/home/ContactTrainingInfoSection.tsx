@@ -1,32 +1,43 @@
 import { Box, Typography } from "@mui/material";
 import section from "../../data/home/section.json";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { FONTS } from "../../theme/theme";
+import ContactTrainingInfoMobile from "./ContactTrainingInfoMobile";
 
 const ContactTrainingInfoSection = () => {
+  const { isMobile } = useBreakpoint();
   const navigate = useLocalizedNavigate();
   const { contact_us } = section;
+
+  // 모바일은 배경/버튼/이미지가 완전히 다른 레이아웃 → 컴포넌트 교체
+  if (isMobile) return <ContactTrainingInfoMobile />;
 
   return (
     <Box
       sx={(theme) => ({
-        px: 4,
-        py: 4,
-        [theme.breakpoints.up("tablet")]: {
+        // 이 레이아웃은 tablet(846) 이상에서만 렌더 (그 아래는 모바일 컴포넌트로 교체)
+        // 태블릿은 여백을 줄여 카드 공간 확보, 데스크탑은 넓은 여백 유지
+        px: "8%",
+        py: 8,
+        [theme.breakpoints.up("desktop")]: {
           px: "16%",
           py: 14,
         },
       })}
     >
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           backgroundColor: "#00235F",
           borderRadius: "36px",
-          px: 16,
+          px: 8,
           alignItems: "center",
           position: "relative",
-        }}
+          [theme.breakpoints.up("desktop")]: {
+            px: 16,
+          },
+        })}
       >
         <Box
           component="img"
@@ -42,7 +53,7 @@ const ContactTrainingInfoSection = () => {
             display: "flex",
             alignItems: "flex-start",
             flexDirection: "column",
-            gap: 2,
+            gap: 1,
           }}
         >
           <Typography
