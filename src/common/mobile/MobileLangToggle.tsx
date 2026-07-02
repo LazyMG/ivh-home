@@ -79,7 +79,7 @@ const MobileLangToggle = () => {
         component="span"
         sx={{
           fontFamily: FONTS.freesentation.bold,
-          fontSize: "20px",
+          fontSize: "16px",
           color: ACCENT,
         }}
       >

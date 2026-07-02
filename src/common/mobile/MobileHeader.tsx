@@ -42,7 +42,7 @@ const MobileHeader = () => {
           background: "linear-gradient(90deg, #00235F 0%, #03193F 100%)",
           boxShadow: "0 3px 6px 3px rgba(0, 0, 0, 0.5)",
           // 세로 여백은 py, 좌우 패딩은 px 하나로 제어 (값 키우면 양 끝이 안쪽으로 당겨짐)
-          py: 2,
+          py: 1,
           px: 4,
           zIndex: 1100,
           borderBottom: "6px solid transparent",
@@ -63,9 +63,9 @@ const MobileHeader = () => {
             sx={{ color: "#ffffff", justifySelf: "start", p: 0.5 }}
           >
             {isMenuOpen ? (
-              <CloseIcon sx={{ fontSize: 30 }} />
+              <CloseIcon sx={{ fontSize: 28 }} />
             ) : (
-              <MenuIcon sx={{ fontSize: 30 }} />
+              <MenuIcon sx={{ fontSize: 28 }} />
             )}
           </IconButton>
 
@@ -89,7 +89,7 @@ const MobileHeader = () => {
               component="img"
               src={logoWhite}
               alt="iVH 로고"
-              sx={{ width: "64px", height: "27.4px" }}
+              sx={{ width: "64px", height: "24px" }}
             />
           </Box>
 

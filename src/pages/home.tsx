@@ -57,7 +57,7 @@ const Home = () => {
       >
         <Box
           sx={(theme) => ({
-            mt: 9,
+            mt: 7,
             position: "relative",
             width: "100%",
             height: "100%",
