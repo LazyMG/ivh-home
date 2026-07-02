@@ -18,6 +18,7 @@ import curriculums from "../../data/support/curriculum.json";
 import ScrollButton from "../../common/ScrollButton";
 import MobileScheduleContainer from "../../components/support/MobileScheduleContainer";
 import SectionTitle from "../../components/common/SectionTitle";
+import FullBleedSectionTitle from "../../components/support/FullBleedSectionTitle";
 import BreadScrum from "../../common/BreadScrum";
 import { FONTS } from "../../theme/theme";
 
@@ -69,7 +70,7 @@ const Training = () => {
         component="main"
         sx={(theme) => ({
           position: "relative",
-          px: 4,
+          px: 5,
           [theme.breakpoints.up("tablet")]: {
             px: 10,
           },
@@ -81,19 +82,31 @@ const Training = () => {
       >
         <BreadScrum
           pageKey="training"
-          sx={{ position: "absolute", top: "-24px", right: "8%" }}
+          sx={(theme) => ({
+            position: "absolute",
+            top: "-24px",
+            right: "8%",
+            // 모바일 시안에는 브레드스크럼 없음 → 데스크탑부터 표시
+            display: "none",
+            [theme.breakpoints.up("desktop")]: {
+              display: "flex",
+            },
+          })}
         />
         {/** 개요 영역 */}
         <Box
-          display="grid"
-          sx={{
+          sx={(theme) => ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            mt: 8,
-            px: 8,
-            mb: 16,
-          }}
+            mt: 5,
+            mb: 8,
+            [theme.breakpoints.up("desktop")]: {
+              mt: 8,
+              px: 8,
+              mb: 16,
+            },
+          })}
         >
           <Box
             sx={{
@@ -109,10 +122,12 @@ const Training = () => {
           </Box>
           <Box
             sx={(theme) => ({
-              mt: 6,
-              display: "none",
+              display: "flex",
+              justifyContent: "center",
+              mt: 2,
               [theme.breakpoints.up("desktop")]: {
-                display: "block",
+                justifyContent: "flex-start",
+                mt: 6,
               },
             })}
           >
@@ -120,46 +135,45 @@ const Training = () => {
           </Box>
           <Box
             sx={(theme) => ({
-              display: "flex",
-              justifyContent: "center",
+              my: 2,
+              borderTop: "none",
+              width: "100%",
               [theme.breakpoints.up("desktop")]: {
-                display: "none",
+                my: 6,
+                borderTop: "1px dashed #C9C9C9",
               },
             })}
-          >
-            <TrainingMainTitle titleList={training_title} />
-          </Box>
-          <Box
-            sx={{
-              my: 6,
-              borderTop: "1px dashed #C9C9C9",
-              width: "100%",
-            }}
           />
           <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
             {training_outline.contents.map((content, index) => (
               <Typography
                 key={index}
-                sx={{
+                sx={(theme) => ({
                   wordBreak: "keep-all",
                   fontFamily: FONTS.freesentation.medium,
-                  fontSize: "20px",
+                  fontSize: "16px",
                   whiteSpace: "pre-line",
                   color: "#424242",
-                }}
+                  [theme.breakpoints.up("desktop")]: {
+                    fontSize: "20px",
+                  },
+                })}
               >
                 {content}
               </Typography>
             ))}
           </Box>
           <Box
-            sx={{
-              display: "flex",
+            sx={(theme) => ({
+              display: "none",
               alignItems: "center",
               gap: 3,
               width: "100%",
               mt: 6,
-            }}
+              [theme.breakpoints.up("tablet")]: {
+                display: "flex",
+              },
+            })}
           >
             {training_outline.session_images.map((src) => (
               <Box
@@ -185,47 +199,52 @@ const Training = () => {
           sx={(theme) => ({
             width: "100%",
             margin: "50px auto",
-            display: "none",
-            flexDirection: "column",
-            mb: 16,
+            mb: 10,
             [theme.breakpoints.up("tablet")]: {
               display: "flex",
+              flexDirection: "column",
+              mb: 16,
             },
           })}
         >
-          <SectionTitle text="Curriculum" />
+          <FullBleedSectionTitle text="Curriculum" />
           <TraingCurriculumTable
             reservationList={apiReservationList}
             curriculums={training_curriculums}
           />
+          <MobileScheduleContainer reservationList={apiReservationList} />
         </Box>
 
         {/** Schedule 섹션 */}
         <Box
-          sx={{
+          sx={(theme) => ({
             width: "100%",
             margin: "50px auto",
-            display: "flex",
-            flexDirection: "column",
+            display: "none",
             mb: 16,
-          }}
+            [theme.breakpoints.up("tablet")]: {
+              display: "flex",
+              flexDirection: "column",
+            },
+          })}
         >
           <SectionTitle text="Schedule" />
           <Calendar reservationList={apiReservationList} />
-          <MobileScheduleContainer reservationList={apiReservationList} />
         </Box>
 
         {/** Application 섹션 */}
         <Box
-          sx={{
+          sx={(theme) => ({
             width: "100%",
-            margin: "50px auto",
             flexDirection: "column",
             gap: 4,
             display: "flex",
-          }}
+            [theme.breakpoints.up("desktop")]: {
+              margin: "50px auto",
+            },
+          })}
         >
-          <SectionTitle text="Application" />
+          <FullBleedSectionTitle text="Application" />
           <ApplicationForm reservationList={apiReservationList} />
         </Box>
 
