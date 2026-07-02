@@ -16,6 +16,7 @@ const NewsCard = ({ image, title, date, onClick }: NewsCardProps) => {
       sx={{
         display: "flex",
         flexDirection: "column",
+        height: "100%", // 캐러셀 슬라이드/그리드 셀을 채워 형제 최대 높이에 맞춤
         border: "1px solid #03193F",
         borderRadius: "16px",
         boxShadow: "2px 2px 5px 3px rgba(0,0,0,0.25)",
@@ -67,41 +68,55 @@ const NewsCard = ({ image, title, date, onClick }: NewsCardProps) => {
 
       {/* 가로 점선 구분선 (이미지와 동일 너비) */}
       <Box
-        sx={{
-          my: 4,
+        sx={(theme) => ({
+          my: 2,
           borderTop: "1px dashed #C9C9C9",
-        }}
+          [theme.breakpoints.up("desktop")]: {
+            my: 4,
+          },
+        })}
       />
 
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
-          gap: 3,
+          gap: 2,
           pb: 2,
-          px: 3,
-        }}
+          px: 1,
+          [theme.breakpoints.up("desktop")]: {
+            px: 3,
+            gap: 3,
+          },
+        })}
       >
-        {/* 제목 */}
+        {/* 제목 — 전체 노출(말줄임 없음). 카드 높이는 형제 최대에 맞춰 균일화됨 */}
         <Typography
-          sx={{
+          sx={(theme) => ({
             fontFamily: FONTS.freesentation.semiBold,
-            fontSize: "18px",
+            fontSize: "16px",
             color: "#03193F",
             lineHeight: 1.4,
             wordBreak: "keep-all",
-          }}
+            [theme.breakpoints.up("desktop")]: {
+              fontSize: "18px",
+            },
+          })}
         >
           {title}
         </Typography>
 
         {/* 날짜 */}
         <Typography
-          sx={{
+          sx={(theme) => ({
             fontFamily: FONTS.galderglynn.regular,
-            fontSize: "14px",
-            color: "#003B8D",
-          }}
+            fontSize: "16px",
+            color: "#8D8D8D",
+            [theme.breakpoints.up("desktop")]: {
+              fontSize: "14px",
+              color: "#003B8D",
+            },
+          })}
         >
           | {date} |
         </Typography>
