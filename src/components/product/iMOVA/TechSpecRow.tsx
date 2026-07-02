@@ -39,6 +39,7 @@ export const MobileSpecRow = ({
     <Typography
       sx={{
         flex: 1,
+        color: "#03193F",
         fontFamily: FONTS.freesentation.medium,
         ...(valueFontSize ? { fontSize: valueFontSize } : null),
       }}

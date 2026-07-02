@@ -21,12 +21,12 @@ export const useBreakpoint = () => {
     return {
       // 기본 (화면 크기)
       isMobilePortrait, // 0~480px
-      isMobileLandscape, // 481~768px
-      isTablet, // 769~1279px
+      isMobileLandscape, // 481~845px
+      isTablet, // 846~1279px
       isDesktop, // 1280px~
 
       // 편의
-      isMobile, // 0~768px
+      isMobile, // 0~845px
 
       // Orientation 조합 (크기 + 방향 파생)
       isPhonePortrait: isMobilePortrait && isPortrait, // 작은 화면 + 세로
