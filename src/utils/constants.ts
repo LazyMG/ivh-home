@@ -34,6 +34,12 @@ export const RESERVATION_STATUS_COLOR: ReservationStatusColorType = {
   CANCELLED: { color: "#888888", label: "취소" },
 } as const;
 
+export const RESERVATION_STATUS_MOBILE_COLOR: ReservationStatusColorType = {
+  OPEN: { color: "#DB5F11", label: "모집 중" },
+  CLOSED: { color: "#005AD5", label: "모집 완료" },
+  CANCELLED: { color: "#B2B2B2", label: "취소" },
+} as const;
+
 export const EAMIL_REGEX =
   /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-.]*)[a-z0-9_+-]@([a-z0-9][a-z0-9-]*\.)+[a-z]{2,}$/i;
 

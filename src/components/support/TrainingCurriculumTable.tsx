@@ -107,17 +107,20 @@ const TraingCurriculumTable = ({
 
   return (
     <Box
-      display="flex"
       flexDirection="column"
       sx={(theme) => ({
         mt: 4,
         mb: 8,
-        // maxWidth: "1500px",
         mx: "auto",
         width: "100%",
         boxSizing: "border-box",
+        display: "none",
+        [theme.breakpoints.up("tablet")]: {
+          display: "flex",
+          mx: 0,
+          px: 6,
+        },
         [theme.breakpoints.up("desktop")]: {
-          // mx: 24,
           mx: 0,
           px: 14,
         },
