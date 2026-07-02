@@ -13,7 +13,6 @@ export const DrawerFixedArea = () => {
           mt: 1,
           mb: 2,
           position: "relative",
-          backgroundColor: "blue",
           height: "fit-content",
         }}
       >

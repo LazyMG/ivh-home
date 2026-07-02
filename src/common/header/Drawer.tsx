@@ -35,13 +35,15 @@ export const Drawer = ({
         backgroundColor: "#ffffff",
       }}
     >
-      {/* 좌측 고정 검색 영역 */}
+      {/* 좌측 고정 검색 영역 — 노트북(1536)부터 표시.
+          그 미만(태블릿 가로 1366 포함)에선 콘텐츠(anchorLeft 정렬)와 겹치므로 숨김. */}
       <Box
         sx={{
           position: "absolute",
           top: 32, // py: 4
           left: "6%",
           width: "240px",
+          "@media (max-width:1535.98px)": { display: "none" },
         }}
       >
         <DrawerFixedArea />
