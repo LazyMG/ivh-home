@@ -14,36 +14,34 @@ const Support = () => {
       <SEO {...seoData} />
       <Box
         component="main"
-        sx={{
-          padding: {
-            mobilePortrait: "0 32px",
-            mobileLandscape: "0 48px",
-            tablet: "0 80px",
-            desktop: "0 240px",
+        sx={(theme) => ({
+          px: 4,
+          mt: 4,
+          mb: 10,
+          [theme.breakpoints.up("tablet")]: {
+            px: 10,
+            mt: 8,
+            mb: 15,
           },
-          marginTop: {
-            mobilePortrait: "32px",
-            mobileLandscape: "48px",
-            tablet: "64px",
-            desktop: "100px",
+          [theme.breakpoints.up("desktop")]: {
+            px: 30,
+            mt: "100px",
+            mb: 30,
           },
-          marginBottom: {
-            mobilePortrait: "80px",
-            mobileLandscape: "100px",
-            tablet: "120px",
-            desktop: "240px",
-          },
-        }}
+        })}
       >
         <ScrollButton />
         <Box
-          sx={{
+          sx={(theme) => ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: 9,
-          }}
+            gap: 4,
+            [theme.breakpoints.up("desktop")]: {
+              gap: 9,
+            },
+          })}
         >
           {/* 이미지 영역 */}
           <Box
@@ -52,7 +50,7 @@ const Support = () => {
               justifyContent: "center",
               mx: "auto",
               width: "100%",
-              [theme.breakpoints.up("tablet")]: {
+              [theme.breakpoints.up("desktop")]: {
                 alignSelf: "center",
               },
             })}
@@ -68,19 +66,29 @@ const Support = () => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = "none";
                 }}
-                sx={{ display: "block", position: "relative", zIndex: 1 }}
+                sx={{
+                  display: "block",
+                  position: "relative",
+                  zIndex: 1,
+                  width: "100%",
+                }}
               />
               {/* 이미지 뒤 점선 (하단에서 살짝 위) */}
               <Box
                 aria-hidden
-                sx={{
+                sx={(theme) => ({
                   position: "absolute",
-                  left: "-160px",
-                  right: "-160px",
+                  left: "-32px",
+                  right: "-32px",
                   bottom: "18%",
-                  borderTop: "1px dashed #C9C9C9",
+                  borderTop: "1px dashed #000000",
                   zIndex: 0,
-                }}
+                  [theme.breakpoints.up("desktop")]: {
+                    left: "-160px",
+                    right: "-160px",
+                    borderTop: "1px dashed #000000",
+                  },
+                })}
               />
             </Box>
           </Box>
@@ -98,11 +106,17 @@ const Support = () => {
           >
             <Typography
               variant="supportTitleFont"
-              sx={{
+              sx={(theme) => ({
                 lineHeight: 1.2,
                 wordBreak: "keep-all",
                 fontFamily: FONTS.freesentation.regular,
-              }}
+                textAlign: "center",
+                fontSize: "22px",
+                width: "90%",
+                [theme.breakpoints.up("desktop")]: {
+                  width: "100%",
+                },
+              })}
             >
               <Box
                 component="span"
@@ -123,25 +137,33 @@ const Support = () => {
             <Typography
               variant="supportTextFont"
               component="p"
-              sx={{
+              sx={(theme) => ({
                 wordBreak: "keep-all",
-                color: support.support_text.color,
-                fontSize: "18px",
+                color: "#656565",
+                fontSize: "16px",
                 fontFamily: FONTS.freesentation.medium,
-              }}
+                textAlign: "center",
+                width: "90%",
+                [theme.breakpoints.up("desktop")]: {
+                  fontSize: "18px",
+                  width: "100%",
+                },
+              })}
             >
               {support.support_text.text}
             </Typography>
           </Box>
           <Box
-            sx={{
+            sx={(theme) => ({
               px: 4,
               py: 1,
               backgroundColor: "#03193F",
               width: "fit-content",
               borderRadius: "6px",
-              boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
-            }}
+              [theme.breakpoints.up("desktop")]: {
+                boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
+              },
+            })}
           >
             <Box
               component="a"
