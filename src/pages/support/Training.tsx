@@ -1,4 +1,7 @@
-import type { ReservationResponse } from "../../types/reservation";
+import type {
+  ReservationResponse,
+  ReservationStatus,
+} from "../../types/reservation";
 
 import { Box, Typography } from "@mui/material";
 
@@ -21,6 +24,129 @@ import SectionTitle from "../../components/common/SectionTitle";
 import FullBleedSectionTitle from "../../components/support/FullBleedSectionTitle";
 import BreadScrum from "../../common/BreadScrum";
 import { FONTS } from "../../theme/theme";
+
+// ⚠️ 테스트용 임시 예약 데이터 — 실제 API 연동 시 이 상수와 useEffect 내 사용부를 제거하세요.
+const mockReservation = (
+  id: number,
+  reservationName: string,
+  startDate: string, // "YYYY-MM-DDT10:00:00" 형식
+  reservationStatus: ReservationStatus,
+  reservatedPeople: number,
+): ReservationResponse => ({
+  id,
+  reservationName,
+  startDate,
+  endDate: startDate.replace("T10:00:00", "T17:00:00"),
+  reservationStatus,
+  reservationType: "EDUCATION",
+  cost: 0,
+  reservationDescription: `${reservationName} 실습 교육`,
+  maxPeople: 20,
+  minPeople: 4,
+  reservatedPeople,
+  createdAt: "2026-06-01T09:00:00",
+  updatedAt: "2026-06-01T09:00:00",
+});
+
+// 교육별로 7·8·9월에 각각 일정 배치 → 카드마다 여러 날짜(월별)가 표시됨
+const MOCK_RESERVATIONS: ReservationResponse[] = [
+  // Modelica 기본 교육
+  mockReservation(1, "Modelica 기본 교육", "2026-07-15T10:00:00", "OPEN", 7),
+  mockReservation(2, "Modelica 기본 교육", "2026-08-12T10:00:00", "OPEN", 10),
+  mockReservation(3, "Modelica 기본 교육", "2026-09-16T10:00:00", "CLOSED", 20),
+  // FMI Basic
+  mockReservation(4, "FMI Basic", "2026-07-22T10:00:00", "CLOSED", 16),
+  mockReservation(5, "FMI Basic", "2026-08-19T10:00:00", "OPEN", 5),
+  mockReservation(6, "FMI Basic", "2026-09-23T10:00:00", "OPEN", 8),
+  // OpenDRIVE 표준 이해 및 모델링
+  mockReservation(
+    7,
+    "OpenDRIVE 표준 이해 및 모델링",
+    "2026-07-08T10:00:00",
+    "OPEN",
+    3,
+  ),
+  mockReservation(
+    8,
+    "OpenDRIVE 표준 이해 및 모델링",
+    "2026-08-05T10:00:00",
+    "OPEN",
+    6,
+  ),
+  mockReservation(
+    9,
+    "OpenDRIVE 표준 이해 및 모델링",
+    "2026-09-02T10:00:00",
+    "OPEN",
+    9,
+  ),
+  // Battery 설계 및 성능 해석 교육
+  mockReservation(
+    10,
+    "Battery 설계 및 성능 해석 교육",
+    "2026-07-29T10:00:00",
+    "OPEN",
+    4,
+  ),
+  mockReservation(
+    11,
+    "Battery 설계 및 성능 해석 교육",
+    "2026-08-26T10:00:00",
+    "OPEN",
+    7,
+  ),
+  mockReservation(
+    12,
+    "Battery 설계 및 성능 해석 교육",
+    "2026-09-30T10:00:00",
+    "OPEN",
+    2,
+  ),
+  // Vehicle Dynamics 설계 및 성능해석 교육
+  mockReservation(
+    13,
+    "Vehicle Dynamics 설계 및 성능해석 교육",
+    "2026-07-16T10:00:00",
+    "OPEN",
+    5,
+  ),
+  mockReservation(
+    14,
+    "Vehicle Dynamics 설계 및 성능해석 교육",
+    "2026-08-20T10:00:00",
+    "CLOSED",
+    18,
+  ),
+  mockReservation(
+    15,
+    "Vehicle Dynamics 설계 및 성능해석 교육",
+    "2026-09-17T10:00:00",
+    "OPEN",
+    11,
+  ),
+  // Traffic Flow 이해 및 모델링
+  mockReservation(
+    16,
+    "Traffic Flow 이해 및 모델링",
+    "2026-07-23T10:00:00",
+    "OPEN",
+    12,
+  ),
+  mockReservation(
+    17,
+    "Traffic Flow 이해 및 모델링",
+    "2026-08-13T10:00:00",
+    "OPEN",
+    6,
+  ),
+  mockReservation(
+    18,
+    "Traffic Flow 이해 및 모델링",
+    "2026-09-24T10:00:00",
+    "OPEN",
+    9,
+  ),
+];
 
 const Training = () => {
   const seoData = useSEO("support/training", training);
@@ -54,8 +180,10 @@ const Training = () => {
   };
 
   useEffect(() => {
-    // 렌더시에 호출하도록
-    fetchReservationList();
+    // ⚠️ 테스트용 임시 데이터 주입 — 실제 연동 시 아래 두 줄을 제거하고 fetchReservationList() 복구
+    setApiReservationList(MOCK_RESERVATIONS);
+    void fetchReservationList; // 미사용 경고 방지 (임시)
+    // fetchReservationList();
   }, []);
 
   const THRESHOLD = 100;
