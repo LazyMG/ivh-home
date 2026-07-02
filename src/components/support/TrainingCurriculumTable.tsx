@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import type { ReservationResponse } from "../../types/reservation";
 import { getQuarterInfo } from "../../utils/quarter";
+import { FONTS } from "../../theme/theme";
 
 interface TraingCurriculumTableProps {
   reservationList: ReservationResponse[] | null;
@@ -142,13 +143,13 @@ const TraingCurriculumTable = ({
             },
           },
           "& th": {
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: FONTS.freesentation.bold,
             color: "#424242",
             fontSize: "16px",
           },
           "& td": {
             fontSize: "16px",
-            fontFamily: "Freesentation-6-SemiBold",
+            fontFamily: FONTS.freesentation.semiBold,
             color: "#424242",
           },
         }}
@@ -211,7 +212,7 @@ const TraingCurriculumTable = ({
         <Typography
           sx={{
             whiteSpace: "pre-wrap",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             fontSize: "16px",
             color: "#424242",
           }}

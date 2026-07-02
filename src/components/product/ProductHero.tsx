@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import type { SxProps, Theme } from "@mui/material/styles";
 import type { ReactNode } from "react";
 import BreadScrum from "../../common/BreadScrum";
+import { FONTS } from "../../theme/theme";
 
 interface ProductHeroProps {
   /** 메인 배경 이미지 */
@@ -73,28 +74,34 @@ const ProductHero = ({
           left: "5%",
           display: "flex",
           flexDirection: "column",
+          // 태블릿(세로가 긴 iPad Pro 등): 콘텐츠를 이미지 하단 가까이
           [theme.breakpoints.up("tablet")]: {
-            bottom: "20%",
-            left: "2%",
+            bottom: "6%",
+            left: "8%",
           },
+          // 데스크탑: 기존 위치 유지
           [theme.breakpoints.up("desktop")]: {
+            bottom: "16%",
             left: "5%",
           },
         })}
       >
         <Box
-          sx={{
+          sx={(theme) => ({
             display: "flex",
-            gap: 3,
+            gap: 1,
             flexDirection: "column",
-          }}
+            [theme.breakpoints.up("desktop")]: {
+              gap: 3,
+            },
+          })}
         >
           <Box sx={{ width: "fit-content", backgroundColor: "#03193F", px: 2 }}>
             <Typography
               sx={{
                 color: "#ffffff",
                 fontSize: "18px",
-                fontFamily: "Freesentation-6-SemiBold",
+                fontFamily: FONTS.freesentation.semiBold,
               }}
             >
               {badge}
@@ -119,7 +126,7 @@ const ProductHero = ({
               color: "#003B8D",
               fontSize: "14px",
               fontWeight: "bold",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: FONTS.freesentation.semiBold,
               [theme.breakpoints.up("tablet")]: {
                 fontSize: "20px",
               },
@@ -156,11 +163,10 @@ const ProductHero = ({
               fontSize: "12px",
               wordBreak: "keep-all",
               display: "none",
+              // 태블릿부터 이미지 위 오버레이로 표시(데스크탑과 동일 위치)
               [theme.breakpoints.up("tablet")]: {
-                fontSize: "18px",
-              },
-              [theme.breakpoints.up("desktop")]: {
                 display: "block",
+                fontSize: "18px",
                 mt: 2,
                 whiteSpace: "pre-line",
               },

@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useLang, type Lang } from "../i18n/useLang";
+import { FONTS } from "../theme/theme";
 
 const OPTIONS: { value: Lang; label: string }[] = [
   { value: "ko", label: "KR" },
@@ -80,7 +81,7 @@ const LangToggle = () => {
         component="span"
         className="lang-label"
         sx={{
-          fontFamily: "Freesentation-7-Bold",
+          fontFamily: FONTS.freesentation.bold,
           fontSize: "16px",
           color: labelColor,
           transition: "color 0.2s",
@@ -135,7 +136,7 @@ const LangToggle = () => {
                   height: "44px",
                   px: 2,
                   cursor: "pointer",
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: FONTS.freesentation.bold,
                   fontSize: "16px",
                   color: "#FFFFFF",
                   transition: "color 0.2s",

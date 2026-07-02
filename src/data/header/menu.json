@@ -2,6 +2,7 @@
   "mainMenu": [
     {
       "title": "PRODUCT & SERVICES",
+      "basePath": "/product",
       "subMenu": [
         {
           "name": "Products",
@@ -309,6 +310,7 @@
     },
     {
       "title": "SOLUTIONS",
+      "basePath": "/solution",
       "subMenu": [
         {
           "name": "Our Engineering Philosophy",
@@ -344,6 +346,7 @@
     },
     {
       "title": "SUPPORT",
+      "basePath": "/support",
       "subMenu": [
         {
           "name": "Training",
@@ -357,6 +360,7 @@
     },
     {
       "title": "COMPANY",
+      "basePath": "/company",
       "subMenu": [
         {
           "name": "CEO",

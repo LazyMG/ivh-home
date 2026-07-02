@@ -5,6 +5,7 @@
   "hero": {
     "imova_title_image": "/images/pages/product/iMOVA/iMOVA_logo_image.png",
     "image": "/images/pages/product/iMOVA/humanoid_main_image.png",
+    "mobile_image": "/images/pages/product/iMOVA/humannoid_mobile_main_image.png",
     "equation": {
       "robot": "/images/pages/product/iMOVA/humanoid_robot_image.png",
       "plus": "/images/pages/product/iMOVA/+.png",

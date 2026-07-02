@@ -1,6 +1,13 @@
 // common
 import "./App.css";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import theme from "./theme/theme";
@@ -253,6 +260,14 @@ const routes: { path: string; element: React.ReactNode }[] = [
   { path: "company/partner", element: <Partner /> },
 ];
 
+// /:lang prefix 가드 — 지원 언어(ko는 prefix 없음)가 아니면 404 처리.
+// 이게 없으면 `:lang`이 아무 첫 세그먼트나 받아 Home 인덱스로 떨어짐.
+const PREFIX_LANGS: string[] = ["en"];
+function LangGuard() {
+  const { lang } = useParams<{ lang?: string }>();
+  return PREFIX_LANGS.includes(lang ?? "") ? <Outlet /> : <NotFound />;
+}
+
 function AppContent() {
   const { isMobile, isTablet } = useBreakpoint();
   const location = useLocation();
@@ -275,7 +290,7 @@ function AppContent() {
               <Route key={r.path} path={r.path} element={r.element} />
             ))}
             {/* 다국어 경로 = /:lang/ prefix */}
-            <Route path="/:lang">
+            <Route path="/:lang" element={<LangGuard />}>
               {routes.map((r) => (
                 <Route
                   key={`lang-${r.path}`}

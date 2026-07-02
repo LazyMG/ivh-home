@@ -20,6 +20,7 @@ import { useRef, useState } from "react";
 import CustomModal from "./CustomModal";
 import CalendarModalContent from "./CalendarModalContent";
 import CalendarLegend from "./CalendarLegend";
+import { FONTS } from "../../theme/theme";
 
 // 캘린더 뷰 전환 버튼 정의
 const VIEW_BUTTONS = [
@@ -145,7 +146,7 @@ const Calendar = ({
         )}
         <span
           className="fc-event-title"
-          style={{ fontSize: "14px", fontFamily: "Freesentation-6-SemiBold" }}
+          style={{ fontSize: "14px", fontFamily: FONTS.freesentation.semiBold }}
         >{`${formatTimeWithPeriod(eventInfo.event.start)} ${
           eventInfo.event.title
         } (${props.reservatedPeople}/${props.maxPeople})`}</span>
@@ -224,7 +225,7 @@ const Calendar = ({
                     height: 36,
                     px: 3,
                     borderRadius: "999px",
-                    fontFamily: "Galderglynn-Titling-Regular",
+                    fontFamily: FONTS.galderglynn.regular,
                     fontSize: "16px",
                     border: "1px solid",
                     borderColor: TOOLBAR_ACCENT,

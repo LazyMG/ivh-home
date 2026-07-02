@@ -12,6 +12,7 @@ import {
   type CustomerRequestForm,
 } from "../../service/customerService";
 import CustomSnackbar from "../support/CustomSnackbar";
+import { FONTS } from "../../theme/theme";
 
 interface ProductRequestForm {
   name: string;
@@ -180,7 +181,7 @@ const ProductForm = ({ productName }: { productName: string }) => {
               sx={{
                 color: "#fff",
                 fontSize: "16px",
-                fontFamily: "Freesentation-6-SemiBold",
+                fontFamily: FONTS.freesentation.semiBold,
                 textAlign: "center",
               }}
             >

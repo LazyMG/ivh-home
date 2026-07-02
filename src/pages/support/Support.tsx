@@ -3,6 +3,7 @@ import support from "../../data/support/support.json";
 import SEO from "../../common/SEO";
 import { useSEO } from "../../hooks/useSEO";
 import ScrollButton from "../../common/ScrollButton";
+import { FONTS } from "../../theme/theme";
 const Support = () => {
   // TODO: 실제 support_image.svg 파일이 준비되면 이 경로를 사용하세요
   // 현재는 임시로 빈 div를 사용합니다
@@ -60,7 +61,7 @@ const Support = () => {
               <Box
                 component="img"
                 src={support.support_image}
-                alt="iVH 기술지원 서비스"
+                alt={support.support_image_alt}
                 loading="lazy"
                 onError={(e) => {
                   // 이미지 로드 실패 시 (support_image.svg가 없는 경우)
@@ -100,7 +101,7 @@ const Support = () => {
               sx={{
                 lineHeight: 1.2,
                 wordBreak: "keep-all",
-                fontFamily: "Freesentation-4-Regular",
+                fontFamily: FONTS.freesentation.regular,
               }}
             >
               <Box
@@ -111,7 +112,7 @@ const Support = () => {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                  fontFamily: "Freesentation-6-SemiBold",
+                  fontFamily: FONTS.freesentation.semiBold,
                 }}
               >
                 {support.support_title_parts.gradient}
@@ -126,7 +127,7 @@ const Support = () => {
                 wordBreak: "keep-all",
                 color: support.support_text.color,
                 fontSize: "18px",
-                fontFamily: "Freesentation-5-Medium",
+                fontFamily: FONTS.freesentation.medium,
               }}
             >
               {support.support_text.text}
@@ -150,7 +151,7 @@ const Support = () => {
                 display: "flex",
                 alignItems: "center",
                 fontSize: "18px",
-                fontFamily: "Freesentation-6-SemiBold",
+                fontFamily: FONTS.freesentation.semiBold,
                 color: "#fff", // blue-700
                 width: "fit-content",
                 cursor: "pointer",

@@ -2,6 +2,7 @@ import { Box, Divider, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import MenuList from "./MenuList";
+import { FONTS } from "../../theme/theme";
 
 const Menu = () => {
   return (
@@ -37,7 +38,7 @@ const Menu = () => {
               color: "#6d6d6d",
               alignSelf: "center",
               lineHeight: "0",
-              fontFamily: "Presentaition",
+              fontFamily: FONTS.freesentation.bold,
               fontWeight: "700",
             }}
           >
@@ -54,7 +55,7 @@ const Menu = () => {
               fontSize: "0.8rem",
               alignSelf: "center",
               lineHeight: "0",
-              fontFamily: "Presentaition",
+              fontFamily: FONTS.freesentation.bold,
               fontWeight: "700",
             }}
           >

@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
+import { FONTS } from "../../theme/theme";
 
 interface ImageIconProps {
   src: string;
@@ -83,7 +84,7 @@ const ImageIcon = (icon: ImageIconProps) => {
           <Typography
             sx={(theme) => ({
               color,
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: FONTS.freesentation.bold,
               lineHeight: 1,
               fontSize: "12px",
               [theme.breakpoints.up("desktop")]: {
@@ -99,7 +100,7 @@ const ImageIcon = (icon: ImageIconProps) => {
           <Typography
             sx={(theme) => ({
               color,
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: FONTS.freesentation.bold,
               lineHeight: 1.1,
               fontSize: "12px",
               width: "70%",
@@ -188,7 +189,7 @@ const ImageIcon = (icon: ImageIconProps) => {
                 key={index}
                 sx={(theme) => ({
                   color,
-                  fontFamily: "Freesentation-5-Medium",
+                  fontFamily: FONTS.freesentation.medium,
                   fontSize: "10px",
                   padding: "8px 6px",
                   borderRadius: "6px",
@@ -198,7 +199,7 @@ const ImageIcon = (icon: ImageIconProps) => {
                   textAlign: "center",
                   "&:hover": {
                     backgroundColor: `${color}15`,
-                    fontFamily: "Freesentation-7-Bold",
+                    fontFamily: FONTS.freesentation.bold,
                   },
                   [theme.breakpoints.up("desktop")]: {
                     fontSize: "16px",
@@ -208,7 +209,7 @@ const ImageIcon = (icon: ImageIconProps) => {
                     "&:hover": {
                       backgroundColor: `${color}15`,
                       transform: "translateX(4px)",
-                      fontFamily: "Freesentation-7-Bold",
+                      fontFamily: FONTS.freesentation.bold,
                     },
                   },
                 })}

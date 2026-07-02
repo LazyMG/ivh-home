@@ -4,6 +4,8 @@
   "title": "iMOVA 시리즈는 배터리 생산라인의 전극재 운반과 실시간 환경 모니터링을 동시에 수행할 수 있도록 설계된 고성능 자율주행 로봇입니다.\n이 플랫폼은 고정밀 주행 기술, 지능형 작업 분배, AI 기반 환경 인식, 에너지 최적화, 고강성 구조, 그리고 유연한 시스템 연동 기능을 통해 배터리 생산공정의 생산성과 안전성을 획기적으로 향상시킵니다.",
   "main_image_alt": "iMOVA - AMR 자율주행로봇",
   "title_image_alt": "iMOVA Logo",
+  "keywords": "iMOVA, AMR, 자율주행로봇, 자율주행, 스마트팩토리, 무인운반, iVH",
+  "top_video_alt": "iVH 자동화 공정 소개 영상",
   "section_titles": {
     "main_function": "Key Features",
     "control_system": "Intelligent Fleet Management System",

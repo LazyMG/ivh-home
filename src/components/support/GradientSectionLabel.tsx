@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 {
   /** Training 페이지에 사용되는 그라데이션 섹션 제목 컴포넌트 */
@@ -7,7 +8,7 @@ const GradientSectionLabel = ({ labelText }: { labelText: string }) => {
   return (
     <Typography
       sx={{
-        fontFamily: "Freesentation-7-Bold",
+        fontFamily: FONTS.freesentation.bold,
         fontSize: "20px",
         width: "128px",
         color: "#ffffff",

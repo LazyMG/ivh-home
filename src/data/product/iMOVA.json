@@ -1,5 +1,9 @@
 {
+  "seo": {
+    "canonical": "https://ivh.co.kr/product/imova"
+  },
   "main_image": "/images/pages/product/iMOVA/iMOVA_main_image.png",
+  "mobile_main_image": "/images/pages/product/iMOVA/iMOVA_mobile_main_image.png",
   "title_image": "/images/pages/product/iMOVA/iMOVA_logo_image.png",
   "logo_image": "/images/pages/product/iMOVA/iMOVA_logo_image.png",
   "top_video": "/video/iMOVA_3D.mp4",
@@ -53,53 +57,76 @@
   ],
   "production_line": {
     "production_line_image_url": "/images/pages/product/iMOVA/iMOVA_usecase.png",
+    "//overlay": "구간별(laptop 1366~1679 / monitor 1680↑) 오버레이 설정. image_width=이미지 폭, box.side/bottom=그룹별 박스 기본값(width/px/py). 박스별 overlay(top/left/right)가 기본값 뒤에 병합되므로 특정 박스만 다르게 하려면 그 박스 overlay에 같은 키를 추가하면 됨.",
+    "overlay": {
+      "laptop": {
+        "image_width": "64%",
+        "box": {
+          "side": { "width": "420px", "px": "24px", "py": "14px" },
+          "bottom": { "width": "300px", "px": "24px", "py": "14px" }
+        }
+      },
+      "monitor": {
+        "image_width": "60%",
+        "box": {
+          "side": { "width": "400px", "px": "40px", "py": "24px" },
+          "bottom": { "width": "420px", "px": "40px", "py": "24px" }
+        }
+      }
+    },
     "production_line_list": [
       {
         "id": "wireless-charging",
         "production_line_color": "#B36E1D",
-        "position": {
-          "top": "4%",
-          "left": "-24%"
+        "group": "side",
+        "overlay": {
+          "laptop": { "top": "2%", "left": "-40%" },
+          "monitor": { "top": "4%", "left": "-36%" }
         }
       },
       {
         "id": "integrated-control",
         "production_line_color": "#534585",
-        "position": {
-          "top": "48%",
-          "left": "-24%"
+        "group": "side",
+        "overlay": {
+          "laptop": { "top": "48%", "left": "-40%" },
+          "monitor": { "top": "48%", "left": "-36%" }
         }
       },
       {
         "id": "env-monitoring",
         "production_line_color": "#157960",
-        "position": {
-          "top": "4%",
-          "right": "-24%"
+        "group": "side",
+        "overlay": {
+          "laptop": { "top": "2%", "right": "-40%" },
+          "monitor": { "top": "4%", "right": "-36%" }
         }
       },
       {
         "id": "unmanned-line",
         "production_line_color": "#B09A42",
-        "position": {
-          "top": "48%",
-          "right": "-24%"
+        "group": "side",
+        "overlay": {
+          "laptop": { "top": "48%", "right": "-40%" },
+          "monitor": { "top": "48%", "right": "-36%" }
         }
       },
       {
         "id": "high-load-amr",
         "production_line_color": "#424242",
-        "position": {
-          "top": "96%",
-          "left": "12%"
+        "group": "bottom",
+        "overlay": {
+          "laptop": { "top": "96%", "left": "6%" },
+          "monitor": { "top": "96%", "left": "4%" }
         }
       },
       {
         "id": "precision-docking",
         "production_line_color": "#1A7795",
-        "position": {
-          "top": "96%",
-          "right": "12%"
+        "group": "bottom",
+        "overlay": {
+          "laptop": { "top": "96%", "right": "6%" },
+          "monitor": { "top": "96%", "right": "4%" }
         }
       }
     ]

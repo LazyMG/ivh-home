@@ -3,6 +3,7 @@ import { useRef } from "react";
 import type { MainMenuItem } from "../../types/header";
 import { Logo } from "./Logo";
 import LangToggle from "../LangToggle";
+import { FONTS } from "../../theme/theme";
 
 interface MainMenuBarProps {
   menuItems: MainMenuItem[];
@@ -101,7 +102,7 @@ export const MainMenuBar = ({
                 }}
                 sx={{
                   fontSize: "16px",
-                  fontFamily: "Galderglynn-Titling-Regular",
+                  fontFamily: FONTS.galderglynn.regular,
                   color: openMainMenu === item.title ? "#66BAFF" : "#ffffff",
                   whiteSpace: "nowrap",
                   ":hover": {

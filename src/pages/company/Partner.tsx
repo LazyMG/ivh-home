@@ -5,6 +5,7 @@ import CompanyPageHeader from "../../components/company/CompanyPageHeader";
 import CustomerContainer from "../../components/company/CustomerContainer";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
+import { FONTS } from "../../theme/theme";
 
 interface CustomerListObj {
   src: string;
@@ -54,7 +55,7 @@ const Partner = () => {
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
         <CompanyPageHeader
-          imgUrl="/images/pages/company/company_temp_partner.png"
+          imgUrl={resource.image}
           imgPosition={resource.image_position}
           pageKey="partner"
         />
@@ -83,7 +84,7 @@ const Partner = () => {
                 component="h1"
                 sx={(theme) => ({
                   whiteSpace: "pre-line",
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: FONTS.freesentation.bold,
                   color: "#000000",
                   fontSize: "24px",
                   [theme.breakpoints.up("tablet")]: {
@@ -99,7 +100,7 @@ const Partner = () => {
               {t("partner_subtitle") && (
                 <Typography
                   sx={(theme) => ({
-                    fontFamily: "Freesentation-6-SemiBold",
+                    fontFamily: FONTS.freesentation.semiBold,
                     color: "#2A2A2A",
                     fontSize: "14px",
                     [theme.breakpoints.up("desktop")]: {
@@ -151,7 +152,7 @@ const Partner = () => {
                 component="h2"
                 sx={(theme) => ({
                   whiteSpace: "pre-line",
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: FONTS.freesentation.bold,
                   color: "#000000",
                   fontSize: "24px",
                   [theme.breakpoints.up("tablet")]: {
@@ -167,7 +168,7 @@ const Partner = () => {
               {t("customer_subtitle") && (
                 <Typography
                   sx={(theme) => ({
-                    fontFamily: "Freesentation-6-SemiBold",
+                    fontFamily: FONTS.freesentation.semiBold,
                     color: "#2A2A2A",
                     fontSize: "14px",
                     [theme.breakpoints.up("desktop")]: {

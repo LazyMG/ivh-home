@@ -4,6 +4,7 @@ import resource from "../../data/company/history.json";
 import CompanyPageHeader from "../../components/company/CompanyPageHeader";
 import SEO from "../../common/SEO";
 import ScrollButton from "../../common/ScrollButton";
+import { FONTS } from "../../theme/theme";
 
 const ACCENT = resource.color;
 
@@ -84,7 +85,7 @@ const History = () => {
         <Typography
           sx={{
             fontSize: "30px",
-            fontFamily: "Galderglynn-Titling-Regular",
+            fontFamily: FONTS.galderglynn.regular,
             color: ACCENT,
             whiteSpace: "nowrap",
           }}
@@ -106,7 +107,7 @@ const History = () => {
               sx={{
                 flex: 1,
                 color: "#000000",
-                fontFamily: "Freesentation-4-Regular",
+                fontFamily: FONTS.freesentation.regular,
                 whiteSpace: "pre-line",
                 wordBreak: "keep-all",
                 fontSize: "18px",
@@ -132,7 +133,7 @@ const History = () => {
       <Box sx={{ display: "flex", flexDirection: "column", mb: 20 }}>
         <ScrollButton />
         <CompanyPageHeader
-          imgUrl="/images/pages/company/company_temp_history.png"
+          imgUrl={resource.image}
           imgPosition={resource.image_position}
           pageKey="history"
         />
@@ -162,7 +163,7 @@ const History = () => {
               component="h1"
               sx={(theme) => ({
                 whiteSpace: "pre-line",
-                fontFamily: "Freesentation-7-Bold",
+                fontFamily: FONTS.freesentation.bold,
                 color: "#000000",
                 fontSize: "24px",
                 [theme.breakpoints.up("tablet")]: {
@@ -178,7 +179,7 @@ const History = () => {
             {t("subtitle") && (
               <Typography
                 sx={(theme) => ({
-                  fontFamily: "Freesentation-6-SemiBold",
+                  fontFamily: FONTS.freesentation.semiBold,
                   color: "#2A2A2A",
                   fontSize: "14px",
                   [theme.breakpoints.up("desktop")]: {
@@ -206,7 +207,7 @@ const History = () => {
                 <Typography
                   sx={{
                     fontSize: "30px",
-                    fontFamily: "Freesentation-7-Bold",
+                    fontFamily: FONTS.freesentation.bold,
                     color: ACCENT,
                   }}
                 >
@@ -218,7 +219,7 @@ const History = () => {
                       key={idx}
                       sx={{
                         color: "#2A2A2A",
-                        fontFamily: "Freesentation-4-Regular",
+                        fontFamily: FONTS.freesentation.regular,
                         whiteSpace: "pre-line",
                         fontSize: "18px",
                       }}

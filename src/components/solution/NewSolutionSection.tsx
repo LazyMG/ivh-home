@@ -1,19 +1,20 @@
 import { Box, Typography } from "@mui/material";
 import { createContext, useContext, type ReactNode } from "react";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { FONTS } from "../../theme/theme";
 
 const DEFAULT_COLOR = "#00758F";
 
 const SectionColorContext = createContext<string>(DEFAULT_COLOR);
 
 export const Bold = ({ children }: { children: ReactNode }) => (
-  <Typography component="span" sx={{ fontFamily: "Freesentation-7-Bold" }}>
+  <Typography component="span" sx={{ fontFamily: FONTS.freesentation.bold }}>
     {children}
   </Typography>
 );
 
 export const P = ({ children }: { children: ReactNode }) => (
-  <Typography sx={{ color: "#424242", fontFamily: "Freesentation-5-Medium" }}>
+  <Typography sx={{ color: "#424242", fontFamily: FONTS.freesentation.medium }}>
     {children}
   </Typography>
 );
@@ -108,7 +109,7 @@ export const PageTitle = ({
         sx={{
           fontSize: isMobile ? "28px" : "40px",
           lineHeight: 1.2,
-          fontFamily: "Freesentation-2-ExtraLight",
+          fontFamily: FONTS.freesentation.extraLight,
           position: "relative",
           zIndex: 1,
         }}
@@ -136,7 +137,7 @@ export const Section = ({ title, children, color, subtitle }: SectionProps) => {
       <Typography
         sx={{
           fontSize: "24px",
-          fontFamily: "Freesentation-7-Bold",
+          fontFamily: FONTS.freesentation.bold,
           color: resolvedColor,
           lineHeight: isMobile ? 1.1 : 1.2,
         }}
@@ -147,7 +148,7 @@ export const Section = ({ title, children, color, subtitle }: SectionProps) => {
         <Typography
           sx={{
             fontSize: "20px",
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: FONTS.freesentation.bold,
             textDecoration: "underline",
             color: "#424242",
           }}
@@ -199,7 +200,7 @@ export const BulletList = ({ items }: BulletListProps) => {
         <Typography
           key={i}
           component="li"
-          sx={{ color: "#424242", fontFamily: "Freesentation-5-Medium" }}
+          sx={{ color: "#424242", fontFamily: FONTS.freesentation.medium }}
         >
           {item}
         </Typography>
@@ -218,7 +219,7 @@ export const LabeledBulletList = ({ label, items }: LabeledBulletListProps) => (
     <Typography
       sx={{
         color: "#424242",
-        fontFamily: "Freesentation-7-Bold",
+        fontFamily: FONTS.freesentation.bold,
       }}
     >
       {label}
@@ -303,7 +304,7 @@ export const Callout = ({
         backgroundClip: "text",
         color: "transparent",
         fontSize: "24px",
-        fontFamily: "Freesentation-7-Bold",
+        fontFamily: FONTS.freesentation.bold,
       }}
     >
       {children}

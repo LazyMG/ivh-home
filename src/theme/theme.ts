@@ -15,6 +15,11 @@ const baseTheme = createTheme({
 });
 
 export const mediaQueries = {
+  // === 경계 up 쿼리 (useBreakpoint 내부 파생용 — 실제 matchMedia 구독은 이 3개 + portrait) ===
+  upMobileLandscape: baseTheme.breakpoints.up("mobileLandscape"), // >=481px
+  upTablet: baseTheme.breakpoints.up("tablet"), // >=846px
+  upDesktop: baseTheme.breakpoints.up("desktop"), // >=1280px
+
   // === 기본 범위 (화면 크기만) ===
   mobilePortrait: baseTheme.breakpoints.between(
     "mobilePortrait",
@@ -55,17 +60,36 @@ export const mediaQueries = {
   portrait: "(orientation: portrait)",
 } as const;
 
-const fontConfig = {
-  regular: "Freesentation-4-Regular",
-  medium: "Freesentation-5-Medium",
-  semiBold: "Freesentation-6-SemiBold",
-  bold: "Freesentation-7-Bold",
-  extraBold: "Freesentation-8-ExtraBold",
-};
+// 폰트 토큰 — family 2종(Freesentation 본문 / Galderglynn-Titling 영문 타이틀).
+// 컴포넌트에서 fontFamily 인라인 문자열 대신 이 토큰을 import해서 사용.
+export const FONTS = {
+  // 본문 폰트
+  freesentation: {
+    thin: "Freesentation-1-Thin",
+    extraLight: "Freesentation-2-ExtraLight",
+    light: "Freesentation-3-Light",
+    regular: "Freesentation-4-Regular",
+    medium: "Freesentation-5-Medium",
+    semiBold: "Freesentation-6-SemiBold",
+    bold: "Freesentation-7-Bold",
+    extraBold: "Freesentation-8-ExtraBold",
+    black: "Freesentation-9-Black",
+  },
+  // 영문 타이틀 폰트
+  galderglynn: {
+    ultraLight: "Galderglynn-Titling-UltraLight",
+    extraLight: "Galderglynn-Titling-ExtraLight",
+    light: "Galderglynn-Titling-Light",
+    book: "Galderglynn-Titling-Book",
+    regular: "Galderglynn-Titling-Regular",
+    bold: "Galderglynn-Titling-Bold",
+    black: "Galderglynn-Titling-Black",
+  },
+} as const;
 
 const responsiveFonts = {
   breadScrumFont: {
-    // font: fontConfig["bold"],
+    // font: FONTS.freesentation.bold,
     mobilePortrait: "11px",
     mobileLandscape: "13px",
     tablet: "16px",
@@ -73,7 +97,7 @@ const responsiveFonts = {
   },
   // 솔루션 페이지 (/solution) 상단 문구 'SOLUTION'
   solutionMainTitle: {
-    font: fontConfig["extraBold"],
+    font: FONTS.freesentation.extraBold,
     mobilePortrait: "24px", // 0~480px
     mobileLandscape: "32px", // 481~768px
     tablet: "40px", // 769~1279px
@@ -81,7 +105,7 @@ const responsiveFonts = {
   },
   // 솔루션 페이지 (/solution) 하단 네비게이션 버튼 문구 'Energy BEMS ...'
   solutionMainNavFont: {
-    font: fontConfig["semiBold"],
+    font: FONTS.freesentation.semiBold,
     mobilePortrait: "16px",
     mobileLandscape: "20px",
     tablet: "30px",
@@ -89,7 +113,7 @@ const responsiveFonts = {
   },
   // 솔루션의 각 페이지 (/solution/...) 상단 페이지 제목 'Energy', 'BEMS', ...
   solutionTitleFont: {
-    font: fontConfig["extraBold"],
+    font: FONTS.freesentation.extraBold,
     mobilePortrait: "22px",
     mobileLandscape: "24px",
     tablet: "30px",
@@ -97,7 +121,7 @@ const responsiveFonts = {
   },
   // 솔루션의 각 페이지 (/solution/...) 상단 페이지 부제목 '원자력 - ...', ...
   solutionSubTitleFont: {
-    font: fontConfig["semiBold"],
+    font: FONTS.freesentation.semiBold,
     mobilePortrait: "18px",
     mobileLandscape: "22px",
     tablet: "25px",
@@ -105,7 +129,7 @@ const responsiveFonts = {
   },
   // 솔루션의 각 페이지 (/solution/...) 본문 부제목 '개요', '기술적 배경', ...
   solutionTextTitleFont: {
-    font: fontConfig["bold"],
+    font: FONTS.freesentation.bold,
     mobilePortrait: "16px",
     mobileLandscape: "20px",
     tablet: "22px",
@@ -113,7 +137,7 @@ const responsiveFonts = {
   },
   // 솔루션의 각 페이지 (/solution/...) 본문 내용 및 박스 본문 내용 '기존의 전력 시스템은 ...', ...
   solutionTextFont: {
-    font: fontConfig["medium"],
+    font: FONTS.freesentation.medium,
     mobilePortrait: "13px", // 본문 내용들 모바일 세로 사이즈
     mobileLandscape: "16px", // 본문 내용들 모바일 가로, 태블릿 세로 사이즈
     tablet: "16px", // 본문 내용들 태블릿 세로 사이즈
@@ -121,21 +145,21 @@ const responsiveFonts = {
   },
   // 솔루션의 각 페이지 (/solution/...) 박스 부제목 '핵심 기술', '제공 서비스', ...
   solutionBoxTitleFont: {
-    font: fontConfig["bold"],
+    font: FONTS.freesentation.bold,
     mobilePortrait: "16px",
     mobileLandscape: "20px",
     tablet: "22px",
     desktop: "31px",
   },
   contactTitleFont: {
-    font: fontConfig["bold"],
+    font: FONTS.freesentation.bold,
     mobilePortrait: "24px",
     mobileLandscape: "24px",
     tablet: "30px",
     desktop: "40px",
   },
   contactProductsLinkFont: {
-    font: fontConfig["semiBold"],
+    font: FONTS.freesentation.semiBold,
     mobilePortrait: "14px",
     mobileLandscape: "14px",
     tablet: "14px",
@@ -143,7 +167,7 @@ const responsiveFonts = {
   },
   // Support 페이지 제목 'iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.'
   supportTitleFont: {
-    font: fontConfig["semiBold"],
+    font: FONTS.freesentation.semiBold,
     mobilePortrait: "24px",
     mobileLandscape: "24px",
     tablet: "40px",
@@ -151,7 +175,7 @@ const responsiveFonts = {
   },
   // Support 페이지 본문 '긴급 핫라인을 통한 빠른 답변부터...'
   supportTextFont: {
-    font: fontConfig["regular"],
+    font: FONTS.freesentation.regular,
     mobilePortrait: "16px",
     mobileLandscape: "16px",
     tablet: "16px",
@@ -159,7 +183,7 @@ const responsiveFonts = {
   },
   // Newsletter 아이템 제목
   newsletterItemTitleFont: {
-    font: fontConfig["semiBold"],
+    font: FONTS.freesentation.semiBold,
     mobilePortrait: "19px",
     mobileLandscape: "19px",
     tablet: "19px",
@@ -397,7 +421,7 @@ const theme = createTheme({
       alignItems: "center",
       gap: "4px",
       fontSize: "14px",
-      fontFamily: fontConfig["semiBold"],
+      fontFamily: FONTS.freesentation.semiBold,
       lineHeight: 1.5,
       color: "#374151", // gray-900
       width: "fit-content",
@@ -448,7 +472,7 @@ const theme = createTheme({
     contactButton: {
       padding: "8px 32px",
       fontSize: "16px",
-      fontFamily: fontConfig["semiBold"],
+      fontFamily: FONTS.freesentation.semiBold,
       color: "#fff",
       backgroundColor: "#03193F",
       boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
@@ -478,7 +502,7 @@ const theme = createTheme({
       gap: "4px",
       paddingBottom: "4px",
       fontSize: "16px",
-      fontFamily: fontConfig["semiBold"],
+      fontFamily: FONTS.freesentation.semiBold,
       color: "#fff", // blue-700
       width: "fit-content",
       cursor: "pointer",
@@ -550,7 +574,7 @@ const theme = createTheme({
       backgroundColor: "#000000",
       color: "#ffffff",
       fontSize: "14px",
-      fontFamily: fontConfig["bold"],
+      fontFamily: FONTS.freesentation.bold,
       borderRadius: "8px",
       padding: "4px 16px",
       textTransform: "none",
@@ -565,7 +589,7 @@ const theme = createTheme({
       backgroundColor: "transparent",
       color: "#fff",
       fontSize: "16px",
-      fontFamily: fontConfig["bold"],
+      fontFamily: FONTS.freesentation.bold,
       padding: "0px",
       textTransform: "none",
       boxShadow: "none",

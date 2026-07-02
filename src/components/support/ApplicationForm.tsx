@@ -25,6 +25,7 @@ import ApplicationInput from "./ApplicationInput";
 import CustomSnackbar from "./CustomSnackbar";
 import PrivacyPolicyIcon from "./PrivacyPolicyIcon";
 import ApplicationSelect from "./ApplicationSelect";
+import { FONTS } from "../../theme/theme";
 
 // 공백 문자 유효성 검사를 위한 공통 규칙
 const trimValidation = (message: string) => ({
@@ -278,7 +279,7 @@ const ApplicationForm = ({
         component="h4"
         sx={{
           fontSize: "20px",
-          fontFamily: "Freesentation-6-SemiBold",
+          fontFamily: FONTS.freesentation.semiBold,
           color: "#03193F",
         }}
       >
@@ -300,7 +301,7 @@ const ApplicationForm = ({
         <Typography
           sx={{
             fontSize: "20px",
-            fontFamily: "Freesentation-6-SemiBold",
+            fontFamily: FONTS.freesentation.semiBold,
             color: "#03193F",
           }}
         >
@@ -475,7 +476,7 @@ const ApplicationForm = ({
           <Typography
             sx={{
               fontSize: "20px",
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: FONTS.freesentation.semiBold,
               color: "#03193F",
               mr: 2,
               alignSelf: "center",
@@ -490,7 +491,7 @@ const ApplicationForm = ({
                 <Typography
                   sx={{
                     fontSize: "16px",
-                    fontFamily: "Freesentation-5-Medium",
+                    fontFamily: FONTS.freesentation.medium,
                     color: "#8D8D8D",
                   }}
                 >
@@ -760,7 +761,7 @@ const ApplicationForm = ({
               />
             }
             sx={{
-              fontFamily: "Freesentation-6-SemiBold",
+              fontFamily: FONTS.freesentation.semiBold,
               mr: 1,
               color: "#8D8D8D",
               fontSize: "18px",
@@ -790,7 +791,7 @@ const ApplicationForm = ({
             width: "fit-content",
             padding: "8px 32px",
             fontSize: "18px",
-            fontFamily: "Freesentation-6-SemiBold",
+            fontFamily: FONTS.freesentation.semiBold,
             color: "#fff",
             backgroundColor: "#03193F",
             boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",

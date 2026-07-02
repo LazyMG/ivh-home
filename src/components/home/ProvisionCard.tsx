@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { FONTS } from "../../theme/theme";
 
 interface ProvisionCardProps {
   icon: string;
@@ -16,24 +17,31 @@ const ProvisionCard = ({
 }: ProvisionCardProps) => {
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         flex: 1,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 8,
+        gap: 2,
         px: 4,
-      }}
+        [theme.breakpoints.up("desktop")]: {
+          justifyContent: "center",
+          gap: 8,
+        },
+      })}
     >
       {/* 콘텐츠 컬럼 (제한 폭, 카드 가운데). 아이콘·제목은 가운데, 설명은 왼쪽 */}
       <Box
-        sx={{
+        sx={(theme) => ({
           maxWidth: "300px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 3,
-        }}
+          gap: 2,
+          [theme.breakpoints.up("desktop")]: {
+            gap: 3,
+          },
+        })}
       >
         {/* 아이콘 */}
         <Box
@@ -45,26 +53,32 @@ const ProvisionCard = ({
 
         {/* 제목 */}
         <Typography
-          sx={{
-            fontFamily: "Galderglynn-Titling-Regular",
-            fontSize: "22px",
+          sx={(theme) => ({
+            fontFamily: FONTS.galderglynn.regular,
+            fontSize: "18px",
             color: "#03193F",
-            textTransform: "uppercase",
-          }}
+            [theme.breakpoints.up("desktop")]: {
+              fontSize: "22px",
+            },
+          })}
         >
           {title}
         </Typography>
 
         {/* 설명 - 컬럼 폭을 채우며 왼쪽 정렬 */}
         <Typography
-          sx={{
-            width: "100%",
-            fontFamily: "Freesentation-4-Regular",
+          sx={(theme) => ({
+            width: "90%",
+            fontFamily: FONTS.freesentation.medium,
             fontSize: "16px",
-            color: "#424242",
+            color: "#737373",
             wordBreak: "keep-all",
-            textAlign: "left",
-          }}
+            textAlign: "center",
+            [theme.breakpoints.up("desktop")]: {
+              width: "100%",
+              textAlign: "left",
+            },
+          })}
         >
           {description}
         </Typography>
@@ -72,12 +86,17 @@ const ProvisionCard = ({
 
       {/* MORE 버튼 - 하단 우측 (mt:auto 로 카드 바닥에 정렬) */}
       <Box
-        sx={{
+        sx={(theme) => ({
           width: "100%",
           mt: "auto",
           display: "flex",
-          justifyContent: "flex-end",
-        }}
+          justifyContent: "center",
+          mr: 2,
+          [theme.breakpoints.up("desktop")]: {
+            justifyContent: "flex-end",
+            mr: 0,
+          },
+        })}
       >
         <Box
           component="button"
@@ -105,8 +124,8 @@ const ProvisionCard = ({
               alignItems: "center",
               gap: 1,
               color: "#FFFFFF",
-              fontFamily: "Galderglynn-Titling-Book",
-              fontSize: "17px",
+              fontFamily: FONTS.galderglynn.book,
+              fontSize: "16px",
               letterSpacing: "0.1em",
               whiteSpace: "nowrap",
             }}

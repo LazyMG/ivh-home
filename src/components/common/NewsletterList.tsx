@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 // import { newsService } from "../../service/newsService";
 import dayjs from "dayjs";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { FONTS } from "../../theme/theme";
 
 export interface NewsletterItem {
   title: string;
@@ -193,7 +194,7 @@ const NewsletterList = () => {
               fontStyle: "italic",
               fontSize: "24px",
               color: "#fff",
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: FONTS.freesentation.bold,
             }}
           >
             iVH NEWs
@@ -205,7 +206,7 @@ const NewsletterList = () => {
               backgroundColor: "transparent",
               color: "#fff",
               fontSize: "16px",
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: FONTS.freesentation.bold,
               padding: "0px",
               textTransform: "none",
               boxShadow: "none",
@@ -304,7 +305,7 @@ const NewsletterList = () => {
                     backgroundColor: "#1755C2",
                     color: "#ffffff",
                     fontSize: "14px",
-                    fontFamily: "Freesentation-7-Bold",
+                    fontFamily: FONTS.freesentation.bold,
                     borderRadius: "8px",
                     padding: "4px 16px",
                     textTransform: "none",
@@ -340,7 +341,7 @@ const NewsletterList = () => {
             sx={{
               borderColor: "#ffffff",
               color: "#ffffff",
-              fontFamily: "Freesentation-5-Medium",
+              fontFamily: FONTS.freesentation.medium,
               fontSize: "12px",
               "&:hover": {
                 borderColor: "#ffffff",
@@ -357,7 +358,7 @@ const NewsletterList = () => {
             sx={{
               borderColor: "#1755C2",
               color: "#1755C2",
-              fontFamily: "Freesentation-7-Bold",
+              fontFamily: FONTS.freesentation.bold,
               fontSize: "14px",
             }}
             onClick={() => setIsHide(true)}

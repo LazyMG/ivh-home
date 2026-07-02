@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useEffect } from "react";
+import { FONTS } from "../../theme/theme";
 
 const PDF_PATH = "/documents/private-policy.pdf";
 
@@ -52,7 +53,7 @@ const PrivacyPolicy = () => {
           >
             <Typography
               variant="h5"
-              sx={{ fontFamily: "Freesentation-6-SemiBold" }}
+              sx={{ fontFamily: FONTS.freesentation.semiBold }}
             >
               iVH 개인정보처리방침
             </Typography>

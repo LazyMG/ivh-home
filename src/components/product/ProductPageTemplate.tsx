@@ -6,6 +6,7 @@ import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import BreadScrum from "../../common/BreadScrum";
 import SectionTitle from "../common/SectionTitle";
+import { FONTS } from "../../theme/theme";
 
 interface LibraryItem {
   imgUrl: string;
@@ -83,7 +84,7 @@ const LibraryButton = ({
         sx={(theme) => ({
           fontSize: "14px",
           lineHeight: 1.3,
-          fontFamily: "Freesentation-6-SemiBold",
+          fontFamily: FONTS.freesentation.semiBold,
           textAlign: "center",
           color: "inherit",
           wordBreak: "keep-all",
@@ -394,7 +395,7 @@ const ProductPageTemplate = ({
               <Typography
                 component="h1"
                 sx={(theme) => ({
-                  fontFamily: "Galderglynn-Titling-Bold",
+                  fontFamily: FONTS.galderglynn.bold,
                   fontSize: "28px",
                   textTransform: "uppercase",
                   color: "#ffffff",
@@ -409,7 +410,7 @@ const ProductPageTemplate = ({
                 <Typography
                   component="h4"
                   sx={{
-                    fontFamily: "Freesentation-6-SemiBold",
+                    fontFamily: FONTS.freesentation.semiBold,
                     fontSize: "20px",
                     wordBreak: "keep-all",
                     color: "#ffffff",
@@ -444,7 +445,7 @@ const ProductPageTemplate = ({
                   <Typography
                     key={index}
                     sx={(theme) => ({
-                      fontFamily: "Freesentation-4-Regular",
+                      fontFamily: FONTS.freesentation.regular,
                       fontSize: "16px",
                       color: "#737373",
                       [theme.breakpoints.up("tablet")]: {

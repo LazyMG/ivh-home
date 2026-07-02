@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import type { MainMenuItem } from "../../types/header";
+import { FONTS } from "../../theme/theme";
 
 interface SimpleMenuPanelProps {
   menu: MainMenuItem;
@@ -30,7 +31,7 @@ export const SimpleMenuPanel = ({
             onClick={() => handleNavigate(item.path)}
             sx={{
               fontSize: "16px",
-              fontFamily: "Freesentation-4-Regular",
+              fontFamily: FONTS.freesentation.regular,
               color: "#000000",
               cursor: "pointer",
               py: 0.5,

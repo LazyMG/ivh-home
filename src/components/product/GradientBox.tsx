@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import type { ReactNode } from "react";
+import { FONTS } from "../../theme/theme";
 
 const GradientBox = ({
   title,
@@ -27,7 +28,7 @@ const GradientBox = ({
       <>
         <Typography
           sx={(theme) => ({
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: FONTS.freesentation.bold,
             color: "#fff",
             py: 0.5,
             borderRadius: "8px",

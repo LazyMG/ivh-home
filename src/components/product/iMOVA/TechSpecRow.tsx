@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import type { ReactNode } from "react";
+import { FONTS } from "../../../theme/theme";
 
 type MobileSpecRowProps = {
   label: string;
@@ -30,7 +31,7 @@ export const MobileSpecRow = ({
       sx={{
         flex: "0 0 180px",
         color: "#666",
-        fontFamily: "Freesentation-5-Medium",
+        fontFamily: FONTS.freesentation.medium,
       }}
     >
       {label}
@@ -38,7 +39,8 @@ export const MobileSpecRow = ({
     <Typography
       sx={{
         flex: 1,
-        fontFamily: "Freesentation-5-Medium",
+        color: "#03193F",
+        fontFamily: FONTS.freesentation.medium,
         ...(valueFontSize ? { fontSize: valueFontSize } : null),
       }}
     >
@@ -77,7 +79,7 @@ export const DesktopSpecRow = ({
         }}
       >
         <Typography
-          sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+          sx={{ fontFamily: FONTS.freesentation.bold, fontSize: "18px" }}
         >
           {sectionTitle.title}
         </Typography>
@@ -94,7 +96,7 @@ export const DesktopSpecRow = ({
       <Typography
         sx={{
           color: "#364B60",
-          fontFamily: "Freesentation-5-Medium",
+          fontFamily: FONTS.freesentation.medium,
           fontSize: "16px",
         }}
       >
@@ -114,7 +116,7 @@ export const DesktopSpecRow = ({
         <Typography
           sx={{
             color: "#364B60",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             fontSize: valueFontSize ?? "16px",
           }}
         >

@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
+import { FONTS } from "../../theme/theme";
 
 interface ProductCardProps {
   cards: {
@@ -124,7 +125,7 @@ const ProductCard = ({ cards }: ProductCardProps) => {
                   // mb: 0,
                   // width: "100%",
                   // pb: "12px",
-                  // fontFamily: "Freesentation-7-Bold",
+                  // fontFamily: FONTS.freesentation.bold,
                   // fontSize: "32px",
                   // color: "white",
                   // letterSpacing: 0,
@@ -132,7 +133,7 @@ const ProductCard = ({ cards }: ProductCardProps) => {
                   // textShadow: "2px 2px 2px rgba(0, 0, 0, 0.64)",
 
                   position: "absolute",
-                  fontFamily: "Freesentation-7-Bold",
+                  fontFamily: FONTS.freesentation.bold,
                   fontSize: "32px",
                   color: "white",
                   letterSpacing: 0,
@@ -154,7 +155,7 @@ const ProductCard = ({ cards }: ProductCardProps) => {
               <CardContent sx={{ p: "24px 20px" }}>
                 <Typography
                   sx={{
-                    fontFamily: "Freesentation-6-SemiBold",
+                    fontFamily: FONTS.freesentation.semiBold,
                     fontSize: "14.6px",
                     color: "#000000",
                     letterSpacing: 0,

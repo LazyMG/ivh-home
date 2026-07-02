@@ -18,5 +18,6 @@
     "text": "기술지원 서비스로 연결",
     "url": "https://redmine.ivh.co.kr/"
   },
-  "support_image": "/images/pages/support/support/support_main_image.png"
+  "support_image": "/images/pages/support/support/support_main_image.png",
+  "support_image_alt": "iVH 기술지원 서비스"
 }

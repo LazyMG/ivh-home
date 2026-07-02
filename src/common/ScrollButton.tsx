@@ -7,36 +7,39 @@ import { useBreakpoint } from "../hooks/useBreakpoint";
 const ScrollButton = ({
   color = "#000000",
   threshold = 100,
-  show,
+  show = true,
 }: {
   color?: string;
   threshold?: number;
   show?: boolean;
 }) => {
-  const isMobile = useBreakpoint();
+  const { isMobile } = useBreakpoint();
 
-  // 항상 보이거나 모바일 화면에서만 보이도록 설정
+  // 기본적으로 항상 노출. show={false}가 명시되면 모바일에서만 노출.
   const defaultShowing = show || isMobile;
 
   // 최상단 스크롤을 위한 스크롤 버튼 노출 상태
   const [isShow, setIsShow] = useState(false);
 
-  // 화면의 스크롤 위치에 따라 스크롤 버튼 노출 감지
+  // 화면의 스크롤 위치에 따라 스크롤 버튼 노출 감지.
+  // rAF로 프레임당 1회만 처리하고, 상태가 실제로 바뀔 때만 setState.
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const next = window.scrollY >= threshold;
+        setIsShow((prev) => (prev === next ? prev : next));
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  // 화면의 스크롤이 threshold보다 커지면 스크롤 버튼 노출
-  const handleScroll = () => {
-    if (window.scrollY >= threshold) {
-      setIsShow(true);
-    } else {
-      setIsShow(false);
-    }
-  };
+  }, [threshold]);
 
   // 항상 보이거나 모바일 화면이 아니라면 렌더하지 않음
   if (!defaultShowing) return null;

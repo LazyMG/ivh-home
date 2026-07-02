@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import type { SxProps, Theme } from "@mui/material";
 import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
+import { FONTS } from "../../theme/theme";
 
 // 오늘 날짜 셀 배경색과 동일 (training-calendar.css의 .fc-day-today)
 const TODAY_LEGEND_COLOR = "#aed3f0";
@@ -21,7 +22,7 @@ const Legend = ({ color, text }: { color: string; text: string }) => {
       <Typography
         sx={{
           lineHeight: 1.2,
-          fontFamily: "Freesentation-6-SemiBold",
+          fontFamily: FONTS.freesentation.semiBold,
           fontSize: "16px",
           color: "#424242",
         }}

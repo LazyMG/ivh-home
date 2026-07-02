@@ -4,6 +4,7 @@ import type {
   ReservationStatus,
 } from "../../types/reservation";
 import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
+import { FONTS } from "../../theme/theme";
 
 interface ScheduleInfo {
   id: number;
@@ -50,7 +51,7 @@ const MobileScheduleCard = ({
         <Typography
           sx={{
             fontSize: "14px",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             color: "#737373",
             minWidth: "60px",
           }}
@@ -60,7 +61,7 @@ const MobileScheduleCard = ({
         <Typography
           sx={{
             fontSize: "16px",
-            fontFamily: "Freesentation-6-SemiBold",
+            fontFamily: FONTS.freesentation.semiBold,
             color: "#000",
             wordBreak: "keep-all",
           }}
@@ -74,7 +75,7 @@ const MobileScheduleCard = ({
         <Typography
           sx={{
             fontSize: "14px",
-            fontFamily: "Freesentation-5-Medium",
+            fontFamily: FONTS.freesentation.medium,
             color: "#737373",
             minWidth: "60px",
           }}
@@ -94,7 +95,7 @@ const MobileScheduleCard = ({
                 backgroundColor:
                   RESERVATION_STATUS_COLOR[schedule.status].color,
                 color: "#000000",
-                fontFamily: "Freesentation-5-Medium",
+                fontFamily: FONTS.freesentation.medium,
                 fontSize: "16px",
                 cursor: "pointer",
                 height: "fit-content",

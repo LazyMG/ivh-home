@@ -6,6 +6,7 @@ import IntroductionContent, {
 } from "./IntroductionContent";
 import ProductContent from "./ProductContent";
 import SectionTitle from "../common/SectionTitle";
+import { FONTS } from "../../theme/theme";
 
 interface ImageObject {
   imgUrl?: string[];
@@ -116,7 +117,7 @@ const LibraryPageTemplate = ({
                 <Typography
                   component="h1"
                   sx={(theme) => ({
-                    fontFamily: "Galderglynn-Titling-Regular",
+                    fontFamily: FONTS.galderglynn.regular,
                     fontSize: "20px",
                     textTransform: "uppercase",
                     color: "#03193F",
@@ -135,7 +136,7 @@ const LibraryPageTemplate = ({
                   sx={{
                     color: "#03193F",
                     fontSize: "18px",
-                    fontFamily: "Freesentation-6-SemiBold",
+                    fontFamily: FONTS.freesentation.semiBold,
                   }}
                 >
                   {subTitle}

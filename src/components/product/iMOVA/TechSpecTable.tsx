@@ -11,6 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { MobileSpecRow, DesktopSpecRow } from "./TechSpecRow";
 import type { IMOVATechnologySpec } from "../../../types/product";
 import SectionTitle from "../../common/SectionTitle";
+import { FONTS } from "../../../theme/theme";
 
 const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
   const theme = useTheme();
@@ -19,24 +20,49 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
 
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         width: "100%",
-        mt: 24,
-      }}
+        mt: 2,
+        [theme.breakpoints.up("desktop")]: {
+          mt: 24,
+        },
+      })}
     >
-      <Box sx={{ display: "flex", gap: 2, alignItems: "center", mb: 6 }}>
+      <Box
+        sx={(theme) => ({
+          display: "flex",
+          flexDirection: "column",
+          gap: 0,
+          mb: 4,
+          [theme.breakpoints.up("desktop")]: {
+            gap: 1.5,
+            mb: 6,
+            flexDirection: "row",
+            alignItems: "center",
+          },
+        })}
+      >
         <SectionTitle text={labels.tech_spec} />
         <Typography
-          sx={{
-            fontFamily: "Galderglynn-Titling-Book",
-            fontSize: "18px",
-            color: "#737373",
-            textTransform: "uppercase",
-            textAlign: "end",
-          }}
+          sx={(theme) => ({
+            // 모바일: freesentation.medium / 16px
+            fontFamily: FONTS.freesentation.medium,
+            fontSize: "16px",
+            color: "#8D8D8D",
+            // 제목 텍스트 시작 위치에 정렬 = SectionTitle pill 너비 + gap
+            // (pill 32 + gap 16) / 태블릿(pill 88 + gap 16) / 데스크탑(pill 88 + gap 32)
+            pl: "48px",
+            [theme.breakpoints.up("tablet")]: {
+              // 태블릿↑: 기존 galderglynn.book / 18px
+              fontFamily: FONTS.galderglynn.book,
+              fontSize: "18px",
+              pl: "104px",
+            },
+            [theme.breakpoints.up("desktop")]: { pl: 0 },
+          })}
         >
           {technology_spec.technology_spec_title}
         </Typography>
@@ -54,7 +80,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               }}
             >
               <Typography
-                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+                sx={{
+                  fontFamily: FONTS.freesentation.bold,
+                  fontSize: "20px",
+                  color: "#03193F",
+                }}
               >
                 {labels.product_standard}
               </Typography>
@@ -66,7 +96,8 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontFamily: "Freesentation-7-Bold",
+                          fontFamily: FONTS.freesentation.bold,
+                          color: "#03193F",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #03193F",
@@ -116,7 +147,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               }}
             >
               <Typography
-                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+                sx={{
+                  fontFamily: FONTS.freesentation.bold,
+                  fontSize: "20px",
+                  color: "#03193F",
+                }}
               >
                 {labels.performance}
               </Typography>
@@ -131,7 +166,8 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #03193F",
-                          fontFamily: "Freesentation-7-Bold",
+                          fontFamily: FONTS.freesentation.bold,
+                          color: "#03193F",
                         }}
                       >
                         {product.product}
@@ -193,7 +229,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               }}
             >
               <Typography
-                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+                sx={{
+                  fontFamily: FONTS.freesentation.bold,
+                  fontSize: "20px",
+                  color: "#03193F",
+                }}
               >
                 {labels.electrical}
               </Typography>
@@ -205,7 +245,8 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontFamily: "Freesentation-7-Bold",
+                          fontFamily: FONTS.freesentation.bold,
+                          color: "#03193F",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #03193F",
@@ -258,7 +299,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               }}
             >
               <Typography
-                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+                sx={{
+                  fontFamily: FONTS.freesentation.bold,
+                  fontSize: "20px",
+                  color: "#03193F",
+                }}
               >
                 {labels.environment}
               </Typography>
@@ -270,7 +315,8 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontFamily: "Freesentation-7-Bold",
+                          fontFamily: FONTS.freesentation.bold,
+                          color: "#03193F",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #03193F",
@@ -315,7 +361,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               }}
             >
               <Typography
-                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+                sx={{
+                  fontFamily: FONTS.freesentation.bold,
+                  fontSize: "20px",
+                  color: "#03193F",
+                }}
               >
                 {labels.battery}
               </Typography>
@@ -327,7 +377,8 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontFamily: "Freesentation-7-Bold",
+                          fontFamily: FONTS.freesentation.bold,
+                          color: "#03193F",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #03193F",
@@ -368,7 +419,11 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
               }}
             >
               <Typography
-                sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "20px" }}
+                sx={{
+                  fontFamily: FONTS.freesentation.bold,
+                  fontSize: "20px",
+                  color: "#03193F",
+                }}
               >
                 {labels.environmental_monitoring}
               </Typography>
@@ -380,7 +435,8 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Box key={index} sx={{ mb: 2 }}>
                       <Typography
                         sx={{
-                          fontFamily: "Freesentation-7-Bold",
+                          fontFamily: FONTS.freesentation.bold,
+                          color: "#03193F",
                           mb: 1,
                           pb: 1,
                           borderBottom: "2px solid #03193F",
@@ -468,7 +524,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
           >
             <Typography
               sx={{
-                fontFamily: "Freesentation-7-Bold",
+                fontFamily: FONTS.freesentation.bold,
                 mb: 2,
                 fontSize: { mobile: "24px", tablet: "24px", desktop: "18px" },
               }}
@@ -480,7 +536,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                 lineHeight: 1.8,
                 fontSize: { mobile: "14px", tablet: "15px", desktop: "16px" },
                 whiteSpace: "pre-line",
-                fontFamily: "Freesentation-5-Medium",
+                fontFamily: FONTS.freesentation.medium,
               }}
             >
               {technology_spec.technology_spec_application}
@@ -534,7 +590,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     <Typography
                       sx={{
                         fontSize: "20px",
-                        fontFamily: "Freesentation-7-Bold",
+                        fontFamily: FONTS.freesentation.bold,
                       }}
                     >
                       {product.product}
@@ -769,7 +825,10 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                 }}
               >
                 <Typography
-                  sx={{ fontFamily: "Freesentation-7-Bold", fontSize: "18px" }}
+                  sx={{
+                    fontFamily: FONTS.freesentation.bold,
+                    fontSize: "18px",
+                  }}
                 >
                   {labels.application}
                 </Typography>
@@ -788,7 +847,7 @@ const TechSpecTable = (technology_spec: IMOVATechnologySpec) => {
                     lineHeight: 1.4,
                     whiteSpace: "pre-line",
                     color: "#364B60",
-                    fontFamily: "Freesentation-5-Medium",
+                    fontFamily: FONTS.freesentation.medium,
                     fontSize: "16px",
                   }}
                 >

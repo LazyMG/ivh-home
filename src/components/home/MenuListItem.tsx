@@ -1,5 +1,6 @@
 import { ListItem } from "@mui/material";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
+import { FONTS } from "../../theme/theme";
 
 const MenuListItem = ({ menu, path }: { menu: string; path: string }) => {
   const navigate = useLocalizedNavigate();
@@ -13,7 +14,7 @@ const MenuListItem = ({ menu, path }: { menu: string; path: string }) => {
         },
         fontWeight: "700",
         mb: "4.5rem",
-        fontFamily: "Presentation",
+        fontFamily: FONTS.freesentation.bold,
         cursor: "pointer",
       }}
       onClick={() => {

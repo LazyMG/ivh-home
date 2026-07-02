@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import MainGradientText from "../common/MainGradientText";
+import { FONTS } from "../../theme/theme";
 
 const LibraryHeader = ({ text }: { text: string }) => {
   return (
@@ -14,7 +15,7 @@ const LibraryHeader = ({ text }: { text: string }) => {
       <MainGradientText
         component="h2"
         sx={(theme) => ({
-          fontFamily: "Freesentation-6-SemiBold",
+          fontFamily: FONTS.freesentation.semiBold,
           fontSize: "16px",
           [theme.breakpoints.up("tablet")]: {
             fontSize: "18px",

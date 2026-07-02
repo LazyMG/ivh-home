@@ -1,6 +1,7 @@
 import type { ContentProps } from "../../types/solution";
 import { Box, Typography } from "@mui/material";
 import BreadScrum from "../../common/BreadScrum";
+import { FONTS } from "../../theme/theme";
 
 const SolutionTitle = ({
   contentProps,
@@ -29,7 +30,7 @@ const SolutionTitle = ({
             color,
             letterSpacing: "2px",
             fontSize: "30px",
-            fontFamily: "Freesentation-7-Bold",
+            fontFamily: FONTS.freesentation.bold,
           }}
         >
           {title}

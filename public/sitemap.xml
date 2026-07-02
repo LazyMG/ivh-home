@@ -34,6 +34,30 @@
     <loc>https://ivh.co.kr/solution/aIinnovationhub</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://ivh.co.kr/solution/philosophy</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ivh.co.kr/solution/modelica</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ivh.co.kr/solution/asam</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ivh.co.kr/solution/physical-ai</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ivh.co.kr/solution/engineering-to-industry</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ivh.co.kr/solution/future-directions</loc>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Product - iMOVA -->
   <url>
