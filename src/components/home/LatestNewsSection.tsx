@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 
-import { newsService } from "../../service/newsService";
+// import { newsService } from "../../service/newsService";
 import type { NewsResponse } from "../../service/newsService";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
@@ -92,9 +92,10 @@ const LatestNewsSection = () => {
   const fetchNews = async () => {
     setNewsStatus("loading");
     try {
-      const response = await newsService.getNews();
+      // const response = await newsService.getNews();
       // 임시 데이터를 DB 데이터 앞에 끼운 뒤, 앞에서 4개만 잘라서 표시
-      setNewsItems([...TEMP_NEWS_ITEMS, ...response].slice(0, 4));
+      // setNewsItems([...TEMP_NEWS_ITEMS, ...response].slice(0, 4));
+      setNewsItems([...TEMP_NEWS_ITEMS]);
       setNewsStatus("success");
     } catch {
       setNewsItems([]);
