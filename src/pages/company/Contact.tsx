@@ -27,6 +27,20 @@ import BreadScrum from "../../common/BreadScrum";
 import resource from "../../data/company/contact.json";
 import { FONTS } from "../../theme/theme";
 
+// 폼 인풋 공통 스타일 (ApplicationForm과 동일: radius 0 + 고정 border + placeholder 색)
+const INPUT_SX = {
+  "& .MuiOutlinedInput-root": {
+    borderRadius: 0,
+    "& fieldset": { borderColor: "#7C7C7C" },
+    "&:hover fieldset": { borderColor: "#7C7C7C" },
+    "&.Mui-focused fieldset": { borderColor: "#7C7C7C" },
+  },
+  "& .MuiOutlinedInput-input::placeholder": {
+    color: "#7C7C7C",
+    opacity: 1,
+  },
+};
+
 interface ContactFormType {
   company: string;
   division: string;
@@ -90,9 +104,7 @@ const Contact = () => {
       setSubmitStatus("error");
 
       const errorMessage =
-        error instanceof Error
-          ? error.message
-          : t("form.snackbar.error");
+        error instanceof Error ? error.message : t("form.snackbar.error");
       setSnackbarMessage(errorMessage);
     }
   };
@@ -111,27 +123,46 @@ const Contact = () => {
       />
       <Box
         component="main"
-        sx={[
-          (theme) => ({ ...theme.customStyles.contactMainContainer }),
-          { position: "relative" },
-        ]}
+        sx={(theme) => ({
+          display: "flex",
+          flexDirection: "column",
+          position: "relative",
+          gap: 8,
+          px: 4,
+          my: 4,
+          [theme.breakpoints.up("desktop")]: {
+            px: 20,
+            mb: 30,
+          },
+        })}
       >
         <ScrollButton />
 
         <Box
-          sx={(theme) => ({
-            ...theme.customStyles.contactTopContainer,
-          })}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+          }}
         >
           <BreadScrum
             pageKey="contact"
-            sx={{ position: "absolute", top: "8px", right: "8%" }}
+            sx={(theme) => ({
+              position: "absolute",
+              top: "8px",
+              right: "8%",
+              // 모바일 시안에는 브레드스크럼 없음 → 태블릿부터 표시
+              display: "none",
+              [theme.breakpoints.up("tablet")]: {
+                display: "flex",
+              },
+            })}
           />
           {/* 상단 영역: 제목 + 이미지 */}
           <Box
             sx={(theme) => ({
               display: "flex",
-              flexDirection: "column-reverse",
+              flexDirection: "column",
               alignItems: "center",
               [theme.breakpoints.up("tablet")]: {
                 flexDirection: "row",
@@ -155,7 +186,7 @@ const Contact = () => {
                 alt={t("img_alt")}
                 loading="lazy"
                 sx={(theme) => ({
-                  width: "80%",
+                  width: "100%",
                   height: "auto",
                   [theme.breakpoints.up("tablet")]: {
                     width: "auto",
@@ -169,34 +200,82 @@ const Contact = () => {
             </Box>
             <Box
               sx={(theme) => ({
-                ...theme.customStyles.contactTitleContainer,
+                display: "flex",
+                flexDirection: "column",
+                gap: "36px",
+                // 모바일: 제목 컨테이너를 꽉 채워 다크 박스 mx(-4)가 화면 끝까지 닿게 함
+                width: "100%",
+                [theme.breakpoints.up("tablet")]: {
+                  width: "auto",
+                },
               })}
             >
-              <Typography
-                variant="contactTitleFont"
-                component="h1"
-                sx={{
-                  wordBreak: "keep-all",
-                  width: "90%",
-                  background:
-                    "linear-gradient(90deg, #003B8D 0%, #66BAFF 100%)",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  color: "transparent",
-                }}
+              <Box
+                sx={(theme) => ({
+                  backgroundColor: "#03193F",
+                  // 컨테이너 px(32px) 상쇄 → 화면 좌우 끝까지 (풀블리드)
+                  mx: -4,
+                  px: 4,
+                  py: 3,
+                  display: "flex",
+                  justifyContent: "center",
+                  [theme.breakpoints.up("tablet")]: {
+                    backgroundColor: "transparent",
+                    justifyContent: "flex-start",
+                    mx: 0,
+                    p: 0,
+                  },
+                  [theme.breakpoints.up("desktop")]: {
+                    backgroundColor: "transparent",
+                  },
+                })}
               >
-                {t("title")}
-              </Typography>
+                <Typography
+                  component="h1"
+                  sx={(theme) => ({
+                    wordBreak: "keep-all",
+                    fontFamily: FONTS.freesentation.semiBold,
+                    fontSize: "24px",
+                    lineHeight: 1.5,
+                    letterSpacing: "normal",
+                    color: "#ffffff",
+                    textAlign: "center",
+                    width: "90%",
+                    [theme.breakpoints.up("tablet")]: {
+                      fontFamily: FONTS.freesentation.bold,
+                      fontSize: "30px",
+                      textAlign: "left",
+                      color: "transparent",
+                      background:
+                        "linear-gradient(90deg, #003B8D 0%, #66BAFF 100%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    },
+                    [theme.breakpoints.up("desktop")]: {
+                      fontSize: "40px",
+                      width: "95%",
+                    },
+                  })}
+                >
+                  {t("title")}
+                </Typography>
+              </Box>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 {contactTexts.map((text, index) => (
                   <Typography
                     key={index}
-                    sx={{
+                    sx={(theme) => ({
                       fontFamily: FONTS.freesentation.regular,
-                      fontSize: "18px",
-                      color: "#656565",
-                    }}
+                      fontSize: "16px",
+                      color: "#03193F",
+                      [theme.breakpoints.up("tablet")]: {
+                        color: "#656565",
+                      },
+                      [theme.breakpoints.up("desktop")]: {
+                        fontSize: "18px",
+                      },
+                    })}
                   >
                     {text}
                   </Typography>
@@ -207,10 +286,14 @@ const Contact = () => {
 
           {/* 점선 구분선 */}
           <Box
-            sx={{
-              width: "100%",
-              borderTop: "1px dashed #C4C4C4",
-            }}
+            sx={(theme) => ({
+              display: "none",
+              [theme.breakpoints.up("desktop")]: {
+                display: "block",
+                width: "100%",
+                borderTop: "1px dashed #C4C4C4",
+              },
+            })}
           />
 
           {/* 하단 영역: 문의 폼 */}
@@ -218,17 +301,25 @@ const Contact = () => {
             component="form"
             onSubmit={handleSubmit(onSubmit)}
             sx={(theme) => ({
-              ...theme.customStyles.contactFormContainer,
+              flex: 1,
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              gap: 3,
+              [theme.breakpoints.up("tablet")]: {
+                gridTemplateColumns: "repeat(3,1fr)",
+                columnGap: 3,
+              },
             })}
           >
             {/* 회사명 */}
-            <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <Box sx={{ position: "relative" }}>
               <TextField
                 size="small"
                 label={t("form.company.label")}
                 placeholder={t("form.company.placeholder")}
                 required
                 fullWidth
+                sx={INPUT_SX}
                 {...register("company", {
                   //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
                   validate: (value) => validateNotEmptyAndLength(value, 50),
@@ -242,35 +333,37 @@ const Contact = () => {
             </Box>
 
             {/* 부서 */}
-            <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <Box sx={{ position: "relative" }}>
               <TextField
                 size="small"
                 label={t("form.division.label")}
                 placeholder={t("form.division.placeholder")}
                 required
                 fullWidth
+                sx={INPUT_SX}
                 {...register("division", {
-                  //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
+                  //TODO: 백엔드 부서 최대 길이 제한 확인 후 변경 필요
                   validate: (value) => validateNotEmptyAndLength(value, 50),
                 })}
               />
-              {errors.company && (
+              {errors.division && (
                 <ApplicationInputErrorText
-                  text={errors.company.message || ""}
+                  text={errors.division.message || ""}
                 />
               )}
             </Box>
 
             {/* 성함 */}
-            <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <Box sx={{ position: "relative" }}>
               <TextField
                 size="small"
                 label={t("form.name.label")}
                 placeholder={t("form.name.placeholder")}
                 required
                 fullWidth
+                sx={INPUT_SX}
                 {...register("name", {
-                  //TODO: 백엔드 회사명 최대 길이 제한 확인 후 변경 필요
+                  //TODO: 백엔드 성함 최대 길이 제한 확인 후 변경 필요
                   validate: (value) => validateNotEmptyAndLength(value, 50),
                 })}
               />
@@ -280,13 +373,14 @@ const Contact = () => {
             </Box>
 
             {/* 직급 */}
-            <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <Box sx={{ position: "relative" }}>
               <TextField
                 size="small"
                 label={t("form.position.label")}
                 placeholder={t("form.position.placeholder")}
                 required
                 fullWidth
+                sx={INPUT_SX}
                 {...register("position", {
                   validate: (value) => validateNotEmptyAndLength(value, 50),
                 })}
@@ -299,13 +393,14 @@ const Contact = () => {
             </Box>
 
             {/* 이메일 */}
-            <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <Box sx={{ position: "relative" }}>
               <TextField
                 size="small"
                 label={t("form.email.label")}
                 placeholder={t("form.email.placeholder")}
                 required
                 fullWidth
+                sx={INPUT_SX}
                 {...register("email", {
                   validate: (value) => validateEmail(value),
                 })}
@@ -316,13 +411,14 @@ const Contact = () => {
             </Box>
 
             {/* 연락처 */}
-            <Box sx={(theme) => ({ ...theme.customStyles.contactFormField })}>
+            <Box sx={{ position: "relative" }}>
               <TextField
                 size="small"
                 label={t("form.phone.label")}
                 placeholder={t("form.phone.placeholder")}
                 required
                 fullWidth
+                sx={INPUT_SX}
                 {...register("phone", {
                   validate: (value) => validatePhone(value),
                 })}
@@ -335,7 +431,8 @@ const Contact = () => {
             {/* 문의내용 */}
             <Box
               sx={(theme) => ({
-                ...theme.customStyles.contactFormFullWidthField,
+                position: "relative",
+                [theme.breakpoints.up("tablet")]: { gridColumn: "span 3" },
               })}
             >
               <TextField
@@ -345,6 +442,7 @@ const Contact = () => {
                 multiline
                 rows={6}
                 fullWidth
+                sx={INPUT_SX}
                 {...register("inquiry", {
                   validate: (value) =>
                     validateNotEmpty(value, t("form.inquiry_required")),
@@ -360,7 +458,11 @@ const Contact = () => {
             {/* 개인정보처리방침 동의 */}
             <Box
               sx={(theme) => ({
-                ...theme.customStyles.contactCheckboxContainer,
+                position: "relative",
+                display: "flex",
+                justifySelf: "end",
+                alignItems: "center",
+                [theme.breakpoints.up("tablet")]: { gridColumn: "span 3" },
               })}
             >
               <Controller
@@ -380,9 +482,12 @@ const Contact = () => {
                           checked={field.value}
                           onChange={field.onChange}
                           sx={(theme) => ({
-                            ...theme.customStyles.contactformControlLabel,
+                            py: 0,
                             "&.Mui-checked": {
                               color: "#03193F",
+                            },
+                            [theme.breakpoints.up("desktop")]: {
+                              py: "9px",
                             },
                           })}
                         />
@@ -392,7 +497,7 @@ const Contact = () => {
                           sx={{
                             fontSize: "16px",
                             fontFamily: FONTS.freesentation.medium,
-                            color: "#8D8D8D", // gray-900
+                            color: "#626262",
                             cursor: "pointer",
                           }}
                         >
@@ -416,7 +521,7 @@ const Contact = () => {
             {/* 신청하기 버튼 */}
             <Box
               sx={(theme) => ({
-                ...theme.customStyles.contactFormFullWidthField,
+                position: "relative",
                 [theme.breakpoints.up("mobilePortrait")]: {
                   justifySelf: "end",
                 },
@@ -427,8 +532,30 @@ const Contact = () => {
             >
               <Button
                 type="submit"
+                disabled={submitStatus === "loading"}
                 sx={(theme) => ({
-                  ...theme.customStyles.contactButton,
+                  width: "fit-content",
+                  px: 4,
+                  fontSize: "18px",
+                  fontFamily: FONTS.freesentation.semiBold,
+                  color: "#fff",
+                  backgroundColor: "#003B8D",
+                  borderRadius: "4px",
+                  "&:hover": {
+                    backgroundColor: "#003B8D",
+                  },
+                  "&.Mui-disabled": {
+                    backgroundColor: "#cccccc",
+                    color: "#888888",
+                  },
+                  [theme.breakpoints.up("desktop")]: {
+                    py: 1,
+                    boxShadow: "3px 3px 5px 3px rgba(0,0,0,0.2)",
+                    backgroundColor: "#03193F",
+                    "&:hover": {
+                      backgroundColor: "#03193F",
+                    },
+                  },
                 })}
               >
                 {t("form.submit")}
@@ -440,7 +567,14 @@ const Contact = () => {
         {/* 지도 영역 */}
         <Box
           sx={(theme) => ({
-            ...theme.customStyles.contactMapContainer,
+            width: "100%",
+            height: "300px",
+            borderRadius: "8px",
+            overflow: "hidden",
+            border: "1px solid #e5e7eb",
+            [theme.breakpoints.up("tablet")]: {
+              height: "450px",
+            },
           })}
         >
           <iframe
