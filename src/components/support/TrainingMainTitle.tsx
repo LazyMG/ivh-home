@@ -28,7 +28,7 @@ const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
         width: "fit-content",
         fontFamily: FONTS.freesentation.bold,
         textAlign: "center",
-        maxWidth: "80%",
+        maxWidth: "90%",
         [theme.breakpoints.up("desktop")]: {
           maxWidth: "100%",
         },
@@ -40,15 +40,15 @@ const TrainingMainTitle = ({ titleList }: TrainingMainTitleProps) => {
           component="span"
           sx={(theme) => ({
             fontSize: title.size,
-            [theme.breakpoints.up("tablet")]: {
-              fontSize: "50px",
-            },
             color: title.color,
             fontFamily: title.font,
             backgroundColor: title.backColor,
             px: title.padding,
             boxDecorationBreak: "clone",
             WebkitBoxDecorationBreak: "clone",
+            [theme.breakpoints.up("desktop")]: {
+              fontSize: "50px",
+            },
           })}
         >
           {title.text}

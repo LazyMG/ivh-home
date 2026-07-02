@@ -1,5 +1,6 @@
 {
   "image": "/images/pages/company/ceo_main_image.png",
+  "mobile_image": "/images/pages/company/ceo_mobile_main_image.png",
   "color": "#179EBD",
   "image_position": "70% 50%"
 }

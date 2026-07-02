@@ -156,15 +156,12 @@ const Calendar = ({
 
   return (
     <Box
-      sx={(theme) => ({
+      sx={{
         width: "100%",
-        display: "none",
+        display: "flex",
         flexDirection: "column",
         mt: 6,
-        [theme.breakpoints.up("tablet")]: {
-          display: "flex",
-        },
-      })}
+      }}
     >
       {/* 커스텀 툴바: 왼쪽=이동/뷰 버튼, 오른쪽=legend (내장 툴바 대체) */}
       <Box

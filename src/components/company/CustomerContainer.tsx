@@ -40,6 +40,7 @@ const CustomerContainer = ({
     }
   };
 
+  // 데스크탑 그룹 레이아웃의 1181~1279px 구간 로고 크기 (1280px↑은 아래 desktop 스텝)
   const getTabletSizeFormatter = (maxWidth: string) => {
     if (!parseInt(maxWidth.split("%")[0])) return maxWidth;
 
@@ -51,12 +52,15 @@ const CustomerContainer = ({
     }
   };
 
+  // 고객사 로고: 1180px까지는 3열 그리드(모바일형), 1181px부터 데스크탑 그룹 레이아웃
+  const DESKTOP_UP = "@media (min-width:1181px)";
+
   return (
     <>
       {chunkList.map((chunk, index) => (
         <Box
           key={`mobile-${index}`}
-          sx={(theme) => ({
+          sx={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
             width: "100%",
@@ -65,10 +69,10 @@ const CustomerContainer = ({
             px: 2,
             py: 3,
             gap: 2,
-            [theme.breakpoints.up("tablet")]: {
+            [DESKTOP_UP]: {
               display: "none",
             },
-          })}
+          }}
         >
           {chunk.map((customerImg) => (
             <Box
@@ -104,9 +108,9 @@ const CustomerContainer = ({
       {customerList.map((content, index) => (
         <Box
           key={`desktop-${index}`}
-          sx={(theme) => ({
+          sx={{
             display: "none",
-            [theme.breakpoints.up("tablet")]: {
+            [DESKTOP_UP]: {
               display: "flex",
               width: "100%",
               alignItems: "center",
@@ -118,7 +122,7 @@ const CustomerContainer = ({
               overflow: "hidden",
               gap: content.layout === "start" ? 10 : 0,
             },
-          })}
+          }}
         >
           {content.list.map((customerImg) => (
             <Box

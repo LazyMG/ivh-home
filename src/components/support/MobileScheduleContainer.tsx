@@ -4,9 +4,9 @@ import { useState, useMemo } from "react";
 import CustomModal from "./CustomModal";
 import CalendarModalContent from "./CalendarModalContent";
 import MobileScheduleCard from "./MobileScheduleCard";
-import CalendarLegend from "./CalendarLegend";
 import { getQuarterInfo } from "../../utils/quarter";
 import { FONTS } from "../../theme/theme";
+import MobileCurriculumLegend from "./MobileCurriculumLegend";
 
 // 날짜 포맷 함수 (YYYY-MM-DD -> MM/DD)
 const formatDate = (dateString: string): string => {
@@ -54,13 +54,24 @@ const MobileScheduleContainer = ({
   //   setIsModalOpen(true);
   // };
 
-  // reservationList를 교육명으로 그룹핑
+  const { tableTitle, quarterMonths, quarterYears } = getQuarterInfo();
+
+  // reservationList를 분기 3개월(상단 표시 기간)로 필터링 후 교육명으로 그룹핑
   const groupedReservations = useMemo(() => {
     if (!reservationList) return {};
-    return groupByTitle(reservationList);
-  }, [reservationList]);
 
-  const { tableTitle } = getQuarterInfo();
+    const filtered = reservationList.filter((reservation) => {
+      const [resYear, resMonth] = reservation.startDate.split("-");
+      const resYearNum = parseInt(resYear, 10);
+      const resMonthNum = parseInt(resMonth, 10);
+
+      return quarterMonths.some(
+        (qm, i) => resYearNum === quarterYears[i] && resMonthNum === qm,
+      );
+    });
+
+    return groupByTitle(filtered);
+  }, [reservationList, quarterMonths, quarterYears]);
 
   return (
     <>
@@ -72,16 +83,17 @@ const MobileScheduleContainer = ({
           },
         })}
       >
+        <MobileCurriculumLegend />
         <Typography
           sx={{
             fontSize: "16px",
             fontFamily: FONTS.freesentation.medium,
-            mt: 4,
+            mt: 2,
+            color: "#424242",
           }}
         >
           기간: {tableTitle}
         </Typography>
-        <CalendarLegend />
       </Box>
       <Box
         sx={(theme) => ({
@@ -94,7 +106,7 @@ const MobileScheduleContainer = ({
           },
         })}
       >
-        {!reservationList || reservationList.length === 0 ? (
+        {Object.keys(groupedReservations).length === 0 ? (
           <Typography
             sx={{
               textAlign: "center",
@@ -122,7 +134,13 @@ const MobileScheduleContainer = ({
           ))
         )}
 
-        <Box sx={{ mt: 3 }}>
+        <Box
+          sx={(theme) => ({
+            mt: 3,
+            display: "none",
+            [theme.breakpoints.up("desktop")]: { display: "block" },
+          })}
+        >
           <Typography
             sx={{
               whiteSpace: "pre-wrap",

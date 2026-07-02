@@ -16,7 +16,7 @@ const ApplicationInputErrorText = ({
         ...sx,
         width: "100%",
         height: "12px",
-        position: "absolute",
+        // position: "absolute",
         color: "red",
         lineHeight: 1.2,
         fontSize: "12px",

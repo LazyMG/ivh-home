@@ -3,7 +3,7 @@ import type {
   ReservationResponse,
   ReservationStatus,
 } from "../../types/reservation";
-import { RESERVATION_STATUS_COLOR } from "../../utils/constants";
+import { RESERVATION_STATUS_MOBILE_COLOR } from "../../utils/constants";
 import { FONTS } from "../../theme/theme";
 
 interface ScheduleInfo {
@@ -36,18 +36,16 @@ const MobileScheduleCard = ({
   return (
     <Paper
       sx={{
-        border: "2px solid transparent",
+        border: "1px solid #03193F",
         borderRadius: "10px",
         p: 2,
         boxShadow: "4px 4px 4px 0 rgba(0,0,0,0.25)",
-        background:
-          "linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #339070, #1755C2) border-box",
         // cursor: onCardClick ? "pointer" : "default",  // 나중에 사용
       }}
       // onClick={handleCardClick}  // 나중에 사용
     >
       {/* 교육명 */}
-      <Box sx={{ display: "flex", gap: 2, mb: 1.5 }}>
+      <Box sx={{ display: "flex", gap: 2, mb: 1.5, alignItems: "start" }}>
         <Typography
           sx={{
             fontSize: "14px",
@@ -62,7 +60,7 @@ const MobileScheduleCard = ({
           sx={{
             fontSize: "16px",
             fontFamily: FONTS.freesentation.semiBold,
-            color: "#000",
+            color: "#03193F",
             wordBreak: "keep-all",
           }}
         >
@@ -93,15 +91,15 @@ const MobileScheduleCard = ({
               }}
               sx={{
                 backgroundColor:
-                  RESERVATION_STATUS_COLOR[schedule.status].color,
-                color: "#000000",
-                fontFamily: FONTS.freesentation.medium,
+                  RESERVATION_STATUS_MOBILE_COLOR[schedule.status].color,
+                color: "#ffffff",
+                fontFamily: FONTS.freesentation.semiBold,
                 fontSize: "16px",
                 cursor: "pointer",
                 height: "fit-content",
                 "&:hover": {
                   backgroundColor:
-                    RESERVATION_STATUS_COLOR[schedule.status].color,
+                    RESERVATION_STATUS_MOBILE_COLOR[schedule.status].color,
                   opacity: 0.8,
                 },
               }}

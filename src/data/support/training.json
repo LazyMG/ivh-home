@@ -10,7 +10,7 @@
       "text": "표준화된 과정",
       "font": "Freesentation-7-Bold",
       "color": "#ffffff",
-      "size": "50px",
+      "size": "22px",
       "backColor": "#003B8D",
       "padding": "0.2em"
     },
@@ -25,7 +25,7 @@
       "text": "맞춤형 교육",
       "font": "Freesentation-7-Bold",
       "color": "#ffffff",
-      "size": "28px",
+      "size": "22px",
       "backColor": "#33A3FF",
       "padding": "0.2em"
     },
