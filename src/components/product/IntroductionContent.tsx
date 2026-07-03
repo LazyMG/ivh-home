@@ -22,7 +22,17 @@ const hasImages = (item?: IntroductionItem) =>
 
 const IntroductionContent = ({ items }: IntroductionContentProps) => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 5, pl: 4 }}>
+    <Box
+      sx={(theme) => ({
+        display: "flex",
+        flexDirection: "column",
+        gap: 5,
+        pl: 1,
+        [theme.breakpoints.up("desktop")]: {
+          pl: 4,
+        },
+      })}
+    >
       {items.map((item, index) => {
         const withImages = hasImages(item);
         // 캡션 유무로 레이아웃 결정: 캡션 있으면 좌우 지그재그, 없으면 이미지 위/텍스트 아래 stack
@@ -76,10 +86,13 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                 <Typography
                   sx={(theme) => ({
                     fontFamily: FONTS.freesentation.medium,
-                    fontSize: "18px",
+                    fontSize: "16px",
                     color: "#656565",
                     whiteSpace: "pre-line",
-                    [theme.breakpoints.up("tablet")]: { color: "#656565" },
+                    [theme.breakpoints.up("tablet")]: {
+                      fontSize: "18px",
+                      color: "#656565",
+                    },
                   })}
                 >
                   {item.text}
@@ -133,6 +146,10 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                             fontFamily: FONTS.freesentation.medium,
                             textAlign: "center",
                             color: "#656565",
+                            // 2줄분 높이 예약 → 캡션이 1줄이든 2줄이든 열 높이가 같아져
+                            // 이미지가 캡션 길이에 따라 위로 밀리지 않고 정렬을 유지한다.
+                            lineHeight: 1.3,
+                            minHeight: "2.6em",
                             [theme.breakpoints.up("tablet")]: {
                               color: "#656565",
                             },
@@ -156,10 +173,13 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
                   <Typography
                     sx={(theme) => ({
                       fontFamily: FONTS.freesentation.medium,
-                      fontSize: "18px",
+                      fontSize: "16px",
                       color: "#656565",
                       whiteSpace: "pre-line",
-                      [theme.breakpoints.up("tablet")]: { color: "#656565" },
+                      [theme.breakpoints.up("tablet")]: {
+                        fontSize: "18px",
+                        color: "#656565",
+                      },
                     })}
                   >
                     {item.text}
@@ -171,10 +191,13 @@ const IntroductionContent = ({ items }: IntroductionContentProps) => {
               <Typography
                 sx={(theme) => ({
                   fontFamily: FONTS.freesentation.medium,
-                  fontSize: "18px",
-                  color: "#737373",
+                  fontSize: "16px",
+                  color: "#656565",
                   whiteSpace: "pre-line",
-                  [theme.breakpoints.up("tablet")]: { color: "#656565" },
+                  [theme.breakpoints.up("desktop")]: {
+                    fontSize: "18px",
+                    color: "#656565",
+                  },
                 })}
               >
                 {item.text}
