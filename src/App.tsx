@@ -8,7 +8,7 @@ import {
   useLocation,
   useParams,
 } from "react-router-dom";
-import { ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import theme from "./theme/theme";
 import ScrollToTop from "./common/ScrollToTop";
@@ -278,31 +278,43 @@ function AppContent() {
     location.pathname.endsWith("/support/privacyPolicy");
 
   return (
-    <>
+    // sticky footer: 콘텐츠가 뷰포트보다 짧아도 푸터가 화면 하단에 붙도록
+    // 전체를 최소 뷰포트 높이의 flex column으로 만들고 main이 남는 높이를 흡수
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        // 모바일 주소창 높이 변화를 반영하는 dvh 지원 시 사용
+        "@supports (min-height: 100dvh)": { minHeight: "100dvh" },
+      }}
+    >
       <ScrollToTop>
         {/** header */}
         {!hideLayout &&
           (isMobile || isTablet ? <MobileHeader /> : <NewHeader />)}
-        <Suspense fallback={<div style={{ minHeight: "100vh" }} />}>
-          <Routes>
-            {/* 기존 경로 = ko (prefix 없음) */}
-            {routes.map((r) => (
-              <Route key={r.path} path={r.path} element={r.element} />
-            ))}
-            {/* 다국어 경로 = /:lang/ prefix */}
-            <Route path="/:lang" element={<LangGuard />}>
+        <Box component="main" sx={{ flex: 1 }}>
+          <Suspense fallback={<div style={{ minHeight: "100vh" }} />}>
+            <Routes>
+              {/* 기존 경로 = ko (prefix 없음) */}
               {routes.map((r) => (
-                <Route
-                  key={`lang-${r.path}`}
-                  path={r.path === "/" ? "" : r.path}
-                  element={r.element}
-                />
+                <Route key={r.path} path={r.path} element={r.element} />
               ))}
-            </Route>
-            {/** 404 */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+              {/* 다국어 경로 = /:lang/ prefix */}
+              <Route path="/:lang" element={<LangGuard />}>
+                {routes.map((r) => (
+                  <Route
+                    key={`lang-${r.path}`}
+                    path={r.path === "/" ? "" : r.path}
+                    element={r.element}
+                  />
+                ))}
+              </Route>
+              {/** 404 */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </Box>
       </ScrollToTop>
       {/** chatbot button */}
       <Suspense fallback={null}>
@@ -310,7 +322,7 @@ function AppContent() {
       </Suspense>
       {/** footer */}
       {!hideLayout && (isMobile || isTablet ? <MobileFooter /> : <Footer />)}
-    </>
+    </Box>
   );
 }
 

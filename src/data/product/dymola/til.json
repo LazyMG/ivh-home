@@ -50,7 +50,8 @@
           ]
         },
         {
-          "col": 12
+          "col": 12,
+          "imgTextAlign": "center"
         }
       ],
       "textObj": {
@@ -63,6 +64,7 @@
         {
           "col": 6,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til-feat-two-first.png",
@@ -73,6 +75,7 @@
         {
           "col": 6,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til-feat-two-second.png",
@@ -127,7 +130,11 @@
       "id": "feat-4",
       "imgObj": [
         {
-          "col": 2.4,
+          "col": 6,
+          "colMobile": 12,
+          "imgSize": "small",
+          "imgMaxWidth": "50%",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til_simpel_acc.png",
@@ -136,7 +143,11 @@
           ]
         },
         {
-          "col": 2.4,
+          "col": 6,
+          "colMobile": 12,
+          "imgSize": "small",
+          "imgMaxWidth": "50%",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til_automotive_secondary_loop.png",
@@ -145,7 +156,11 @@
           ]
         },
         {
-          "col": 2.4,
+          "col": 6,
+          "colMobile": 12,
+          "imgSize": "small",
+          "imgMaxWidth": "50%",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til_industrial_refrigerator.png",
@@ -154,7 +169,11 @@
           ]
         },
         {
-          "col": 2.4,
+          "col": 6,
+          "colMobile": 12,
+          "imgSize": "small",
+          "imgMaxWidth": "50%",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til_automotive_secondary_loop_2.png",
@@ -163,7 +182,11 @@
           ]
         },
         {
-          "col": 2.4,
+          "col": 6,
+          "colMobile": 12,
+          "imgSize": "small",
+          "imgMaxWidth": "50%",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/til/til_automotive_HVAC.png",
@@ -172,7 +195,8 @@
           ]
         },
         {
-          "col": 12
+          "col": 12,
+          "imgTextAlign": "center"
         }
       ],
       "textObj": {
@@ -180,7 +204,7 @@
       },
       "imageLayoutStyle": {
         "large": "strip",
-        "small": "slide"
+        "small": "container"
       }
     }
   ]

@@ -1,5 +1,6 @@
 {
   "ptv_mainImg": "/images/pages/product/ptv/ptv_main_image.png",
+  "ptv_mobileMainImg": "/images/pages/product/ptv/ptv_mobile_main_image.png",
   "ptv_pageKey": "ptv",
   "seo": {
     "ogImage": "https://ivh.co.kr/images/pages/product/ptv/ptv-main.png"

@@ -49,7 +49,6 @@ const Vissim = () => {
         introduction={introduction}
         pageKey={resource.vissim_pageKey}
         features={features}
-        name={td("vissim_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>

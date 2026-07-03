@@ -3,6 +3,7 @@
     "ogImage": "https://ivh.co.kr/images/pages/product/vtd/vtd-card-create.png"
   },
   "vtd_mainImg": "/images/pages/product/vtd/vtd-main.png",
+  "vtd_mobileMainImg": "/images/pages/product/vtd/vtd_mobile_main_image.png",
   "vtd_pageKey": "vtd",
   "vtd_libraries": [
     {

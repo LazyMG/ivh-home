@@ -7,10 +7,14 @@ const Dymola = () => {
   const { t } = useTranslation("product/dymola" as never);
   const td = (key: string): string => t(key as never);
 
-  const textList = t("dymola_text" as never, { returnObjects: true }) as string[];
+  const textList = t("dymola_text" as never, {
+    returnObjects: true,
+  }) as string[];
 
   const features = resource.dymola_features.map((feat) => {
-    const imgTexts = t(`dymola_features.${feat.id}.imgTexts` as never, { returnObjects: true }) as string[] | string;
+    const imgTexts = t(`dymola_features.${feat.id}.imgTexts` as never, {
+      returnObjects: true,
+    }) as string[] | string;
     const imgTextsArr = Array.isArray(imgTexts) ? imgTexts : [];
     return {
       ...(feat.imgObj
@@ -26,7 +30,9 @@ const Dymola = () => {
         title: td(`dymola_features.${feat.id}.title`),
         text: td(`dymola_features.${feat.id}.text`),
       },
-      ...(("imageLayoutStyle" in feat && feat.imageLayoutStyle) ? { imageLayoutStyle: feat.imageLayoutStyle } : {}),
+      ...("imageLayoutStyle" in feat && feat.imageLayoutStyle
+        ? { imageLayoutStyle: feat.imageLayoutStyle }
+        : {}),
     };
   });
 
@@ -47,12 +53,12 @@ const Dymola = () => {
       />
       <ProductPageTemplate
         image={resource.dymola_mainImg}
+        mobileImage={resource.dymola_mobileMainImg}
         image_alt={td("dymola_mainImg_alt")}
         title={td("dymola_title")}
         subTitle={td("dymola_subTitle")}
         textList={textList}
         features={features}
-        name={td("dymola_name")}
         libraries={libraries}
         pageKey={resource.dymola_pageKey}
         featuresSectionTitle={td("features_section_title")}

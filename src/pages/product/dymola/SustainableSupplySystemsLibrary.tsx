@@ -5,7 +5,9 @@ import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate
 
 const SustainableSupplySystemsLibrary = () => {
   const { t } = useTranslation("product/dymola/sustainable" as never);
-  const introTexts = t("introduction" as never, { returnObjects: true }) as string[];
+  const introTexts = t("introduction" as never, {
+    returnObjects: true,
+  }) as string[];
   const introduction = introTexts.map((text) => ({ text }));
 
   return (
@@ -21,7 +23,6 @@ const SustainableSupplySystemsLibrary = () => {
         subTitle={t("subTitle" as never)}
         introduction={introduction}
         pageKey={resource.pageKey}
-        name={t("name" as never)}
       />
     </>
   );

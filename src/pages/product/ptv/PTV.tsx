@@ -26,15 +26,17 @@ const PTV = () => {
       />
       <ProductPageTemplate
         image={resource.ptv_mainImg}
+        mobileImage={resource.ptv_mobileMainImg}
         image_alt={td("ptv_mainImg_alt")}
         title={td("ptv_title")}
         textList={textList}
-        name={td("ptv_name")}
         libraries={libraries}
         pageKey={resource.ptv_pageKey}
         libraryLayout="center"
         contentTop="85%"
-        introBottomSpace={20}
+        introBottomSpaceMobile={8}
+        introBottomSpace={24}
+        introBottomSpaceWide={15}
       />
     </>
   );

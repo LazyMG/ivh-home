@@ -45,7 +45,6 @@ const VTDSimulate = () => {
         introduction={introduction}
         pageKey={resource.vtd_simulate_pageKey}
         features={features}
-        name={td("vtd_simulate_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>

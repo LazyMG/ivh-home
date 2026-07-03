@@ -52,7 +52,6 @@ const VissimAutomotive = () => {
         introduction={introduction}
         pageKey={resource.vissim_automotive_pageKey}
         features={features}
-        name={td("vissim_automotive_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>
