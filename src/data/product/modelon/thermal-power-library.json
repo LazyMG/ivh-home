@@ -38,7 +38,8 @@
           ]
         },
         {
-          "col": 12
+          "col": 12,
+          "imgTextAlign": "center"
         }
       ],
       "textObj": {

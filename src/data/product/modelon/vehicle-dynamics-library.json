@@ -78,7 +78,8 @@
           ]
         },
         {
-          "col": 12
+          "col": 12,
+          "imgTextAlign": "center"
         }
       ],
       "textObj": {
@@ -110,6 +111,7 @@
         {
           "col": 6,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/vehicle/vehicle-feat-five-first.png",
@@ -120,6 +122,7 @@
         {
           "col": 6,
           "imgSize": "small",
+          "imgTextAlign": "center",
           "images": [
             {
               "url": "/images/pages/product/vehicle/vehicle-feat-five-second.png",
