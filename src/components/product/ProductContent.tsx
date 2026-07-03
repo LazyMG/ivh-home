@@ -1,12 +1,6 @@
-import { Fragment } from "react";
+import { Fragment, useLayoutEffect, useRef, useState } from "react";
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "../../style/product-slider.css";
 import { FONTS } from "../../theme/theme";
 
 interface FeatureImageItem {
@@ -47,6 +41,204 @@ export interface ProductContentProps {
 
 // 이미지가 실제로 들어있는 그룹인지 판별 (빈 배열·미지정 모두 false)
 const hasImages = (img: FeatureImage) => !!img.images?.length;
+
+// 슬라이더 화살표 — 중앙 슬라이드 가장자리에서 고정 px 간격을 유지해
+// 화면이 좁아져도 이미지에 달라붙지 않는다. (%-기반 위치는 좁은 화면에서 이미지와 겹침)
+const SliderArrow = ({
+  direction,
+  disabled,
+  onClick,
+}: {
+  direction: "prev" | "next";
+  disabled: boolean;
+  onClick: () => void;
+}) => (
+  <Box
+    component="button"
+    type="button"
+    onClick={onClick}
+    disabled={disabled}
+    aria-label={direction === "prev" ? "이전 슬라이드" : "다음 슬라이드"}
+    sx={{
+      position: "absolute",
+      zIndex: 10,
+      top: "50%",
+      transform: "translateY(-50%)",
+      width: 40,
+      height: 40,
+      p: 0,
+      border: "none",
+      cursor: "pointer",
+      backgroundColor: "transparent",
+      backgroundImage: `url(/images/utils/${
+        direction === "prev" ? "left" : "right"
+      }_arrow.png)`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      backgroundSize: "contain",
+      transition: "all 0.3s ease",
+      // 슬라이드 폭 50% → 가장자리는 25% 지점. 화살표 폭 40px + 간격 12px 바깥에 고정.
+      [direction === "prev" ? "left" : "right"]: "calc(25% - 52px)",
+      "&:hover:not(:disabled)": {
+        opacity: 0.6,
+        transform: "translateY(-50%) scale(1.1)",
+      },
+      // 첫/마지막 슬라이드에서 더 갈 수 없는 방향은 흐리게
+      "&:disabled": {
+        opacity: 0.3,
+        cursor: "default",
+      },
+      "@media (max-width: 768px)": {
+        width: 20,
+        height: 20,
+        // 슬라이드 폭 80% → 가장자리는 10% 지점. 화살표 폭 20px + 간격 8px 바깥.
+        [direction === "prev" ? "left" : "right"]: "calc(10% - 28px)",
+      },
+    }}
+  />
+);
+
+// 제품 이미지 슬라이더 — swiper.js 없이 네이티브 가로 스크롤 + CSS scroll-snap으로 구현.
+// 활성(중앙) 슬라이드만 불투명하게, 나머지는 opacity 0.5.
+const ProductSlider = ({ slides }: { slides: FeatureImage[] }) => {
+  const trackRef = useRef<HTMLDivElement>(null);
+  // 가운데 슬라이드에서 시작 (기존 initialSlide와 동일)
+  const [activeIndex, setActiveIndex] = useState(
+    Math.floor(slides.length / 2),
+  );
+
+  // index번 슬라이드의 중앙이 트랙 중앙에 오도록 스크롤
+  const scrollToSlide = (index: number, behavior: ScrollBehavior) => {
+    const track = trackRef.current;
+    const slide = track?.children[index] as HTMLElement | undefined;
+    if (!track || !slide) return;
+    track.scrollTo({
+      left:
+        slide.offsetLeft -
+        track.offsetLeft -
+        (track.clientWidth - slide.clientWidth) / 2,
+      behavior,
+    });
+  };
+
+  // 최초 렌더 직후(페인트 전) 가운데 슬라이드로 이동
+  useLayoutEffect(() => {
+    scrollToSlide(Math.floor(slides.length / 2), "auto");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // 스크롤 위치 기준으로 트랙 중앙에 가장 가까운 슬라이드를 활성으로 판정
+  const syncActive = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const center = track.scrollLeft + track.clientWidth / 2;
+    let nearest = 0;
+    let minDistance = Infinity;
+    Array.from(track.children).forEach((child, index) => {
+      const el = child as HTMLElement;
+      const distance = Math.abs(
+        el.offsetLeft - track.offsetLeft + el.clientWidth / 2 - center,
+      );
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearest = index;
+      }
+    });
+    setActiveIndex(nearest);
+  };
+
+  return (
+    // Full Bleed 컨테이너 - 부모 컨테이너를 벗어나 화면 전체 폭 사용
+    <Box
+      sx={{
+        width: "100vw",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+        py: "20px",
+      }}
+    >
+      {/* 트랙 - 네이티브 가로 스크롤 + 중앙 스냅 */}
+      <Box
+        ref={trackRef}
+        onScroll={syncActive}
+        sx={{
+          display: "flex",
+          gap: "64px",
+          overflowX: "auto",
+          scrollSnapType: "x mandatory",
+          overscrollBehaviorX: "contain",
+          // 스크롤바 숨김
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": { display: "none" },
+        }}
+      >
+        {slides.map((img, index) => (
+          // 슬라이드 - 모바일 80% / 데스크톱 50% 폭, 첫/마지막은 중앙 스냅용 여백
+          // (트랙 padding 대신 margin을 써야 슬라이드 %폭 기준이 안 바뀜)
+          <Box
+            key={index}
+            sx={{
+              flex: "0 0 auto",
+              scrollSnapAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 1,
+              opacity: index === activeIndex ? 1 : 0.5,
+              width: "80%",
+              "&:first-of-type": { ml: "10%" },
+              "&:last-of-type": { mr: "10%" },
+              "@media (min-width: 769px)": {
+                width: "50%",
+                "&:first-of-type": { ml: "25%" },
+                "&:last-of-type": { mr: "25%" },
+              },
+            }}
+          >
+            {img.images &&
+              img.images.map((image) => (
+                <Box
+                  key={image.url}
+                  component="img"
+                  src={image.url}
+                  alt={image.alt}
+                  loading="lazy"
+                  sx={{
+                    objectFit: "contain",
+                    width: "100%",
+                    maxWidth: "100%",
+                  }}
+                />
+              ))}
+            {img.imgText && <SlideCaption text={img.imgText} />}
+          </Box>
+        ))}
+      </Box>
+      {slides.length > 1 && (
+        <>
+          <SliderArrow
+            direction="prev"
+            disabled={activeIndex === 0}
+            onClick={() =>
+              scrollToSlide(Math.max(activeIndex - 1, 0), "smooth")
+            }
+          />
+          <SliderArrow
+            direction="next"
+            disabled={activeIndex === slides.length - 1}
+            onClick={() =>
+              scrollToSlide(
+                Math.min(activeIndex + 1, slides.length - 1),
+                "smooth",
+              )
+            }
+          />
+        </>
+      )}
+    </Box>
+  );
+};
 
 // 슬라이드/텍스트전용 항목의 캡션 (두 위치에서 동일 스타일 사용)
 const SlideCaption = ({ text }: { text: string }) => (
@@ -103,45 +295,7 @@ const ProductContent = ({
     return (
       <>
         <Grid size={12}>
-          <Swiper
-            className="product-swiper"
-            slidesPerView="auto"
-            centeredSlides={true}
-            initialSlide={Math.floor(slideImages.length / 2)}
-            navigation={true}
-            spaceBetween={64}
-            modules={[Navigation]}
-          >
-            {slideImages.map((img, index) => (
-              <SwiperSlide key={index}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 1,
-                  }}
-                >
-                  {img.images &&
-                    img.images.map((image) => (
-                      <Box
-                        key={image.url}
-                        component="img"
-                        src={image.url}
-                        alt={image.alt}
-                        loading="lazy"
-                        sx={{
-                          objectFit: "contain",
-                          width: "100%",
-                          maxWidth: "100%",
-                        }}
-                      />
-                    ))}
-                  {img.imgText && <SlideCaption text={img.imgText} />}
-                </Box>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <ProductSlider slides={slideImages} />
         </Grid>
         {textOnlyItems.map((item, index) => (
           <Grid key={`text-only-${index}`} size={12}>
