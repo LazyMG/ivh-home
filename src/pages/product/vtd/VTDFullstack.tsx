@@ -45,7 +45,6 @@ const VTDFullstack = () => {
         introduction={introduction}
         pageKey={resource.vtd_fullstack_pageKey}
         features={features}
-        name={td("vtd_fullstack_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>

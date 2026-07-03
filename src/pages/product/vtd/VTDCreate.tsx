@@ -44,7 +44,6 @@ const VTDCreate = () => {
         introduction={introduction}
         pageKey={resource.vtd_create_pageKey}
         features={features}
-        name={td("vtd_create_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>

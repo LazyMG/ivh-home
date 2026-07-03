@@ -53,7 +53,6 @@ const Battery = () => {
         introduction={introduction}
         pageKey={resource.battery_pageKey}
         features={features}
-        name={td("battery_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>

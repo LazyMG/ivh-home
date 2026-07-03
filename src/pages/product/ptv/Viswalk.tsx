@@ -49,7 +49,6 @@ const Viswalk = () => {
         introduction={introduction}
         pageKey={resource.viswalk_pageKey}
         features={features}
-        name={td("viswalk_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>

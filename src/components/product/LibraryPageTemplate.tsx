@@ -8,30 +8,25 @@ import ProductContent from "./ProductContent";
 import SectionTitle from "../common/SectionTitle";
 import { FONTS } from "../../theme/theme";
 
-interface ImageObject {
-  imgUrl?: string[];
+// features는 그대로 ProductContent로 스프레드된다. ProductContent가 실제로 읽는 필드
+// (images 배열)를 반영. imgTextAlign은 ProductContent 쪽이 "center"|"start" 유니온인데
+// JSON 값은 string으로 넓혀져 충돌하므로, 여기 타입에선 생략한다(런타임 값은 스프레드로 전달됨).
+interface FeatureImage {
+  images?: { url: string; alt: string }[];
   imgText?: string;
   col: number;
+  colMobile?: number;
   imgSize?: string;
 }
 
-interface TextObject {
-  title: string;
-  text: string;
-  col: number;
-}
-
-interface ImageLayoutStyle {
-  large: string;
-  small: string;
-}
-
-export interface FeatureItem {
-  imgObj?: ImageObject[];
-  textObj: TextObject;
-  imageLayoutStyle?: ImageLayoutStyle;
+interface FeatureItem {
+  imgObj?: FeatureImage[];
+  textObj: { title: string; text: string; col: number };
+  imageLayoutStyle?: { large: string; small: string };
   /** 하단 구분선 표시 여부 (기본 true) */
   showDivider?: boolean;
+  /** 이미지 그리드 열 간격 (MUI spacing, 기본 4) */
+  columnSpacing?: number;
 }
 
 interface LibraryPageTemplate {
@@ -40,7 +35,6 @@ interface LibraryPageTemplate {
   introduction: IntroductionItem[];
   features?: FeatureItem[];
   pageKey: string;
-  name: string;
   featuresSectionTitle?: string;
 }
 
@@ -56,7 +50,16 @@ const LibraryPageTemplate = ({
     <Box component="main" sx={{ position: "relative", display: "flow-root" }}>
       <BreadScrum
         pageKey={pageKey}
-        sx={{ position: "absolute", top: "40px", right: "8%", zIndex: 1 }}
+        sx={{
+          position: "absolute",
+          top: "40px",
+          right: "8%",
+          zIndex: 1,
+          display: "none",
+          "@media (min-width:1024px)": {
+            display: "flex",
+          },
+        }}
       />
       <Box
         sx={(theme) => ({
@@ -66,6 +69,7 @@ const LibraryPageTemplate = ({
           px: 4,
           flexDirection: "column",
           overflowX: "hidden",
+          mb: 10,
           [theme.breakpoints.up("tablet")]: {
             px: "8%",
             mt: 10,
@@ -89,14 +93,26 @@ const LibraryPageTemplate = ({
         >
           <Box
             id="introduction"
-            sx={{
+            sx={(theme) => ({
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: 9,
-            }}
+              gap: 5,
+              [theme.breakpoints.up("desktop")]: {
+                gap: 9,
+              },
+            })}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
+            <Box
+              sx={(theme) => ({
+                display: "flex",
+                alignItems: "center",
+                gap: 2,
+                [theme.breakpoints.up("desktop")]: {
+                  gap: 3,
+                },
+              })}
+            >
               <Box
                 sx={{
                   alignSelf: "stretch",
@@ -119,7 +135,6 @@ const LibraryPageTemplate = ({
                   sx={(theme) => ({
                     fontFamily: FONTS.galderglynn.regular,
                     fontSize: "20px",
-                    textTransform: "uppercase",
                     color: "#03193F",
                     lineHeight: "1",
                     [theme.breakpoints.up("tablet")]: {
@@ -130,14 +145,26 @@ const LibraryPageTemplate = ({
                   {title}
                 </Typography>
                 <Divider
-                  sx={{ width: "120%", borderColor: "#00235F", my: 2 }}
+                  sx={(theme) => ({
+                    width: "90%",
+                    borderColor: "#00235F",
+                    my: 1,
+                    [theme.breakpoints.up("desktop")]: {
+                      width: "120%",
+                      my: 2,
+                    },
+                  })}
                 />
                 <Typography
-                  sx={{
-                    color: "#03193F",
-                    fontSize: "18px",
+                  sx={(theme) => ({
+                    color: "#000000",
+                    fontSize: "16px",
                     fontFamily: FONTS.freesentation.semiBold,
-                  }}
+                    [theme.breakpoints.up("desktop")]: {
+                      fontSize: "18px",
+                      color: "#03193F",
+                    },
+                  })}
                 >
                   {subTitle}
                 </Typography>
@@ -152,7 +179,16 @@ const LibraryPageTemplate = ({
               sx={{ display: "flex", flexDirection: "column", gap: 4 }}
             >
               <SectionTitle text={featuresSectionTitle} />
-              <Box sx={{ display: "flex", flexDirection: "column", px: 10 }}>
+              <Box
+                sx={(theme) => ({
+                  display: "flex",
+                  flexDirection: "column",
+                  px: 0,
+                  [theme.breakpoints.up("desktop")]: {
+                    px: 10,
+                  },
+                })}
+              >
                 {features.map((item, index) => (
                   <ProductContent key={index} {...item} />
                 ))}

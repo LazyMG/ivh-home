@@ -52,7 +52,6 @@ const ThermalPowerLibrary = () => {
         subTitle={t("subTitle" as never)}
         introduction={introduction}
         pageKey={resource.pageKey}
-        name={t("name" as never)}
         features={features}
         featuresSectionTitle={td("features_section_title")}
       />

@@ -50,7 +50,7 @@ const TIL = () => {
         title: td(`til_features.${feat.id}.title`),
         text: td(`til_features.${feat.id}.text`),
       },
-      ...(feat.imageLayoutStyle
+      ...("imageLayoutStyle" in feat && feat.imageLayoutStyle
         ? { imageLayoutStyle: feat.imageLayoutStyle }
         : {}),
       showDivider: index !== arr.length - 1,
@@ -71,7 +71,6 @@ const TIL = () => {
         introduction={introduction}
         pageKey={resource.til_pageKey}
         features={features}
-        name={td("til_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>

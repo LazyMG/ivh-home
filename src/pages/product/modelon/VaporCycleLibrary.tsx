@@ -5,7 +5,9 @@ import LibraryPageTemplate from "../../../components/product/LibraryPageTemplate
 
 const VaporCycleLibrary = () => {
   const { t } = useTranslation("product/modelon/vapor" as never);
-  const introTexts = t("introduction" as never, { returnObjects: true }) as string[];
+  const introTexts = t("introduction" as never, {
+    returnObjects: true,
+  }) as string[];
   const introduction = introTexts.map((text) => ({ text }));
 
   return (
@@ -21,7 +23,6 @@ const VaporCycleLibrary = () => {
         subTitle={t("subTitle" as never)}
         introduction={introduction}
         pageKey={resource.pageKey}
-        name={t("name" as never)}
       />
     </>
   );

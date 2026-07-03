@@ -53,7 +53,6 @@ const VehicleDynamicsLibrary = () => {
         introduction={introduction}
         pageKey={resource.vehicle_pageKey}
         features={features}
-        name={td("vehicle_name")}
         featuresSectionTitle={td("features_section_title")}
       />
     </>
