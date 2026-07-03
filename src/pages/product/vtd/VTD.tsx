@@ -26,14 +26,17 @@ const VTD = () => {
       />
       <ProductPageTemplate
         image={resource.vtd_mainImg}
+        mobileImage={resource.vtd_mobileMainImg}
         image_alt={td("vtd_mainImg_alt")}
         title={td("vtd_title")}
         subTitle={td("vtd_subTitle")}
         textList={textList}
-        name={td("vtd_name")}
         libraries={libraries}
         pageKey={resource.vtd_pageKey}
         libraryLayout="center"
+        introBottomSpaceMobile={10}
+        introBottomSpace={24}
+        introBottomSpaceWide={15}
       />
     </>
   );

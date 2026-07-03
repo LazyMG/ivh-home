@@ -26,14 +26,16 @@ const Modelon = () => {
       />
       <ProductPageTemplate
         image={resource.modelon_mainImg}
+        mobileImage={resource.modelon_mobileMainImg}
         image_alt={td("modelon_mainImg_alt")}
         title={td("modelon_title")}
         textList={textList}
-        name={td("modelon_name")}
         libraries={libraries}
         pageKey={resource.modelon_pageKey}
         contentTop="85%"
-        introBottomSpace={20}
+        introBottomSpaceMobile={10}
+        introBottomSpace={24}
+        introBottomSpaceWide={20}
         breadcrumbColor="#000000"
       />
     </>
