@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Support - iVH 기술지원 서비스",
+    "description": "iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.",
+    "keywords": "Support, 기술지원, iVH"
+  },
+  "support_title": "iVH 기술지원 서비스는 고객 요청에 정확하고 빠르게 답변합니다.",
+  "support_title_parts": {
+    "gradient": "iVH 기술지원 포털",
+    "normal": "은 고객의 프로젝트를 보다 효율적으로 수행할 수 있도록 지원합니다."
+  },
+  "support_text": "기술 문의, 이슈 관리, 지원 요청 등 프로젝트 수행 과정에서 필요한 사항을 체계적으로 관리하고 신속하게 대응합니다.",
+  "support_link_text": "기술지원 서비스로 연결",
+  "support_image_alt": "iVH 기술지원 서비스"
+}

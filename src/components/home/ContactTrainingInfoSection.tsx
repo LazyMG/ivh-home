@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import section from "../../data/home/section.json";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
@@ -8,6 +9,7 @@ import ContactTrainingInfoMobile from "./ContactTrainingInfoMobile";
 const ContactTrainingInfoSection = () => {
   const { isMobile } = useBreakpoint();
   const navigate = useLocalizedNavigate();
+  const { t } = useTranslation("home");
   const { contact_us } = section;
 
   // 모바일은 배경/버튼/이미지가 완전히 다른 레이아웃 → 컴포넌트 교체
@@ -65,7 +67,7 @@ const ContactTrainingInfoSection = () => {
               [theme.breakpoints.up("tablet")]: { fontSize: "36px" },
             })}
           >
-            {contact_us.title}
+            {t("contact_us.title")}
           </Typography>
           <Typography
             sx={(theme) => ({
@@ -77,7 +79,7 @@ const ContactTrainingInfoSection = () => {
               },
             })}
           >
-            {contact_us.text}
+            {t("contact_us.text")}
           </Typography>
         </Box>
         <Box

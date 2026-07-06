@@ -1,0 +1,46 @@
+{
+  "seo": {
+    "title": "Training - iVH Training Programs",
+    "description": "Professional training programs for simulation tools such as Dymola, VTD, and Vissim, from beginner to advanced, including customized courses.",
+    "keywords": "Training, Dymola, VTD, Vissim, Simulation Training, Technical Training"
+  },
+  "training_title": [
+    {
+      "text": "Professional Training",
+      "font": "Freesentation-7-Bold",
+      "color": "#ffffff",
+      "size": "22px",
+      "backColor": "#003B8D",
+      "padding": "0.2em"
+    },
+    {
+      "text": " for ",
+      "font": "Freesentation-7-Bold",
+      "color": "#000000",
+      "size": "22px",
+      "backColor": "transparent"
+    },
+    {
+      "text": "Digital Engineering",
+      "font": "Freesentation-7-Bold",
+      "color": "#ffffff",
+      "size": "22px",
+      "backColor": "#33A3FF",
+      "padding": "0.2em"
+    },
+    {
+      "text": " Solutions",
+      "font": "Freesentation-7-Bold",
+      "color": "#000000",
+      "size": "22px",
+      "backColor": "transparent"
+    }
+  ],
+  "training_outline": {
+    "contents": [
+      "Training is one of the most effective ways to quickly enhance user capabilities and maximize the value of engineering solutions. At iVH, we offer both standardized and customized training programs to meet the diverse needs of our customers. Our standard training courses are regularly delivered across multiple skill levels, from introductory to advanced, covering major solutions including Dymola, Modelon, and VTD.",
+      "All training programs are carefully designed to combine lectures, hands-on exercises, and demonstrations, enabling participants to build both theoretical understanding and practical expertise. Courses are led by experienced engineers who are actively involved in product development and engineering consulting projects, providing valuable insights drawn from real-world experience. In addition, iVH actively participates in the Modelica Association and ASAM communities. Combined with our experience across a wide range of industrial projects, this enables us to provide in-depth perspectives on the latest technologies, industry trends, and engineering standards."
+    ],
+    "image_alt": "iVH training overview image"
+  }
+}

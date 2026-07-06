@@ -13,6 +13,18 @@ import historyEn from "../locales/en/company/history.json";
 import partnerKo from "../locales/ko/company/partner.json";
 import partnerEn from "../locales/en/company/partner.json";
 
+// home / footer
+import homeKo from "../locales/ko/home/home.json";
+import homeEn from "../locales/en/home/home.json";
+import footerKo from "../locales/ko/footer/footer.json";
+import footerEn from "../locales/en/footer/footer.json";
+
+// support
+import trainingKo from "../locales/ko/support/training.json";
+import trainingEn from "../locales/en/support/training.json";
+import supportKo from "../locales/ko/support/support.json";
+import supportEn from "../locales/en/support/support.json";
+
 // dymola
 import dymolaKo from "../locales/ko/product/dymola/dymola.json";
 import dymolaEn from "../locales/en/product/dymola/dymola.json";
@@ -115,6 +127,10 @@ i18n.use(initReactI18next).init({
   lng: "ko",
   fallbackLng: "ko",
   ns: [
+    "home",
+    "footer",
+    "support/training",
+    "support/support",
     "product/iMOVA",
     "product/humanoidPackage",
     "company/ceo",
@@ -168,6 +184,10 @@ i18n.use(initReactI18next).init({
   defaultNS: "product/iMOVA",
   resources: {
     ko: {
+      home: homeKo,
+      footer: footerKo,
+      "support/training": trainingKo,
+      "support/support": supportKo,
       "product/iMOVA": iMOVAKo,
       "product/humanoidPackage": humanoidKo,
       "company/ceo": ceoKo,
@@ -219,6 +239,10 @@ i18n.use(initReactI18next).init({
       "solution/future-directions": futureDirectionsKo,
     },
     en: {
+      home: homeEn,
+      footer: footerEn,
+      "support/training": trainingEn,
+      "support/support": supportEn,
       "product/iMOVA": iMOVAEn,
       "product/humanoidPackage": humanoidEn,
       "company/ceo": ceoEn,

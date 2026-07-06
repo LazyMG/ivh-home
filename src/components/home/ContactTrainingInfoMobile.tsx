@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import section from "../../data/home/section.json";
 import { useLocalizedNavigate } from "../../i18n/useLocalizedNavigate";
 import { FONTS } from "../../theme/theme";
@@ -7,6 +8,7 @@ import { FONTS } from "../../theme/theme";
 // 배경/라운드 없이 세로 중앙 정렬: 이미지 → 제목 → 본문 → 평범한 원형 버튼.
 const ContactTrainingInfoMobile = () => {
   const navigate = useLocalizedNavigate();
+  const { t } = useTranslation("home");
   const { contact_us } = section;
 
   return (
@@ -50,7 +52,7 @@ const ContactTrainingInfoMobile = () => {
             fontFamily: FONTS.galderglynn.regular,
           }}
         >
-          {contact_us.title}
+          {t("contact_us.title")}
         </Typography>
         <Typography
           sx={{
@@ -62,7 +64,7 @@ const ContactTrainingInfoMobile = () => {
             wordBreak: "break-all",
           }}
         >
-          {contact_us.text}
+          {t("contact_us.text")}
         </Typography>
       </Box>
 

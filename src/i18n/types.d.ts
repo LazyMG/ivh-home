@@ -11,11 +11,19 @@ import type asamKo from "../locales/ko/solution/asam.json";
 import type physicalAiKo from "../locales/ko/solution/physical-ai.json";
 import type engineeringToIndustryKo from "../locales/ko/solution/engineering-to-industry.json";
 import type futureDirectionsKo from "../locales/ko/solution/future-directions.json";
+import type homeKo from "../locales/ko/home/home.json";
+import type footerKo from "../locales/ko/footer/footer.json";
+import type trainingKo from "../locales/ko/support/training.json";
+import type supportKo from "../locales/ko/support/support.json";
 
 declare module "i18next" {
   interface CustomTypeOptions {
     defaultNS: "product/iMOVA";
     resources: {
+      home: typeof homeKo;
+      footer: typeof footerKo;
+      "support/training": typeof trainingKo;
+      "support/support": typeof supportKo;
       "product/iMOVA": typeof iMOVAKo;
       "product/humanoidPackage": typeof humanoidKo;
       "company/ceo": typeof ceoKo;

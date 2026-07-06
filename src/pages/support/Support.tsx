@@ -1,17 +1,23 @@
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import support from "../../data/support/support.json";
 import SEO from "../../common/SEO";
-import { useSEO } from "../../hooks/useSEO";
 import ScrollButton from "../../common/ScrollButton";
 import { FONTS } from "../../theme/theme";
 const Support = () => {
   // TODO: 실제 support_image.svg 파일이 준비되면 이 경로를 사용하세요
   // 현재는 임시로 빈 div를 사용합니다
   // const supportImageSrc = "/images/pages/support/support/support_page.svg";
-  const seoData = useSEO("support/support", support);
+  const { t } = useTranslation("support/support");
   return (
     <>
-      <SEO {...seoData} />
+      <SEO
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
+        ogImage="https://ivh.co.kr/images/support/support/support_page.png"
+        canonical="https://ivh.co.kr/support/support"
+      />
       <Box
         component="main"
         sx={(theme) => ({
@@ -59,7 +65,7 @@ const Support = () => {
               <Box
                 component="img"
                 src={support.support_image}
-                alt={support.support_image_alt}
+                alt={t("support_image_alt")}
                 loading="lazy"
                 onError={(e) => {
                   // 이미지 로드 실패 시 (support_image.svg가 없는 경우)
@@ -129,9 +135,9 @@ const Support = () => {
                   fontFamily: FONTS.freesentation.semiBold,
                 }}
               >
-                {support.support_title_parts.gradient}
+                {t("support_title_parts.gradient")}
               </Box>
-              {support.support_title_parts.normal}
+              {t("support_title_parts.normal")}
             </Typography>
 
             <Typography
@@ -150,7 +156,7 @@ const Support = () => {
                 },
               })}
             >
-              {support.support_text.text}
+              {t("support_text")}
             </Typography>
           </Box>
           <Box
@@ -181,7 +187,7 @@ const Support = () => {
                 py: 0.5,
               }}
             >
-              <span>{support.support_link.text}</span>
+              <span>{t("support_link_text")}</span>
             </Box>
           </Box>
         </Box>
