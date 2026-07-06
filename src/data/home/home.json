@@ -11,12 +11,14 @@
     {
       "image": "/images/home/home_porduct_hardware.png",
       "title_image": "/images/home/logo_imova.png",
+      "title_image_alt": "iMOVA 로고",
       "category": "HARDWARE",
       "path": "/product/imova"
     },
     {
       "image": "/images/home/home_porduct_software.png",
       "title_image": "/images/home/logo_isuite.png",
+      "title_image_alt": "iSuite 로고",
       "category": "software",
       "path": "/product/isuite"
     }
@@ -79,6 +81,5 @@
       "mobile_image_alt": "Main Product - iSuite52 모바일 이미지",
       "path": ""
     }
-  ],
-  "video": "/video/smart_factory.mp4"
+  ]
 }

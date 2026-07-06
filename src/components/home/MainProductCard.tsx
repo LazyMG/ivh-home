@@ -5,7 +5,8 @@ import { FONTS } from "../../theme/theme";
 interface MainProductCardProps {
   category?: string; // 상단 헤더 (예: HARDWARE)
   image: string;
-  title?: string; // 강조 타이틀 (예: iMOVA)
+  title?: string; // 강조 타이틀 로고 이미지 URL (예: iMOVA 로고)
+  titleAlt?: string; // 로고 이미지 대체 텍스트 (제품명)
   subtitle?: string; // 보조 타이틀 (예: SERIES)
   description?: string;
   onClick?: () => void;
@@ -18,6 +19,7 @@ const MainProductCard = ({
   category = "HARDWARE",
   image,
   title,
+  titleAlt = "",
   subtitle = "SERIES",
   description = "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다.",
   onClick,
@@ -88,6 +90,7 @@ const MainProductCard = ({
             component="img"
             src={image}
             alt={description}
+            loading="lazy"
             sx={{ width: "100%", display: "block" }}
           />
         </Box>
@@ -143,6 +146,8 @@ const MainProductCard = ({
           <Box
             component="img"
             src={title}
+            alt={titleAlt}
+            loading="lazy"
             // 폭 고정이 아니라 높이 고정 → 로고 비율이 달라도 타이틀 행 높이가 같아
             // 아래 구분선이 카드마다 어긋나지 않음(폭은 비율대로 자동)
             sx={(theme) => ({

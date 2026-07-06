@@ -110,6 +110,7 @@ export const renderTopBlock = (block: TopBlock, i: number): ReactNode => {
           component="img"
           src={block.src}
           alt={block.alt}
+          loading="lazy"
           sx={{ width: "100%" }}
         />
       );
