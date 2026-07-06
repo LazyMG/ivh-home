@@ -132,7 +132,7 @@ const Support = () => {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                  fontFamily: FONTS.freesentation.semiBold,
+                  fontFamily: FONTS.freesentation.bold,
                 }}
               >
                 {t("support_title_parts.gradient")}
