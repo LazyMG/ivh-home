@@ -2,6 +2,8 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import iMOVAKo from "../locales/ko/product/iMOVA/iMOVA.json";
 import iMOVAEn from "../locales/en/product/iMOVA/iMOVA.json";
+import iSuiteKo from "../locales/ko/product/iSuite/iSuite.json";
+import iSuiteEn from "../locales/en/product/iSuite/iSuite.json";
 import humanoidKo from "../locales/ko/product/iMOVA/humanoidPackage.json";
 import humanoidEn from "../locales/en/product/iMOVA/humanoidPackage.json";
 import ceoKo from "../locales/ko/company/ceo.json";
@@ -133,6 +135,7 @@ i18n.use(initReactI18next).init({
     "support/support",
     "product/iMOVA",
     "product/humanoidPackage",
+    "product/iSuite",
     "company/ceo",
     "company/contact",
     "company/history",
@@ -190,6 +193,7 @@ i18n.use(initReactI18next).init({
       "support/support": supportKo,
       "product/iMOVA": iMOVAKo,
       "product/humanoidPackage": humanoidKo,
+      "product/iSuite": iSuiteKo,
       "company/ceo": ceoKo,
       "company/contact": contactKo,
       "company/history": historyKo,
@@ -245,6 +249,7 @@ i18n.use(initReactI18next).init({
       "support/support": supportEn,
       "product/iMOVA": iMOVAEn,
       "product/humanoidPackage": humanoidEn,
+      "product/iSuite": iSuiteEn,
       "company/ceo": ceoEn,
       "company/contact": contactEn,
       "company/history": historyEn,

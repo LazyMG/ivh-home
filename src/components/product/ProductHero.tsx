@@ -23,6 +23,12 @@ interface ProductHeroProps {
   descriptionSx?: SxProps<Theme>;
   /** breadscrum.json의 pageKey. 지정 시 우측 상단에 breadcrumb 노출(태블릿↑) */
   breadcrumbKey?: string;
+  /** 캡션 텍스트 색상 (기본 #003B8D) — 페이지별 override */
+  captionColor?: string;
+  /** 배지 배경색 (기본 #03193F) — 페이지별 override */
+  badgeColor?: string;
+  /** 배지 글자색 (기본 #ffffff) — 페이지별 override */
+  badgeTextColor?: string;
 }
 
 /** 제품 상세 페이지 공통 히어로(상단 비주얼 + 오버레이) */
@@ -37,6 +43,9 @@ const ProductHero = ({
   underlineWidth = "80%",
   descriptionSx,
   breadcrumbKey,
+  captionColor = "#003B8D",
+  badgeColor = "#03193F",
+  badgeTextColor = "#ffffff",
 }: ProductHeroProps) => {
   return (
     <Box sx={{ position: "relative", width: "100%", overflow: "hidden" }}>
@@ -96,10 +105,10 @@ const ProductHero = ({
             },
           })}
         >
-          <Box sx={{ width: "fit-content", backgroundColor: "#03193F", px: 2 }}>
+          <Box sx={{ width: "fit-content", backgroundColor: badgeColor, px: 2 }}>
             <Typography
               sx={{
-                color: "#ffffff",
+                color: badgeTextColor,
                 fontSize: "18px",
                 fontFamily: FONTS.freesentation.semiBold,
               }}
@@ -123,7 +132,7 @@ const ProductHero = ({
           />
           <Typography
             sx={(theme) => ({
-              color: "#003B8D",
+              color: captionColor,
               fontSize: "14px",
               fontWeight: "bold",
               fontFamily: FONTS.freesentation.semiBold,

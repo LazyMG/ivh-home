@@ -297,6 +297,13 @@
         "url": "/product/imova"
       }
     },
+    "isuite": {
+      "extends": ["home_product"],
+      "current": {
+        "title": "iSuite",
+        "url": "/product/isuite"
+      }
+    },
     "humanoidPackage": {
       "extends": ["home_product"],
       "current": {

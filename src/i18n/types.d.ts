@@ -1,6 +1,7 @@
 import "i18next";
 import type iMOVAKo from "../locales/ko/product/iMOVA/iMOVA.json";
 import type humanoidKo from "../locales/ko/product/iMOVA/humanoidPackage.json";
+import type iSuiteKo from "../locales/ko/product/iSuite/iSuite.json";
 import type ceoKo from "../locales/ko/company/ceo.json";
 import type contactKo from "../locales/ko/company/contact.json";
 import type historyKo from "../locales/ko/company/history.json";
@@ -26,6 +27,7 @@ declare module "i18next" {
       "support/support": typeof supportKo;
       "product/iMOVA": typeof iMOVAKo;
       "product/humanoidPackage": typeof humanoidKo;
+      "product/iSuite": typeof iSuiteKo;
       "company/ceo": typeof ceoKo;
       "company/contact": typeof contactKo;
       "company/history": typeof historyKo;

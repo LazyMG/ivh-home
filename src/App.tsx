@@ -25,8 +25,8 @@ import NewHeader from "./common/header/Header";
 const FloatingButton = lazy(
   () => import("./components/chatbot/FloatingButton"),
 );
-import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
+import ISuite from "./pages/product/ISuite";
 
 // Solution (lazy 그룹)
 const Solution = lazy(() => import("./pages/solution/solution"));
@@ -181,7 +181,7 @@ const routes: { path: string; element: React.ReactNode }[] = [
   // Product - iMOVA
   { path: "product/imova/humanoid", element: <HumanoidPackage /> },
   { path: "product/imova", element: <IMOVA /> },
-  { path: "product/isuite", element: <ComingSoon /> },
+  { path: "product/isuite", element: <ISuite /> },
   // Product - Dymola
   { path: "product/dymola", element: <Dymola /> },
   { path: "product/dymola/battery", element: <Battery /> },

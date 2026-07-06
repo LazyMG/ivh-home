@@ -1,0 +1,89 @@
+{
+  "seo": {
+    "canonical": "https://ivh.co.kr/product/isuite"
+  },
+  "main_image": "/images/pages/product/iSuite/iSuite_main_image.png",
+  "mobile_main_image": "/images/pages/product/iSuite/iSuite_main_image.png",
+  "title_image": "/images/pages/product/iSuite/iSuite_logo_image.png",
+  "logo_image": "/images/pages/product/iSuite/iSuite_logo_image.png",
+  "sections": [
+    {
+      "id": "monitoring",
+      "bullets": [
+        {
+          "id": "map-visualization",
+          "image": "/images/pages/product/iSuite/iSuite_section_1_1.png"
+        },
+        {
+          "id": "env-sensing",
+          "image": "/images/pages/product/iSuite/iSuite_section_1_2.png"
+        }
+      ]
+    },
+    {
+      "id": "task-allocation",
+      "bullets": [
+        {
+          "id": "mes-dispatch",
+          "image": "/images/pages/product/iSuite/iSuite_section_2_1.png"
+        },
+        {
+          "id": "collision-avoidance",
+          "image": "/images/pages/product/iSuite/iSuite_section_2_2.png"
+        }
+      ]
+    },
+    {
+      "id": "charging",
+      "bullets": [
+        {
+          "id": "charge-distribution",
+          "image": "/images/pages/product/iSuite/iSuite_section_3_1.png"
+        },
+        {
+          "id": "energy-efficiency",
+          "image": "/images/pages/product/iSuite/iSuite_section_3_2.png"
+        }
+      ]
+    },
+    {
+      "id": "fault-detection",
+      "bullets": [
+        {
+          "id": "realtime-alert",
+          "image": "/images/pages/product/iSuite/iSuite_section_empty.png"
+        },
+        {
+          "id": "predictive-maintenance",
+          "image": "/images/pages/product/iSuite/iSuite_section_empty.png"
+        }
+      ]
+    },
+    {
+      "id": "ai-monitoring",
+      "bullets": [
+        {
+          "id": "multi-sensor",
+          "image": "/images/pages/product/iSuite/iSuite_section_5_1.png"
+        },
+        {
+          "id": "ai-anomaly",
+          "image": "/images/pages/product/iSuite/iSuite_section_5_2.png"
+        }
+      ]
+    },
+    {
+      "id": "integration",
+      "bullets": [
+        {
+          "id": "protocol",
+          "image": "/images/pages/product/iSuite/iSuite_section_6_1.png"
+        },
+        {
+          "id": "data-management",
+          "image": "/images/pages/product/iSuite/iSuite_section_6_2.png"
+        }
+      ]
+    }
+  ]
+}
