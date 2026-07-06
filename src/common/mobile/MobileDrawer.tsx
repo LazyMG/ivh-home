@@ -46,7 +46,10 @@ const MobileDrawer = ({
           left: 0,
           width: "80%",
           maxWidth: "400px",
-          height: "100vh",
+          // 모바일 브라우저에서 100vh는 주소창을 제외한 '최대' 높이라 실제 표시 영역보다 커서
+          // 하단(소셜 아이콘)이 브라우저 UI 뒤로 잘린다. dvh는 실제 보이는 높이를 따라간다.
+          height: "100vh", // dvh 미지원 브라우저용 폴백
+          "@supports (height: 100dvh)": { height: "100dvh" },
           boxSizing: "border-box",
           backgroundColor: "#ffffff",
           transform: isOpen ? "translateX(0)" : "translateX(-100%)",
