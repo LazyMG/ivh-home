@@ -42,5 +42,51 @@
       "모든 교육 과정은 강의, 실습, 데모를 균형 있게 구성하여 이론적 이해와 실무 활용 능력을 동시에 향상시킬 수 있도록 설계되었습니다. 교육은 제품 개발과 엔지니어링 컨설팅 프로젝트를 수행하는 전문 강사진이 직접 진행하며, 실제 프로젝트 경험을 바탕으로 실무 중심의 교육을 제공합니다. 또한 iVH는 Modelica Association 및 ASAM 활동에 적극적으로 참여하고 있으며, 다양한 산업 분야의 프로젝트 수행 경험을 바탕으로 최신 기술 동향과 산업 표준에 대한 깊이 있는 인사이트를 제공합니다."
     ],
     "image_alt": "iVH 교육 안내 이미지"
+  },
+  "form": {
+    "apply_title": "수강신청",
+    "applicant_title": "신청자",
+    "customer_title": "수강자",
+    "same_as_applicant": "신청자 정보와 같음",
+    "agree_checkbox": "개인정보처리방침에 동의합니다.",
+    "submit": "신청하기",
+    "memo_placeholder": "요청 사항을 입력해주십시오.",
+    "fields": {
+      "company": { "label": "회사명", "placeholder": "iVH" },
+      "division": { "label": "부서", "placeholder": "IT" },
+      "position": { "label": "직급", "placeholder": "사원" },
+      "name": { "label": "성함", "placeholder": "홍길동" },
+      "email": { "label": "이메일", "placeholder": "example@ivh.co.kr" },
+      "phone": { "label": "연락처", "placeholder": "(-) 포함 입력" }
+    },
+    "validation": {
+      "applicant": {
+        "company": "신청자 회사명을 입력해주십시오.",
+        "division": "신청자 부서를 입력해주십시오.",
+        "position": "신청자 직급을 입력해주십시오.",
+        "name": "신청자 성함을 입력해주십시오.",
+        "email": "신청자 이메일을 입력해주십시오.",
+        "phone": "신청자 연락처를 입력해주십시오."
+      },
+      "customer": {
+        "company": "수강자 회사명을 입력해주십시오.",
+        "division": "수강자 부서를 입력해주십시오.",
+        "position": "수강자 직급을 입력해주십시오.",
+        "name": "수강자 성함을 입력해주십시오.",
+        "email": "수강자 이메일을 입력해주십시오.",
+        "phone": "수강자 연락처를 입력해주십시오."
+      },
+      "max_length": "글자 수가 너무 많습니다.",
+      "email_format": "이메일 형식을 맞춰주십시오.",
+      "phone_format": "전화번호 형식을 맞춰주십시오.",
+      "agree_required": "동의가 필요합니다.",
+      "applicant_form_invalid": "신청자 양식을 맞춰주세요.",
+      "applicant_required_first": "신청자 정보를 먼저 입력해주세요."
+    },
+    "snackbar": {
+      "loading": "예약 신청 중입니다...",
+      "success": "예약 신청이 성공적으로 등록되었습니다.",
+      "error": "교육 신청에 실패했습니다. 다시 시도해주세요."
+    }
   }
 }
