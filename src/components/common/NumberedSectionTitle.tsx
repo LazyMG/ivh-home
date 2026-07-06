@@ -63,9 +63,9 @@ const NumberedSectionTitle = ({
               "inset 1.5px -1.5px 4px rgba(0, 60, 150, 0.15)",
             ].join(", "),
             [theme.breakpoints.up("desktop")]: {
-              ml: "-30px",
-              width: "72px",
-              height: "72px",
+              ml: "-20px",
+              width: "56px",
+              height: "56px",
             },
           })}
         >
@@ -96,7 +96,7 @@ const NumberedSectionTitle = ({
           lineHeight: 1.3,
           wordBreak: "keep-all",
           [theme.breakpoints.up("tablet")]: {
-            fontSize: "28px",
+            fontSize: "22px",
           },
         })}
       >

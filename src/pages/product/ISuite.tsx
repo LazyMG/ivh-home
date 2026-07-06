@@ -117,7 +117,7 @@ const ISuite = () => {
                   fontSize: "16px",
                   px: 2,
                   [theme.breakpoints.up("desktop")]: {
-                    fontSize: "24px",
+                    fontSize: "20px",
                     px: 4,
                   },
                 })}
@@ -199,7 +199,7 @@ const ISuite = () => {
                             height: "1.3em",
                             fontSize: "18px",
                             [theme.breakpoints.up("desktop")]: {
-                              fontSize: "28px",
+                              fontSize: "22px",
                             },
                           })}
                         >
@@ -229,7 +229,7 @@ const ISuite = () => {
                               fontSize: "18px",
                               lineHeight: 1.3,
                               [theme.breakpoints.up("desktop")]: {
-                                fontSize: "28px",
+                                fontSize: "22px",
                               },
                             })}
                           >
@@ -244,7 +244,7 @@ const ISuite = () => {
                               fontFamily: FONTS.freesentation.medium,
                               fontSize: "16px",
                               [theme.breakpoints.up("desktop")]: {
-                                fontSize: "24px",
+                                fontSize: "20px",
                               },
                             })}
                           >
