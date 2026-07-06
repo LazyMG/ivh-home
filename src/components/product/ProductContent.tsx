@@ -1,5 +1,6 @@
 import { Fragment, useLayoutEffect, useRef, useState } from "react";
 import { Box, Divider, Grid, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { FONTS } from "../../theme/theme";
 
@@ -103,9 +104,7 @@ const SliderArrow = ({
 const ProductSlider = ({ slides }: { slides: FeatureImage[] }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   // 가운데 슬라이드에서 시작 (기존 initialSlide와 동일)
-  const [activeIndex, setActiveIndex] = useState(
-    Math.floor(slides.length / 2),
-  );
+  const [activeIndex, setActiveIndex] = useState(Math.floor(slides.length / 2));
 
   // index번 슬라이드의 중앙이 트랙 중앙에 오도록 스크롤
   const scrollToSlide = (index: number, behavior: ScrollBehavior) => {
@@ -241,21 +240,29 @@ const ProductSlider = ({ slides }: { slides: FeatureImage[] }) => {
 };
 
 // 슬라이드/텍스트전용 항목의 캡션 (두 위치에서 동일 스타일 사용)
-const SlideCaption = ({ text }: { text: string }) => (
-  <Typography
-    sx={(theme) => ({
-      fontSize: "14px",
-      fontFamily: FONTS.galderglynn.regular,
-      textAlign: "center",
-      color: "#979797",
-      [theme.breakpoints.up("tablet")]: {
-        color: "#000",
-      },
-    })}
-  >
-    {text}
-  </Typography>
-);
+const SlideCaption = ({ text }: { text: string }) => {
+  // 캡션(imgText)에 국문이 유입될 수 있으므로 라틴 전용 Galderglynn 대신 Freesentation으로 전환
+  const { i18n } = useTranslation();
+  const isKorean = i18n.language.startsWith("ko");
+
+  return (
+    <Typography
+      sx={(theme) => ({
+        fontSize: "14px",
+        fontFamily: isKorean
+          ? FONTS.freesentation.medium
+          : FONTS.galderglynn.regular,
+        textAlign: "center",
+        color: "#979797",
+        [theme.breakpoints.up("tablet")]: {
+          color: "#000",
+        },
+      })}
+    >
+      {text}
+    </Typography>
+  );
+};
 
 const ProductContent = ({
   textObj,
@@ -266,6 +273,9 @@ const ProductContent = ({
 }: ProductContentProps) => {
   const isImgTextExist = imgObj && imgObj.some((img) => img.imgText);
   const { isMobile } = useBreakpoint();
+  // 국문이면 라틴 전용 Galderglynn 대신 국문 지원 Freesentation으로 제목 폰트 전환
+  const { i18n } = useTranslation();
+  const isKorean = i18n.language.startsWith("ko");
 
   // 현재 레이아웃 스타일 결정
   const currentLayout = isMobile
@@ -370,7 +380,10 @@ const ProductContent = ({
                 textAlign: img.imgTextAlign === "center" ? "center" : "left",
                 [theme.breakpoints.up("tablet")]: {
                   color: "#737373",
-                  fontFamily: FONTS.galderglynn.regular,
+                  // 국문이면 라틴 전용 Galderglynn이 깨지므로 Freesentation 유지
+                  ...(isKorean
+                    ? {}
+                    : { fontFamily: FONTS.galderglynn.regular }),
                 },
               })}
             >
@@ -444,7 +457,10 @@ const ProductContent = ({
                   <Typography
                     sx={{
                       fontSize: "14px",
-                      fontFamily: FONTS.galderglynn.regular,
+                      // 국문이 유입될 수 있으므로 라틴 전용 Galderglynn 대신 Freesentation으로 전환
+                      fontFamily: isKorean
+                        ? FONTS.freesentation.medium
+                        : FONTS.galderglynn.regular,
                       textAlign: "center",
                       color: "#737373",
                     }}
@@ -466,7 +482,10 @@ const ProductContent = ({
               textAlign: "center",
               color: "#b2b2b2",
               [theme.breakpoints.up("desktop")]: {
-                fontFamily: FONTS.galderglynn.regular,
+                // 국문이면 라틴 전용 Galderglynn이 깨지므로 Freesentation 유지
+                ...(isKorean
+                  ? {}
+                  : { fontFamily: FONTS.galderglynn.regular }),
                 color: "#737373",
               },
             })}
@@ -516,7 +535,9 @@ const ProductContent = ({
           <Typography
             sx={(theme) => ({
               fontSize: "18px",
-              fontFamily: FONTS.galderglynn.regular,
+              fontFamily: isKorean
+                ? FONTS.freesentation.bold
+                : FONTS.galderglynn.regular,
               color: "#03193F",
               [theme.breakpoints.up("desktop")]: {
                 fontSize: "20px",

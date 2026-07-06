@@ -15,9 +15,11 @@ import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { FONTS } from "../../theme/theme";
 
 const IMOVA = () => {
-  const { t } = useTranslation("product/iMOVA");
+  const { t, i18n } = useTranslation("product/iMOVA");
   const { isMobile } = useBreakpoint();
   const THRESHOLD = 100;
+  // 국문이면 라틴 전용 Galderglynn 대신 국문 지원 Freesentation으로 제목 폰트 전환
+  const isKorean = i18n.language.startsWith("ko");
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- 동적 키 접근용
   const td = (key: string): string => t(key as any);
@@ -278,13 +280,18 @@ const IMOVA = () => {
                           <Typography
                             sx={(theme) => ({
                               // 모바일: regular / 18px, 태블릿↑: book / 20px (색상 동일)
-                              fontFamily: FONTS.galderglynn.regular,
+                              // 국문은 라틴 전용 폰트가 깨지므로 Freesentation으로 전환
+                              fontFamily: isKorean
+                                ? FONTS.freesentation.bold
+                                : FONTS.galderglynn.regular,
                               color: "#03193F",
                               fontSize: "18px",
                               lineHeight: 1.2,
                               textTransform: "uppercase",
                               [theme.breakpoints.up("tablet")]: {
-                                fontFamily: FONTS.galderglynn.book,
+                                fontFamily: isKorean
+                                  ? FONTS.freesentation.bold
+                                  : FONTS.galderglynn.book,
                                 fontSize: "20px",
                               },
                             })}
@@ -429,7 +436,10 @@ const IMOVA = () => {
                       >
                         <Typography
                           sx={(theme) => ({
-                            fontFamily: FONTS.galderglynn.regular,
+                            // 국문은 라틴 전용 폰트가 깨지므로 Freesentation으로 전환
+                            fontFamily: isKorean
+                              ? FONTS.freesentation.bold
+                              : FONTS.galderglynn.regular,
                             mb: 2,
                             textAlign: "center",
                             fontSize: "18px",
