@@ -56,6 +56,7 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
               component="img"
               src={logoBlack}
               alt="iVH 로고"
+              loading="lazy"
               // 모바일 푸터(<1280)에선 68px, 데스크탑(≥1280)에선 88px
               sx={(theme) => ({
                 width: "68px",
@@ -157,6 +158,7 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
               onClick={() => window.open(linkedinUrl)}
               src={linkedinLogoBlack}
               alt="linkedin"
+              loading="lazy"
               sx={{ width: "40px", height: "40px", cursor: "pointer" }}
             />
             <Box
@@ -164,6 +166,7 @@ const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
               onClick={() => window.open(youtubeUrl)}
               src={youtubeLogoBlack}
               alt="youtube"
+              loading="lazy"
               sx={{ width: "40px", height: "40px", cursor: "pointer" }}
             />
           </Box>

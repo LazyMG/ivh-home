@@ -32,6 +32,7 @@ const NewsCard = ({ image, title, date, onClick }: NewsCardProps) => {
           component="img"
           src={image}
           alt={title}
+          loading="lazy"
           sx={{
             width: "100%",
             aspectRatio: "18 / 11",

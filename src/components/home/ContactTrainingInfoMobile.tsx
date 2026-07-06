@@ -27,6 +27,7 @@ const ContactTrainingInfoMobile = () => {
         component="img"
         src="/images/home/contract_mobile_image.png"
         alt="Contact Us"
+        loading="lazy"
         sx={{
           width: "60%",
           maxWidth: "260px",

@@ -44,6 +44,8 @@ const ContactTrainingInfoSection = () => {
         <Box
           component="img"
           src="/images/home/contact_image.png"
+          alt=""
+          loading="lazy"
           sx={{
             width: "40%", // 부모 폭에 맞춤
             height: "auto", // 비율 유지
@@ -64,7 +66,7 @@ const ContactTrainingInfoSection = () => {
               color: "#ffffff",
               textTransform: "uppercase",
               fontFamily: FONTS.galderglynn.regular,
-              [theme.breakpoints.up("tablet")]: { fontSize: "36px" },
+              [theme.breakpoints.up("tablet")]: { fontSize: "22px" },
             })}
           >
             {t("contact_us.title")}
@@ -75,7 +77,7 @@ const ContactTrainingInfoSection = () => {
               fontFamily: FONTS.freesentation.medium,
               color: "#ffffff",
               [theme.breakpoints.up("tablet")]: {
-                fontSize: "16px",
+                fontSize: "18px",
               },
             })}
           >
@@ -113,10 +115,12 @@ const ContactTrainingInfoSection = () => {
             alignItems: "center",
           }}
           onClick={() => navigate(contact_us.url)}
+          aria-label={t("contact_us.title")}
         >
           <Box
             component="img"
             src="/images/utils/play-button.png"
+            alt=""
             sx={{ width: "24px", height: "auto", ml: "4px" }}
           />
         </Box>

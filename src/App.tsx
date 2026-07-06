@@ -26,7 +26,9 @@ const FloatingButton = lazy(
   () => import("./components/chatbot/FloatingButton"),
 );
 import NotFound from "./pages/NotFound";
-import ISuite from "./pages/product/ISuite";
+
+// iSuite (lazy 개별)
+const ISuite = lazy(() => import("./pages/product/ISuite"));
 
 // Solution (lazy 그룹)
 const Solution = lazy(() => import("./pages/solution/solution"));

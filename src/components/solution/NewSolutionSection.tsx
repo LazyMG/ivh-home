@@ -79,6 +79,8 @@ export const PageTitle = ({
         <Box
           component="img"
           src={image}
+          alt=""
+          loading="lazy"
           sx={{
             position: "absolute",
             left: "100px",

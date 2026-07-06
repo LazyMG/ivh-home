@@ -61,7 +61,7 @@ const CEO = () => {
             component="h1"
             sx={(theme) => ({
               whiteSpace: "pre-line",
-              fontFamily: FONTS.freesentation.semiBold,
+              fontFamily: FONTS.freesentation.regular,
               wordBreak: "keep-all",
               color: "#000000",
               fontSize: "24px",
@@ -87,6 +87,7 @@ const CEO = () => {
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       color: "transparent",
+                      fontFamily: FONTS.freesentation.bold,
                     }}
                   />
                 ),

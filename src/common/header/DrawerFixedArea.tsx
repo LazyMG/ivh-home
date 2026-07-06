@@ -31,6 +31,7 @@ export const DrawerFixedArea = () => {
         <Box
           component="img"
           src={search_icon}
+          alt="검색"
           sx={{
             position: "absolute",
             right: 10,

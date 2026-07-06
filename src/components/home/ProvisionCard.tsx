@@ -48,6 +48,7 @@ const ProvisionCard = ({
           component="img"
           src={icon}
           alt={title}
+          loading="lazy"
           sx={{ width: 72, height: 72, objectFit: "contain" }}
         />
 

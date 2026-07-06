@@ -193,6 +193,7 @@ const Home = () => {
                     onClick={() => navigate(item.path)}
                     category={item.category}
                     title={item.title_image}
+                    titleAlt={item.title_image_alt}
                     description={mainProductsT[i]?.description ?? ""}
                   />
                 ))}
