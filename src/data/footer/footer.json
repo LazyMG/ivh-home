@@ -25,15 +25,22 @@
     {
       "title": "SOLUTION",
       "items": [
-        { "name": "AI Innovation Hub", "path": "/solution/aIinnovationhub" },
-        { "name": "BEMS", "path": "/solution/bems" },
-        { "name": "Energy", "path": "/solution/energy" },
-        { "name": "Home Appliances", "path": "/solution/homeappliance" },
         {
-          "name": "Mobility",
-          "path": "/solution/mobility"
+          "name": "our engineering philosophy",
+          "path": "/solution/philosophy"
         },
-        { "name": "Smart Factory", "path": "/solution/smartfactory" }
+        {
+          "name": "core engineering capabilities",
+          "path": "/solution/modelica"
+        },
+        {
+          "name": "engineering to industry",
+          "path": "/solution/engineering-to-industry"
+        },
+        {
+          "name": "future engineering directions",
+          "path": "/solution/future-directions"
+        }
       ]
     },
     {

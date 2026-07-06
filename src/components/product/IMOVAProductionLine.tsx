@@ -25,9 +25,11 @@ const MQ = {
  * - 이미지 클릭 → 전체 화면 확대(라이트박스).
  */
 const IMOVAProductionLine = () => {
-  const { t } = useTranslation("product/iMOVA");
+  const { t, i18n } = useTranslation("product/iMOVA");
   const td = (key: string): string => t(key as never);
   const [isImageZoomed, setIsImageZoomed] = useState(false);
+  // 국문이면 라틴 전용 Galderglynn 대신 국문 지원 Freesentation으로 폰트 전환
+  const isKorean = i18n.language.startsWith("ko");
 
   const imageUrl = resource.production_line.production_line_image_url;
   const title = td("production_line.production_line_title");
@@ -157,52 +159,55 @@ const IMOVAProductionLine = () => {
 
             {/* 오버레이 구간 전용: 텍스트 글래스 박스. 위치·폭·여백은 구간별 JSON에서 */}
             {resource.production_line.production_line_list.map((item) => (
-                <Box
-                  key={item.id}
+              <Box
+                key={item.id}
+                sx={{
+                  position: "absolute",
+                  border: `2px solid ${item.production_line_color}`,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1,
+                  boxSizing: "border-box",
+                  // width/top/left/right/px/py: 구간별 JSON을 CSS 미디어쿼리로 적용.
+                  ...boxOverlaySx(item),
+                  // 반투명 + blur 글래스 (이미지와 겹친 부분이 흐려짐)
+                  backgroundColor: "rgba(255, 255, 255, 0.4)",
+                  backdropFilter: "blur(8px)",
+                  WebkitBackdropFilter: "blur(8px)",
+                  [MQ.card]: { display: "none" },
+                }}
+              >
+                <Typography
                   sx={{
-                    position: "absolute",
-                    border: `2px solid ${item.production_line_color}`,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 1,
-                    boxSizing: "border-box",
-                    // width/top/left/right/px/py: 구간별 JSON을 CSS 미디어쿼리로 적용.
-                    ...boxOverlaySx(item),
-                    // 반투명 + blur 글래스 (이미지와 겹친 부분이 흐려짐)
-                    backgroundColor: "rgba(255, 255, 255, 0.4)",
-                    backdropFilter: "blur(8px)",
-                    WebkitBackdropFilter: "blur(8px)",
-                    [MQ.card]: { display: "none" },
+                    textAlign: "center",
+                    color: item.production_line_color,
+                    // 국문은 라틴 전용 폰트가 깨지므로 Freesentation으로 전환
+                    fontFamily: isKorean
+                      ? FONTS.freesentation.semiBold
+                      : FONTS.galderglynn.regular,
+                    fontSize: "16px",
+                    wordBreak: "keep-all",
+                    textTransform: "uppercase",
+                    width: "80%",
+                    mx: "auto",
                   }}
                 >
-                  <Typography
-                    sx={{
-                      textAlign: "center",
-                      color: item.production_line_color,
-                      fontFamily: FONTS.galderglynn.regular,
-                      fontSize: "16px",
-                      wordBreak: "keep-all",
-                      textTransform: "uppercase",
-                      width: "80%",
-                      mx: "auto",
-                    }}
-                  >
-                    {td(
-                      `production_line.production_line_list.${item.id}.production_line_topic`,
-                    )}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: "14px",
-                      fontFamily: FONTS.freesentation.medium,
-                      color: "#737373",
-                    }}
-                  >
-                    {td(
-                      `production_line.production_line_list.${item.id}.production_line_description`,
-                    )}
-                  </Typography>
-                </Box>
+                  {td(
+                    `production_line.production_line_list.${item.id}.production_line_topic`,
+                  )}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "14px",
+                    fontFamily: FONTS.freesentation.medium,
+                    color: "#737373",
+                  }}
+                >
+                  {td(
+                    `production_line.production_line_list.${item.id}.production_line_description`,
+                  )}
+                </Typography>
+              </Box>
             ))}
           </Box>
 
@@ -237,7 +242,10 @@ const IMOVAProductionLine = () => {
                   sx={{
                     textAlign: "center",
                     color: item.production_line_color,
-                    fontFamily: FONTS.galderglynn.regular,
+                    // 국문은 라틴 전용 폰트가 깨지므로 Freesentation으로 전환
+                    fontFamily: isKorean
+                      ? FONTS.freesentation.semiBold
+                      : FONTS.galderglynn.regular,
                     fontSize: "16px",
                     wordBreak: "keep-all",
                     width: "90%",

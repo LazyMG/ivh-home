@@ -1,4 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { FONTS } from "../../theme/theme";
 
 interface MainProductCardProps {
@@ -21,6 +22,10 @@ const MainProductCard = ({
   description = "iMOVA 시리즈는 스마트 제조 환경을 실현하기 위해 개발된 고중량 자율주행 로봇 플랫폼입니다.",
   onClick,
 }: MainProductCardProps) => {
+  const { i18n } = useTranslation();
+  // subtitle에 국문이 유입될 경우 라틴 전용 Galderglynn이 깨지므로 Freesentation으로 전환
+  const isKorean = i18n.language.startsWith("ko");
+
   return (
     <Box
       sx={(theme) => ({
@@ -148,11 +153,15 @@ const MainProductCard = ({
           />
           <Typography
             sx={(theme) => ({
-              fontFamily: FONTS.galderglynn.regular,
+              fontFamily: isKorean
+                ? FONTS.freesentation.bold
+                : FONTS.galderglynn.regular,
               fontSize: "16px",
               color: "#737373",
               [theme.breakpoints.up("desktop")]: {
-                fontFamily: FONTS.galderglynn.bold,
+                fontFamily: isKorean
+                  ? FONTS.freesentation.bold
+                  : FONTS.galderglynn.bold,
                 fontSize: "24px",
               },
             })}

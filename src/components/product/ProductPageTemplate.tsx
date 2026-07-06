@@ -1,5 +1,6 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import type { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import ProductContent from "./ProductContent";
 import ScrollButton from "../../common/ScrollButton";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
@@ -22,7 +23,12 @@ const LibraryButton = ({
 }: {
   library: LibraryItem;
   onClick: () => void;
-}) => (
+}) => {
+  const { i18n } = useTranslation();
+  // library.text에 국문이 유입될 경우 모바일의 라틴 전용 Galderglynn이 깨지므로 Freesentation으로 전환
+  const isKorean = i18n.language.startsWith("ko");
+
+  return (
   <Box
     component="button"
     onClick={onClick}
@@ -109,7 +115,9 @@ const LibraryButton = ({
         sx={(theme) => ({
           fontSize: "14px",
           lineHeight: 1.3,
-          fontFamily: FONTS.galderglynn.book,
+          fontFamily: isKorean
+            ? FONTS.freesentation.bold
+            : FONTS.galderglynn.book,
           wordBreak: "keep-all",
           // 버튼 색 상속 → hover/press 시 흰색 반전
           color: "inherit",
@@ -126,7 +134,8 @@ const LibraryButton = ({
       </Typography>
     </Box>
   </Box>
-);
+  );
+};
 
 /**
  * grid 모드 셀(정사각형). 내부 dashed 구분선(마지막 열/행 제거).

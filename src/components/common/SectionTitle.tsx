@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { FONTS } from "../../theme/theme";
 
 const SectionTitle = ({
@@ -9,6 +10,10 @@ const SectionTitle = ({
   /** pill(디자인 요소) 세로 정렬. "top"이면 2줄 제목에서도 pill이 상단에 고정 */
   align?: "center" | "top";
 }) => {
+  const { i18n } = useTranslation();
+  // text에 국문이 유입될 수 있으므로(예: "특징"), 라틴 전용 Galderglynn 대신 Freesentation으로 전환
+  const isKorean = i18n.language.startsWith("ko");
+
   return (
     <Box
       sx={(theme) => ({
@@ -40,7 +45,9 @@ const SectionTitle = ({
       <Typography
         sx={(theme) => ({
           fontSize: "18px",
-          fontFamily: FONTS.galderglynn.regular,
+          fontFamily: isKorean
+            ? FONTS.freesentation.bold
+            : FONTS.galderglynn.regular,
           color: "#03193F",
           // 상단 정렬 시 줄 간격 확보(pill mt로 정렬 보정)
           ...(align === "top" && { lineHeight: 1.2 }),

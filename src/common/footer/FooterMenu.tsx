@@ -21,7 +21,7 @@ const FooterMenu = ({ navigate }: FooterMenuProps) => {
         display: "grid",
         gridTemplateColumns: `repeat(${menu.length}, auto)`,
         gridAutoRows: "auto",
-        columnGap: "2vw",
+        columnGap: "1.5vw",
         width: "fit-content",
       }}
     >
@@ -32,7 +32,7 @@ const FooterMenu = ({ navigate }: FooterMenuProps) => {
             fontSize: "18px",
             fontFamily: FONTS.galderglynn.regular,
             color: "#00235F",
-            px: 3,
+            px: 2,
           }}
         >
           {item.title}
@@ -56,7 +56,7 @@ const FooterMenu = ({ navigate }: FooterMenuProps) => {
             display: "flex",
             flexDirection: "column",
             gap: "10px",
-            px: 3,
+            px: 2,
           }}
         >
           {item.items.map((subItem, subIndex) => (

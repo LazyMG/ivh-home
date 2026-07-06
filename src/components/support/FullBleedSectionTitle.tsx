@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { FONTS } from "../../theme/theme";
 
 /**
@@ -7,6 +8,10 @@ import { FONTS } from "../../theme/theme";
  * 화면 끝까지 뻗어나가는 형태이므로 해당 페이지 전용이다.
  */
 const FullBleedSectionTitle = ({ text }: { text: string }) => {
+  const { i18n } = useTranslation();
+  // text에 국문이 유입될 수 있으므로 라틴 전용 Galderglynn 대신 Freesentation으로 전환
+  const isKorean = i18n.language.startsWith("ko");
+
   return (
     <Box
       sx={(theme) => ({
@@ -46,7 +51,9 @@ const FullBleedSectionTitle = ({ text }: { text: string }) => {
       <Typography
         sx={(theme) => ({
           fontSize: "18px",
-          fontFamily: FONTS.galderglynn.regular,
+          fontFamily: isKorean
+            ? FONTS.freesentation.bold
+            : FONTS.galderglynn.regular,
           color: "#03193F",
           [theme.breakpoints.up("tablet")]: {
             fontSize: "28px",
