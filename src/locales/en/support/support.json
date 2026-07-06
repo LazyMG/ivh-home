@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Support - iVH Technical Support",
+    "description": "The iVH Technical Support Portal helps customers successfully manage and deliver their projects.",
+    "keywords": "Support, Technical Support, iVH"
+  },
+  "support_title": "The iVH Technical Support Portal helps customers successfully manage and deliver their projects.",
+  "support_title_parts": {
+    "gradient": "The iVH Technical Support Portal",
+    "normal": " helps customers successfully manage and deliver their projects."
+  },
+  "support_text": "Submit technical inquiries, track issues, and request support through a centralized platform designed to provide efficient collaboration and timely assistance.",
+  "support_link_text": "Go to Technical Support Portal",
+  "support_image_alt": "iVH Technical Support"
+}

@@ -10,6 +10,7 @@ import {
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import type {
   ReservationResponse,
@@ -57,6 +58,7 @@ const ApplicationForm = ({
 }: {
   reservationList: ReservationResponse[] | null;
 }) => {
+  const { t } = useTranslation("support/training");
   const [submitStatus, setSubmitStatus] = useState<
     "loading" | "success" | "error" | null
   >(null);
@@ -137,7 +139,7 @@ const ApplicationForm = ({
     if (event.target.checked) {
       if (errors.applicant) {
         setIsFillCustomerChecked(false);
-        setShowFillCustomerError("신청자 양식을 맞춰주세요.");
+        setShowFillCustomerError(t("form.validation.applicant_form_invalid"));
         return;
       }
       const applicantValue = getValues().applicant;
@@ -149,42 +151,42 @@ const ApplicationForm = ({
         emptyFields.push("applicantName");
         setError("applicant.applicantName", {
           type: "manual",
-          message: "신청자 정보를 먼저 입력해주세요.",
+          message: t("form.validation.applicant_required_first"),
         });
       }
       if (!applicantValue?.applicantEmail?.trim()) {
         emptyFields.push("applicantEmail");
         setError("applicant.applicantEmail", {
           type: "manual",
-          message: "신청자 정보를 먼저 입력해주세요.",
+          message: t("form.validation.applicant_required_first"),
         });
       }
       if (!applicantValue?.applicantCompany?.trim()) {
         emptyFields.push("applicantCompany");
         setError("applicant.applicantCompany", {
           type: "manual",
-          message: "신청자 정보를 먼저 입력해주세요.",
+          message: t("form.validation.applicant_required_first"),
         });
       }
       if (!applicantValue?.applicantPosition?.trim()) {
         emptyFields.push("applicantPosition");
         setError("applicant.applicantPosition", {
           type: "manual",
-          message: "신청자 정보를 먼저 입력해주세요.",
+          message: t("form.validation.applicant_required_first"),
         });
       }
       if (!applicantValue?.applicantPhone?.trim()) {
         emptyFields.push("applicantPhone");
         setError("applicant.applicantPhone", {
           type: "manual",
-          message: "신청자 정보를 먼저 입력해주세요.",
+          message: t("form.validation.applicant_required_first"),
         });
       }
       if (!applicantValue?.applicantDivision?.trim()) {
         emptyFields.push("applicantDivision");
         setError("applicant.applicantDivision", {
           type: "manual",
-          message: "신청자 정보를 먼저 입력해주세요.",
+          message: t("form.validation.applicant_required_first"),
         });
       }
       // 모든 필드가 채워져 있을 때만 체크박스 활성화
@@ -237,14 +239,14 @@ const ApplicationForm = ({
     };
 
     setSubmitStatus("loading");
-    setSnackbarMessage("예약 신청 중입니다...");
+    setSnackbarMessage(t("form.snackbar.loading"));
 
     // return;
 
     try {
       await reservationService.postReservationRequest(reservationRequestForm);
       setSubmitStatus("success");
-      setSnackbarMessage("예약 신청이 성공적으로 등록되었습니다.");
+      setSnackbarMessage(t("form.snackbar.success"));
       reset();
       setIsFillCustomerChecked(false);
     } catch (error: unknown) {
@@ -252,9 +254,7 @@ const ApplicationForm = ({
       setSubmitStatus("error");
 
       const errorMessage =
-        error instanceof Error
-          ? error.message
-          : "교육 신청에 실패했습니다. 다시 시도해주세요.";
+        error instanceof Error ? error.message : t("form.snackbar.error");
       setSnackbarMessage(errorMessage);
     }
   };
@@ -289,7 +289,7 @@ const ApplicationForm = ({
           },
         })}
       >
-        수강신청
+        {t("form.apply_title")}
       </Typography>
       <ApplicationSelect
         control={control}
@@ -324,7 +324,7 @@ const ApplicationForm = ({
             color: "#003B8D",
           }}
         >
-          신청자
+          {t("form.applicant_title")}
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Box
@@ -341,17 +341,17 @@ const ApplicationForm = ({
             })}
           >
             <ApplicationInput
-              label="회사명"
-              placeholder="iVH"
+              label={t("form.fields.company.label")}
+              placeholder={t("form.fields.company.placeholder")}
               disabled={isFillCustomerChecked}
               onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantCompany", {
-                  ...trimValidation("신청자 회사명을 입력해주십시오."),
-                  required: "신청자 회사명을 입력해주십시오.",
+                  ...trimValidation(t("form.validation.applicant.company")),
+                  required: t("form.validation.applicant.company"),
                   maxLength: {
                     value: 50,
-                    message: "글자 수가 너무 많습니다.",
+                    message: t("form.validation.max_length"),
                   },
                 }),
               }}
@@ -363,17 +363,17 @@ const ApplicationForm = ({
               )}
             </ApplicationInput>
             <ApplicationInput
-              placeholder="IT"
-              label="부서"
+              placeholder={t("form.fields.division.placeholder")}
+              label={t("form.fields.division.label")}
               disabled={isFillCustomerChecked}
               onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantDivision", {
-                  ...trimValidation("신청자 부서를 입력해주십시오."),
-                  required: "신청자 부서를 입력해주십시오.",
+                  ...trimValidation(t("form.validation.applicant.division")),
+                  required: t("form.validation.applicant.division"),
                   maxLength: {
                     value: 50,
-                    message: "글자 수가 너무 많습니다.",
+                    message: t("form.validation.max_length"),
                   },
                 }),
               }}
@@ -385,17 +385,17 @@ const ApplicationForm = ({
               )}
             </ApplicationInput>
             <ApplicationInput
-              placeholder="사원"
-              label="직급"
+              placeholder={t("form.fields.position.placeholder")}
+              label={t("form.fields.position.label")}
               disabled={isFillCustomerChecked}
               onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantPosition", {
-                  ...trimValidation("신청자 직급을 입력해주십시오."),
-                  required: "신청자 직급을 입력해주십시오.",
+                  ...trimValidation(t("form.validation.applicant.position")),
+                  required: t("form.validation.applicant.position"),
                   maxLength: {
                     value: 50,
-                    message: "글자 수가 너무 많습니다.",
+                    message: t("form.validation.max_length"),
                   },
                 }),
               }}
@@ -407,17 +407,17 @@ const ApplicationForm = ({
               )}
             </ApplicationInput>
             <ApplicationInput
-              placeholder="홍길동"
-              label="성함"
+              placeholder={t("form.fields.name.placeholder")}
+              label={t("form.fields.name.label")}
               disabled={isFillCustomerChecked}
               onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantName", {
-                  ...trimValidation("신청자 성함을 입력해주십시오."),
-                  required: "신청자 성함을 입력해주십시오.",
+                  ...trimValidation(t("form.validation.applicant.name")),
+                  required: t("form.validation.applicant.name"),
                   maxLength: {
                     value: 50,
-                    message: "글자 수가 너무 많습니다.",
+                    message: t("form.validation.max_length"),
                   },
                 }),
               }}
@@ -429,21 +429,21 @@ const ApplicationForm = ({
               )}
             </ApplicationInput>
             <ApplicationInput
-              placeholder="example@ivh.co.kr"
-              label="이메일"
+              placeholder={t("form.fields.email.placeholder")}
+              label={t("form.fields.email.label")}
               disabled={isFillCustomerChecked}
               onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantEmail", {
-                  ...trimValidation("신청자 이메일을 입력해주십시오."),
-                  required: "신청자 이메일을 입력해주십시오.",
+                  ...trimValidation(t("form.validation.applicant.email")),
+                  required: t("form.validation.applicant.email"),
                   pattern: {
                     value: EAMIL_REGEX,
-                    message: "이메일 형식을 맞춰주십시오.",
+                    message: t("form.validation.email_format"),
                   },
                   maxLength: {
                     value: 50,
-                    message: "글자 수가 너무 많습니다.",
+                    message: t("form.validation.max_length"),
                   },
                 }),
               }}
@@ -455,21 +455,21 @@ const ApplicationForm = ({
               )}
             </ApplicationInput>
             <ApplicationInput
-              placeholder="(-) 포함 입력"
-              label="연락처"
+              placeholder={t("form.fields.phone.placeholder")}
+              label={t("form.fields.phone.label")}
               disabled={isFillCustomerChecked}
               onFocus={handleApplicantFieldFocus}
               register={{
                 ...register("applicant.applicantPhone", {
-                  ...trimValidation("신청자 연락처를 입력해주십시오."),
-                  required: "신청자 연락처를 입력해주십시오.",
+                  ...trimValidation(t("form.validation.applicant.phone")),
+                  required: t("form.validation.applicant.phone"),
                   pattern: {
                     value: PHONE_REGEX,
-                    message: "전화번호 형식을 맞춰주십시오.",
+                    message: t("form.validation.phone_format"),
                   },
                   maxLength: {
                     value: 50,
-                    message: "글자 수가 너무 많습니다.",
+                    message: t("form.validation.max_length"),
                   },
                 }),
               }}
@@ -511,7 +511,7 @@ const ApplicationForm = ({
               alignSelf: "center",
             }}
           >
-            수강자
+            {t("form.customer_title")}
           </Typography>
 
           <Box sx={{ position: "relative" }}>
@@ -524,7 +524,7 @@ const ApplicationForm = ({
                     color: "#626262",
                   }}
                 >
-                  신청자 정보와 같음
+                  {t("form.same_as_applicant")}
                 </Typography>
               }
               control={
@@ -588,14 +588,14 @@ const ApplicationForm = ({
                 })}
               >
                 <ApplicationInput
-                  placeholder="iVH"
-                  label="회사명"
+                  placeholder={t("form.fields.company.placeholder")}
+                  label={t("form.fields.company.label")}
                   disabled={index === 0 && isFillCustomerChecked}
                   shrink={customerValues?.[index]?.company}
                   register={{
                     ...register(`customer.${index}.company`, {
-                      required: "수강자 회사명을 입력해주십시오.",
-                      ...trimValidation("수강자 회사명을 입력해주십시오."),
+                      required: t("form.validation.customer.company"),
+                      ...trimValidation(t("form.validation.customer.company")),
                     }),
                   }}
                 >
@@ -608,14 +608,14 @@ const ApplicationForm = ({
                     )}
                 </ApplicationInput>
                 <ApplicationInput
-                  placeholder="IT"
-                  label="부서"
+                  placeholder={t("form.fields.division.placeholder")}
+                  label={t("form.fields.division.label")}
                   disabled={index === 0 && isFillCustomerChecked}
                   shrink={customerValues?.[index]?.division}
                   register={{
                     ...register(`customer.${index}.division`, {
-                      required: "수강자 부서를 입력해주십시오.",
-                      ...trimValidation("수강자 부서를 입력해주십시오."),
+                      required: t("form.validation.customer.division"),
+                      ...trimValidation(t("form.validation.customer.division")),
                     }),
                   }}
                 >
@@ -628,14 +628,14 @@ const ApplicationForm = ({
                     )}
                 </ApplicationInput>
                 <ApplicationInput
-                  placeholder="사원"
-                  label="직급"
+                  placeholder={t("form.fields.position.placeholder")}
+                  label={t("form.fields.position.label")}
                   disabled={index === 0 && isFillCustomerChecked}
                   shrink={customerValues?.[index]?.position}
                   register={{
                     ...register(`customer.${index}.position`, {
-                      required: "수강자 작급을 입력해주십시오.",
-                      ...trimValidation("수강자 직급을 입력해주십시오."),
+                      required: t("form.validation.customer.position"),
+                      ...trimValidation(t("form.validation.customer.position")),
                     }),
                   }}
                 >
@@ -648,14 +648,14 @@ const ApplicationForm = ({
                     )}
                 </ApplicationInput>
                 <ApplicationInput
-                  placeholder="홍길동"
-                  label="성함"
+                  placeholder={t("form.fields.name.placeholder")}
+                  label={t("form.fields.name.label")}
                   disabled={index === 0 && isFillCustomerChecked}
                   shrink={customerValues?.[index]?.name}
                   register={{
                     ...register(`customer.${index}.name`, {
-                      required: "수강자 성함을 입력해주십시오.",
-                      ...trimValidation("수강자 성함을 입력해주십시오."),
+                      required: t("form.validation.customer.name"),
+                      ...trimValidation(t("form.validation.customer.name")),
                     }),
                   }}
                 >
@@ -668,17 +668,17 @@ const ApplicationForm = ({
                     )}
                 </ApplicationInput>
                 <ApplicationInput
-                  placeholder="example@ivh.co.kr"
-                  label="이메일"
+                  placeholder={t("form.fields.email.placeholder")}
+                  label={t("form.fields.email.label")}
                   disabled={index === 0 && isFillCustomerChecked}
                   shrink={customerValues?.[index]?.email}
                   register={{
                     ...register(`customer.${index}.email`, {
-                      required: "수강자 이메일을 입력해주십시오.",
-                      ...trimValidation("수강자 이메일을 입력해주십시오."),
+                      required: t("form.validation.customer.email"),
+                      ...trimValidation(t("form.validation.customer.email")),
                       pattern: {
                         value: EAMIL_REGEX,
-                        message: "이메일 형식을 맞춰주십시오.",
+                        message: t("form.validation.email_format"),
                       },
                     }),
                   }}
@@ -692,17 +692,17 @@ const ApplicationForm = ({
                     )}
                 </ApplicationInput>
                 <ApplicationInput
-                  placeholder="(-) 포함 입력"
-                  label="연락처"
+                  placeholder={t("form.fields.phone.placeholder")}
+                  label={t("form.fields.phone.label")}
                   disabled={index === 0 && isFillCustomerChecked}
                   shrink={customerValues?.[index]?.phone}
                   register={{
                     ...register(`customer.${index}.phone`, {
-                      required: "수강자 연락처를 입력해주십시오.",
-                      ...trimValidation("수강자 연락처를 입력해주십시오."),
+                      required: t("form.validation.customer.phone"),
+                      ...trimValidation(t("form.validation.customer.phone")),
                       pattern: {
                         value: PHONE_REGEX,
-                        message: "전화번호 형식을 맞춰주십시오.",
+                        message: t("form.validation.phone_format"),
                       },
                     }),
                   }}
@@ -731,7 +731,7 @@ const ApplicationForm = ({
           maxRows={5}
           minRows={5}
           multiline
-          placeholder="요청 사항을 입력해주십시오."
+          placeholder={t("form.memo_placeholder")}
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: 0,
@@ -791,7 +791,7 @@ const ApplicationForm = ({
               <Controller
                 name="isChecked"
                 control={control}
-                rules={{ required: "동의가 필요합니다." }}
+                rules={{ required: t("form.validation.agree_required") }}
                 render={({ field }) => (
                   <Checkbox
                     checked={field.value || false}
@@ -816,7 +816,7 @@ const ApplicationForm = ({
               color: "#626262",
               fontSize: "16px",
             })}
-            label={"개인정보처리방침에 동의합니다."}
+            label={t("form.agree_checkbox")}
           />
           {/* <PrivacyPolicyIcon /> */}
         </Box>
@@ -871,7 +871,7 @@ const ApplicationForm = ({
           })}
           disabled={submitStatus === "loading"}
         >
-          신청하기
+          {t("form.submit")}
         </Button>
       </Box>
       {/** 신청 요청을 보낼 때 발생한 에러 보여주는 스낵바 */}

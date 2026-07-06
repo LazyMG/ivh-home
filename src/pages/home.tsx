@@ -14,13 +14,19 @@ import "../App.css";
 import ScrollButton from "../common/ScrollButton";
 
 import homeData from "../data/home/home.json";
+import { useTranslation } from "react-i18next";
 import { useLocalizedNavigate } from "../i18n/useLocalizedNavigate";
 import { FONTS } from "../theme/theme";
 
 const Home = () => {
   const { isMobile } = useBreakpoint();
+  const { t } = useTranslation("home");
 
   const { iMOVA, main_products, provisions } = homeData;
+
+  // 배열 텍스트: locale에서 통째로 가져와 index로 병합
+  const mainProductsT = t("main_products", { returnObjects: true });
+  const provisionsT = t("provisions", { returnObjects: true });
 
   const navigate = useLocalizedNavigate();
 
@@ -75,7 +81,7 @@ const Home = () => {
             <Box
               component="img"
               src={isMobile ? iMOVA.mobile_imageUrl : iMOVA.imageUrl}
-              alt={isMobile ? iMOVA.mobile_image_alt : iMOVA.image_alt}
+              alt={isMobile ? t("iMOVA.mobile_image_alt") : t("iMOVA.image_alt")}
               fetchPriority="high"
               sx={{
                 width: "100%",
@@ -129,7 +135,7 @@ const Home = () => {
                 })}
               >
                 {/* 띄어쓰기마다 줄바꿈 (원문은 JSON에 한 줄로 유지) */}
-                {iMOVA.mainText.replaceAll(" ", "\n")}
+                {t("iMOVA.mainText").replaceAll(" ", "\n")}
               </Typography>
               <Typography
                 sx={(theme) => ({
@@ -145,7 +151,7 @@ const Home = () => {
                   },
                 })}
               >
-                {iMOVA.subText}
+                {t("iMOVA.subText")}
               </Typography>
             </Box>
           </Box>
@@ -180,14 +186,14 @@ const Home = () => {
                   },
                 })}
               >
-                {main_products.map((item) => (
+                {main_products.map((item, i) => (
                   <MainProductCard
                     key={item.title_image}
                     image={item.image}
                     onClick={() => navigate(item.path)}
                     category={item.category}
                     title={item.title_image}
-                    description={item.description}
+                    description={mainProductsT[i]?.description ?? ""}
                   />
                 ))}
               </Box>
@@ -232,7 +238,7 @@ const Home = () => {
                     <ProvisionCard
                       icon={item.icon}
                       title={item.title}
-                      description={item.description}
+                      description={provisionsT[i]?.description ?? ""}
                       onMore={() => navigate(item.path)}
                     />
                   </Fragment>

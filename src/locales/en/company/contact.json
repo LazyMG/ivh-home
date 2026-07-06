@@ -4,50 +4,50 @@
     "description": "Contact iVH for product and solution inquiries. We will respond promptly.",
     "keywords": "iVH, Contact, Inquiry, Consultation"
   },
-  "title": "iVH PRODUCTS 관련 및 기타 궁금하신 점을 문의해보세요.",
+  "title": "Have questions about our products or solutions?",
   "texts": [
-    "서비스, 기술, 제휴 관련 문의는 아래 문의란을 이용해 주세요. 접수된 문의는 담당 부서에서 검토 후 빠르게 회신드리겠습니다.",
-    "원활한 처리를 위해 사용 환경 및 문의 목적을 함께 기재해 주시면 도움이 됩니다."
+    "Whether you are looking for product information, technical support, partnership opportunities, or a demo request, our team is here to help. Your inquiry will be reviewed by the appropriate specialist, and we will get back to you as soon as possible.",
+    "To ensure a more effective consultation, please provide details about your environment and requirements."
   ],
-  "img_alt": "iVH PRODUCTS 관련 및 기타 문의 사항 답변 이미지",
-  "checkbox_text": "개인정보처리방침에 동의합니다.",
+  "img_alt": "Image for inquiries about iVH products and other questions",
+  "checkbox_text": "I agree to the Privacy Policy.",
   "form": {
     "company": {
-      "label": "회사명",
-      "placeholder": "담당자 회사명을 입력해주십시오"
+      "label": "Company Name",
+      "placeholder": "Enter your company name"
     },
     "division": {
-      "label": "부서명",
-      "placeholder": "담당자 부서명을 입력해주십시오"
+      "label": "Department",
+      "placeholder": "Enter your department"
     },
     "name": {
-      "label": "성함",
-      "placeholder": "담당자 성함을 입력해주십시오"
+      "label": "Name",
+      "placeholder": "Enter your name"
     },
     "position": {
-      "label": "직급",
-      "placeholder": "담당자 직급을 입력해주십시오"
+      "label": "Job Title",
+      "placeholder": "Enter your job title"
     },
     "email": {
-      "label": "이메일",
-      "placeholder": "담당자 이메일을 입력해주십시오"
+      "label": "Email",
+      "placeholder": "Enter your email address"
     },
     "phone": {
-      "label": "연락처",
-      "placeholder": "담당자 연락처를 입력해주십시오 (-) 포함"
+      "label": "Phone Number",
+      "placeholder": "Enter your phone number, including dashes (-)"
     },
     "inquiry": {
-      "label": "문의내용",
-      "placeholder": "문의내용을 입력해주십시오"
+      "label": "Inquiry Details",
+      "placeholder": "Enter your inquiry"
     },
-    "submit": "신청하기",
-    "agree_required": "개인정보처리방침에 동의해주세요.",
-    "agree_checkbox": "개인정보처리방침에 동의해주십시오.",
-    "inquiry_required": "문의내용을 입력해주십시오.",
+    "submit": "Submit Inquiry",
+    "agree_required": "Please agree to the Privacy Policy.",
+    "agree_checkbox": "Please agree to the Privacy Policy.",
+    "inquiry_required": "Please enter your inquiry.",
     "snackbar": {
-      "loading": "문의사항을 전송 중입니다...",
-      "success": "문의사항이 성공적으로 전송되었습니다.",
-      "error": "문의사항 전송에 실패했습니다. 다시 시도해주세요."
+      "loading": "Sending your inquiry...",
+      "success": "Your inquiry has been sent successfully.",
+      "error": "Failed to send your inquiry. Please try again."
     }
   }
 }

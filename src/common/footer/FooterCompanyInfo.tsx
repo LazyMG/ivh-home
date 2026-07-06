@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import logoBlack from "/images/header/ivh_logo_black.png";
 import footer from "../../data/footer/footer.json";
 import { FONTS } from "../../theme/theme";
@@ -9,8 +10,10 @@ interface FooterCompanyInfoProps {
 
 // 푸터 왼쪽: 로고 · 회사명 · 주소/연락처 · 소셜 · 카피라이트
 const FooterCompanyInfo = ({ navigate }: FooterCompanyInfoProps) => {
-  const { companyName, address, phone, email, copyright, socialMedia } =
-    footer.companyInfo;
+  const { t } = useTranslation("footer");
+  const { phone, email, copyright, socialMedia } = footer.companyInfo;
+  const companyName = t("companyName");
+  const address = t("address");
   const { youtubeUrl, linkedinUrl, youtubeLogoBlack, linkedinLogoBlack } =
     socialMedia;
 

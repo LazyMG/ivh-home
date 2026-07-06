@@ -10,7 +10,7 @@ import Calendar from "../../components/support/Calendar";
 import ApplicationForm from "../../components/support/ApplicationForm";
 
 import training from "../../data/support/training.json";
-import { useSEO } from "../../hooks/useSEO";
+import { useTranslation } from "react-i18next";
 import SEO from "../../common/SEO";
 import { useEffect, useState } from "react";
 import { reservationService } from "../../service/reservationService";
@@ -149,8 +149,14 @@ const MOCK_RESERVATIONS: ReservationResponse[] = [
 ];
 
 const Training = () => {
-  const seoData = useSEO("support/training", training);
-  const { training_title, training_outline } = training;
+  const { t } = useTranslation("support/training");
+  const { training_outline } = training;
+
+  // 텍스트(제목 세그먼트·본문)는 locale, 이미지 경로는 data json에서 가져와 병합
+  const trainingTitle = t("training_title", { returnObjects: true });
+  const outlineContents = t("training_outline.contents", {
+    returnObjects: true,
+  });
 
   const [apiReservationList, setApiReservationList] = useState<
     ReservationResponse[] | null
@@ -190,7 +196,13 @@ const Training = () => {
 
   return (
     <>
-      <SEO {...seoData} />
+      <SEO
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
+        ogImage="https://ivh.co.kr/images/opengraph.png"
+        canonical="https://ivh.co.kr/support/training"
+      />
       <ScrollButton threshold={THRESHOLD} />
 
       {/** 개요, Curriculum, Schedule, Application 섹션 전체 컨테이너 */}
@@ -244,7 +256,7 @@ const Training = () => {
           >
             <img
               src={training_outline.image}
-              alt={training_outline.image_alt}
+              alt={t("training_outline.image_alt")}
               style={{ maxWidth: "100%" }}
             />
           </Box>
@@ -259,7 +271,7 @@ const Training = () => {
               },
             })}
           >
-            <TrainingMainTitle titleList={training_title} />
+            <TrainingMainTitle titleList={trainingTitle} />
           </Box>
           <Box
             sx={(theme) => ({
@@ -273,7 +285,7 @@ const Training = () => {
             })}
           />
           <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
-            {training_outline.contents.map((content, index) => (
+            {outlineContents.map((content, index) => (
               <Typography
                 key={index}
                 sx={(theme) => ({

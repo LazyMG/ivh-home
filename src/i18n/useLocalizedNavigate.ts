@@ -21,6 +21,9 @@ export const useLocalizedNavigate = () => {
       navigate(to);
       return;
     }
+    // 실제 라우트가 아닌 placeholder(빈 값, "#", 해시 시작)는 이동하지 않음.
+    // (langPrefix가 붙으면 "/en#"처럼 절대경로가 되어 홈으로 리다이렉트되는 것 방지)
+    if (!to || to === "#" || to.startsWith("#")) return;
     navigate(`${langPrefix}${to}`, options);
   };
 };
