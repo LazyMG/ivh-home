@@ -37,6 +37,7 @@ const ISuite = () => {
             titleImage={resource.title_image}
             titleImageAlt={t("title_image_alt")}
             badge="Software"
+            badgeColor="#0058D0"
             caption={t("page_name")}
             description={t("title")}
           />

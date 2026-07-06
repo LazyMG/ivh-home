@@ -11,6 +11,7 @@ interface IMOVAHeroMobileProps {
   titleImageAlt?: string;
   /** 좌측 badge 텍스트 (예: AMR) */
   badge: string;
+  badgeColor?: string;
   /** 파란 그라데이션 밴드의 캡션 */
   caption: ReactNode;
   /** 흰 배경 영역의 설명문 */
@@ -31,6 +32,7 @@ const IMOVAHeroMobile = ({
   titleImage,
   titleImageAlt = "",
   badge,
+  badgeColor = "#03193F",
   caption,
   description,
 }: IMOVAHeroMobileProps) => {
@@ -63,7 +65,7 @@ const IMOVAHeroMobile = ({
           />
           <Box
             sx={{
-              backgroundColor: "#03193F",
+              backgroundColor: badgeColor,
               display: "flex",
               justifyContent: "center",
               alignItems: "flex-end",
